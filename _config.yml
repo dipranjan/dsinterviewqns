@@ -17,7 +17,7 @@ html:
   use_issues_button         : true  # Whether to add an "open an issue" button
   extra_navbar              : <a href="https://www.buymeacoffee.com/dearc" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>  # Will be displayed underneath the left navbar.
   extra_footer              : ""  # Will be displayed underneath the footer.
-  google_analytics_id       : "2789778172"  # A GA id that can be used to track book views.
+  google_analytics_id       : "UA-60403888-2"  # A GA id that can be used to track book views.
   home_page_in_navbar       : true  # Whether to include your home page in the left Navigation Bar
   baseurl                   : "https://dipranjan.github.io/dsinterviewqns/"  # The base URL where your book will be hosted. Used for creating image previews and social links. e.g.: https://mypage.com/mybook/
   comments:
