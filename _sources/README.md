@@ -1,12 +1,13 @@
 # About this Book
 
 
-This book is a collection of some good open source Machine learning resources out there. The book does not belong to me, it belongs to the entire community, I have just taken it upon me to collect the fantastic resources in a book format as a comprehensive source for someone starting out.
+This book is created as an attempt to consolidate my learnings as I prepare for Data Science related interviews. There is enormous amount of resources available in the internet, multiple repositories, there are even new companies that have cropped up helping students prepare for interviews at the Big Tech companies. The idea here is to create an accessible version of these resources so people on the same journey can benefit from it.
 
-To the best of my knowledge I have ensured that the resources used here are available under free-to-use license. Incase you feel that is not the case, please open an issue stating the same and I will take a look into it.
+This book does not cover the topics in depth, it covers just enough to get you ready for the interview. The assumption here is that the person using it is already familiar with the topic and is here to brush up on the topic. Additonal resources for someone eager to explore the topic in depth will be added later.
 
-Every book contains within it the author's style, which makes reading the book a seamless experience or brings some sort of uniformity to the book. However given the nature of this book it will not be the case, this book will be a mish-mash of different styles depending on the original source.
+Please create a pull request and contribute.
 
-If you come across any Open Source Resource that you think should be here or even if you have a way to explain things better, please feel free to create a pull request.
+The online version of the book is available at [this link.](https://dipranjan.github.io/dsinterviewqns/intro.html)
 
-The online version of the book is available at [this link.](https://dipranjan.github.io/opensourcemlbook/intro.html)
+
+<a href="https://www.buymeacoffee.com/dearc" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
