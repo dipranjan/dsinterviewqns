@@ -40,7 +40,7 @@ It can be surprisingly difficult to count the number of sequences or sets satisf
 
 If both are same then A and B are independent events.
 
-```{figure} images/image1.png
+```{figure} ./image1.png
 ---
 height: 150px
 name: image1
