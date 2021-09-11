@@ -42,3 +42,32 @@ def palindrome_checker(txt):
 print(palindrome_checker("carerac"))
 print(palindrome_checker("sunset"))
 
+
+# ```{admonition} Problem:
+# :class: tip
+# Write a function to generate this pattern:
+# 1
+# 2 3
+# 4 5 6
+# 
+# Change the code to output
+# 1
+# 1 2
+# 1 2 3
+# ```
+
+# In[27]:
+
+
+def pyramid(n):
+    i = 1
+    j = 1
+    while i < n:
+        for k in range(1,j):
+            print(i, end=' ') # For the second pattern change i to k
+            i += 1
+        print(" ") 
+        j +=1
+
+pyramid(6)
+

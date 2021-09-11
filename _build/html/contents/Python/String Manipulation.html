@@ -53,7 +53,7 @@
     <link rel="shortcut icon" href="../../_static/logo.gif"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="To Do" href="../ML%20Hardware/To%20Do.html" />
+    <link rel="next" title="Statistics" href="Statistics.html" />
     <link rel="prev" title="Bayesian vs Frequentist Reasoning" href="../Statistics/Bayesian%20vs%20Frequentist%20Reasoning.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -122,6 +122,11 @@
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    String Manipulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Statistics.html">
+   Statistics
   </a>
  </li>
 </ul>
@@ -295,6 +300,42 @@ False
 </div>
 </div>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">Problem:</p>
+<p>Write a function to generate this pattern:
+1
+2 3
+4 5 6</p>
+<p>Change the code to output
+1
+1 2
+1 2 3</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">pyramid</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span> <span class="c1"># For the second pattern change i to k</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span> 
+        <span class="n">j</span> <span class="o">+=</span><span class="mi">1</span>
+
+<span class="n">pyramid</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 
+1  
+2 3  
+4 5 6  
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -336,10 +377,10 @@ False
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="../ML%20Hardware/To%20Do.html" title="next page">
+        <a class="right-next" href="Statistics.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">To Do</p>
+                <p class="prevnext-title">Statistics</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
