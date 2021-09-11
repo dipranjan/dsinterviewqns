@@ -6,6 +6,10 @@ parts:
     - file: contents/Statistics/Probability Basics
     - file: contents/Statistics/Probability Distribution
     - file: contents/Statistics/Bayesian vs Frequentist Reasoning
+  - caption: Python
+    chapters:
+    - file: contents/Python/String Manipulation
+    - file: contents/Python/Statistics
   - caption: Machine Learning Hardware
     chapters:
     - file: contents/ML Hardware/To Do

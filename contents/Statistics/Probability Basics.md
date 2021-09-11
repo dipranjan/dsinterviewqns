@@ -33,6 +33,10 @@ It can be surprisingly difficult to count the number of sequences or sets satisf
 - Permutation - $AB \neq BA$ , order matters
 - Combination - $AB = BA$ , order does not matters
 
+
+
+
+
 ### Joint & Conditional Probability
 
 - Joint Probability is the probability of 2 independent events occuring : $P(A \cap B) = P(A)*P(B)$
@@ -49,3 +53,27 @@ Baye's Theorem
 ```
 
 $P(Banana|Long,Sweet,Yellow) = \frac{P(Long|Banana)*P(Sweet|Banana)*P(Yellow|Banana)*P(Banana)}{P(Long)*P(Sweet)*P(Yellow)}$
+
+
+
+```{admonition} Problem:
+:class: tip
+
+**Asked By - UBER**
+
+We throw 3 dice one by one. What is the probability that we obtain 3 points in strictly increasing order?
+
+```
+
+```{admonition} Solution:
+:class: dropdown
+
+Suppose we get $4$ in the first roll then,
+
+Total Probability = $P(4) * P(5) * P(6) = 1/6 * 1/6 * 1/6 = 1/216$
+
+Similarly for $3$,    $P(3) * P(4,5 | 4,6 | 5,6) = 1/6 * (1/36 + 1/36 + 1/36) = 3/216$
+
+Taking into consideration $P(1)$ and $P(2)$ we have the total as $= 10/216 + 6/216 + 3/216 + 1/216 = 20/216$ 
+
+```
