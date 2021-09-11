@@ -23,7 +23,7 @@ Looking at the table we see just 1 case of Three Heads, but 3 cases of Two Heads
 
 And this is what becomes the **probability distribution.**
 
-```{figure} ./image2.png
+```{figure} ../Statistics/images/image2.png
 ---
 height: 250px
 name: image2
