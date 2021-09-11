@@ -14,7 +14,7 @@ Consider the outcome of a single die roll, and call it $X$. A reasonable questio
 
 $Weighted Average = \frac{1}{6} * (1 + 2 + 3 + 4 + 5 + 6) = 3.5$
 
-If you play the game $ \inf $ times the average value becomes $E(X)$
+If you play the game $ \infty $ times the average value becomes $E(X)$
 
 The **variance** of a random variable $X$ is a nonnegative number that summarizes on average how much $X$ differs from its mean, or expectation.
 The square root of the variance is called the **standard deviation.**
@@ -40,7 +40,7 @@ It can be surprisingly difficult to count the number of sequences or sets satisf
 
 If both are same then A and B are independent events.
 
-```{figure} ./images/image1.png
+```{figure} images/image1.png
 ---
 height: 150px
 name: image1
