@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bayesian vs Frequentist Reasoning &#8212; The Data Science Interview Book</title>
+    <title>Statistics &#8212; The Data Science Interview Book</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -49,12 +49,12 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/Statistics/Bayesian vs Frequentist Reasoning.html" />
+    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/Python/Statistics.html" />
     <link rel="shortcut icon" href="../../_static/logo.gif"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Interview Questions" href="../Python/Interview%20Questions.html" />
-    <link rel="prev" title="Probability Distribution" href="Probability%20Distribution.html" />
+    <link rel="next" title="To Do" href="../ML%20Hardware/To%20Do.html" />
+    <link rel="prev" title="String Manipulation" href="String%20Manipulation.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -96,19 +96,19 @@
   Statistics
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="Probability%20Basics.html">
+  <a class="reference internal" href="../Statistics/Probability%20Basics.html">
    Probability Basics
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Probability%20Distribution.html">
+  <a class="reference internal" href="../Statistics/Probability%20Distribution.html">
    Probability Distribution
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Statistics/Bayesian%20vs%20Frequentist%20Reasoning.html">
    Bayesian vs Frequentist Reasoning
   </a>
  </li>
@@ -118,10 +118,15 @@
   Python
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../Python/Interview%20Questions.html">
-   Interview Questions
+  <a class="reference internal" href="String%20Manipulation.html">
+   String Manipulation
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Statistics
   </a>
  </li>
 </ul>
@@ -182,9 +187,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/contents/Statistics/Bayesian vs Frequentist Reasoning.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/contents/Python/Statistics.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -202,10 +207,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/Statistics/Bayesian vs Frequentist Reasoning.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/Python/Statistics.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/dipranjan/dsinterviewqns/edit/master/contents/Statistics/Bayesian vs Frequentist Reasoning.md"><button
+        <a class="edit-button" href="https://github.com/dipranjan/dsinterviewqns/edit/master/contents/Python/Statistics.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -220,6 +225,23 @@
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/dipranjan/dsinterviewqns/master?urlpath=tree/contents/Python/Statistics.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
@@ -233,12 +255,40 @@
         
               <div>
                 
-  <div class="section" id="bayesian-vs-frequentist-reasoning">
-<h1>Bayesian vs Frequentist Reasoning<a class="headerlink" href="#bayesian-vs-frequentist-reasoning" title="Permalink to this headline">¶</a></h1>
-<p>Bayesian statistics concerns itself with trying to represent your beliefs in a DeFinetti consistent manner, simply put - you want a logically rigorous way of describing your initial (prior) belief and the update in your belief as you observe new data (thus creating posterior belief).</p>
-<p>Frequentist statistics concerns itself with methods that have ‘long run’ guarantees.</p>
-<p>E.g. If a person shoots bullseye of the target 9 times, the frequentist approach predicts that 10th shot will also be bullseye. Whereas, as a human we are prone to making some error. The Bayesian approach will take this prior behavior into account. It will not predict 1 as the probability of hitting bullseye in 10th shot. It will take into account prior shots in similar situations and predict accordingly.</p>
-<p>In case of Web data, if a person has liked something 9 times, frequentist will predict that the person will like it 10th time as well. Where as, Bayesian approach knows that humans can get bored. Liking something 9 times does not guarantee that it will be liked 10th time as well.</p>
+  <div class="section" id="statistics">
+<h1>Statistics<a class="headerlink" href="#statistics" title="Permalink to this headline">¶</a></h1>
+<div class="tip admonition">
+<p class="admonition-title">Problem:</p>
+<p><strong>Asked By - GOOGLE</strong></p>
+<p>Write a function to generate N samples from a normal distribution and plot the histogram.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+
+<span class="k">def</span> <span class="nf">normal_sample_generator</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="c1"># can be done using np.random.randn or stats.norm.rvs</span>
+    <span class="c1">#x = np.random.randn(N)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">)</span>
+    <span class="n">num_bins</span> <span class="o">=</span> <span class="mi">20</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">num_bins</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+    <span class="n">bin_width</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">x</span><span class="o">.</span><span class="n">min</span><span class="p">())</span> <span class="o">/</span> <span class="n">num_bins</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">*</span> <span class="n">N</span> <span class="o">*</span> <span class="n">bin_width</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">normal_sample_generator</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Statistics_2_0.png" src="../../_images/Statistics_2_0.png" />
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -254,7 +304,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./contents\Statistics"
+            path: "./contents\Python"
         },
         predefinedOutput: true
     }
@@ -271,19 +321,19 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="Probability%20Distribution.html" title="previous page">
+        <a class="left-prev" href="String%20Manipulation.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Probability Distribution</p>
+                <p class="prevnext-title">String Manipulation</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="../Python/Interview%20Questions.html" title="next page">
+        <a class="right-next" href="../ML%20Hardware/To%20Do.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Interview Questions</p>
+                <p class="prevnext-title">To Do</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

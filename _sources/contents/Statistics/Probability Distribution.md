@@ -37,3 +37,48 @@ Now the probability distribution can be of 2 types, discrete and continous. An e
 
 When we use a probability function to describe a continuous probability distribution we call it a **probability density function (pdf)**.
 
+
+### Unbiased Estimator
+
+An unbiased estimator is an accurate statistic that’s used to approximate a population parameter. “Accurate” in this sense means that it’s neither an overestimate nor an underestimate. If an overestimate or underestimate does happen, the mean of the difference is called a “bias.” That’s just saying if the estimator (i.e. the sample mean) equals the parameter (i.e. the population mean), then it’s an unbiased estimator.
+
+```{admonition} Problem:
+:class: tip
+
+**Asked By - LIME**
+
+What is an unbiased estimator and can you provide an example for a layman to understand?
+
+```
+
+```{admonition} Solution:
+:class: dropdown
+
+One famous example of an unrepresentative sample is the literary digest voter survey, which predicted Alfred Landon would win the 1936 presidential election. The survey was biased, as it failed to include a representative sample of low income voters who were more likely to be democrat and vote for Theodore Roosevelt.
+
+If the sampling had been done correctly then the estimator would have been unbiased as it would match with the actual output from the population, which was win for Theodore Roosevelt.
+```
+
+
+### Maximum Likelihood Estimation (MLE)
+
+
+:::{note}
+Reference: [Click Here](https://towardsdatascience.com/probability-concepts-explained-maximum-likelihood-estimation-c7b4342fdbb1)
+:::
+
+```{admonition} Problem:
+:class: tip
+
+**Asked By - SPOTIFY**
+
+Suppose you draw n samples from a uniform distribution U(a, b). What is the MLE estimate of a and b?
+
+```
+
+```{admonition} Solution:
+:class: dropdown
+
+Solution Pending
+
+```
