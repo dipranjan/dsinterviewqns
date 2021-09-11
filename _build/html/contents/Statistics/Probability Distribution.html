@@ -54,8 +54,8 @@
     <link rel="shortcut icon" href="../../_static/logo.gif"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="To Do" href="../ML%20Hardware/To%20Do.html" />
-    <link rel="prev" title="Bayesian vs Frequentist Reasoning" href="Bayesian%20vs%20Frequentist%20Reasoning.html" />
+    <link rel="next" title="Bayesian vs Frequentist Reasoning" href="Bayesian%20vs%20Frequentist%20Reasoning.html" />
+    <link rel="prev" title="Probability Basics" href="Probability%20Basics.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -103,14 +103,14 @@
    Probability Basics
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Bayesian%20vs%20Frequentist%20Reasoning.html">
-   Bayesian vs Frequentist Reasoning
-  </a>
- </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Probability Distribution
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Bayesian%20vs%20Frequentist%20Reasoning.html">
+   Bayesian vs Frequentist Reasoning
   </a>
  </li>
 </ul>
@@ -241,7 +241,7 @@
 <h2>Random Variable<a class="headerlink" href="#random-variable" title="Permalink to this headline">¶</a></h2>
 <p>Random Variable maps the outcome of sample space into real numbers.</p>
 <p>Example: How many heads when we toss 3 coins?</p>
-<p><span class="math notranslate nohighlight">\(X\)</span> could be <span class="math notranslate nohighlight">\(0, 1, 2 or 3 \)</span> randomly.
+<p><span class="math notranslate nohighlight">\(X\)</span> could be <span class="math notranslate nohighlight">\(0, 1, 2\)</span> or <span class="math notranslate nohighlight">\(3\)</span> randomly.
 And they might each have a different probability.</p>
 <p><span class="math notranslate nohighlight">\(X\)</span> = “The number of Heads” is the Random Variable.
 In this case, there could be 0 Heads (if all the coins land Tails up), 1 Head, 2 Heads or 3 Heads.
@@ -261,6 +261,8 @@ The three coins can land in eight possible ways:</p>
 <p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Probability Distribution vs Frequency Distribution</span><a class="headerlink" href="#image2" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>Frequency distribution</strong> comes from actually doing the experiment <span class="math notranslate nohighlight">\(n\)</span> number of times as <span class="math notranslate nohighlight">\(n --&gt; \inf\)</span> the shape comes closer and closer to the Probability distribution</p>
+<p>Now the probability distribution can be of 2 types, discrete and continous. An example of Discrete is shown above. When we use a probability function to describe a discrete probability distribution we call it a <strong>probability mass function (pmf)</strong>. The probability mass function, <span class="math notranslate nohighlight">\(f\)</span>, just returns the probability of the outcome. Therefore the probability of rolling a <span class="math notranslate nohighlight">\(3\)</span> is <span class="math notranslate nohighlight">\(f(3) = 1/6\)</span>.</p>
+<p>When we use a probability function to describe a continuous probability distribution we call it a <strong>probability density function (pdf)</strong>.</p>
 </div>
 </div>
 
@@ -294,19 +296,19 @@ The three coins can land in eight possible ways:</p>
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="Bayesian%20vs%20Frequentist%20Reasoning.html" title="previous page">
+        <a class="left-prev" href="Probability%20Basics.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Bayesian vs Frequentist Reasoning</p>
+                <p class="prevnext-title">Probability Basics</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="../ML%20Hardware/To%20Do.html" title="next page">
+        <a class="right-next" href="Bayesian%20vs%20Frequentist%20Reasoning.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">To Do</p>
+                <p class="prevnext-title">Bayesian vs Frequentist Reasoning</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
