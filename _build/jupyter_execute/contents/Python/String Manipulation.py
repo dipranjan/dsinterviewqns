@@ -45,14 +45,14 @@ print(palindrome_checker("sunset"))
 
 # ```{admonition} Problem:
 # :class: tip
-# Write a function to generate this pattern:
-# 1
-# 2 3
+# Write a function to generate this pattern:\
+# 1\
+# 2 3\
 # 4 5 6
 # 
-# Change the code to output
-# 1
-# 1 2
+# Now change the code to output\
+# 1\
+# 1 2\
 # 1 2 3
 # ```
 

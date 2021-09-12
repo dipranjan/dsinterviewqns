@@ -64,8 +64,14 @@ If the sampling had been done correctly then the estimator would have been unbia
 
 
 :::{note}
-Reference: [Click Here](https://towardsdatascience.com/probability-concepts-explained-maximum-likelihood-estimation-c7b4342fdbb1)
+**Reference:** [Discussion](https://stats.stackexchange.com/questions/112451/maximum-likelihood-estimation-mle-in-layman-terms), [Explanation](https://www.kdnuggets.com/2019/11/probability-learning-maximum-likelihood.html), [Implementation](https://analyticsindiamag.com/maximum-likelihood-estimation-python-guide/)
 :::
+
+Say you have some data. Say you're willing to assume that the data comes from some distribution -- perhaps Gaussian. There are an infinite number of different Gaussians that the data could have come from (which correspond to the combination of the infinite number of means and variances that a Gaussian distribution can have). MLE will pick the Gaussian (i.e., the mean and variance) that is "most consistent" with your data (the precise meaning of consistent is explained below).
+
+So, say you've got a data set of $y={−1,3,7}$. The most consistent Gaussian from which that data could have come has a mean of $3$ and a variance of $16$. It could have been sampled from some other Gaussian. But one with a mean of $3$ and variance of $16$ is most consistent with the data in the following sense: the probability of getting the particular $y$ values you observed is greater with this choice of mean and variance, than it is with any other choice.
+
+Maximum Likelihood Estimation can be applied to both regression and classification problems.
 
 ```{admonition} Problem:
 :class: tip
