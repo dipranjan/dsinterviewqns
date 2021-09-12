@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Probability Distribution &#8212; The Data Science Interview Book</title>
+    <title>Logistic Regression &#8212; The Data Science Interview Book</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,12 +51,12 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/Statistics/Probability Distribution.html" />
+    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/Algorithms/Logistic Regression.html" />
     <link rel="shortcut icon" href="../../_static/logo.gif"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Bayesian vs Frequentist Reasoning" href="Bayesian%20vs%20Frequentist%20Reasoning.html" />
-    <link rel="prev" title="Probability Basics" href="Probability%20Basics.html" />
+    <link rel="next" title="String Manipulation" href="../Python/String%20Manipulation.html" />
+    <link rel="prev" title="Bayesian vs Frequentist Reasoning" href="../Statistics/Bayesian%20vs%20Frequentist%20Reasoning.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -98,19 +98,19 @@
   Statistics
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="Probability%20Basics.html">
+  <a class="reference internal" href="../Statistics/Probability%20Basics.html">
    Probability Basics
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Statistics/Probability%20Distribution.html">
    Probability Distribution
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Bayesian%20vs%20Frequentist%20Reasoning.html">
+  <a class="reference internal" href="../Statistics/Bayesian%20vs%20Frequentist%20Reasoning.html">
    Bayesian vs Frequentist Reasoning
   </a>
  </li>
@@ -120,9 +120,9 @@
   Algorithms
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../Algorithms/Logistic%20Regression.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Logistic Regression
   </a>
  </li>
@@ -201,7 +201,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/contents/Statistics/Probability Distribution.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/contents/Algorithms/Logistic Regression.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -221,10 +221,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/Statistics/Probability Distribution.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/Algorithms/Logistic Regression.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/dipranjan/dsinterviewqns/edit/master/contents/Statistics/Probability Distribution.md"><button
+        <a class="edit-button" href="https://github.com/dipranjan/dsinterviewqns/edit/master/contents/Algorithms/Logistic Regression.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -244,29 +244,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#random-variable">
-   Random Variable
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#unbiased-estimator">
-   Unbiased Estimator
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#maximum-likelihood-estimation-mle">
-   Maximum Likelihood Estimation (MLE)
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -275,67 +252,29 @@
         
               <div>
                 
-  <div class="section" id="probability-distribution">
-<h1>Probability Distribution<a class="headerlink" href="#probability-distribution" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="random-variable">
-<h2>Random Variable<a class="headerlink" href="#random-variable" title="Permalink to this headline">¶</a></h2>
-<p>Random Variable maps the outcome of sample space into real numbers.</p>
-<p>Example: How many heads when we toss 3 coins?</p>
-<p><span class="math notranslate nohighlight">\(X\)</span> could be <span class="math notranslate nohighlight">\(0, 1, 2\)</span> or <span class="math notranslate nohighlight">\(3\)</span> randomly.
-And they might each have a different probability.</p>
-<p><span class="math notranslate nohighlight">\(X\)</span> = “The number of Heads” is the Random Variable.
-In this case, there could be 0 Heads (if all the coins land Tails up), 1 Head, 2 Heads or 3 Heads.
-So the Sample Space = <span class="math notranslate nohighlight">\({0, 1, 2, 3}\)</span>
-But this time the outcomes are NOT all equally likely.
-The three coins can land in eight possible ways:</p>
-<p>Looking at the table we see just 1 case of Three Heads, but 3 cases of Two Heads, 3 cases of One Head, and 1 case of Zero Heads. So:</p>
+  <div class="section" id="logistic-regression">
+<h1>Logistic Regression<a class="headerlink" href="#logistic-regression" title="Permalink to this headline">¶</a></h1>
+<div class="tip admonition">
+<p class="admonition-title">Problem:</p>
+<p><strong>Asked By - ROBINHOOD</strong></p>
+<p>How would you interpret coefficients of logistic regression for categorical and boolean variables?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p><strong>Reference:</strong> <a class="reference external" href="https://www.displayr.com/how-to-interpret-logistic-regression-coefficients/">Explanation</a></p>
+<p>Let’s explain this using an example. The table below shows the main outputs from the logistic regression. It is very obvious which are the categorial variables out here:</p>
+<p><img alt="Estimate of Coefficients" src="../../_images/image12.PNG" /></p>
+<p>The first category (usually not shown) has a coefficient of <span class="math notranslate nohighlight">\(0\)</span>. So, if we can say, for example, that:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(P(X = 3) = 1/8 = {HHH}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(P(X = 2) = 3/8 = {HHT,HTH,THH}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(P(X = 1) = 3/8 = {TTH,THT,TTH}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(P(X = 0) = 1/8 = {TTT}\)</span></p></li>
+<li><p>The effect of having a DSL service versus having no DSL service <span class="math notranslate nohighlight">\((0.92 - 0 = 0.92)\)</span> is a little more than twice as big in terms of leading to churn as is the effect of being a senior citizen <span class="math notranslate nohighlight">\((0.41)\)</span>.</p></li>
+<li><p>The effect of having a Fiber optic service is approximately twice as big as having a DSL service.</p></li>
+<li><p>If somebody has a One year contract and a DSL service, these two effects almost completely cancel each other out.</p></li>
 </ul>
-<p>And this is what becomes the <strong>probability distribution.</strong></p>
-<div class="figure align-default" id="image2">
-<a class="reference internal image-reference" href="../../_images/image21.PNG"><img alt="../../_images/image21.PNG" src="../../_images/image21.PNG" style="height: 250px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Probability Distribution vs Frequency Distribution</span><a class="headerlink" href="#image2" title="Permalink to this image">¶</a></p>
-</div>
-<p><strong>Frequency distribution</strong> comes from actually doing the experiment <span class="math notranslate nohighlight">\(n\)</span> number of times as <span class="math notranslate nohighlight">\(n --&gt; \infty\)</span> the shape comes closer and closer to the Probability distribution</p>
-<p>Now the probability distribution can be of 2 types, discrete and continous. An example of Discrete is shown above. When we use a probability function to describe a discrete probability distribution we call it a <strong>probability mass function (pmf)</strong>. The probability mass function, <span class="math notranslate nohighlight">\(f\)</span>, just returns the probability of the outcome. Therefore the probability of rolling a <span class="math notranslate nohighlight">\(3\)</span> is <span class="math notranslate nohighlight">\(f(3) = 1/6\)</span>.</p>
-<p>When we use a probability function to describe a continuous probability distribution we call it a <strong>probability density function (pdf)</strong>.</p>
-</div>
-<div class="section" id="unbiased-estimator">
-<h2>Unbiased Estimator<a class="headerlink" href="#unbiased-estimator" title="Permalink to this headline">¶</a></h2>
-<p>An unbiased estimator is an accurate statistic that’s used to approximate a population parameter. “Accurate” in this sense means that it’s neither an overestimate nor an underestimate. If an overestimate or underestimate does happen, the mean of the difference is called a “bias.” That’s just saying if the estimator (i.e. the sample mean) equals the parameter (i.e. the population mean), then it’s an unbiased estimator.</p>
-<div class="tip admonition">
-<p class="admonition-title">Problem:</p>
-<p><strong>Asked By - LIME</strong></p>
-<p>What is an unbiased estimator and can you provide an example for a layman to understand?</p>
-</div>
-<div class="dropdown admonition">
-<p class="admonition-title">Solution:</p>
-<p>One famous example of an unrepresentative sample is the literary digest voter survey, which predicted Alfred Landon would win the 1936 presidential election. The survey was biased, as it failed to include a representative sample of low income voters who were more likely to be democrat and vote for Theodore Roosevelt.</p>
-<p>If the sampling had been done correctly then the estimator would have been unbiased as it would match with the actual output from the population, which was win for Theodore Roosevelt.</p>
-</div>
-</div>
-<div class="section" id="maximum-likelihood-estimation-mle">
-<h2>Maximum Likelihood Estimation (MLE)<a class="headerlink" href="#maximum-likelihood-estimation-mle" title="Permalink to this headline">¶</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><strong>Reference:</strong> <a class="reference external" href="https://stats.stackexchange.com/questions/112451/maximum-likelihood-estimation-mle-in-layman-terms">Discussion</a>, <a class="reference external" href="https://www.kdnuggets.com/2019/11/probability-learning-maximum-likelihood.html">Explanation</a>, <a class="reference external" href="https://analyticsindiamag.com/maximum-likelihood-estimation-python-guide/">Implementation</a></p>
-</div>
-<p>Say you have some data. Say you’re willing to assume that the data comes from some distribution – perhaps Gaussian. There are an infinite number of different Gaussians that the data could have come from (which correspond to the combination of the infinite number of means and variances that a Gaussian distribution can have). MLE will pick the Gaussian (i.e., the mean and variance) that is “most consistent” with your data (the precise meaning of consistent is explained below).</p>
-<p>So, say you’ve got a data set of <span class="math notranslate nohighlight">\(y={−1,3,7}\)</span>. The most consistent Gaussian from which that data could have come has a mean of <span class="math notranslate nohighlight">\(3\)</span> and a variance of <span class="math notranslate nohighlight">\(16\)</span>. It could have been sampled from some other Gaussian. But one with a mean of <span class="math notranslate nohighlight">\(3\)</span> and variance of <span class="math notranslate nohighlight">\(16\)</span> is most consistent with the data in the following sense: the probability of getting the particular <span class="math notranslate nohighlight">\(y\)</span> values you observed is greater with this choice of mean and variance, than it is with any other choice.</p>
-<p>Maximum Likelihood Estimation can be applied to both regression and classification problems.</p>
-<div class="tip admonition">
-<p class="admonition-title">Problem:</p>
-<p><strong>Asked By - SPOTIFY</strong></p>
-<p>Suppose you draw n samples from a uniform distribution U(a, b). What is the MLE estimate of a and b?</p>
-</div>
-<div class="dropdown admonition">
-<p class="admonition-title">Solution:</p>
-<p>Solution Pending</p>
-</div>
+<p>Consider the scenario of a senior citizen with a <span class="math notranslate nohighlight">\(2\)</span> month tenure, with no internet service, a one year contract and a monthly charge of $<span class="math notranslate nohighlight">\(100\)</span>. If we compute all the effects and add them up we have:</p>
+<p><span class="math notranslate nohighlight">\(0.41\)</span> (Senior Citizen = Yes) <span class="math notranslate nohighlight">\(- 0.06 (2*-0.03\)</span>; tenure) <span class="math notranslate nohighlight">\(+ 0\)</span> (no internet service) <span class="math notranslate nohighlight">\(- 0.88\)</span> (one year contract) <span class="math notranslate nohighlight">\(+ 0 (100*0\)</span>; monthly charge) <span class="math notranslate nohighlight">\(= -0.53\)</span>.</p>
+<p>We then need to add the (Intercept), also sometimes called the constant, which gives us <span class="math notranslate nohighlight">\(-0.53- 1.41 = -1.94\)</span>. To make the next bit a little more transparent, I am going to substitute <span class="math notranslate nohighlight">\(-1.94\)</span> with <span class="math notranslate nohighlight">\(x\)</span>. The logistic transformation is:</p>
+<p>Probability <span class="math notranslate nohighlight">\(= \frac{1} {1 + \exp^{-x}} = \frac{1}{1 + \exp^{1.94}} = 0.13 = 13\%\)</span>.</p>
+<p>Thus, the senior citizen with a <span class="math notranslate nohighlight">\(2\)</span> month tenure, no internet service, a one year contract, and a monthly charge of $<span class="math notranslate nohighlight">\(100\)</span>, is predicted as having a <span class="math notranslate nohighlight">\(13\%\)</span> chance of cancelling their subscription. By contrast if we redo this, just changing one thing, which is substituting the effect for no internet service <span class="math notranslate nohighlight">\((0)\)</span> with that for a fiber optic connection <span class="math notranslate nohighlight">\((1.86)\)</span>, we compute that they have a <span class="math notranslate nohighlight">\(48\%\)</span> chance of cancelling.</p>
 </div>
 </div>
 
@@ -352,7 +291,7 @@ The three coins can land in eight possible ways:</p>
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./contents\Statistics"
+            path: "./contents\Algorithms"
         },
         predefinedOutput: true
     }
@@ -369,19 +308,19 @@ The three coins can land in eight possible ways:</p>
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="Probability%20Basics.html" title="previous page">
+        <a class="left-prev" href="../Statistics/Bayesian%20vs%20Frequentist%20Reasoning.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Probability Basics</p>
+                <p class="prevnext-title">Bayesian vs Frequentist Reasoning</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="Bayesian%20vs%20Frequentist%20Reasoning.html" title="next page">
+        <a class="right-next" href="../Python/String%20Manipulation.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Bayesian vs Frequentist Reasoning</p>
+                <p class="prevnext-title">String Manipulation</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
