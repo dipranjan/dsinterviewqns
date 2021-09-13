@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Statistics &#8212; The Data Science Interview Book</title>
+    <title>Regression &#8212; The Data Science Interview Book</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -42,6 +42,8 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -49,12 +51,12 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/Python/Statistics.html" />
+    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/Algorithms/Regression.html" />
     <link rel="shortcut icon" href="../../_static/logo.gif"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="To Do" href="../ML%20Hardware/To%20Do.html" />
-    <link rel="prev" title="String Manipulation" href="String%20Manipulation.html" />
+    <link rel="next" title="String Manipulation" href="../Python/String%20Manipulation.html" />
+    <link rel="prev" title="Anomaly Detection" href="Anomaly%20Detection.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -118,19 +120,19 @@
   Algorithms
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../Algorithms/Logistic%20Regression.html">
+  <a class="reference internal" href="Logistic%20Regression.html">
    Logistic Regression
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Algorithms/Anomaly%20Detection.html">
+  <a class="reference internal" href="Anomaly%20Detection.html">
    Anomaly Detection
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Algorithms/Regression.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Regression
   </a>
  </li>
@@ -140,14 +142,14 @@
   Python
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="String%20Manipulation.html">
+  <a class="reference internal" href="../Python/String%20Manipulation.html">
    String Manipulation
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Python/Statistics.html">
    Statistics
   </a>
  </li>
@@ -209,9 +211,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/contents/Python/Statistics.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/contents/Algorithms/Regression.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+                data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -229,10 +231,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/Python/Statistics.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/Algorithms/Regression.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/dipranjan/dsinterviewqns/edit/master/contents/Python/Statistics.ipynb"><button
+        <a class="edit-button" href="https://github.com/dipranjan/dsinterviewqns/edit/master/contents/Algorithms/Regression.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -247,23 +249,6 @@
 
             <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/dipranjan/dsinterviewqns/master?urlpath=tree/contents/Python/Statistics.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
         </div>
 
         <!-- Table of contents -->
@@ -277,48 +262,22 @@
         
               <div>
                 
-  <div class="section" id="statistics">
-<h1>Statistics<a class="headerlink" href="#statistics" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="regression">
+<h1>Regression<a class="headerlink" href="#regression" title="Permalink to this headline">¶</a></h1>
 <div class="tip admonition">
 <p class="admonition-title">Problem:</p>
-<p><strong>Asked By - GOOGLE</strong></p>
-<p>Write a function to generate N samples from a normal distribution and plot the histogram.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
-
-<span class="k">def</span> <span class="nf">normal_sample_generator</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
-    <span class="c1"># can be done using np.random.randn or stats.norm.rvs</span>
-    <span class="c1">#x = np.random.randn(N)</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">)</span>
-    <span class="n">num_bins</span> <span class="o">=</span> <span class="mi">20</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">num_bins</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-
-    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
-    <span class="n">bin_width</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">x</span><span class="o">.</span><span class="n">min</span><span class="p">())</span> <span class="o">/</span> <span class="n">num_bins</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">*</span> <span class="n">N</span> <span class="o">*</span> <span class="n">bin_width</span><span class="p">)</span>
-
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-
-<span class="n">normal_sample_generator</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/Statistics_2_0.png" src="../../_images/Statistics_2_0.png" />
-</div>
-</div>
-<div class="tip admonition">
-<p class="admonition-title">Problem:</p>
-<p><strong>Asked By - UBER</strong></p>
-<p>Given a random Bernoulli trial generator, write a function to return a value sampled from a normal distribution.</p>
+<p><strong>Asked By - UPSTART</strong></p>
+<p>Suppose we have two variables, X and Y, where Y = X + some normal white noise.</p>
+<ol class="simple">
+<li><p>What will our coefficient be of we run a regression of Y on X?</p></li>
+<li><p>What happens if we run a regression of X on Y?</p></li>
+</ol>
 </div>
 <div class="dropdown admonition">
 <p class="admonition-title">Solution:</p>
-<p>Solution pending, [Reference material link](Given a random Bernoulli trial generator, how do you return a value sampled from a normal distribution?)</p>
+<p>Let’s start with <span class="math notranslate nohighlight">\(Y = X\)</span>, then the regression line is a perfect fit. The points of such a dataset is <span class="math notranslate nohighlight">\((1,1),(2,2),(3,3),(4,4),(5,5)\)</span></p>
+<p>Adding some normal white noise to these points <span class="math notranslate nohighlight">\((1,1),(2,3),(3,5),(4,5),(5,5)\)</span>. A regression line fit on these points will move up. Hence the coefficients of <span class="math notranslate nohighlight">\(Y = mX+c\)</span>, <span class="math notranslate nohighlight">\(m\)</span> will increase, <span class="math notranslate nohighlight">\(c\)</span> might still stay at <span class="math notranslate nohighlight">\(0\)</span> or at max increase.</p>
+<p>This movement will go in the negative direction if we predict <span class="math notranslate nohighlight">\(X\)</span> based on <span class="math notranslate nohighlight">\(Y\)</span></p>
 </div>
 </div>
 
@@ -335,7 +294,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./contents\Python"
+            path: "./contents\Algorithms"
         },
         predefinedOutput: true
     }
@@ -352,19 +311,19 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="String%20Manipulation.html" title="previous page">
+        <a class="left-prev" href="Anomaly%20Detection.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">String Manipulation</p>
+                <p class="prevnext-title">Anomaly Detection</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="../ML%20Hardware/To%20Do.html" title="next page">
+        <a class="right-next" href="../Python/String%20Manipulation.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">To Do</p>
+                <p class="prevnext-title">String Manipulation</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
