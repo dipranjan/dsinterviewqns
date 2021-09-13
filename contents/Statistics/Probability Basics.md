@@ -77,3 +77,26 @@ Similarly for $3$,    $P(3) * P(4,5 | 4,6 | 5,6) = 1/6 * (1/36 + 1/36 + 1/36) = 
 Taking into consideration $P(1)$ and $P(2)$ we have the total as $= 10/216 + 6/216 + 3/216 + 1/216 = 20/216$ 
 
 ```
+
+
+```{admonition} Problem:
+:class: tip
+
+**Asked By - STATE FARM**
+
+Pull $2$ cards from a deck without replacement what is probability that both are of different colors.
+
+There can be many variants to this question.
+
+```
+
+```{admonition} Solution:
+:class: dropdown
+ 
+$52$ cards = $26$ Red + $26$ Black
+
+Different Color Without Replacement $= 26/52 * 26/51$
+Different Color With Replacement    $= 26/52 * 26/52$
+Same Color Without Replacement 		$= 26/52 * 25/51$
+Same Color With Replacement    		$= 26/52 * 25/52$
+```

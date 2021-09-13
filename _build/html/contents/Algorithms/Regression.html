@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Probability Basics &#8212; The Data Science Interview Book</title>
+    <title>Regression &#8212; The Data Science Interview Book</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,12 +51,12 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/Statistics/Probability Basics.html" />
+    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/Algorithms/Regression.html" />
     <link rel="shortcut icon" href="../../_static/logo.gif"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Probability Distribution" href="Probability%20Distribution.html" />
-    <link rel="prev" title="About this Book" href="../../intro.html" />
+    <link rel="next" title="String Manipulation" href="../Python/String%20Manipulation.html" />
+    <link rel="prev" title="Anomaly Detection" href="Anomaly%20Detection.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -98,19 +98,19 @@
   Statistics
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Statistics/Probability%20Basics.html">
    Probability Basics
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Probability%20Distribution.html">
+  <a class="reference internal" href="../Statistics/Probability%20Distribution.html">
    Probability Distribution
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Bayesian%20vs%20Frequentist%20Reasoning.html">
+  <a class="reference internal" href="../Statistics/Bayesian%20vs%20Frequentist%20Reasoning.html">
    Bayesian vs Frequentist Reasoning
   </a>
  </li>
@@ -120,19 +120,19 @@
   Algorithms
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../Algorithms/Logistic%20Regression.html">
+  <a class="reference internal" href="Logistic%20Regression.html">
    Logistic Regression
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Algorithms/Anomaly%20Detection.html">
+  <a class="reference internal" href="Anomaly%20Detection.html">
    Anomaly Detection
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Algorithms/Regression.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Regression
   </a>
  </li>
@@ -211,7 +211,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/contents/Statistics/Probability Basics.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/contents/Algorithms/Regression.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -231,10 +231,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/Statistics/Probability Basics.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/Algorithms/Regression.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/dipranjan/dsinterviewqns/edit/master/contents/Statistics/Probability Basics.md"><button
+        <a class="edit-button" href="https://github.com/dipranjan/dsinterviewqns/edit/master/contents/Algorithms/Regression.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -254,34 +254,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#common-terminologies">
-   Common Terminologies
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#set">
-   Set
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#permutation-and-combination">
-   Permutation and Combination
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#joint-conditional-probability">
-   Joint &amp; Conditional Probability
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -290,71 +262,22 @@
         
               <div>
                 
-  <div class="section" id="probability-basics">
-<h1>Probability Basics<a class="headerlink" href="#probability-basics" title="Permalink to this headline">¶</a></h1>
-<p>Probability theory is the mathematical framework that allows us to analyze chance events in a logically sound manner. The probability of an event is a number indicating how likely that event will occur.</p>
-<p>Note that when we say the probability of a head is <span class="math notranslate nohighlight">\(1/2\)</span>, we are not claiming that any sequence of coin tosses will consist of exactly <span class="math notranslate nohighlight">\(50%\)</span> heads. If we toss a fair coin ten times, it would not be surprising to observe <span class="math notranslate nohighlight">\(6\)</span> heads and <span class="math notranslate nohighlight">\(4\)</span> tails, or even <span class="math notranslate nohighlight">\(3\)</span> heads and <span class="math notranslate nohighlight">\(7\)</span> tails. But as we continue to toss the coin over and over again, we expect the long-run frequency of heads to get ever closer to <span class="math notranslate nohighlight">\(50%\)</span>. In general, it is important in statistics to understand the distinction between theoretical and empirical quantities. Here, the true (theoretical) probability of a head was <span class="math notranslate nohighlight">\(1/2\)</span>, but any realized (empirical) sequence of coin tosses may have more or less than exactly <span class="math notranslate nohighlight">\(50%\)</span> heads.</p>
-<div class="section" id="common-terminologies">
-<h2>Common Terminologies<a class="headerlink" href="#common-terminologies" title="Permalink to this headline">¶</a></h2>
-<p>The <strong>sample space is the set of all possible outcomes in the experiment</strong> : for a dice <span class="math notranslate nohighlight">\(Ω = {1, 2, 3, 4, 5, 6}\)</span>.</p>
-<p>Any <strong>subset of <span class="math notranslate nohighlight">\(Ω\)</span> is a valid event</strong>. we can speak of the event <span class="math notranslate nohighlight">\(F\)</span> of rolling a <span class="math notranslate nohighlight">\(4\)</span>, <span class="math notranslate nohighlight">\(F = {4}\)</span>.</p>
-<p>Consider the outcome of a single die roll, and call it <span class="math notranslate nohighlight">\(X\)</span>. A reasonable question one might ask is “What is the average value of <span class="math notranslate nohighlight">\(X\)</span>?”. We define this notion of “average” as a weighted sum of outcomes. This is called the <strong>expected value</strong>, or expectation of <span class="math notranslate nohighlight">\(X\)</span>, denoted by <span class="math notranslate nohighlight">\(E(X)\)</span>,</p>
-<p><span class="math notranslate nohighlight">\(Weighted Average = \frac{1}{6} * (1 + 2 + 3 + 4 + 5 + 6) = 3.5\)</span></p>
-<p>If you play the game <span class="math notranslate nohighlight">\( \infty \)</span> times the average value becomes <span class="math notranslate nohighlight">\(E(X)\)</span></p>
-<p>The <strong>variance</strong> of a random variable <span class="math notranslate nohighlight">\(X\)</span> is a nonnegative number that summarizes on average how much <span class="math notranslate nohighlight">\(X\)</span> differs from its mean, or expectation.
-The square root of the variance is called the <strong>standard deviation.</strong></p>
-<p><span class="math notranslate nohighlight">\(Var(X) = \frac{(1−3.5)^2+(2−3.5)^2+(3−3.5)^2+(4−3.5)^2+(5−3.5)^2+(6−3.5)^2}{6} = \frac{17.5}{6}\)</span></p>
-</div>
-<div class="section" id="set">
-<h2>Set<a class="headerlink" href="#set" title="Permalink to this headline">¶</a></h2>
-<p>A set, broadly defined, is a collection of objects. In the context of probability theory, we use set notation to specify compound events. For example, we can represent the event “roll an even number” by the set {2, 4, 6}.</p>
-</div>
-<div class="section" id="permutation-and-combination">
-<h2>Permutation and Combination<a class="headerlink" href="#permutation-and-combination" title="Permalink to this headline">¶</a></h2>
-<p>It can be surprisingly difficult to count the number of sequences or sets satisfying certain conditions. This is where <strong>Premutation and Combination</strong> comes in. For example, consider a bag of marbles in which each marble is a different color. If we draw marbles one at a time from the bag without replacement, how many different ordered sequences (permutations) of the marbles are possible? How many different unordered sets (combinations)?</p>
-<ul class="simple">
-<li><p>Permutation - <span class="math notranslate nohighlight">\(AB \neq BA\)</span> , order matters</p></li>
-<li><p>Combination - <span class="math notranslate nohighlight">\(AB = BA\)</span> , order does not matters</p></li>
-</ul>
-</div>
-<div class="section" id="joint-conditional-probability">
-<h2>Joint &amp; Conditional Probability<a class="headerlink" href="#joint-conditional-probability" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>Joint Probability is the probability of 2 independent events occuring : <span class="math notranslate nohighlight">\(P(A \cap B) = P(A)*P(B)\)</span></p></li>
-<li><p>Conditional probability tells the probability of B given A has occured, it allow us to account for information we have about our system of interest: <span class="math notranslate nohighlight">\(P(B|A) = \frac{P(A \cap B)}{P(A)}\)</span></p></li>
-</ul>
-<p>If both are same then A and B are independent events.</p>
-<div class="figure align-default" id="image1">
-<a class="reference internal image-reference" href="../../_images/image11.PNG"><img alt="../../_images/image11.PNG" src="../../_images/image11.PNG" style="height: 150px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Baye’s Theorem</span><a class="headerlink" href="#image1" title="Permalink to this image">¶</a></p>
-</div>
-<p><span class="math notranslate nohighlight">\(P(Banana|Long,Sweet,Yellow) = \frac{P(Long|Banana)*P(Sweet|Banana)*P(Yellow|Banana)*P(Banana)}{P(Long)*P(Sweet)*P(Yellow)}\)</span></p>
+  <div class="section" id="regression">
+<h1>Regression<a class="headerlink" href="#regression" title="Permalink to this headline">¶</a></h1>
 <div class="tip admonition">
 <p class="admonition-title">Problem:</p>
-<p><strong>Asked By - UBER</strong></p>
-<p>We throw 3 dice one by one. What is the probability that we obtain 3 points in strictly increasing order?</p>
+<p><strong>Asked By - UPSTART</strong></p>
+<p>Suppose we have two variables, X and Y, where Y = X + some normal white noise.</p>
+<ol class="simple">
+<li><p>What will our coefficient be of we run a regression of Y on X?</p></li>
+<li><p>What happens if we run a regression of X on Y?</p></li>
+</ol>
 </div>
 <div class="dropdown admonition">
 <p class="admonition-title">Solution:</p>
-<p>Suppose we get <span class="math notranslate nohighlight">\(4\)</span> in the first roll then,</p>
-<p>Total Probability = <span class="math notranslate nohighlight">\(P(4) * P(5) * P(6) = 1/6 * 1/6 * 1/6 = 1/216\)</span></p>
-<p>Similarly for <span class="math notranslate nohighlight">\(3\)</span>,    <span class="math notranslate nohighlight">\(P(3) * P(4,5 | 4,6 | 5,6) = 1/6 * (1/36 + 1/36 + 1/36) = 3/216\)</span></p>
-<p>Taking into consideration <span class="math notranslate nohighlight">\(P(1)\)</span> and <span class="math notranslate nohighlight">\(P(2)\)</span> we have the total as <span class="math notranslate nohighlight">\(= 10/216 + 6/216 + 3/216 + 1/216 = 20/216\)</span></p>
-</div>
-<div class="tip admonition">
-<p class="admonition-title">Problem:</p>
-<p><strong>Asked By - STATE FARM</strong></p>
-<p>Pull <span class="math notranslate nohighlight">\(2\)</span> cards from a deck without replacement what is probability that both are of different colors.</p>
-<p>There can be many variants to this question.</p>
-</div>
-<div class="dropdown admonition">
-<p class="admonition-title">Solution:</p>
-<p><span class="math notranslate nohighlight">\(52\)</span> cards = <span class="math notranslate nohighlight">\(26\)</span> Red + <span class="math notranslate nohighlight">\(26\)</span> Black</p>
-<p>Different Color Without Replacement <span class="math notranslate nohighlight">\(= 26/52 * 26/51\)</span>
-Different Color With Replacement    <span class="math notranslate nohighlight">\(= 26/52 * 26/52\)</span>
-Same Color Without Replacement 		<span class="math notranslate nohighlight">\(= 26/52 * 25/51\)</span>
-Same Color With Replacement    		<span class="math notranslate nohighlight">\(= 26/52 * 25/52\)</span></p>
-</div>
+<p>Let’s start with <span class="math notranslate nohighlight">\(Y = X\)</span>, then the regression line is a perfect fit. The points of such a dataset is <span class="math notranslate nohighlight">\((1,1),(2,2),(3,3),(4,4),(5,5)\)</span></p>
+<p>Adding some normal white noise to these points <span class="math notranslate nohighlight">\((1,1),(2,3),(3,5),(4,5),(5,5)\)</span>. A regression line fit on these points will move up. Hence the coefficients of <span class="math notranslate nohighlight">\(Y = mX+c\)</span>, <span class="math notranslate nohighlight">\(m\)</span> will increase, <span class="math notranslate nohighlight">\(c\)</span> might still stay at <span class="math notranslate nohighlight">\(0\)</span> or at max increase.</p>
+<p>This movement will go in the negative direction if we predict <span class="math notranslate nohighlight">\(X\)</span> based on <span class="math notranslate nohighlight">\(Y\)</span></p>
 </div>
 </div>
 
@@ -371,7 +294,7 @@ Same Color With Replacement    		<span class="math notranslate nohighlight">\(= 
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./contents\Statistics"
+            path: "./contents\Algorithms"
         },
         predefinedOutput: true
     }
@@ -388,19 +311,19 @@ Same Color With Replacement    		<span class="math notranslate nohighlight">\(= 
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="../../intro.html" title="previous page">
+        <a class="left-prev" href="Anomaly%20Detection.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">About this Book</p>
+                <p class="prevnext-title">Anomaly Detection</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="Probability%20Distribution.html" title="next page">
+        <a class="right-next" href="../Python/String%20Manipulation.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Probability Distribution</p>
+                <p class="prevnext-title">String Manipulation</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

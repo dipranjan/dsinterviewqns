@@ -33,3 +33,16 @@ def normal_sample_generator(N):
 
 normal_sample_generator(10000)
 
+
+# ```{admonition} Problem:
+# :class: tip
+# 
+# **Asked By - UBER**
+# 
+# Given a random Bernoulli trial generator, write a function to return a value sampled from a normal distribution.
+# ```
+
+# ```{admonition} Solution:
+# :class: dropdown
+# Solution pending, [Reference material link](Given a random Bernoulli trial generator, how do you return a value sampled from a normal distribution?)
+# ```

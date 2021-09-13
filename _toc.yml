@@ -9,6 +9,8 @@ parts:
   - caption: Algorithms
     chapters:
     - file: contents/Algorithms/Logistic Regression
+    - file: contents/Algorithms/Anomaly Detection
+    - file: contents/Algorithms/Regression
   - caption: Python
     chapters:
     - file: contents/Python/String Manipulation
