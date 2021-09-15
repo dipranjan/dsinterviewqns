@@ -6,6 +6,7 @@ parts:
     - file: contents/Statistics/Probability Basics
     - file: contents/Statistics/Probability Distribution
     - file: contents/Statistics/Bayesian vs Frequentist Reasoning
+    - file: contents/Statistics/Hypothesis Testing
   - caption: Algorithms
     chapters:
     - file: contents/Algorithms/Logistic Regression
@@ -14,7 +15,14 @@ parts:
   - caption: Python
     chapters:
     - file: contents/Python/String Manipulation
+    - file: contents/Python/Data Manipulation
     - file: contents/Python/Statistics
+  - caption: SQL
+    chapters:
+    - file: contents/SQL/Select
+    - file: contents/SQL/Joins
+    - file: contents/SQL/Windows Functions
+    - file: contents/SQL/Functions
   - caption: Machine Learning Hardware
     chapters:
     - file: contents/ML Hardware/To Do
