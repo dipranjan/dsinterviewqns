@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Statistics &#8212; The Data Science Interview Book</title>
+    <title>Data Manipulation &#8212; The Data Science Interview Book</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -42,6 +42,8 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -49,12 +51,12 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/Python/Statistics.html" />
+    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/Python/Data Manipulation.html" />
     <link rel="shortcut icon" href="../../_static/logo.gif"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Select" href="../SQL/Select.html" />
-    <link rel="prev" title="Data Manipulation" href="Data%20Manipulation.html" />
+    <link rel="next" title="Statistics" href="Statistics.html" />
+    <link rel="prev" title="String Manipulation" href="String%20Manipulation.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -151,13 +153,13 @@
    String Manipulation
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Data%20Manipulation.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Data Manipulation
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Statistics.html">
    Statistics
   </a>
  </li>
@@ -236,7 +238,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/contents/Python/Statistics.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/contents/Python/Data Manipulation.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -256,10 +258,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/Python/Statistics.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/Python/Data Manipulation.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/dipranjan/dsinterviewqns/edit/master/contents/Python/Statistics.ipynb"><button
+        <a class="edit-button" href="https://github.com/dipranjan/dsinterviewqns/edit/master/contents/Python/Data Manipulation.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -279,7 +281,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/dipranjan/dsinterviewqns/master?urlpath=tree/contents/Python/Statistics.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/dipranjan/dsinterviewqns/master?urlpath=tree/contents/Python/Data Manipulation.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -304,48 +306,134 @@
         
               <div>
                 
-  <div class="section" id="statistics">
-<h1>Statistics<a class="headerlink" href="#statistics" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="data-manipulation">
+<h1>Data Manipulation<a class="headerlink" href="#data-manipulation" title="Permalink to this headline">¶</a></h1>
 <div class="tip admonition">
 <p class="admonition-title">Problem:</p>
 <p><strong>Asked By - GOOGLE</strong></p>
-<p>Write a function to generate N samples from a normal distribution and plot the histogram.</p>
+<p>Let’s say you’re given a list of standardized test scores from high schoolers from grades <span class="math notranslate nohighlight">\(9\)</span> to <span class="math notranslate nohighlight">\(12\)</span>.</p>
+<p>Given the dataset, write code in Pandas to return the cumulative percentage of students that received scores within the buckets of <span class="math notranslate nohighlight">\(&lt;50, &lt;75, &lt;90, &lt;100\)</span>.</p>
+<p>Example Input:</p>
+<p>user_id | grade | test score
+——–+——-+———–
+1       | 10    | 85
+2       | 10    | 60
+3       | 11    | 90
+4       | 10    | 30
+5       | 11    | 99</p>
+<p>Example Output:</p>
+<p>grade   |test score  |percentage
+——–+————+———–
+10      | &lt;50        | 30%
+10      | &lt;75        | 65%
+10      | &lt;90        | 96%
+10      | &lt;100       | 99%
+11      | &lt;50        | 15%
+11      | &lt;75        | 50%</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="k">def</span> <span class="nf">normal_sample_generator</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
-    <span class="c1"># can be done using np.random.randn or stats.norm.rvs</span>
-    <span class="c1">#x = np.random.randn(N)</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">)</span>
-    <span class="n">num_bins</span> <span class="o">=</span> <span class="mi">20</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">num_bins</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">85</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">60</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">90</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">30</span><span class="p">],[</span><span class="mi">5</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">99</span><span class="p">]],</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;user_id&quot;</span><span class="p">,</span><span class="s2">&quot;grade&quot;</span><span class="p">,</span><span class="s2">&quot;test score&quot;</span><span class="p">])</span>
 
-    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
-    <span class="n">bin_width</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">x</span><span class="o">.</span><span class="n">min</span><span class="p">())</span> <span class="o">/</span> <span class="n">num_bins</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">*</span> <span class="n">N</span> <span class="o">*</span> <span class="n">bin_width</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;&lt;50&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;test score&quot;</span><span class="p">]</span><span class="o">&lt;</span><span class="mi">50</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;&lt;75&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;test score&quot;</span><span class="p">]</span><span class="o">&lt;</span><span class="mi">75</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;&lt;90&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;test score&quot;</span><span class="p">]</span><span class="o">&lt;</span><span class="mi">90</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;&lt;100&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;test score&quot;</span><span class="p">]</span><span class="o">&lt;</span><span class="mi">100</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
 
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;grade&quot;</span><span class="p">])[[</span><span class="s2">&quot;&lt;50&quot;</span><span class="p">,</span><span class="s2">&quot;&lt;75&quot;</span><span class="p">,</span><span class="s2">&quot;&lt;90&quot;</span><span class="p">,</span><span class="s2">&quot;&lt;100&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">id_vars</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;grade&quot;</span><span class="p">],</span><span class="n">var_name</span><span class="o">=</span><span class="s2">&quot;test score&quot;</span><span class="p">,</span><span class="n">value_name</span><span class="o">=</span><span class="s2">&quot;count&quot;</span><span class="p">)</span>
 
-<span class="n">normal_sample_generator</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;grp_ttl&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;grade&quot;</span><span class="p">)[</span><span class="s2">&quot;count&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="s1">&#39;max&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;percentage&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span><span class="o">*</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">]</span><span class="o">/</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;grp_ttl&quot;</span><span class="p">]</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s2">&quot;grade&quot;</span><span class="p">,</span><span class="s2">&quot;test score&quot;</span><span class="p">,</span><span class="s2">&quot;percentage&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s2">&quot;grade&quot;</span><span class="p">,</span><span class="s2">&quot;percentage&quot;</span><span class="p">],</span><span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;percentage&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">percentage</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;percentage&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;percentage&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;%&quot;</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Statistics_2_0.png" src="../../_images/Statistics_2_0.png" />
-</div>
-</div>
-<div class="tip admonition">
-<p class="admonition-title">Problem:</p>
-<p><strong>Asked By - UBER</strong></p>
-<p>Given a random Bernoulli trial generator, write a function to return a value sampled from a normal distribution.</p>
-</div>
-<div class="dropdown admonition">
-<p class="admonition-title">Solution:</p>
-<p>Solution pending, [Reference material link](Given a random Bernoulli trial generator, how do you return a value sampled from a normal distribution?)</p>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>grade</th>
+      <th>test score</th>
+      <th>percentage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>10</td>
+      <td>&lt;50</td>
+      <td>33%</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>10</td>
+      <td>&lt;75</td>
+      <td>66%</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>10</td>
+      <td>&lt;90</td>
+      <td>100%</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>10</td>
+      <td>&lt;100</td>
+      <td>100%</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>11</td>
+      <td>&lt;50</td>
+      <td>0%</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>11</td>
+      <td>&lt;75</td>
+      <td>0%</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>11</td>
+      <td>&lt;90</td>
+      <td>0%</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>11</td>
+      <td>&lt;100</td>
+      <td>100%</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </div>
 
@@ -379,19 +467,19 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="Data%20Manipulation.html" title="previous page">
+        <a class="left-prev" href="String%20Manipulation.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Data Manipulation</p>
+                <p class="prevnext-title">String Manipulation</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="../SQL/Select.html" title="next page">
+        <a class="right-next" href="Statistics.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Select</p>
+                <p class="prevnext-title">Statistics</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

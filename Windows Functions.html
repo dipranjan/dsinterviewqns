@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About this Book &#8212; The Data Science Interview Book</title>
+    <title>Windows Functions &#8212; The Data Science Interview Book</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -49,7 +49,7 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/README.html" />
+    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/Windows Functions.html" />
     <link rel="shortcut icon" href="_static/logo.gif"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -176,6 +176,16 @@
    Joins
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="contents/SQL/Windows%20Functions.html">
+   Windows Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="contents/SQL/Functions.html">
+   Functions
+  </a>
+ </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
@@ -234,7 +244,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/README.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/Windows Functions.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -254,10 +264,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2FREADME.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2FWindows Functions.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/dipranjan/dsinterviewqns/edit/master/README.md"><button
+        <a class="edit-button" href="https://github.com/dipranjan/dsinterviewqns/edit/master/Windows Functions.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -285,13 +295,139 @@
         
               <div>
                 
-  <div class="section" id="about-this-book">
-<h1>About this Book<a class="headerlink" href="#about-this-book" title="Permalink to this headline">¶</a></h1>
-<p>This book is created as an attempt to consolidate my learnings as I prepare for Data Science related interviews. There is enormous amount of resources available in the internet, multiple repositories, there are even new companies that have cropped up helping students prepare for interviews at the Big Tech companies. The idea here is to create an accessible version of these resources so people on the same journey can benefit from it.</p>
-<p>This book does not cover the topics in depth, it covers just enough to get you ready for the interview. The assumption here is that the person using it is already familiar with the topic and is here to brush up on the topic. Additonal resources for someone eager to explore the topic in depth will be added later.</p>
-<p>Please create a pull request and contribute.</p>
-<p>The online version of the book is available at <a class="reference external" href="https://dipranjan.github.io/dsinterviewqns/intro.html">this link.</a></p>
-<p><a href="https://www.buymeacoffee.com/dearc" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a></p>
+  <div class="section" id="windows-functions">
+<h1>Windows Functions<a class="headerlink" href="#windows-functions" title="Permalink to this headline">¶</a></h1>
+<div class="dropdown admonition">
+<p class="admonition-title">Problem: Rank Scores</p>
+<p><strong>Reference - <a class="reference external" href="https://leetcode.com/problems/rank-scores/">Leetcode</a></strong></p>
+<p>Write a SQL query to rank scores. If there is a tie between two scores, both should have the same ranking. Note that after a tie, the next ranking number should be the next consecutive integer value. In other words, there should be no “holes” between ranks.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Id</p></th>
+<th class="head"><p>Score</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>3.40</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>3.65</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>4.00</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>3.50</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>4.00</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>3.65</p></td>
+</tr>
+</tbody>
+</table>
+<p>For example, given the above Scores table, your query should generate the following report (order by highest score):</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>score</p></th>
+<th class="head"><p>Rank</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>4.00</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>4.00</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>3.95</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>3.65</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-even"><td><p>3.65</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p>3.40</p></td>
+<td><p>4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>The tie resolving method which is being asked in the question is called Dense Rank, if we use Rank it will have “holes”</p>
+<p><code class="docutils literal notranslate"><span class="pre">select</span>&#160; <span class="pre">Score,</span> <span class="pre">dense_rank()</span> <span class="pre">over(order</span> <span class="pre">by</span> <span class="pre">score</span> <span class="pre">desc)</span> <span class="pre">as</span> <span class="pre">Rank</span> <span class="pre">from</span> <span class="pre">Scores</span></code></p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Problem: Consecutive Numbers</p>
+<p><strong>Reference - <a class="reference external" href="https://leetcode.com/problems/consecutive-numbers/">Leetcode</a></strong></p>
+<p>Write an SQL query to find all numbers that appear at least three times consecutively.</p>
+<p>Return the result table in any order.</p>
+<p>Input:</p>
+<p>Logs table:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Id</p></th>
+<th class="head"><p>Num</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>2</p></td>
+</tr>
+</tbody>
+</table>
+<p>Result table:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>ConsecutiveNums</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+<p>1 is the only number that appears consecutively for at least three times.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>Multiple solutions are possible, one of them is given below</p>
+<p>`
+with a(Num,NextNum,SecondNextNum ) as(</p>
+<p>SELECT   Num
+, LEAD(Num, 1) OVER (ORDER BY Id) AS NextNum
+, LEAD(Num, 2) OVER (ORDER BY Id) AS SecondNextNum
+FROM Logs</p>
+<p>)</p>
+<p>select distinct(Num) as ConsecutiveNums from a
+where
+Num = NextNum
+and Num = SecondNextNum
+`</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">

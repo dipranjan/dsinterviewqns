@@ -57,7 +57,7 @@ $P(Banana|Long,Sweet,Yellow) = \frac{P(Long|Banana)*P(Sweet|Banana)*P(Yellow|Ban
 
 
 ```{admonition} Problem:
-:class: tip
+:class: tip, dropdown
 
 **Asked By - UBER**
 
@@ -80,7 +80,7 @@ Taking into consideration $P(1)$ and $P(2)$ we have the total as $= 10/216 + 6/2
 
 
 ```{admonition} Problem:
-:class: tip
+:class: tip, dropdown
 
 **Asked By - STATE FARM**
 

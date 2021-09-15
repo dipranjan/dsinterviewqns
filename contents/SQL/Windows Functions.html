@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Interview Questions &#8212; The Data Science Interview Book</title>
+    <title>Windows Functions &#8212; The Data Science Interview Book</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -49,12 +49,12 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/Python/Interview Questions.html" />
+    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/SQL/Windows Functions.html" />
     <link rel="shortcut icon" href="../../_static/logo.gif"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="To Do" href="../ML%20Hardware/To%20Do.html" />
-    <link rel="prev" title="Bayesian vs Frequentist Reasoning" href="../Statistics/Bayesian%20vs%20Frequentist%20Reasoning.html" />
+    <link rel="next" title="Functions" href="Functions.html" />
+    <link rel="prev" title="Joins" href="Joins.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -112,16 +112,80 @@
    Bayesian vs Frequentist Reasoning
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Statistics/Hypothesis%20Testing.html">
+   Hypothesis Testing
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Algorithms
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Algorithms/Logistic%20Regression.html">
+   Logistic Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Algorithms/Anomaly%20Detection.html">
+   Anomaly Detection
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Algorithms/Regression.html">
+   Regression
+  </a>
+ </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
   Python
  </span>
 </p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Python/String%20Manipulation.html">
+   String Manipulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Python/Data%20Manipulation.html">
+   Data Manipulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Python/Statistics.html">
+   Statistics
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  SQL
+ </span>
+</p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Select.html">
+   Select
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Joins.html">
+   Joins
+  </a>
+ </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Interview Questions
+   Windows Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Functions.html">
+   Functions
   </a>
  </li>
 </ul>
@@ -182,9 +246,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/contents/Python/Interview Questions.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/contents/SQL/Windows Functions.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+                data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -202,10 +266,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/Python/Interview Questions.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/SQL/Windows Functions.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/dipranjan/dsinterviewqns/edit/master/contents/Python/Interview Questions.ipynb"><button
+        <a class="edit-button" href="https://github.com/dipranjan/dsinterviewqns/edit/master/contents/SQL/Windows Functions.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -220,23 +284,6 @@
 
             <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/dipranjan/dsinterviewqns/master?urlpath=tree/contents/Python/Interview Questions.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
         </div>
 
         <!-- Table of contents -->
@@ -250,59 +297,138 @@
         
               <div>
                 
-  <div class="section" id="interview-questions">
-<h1>Interview Questions<a class="headerlink" href="#interview-questions" title="Permalink to this headline">¶</a></h1>
-<div class="tip admonition">
-<p class="admonition-title">Problem:</p>
-<p><strong>Asked By - SNAPCHAT</strong></p>
-<p>Given a string, determine whether any permutation of it is a palindrome.</p>
-<p>For example, carerac should return true, since it can be rearranged to form racecar, which is a palindrome. sunset should return false, since there’s no rearrangement that can form a palindrome.</p>
+  <div class="section" id="windows-functions">
+<h1>Windows Functions<a class="headerlink" href="#windows-functions" title="Permalink to this headline">¶</a></h1>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: Rank Scores</p>
+<p><strong>Reference - <a class="reference external" href="https://leetcode.com/problems/rank-scores/">Leetcode</a></strong></p>
+<p>Write a SQL query to rank scores. If there is a tie between two scores, both should have the same ranking. Note that after a tie, the next ranking number should be the next consecutive integer value. In other words, there should be no “holes” between ranks.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Id</p></th>
+<th class="head"><p>Score</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>3.40</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>3.65</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>4.00</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>3.50</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>4.00</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>3.65</p></td>
+</tr>
+</tbody>
+</table>
+<p>For example, given the above Scores table, your query should generate the following report (order by highest score):</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>score</p></th>
+<th class="head"><p>Rank</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>4.00</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>4.00</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>3.95</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>3.65</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-even"><td><p>3.65</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p>3.40</p></td>
+<td><p>4</p></td>
+</tr>
+</tbody>
+</table>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">A string can be a palindrome only if it has even pair of characters and at max 1 odd character</span>
-
-<span class="sd">&#39;&#39;&#39;</span>
-
-<span class="k">def</span> <span class="nf">palindrome_checker</span><span class="p">(</span><span class="n">txt</span><span class="p">):</span>
-    <span class="n">temp</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="n">odd_count</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">even_count</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">(</span><span class="n">txt</span><span class="p">):</span> <span class="c1"># Storing characters and their count</span>
-        <span class="k">if</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">temp</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-            <span class="n">temp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">temp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">temp</span><span class="p">:</span> <span class="c1"># Check count of characters</span>
-        <span class="k">if</span> <span class="n">temp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">%</span><span class="k">2</span>==0:
-            <span class="n">even_count</span> <span class="o">=</span> <span class="n">even_count</span> <span class="o">+</span> <span class="mi">1</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">odd_count</span> <span class="o">=</span> <span class="n">odd_count</span> <span class="o">+</span> <span class="mi">1</span>
-    <span class="k">if</span><span class="p">((</span><span class="n">odd_count</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">)</span><span class="ow">or</span><span class="p">(</span><span class="n">even_count</span><span class="o">==</span><span class="mi">0</span><span class="p">)):</span>
-        <span class="k">return</span> <span class="kc">False</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">True</span>    
-</pre></div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>The tie resolving method which is being asked in the question is called Dense Rank, if we use Rank it will have “holes”</p>
+<p><code class="docutils literal notranslate"><span class="pre">select</span>&#160; <span class="pre">Score,</span> <span class="pre">dense_rank()</span> <span class="pre">over(order</span> <span class="pre">by</span> <span class="pre">score</span> <span class="pre">desc)</span> <span class="pre">as</span> <span class="pre">Rank</span> <span class="pre">from</span> <span class="pre">Scores</span></code></p>
 </div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: Consecutive Numbers</p>
+<p><strong>Reference - <a class="reference external" href="https://leetcode.com/problems/consecutive-numbers/">Leetcode</a></strong></p>
+<p>Write an SQL query to find all numbers that appear at least three times consecutively.</p>
+<p>Return the result table in any order.</p>
+<p>Input:</p>
+<p>Logs table:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Id</p></th>
+<th class="head"><p>Num</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>2</p></td>
+</tr>
+</tbody>
+</table>
+<p>Result table:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>ConsecutiveNums</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+<p>1 is the only number that appears consecutively for at least three times.</p>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">palindrome_checker</span><span class="p">(</span><span class="s2">&quot;carerac&quot;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">palindrome_checker</span><span class="p">(</span><span class="s2">&quot;sunset&quot;</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-False
-</pre></div>
-</div>
-</div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>Multiple solutions are possible, one of them is given below</p>
+<p>`
+with a(Num,NextNum,SecondNextNum ) as(</p>
+<p>SELECT   Num
+, LEAD(Num, 1) OVER (ORDER BY Id) AS NextNum
+, LEAD(Num, 2) OVER (ORDER BY Id) AS SecondNextNum
+FROM Logs</p>
+<p>)</p>
+<p>select distinct(Num) as ConsecutiveNums from a
+where
+Num = NextNum
+and Num = SecondNextNum
+`</p>
 </div>
 </div>
 
@@ -319,7 +445,7 @@ False
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./contents\Python"
+            path: "./contents\SQL"
         },
         predefinedOutput: true
     }
@@ -336,19 +462,19 @@ False
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="../Statistics/Bayesian%20vs%20Frequentist%20Reasoning.html" title="previous page">
+        <a class="left-prev" href="Joins.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Bayesian vs Frequentist Reasoning</p>
+                <p class="prevnext-title">Joins</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="../ML%20Hardware/To%20Do.html" title="next page">
+        <a class="right-next" href="Functions.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">To Do</p>
+                <p class="prevnext-title">Functions</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

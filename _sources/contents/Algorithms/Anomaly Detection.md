@@ -1,7 +1,7 @@
 ## Anomaly Detection
 
 ```{admonition} Problem:
-:class: tip
+:class: tip, dropdown
 
 **Asked By - AKAMAI**
 

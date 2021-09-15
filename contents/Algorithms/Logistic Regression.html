@@ -55,8 +55,8 @@
     <link rel="shortcut icon" href="../../_static/logo.gif"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="String Manipulation" href="../Python/String%20Manipulation.html" />
-    <link rel="prev" title="Bayesian vs Frequentist Reasoning" href="../Statistics/Bayesian%20vs%20Frequentist%20Reasoning.html" />
+    <link rel="next" title="Anomaly Detection" href="Anomaly%20Detection.html" />
+    <link rel="prev" title="Hypothesis Testing" href="../Statistics/Hypothesis%20Testing.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -114,6 +114,11 @@
    Bayesian vs Frequentist Reasoning
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Statistics/Hypothesis%20Testing.html">
+   Hypothesis Testing
+  </a>
+ </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
@@ -124,6 +129,16 @@
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Logistic Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Anomaly%20Detection.html">
+   Anomaly Detection
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Regression.html">
+   Regression
   </a>
  </li>
 </ul>
@@ -139,8 +154,40 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../Python/Data%20Manipulation.html">
+   Data Manipulation
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../Python/Statistics.html">
    Statistics
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  SQL
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../SQL/Select.html">
+   Select
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../SQL/Joins.html">
+   Joins
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../SQL/Windows%20Functions.html">
+   Windows Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../SQL/Functions.html">
+   Functions
   </a>
  </li>
 </ul>
@@ -254,7 +301,7 @@
                 
   <div class="section" id="logistic-regression">
 <h1>Logistic Regression<a class="headerlink" href="#logistic-regression" title="Permalink to this headline">¶</a></h1>
-<div class="tip admonition">
+<div class="tip dropdown admonition">
 <p class="admonition-title">Problem:</p>
 <p><strong>Asked By - ROBINHOOD</strong></p>
 <p>How would you interpret coefficients of logistic regression for categorical and boolean variables?</p>
@@ -263,7 +310,7 @@
 <p class="admonition-title">Solution:</p>
 <p><strong>Reference:</strong> <a class="reference external" href="https://www.displayr.com/how-to-interpret-logistic-regression-coefficients/">Explanation</a></p>
 <p>Let’s explain this using an example. The table below shows the main outputs from the logistic regression. It is very obvious which are the categorial variables out here:</p>
-<p><img alt="Estimate of Coefficients" src="../../_images/image12.PNG" /></p>
+<p><img alt="Estimate of Coefficients" src="../../_images/image1.PNG" /></p>
 <p>The first category (usually not shown) has a coefficient of <span class="math notranslate nohighlight">\(0\)</span>. So, if we can say, for example, that:</p>
 <ul class="simple">
 <li><p>The effect of having a DSL service versus having no DSL service <span class="math notranslate nohighlight">\((0.92 - 0 = 0.92)\)</span> is a little more than twice as big in terms of leading to churn as is the effect of being a senior citizen <span class="math notranslate nohighlight">\((0.41)\)</span>.</p></li>
@@ -308,19 +355,19 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="../Statistics/Bayesian%20vs%20Frequentist%20Reasoning.html" title="previous page">
+        <a class="left-prev" href="../Statistics/Hypothesis%20Testing.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Bayesian vs Frequentist Reasoning</p>
+                <p class="prevnext-title">Hypothesis Testing</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="../Python/String%20Manipulation.html" title="next page">
+        <a class="right-next" href="Anomaly%20Detection.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">String Manipulation</p>
+                <p class="prevnext-title">Anomaly Detection</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

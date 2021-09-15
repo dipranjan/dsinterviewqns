@@ -1,7 +1,7 @@
 ## Regression
 
-```{admonition} Problem:
-:class: tip
+```{admonition} Problem: Regression Coefficient
+:class: tip, dropdown
 
 **Asked By - UPSTART**
 

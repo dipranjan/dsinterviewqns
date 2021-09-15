@@ -114,6 +114,11 @@
    Bayesian vs Frequentist Reasoning
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Hypothesis%20Testing.html">
+   Hypothesis Testing
+  </a>
+ </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
@@ -124,6 +129,16 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../Algorithms/Logistic%20Regression.html">
    Logistic Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Algorithms/Anomaly%20Detection.html">
+   Anomaly Detection
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Algorithms/Regression.html">
+   Regression
   </a>
  </li>
 </ul>
@@ -139,8 +154,40 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../Python/Data%20Manipulation.html">
+   Data Manipulation
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../Python/Statistics.html">
    Statistics
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  SQL
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../SQL/Select.html">
+   Select
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../SQL/Joins.html">
+   Joins
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../SQL/Windows%20Functions.html">
+   Windows Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../SQL/Functions.html">
+   Functions
   </a>
  </li>
 </ul>
@@ -307,7 +354,7 @@ The three coins can land in eight possible ways:</p>
 <div class="section" id="unbiased-estimator">
 <h2>Unbiased Estimator<a class="headerlink" href="#unbiased-estimator" title="Permalink to this headline">¶</a></h2>
 <p>An unbiased estimator is an accurate statistic that’s used to approximate a population parameter. “Accurate” in this sense means that it’s neither an overestimate nor an underestimate. If an overestimate or underestimate does happen, the mean of the difference is called a “bias.” That’s just saying if the estimator (i.e. the sample mean) equals the parameter (i.e. the population mean), then it’s an unbiased estimator.</p>
-<div class="tip admonition">
+<div class="tip dropdown admonition">
 <p class="admonition-title">Problem:</p>
 <p><strong>Asked By - LIME</strong></p>
 <p>What is an unbiased estimator and can you provide an example for a layman to understand?</p>
@@ -327,7 +374,7 @@ The three coins can land in eight possible ways:</p>
 <p>Say you have some data. Say you’re willing to assume that the data comes from some distribution – perhaps Gaussian. There are an infinite number of different Gaussians that the data could have come from (which correspond to the combination of the infinite number of means and variances that a Gaussian distribution can have). MLE will pick the Gaussian (i.e., the mean and variance) that is “most consistent” with your data (the precise meaning of consistent is explained below).</p>
 <p>So, say you’ve got a data set of <span class="math notranslate nohighlight">\(y={−1,3,7}\)</span>. The most consistent Gaussian from which that data could have come has a mean of <span class="math notranslate nohighlight">\(3\)</span> and a variance of <span class="math notranslate nohighlight">\(16\)</span>. It could have been sampled from some other Gaussian. But one with a mean of <span class="math notranslate nohighlight">\(3\)</span> and variance of <span class="math notranslate nohighlight">\(16\)</span> is most consistent with the data in the following sense: the probability of getting the particular <span class="math notranslate nohighlight">\(y\)</span> values you observed is greater with this choice of mean and variance, than it is with any other choice.</p>
 <p>Maximum Likelihood Estimation can be applied to both regression and classification problems.</p>
-<div class="tip admonition">
+<div class="tip dropdown admonition">
 <p class="admonition-title">Problem:</p>
 <p><strong>Asked By - SPOTIFY</strong></p>
 <p>Suppose you draw n samples from a uniform distribution U(a, b). What is the MLE estimate of a and b?</p>
