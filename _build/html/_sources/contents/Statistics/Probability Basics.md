@@ -31,7 +31,7 @@ A set, broadly defined, is a collection of objects. In the context of probabilit
 It can be surprisingly difficult to count the number of sequences or sets satisfying certain conditions. This is where **Premutation and Combination** comes in. For example, consider a bag of marbles in which each marble is a different color. If we draw marbles one at a time from the bag without replacement, how many different ordered sequences (permutations) of the marbles are possible? How many different unordered sets (combinations)? 
 
 - Permutation - $AB \neq BA$ , order matters
-- Combination - $AB = BA$ , order does not matters
+- Combination - $AB = BA$ , order does not matter
 
 
 

@@ -1,7 +1,19 @@
 ## Joins
 
+Joins are best explained using Venn diagrams
+
+```{figure} ../SQL/images/image1.PNG
+---
+name: image1
+---
+TSQL JOIN Types, [Reference](https://stevestedman.com/2015/05/tsql-join-types-poster-version-4-1/)
+```
+
+In case multiple joins each single join produces a **single derived table** that is then joined to the next table and so on.
+
+
 ```{admonition} Problem:
-:class: tip
+:class: tip, dropdown
 
 **Reference - [Leetcode](https://leetcode.com/problems/combine-two-tables/)**
 
