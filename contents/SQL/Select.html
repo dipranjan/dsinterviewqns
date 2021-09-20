@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Select &#8212; The Data Science Interview Book</title>
+    <title>SQL Basics &#8212; The Data Science Interview Book</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -147,8 +147,8 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../Python/String%20Manipulation.html">
-   String Manipulation
+  <a class="reference internal" href="../Python/Basics.html">
+   Basics
   </a>
  </li>
  <li class="toctree-l1">
@@ -170,12 +170,22 @@
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Select
+   SQL Basics
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Joins.html">
    Joins
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Windows%20Functions.html">
+   Windows Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Functions.html">
+   Functions
   </a>
  </li>
 </ul>
@@ -287,10 +297,10 @@
         
               <div>
                 
-  <div class="section" id="select">
-<h1>Select<a class="headerlink" href="#select" title="Permalink to this headline">¶</a></h1>
-<div class="tip admonition">
-<p class="admonition-title">Problem:</p>
+  <div class="section" id="sql-basics">
+<h1>SQL Basics<a class="headerlink" href="#sql-basics" title="Permalink to this headline">¶</a></h1>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: Second Highest Salary</p>
 <p><strong>Reference - <a class="reference external" href="https://leetcode.com/problems/second-highest-salary/">Leetcode</a></strong>
 ** For a similar problem with different approach check Nth highest salary problem **</p>
 <p>Write a SQL query to get the second highest salary from the Employee table.</p>
@@ -318,6 +328,19 @@
 <p class="admonition-title">Solution:</p>
 <p>Multiple solutions are possible only one approach is given below for reference</p>
 <p><code class="docutils literal notranslate"><span class="pre">SELECT</span>&#160;&#160;&#160;&#160; <span class="pre">(SELECT</span> <span class="pre">DISTINCT</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Salary</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">FROM</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Employee</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">ORDER</span> <span class="pre">BY</span> <span class="pre">Salary</span> <span class="pre">DESC</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">LIMIT</span> <span class="pre">1</span> <span class="pre">OFFSET</span> <span class="pre">1)</span> <span class="pre">AS</span> <span class="pre">SecondHighestSalary</span></code></p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: HAVING vs WHERE</p>
+<p>Can you elborate on the differences between HAVING and WHERE clause in a SQL query?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>The major differences between between HAVING and WHERE are as follows:</p>
+<ul class="simple">
+<li><p>WHERE can be used with Select, Insert, Update, Delete statements. HAVING can only be used with Select statements</p></li>
+<li><p>WHERE filters rows before aggregation, HAVING filters after that</p></li>
+</ul>
+<p>Performance wise there is not much of a difference, the best practice is to filter out unwanted rows as early as possible</p>
 </div>
 </div>
 

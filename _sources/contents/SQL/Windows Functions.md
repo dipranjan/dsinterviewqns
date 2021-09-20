@@ -1,5 +1,42 @@
 ## Windows Functions
 
+**Reference:** [📖Explanation](https://www.red-gate.com/simple-talk/sql/t-sql-programming/introduction-to-t-sql-window-functions/), [🔫Playground](https://dbfiddle.uk/?rdbms=sqlserver_2017&fiddle=6379904805d1f465cc0f6ea33fc3c0d6)
+
+Window (also, windowing or windowed) functions perform a calculation over a set of rows. I like to think of “looking through the window” at the rows that are being returned and having one last chance to perform a calculation. The window is defined by the OVER clause which determines if the rows are partitioned into smaller sets and if they are ordered.
+They allow you to add your favourite aggregate function to a non-aggregate query. Similar to Transform is pandas group by clause.
+
+Some common windows functions are as follows:
+
+- **Ranking functions**
+	- ROW_NUMBER: *is used to add unique row numbers to a partition or to the entire result set. It has the ability to turn non-unique rows into unique rows.*
+	- RANK: *it will give numbers same as row_number just that same data will get same rank*
+	- DENSE_RANK: *doesnot skip and rank number*
+	- NTILE: *It assigns bucket numbers to the rows instead of row numbers or ranks*
+
+```{figure} ../SQL/images/image2.PNG
+---
+name: image2
+---
+Ranking functions, check playground to work with this
+```
+
+- **Offset functions**
+	- LAG
+	- LEAD
+	- FIRST_VALUE
+	- LAST_VALUE
+
+- **Statistical functions**
+ 	– PERCENT_RANK
+ 	- CUME_DIST
+ 	- PERCENTILE_DISC
+ 	- PERCENTILE_CONT
+
+One problem is you cannot add window functions to the WHERE clause.
+
+
+
+
 
 ```{admonition} Problem: Rank Scores
 :class: tip, dropdown
@@ -84,6 +121,7 @@ Result table:
 Multiple solutions are possible, one of them is given below
 
 `
+
 with a(Num,NextNum,SecondNextNum ) as(
 
 SELECT   Num
@@ -97,6 +135,7 @@ select distinct(Num) as ConsecutiveNums from a
 where
 Num = NextNum
 and Num = SecondNextNum
+
 `
 
 ```

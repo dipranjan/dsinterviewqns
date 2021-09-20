@@ -147,8 +147,8 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../Python/String%20Manipulation.html">
-   String Manipulation
+  <a class="reference internal" href="../Python/Basics.html">
+   Basics
   </a>
  </li>
  <li class="toctree-l1">
@@ -170,7 +170,7 @@
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Select.html">
-   Select
+   SQL Basics
   </a>
  </li>
  <li class="toctree-l1">
@@ -299,6 +299,43 @@
                 
   <div class="section" id="windows-functions">
 <h1>Windows Functions<a class="headerlink" href="#windows-functions" title="Permalink to this headline">¶</a></h1>
+<p><strong>Reference:</strong> <a class="reference external" href="https://www.red-gate.com/simple-talk/sql/t-sql-programming/introduction-to-t-sql-window-functions/">📖Explanation</a>, <a class="reference external" href="https://dbfiddle.uk/?rdbms=sqlserver_2017&amp;fiddle=6379904805d1f465cc0f6ea33fc3c0d6">🔫Playground</a></p>
+<p>Window (also, windowing or windowed) functions perform a calculation over a set of rows. I like to think of “looking through the window” at the rows that are being returned and having one last chance to perform a calculation. The window is defined by the OVER clause which determines if the rows are partitioned into smaller sets and if they are ordered.
+They allow you to add your favourite aggregate function to a non-aggregate query. Similar to Transform is pandas group by clause.</p>
+<p>Some common windows functions are as follows:</p>
+<ul class="simple">
+<li><p><strong>Ranking functions</strong></p>
+<ul>
+<li><p>ROW_NUMBER: <em>is used to add unique row numbers to a partition or to the entire result set. It has the ability to turn non-unique rows into unique rows.</em></p></li>
+<li><p>RANK: <em>it will give numbers same as row_number just that same data will get same rank</em></p></li>
+<li><p>DENSE_RANK: <em>doesnot skip and rank number</em></p></li>
+<li><p>NTILE: <em>It assigns bucket numbers to the rows instead of row numbers or ranks</em></p></li>
+</ul>
+</li>
+</ul>
+<div class="figure align-default" id="image2">
+<img alt="../../_images/image21.PNG" src="../../_images/image21.PNG" />
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Ranking functions, check playground to work with this</span><a class="headerlink" href="#image2" title="Permalink to this image">¶</a></p>
+</div>
+<ul class="simple">
+<li><p><strong>Offset functions</strong></p>
+<ul>
+<li><p>LAG</p></li>
+<li><p>LEAD</p></li>
+<li><p>FIRST_VALUE</p></li>
+<li><p>LAST_VALUE</p></li>
+</ul>
+</li>
+<li><p><strong>Statistical functions</strong>
+– PERCENT_RANK</p>
+<ul>
+<li><p>CUME_DIST</p></li>
+<li><p>PERCENTILE_DISC</p></li>
+<li><p>PERCENTILE_CONT</p></li>
+</ul>
+</li>
+</ul>
+<p>One problem is you cannot add window functions to the WHERE clause.</p>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Problem: Rank Scores</p>
 <p><strong>Reference - <a class="reference external" href="https://leetcode.com/problems/rank-scores/">Leetcode</a></strong></p>
@@ -417,8 +454,8 @@
 <div class="dropdown admonition">
 <p class="admonition-title">Solution:</p>
 <p>Multiple solutions are possible, one of them is given below</p>
-<p>`
-with a(Num,NextNum,SecondNextNum ) as(</p>
+<p>`</p>
+<p>with a(Num,NextNum,SecondNextNum ) as(</p>
 <p>SELECT   Num
 , LEAD(Num, 1) OVER (ORDER BY Id) AS NextNum
 , LEAD(Num, 2) OVER (ORDER BY Id) AS SecondNextNum
@@ -427,8 +464,8 @@ FROM Logs</p>
 <p>select distinct(Num) as ConsecutiveNums from a
 where
 Num = NextNum
-and Num = SecondNextNum
-`</p>
+and Num = SecondNextNum</p>
+<p>`</p>
 </div>
 </div>
 

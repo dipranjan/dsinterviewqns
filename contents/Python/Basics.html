@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>String Manipulation &#8212; The Data Science Interview Book</title>
+    <title>Basics &#8212; The Data Science Interview Book</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -49,7 +49,7 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/Python/String Manipulation.html" />
+    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/Python/Basics.html" />
     <link rel="shortcut icon" href="../../_static/logo.gif"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -148,7 +148,7 @@
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   String Manipulation
+   Basics
   </a>
  </li>
  <li class="toctree-l1">
@@ -170,12 +170,22 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../SQL/Select.html">
-   Select
+   SQL Basics
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../SQL/Joins.html">
    Joins
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../SQL/Windows%20Functions.html">
+   Windows Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../SQL/Functions.html">
+   Functions
   </a>
  </li>
 </ul>
@@ -236,7 +246,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/contents/Python/String Manipulation.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/contents/Python/Basics.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -256,10 +266,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/Python/String Manipulation.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/Python/Basics.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/dipranjan/dsinterviewqns/edit/master/contents/Python/String Manipulation.ipynb"><button
+        <a class="edit-button" href="https://github.com/dipranjan/dsinterviewqns/edit/master/contents/Python/Basics.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -279,7 +289,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/dipranjan/dsinterviewqns/master?urlpath=tree/contents/Python/String Manipulation.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/dipranjan/dsinterviewqns/master?urlpath=tree/contents/Python/Basics.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -304,39 +314,38 @@
         
               <div>
                 
-  <div class="section" id="string-manipulation">
-<h1>String Manipulation<a class="headerlink" href="#string-manipulation" title="Permalink to this headline">¶</a></h1>
-<div class="tip admonition">
-<p class="admonition-title">Problem:</p>
+  <div class="section" id="basics">
+<h1>Basics<a class="headerlink" href="#basics" title="Permalink to this headline">¶</a></h1>
+<div class="dropdown tip admonition">
+<p class="admonition-title">Problem: Palindrome Checker</p>
 <p><strong>Asked By - SNAPCHAT</strong></p>
 <p>Given a string, determine whether any permutation of it is a palindrome.</p>
 <p>For example, carerac should return true, since it can be rearranged to form racecar, which is a palindrome. sunset should return false, since there’s no rearrangement that can form a palindrome.</p>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">A string can be a palindrome only if it has even pair of characters and at max 1 odd character</span>
-<span class="sd">&#39;&#39;&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A string can be a palindrome only if it has even pair of characters and at max 1 odd character</span>
+
 
 <span class="k">def</span> <span class="nf">palindrome_checker</span><span class="p">(</span><span class="n">txt</span><span class="p">):</span>
-    <span class="n">temp</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="n">odd_count</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">even_count</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">(</span><span class="n">txt</span><span class="p">):</span> <span class="c1"># Storing characters and their count</span>
-        <span class="k">if</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">temp</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-            <span class="n">temp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">odd_count</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">even_count</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">(</span><span class="n">txt</span><span class="p">):</span> <span class="c1"># Storing characters and their count</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">temp</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="n">temp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">temp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">temp</span><span class="p">:</span> <span class="c1"># Check count of characters</span>
+            <span class="k">if</span> <span class="n">temp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">%</span><span class="k">2</span>==0:
+                <span class="n">even_count</span> <span class="o">=</span> <span class="n">even_count</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">odd_count</span> <span class="o">=</span> <span class="n">odd_count</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">if</span><span class="p">((</span><span class="n">odd_count</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">)</span><span class="ow">or</span><span class="p">(</span><span class="n">even_count</span><span class="o">==</span><span class="mi">0</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="kc">False</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">temp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">temp</span><span class="p">:</span> <span class="c1"># Check count of characters</span>
-        <span class="k">if</span> <span class="n">temp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">%</span><span class="k">2</span>==0:
-            <span class="n">even_count</span> <span class="o">=</span> <span class="n">even_count</span> <span class="o">+</span> <span class="mi">1</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">odd_count</span> <span class="o">=</span> <span class="n">odd_count</span> <span class="o">+</span> <span class="mi">1</span>
-    <span class="k">if</span><span class="p">((</span><span class="n">odd_count</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">)</span><span class="ow">or</span><span class="p">(</span><span class="n">even_count</span><span class="o">==</span><span class="mi">0</span><span class="p">)):</span>
-        <span class="k">return</span> <span class="kc">False</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">True</span>    
-    
+            <span class="k">return</span> <span class="kc">True</span>    
+
 <span class="nb">print</span><span class="p">(</span><span class="n">palindrome_checker</span><span class="p">(</span><span class="s2">&quot;carerac&quot;</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">palindrome_checker</span><span class="p">(</span><span class="s2">&quot;sunset&quot;</span><span class="p">))</span>
 </pre></div>
@@ -349,8 +358,8 @@ False
 </div>
 </div>
 </div>
-<div class="tip admonition">
-<p class="admonition-title">Problem:</p>
+<div class="dropdown tip admonition">
+<p class="admonition-title">Problem: Pattern Generation</p>
 <p>Write a function to generate this pattern:<br />
 1<br />
 2 3<br />
@@ -360,7 +369,7 @@ False
 1 2<br />
 1 2 3</p>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">pyramid</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
@@ -381,6 +390,41 @@ False
 1  
 2 3  
 4 5 6  
+</pre></div>
+</div>
+</div>
+</div>
+<div class="dropdown tip admonition">
+<p class="admonition-title">Problem: Sum to N</p>
+<p><strong>Asked By - UBER</strong>
+Given a list of integers, find all combinations that equal the value N.</p>
+<p>Example:</p>
+<p>integers = [2,3,5], target = 8,</p>
+<p>output = [[2,2,2,2],[2,3,3],[3,5]]</p>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ref: https://stackoverflow.com/questions/58415182/function-that-find-combination-of-values-that-sums-to-a-given-number</span>
+
+<span class="k">def</span> <span class="nf">a</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
+    <span class="n">final_list</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># list to store all the valid results</span>
+    
+    <span class="k">def</span> <span class="nf">_a</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">li</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">target</span> <span class="o">==</span> <span class="nb">sum</span><span class="p">(</span><span class="n">li</span><span class="p">):</span> <span class="n">final_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">li</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">target</span> <span class="o">&lt;</span> <span class="nb">sum</span><span class="p">(</span><span class="n">li</span><span class="p">):</span> <span class="k">return</span>
+        
+        <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)):</span>
+            <span class="n">_a</span><span class="p">(</span><span class="n">u</span> <span class="p">,</span> <span class="n">li</span> <span class="o">+</span> <span class="p">[</span><span class="n">lst</span><span class="p">[</span><span class="n">u</span><span class="p">]])</span> <span class="c1"># recursive call</span>
+        <span class="k">return</span> <span class="n">final_list</span>
+    
+    <span class="k">return</span> <span class="n">_a</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">[])</span> <span class="c1"># initial call</span>
+
+<span class="n">a</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span><span class="mi">8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[2, 2, 2, 2], [2, 3, 3], [3, 5]]
 </pre></div>
 </div>
 </div>

@@ -1,8 +1,8 @@
-## Select
+## SQL Basics
 
 
-```{admonition} Problem:
-:class: tip
+```{admonition} Problem: Second Highest Salary
+:class: tip, dropdown
 
 **Reference - [Leetcode](https://leetcode.com/problems/second-highest-salary/)**
 ** For a similar problem with different approach check Nth highest salary problem **
@@ -34,4 +34,21 @@ SELECT
         LIMIT 1 OFFSET 1) AS SecondHighestSalary
 `
 
+```
+
+```{admonition} Problem: HAVING vs WHERE
+:class: tip, dropdown
+Can you elborate on the differences between HAVING and WHERE clause in a SQL query?
+
+```
+
+```{admonition} Solution:
+:class: dropdown
+
+The major differences between between HAVING and WHERE are as follows:
+
+- WHERE can be used with Select, Insert, Update, Delete statements. HAVING can only be used with Select statements
+- WHERE filters rows before aggregation, HAVING filters after that
+
+Performance wise there is not much of a difference, the best practice is to filter out unwanted rows as early as possible
 ```
