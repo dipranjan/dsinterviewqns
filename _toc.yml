@@ -9,12 +9,12 @@ parts:
     - file: contents/Statistics/Hypothesis Testing
   - caption: Algorithms
     chapters:
+    - file: contents/Algorithms/Regression
     - file: contents/Algorithms/Logistic Regression
     - file: contents/Algorithms/Anomaly Detection
-    - file: contents/Algorithms/Regression
   - caption: Python
     chapters:
-    - file: contents/Python/String Manipulation
+    - file: contents/Python/Basics
     - file: contents/Python/Data Manipulation
     - file: contents/Python/Statistics
   - caption: SQL

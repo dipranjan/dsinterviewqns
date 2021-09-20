@@ -3,8 +3,8 @@
 
 # ## Statistics
 
-# ```{admonition} Problem:
-# :class: tip
+# ```{admonition} Problem: Normal Distribution
+# :class: dropdown, tip
 # 
 # **Asked By - GOOGLE**
 # 
@@ -34,8 +34,8 @@ def normal_sample_generator(N):
 normal_sample_generator(10000)
 
 
-# ```{admonition} Problem:
-# :class: tip
+# ```{admonition} Problem: Bernoulli trial generator
+# :class: dropdown, tip
 # 
 # **Asked By - UBER**
 # 

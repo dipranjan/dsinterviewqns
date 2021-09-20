@@ -55,8 +55,8 @@
     <link rel="shortcut icon" href="../../_static/logo.gif"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="String Manipulation" href="../Python/String%20Manipulation.html" />
-    <link rel="prev" title="Anomaly Detection" href="Anomaly%20Detection.html" />
+    <link rel="next" title="Logistic Regression" href="Logistic%20Regression.html" />
+    <link rel="prev" title="Hypothesis Testing" href="../Statistics/Hypothesis%20Testing.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -126,6 +126,11 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Regression
+  </a>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Logistic%20Regression.html">
    Logistic Regression
@@ -136,11 +141,6 @@
    Anomaly Detection
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Regression
-  </a>
- </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
@@ -149,8 +149,8 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../Python/String%20Manipulation.html">
-   String Manipulation
+  <a class="reference internal" href="../Python/Basics.html">
+   Basics
   </a>
  </li>
  <li class="toctree-l1">
@@ -172,7 +172,7 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../SQL/Select.html">
-   Select
+   SQL Basics
   </a>
  </li>
  <li class="toctree-l1">
@@ -291,6 +291,19 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linear-regression">
+   Linear Regression
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -301,6 +314,41 @@
                 
   <div class="section" id="regression">
 <h1>Regression<a class="headerlink" href="#regression" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="linear-regression">
+<h2>Linear Regression<a class="headerlink" href="#linear-regression" title="Permalink to this headline">¶</a></h2>
+<p><span class="math notranslate nohighlight">\(Y = b_0 + b_1 * x_1 + b_2 * x_2 + \epsilon\)</span></p>
+<p>The idea is to find the line or plane which best fits the data. Collectively, <span class="math notranslate nohighlight">\(b_0, b_1, b_2\)</span> are called regression coefficients. <span class="math notranslate nohighlight">\(\epsilon\)</span> is the error term, the part of <span class="math notranslate nohighlight">\(Y\)</span> the regression model is unable to explain.</p>
+<div class="figure align-default" id="image2">
+<img alt="../../_images/image23.PNG" src="../../_images/image23.PNG" />
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text"><a class="reference external" href="https://www.shutterstock.com/image-illustration/annotated-diagram-explaining-components-graph-showing-1406041139">📖Source</a></span><a class="headerlink" href="#image2" title="Permalink to this image">¶</a></p>
+</div>
+<p>Now once you have the model fit next comes the metrics to measure hoe good the fit is, some of the common metrics are as follows:</p>
+<ul class="simple">
+<li><p><strong><span class="math notranslate nohighlight">\(RSS\)</span></strong> (Residual sum of squares) <span class="math notranslate nohighlight">\(= (Y_{actual} - Y_{predicted})^2\)</span>, it changes with scale change</p></li>
+<li><p><strong><span class="math notranslate nohighlight">\(TSS\)</span></strong> (Total sum of squares) <span class="math notranslate nohighlight">\(= (Y_{actual} - Y_{avg})^2\)</span></p></li>
+<li><p><strong><span class="math notranslate nohighlight">\(R^2\)</span></strong> <span class="math notranslate nohighlight">\(= 1-\frac{RSS}{TSS} \)</span>, more the better, increases with more coefficients</p></li>
+<li><p><strong><span class="math notranslate nohighlight">\(RSE\)</span></strong> (Residual Standard Error) <span class="math notranslate nohighlight">\( = \sqrt{\frac{RSS}{d.o.f}}\)</span>, here <span class="math notranslate nohighlight">\(d.o.f = n-2\)</span></p></li>
+</ul>
+<p><strong>Assumptions of Linear Regression</strong> :</p>
+<ul class="simple">
+<li><p>The relationship between <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> is linear</p></li>
+<li><p>The error terms are normally distributed. This can be checked with a Q-Q plot</p></li>
+<li><p>Error terms are independent of each other. This can be checked with a ACF plot</p></li>
+<li><p>Error terms are homoscedastic, i.e. they have constant variance. Residulas Vs Fitted graph should be flat</p></li>
+<li><p>The independent variables are not multicollinear. <strong>Multicollinearity</strong> is when a variable can be explained as a combination of other variables. This can be checked by using VIF(Variance inflation factor) <span class="math notranslate nohighlight">\(= \frac{1}{1-R_i^2}\)</span>.</p>
+<ul>
+<li><p>A VIF score of <span class="math notranslate nohighlight">\(&gt;10\)</span> indicates there there is a problem</p></li>
+<li><p>If a multicollinear variable is present the coefficients swing wildly thereby affecting the interpretability of the model. P-vales are not reliable. But it doesnot affect prediction or the goodness of fit statistics.</p></li>
+<li><p>To deal with multicollinearity</p>
+<ul>
+<li><p>drop variables</p></li>
+<li><p>create new features from existing ones</p></li>
+<li><p>PCA/PLS</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Problem: Regression Coefficient</p>
 <p><strong>Asked By - UPSTART</strong></p>
@@ -315,6 +363,19 @@
 <p>Let’s start with <span class="math notranslate nohighlight">\(Y = X\)</span>, then the regression line is a perfect fit. The points of such a dataset is <span class="math notranslate nohighlight">\((1,1),(2,2),(3,3),(4,4),(5,5)\)</span></p>
 <p>Adding some normal white noise to these points <span class="math notranslate nohighlight">\((1,1),(2,3),(3,5),(4,5),(5,5)\)</span>. A regression line fit on these points will move up. Hence the coefficients of <span class="math notranslate nohighlight">\(Y = mX+c\)</span>, <span class="math notranslate nohighlight">\(m\)</span> will increase, <span class="math notranslate nohighlight">\(c\)</span> might still stay at <span class="math notranslate nohighlight">\(0\)</span> or at max increase.</p>
 <p>This movement will go in the negative direction if we predict <span class="math notranslate nohighlight">\(X\)</span> based on <span class="math notranslate nohighlight">\(Y\)</span></p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: Linear Regression in Time Series</p>
+<p>Do you think Linear Regression should be used in Time series analysis?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>Linear Regression as per me can be used in Time Series but might not always give good results. 2 reasons which come up are:</p>
+<ul class="simple">
+<li><p>Linear Regression is good for intrapolation but not for extrapolation so the results can vary wildly</p></li>
+<li><p>When Linear Regression is used but observations are correlated (as in time series data) you will have a biased estimate of the variance</p></li>
+</ul>
+</div>
 </div>
 </div>
 
@@ -348,19 +409,19 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="Anomaly%20Detection.html" title="previous page">
+        <a class="left-prev" href="../Statistics/Hypothesis%20Testing.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Anomaly Detection</p>
+                <p class="prevnext-title">Hypothesis Testing</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="../Python/String%20Manipulation.html" title="next page">
+        <a class="right-next" href="Logistic%20Regression.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">String Manipulation</p>
+                <p class="prevnext-title">Logistic Regression</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
