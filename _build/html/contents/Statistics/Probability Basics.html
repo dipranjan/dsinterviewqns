@@ -127,6 +127,11 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="../Algorithms/Regression.html">
+   Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../Algorithms/Logistic%20Regression.html">
    Logistic Regression
   </a>
@@ -134,11 +139,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../Algorithms/Anomaly%20Detection.html">
    Anomaly Detection
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Algorithms/Regression.html">
-   Regression
   </a>
  </li>
 </ul>
@@ -367,7 +367,7 @@ The square root of the variance is called the <strong>standard deviation.</stron
 </div>
 <p><span class="math notranslate nohighlight">\(P(Banana|Long,Sweet,Yellow) = \frac{P(Long|Banana)*P(Sweet|Banana)*P(Yellow|Banana)*P(Banana)}{P(Long)*P(Sweet)*P(Yellow)}\)</span></p>
 <div class="tip dropdown admonition">
-<p class="admonition-title">Problem:</p>
+<p class="admonition-title">Problem: Dice in increasing order</p>
 <p><strong>Asked By - UBER</strong></p>
 <p>We throw 3 dice one by one. What is the probability that we obtain 3 points in strictly increasing order?</p>
 </div>
@@ -379,7 +379,7 @@ The square root of the variance is called the <strong>standard deviation.</stron
 <p>Taking into consideration <span class="math notranslate nohighlight">\(P(1)\)</span> and <span class="math notranslate nohighlight">\(P(2)\)</span> we have the total as <span class="math notranslate nohighlight">\(= 10/216 + 6/216 + 3/216 + 1/216 = 20/216\)</span></p>
 </div>
 <div class="tip dropdown admonition">
-<p class="admonition-title">Problem:</p>
+<p class="admonition-title">Problem: Cards without replacement</p>
 <p><strong>Asked By - STATE FARM</strong></p>
 <p>Pull <span class="math notranslate nohighlight">\(2\)</span> cards from a deck without replacement what is probability that both are of different colors.</p>
 <p>There can be many variants to this question.</p>
@@ -391,6 +391,23 @@ The square root of the variance is called the <strong>standard deviation.</stron
 Different Color With Replacement    <span class="math notranslate nohighlight">\(= 26/52 * 26/52\)</span>
 Same Color Without Replacement 		<span class="math notranslate nohighlight">\(= 26/52 * 25/51\)</span>
 Same Color With Replacement    		<span class="math notranslate nohighlight">\(= 26/52 * 25/52\)</span></p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: N Dice</p>
+<p><strong>Asked By - FACEBOOK</strong></p>
+<p>Suppose you’re playing a dice game. You have 2 die.</p>
+<ul class="simple">
+<li><p>What’s the probability of rolling at least one 3?</p></li>
+<li><p>What’s the probability of rolling at least one 3 given N die?</p></li>
+</ul>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>P(at least 1 three) <span class="math notranslate nohighlight">\(=\)</span> P(exactly 1 three) <span class="math notranslate nohighlight">\(+\)</span>  P(2 three) <span class="math notranslate nohighlight">\(= 1/6 * 5/6 + 5/6 * 1/6 + 1/36 = 11/36\)</span></p>
+<p>The second part of the question is a little tricky, let’s start by generalizing the above equation:</p>
+<p>P(at least 1 three) <span class="math notranslate nohighlight">\(= 2*(5^1/6^2) + 5^0/6^2\)</span></p>
+<p>Now for N dice: P(at least 1 three) <span class="math notranslate nohighlight">\(=\)</span> P(exactly 1 three) <span class="math notranslate nohighlight">\(+\)</span>  P(2 three) <span class="math notranslate nohighlight">\(+\)</span>  P(3 three) … <span class="math notranslate nohighlight">\(+\)</span>  P(N three)</p>
+<p>Combining both <span class="math notranslate nohighlight">\(= N * \frac{5^{N-1}}{6^N} + N * \frac{5^{N-2}}{6^N} + N * \frac{5^{N-3}}{6^N} + ... + N * \frac{5^0}{6^N} = \frac{N}{6^N}(5^{N-1} + 5^{N-2} + .. + 1)\)</span></p>
 </div>
 </div>
 </div>

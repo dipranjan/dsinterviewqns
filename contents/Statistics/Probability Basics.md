@@ -56,7 +56,7 @@ $P(Banana|Long,Sweet,Yellow) = \frac{P(Long|Banana)*P(Sweet|Banana)*P(Yellow|Ban
 
 
 
-```{admonition} Problem:
+```{admonition} Problem: Dice in increasing order
 :class: tip, dropdown
 
 **Asked By - UBER**
@@ -79,7 +79,7 @@ Taking into consideration $P(1)$ and $P(2)$ we have the total as $= 10/216 + 6/2
 ```
 
 
-```{admonition} Problem:
+```{admonition} Problem: Cards without replacement
 :class: tip, dropdown
 
 **Asked By - STATE FARM**
@@ -99,4 +99,30 @@ Different Color Without Replacement $= 26/52 * 26/51$
 Different Color With Replacement    $= 26/52 * 26/52$
 Same Color Without Replacement 		$= 26/52 * 25/51$
 Same Color With Replacement    		$= 26/52 * 25/52$
+```
+
+```{admonition} Problem: N Dice
+:class: tip, dropdown
+
+**Asked By - FACEBOOK**
+
+Suppose you're playing a dice game. You have 2 die.
+
+- What's the probability of rolling at least one 3?
+- What's the probability of rolling at least one 3 given N die?
+```
+
+```{admonition} Solution:
+:class: dropdown
+
+P(at least 1 three) $=$ P(exactly 1 three) $+$  P(2 three) $= 1/6 * 5/6 + 5/6 * 1/6 + 1/36 = 11/36$
+
+The second part of the question is a little tricky, let's start by generalizing the above equation:
+
+P(at least 1 three) $= 2*(5^1/6^2) + 5^0/6^2$
+
+Now for N dice: P(at least 1 three) $=$ P(exactly 1 three) $+$  P(2 three) $+$  P(3 three) ... $+$  P(N three)
+
+Combining both $= N * \frac{5^{N-1}}{6^N} + N * \frac{5^{N-2}}{6^N} + N * \frac{5^{N-3}}{6^N} + ... + N * \frac{5^0}{6^N} = \frac{N}{6^N}(5^{N-1} + 5^{N-2} + .. + 1)$
+
 ```
