@@ -12,6 +12,9 @@ parts:
     - file: contents/Algorithms/Regression
     - file: contents/Algorithms/Logistic Regression
     - file: contents/Algorithms/Anomaly Detection
+  - caption: NLP
+    chapters:
+    - file: contents/NLP/Lexical Processing
   - caption: Python
     chapters:
     - file: contents/Python/Basics

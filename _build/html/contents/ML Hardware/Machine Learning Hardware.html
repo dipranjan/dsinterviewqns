@@ -124,6 +124,11 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="../Algorithms/Regression.html">
+   Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../Algorithms/Logistic%20Regression.html">
    Logistic Regression
   </a>
@@ -133,9 +138,16 @@
    Anomaly Detection
   </a>
  </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  NLP
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../Algorithms/Regression.html">
-   Regression
+  <a class="reference internal" href="../NLP/Lexical%20Processing.html">
+   Lexical Processing
   </a>
  </li>
 </ul>
@@ -338,7 +350,7 @@
 <p>But, because the CPU is so flexible, the hardware doesn’t always know what would be next calculation until it reads the next instruction from the software. A CPU has to store the calculation results on memory inside CPU (so called registers or L1 cache) for every single calculation. This memory access becomes the downside of CPU architecture called the von Neumann bottleneck. Even though the huge scale of neural network calculations means that these future steps are entirely predictable, each CPU’s Arithmetic Logic Units (ALU, the component that holds and controls multipliers and adders) executes them one by one, accessing the memory every time, limiting the total throughput and consuming significant energy.</p>
 <div class="figure align-default" id="image2">
 <a class="reference internal image-reference" href="../../_images/image11.PNG"><img alt="../../_images/image11.PNG" src="../../_images/image11.PNG" style="height: 250px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">von Neumann Architecture</span><a class="headerlink" href="#image2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">von Neumann Architecture</span><a class="headerlink" href="#image2" title="Permalink to this image">¶</a></p>
 </div>
 <p>Since memory and the CPU are separated in this architecture, the performance of the system is often limited by the speed of accessing memory. Historically, the memory access speed is orders of magnitude slower than the actual processing speed, creating a bottleneck in the system performance.</p>
 <p>Furthermore, the physical movement of data consumes a significant amount of energy due to interconnect parasitics. In given situations, it has been observed that the physical movement of data from memory can consume up to 500 times more energy than the actual processing of that data. This trend is only expected to worsen as chips scale.</p>
@@ -358,7 +370,7 @@
 <p>This is why the TPU can achieve a high computational throughput on neural network calculations with much less power consumption and smaller footprint.</p>
 <div class="figure align-default" id="image3">
 <a class="reference internal image-reference" href="../../_images/image3.PNG"><img alt="../../_images/image3.PNG" src="../../_images/image3.PNG" style="height: 300px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">CPU vs GPU vs TPU</span><a class="headerlink" href="#image3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">CPU vs GPU vs TPU</span><a class="headerlink" href="#image3" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
