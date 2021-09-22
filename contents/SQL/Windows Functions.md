@@ -72,13 +72,47 @@ For example, given the above Scores table, your query should generate the follow
 
 The tie resolving method which is being asked in the question is called Dense Rank, if we use Rank it will have "holes"
 
-`
-select 
-Score, dense_rank() over(order by score desc) as Rank
-from Scores
-`
+	`
+	select 
+	Score, dense_rank() over(order by score desc) as Rank
+	from Scores
+	`
 
 ```
+
+
+```{admonition} Problem: 2nd Highest score
+:class: tip, dropdown
+
+| Id | subject | marks |
+|---:|---------|------:|
+|  1 | Maths   |    30 |
+|  1 | Phy     |    50 |
+|  1 | Chem    |    85 |
+|  2 | Maths   |    90 |
+|  2 | Phy     |    50 |
+|  2 | Chem    |    85 |
+
+Select the second highest mark for each student.
+
+```
+
+```{admonition} Solution:
+:class: dropdown
+
+	`
+	with CTE as(
+	select *, rank() over(partition by Id order by marks desc) as Rank from tablename
+	)
+
+	select Id, subject, marks from CTE where Rank = 1
+	`
+
+```
+
+
+
+
 
 ```{admonition} Problem: Consecutive Numbers
 :class: tip, dropdown
@@ -120,22 +154,23 @@ Result table:
 
 Multiple solutions are possible, one of them is given below
 
-`
+	`
 
-with a(Num,NextNum,SecondNextNum ) as(
+	with a(Num,NextNum,SecondNextNum ) as(
 
-SELECT   Num
-         , LEAD(Num, 1) OVER (ORDER BY Id) AS NextNum
-         , LEAD(Num, 2) OVER (ORDER BY Id) AS SecondNextNum
-      FROM Logs
-      
-)
+	SELECT   Num
+	         , LEAD(Num, 1) OVER (ORDER BY Id) AS NextNum
+	         , LEAD(Num, 2) OVER (ORDER BY Id) AS SecondNextNum
+	      FROM Logs
+	      
+	)
 
-select distinct(Num) as ConsecutiveNums from a
-where
-Num = NextNum
-and Num = SecondNextNum
+	select distinct(Num) as ConsecutiveNums from a
+	where
+	Num = NextNum
+	and Num = SecondNextNum
 
-`
+	`
 
 ```
+

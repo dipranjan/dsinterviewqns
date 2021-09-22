@@ -103,3 +103,34 @@ def a(lst, target):
 
 a([2,3,5],8)
 
+
+# ```{admonition} Problem: Max Profit
+# :class: dropdown, tip
+# **Asked By - STARBUCKS**
+# 
+# Given a list of stock prices in ascending order by datetime, write a function that outputs the max profit by buying and selling at a specific interval.
+# 
+# Example:
+# 
+# stock_prices = [10,5,20,32,25,12]
+# 
+# buy --> 5
+# sell --> 32
+# 
+# ```
+
+# In[27]:
+
+
+stock_prices = [10,5,20,32,25,12]
+
+diff = []
+for i,j in enumerate(stock_prices):
+    for k in range(i+1,len(stock_prices)):
+        diff.append(stock_prices[k]-j)
+        if(len(diff)>2 and (diff[-1]> max(diff[:-1]))):
+            buy = j
+            sell = stock_prices[k]
+
+print(buy,sell)
+

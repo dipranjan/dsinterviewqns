@@ -54,7 +54,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Data Manipulation" href="Data%20Manipulation.html" />
-    <link rel="prev" title="Regression" href="../Algorithms/Regression.html" />
+    <link rel="prev" title="Lexical Processing" href="../NLP/Lexical%20Processing.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -125,6 +125,11 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="../Algorithms/Regression.html">
+   Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../Algorithms/Logistic%20Regression.html">
    Logistic Regression
   </a>
@@ -134,9 +139,16 @@
    Anomaly Detection
   </a>
  </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  NLP
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../Algorithms/Regression.html">
-   Regression
+  <a class="reference internal" href="../NLP/Lexical%20Processing.html">
+   Lexical Processing
   </a>
  </li>
 </ul>
@@ -429,6 +441,37 @@ Given a list of integers, find all combinations that equal the value N.</p>
 </div>
 </div>
 </div>
+<div class="dropdown tip admonition">
+<p class="admonition-title">Problem: Max Profit</p>
+<p><strong>Asked By - STARBUCKS</strong></p>
+<p>Given a list of stock prices in ascending order by datetime, write a function that outputs the max profit by buying and selling at a specific interval.</p>
+<p>Example:</p>
+<p>stock_prices = [10,5,20,32,25,12]</p>
+<p>buy –&gt; 5
+sell –&gt; 32</p>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stock_prices</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">12</span><span class="p">]</span>
+
+<span class="n">diff</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">stock_prices</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">stock_prices</span><span class="p">)):</span>
+        <span class="n">diff</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">stock_prices</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">-</span><span class="n">j</span><span class="p">)</span>
+        <span class="k">if</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">2</span> <span class="ow">and</span> <span class="p">(</span><span class="n">diff</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">&gt;</span> <span class="nb">max</span><span class="p">(</span><span class="n">diff</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]))):</span>
+            <span class="n">buy</span> <span class="o">=</span> <span class="n">j</span>
+            <span class="n">sell</span> <span class="o">=</span> <span class="n">stock_prices</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">buy</span><span class="p">,</span><span class="n">sell</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5 32
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -461,11 +504,11 @@ Given a list of integers, find all combinations that equal the value N.</p>
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="../Algorithms/Regression.html" title="previous page">
+        <a class="left-prev" href="../NLP/Lexical%20Processing.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Regression</p>
+                <p class="prevnext-title">Lexical Processing</p>
             </div>
         </a>
     </div>

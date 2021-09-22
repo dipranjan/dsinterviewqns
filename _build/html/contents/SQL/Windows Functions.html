@@ -411,7 +411,63 @@ They allow you to add your favourite aggregate function to a non-aggregate query
 <div class="dropdown admonition">
 <p class="admonition-title">Solution:</p>
 <p>The tie resolving method which is being asked in the question is called Dense Rank, if we use Rank it will have “holes”</p>
-<p><code class="docutils literal notranslate"><span class="pre">select</span>&#160; <span class="pre">Score,</span> <span class="pre">dense_rank()</span> <span class="pre">over(order</span> <span class="pre">by</span> <span class="pre">score</span> <span class="pre">desc)</span> <span class="pre">as</span> <span class="pre">Rank</span> <span class="pre">from</span> <span class="pre">Scores</span></code></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>`
+select 
+Score, dense_rank() over(order by score desc) as Rank
+from Scores
+`
+</pre></div>
+</div>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: 2nd Highest score</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:right head"><p>Id</p></th>
+<th class="head"><p>subject</p></th>
+<th class="text-align:right head"><p>marks</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:right"><p>1</p></td>
+<td><p>Maths</p></td>
+<td class="text-align:right"><p>30</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>1</p></td>
+<td><p>Phy</p></td>
+<td class="text-align:right"><p>50</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>1</p></td>
+<td><p>Chem</p></td>
+<td class="text-align:right"><p>85</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>2</p></td>
+<td><p>Maths</p></td>
+<td class="text-align:right"><p>90</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>2</p></td>
+<td><p>Phy</p></td>
+<td class="text-align:right"><p>50</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>2</p></td>
+<td><p>Chem</p></td>
+<td class="text-align:right"><p>85</p></td>
+</tr>
+</tbody>
+</table>
+<p>Select the second highest mark for each student.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>`
+with CTE as(
+select *, rank() over(partition by Id order by marks desc) as Rank from tablename
+)
+
+select Id, subject, marks from CTE where Rank = 1
+`
+</pre></div>
+</div>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Problem: Consecutive Numbers</p>
@@ -466,18 +522,25 @@ They allow you to add your favourite aggregate function to a non-aggregate query
 <div class="dropdown admonition">
 <p class="admonition-title">Solution:</p>
 <p>Multiple solutions are possible, one of them is given below</p>
-<p>`</p>
-<p>with a(Num,NextNum,SecondNextNum ) as(</p>
-<p>SELECT   Num
-, LEAD(Num, 1) OVER (ORDER BY Id) AS NextNum
-, LEAD(Num, 2) OVER (ORDER BY Id) AS SecondNextNum
-FROM Logs</p>
-<p>)</p>
-<p>select distinct(Num) as ConsecutiveNums from a
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>`
+
+with a(Num,NextNum,SecondNextNum ) as(
+
+SELECT   Num
+         , LEAD(Num, 1) OVER (ORDER BY Id) AS NextNum
+         , LEAD(Num, 2) OVER (ORDER BY Id) AS SecondNextNum
+      FROM Logs
+      
+)
+
+select distinct(Num) as ConsecutiveNums from a
 where
 Num = NextNum
-and Num = SecondNextNum</p>
-<p>`</p>
+and Num = SecondNextNum
+
+`
+</pre></div>
+</div>
 </div>
 </div>
 

@@ -3,6 +3,20 @@
 
 # ## Statistics
 
+# ```{admonition} Problem: JOIN Dataframes
+# :class: dropdown, tip
+# Can you tell me the ways in which 2 pandas data frames can be joined?
+# ```
+
+# ```{admonition} Solution:
+# :class: dropdown
+# A very high level difference is that merge() is used to combine two (or more) dataframes on the basis of values of common columns (indices can also be used, use left_index=True and/or right_index=True), and concat() is used to append one (or more) dataframes one below the other (or sideways, depending on whether the axis option is set to 0 or 1).
+# 
+# join() is used to merge 2 dataframes on the basis of the index; instead of using merge() with the option left_index=True we can use join().
+# 
+# ![Combine DataFrames](images/image1.PNG)
+# ```
+
 # ```{admonition} Problem: Normal Distribution
 # :class: dropdown, tip
 # 
