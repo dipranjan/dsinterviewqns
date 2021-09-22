@@ -125,6 +125,11 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="../Algorithms/Regression.html">
+   Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../Algorithms/Logistic%20Regression.html">
    Logistic Regression
   </a>
@@ -134,9 +139,16 @@
    Anomaly Detection
   </a>
  </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  NLP
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../Algorithms/Regression.html">
-   Regression
+  <a class="reference internal" href="../NLP/Lexical%20Processing.html">
+   Lexical Processing
   </a>
  </li>
 </ul>
@@ -317,6 +329,16 @@
   <div class="section" id="statistics">
 <h1>Statistics<a class="headerlink" href="#statistics" title="Permalink to this headline">¶</a></h1>
 <div class="dropdown tip admonition">
+<p class="admonition-title">Problem: JOIN Dataframes</p>
+<p>Can you tell me the ways in which 2 pandas data frames can be joined?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>A very high level difference is that merge() is used to combine two (or more) dataframes on the basis of values of common columns (indices can also be used, use left_index=True and/or right_index=True), and concat() is used to append one (or more) dataframes one below the other (or sideways, depending on whether the axis option is set to 0 or 1).</p>
+<p>join() is used to merge 2 dataframes on the basis of the index; instead of using merge() with the option left_index=True we can use join().</p>
+<p><img alt="Combine DataFrames" src="../../_images/image15.PNG" /></p>
+</div>
+<div class="dropdown tip admonition">
 <p class="admonition-title">Problem: Normal Distribution</p>
 <p><strong>Asked By - GOOGLE</strong></p>
 <p>Write a function to generate N samples from a normal distribution and plot the histogram.</p>
@@ -345,7 +367,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Statistics_2_0.png" src="../../_images/Statistics_2_0.png" />
+<img alt="../../_images/Statistics_4_0.png" src="../../_images/Statistics_4_0.png" />
 </div>
 </div>
 <div class="dropdown tip admonition">
