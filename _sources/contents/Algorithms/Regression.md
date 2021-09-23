@@ -13,19 +13,28 @@ name: image2
 [📖Source](https://www.shutterstock.com/image-illustration/annotated-diagram-explaining-components-graph-showing-1406041139) 
 ```
 
-Now once you have the model fit next comes the metrics to measure hoe good the fit is, some of the common metrics are as follows:
+#### Metrics
+
+Now once you have the model fit next comes the metrics to measure how good the fit is, some of the common metrics are as follows:
 
 - **$RSS$** (Residual sum of squares) $= (Y_{actual} - Y_{predicted})^2$, it changes with scale change
 - **$TSS$** (Total sum of squares) $= (Y_{actual} - Y_{avg})^2$
 - **$R^2$** $= 1-\frac{RSS}{TSS} $, more the better, increases with more coefficients
 - **$RSE$** (Residual Standard Error) $ = \sqrt{\frac{RSS}{d.o.f}}$, here $d.o.f = n-2$
 
-**Assumptions of Linear Regression** :
+#### Feature selection
 
-- The relationship between $X$ and $Y$ is linear
-- The error terms are normally distributed. This can be checked with a Q-Q plot
-- Error terms are independent of each other. This can be checked with a ACF plot
-- Error terms are homoscedastic, i.e. they have constant variance. Residulas Vs Fitted graph should be flat
+- Hypothesis testing and using p-values to understand if the feature is important or not
+- Using metrics like Adjusted $R^2$, AIC, BIC, etc. which takes into consideration the number of features used to build the model and penalizes accordingly
+
+
+
+#### Assumptions
+
+- The relationship between $X$ and $Y$ is **linear**. Because we are fitting a linear model, we assume that the relationship really is linear, and that the errors, or residuals, are simply random fluctuations around the true line.
+- The error terms are **normally distributed**. This can be checked with a Q-Q plot
+- Error terms are independent of each other. This can be checked with a ACF plot. This can be used while checking independence while using a time-series data
+- Error terms are **homoscedastic**, i.e. they have constant variance. Residulas Vs Fitted graph should be flat. This means that the variability in the response is changing as the predicted value increases. This is a problem, in part, because the observations with larger errors will have more pull or influence on the fitted model.
 - The independent variables are not multicollinear. **Multicollinearity** is when a variable can be explained as a combination of other variables. This can be checked by using VIF(Variance inflation factor) $= \frac{1}{1-R_i^2}$.
 	- A VIF score of $>10$ indicates there there is a problem
 	- If a multicollinear variable is present the coefficients swing wildly thereby affecting the interpretability of the model. P-vales are not reliable. But it doesnot affect prediction or the goodness of fit statistics.
@@ -36,7 +45,7 @@ Now once you have the model fit next comes the metrics to measure hoe good the f
 
 
 
-
+#### Problems
 
 ```{admonition} Problem: Regression Coefficient
 :class: tip, dropdown
@@ -74,5 +83,6 @@ Linear Regression as per me can be used in Time Series but might not always give
 
 - Linear Regression is good for intrapolation but not for extrapolation so the results can vary wildly
 - When Linear Regression is used but observations are correlated (as in time series data) you will have a biased estimate of the variance
+- Moreover, time-series data have a pattern, such as during peak hours, festive seasons, etc., which would most likely be treated as outliers in the linear regression analysis
 
 ```

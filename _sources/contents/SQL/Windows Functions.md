@@ -205,7 +205,7 @@ Given you have user data for 2 accounts for 2 months. Calculate the growth rate 
 
 ```
 
-```{admonition} Problem: User Growth
+```{admonition} Problem: Month over Month Revenue
 :class: tip, dropdown
 **Asked By - SALESFORCE**
 **[🔫Playground](https://dbfiddle.uk/?rdbms=sqlserver_2017&fiddle=72569e574e670b477d2f62fdfc4276ca)**

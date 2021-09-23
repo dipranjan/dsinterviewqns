@@ -144,6 +144,18 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
+  NLP
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../NLP/Lexical%20Processing.html">
+   Lexical Processing
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
   Python
  </span>
 </p>
@@ -300,6 +312,28 @@
   <a class="reference internal nav-link" href="#linear-regression">
    Linear Regression
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#metrics">
+     Metrics
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#feature-selection">
+     Feature selection
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assumptions">
+     Assumptions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problems">
+     Problems
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -322,19 +356,30 @@
 <img alt="../../_images/image23.PNG" src="../../_images/image23.PNG" />
 <p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text"><a class="reference external" href="https://www.shutterstock.com/image-illustration/annotated-diagram-explaining-components-graph-showing-1406041139">📖Source</a></span><a class="headerlink" href="#image2" title="Permalink to this image">¶</a></p>
 </div>
-<p>Now once you have the model fit next comes the metrics to measure hoe good the fit is, some of the common metrics are as follows:</p>
+<div class="section" id="metrics">
+<h3>Metrics<a class="headerlink" href="#metrics" title="Permalink to this headline">¶</a></h3>
+<p>Now once you have the model fit next comes the metrics to measure how good the fit is, some of the common metrics are as follows:</p>
 <ul class="simple">
 <li><p><strong><span class="math notranslate nohighlight">\(RSS\)</span></strong> (Residual sum of squares) <span class="math notranslate nohighlight">\(= (Y_{actual} - Y_{predicted})^2\)</span>, it changes with scale change</p></li>
 <li><p><strong><span class="math notranslate nohighlight">\(TSS\)</span></strong> (Total sum of squares) <span class="math notranslate nohighlight">\(= (Y_{actual} - Y_{avg})^2\)</span></p></li>
 <li><p><strong><span class="math notranslate nohighlight">\(R^2\)</span></strong> <span class="math notranslate nohighlight">\(= 1-\frac{RSS}{TSS} \)</span>, more the better, increases with more coefficients</p></li>
 <li><p><strong><span class="math notranslate nohighlight">\(RSE\)</span></strong> (Residual Standard Error) <span class="math notranslate nohighlight">\( = \sqrt{\frac{RSS}{d.o.f}}\)</span>, here <span class="math notranslate nohighlight">\(d.o.f = n-2\)</span></p></li>
 </ul>
-<p><strong>Assumptions of Linear Regression</strong> :</p>
+</div>
+<div class="section" id="feature-selection">
+<h3>Feature selection<a class="headerlink" href="#feature-selection" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>The relationship between <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> is linear</p></li>
-<li><p>The error terms are normally distributed. This can be checked with a Q-Q plot</p></li>
-<li><p>Error terms are independent of each other. This can be checked with a ACF plot</p></li>
-<li><p>Error terms are homoscedastic, i.e. they have constant variance. Residulas Vs Fitted graph should be flat</p></li>
+<li><p>Hypothesis testing and using p-values to understand if the feature is important or not</p></li>
+<li><p>Using metrics like Adjusted <span class="math notranslate nohighlight">\(R^2\)</span>, AIC, BIC, etc. which takes into consideration the number of features used to build the model and penalizes accordingly</p></li>
+</ul>
+</div>
+<div class="section" id="assumptions">
+<h3>Assumptions<a class="headerlink" href="#assumptions" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>The relationship between <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> is <strong>linear</strong>. Because we are fitting a linear model, we assume that the relationship really is linear, and that the errors, or residuals, are simply random fluctuations around the true line.</p></li>
+<li><p>The error terms are <strong>normally distributed</strong>. This can be checked with a Q-Q plot</p></li>
+<li><p>Error terms are independent of each other. This can be checked with a ACF plot. This can be used while checking independence while using a time-series data</p></li>
+<li><p>Error terms are <strong>homoscedastic</strong>, i.e. they have constant variance. Residulas Vs Fitted graph should be flat. This means that the variability in the response is changing as the predicted value increases. This is a problem, in part, because the observations with larger errors will have more pull or influence on the fitted model.</p></li>
 <li><p>The independent variables are not multicollinear. <strong>Multicollinearity</strong> is when a variable can be explained as a combination of other variables. This can be checked by using VIF(Variance inflation factor) <span class="math notranslate nohighlight">\(= \frac{1}{1-R_i^2}\)</span>.</p>
 <ul>
 <li><p>A VIF score of <span class="math notranslate nohighlight">\(&gt;10\)</span> indicates there there is a problem</p></li>
@@ -349,6 +394,9 @@
 </ul>
 </li>
 </ul>
+</div>
+<div class="section" id="problems">
+<h3>Problems<a class="headerlink" href="#problems" title="Permalink to this headline">¶</a></h3>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Problem: Regression Coefficient</p>
 <p><strong>Asked By - UPSTART</strong></p>
@@ -374,7 +422,9 @@
 <ul class="simple">
 <li><p>Linear Regression is good for intrapolation but not for extrapolation so the results can vary wildly</p></li>
 <li><p>When Linear Regression is used but observations are correlated (as in time series data) you will have a biased estimate of the variance</p></li>
+<li><p>Moreover, time-series data have a pattern, such as during peak hours, festive seasons, etc., which would most likely be treated as outliers in the linear regression analysis</p></li>
 </ul>
+</div>
 </div>
 </div>
 </div>
