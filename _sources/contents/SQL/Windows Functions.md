@@ -112,8 +112,6 @@ Select the second highest mark for each student.
 
 
 
-
-
 ```{admonition} Problem: Consecutive Numbers
 :class: tip, dropdown
 
@@ -174,3 +172,75 @@ Multiple solutions are possible, one of them is given below
 
 ```
 
+
+
+```{admonition} Problem: User Growth
+:class: tip, dropdown
+**Asked By - SALESFORCE**
+**[🔫Playground](https://dbfiddle.uk/?rdbms=sqlserver_2017&fiddle=ce4ded37fa37bf552365c18cb7840c3b)**
+
+Given you have user data for 2 accounts for 2 months. Calculate the growth rate of users in each account where growth rate is defined as unique users in month 2 divided by unique users in month 1.
+
+
+```
+
+```{admonition} Solution:
+:class: dropdown
+
+	`
+	with cte as (
+	select account_id, count(distinct(user_id)) as unique_user, MONTH(date_details) as user_month from tablename
+	group by account_id, MONTH(date_details)
+	)
+
+	select a.account_id,month_2,month_1,
+	cast((month_2/month_1)as float) as growth  from 
+	(select account_id, unique_user as month_1
+	from cte where user_month = 1)a
+	left join
+	(select account_id, unique_user as month_2
+	from cte where user_month = 2)b
+	on (a.account_id = b.account_id)
+	`
+
+```
+
+```{admonition} Problem: User Growth
+:class: tip, dropdown
+**Asked By - SALESFORCE**
+**[🔫Playground](https://dbfiddle.uk/?rdbms=sqlserver_2017&fiddle=72569e574e670b477d2f62fdfc4276ca)**
+
+You have 2 tables:
+
+ - transactions: date, prod_id, quantity
+ - products: prod_id, price
+
+ Calculate the month over month revenue, example month over month revenue for month2 is month2_Revenue- month1_Revenue
+
+
+```
+
+```{admonition} Solution:
+:class: dropdown
+
+	`
+	with 
+	cte as(
+	select MONTH(a.date_details) as month, sum(b.price*a.qty) as Rev
+	from transactions a
+	inner join products b
+	on a.prod_id = b.prod_id
+	group by MONTH(a.date_details)
+	),
+
+	cte2 as(
+	select month, Rev, lag(Rev,1) over(order by month) as prev_month
+	from cte
+	)
+
+	select month, (Rev-Prev_month) as extra_rev  from cte2
+	where 
+	prev_month is not null
+	`
+
+```
