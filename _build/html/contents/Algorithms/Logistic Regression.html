@@ -56,7 +56,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Anomaly Detection" href="Anomaly%20Detection.html" />
-    <link rel="prev" title="Hypothesis Testing" href="../Statistics/Hypothesis%20Testing.html" />
+    <link rel="prev" title="Regression" href="Regression.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -126,6 +126,11 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Regression.html">
+   Regression
+  </a>
+ </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Logistic Regression
@@ -136,9 +141,16 @@
    Anomaly Detection
   </a>
  </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  NLP
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="Regression.html">
-   Regression
+  <a class="reference internal" href="../NLP/Lexical%20Processing.html">
+   Lexical Processing
   </a>
  </li>
 </ul>
@@ -291,6 +303,29 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cost-function">
+   Cost Function
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#metrics">
+   Metrics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problems">
+   Problems
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -301,8 +336,35 @@
                 
   <div class="section" id="logistic-regression">
 <h1>Logistic Regression<a class="headerlink" href="#logistic-regression" title="Permalink to this headline">¶</a></h1>
+<p>It is easy to say that the linear regression predicts a “value” of the targeted variable through a linear combination of the given features, while on the other hand, a Logistic regression predicts “probability value” through a linear combination of the given features plugged inside a logistic function.
+Linear regression is unbounded, and this brings logistic regression into picture. Their value strictly ranges from 0 to 1.</p>
+<div class="figure align-default" id="image3">
+<a class="reference internal image-reference" href="../../_images/image3.PNG"><img alt="../../_images/image3.PNG" src="../../_images/image3.PNG" style="width: 687.6px; height: 345.59999999999997px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Logistic regression uses Sigmoid function to transform linear regression into the logit function. Logit is nothing but log of Odds. Then using log of Odds it calculate the required probability.(<a class="reference external" href="https://www.vebuso.com/2020/02/linear-to-logistic-regression-explained-step-by-step/">📖Source</a>)</span><a class="headerlink" href="#image3" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="cost-function">
+<h2>Cost Function<a class="headerlink" href="#cost-function" title="Permalink to this headline">¶</a></h2>
+<p>One more thing to note here is that logistic regression uses maximum likelihood estimation (MLE) instead of least squares method of minimizing the error which is used in linear models. In Linear regression we minimized SSE. In Logistic Regression we maximize log likelihood instead. Linear regression uses mean squared error as its cost function. If this is used for logistic regression, then it will be a non-convex function of parameters (theta). Gradient descent will converge into global minimum only if the function is convex.</p>
+<div class="figure align-default" id="image4">
+<a class="reference internal image-reference" href="../../_images/image4.PNG"><img alt="../../_images/image4.PNG" src="../../_images/image4.PNG" style="width: 356.8px; height: 192.4px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Cost function(<a class="reference external" href="https://pvgisours.tistory.com/59">📖Source</a>)</span><a class="headerlink" href="#image4" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="metrics">
+<h2>Metrics<a class="headerlink" href="#metrics" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default" id="image5">
+<a class="reference internal image-reference" href="../../_images/image5.PNG"><img alt="../../_images/image5.PNG" src="../../_images/image5.PNG" style="width: 601.6px; height: 344.8px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Confusion Matrix and key Metrics</span><a class="headerlink" href="#image5" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="image6">
+<a class="reference internal image-reference" href="../../_images/image6.PNG"><img alt="../../_images/image6.PNG" src="../../_images/image6.PNG" style="width: 636.8000000000001px; height: 365.6px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">(a) ROC curve (b) Precision-Recall curve. Both are a helpful diagnostic tool for evaluating a single classifier but challenging for comparing classifiers. Like ROC AUC, we can calculate the area under the curve as a score and use that score to compare classifiers. The focus on the minority class makes the Precision-Recall AUC more useful for imbalanced classification problems. (<a class="reference external" href="https://machinelearningmastery.com/tour-of-evaluation-metrics-for-imbalanced-classification/">📖Source</a>)</span><a class="headerlink" href="#image6" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="problems">
+<h2>Problems<a class="headerlink" href="#problems" title="Permalink to this headline">¶</a></h2>
 <div class="tip dropdown admonition">
-<p class="admonition-title">Problem:</p>
+<p class="admonition-title">Problem: Interpret Coefficients</p>
 <p><strong>Asked By - ROBINHOOD</strong></p>
 <p>How would you interpret coefficients of logistic regression for categorical and boolean variables?</p>
 </div>
@@ -322,6 +384,16 @@
 <p>We then need to add the (Intercept), also sometimes called the constant, which gives us <span class="math notranslate nohighlight">\(-0.53- 1.41 = -1.94\)</span>. To make the next bit a little more transparent, I am going to substitute <span class="math notranslate nohighlight">\(-1.94\)</span> with <span class="math notranslate nohighlight">\(x\)</span>. The logistic transformation is:</p>
 <p>Probability <span class="math notranslate nohighlight">\(= \frac{1} {1 + \exp^{-x}} = \frac{1}{1 + \exp^{1.94}} = 0.13 = 13\%\)</span>.</p>
 <p>Thus, the senior citizen with a <span class="math notranslate nohighlight">\(2\)</span> month tenure, no internet service, a one year contract, and a monthly charge of $<span class="math notranslate nohighlight">\(100\)</span>, is predicted as having a <span class="math notranslate nohighlight">\(13\%\)</span> chance of cancelling their subscription. By contrast if we redo this, just changing one thing, which is substituting the effect for no internet service <span class="math notranslate nohighlight">\((0)\)</span> with that for a fiber optic connection <span class="math notranslate nohighlight">\((1.86)\)</span>, we compute that they have a <span class="math notranslate nohighlight">\(48\%\)</span> chance of cancelling.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: Multinomial Logistic Regression</p>
+<p>Can Logistic Regression be used for multi class classification?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>Logistic regression, by default, is limited to two-class classification problems. Some extensions like one-vs-rest can allow logistic regression to be used for multi-class classification problems, although they require that the classification problem first be transformed into multiple binary classification problems.</p>
+<p>Multinomial logistic regression algorithm is an extension to the logistic regression model that involves changing the loss function to cross-entropy loss and predict probability distribution to a multinomial probability distribution to natively support multi-class classification problems.</p>
+</div>
 </div>
 </div>
 
@@ -355,11 +427,11 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="../Statistics/Hypothesis%20Testing.html" title="previous page">
+        <a class="left-prev" href="Regression.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Hypothesis Testing</p>
+                <p class="prevnext-title">Regression</p>
             </div>
         </a>
     </div>
