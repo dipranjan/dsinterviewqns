@@ -314,8 +314,28 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stationarity">
+   Stationarity
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#arima-family">
+   ARIMA family
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prophet">
+   Prophet
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#metrics">
    Metrics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#questions">
+   Questions
   </a>
  </li>
 </ul>
@@ -374,6 +394,51 @@
 <p>Exponentiality is hidden in the recursiveness of the function – we multiply by <span class="math notranslate nohighlight">\((1-\alpha)\)</span> each time, which already contains a multiplication by <span class="math notranslate nohighlight">\((1-\alpha)\)</span> of previous model values.</p>
 </li>
 </ul>
+<div class="section" id="stationarity">
+<h2>Stationarity<a class="headerlink" href="#stationarity" title="Permalink to this headline">¶</a></h2>
+<p>Before we start modeling, we should mention such an important property of time series, <strong>stationarity</strong>.</p>
+<p>So why is stationarity so important? Because it is easy to make predictions on a stationary series since we can assume that the future statistical properties will not be different from those currently observed. Most of the time-series models, in one way or the other, try to predict those properties (mean or variance, for example). Furture predictions would be wrong if the original series were not stationary.</p>
+<p>When running a linear regression the assumption is that all of the observations are all independent of each other. In a time series, however, we know that observations are time dependent. It turns out that a lot of nice results that hold for independent random variables (law of large numbers and central limit theorem to name a couple) hold for stationary random variables. So by making the data stationary, we can actually apply regression techniques to this time dependent variable.</p>
+<p><strong>Dickey-Fuller test</strong> can be used as a check for stationarity. If ‘Test Statistic’ is greater than the ‘Critical Value’ then the time series is stationary.</p>
+<p>There are a few ways to deal with non-stationarity:</p>
+<ul class="simple">
+<li><p>Deflation by CPI</p></li>
+<li><p>Logarithmic</p></li>
+<li><p>First Difference</p></li>
+<li><p>Seasonal Difference</p></li>
+<li><p>Seasonal Adjustment</p></li>
+</ul>
+<p>Plot the ACF and PACF charts and find the optimal parameters.</p>
+</div>
+<div class="section" id="arima-family">
+<h2>ARIMA family<a class="headerlink" href="#arima-family" title="Permalink to this headline">¶</a></h2>
+<p>We will explain this model by building up letter by letter. <span class="math notranslate nohighlight">\(SARIMA(p, d, q)(P, D, Q, s)\)</span>, Seasonal Autoregression Moving Average model:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(AR(p)\)</span> - autoregression model i.e. regression of the time series onto itself. The basic assumption is that the current series values depend on its previous values with some lag (or several lags). The maximum lag in the model is referred to as <span class="math notranslate nohighlight">\(p\)</span>. To determine the initial <span class="math notranslate nohighlight">\(p\)</span>, you need to look at the PACF plot and find the biggest significant lag after which <strong>most</strong> other lags become insignificant.</p></li>
+<li><p><span class="math notranslate nohighlight">\(MA(q)\)</span> - moving average model. Without going into too much detail, this models the error of the time series, again with the assumption that the current error depends on the previous with some lag, which is referred to as <span class="math notranslate nohighlight">\(q\)</span>. The initial value can be found on the ACF plot with the same logic as before.</p></li>
+</ul>
+<p>Let’s combine our first 4 letters:</p>
+<p><span class="math notranslate nohighlight">\(AR(p) + MA(q) = ARMA(p, q)\)</span></p>
+<p>What we have here is the Autoregressive–moving-average model! If the series is stationary, it can be approximated with these 4 letters. Let’s continue.</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(I(d)\)</span> - order of integration. This is simply the number of nonseasonal differences needed to make the series stationary.</p></li>
+</ul>
+<p>Adding this letter to the four gives us the <span class="math notranslate nohighlight">\(ARIMA\)</span> model which can handle non-stationary data with the help of nonseasonal differences. Great, one more letter to go!</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(S(s)\)</span> - this is responsible for seasonality and equals the season period length of the series</p></li>
+</ul>
+<p>With this, we have three parameters: <span class="math notranslate nohighlight">\((P, D, Q)\)</span></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(P\)</span> - order of autoregression for the seasonal component of the model, which can be derived from PACF. But you need to look at the number of significant lags, which are the multiples of the season period length. For example, if the period equals 24 and we see the 24-th and 48-th lags are significant in the PACF, that means the initial <span class="math notranslate nohighlight">\(P\)</span> should be 2.</p></li>
+<li><p><span class="math notranslate nohighlight">\(Q\)</span> - similar logic using the ACF plot instead.</p></li>
+<li><p><span class="math notranslate nohighlight">\(D\)</span> - order of seasonal integration. This can be equal to 1 or 0, depending on whether seasonal differeces were applied or not.</p></li>
+</ul>
+</div>
+<div class="section" id="prophet">
+<h2>Prophet<a class="headerlink" href="#prophet" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://stats.stackexchange.com/questions/472266/inference-in-time-series-prophet-vs-arima">📖 Check out this discussion</a></p>
+<p>ARIMA and similar models assume some sort of causal relationship between past values and past errors and future values of the time series. Facebook Prophet doesn’t look for any such causal relationships between past and future. Instead, it simply tries to find the best curve to fit to the data, using a linear or logistic curve, and Fourier coefficients for the seasonal components. There is also a regression component, but that is for external regressors, not for the time series itself (The Prophet model is a special case of GAM - Generalized Additive Model).</p>
+</div>
 <div class="section" id="metrics">
 <h2>Metrics<a class="headerlink" href="#metrics" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -400,6 +465,18 @@
 <li><p><strong>Mean Absolute Percentage Error:</strong> this is the same as MAE but is computed as a percentage, which is very convenient when you want to explain the quality of the model to management, <span class="math notranslate nohighlight">\([0, +\infty)\)</span></p></li>
 </ul>
 <p><span class="math notranslate nohighlight">\(MAPE = \frac{100}{n}\sum\limits_{i=1}^{n} \frac{|y_i - \hat{y}_i|}{y_i}\)</span></p>
+</div>
+<div class="section" id="questions">
+<h2>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h2>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: Cross Validation with Time Series</p>
+<p>Can cross validation be used with Time Series to estimate model parameters automatically?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>Normal cross-validation cannot be used for time series because one cannot randomly mix values in a fold while preserving this structure. With randomization, all time dependencies between observations will be lost. But something like “cross-validation on a rolling basis” can be used.</p>
+<p>The idea is rather simple – we train our model on a small segment of the time series from the beginning until some <span class="math notranslate nohighlight">\(t\)</span>, make predictions for the next <span class="math notranslate nohighlight">\(t+n\)</span> steps, and calculate an error. Then, we expand our training sample to <span class="math notranslate nohighlight">\(t+n\)</span> value, make predictions from <span class="math notranslate nohighlight">\(t+n\)</span> until <span class="math notranslate nohighlight">\(t+2*n\)</span>, and continue moving our test segment of the time series until we hit the last available observation. As a result, we have as many folds as <span class="math notranslate nohighlight">\(n\)</span> will fit between the initial training sample and the last observation.</p>
+</div>
 </div>
 </div>
 

@@ -12,6 +12,9 @@ TSQL JOIN Types, [Reference](https://stevestedman.com/2015/05/tsql-join-types-po
 In case multiple joins each single join produces a **single derived table** that is then joined to the next table and so on.
 
 
+
+#### Questions
+
 ```{admonition} Problem:
 :class: tip, dropdown
 
