@@ -244,3 +244,76 @@ You have 2 tables:
 	`
 
 ```
+
+
+```{admonition} Problem: Employee earning more than their manager
+:class: tip, dropdown
+
+**Reference - [Leetcode](https://leetcode.com/problems/employees-earning-more-than-their-managers/)**
+
+Write an SQL query to find the employees who earn more than their managers.
+
+| Id | Name  | Salary | ManagerId |
+|---:|-------|-------:|----------:|
+|  1 | Joe   |  70000 |         3 |
+|  2 | Henry |  80000 |         4 |
+|  3 | Sam   |  60000 |           |
+|  4 | Max   |  90000 |           |
+
+Output will be : Joe
+
+```
+
+```{admonition} Solution:
+:class: dropdown
+
+
+	`
+
+	with cte as(
+	Select a.Name as Employee, b.Name as Manager, a.Salary as Emp_Sal, b.Salary as Man_Salary
+	from Employee a
+	inner join Employee b
+	on a.ManagerId = b.id)
+
+	Select Employee from cte where Emp_Sal > Man_Salary
+
+	`
+
+```
+
+```{admonition} Problem: Employee earning more than their manager
+:class: tip, dropdown
+
+**Reference - [Leetcode](https://leetcode.com/problems/department-highest-salary/)**
+
+Write an SQL query to find employees who have the highest salary in each of the departments.
+
+	```{figure} ../SQL/images/image3.PNG
+	---
+	name: image3
+	scale: 100%
+	---
+	```
+
+```
+
+```{admonition} Solution:
+:class: dropdown
+
+
+	`
+	with cte as(
+	select Name, Salary, DepartmentId,
+	RANK() over(Partition by DepartmentId order by salary desc) as Rank
+	from Employee
+	    )
+	    
+	select b.Name as Department, a.Name as Employee, a.Salary
+	from cte a
+	inner join Department b
+	on a.DepartmentId = b.Id
+	where a.Rank = 1
+	`
+
+```
