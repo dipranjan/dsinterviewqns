@@ -11,6 +11,7 @@ parts:
     chapters:
     - file: contents/Algorithms/Regression
     - file: contents/Algorithms/Logistic Regression
+    - file: contents/Algorithms/Time Series Analysis
     - file: contents/Algorithms/Anomaly Detection
   - caption: NLP
     chapters:
