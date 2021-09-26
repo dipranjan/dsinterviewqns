@@ -1,6 +1,9 @@
 format: jb-book
 root: intro
 parts:
+  - caption: To Do
+    chapters:
+    - file: contents/To Do List
   - caption: Statistics
     chapters:
     - file: contents/Statistics/Probability Basics
@@ -29,5 +32,4 @@ parts:
     - file: contents/SQL/Functions
   - caption: Machine Learning Hardware
     chapters:
-    - file: contents/ML Hardware/To Do
     - file: contents/ML Hardware/Machine Learning Hardware
