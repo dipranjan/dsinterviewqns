@@ -306,6 +306,19 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#questions">
+   Questions
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -353,6 +366,8 @@ They allow you to add your favourite aggregate function to a non-aggregate query
 </li>
 </ul>
 <p>One problem is you cannot add window functions to the WHERE clause.</p>
+<div class="section" id="questions">
+<h2>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h2>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Problem: Rank Scores</p>
 <p><strong>Reference - <a class="reference external" href="https://leetcode.com/problems/rank-scores/">Leetcode</a></strong></p>
@@ -690,6 +705,7 @@ on a.DepartmentId = b.Id
 where a.Rank = 1
 `
 </pre></div>
+</div>
 </div>
 </div>
 </div>

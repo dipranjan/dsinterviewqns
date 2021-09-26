@@ -135,6 +135,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../Algorithms/Time%20Series%20Analysis.html">
+   Time Series Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../Algorithms/Anomaly%20Detection.html">
    Anomaly Detection
   </a>
@@ -301,6 +306,19 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#questions">
+   Questions
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -317,6 +335,8 @@
 <p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">TSQL JOIN Types, <a class="reference external" href="https://stevestedman.com/2015/05/tsql-join-types-poster-version-4-1/">Reference</a></span><a class="headerlink" href="#image1" title="Permalink to this image">¶</a></p>
 </div>
 <p>In case multiple joins each single join produces a <strong>single derived table</strong> that is then joined to the next table and so on.</p>
+<div class="section" id="questions">
+<h2>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h2>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Problem:</p>
 <p><strong>Reference - <a class="reference external" href="https://leetcode.com/problems/combine-two-tables/">Leetcode</a></strong></p>
@@ -369,6 +389,7 @@
 <div class="dropdown admonition">
 <p class="admonition-title">Solution:</p>
 <p><code class="docutils literal notranslate"><span class="pre">select</span> <span class="pre">a.FirstName,</span> <span class="pre">a.LastName,</span> <span class="pre">b.City,</span> <span class="pre">b.State</span> <span class="pre">from</span> <span class="pre">Person</span> <span class="pre">a</span> <span class="pre">left</span> <span class="pre">join</span> <span class="pre">Address</span> <span class="pre">b</span> <span class="pre">on</span> <span class="pre">a.PersonId</span> <span class="pre">=</span> <span class="pre">b.PersonID</span></code></p>
+</div>
 </div>
 </div>
 
