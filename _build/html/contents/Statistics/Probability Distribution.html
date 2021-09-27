@@ -326,6 +326,33 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#measures-to-understand-a-distribution">
+   Measures to understand a distribution:
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#measure-of-central-tendency">
+     Measure of Central Tendency
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#measure-of-dispersion">
+     Measure of Dispersion
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#measure-to-describe-shape-of-distribution">
+     Measure to describe shape of distribution
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#box-plots">
+     Box Plots
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#unbiased-estimator">
    Unbiased Estimator
   </a>
@@ -374,6 +401,67 @@ The three coins can land in eight possible ways:</p>
 <p><strong>Frequency distribution</strong> comes from actually doing the experiment <span class="math notranslate nohighlight">\(n\)</span> number of times as <span class="math notranslate nohighlight">\(n --&gt; \infty\)</span> the shape comes closer and closer to the Probability distribution</p>
 <p>Now the probability distribution can be of 2 types, discrete and continous. An example of Discrete is shown above. When we use a probability function to describe a discrete probability distribution we call it a <strong>probability mass function (pmf)</strong>. The probability mass function, <span class="math notranslate nohighlight">\(f\)</span>, just returns the probability of the outcome. Therefore the probability of rolling a <span class="math notranslate nohighlight">\(3\)</span> is <span class="math notranslate nohighlight">\(f(3) = 1/6\)</span>.</p>
 <p>When we use a probability function to describe a continuous probability distribution we call it a <strong>probability density function (pdf)</strong>.</p>
+<p>Now depending on the problem type one can choose the corresponding distribution and find the probability for some value of the random variable.</p>
+<p>Some common types of probability distribution are as follows:</p>
+<div class="figure align-default" id="image3">
+<img alt="../../_images/image32.PNG" src="../../_images/image32.PNG" />
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Types of Probability Distribution</span><a class="headerlink" href="#image3" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="measures-to-understand-a-distribution">
+<h2>Measures to understand a distribution:<a class="headerlink" href="#measures-to-understand-a-distribution" title="Permalink to this headline">¶</a></h2>
+<p>There are 3 variety of measures, required to understand a distribution:</p>
+<ul class="simple">
+<li><p>Measure of Central tendency</p></li>
+<li><p>Measure of dispersion</p></li>
+<li><p>Measure to describe shape of curve</p></li>
+</ul>
+<div class="section" id="measure-of-central-tendency">
+<h3>Measure of Central Tendency<a class="headerlink" href="#measure-of-central-tendency" title="Permalink to this headline">¶</a></h3>
+<p>Measures of central tendencies are measures, which help you describe a population, through a single metric. For example, if you were to compare Saving habits of people across various nations, you will compare average Savings rate in each of these nations.
+Following are the measures of central tendency:</p>
+<ul class="simple">
+<li><p>Mean: or the average</p></li>
+<li><p>Median: the value, which divides the population in two half</p></li>
+<li><p>Mode: the most frequent value in a population</p></li>
+</ul>
+<div class="figure align-default" id="image4">
+<img alt="../../_images/image41.PNG" src="../../_images/image41.PNG" />
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Measure of Central Tendency. Mean is typically affected the most by Outliers, followed by the median and mode.</span><a class="headerlink" href="#image4" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="measure-of-dispersion">
+<h3>Measure of Dispersion<a class="headerlink" href="#measure-of-dispersion" title="Permalink to this headline">¶</a></h3>
+<p>Measures of dispersion reveal how is the population distributed around the measures of central tendency.</p>
+<ul class="simple">
+<li><p>Range: Difference in the maximum and minimum value in the population</p></li>
+<li><p>Quartiles: Values, which divide the population in 4 equal subsets (typically referred to as first quartile, second quartile and third quartile)</p></li>
+<li><p>Inter-quartile range: The difference in third quartile (Q3) and first quartile (Q1). By definition of quartiles, 50% of the population lies in the inter-quartile range.</p></li>
+<li><p>Variance: The average of the squared differences from the Mean.</p></li>
+<li><p>Standard Deviation: is square root of Variance</p></li>
+</ul>
+<div class="figure align-default" id="image5">
+<img alt="../../_images/image51.PNG" src="../../_images/image51.PNG" />
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">2 distributions with different standard deviations</span><a class="headerlink" href="#image5" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="measure-to-describe-shape-of-distribution">
+<h3>Measure to describe shape of distribution<a class="headerlink" href="#measure-to-describe-shape-of-distribution" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Skewness: Skewness is a measure of the asymmetry. Negatively skewed curve has a long left tail and vice versa.</p></li>
+<li><p>Kurtosis: Kurtosis is a measure of the “peaked ness”. Distributions with higher peaks have positive kurtosis and vice-versa</p></li>
+</ul>
+<div class="figure align-default" id="image6">
+<a class="reference internal image-reference" href="../../_images/image61.PNG"><img alt="../../_images/image61.PNG" src="../../_images/image61.PNG" style="width: 361.2px; height: 237.0px;" /></a>
+</div>
+</div>
+<div class="section" id="box-plots">
+<h3>Box Plots<a class="headerlink" href="#box-plots" title="Permalink to this headline">¶</a></h3>
+<p>Box plots are one of the easiest and most intuitive way to understand distributions. They show mean, median, quartiles and Outliers on single plot.</p>
+<div class="figure align-default" id="image7">
+<a class="reference internal image-reference" href="../../_images/image7.PNG"><img alt="../../_images/image7.PNG" src="../../_images/image7.PNG" style="width: 252.0px; height: 305.6px;" /></a>
+</div>
+</div>
 </div>
 <div class="section" id="unbiased-estimator">
 <h2>Unbiased Estimator<a class="headerlink" href="#unbiased-estimator" title="Permalink to this headline">¶</a></h2>

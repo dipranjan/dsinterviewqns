@@ -37,6 +37,79 @@ Now the probability distribution can be of 2 types, discrete and continous. An e
 
 When we use a probability function to describe a continuous probability distribution we call it a **probability density function (pdf)**.
 
+Now depending on the problem type one can choose the corresponding distribution and find the probability for some value of the random variable.
+
+Some common types of probability distribution are as follows:
+
+```{figure} ../Statistics/images/image3.PNG
+---
+name: image3
+---
+Types of Probability Distribution
+```
+
+### Measures to understand a distribution:
+
+There are 3 variety of measures, required to understand a distribution:
+- Measure of Central tendency
+- Measure of dispersion
+- Measure to describe shape of curve
+
+#### Measure of Central Tendency
+
+Measures of central tendencies are measures, which help you describe a population, through a single metric. For example, if you were to compare Saving habits of people across various nations, you will compare average Savings rate in each of these nations.
+Following are the measures of central tendency:
+- Mean: or the average
+- Median: the value, which divides the population in two half
+- Mode: the most frequent value in a population
+
+```{figure} ../Statistics/images/image4.PNG
+---
+name: image4
+---
+Measure of Central Tendency. Mean is typically affected the most by Outliers, followed by the median and mode.
+```
+
+#### Measure of Dispersion
+
+Measures of dispersion reveal how is the population distributed around the measures of central tendency.
+- Range: Difference in the maximum and minimum value in the population
+- Quartiles: Values, which divide the population in 4 equal subsets (typically referred to as first quartile, second quartile and third quartile)
+- Inter-quartile range: The difference in third quartile (Q3) and first quartile (Q1). By definition of quartiles, 50% of the population lies in the inter-quartile range.
+- Variance: The average of the squared differences from the Mean.
+- Standard Deviation: is square root of Variance
+
+```{figure} ../Statistics/images/image5.PNG
+---
+name: image5
+---
+2 distributions with different standard deviations
+```
+
+#### Measure to describe shape of distribution
+
+- Skewness: Skewness is a measure of the asymmetry. Negatively skewed curve has a long left tail and vice versa.
+- Kurtosis: Kurtosis is a measure of the “peaked ness”. Distributions with higher peaks have positive kurtosis and vice-versa
+
+```{figure} ../Statistics/images/image6.PNG
+---
+name: image6
+scale: 60%
+---
+```
+
+#### Box Plots
+
+Box plots are one of the easiest and most intuitive way to understand distributions. They show mean, median, quartiles and Outliers on single plot.
+```{figure} ../Statistics/images/image7.PNG
+---
+name: image7
+scale: 80%
+---
+```
+
+
+
 
 ### Unbiased Estimator
 
