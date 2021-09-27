@@ -39,6 +39,8 @@ When we use a probability function to describe a continuous probability distribu
 
 Now depending on the problem type one can choose the corresponding distribution and find the probability for some value of the random variable.
 
+
+### Types of Distribution
 Some common types of probability distribution are as follows:
 
 ```{figure} ../Statistics/images/image3.PNG
@@ -104,10 +106,25 @@ Box plots are one of the easiest and most intuitive way to understand distributi
 ```{figure} ../Statistics/images/image7.PNG
 ---
 name: image7
-scale: 80%
+scale: 60%
 ---
 ```
 
+### Normal(Gaussian) Distribution
+
+The normal distribution is the most important probability distribution in statistics because it fits many natural phenomena. For example, heights, blood pressure, measurement error, and IQ scores follow the normal distribution.
+
+Despite the different shapes, all forms of the normal distribution have the following characteristic properties.
+- They’re all symmetric. The normal distribution cannot model skewed distributions.
+- The mean, median, and mode are all equal.
+- Half of the population is less than the mean and half is greater than the mean.
+- The Empirical Rule, which describes the percentage of the data that fall within specific numbers of standard deviations from the mean for bell-shaped curves.
+
+|     Mean +/- standard deviations    |     Percentage of data contained    |
+|-------------------------------------|-------------------------------------|
+|     1                               |     68%                             |
+|     2                               |     95%                             |
+|     3                               |     99.7%                           |
 
 
 

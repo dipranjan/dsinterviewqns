@@ -8,6 +8,7 @@ parts:
     chapters:
     - file: contents/Statistics/Probability Basics
     - file: contents/Statistics/Probability Distribution
+    - file: contents/Statistics/Central Limit Theorem
     - file: contents/Statistics/Bayesian vs Frequentist Reasoning
     - file: contents/Statistics/Hypothesis Testing
   - caption: Algorithms
