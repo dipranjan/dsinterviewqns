@@ -17,3 +17,5 @@
 - ⌛ Excel [new section]
 - ⌛ Power BI [new section]
 - ⌛ Gradient Descent
+- ⌛ A/B Testing
+- ⌛ Clustering
