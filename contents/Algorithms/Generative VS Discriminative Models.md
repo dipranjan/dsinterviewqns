@@ -1,4 +1,4 @@
-## Generative VS Discriminative Models
+## Generative vs Discriminative Models
 
 Machine learning models can be classified into two types of models – Discriminative and Generative models. In simple words, a discriminative model makes predictions on the unseen data based on conditional probability and can be used either for classification or regression problem statements. On the contrary, a generative model focuses on the distribution of a dataset to return a probability for a given example.
 
@@ -7,7 +7,7 @@ Machine learning models can be classified into two types of models – Discrimin
 name: image7
 scale: 80%
 ---
-[📖Source](https://dataisutopia.com/blog/discremenet-generative-models/))
+[📖Source](https://dataisutopia.com/blog/discremenet-generative-models/)
 ```
 
 ### Discriminative Models
@@ -17,13 +17,13 @@ Discriminative models separate classes instead of modeling the conditional proba
 In case of outliers present in the dataset, then discriminative models work better compared to generative models i.e, discriminative models are more robust to outliers. However, there is one major drawback of these models is the misclassification problem, i.e., wrongly classifying a data point.
 
 Some examples are:
-
-‌- Logistic regression
-- Scalar Vector Machine (SVMs)
-‌- Traditional neural networks
-‌- Nearest neighbor
+‌
+- Scalar Vector Machine(SVMs)
 - Conditional Random Fields (CRFs)
 - Decision Trees and Random Forest
+- Logistic regression
+- Traditional Neural Networks
+- Nearest Neighbor
 
 
 ### Generative Models
@@ -35,7 +35,6 @@ These models use probability estimates and likelihood to model data points and d
 However, they also have a major drawback – If there is a presence of outliers in the dataset, then it affects these types of models to a significant extent.
 
 Some examples are:
-
 - Naïve Bayes
 - Bayesian networks
 - Markov random fields
@@ -44,7 +43,7 @@ Some examples are:
 - Generative Adversarial Networks (GANs)
 - Autoregressive Model
 
-#### Questions
+### Questions
 
 ```{admonition} Problem: Mathematical Intuition
 :class: tip, dropdown
