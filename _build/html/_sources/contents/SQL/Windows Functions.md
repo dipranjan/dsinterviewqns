@@ -282,19 +282,19 @@ Output will be : Joe
 
 ```
 
-```{admonition} Problem: Employee earning more than their manager
+```{admonition} Problem: Highest Salary in each Department
 :class: tip, dropdown
 
 **Reference - [Leetcode](https://leetcode.com/problems/department-highest-salary/)**
 
 Write an SQL query to find employees who have the highest salary in each of the departments.
 
-	```{figure} ../SQL/images/image3.PNG
-	---
-	name: image3
-	scale: 100%
-	---
-	```
+```{figure} ../SQL/images/image3.PNG
+---
+name: image3
+scale: 100%
+---
+```
 
 ```
 
@@ -302,7 +302,7 @@ Write an SQL query to find employees who have the highest salary in each of the 
 :class: dropdown
 
 
-	`
+`
 	with cte as(
 	select Name, Salary, DepartmentId,
 	RANK() over(Partition by DepartmentId order by salary desc) as Rank
@@ -314,6 +314,7 @@ Write an SQL query to find employees who have the highest salary in each of the 
 	inner join Department b
 	on a.DepartmentId = b.Id
 	where a.Rank = 1
-	`
+`
 
 ```
+

@@ -120,6 +120,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../Statistics/Central%20Limit%20Theorem.html">
+   Central Limit Theorem
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../Statistics/Bayesian%20vs%20Frequentist%20Reasoning.html">
    Bayesian vs Frequentist Reasoning
   </a>
@@ -139,6 +144,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../Algorithms/Regression.html">
    Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Algorithms/Generative%20VS%20Discriminative%20Models.html">
+   Generative VS Discriminative Models
   </a>
  </li>
  <li class="toctree-l1">
@@ -227,6 +237,18 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../ML%20Hardware/Machine%20Learning%20Hardware.html">
    CPU vs GPU vs TPU
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Analytical Thinking
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Analytical%20Thinking/Business%20Scenarios.html">
+   Business Scenarios
   </a>
  </li>
 </ul>
@@ -352,7 +374,7 @@ They allow you to add your favourite aggregate function to a non-aggregate query
 </ul>
 <div class="figure align-default" id="image2">
 <img alt="../../_images/image23.PNG" src="../../_images/image23.PNG" />
-<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">Ranking functions, check playground to work with this</span><a class="headerlink" href="#image2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">Ranking functions, check playground to work with this</span><a class="headerlink" href="#image2" title="Permalink to this image">¶</a></p>
 </div>
 <ul class="simple">
 <li><p><strong>Offset functions</strong></p>
@@ -684,35 +706,33 @@ Select Employee from cte where Emp_Sal &gt; Man_Salary
 </div>
 </div>
 <div class="tip dropdown admonition">
-<p class="admonition-title">Problem: Employee earning more than their manager</p>
+<p class="admonition-title">Problem: Highest Salary in each Department</p>
 <p><strong>Reference - <a class="reference external" href="https://leetcode.com/problems/department-highest-salary/">Leetcode</a></strong></p>
 <p>Write an SQL query to find employees who have the highest salary in each of the departments.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```{figure} ../SQL/images/image3.PNG
----
-name: image3
-scale: 100%
----
-```
-</pre></div>
+<div class="figure align-default" id="image3">
+<a class="reference internal image-reference" href="../../_images/image33.PNG"><img alt="../../_images/image33.PNG" src="../../_images/image33.PNG" style="width: 706.0px; height: 222.0px;" /></a>
 </div>
 </div>
-<div class="dropdown admonition">
-<p class="admonition-title">Solution:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>`
-with cte as(
-select Name, Salary, DepartmentId,
-RANK() over(Partition by DepartmentId order by salary desc) as Rank
-from Employee
-    )
-    
-select b.Name as Department, a.Name as Employee, a.Salary
-from cte a
-inner join Department b
-on a.DepartmentId = b.Id
-where a.Rank = 1
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+```{admonition} Solution:
+:class: dropdown
+
+
 `
+	with cte as(
+	select Name, Salary, DepartmentId,
+	RANK() over(Partition by DepartmentId order by salary desc) as Rank
+	from Employee
+	    )
+	    
+	select b.Name as Department, a.Name as Employee, a.Salary
+	from cte a
+	inner join Department b
+	on a.DepartmentId = b.Id
+	where a.Rank = 1
+`
+
 </pre></div>
-</div>
 </div>
 </div>
 </div>

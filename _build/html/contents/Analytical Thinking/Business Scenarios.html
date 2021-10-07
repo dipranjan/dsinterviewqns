@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lexical Processing &#8212; The Data Science Interview Book</title>
+    <title>Business Scenarios &#8212; The Data Science Interview Book</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -42,8 +42,6 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -51,12 +49,11 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/NLP/Lexical Processing.html" />
+    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/Analytical Thinking/Business Scenarios.html" />
     <link rel="shortcut icon" href="../../_static/logo.gif"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Basics" href="../Python/Basics.html" />
-    <link rel="prev" title="Anomaly Detection" href="../Algorithms/Anomaly%20Detection.html" />
+    <link rel="prev" title="CPU vs GPU vs TPU" href="../ML%20Hardware/Machine%20Learning%20Hardware.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -149,11 +146,6 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Algorithms/Generative%20VS%20Discriminative%20Models.html">
-   Generative VS Discriminative Models
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="../Algorithms/Logistic%20Regression.html">
    Logistic Regression
   </a>
@@ -174,9 +166,9 @@
   NLP
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../NLP/Lexical%20Processing.html">
    Lexical Processing
   </a>
  </li>
@@ -247,9 +239,9 @@
   Analytical Thinking
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../Analytical%20Thinking/Business%20Scenarios.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Business Scenarios
   </a>
  </li>
@@ -294,7 +286,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/contents/NLP/Lexical Processing.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/contents/Analytical Thinking/Business Scenarios.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -314,10 +306,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/NLP/Lexical Processing.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/Analytical Thinking/Business Scenarios.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/dipranjan/dsinterviewqns/edit/master/contents/NLP/Lexical Processing.md"><button
+        <a class="edit-button" href="https://github.com/dipranjan/dsinterviewqns/edit/master/contents/Analytical Thinking/Business Scenarios.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -345,42 +337,40 @@
         
               <div>
                 
-  <div class="section" id="lexical-processing">
-<h1>Lexical Processing<a class="headerlink" href="#lexical-processing" title="Permalink to this headline">¶</a></h1>
-<p>In any large text document (say, a hundred thousand words), the word frequencies follow Zipf distribution:</p>
-<div class="figure align-default" id="image1">
-<a class="reference internal image-reference" href="../../_images/image12.PNG"><img alt="../../_images/image12.PNG" src="../../_images/image12.PNG" style="width: 424.2px; height: 291.9px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">Zipf distribution</span><a class="headerlink" href="#image1" title="Permalink to this image">¶</a></p>
+  <div class="section" id="business-scenarios">
+<h1>Business Scenarios<a class="headerlink" href="#business-scenarios" title="Permalink to this headline">¶</a></h1>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: Netflix User Aquisition</p>
+<p>Suppose as a Netflix product Analyst you are speaking with a Product Manager of Netflix. You get the question as to “I would want to understand user base of Netflix”. What would be your approach?</p>
 </div>
-<ul>
-<li><p>Remove <strong>STOP words</strong> as they have high frequency and is most cases does not provide anything important</p></li>
-<li><p><strong>Tokenize</strong> or break the corpus by words, sentences, etc.</p></li>
-<li><p><strong>Canonicalisation</strong> or Reduce the words into their base forms:</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>This type of questions are basically a coversation and tries to judge your skills in breaking down the problem statement and providing an analytical solution.</p>
 <ul class="simple">
-<li><p><strong>Stemming:</strong> a rule-based technique that just chops off the suffix of a word to get its root form which is called the ‘stem’. For example converts driving, drive etc. to driv. But is not good for words like feet, drove etc.</p></li>
-<li><p><strong>Lemmatization:</strong> a more sophisticated technique, it doesn’t just chop off the suffix of a word. Instead, it takes an input word and searches for its base word by going recursively through all the variations of dictionary words. The base word, in this case, is called the ‘lemma’. It is more resource intensive and you need to pass the POS tag of the word along with the word to be lemmatized.</p></li>
-<li><p><strong>Phonetic Hashing:</strong> certain words which have different pronunciations in different languages. As a result, they end up being spelt differently. Example being Delhi and Dilli</p></li>
+<li><p>Ask follow up questions, these problem statements are kept vague to encourage you to ask questions</p></li>
+<li><p>Define KPIs</p></li>
+<li><p>Speak about your assumptions</p></li>
+<li><p>Break down the problem statement into 2-3 pieces and tell how would you solve them</p></li>
 </ul>
-<div class="figure align-default" id="image2">
-<a class="reference internal image-reference" href="../../_images/image22.PNG"><img alt="../../_images/image22.PNG" src="../../_images/image22.PNG" style="width: 387.20000000000005px; height: 209.20000000000002px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">Soundex Algorithm for Phonetic Hashing (<a class="reference external" href="https://www.sqlservercentral.com/articles/soundex-experiments-with-sqlclr-part-2">📖Source</a>)</span><a class="headerlink" href="#image2" title="Permalink to this image">¶</a></p>
 </div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: Survey Monkey Alternative</p>
+<p>Suppose your company has launched a Survey Monkey competitor and the PM wants to understand user growth. There are 2 flavors of the product:</p>
 <ul class="simple">
-<li><p><strong>Edit Distance:</strong> Edit distance is a way of quantifying how dissimilar two strings are to one another by counting the minimum number of operations required to transform one string into the other. There are different methodologies for doing it, e.g. Hamming distance,Levenshtein distance, Jaro-Winkler etc.</p></li>
-<li><p><strong>Pointwise Mutual Information(PMI):</strong> Words like “Massachusetts Institute of Technology” are essentially one word but tokenization reduces these into individual words which is not desireable. PMI is used to determine whether this term should be represented by a single token or not.</p></li>
+<li><p>Unlimited survey’s for 3 for a pro license</p></li>
+<li><p>One survey per license for a normal license</p></li>
 </ul>
-</li>
-<li><p>Convert the data into tabular form:</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>This type of questions are basically a coversation and tries to judge your skills in breaking down the problem statement and providing an analytical solution.</p>
 <ul class="simple">
-<li><p><strong>Bag of Words(BoW):</strong> A table containing which word is present in which document, can be either count or binary</p></li>
-<li><p><strong>tf-idf:</strong> is a numerical statistic that is intended to reflect how important a word is to a document in a collection or corpus. The tf–idf value increases proportionally to the number of times a word appears in the document and is offset by the number of documents in the corpus that contain the word, which helps to adjust for the fact that some words appear more frequently in general.</p>
-<ul>
-<li><p><span class="math notranslate nohighlight">\( tf-idf = \frac{\text{freq of term 't' in doc 'd'}}{\text{total terms in 'd'}} * log \frac{\text{total number of docs}}{\text{total number of docs having term 't'}}\)</span></p></li>
+<li><p>Ask follow up questions, these problem statements are kept vague to encourage you to ask questions</p></li>
+<li><p>Define KPIs</p></li>
+<li><p>Speak about your assumptions</p></li>
+<li><p>Break down the problem statement into 2-3 pieces and tell how would you solve them</p></li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -396,7 +386,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./contents\NLP"
+            path: "./contents\Analytical Thinking"
         },
         predefinedOutput: true
     }
@@ -413,23 +403,14 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="../Algorithms/Anomaly%20Detection.html" title="previous page">
+        <a class="left-prev" href="../ML%20Hardware/Machine%20Learning%20Hardware.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Anomaly Detection</p>
+                <p class="prevnext-title">CPU vs GPU vs TPU</p>
             </div>
         </a>
     </div>
-     <div id="next">
-        <a class="right-next" href="../Python/Basics.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Basics</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
 
 </div>
         

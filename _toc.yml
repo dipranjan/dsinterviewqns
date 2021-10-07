@@ -14,6 +14,7 @@ parts:
   - caption: Algorithms
     chapters:
     - file: contents/Algorithms/Regression
+    - file: contents/Algorithms/Generative VS Discriminative Models
     - file: contents/Algorithms/Logistic Regression
     - file: contents/Algorithms/Time Series Analysis
     - file: contents/Algorithms/Anomaly Detection
@@ -34,3 +35,6 @@ parts:
   - caption: Machine Learning Hardware
     chapters:
     - file: contents/ML Hardware/Machine Learning Hardware
+  - caption: Analytical Thinking
+    chapters:
+    - file: contents/Analytical Thinking/Business Scenarios

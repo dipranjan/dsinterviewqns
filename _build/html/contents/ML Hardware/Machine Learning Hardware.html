@@ -53,6 +53,7 @@
     <link rel="shortcut icon" href="../../_static/logo.gif"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Business Scenarios" href="../Analytical%20Thinking/Business%20Scenarios.html" />
     <link rel="prev" title="Functions" href="../SQL/Functions.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -119,6 +120,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../Statistics/Central%20Limit%20Theorem.html">
+   Central Limit Theorem
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../Statistics/Bayesian%20vs%20Frequentist%20Reasoning.html">
    Bayesian vs Frequentist Reasoning
   </a>
@@ -138,6 +144,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../Algorithms/Regression.html">
    Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Algorithms/Generative%20VS%20Discriminative%20Models.html">
+   Generative VS Discriminative Models
   </a>
  </li>
  <li class="toctree-l1">
@@ -226,6 +237,18 @@
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    CPU vs GPU vs TPU
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Analytical Thinking
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Analytical%20Thinking/Business%20Scenarios.html">
+   Business Scenarios
   </a>
  </li>
 </ul>
@@ -362,7 +385,7 @@
 <p>But, because the CPU is so flexible, the hardware doesn’t always know what would be next calculation until it reads the next instruction from the software. A CPU has to store the calculation results on memory inside CPU (so called registers or L1 cache) for every single calculation. This memory access becomes the downside of CPU architecture called the von Neumann bottleneck. Even though the huge scale of neural network calculations means that these future steps are entirely predictable, each CPU’s Arithmetic Logic Units (ALU, the component that holds and controls multipliers and adders) executes them one by one, accessing the memory every time, limiting the total throughput and consuming significant energy.</p>
 <div class="figure align-default" id="image2">
 <a class="reference internal image-reference" href="../../_images/image11.PNG"><img alt="../../_images/image11.PNG" src="../../_images/image11.PNG" style="height: 250px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">von Neumann Architecture</span><a class="headerlink" href="#image2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">von Neumann Architecture</span><a class="headerlink" href="#image2" title="Permalink to this image">¶</a></p>
 </div>
 <p>Since memory and the CPU are separated in this architecture, the performance of the system is often limited by the speed of accessing memory. Historically, the memory access speed is orders of magnitude slower than the actual processing speed, creating a bottleneck in the system performance.</p>
 <p>Furthermore, the physical movement of data consumes a significant amount of energy due to interconnect parasitics. In given situations, it has been observed that the physical movement of data from memory can consume up to 500 times more energy than the actual processing of that data. This trend is only expected to worsen as chips scale.</p>
@@ -382,7 +405,7 @@
 <p>This is why the TPU can achieve a high computational throughput on neural network calculations with much less power consumption and smaller footprint.</p>
 <div class="figure align-default" id="image3">
 <a class="reference internal image-reference" href="../../_images/image31.PNG"><img alt="../../_images/image31.PNG" src="../../_images/image31.PNG" style="height: 300px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">CPU vs GPU vs TPU</span><a class="headerlink" href="#image3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">CPU vs GPU vs TPU</span><a class="headerlink" href="#image3" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
@@ -425,6 +448,15 @@
             </div>
         </a>
     </div>
+     <div id="next">
+        <a class="right-next" href="../Analytical%20Thinking/Business%20Scenarios.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Business Scenarios</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
 
 </div>
         
