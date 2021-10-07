@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Generative VS Discriminative Models &#8212; The Data Science Interview Book</title>
+    <title>Generative vs Discriminative Models &#8212; The Data Science Interview Book</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -150,7 +150,7 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Generative VS Discriminative Models
+   Generative vs Discriminative Models
   </a>
  </li>
  <li class="toctree-l1">
@@ -351,13 +351,11 @@
   <a class="reference internal nav-link" href="#generative-models">
    Generative Models
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#questions">
-     Questions
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#questions">
+   Questions
+  </a>
  </li>
 </ul>
 
@@ -371,24 +369,25 @@
               <div>
                 
   <div class="section" id="generative-vs-discriminative-models">
-<h1>Generative VS Discriminative Models<a class="headerlink" href="#generative-vs-discriminative-models" title="Permalink to this headline">¶</a></h1>
+<h1>Generative vs Discriminative Models<a class="headerlink" href="#generative-vs-discriminative-models" title="Permalink to this headline">¶</a></h1>
 <p>Machine learning models can be classified into two types of models – Discriminative and Generative models. In simple words, a discriminative model makes predictions on the unseen data based on conditional probability and can be used either for classification or regression problem statements. On the contrary, a generative model focuses on the distribution of a dataset to return a probability for a given example.</p>
 <div class="figure align-default" id="image7">
-<a class="reference internal image-reference" href="../../_images/image71.PNG"><img alt="../../_images/image71.PNG" src="../../_images/image71.PNG" style="width: 540.0px; height: 336.0px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text"><a class="reference external" href="https://dataisutopia.com/blog/discremenet-generative-models/">📖Source</a>)</span><a class="headerlink" href="#image7" title="Permalink to this image">¶</a></p>
+<a class="reference internal image-reference" href="../../_images/image7.PNG"><img alt="../../_images/image7.PNG" src="../../_images/image7.PNG" style="width: 540.0px; height: 336.0px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text"><a class="reference external" href="https://dataisutopia.com/blog/discremenet-generative-models/">📖Source</a></span><a class="headerlink" href="#image7" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="discriminative-models">
 <h2>Discriminative Models<a class="headerlink" href="#discriminative-models" title="Permalink to this headline">¶</a></h2>
 <p>Discriminative models separate classes instead of modeling the conditional probability and don’t make any assumptions about the data points. But these models are not capable of generating new data points. Therefore, the ultimate objective of discriminative models is to separate one class from another.</p>
 <p>In case of outliers present in the dataset, then discriminative models work better compared to generative models i.e, discriminative models are more robust to outliers. However, there is one major drawback of these models is the misclassification problem, i.e., wrongly classifying a data point.</p>
-<p>Some examples are:</p>
-<p>‌- Logistic regression</p>
+<p>Some examples are:
+‌</p>
 <ul class="simple">
-<li><p>Scalar Vector Machine (SVMs)
-‌- Traditional neural networks
-‌- Nearest neighbor</p></li>
+<li><p>Scalar Vector Machine(SVMs)</p></li>
 <li><p>Conditional Random Fields (CRFs)</p></li>
 <li><p>Decision Trees and Random Forest</p></li>
+<li><p>Logistic regression</p></li>
+<li><p>Traditional Neural Networks</p></li>
+<li><p>Nearest Neighbor</p></li>
 </ul>
 </div>
 <div class="section" id="generative-models">
@@ -406,8 +405,9 @@
 <li><p>Generative Adversarial Networks (GANs)</p></li>
 <li><p>Autoregressive Model</p></li>
 </ul>
+</div>
 <div class="section" id="questions">
-<h3>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h3>
+<h2>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h2>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Problem: Mathematical Intuition</p>
 <p>Can you describe the distinction between Generative and Discriminative Models from the probability standpoint?</p>
@@ -415,7 +415,6 @@
 <div class="dropdown admonition">
 <p class="admonition-title">Solution:</p>
 <p>In mathematical terms, a discriminative machine learning trains a model which is done by learning parameters that maximize the conditional probability <span class="math notranslate nohighlight">\(P(Y|X)\)</span>, while on the other hand, a generative model learns parameters by maximizing the joint probability of <span class="math notranslate nohighlight">\(P(X,Y)\)</span>.</p>
-</div>
 </div>
 </div>
 </div>

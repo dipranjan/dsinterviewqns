@@ -1,6 +1,5 @@
 # To Do
 
-
 - 🚧 Hypothesis Testing
 - 🚧 Anamoly Detection
 - 🚧 NLP
@@ -19,3 +18,4 @@
 - ⌛ Gradient Descent
 - ⌛ A/B Testing
 - ⌛ Clustering
+- ✔ Generative VS Discriminative Models
