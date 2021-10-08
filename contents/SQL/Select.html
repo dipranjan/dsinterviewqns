@@ -148,7 +148,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Algorithms/Generative%20VS%20Discriminative%20Models.html">
-   Generative VS Discriminative Models
+   Generative vs Discriminative Models
   </a>
  </li>
  <li class="toctree-l1">
@@ -373,7 +373,16 @@
 <div class="dropdown admonition">
 <p class="admonition-title">Solution:</p>
 <p>Multiple solutions are possible only one approach is given below for reference</p>
-<p><code class="docutils literal notranslate"><span class="pre">SELECT</span>&#160;&#160;&#160;&#160; <span class="pre">(SELECT</span> <span class="pre">DISTINCT</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Salary</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">FROM</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Employee</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">ORDER</span> <span class="pre">BY</span> <span class="pre">Salary</span> <span class="pre">DESC</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">LIMIT</span> <span class="pre">1</span> <span class="pre">OFFSET</span> <span class="pre">1)</span> <span class="pre">AS</span> <span class="pre">SecondHighestSalary</span></code></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>`
+SELECT
+(SELECT DISTINCT(Salary)
+FROM Employee
+ORDER BY Salary DESC
+LIMIT 1 OFFSET 1) 
+AS SecondHighestSalary
+`
+</pre></div>
+</div>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Problem: HAVING vs WHERE</p>

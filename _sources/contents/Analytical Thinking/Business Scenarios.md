@@ -1,9 +1,9 @@
 ## Business Scenarios
 
-
-
 ```{admonition} Problem: Netflix User Aquisition
 :class: tip, dropdown
+
+**Asked By - SALESFORCE**
 
 Suppose as a Netflix product Analyst you are speaking with a Product Manager of Netflix. You get the question as to "I would want to understand user base of Netflix". What would be your approach?
 
@@ -23,6 +23,8 @@ This type of questions are basically a coversation and tries to judge your skill
 
 ```{admonition} Problem: Survey Monkey Alternative
 :class: tip, dropdown
+
+**Asked By - SALESFORCE**
 
 Suppose your company has launched a Survey Monkey competitor and the PM wants to understand user growth. There are 2 flavors of the product:
 

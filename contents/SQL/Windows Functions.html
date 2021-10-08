@@ -148,7 +148,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Algorithms/Generative%20VS%20Discriminative%20Models.html">
-   Generative VS Discriminative Models
+   Generative vs Discriminative Models
   </a>
  </li>
  <li class="toctree-l1">
@@ -654,7 +654,8 @@ prev_month is not null
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Problem: Employee earning more than their manager</p>
-<p><strong>Reference - <a class="reference external" href="https://leetcode.com/problems/employees-earning-more-than-their-managers/">Leetcode</a></strong></p>
+<p><strong>Reference - <a class="reference external" href="https://leetcode.com/problems/employees-earning-more-than-their-managers/">Leetcode</a></strong>
+<strong>Asked By - SALESFORCE</strong></p>
 <p>Write an SQL query to find the employees who earn more than their managers.</p>
 <table class="colwidths-auto table">
 <thead>
@@ -717,20 +718,19 @@ Select Employee from cte where Emp_Sal &gt; Man_Salary
 ```{admonition} Solution:
 :class: dropdown
 
-
-`
-	with cte as(
-	select Name, Salary, DepartmentId,
-	RANK() over(Partition by DepartmentId order by salary desc) as Rank
-	from Employee
-	    )
-	    
-	select b.Name as Department, a.Name as Employee, a.Salary
-	from cte a
-	inner join Department b
-	on a.DepartmentId = b.Id
-	where a.Rank = 1
-`
+	`
+		with cte as(
+		select Name, Salary, DepartmentId,
+		RANK() over(Partition by DepartmentId order by salary desc) as Rank
+		from Employee
+		    )
+		    
+		select b.Name as Department, a.Name as Employee, a.Salary
+		from cte a
+		inner join Department b
+		on a.DepartmentId = b.Id
+		where a.Rank = 1
+	`
 
 </pre></div>
 </div>

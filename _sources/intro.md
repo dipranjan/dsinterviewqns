@@ -10,6 +10,6 @@ This book **IS AND ALWAYS WILL BE** a work in progress. The book gets updated we
 If this has helped you in any way please feel free to contribute. 
 
 - The best way to do so is by adding more content to make this more relevant, feel free to create a merge request
-- You can also support by Sponsoring, click on the button at the left bottom corner to do so 
+- You can also [support](https://www.buymeacoffee.com/dearc) the project, click on the button at the left bottom corner to do so 
 
 The Discussion Forum (🙊🙈🙉) of the book is available at [this link.](https://github.com/dipranjan/dsinterviewqns/discussions)

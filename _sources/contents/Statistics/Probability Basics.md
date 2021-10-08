@@ -95,10 +95,10 @@ There can be many variants to this question.
  
 $52$ cards = $26$ Red + $26$ Black
 
-Different Color Without Replacement $= 26/52 * 26/51$
-Different Color With Replacement    $= 26/52 * 26/52$
-Same Color Without Replacement 		$= 26/52 * 25/51$
-Same Color With Replacement    		$= 26/52 * 25/52$
+- Different Color Without Replacement $= 26/52 * 26/51$
+- Different Color With Replacement    $= 26/52 * 26/52$
+- Same Color Without Replacement 	  $= 26/52 * 25/51$
+- Same Color With Replacement    	  $= 26/52 * 25/52$
 ```
 
 ```{admonition} Problem: N Dice

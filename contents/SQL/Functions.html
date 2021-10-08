@@ -148,7 +148,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Algorithms/Generative%20VS%20Discriminative%20Models.html">
-   Generative VS Discriminative Models
+   Generative vs Discriminative Models
   </a>
  </li>
  <li class="toctree-l1">
@@ -372,7 +372,20 @@ Write a SQL query to get the Nth highest salary from the Employee table.</p>
 <div class="dropdown admonition">
 <p class="admonition-title">Solution:</p>
 <p>Multiple solutions are possible only one approach is given below for reference</p>
-<p><code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">FUNCTION</span> <span class="pre">getNthHighestSalary(N</span> <span class="pre">INT)</span> <span class="pre">RETURNS</span> <span class="pre">INT</span> <span class="pre">BEGIN</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">DECLARE</span> <span class="pre">temp</span> <span class="pre">INT;</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">SET</span> <span class="pre">temp</span> <span class="pre">=</span> <span class="pre">N-1;</span>&#160;&#160; <span class="pre">RETURN</span> <span class="pre">(</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Select</span> <span class="pre">DISTINCT</span> <span class="pre">Salary</span> <span class="pre">from</span> <span class="pre">Employee</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Order</span> <span class="pre">by</span> <span class="pre">Salary</span> <span class="pre">Desc</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">LIMIT</span> <span class="pre">1</span> <span class="pre">Offset</span> <span class="pre">temp</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">);</span> <span class="pre">END</span></code></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>`
+CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
+BEGIN
+      DECLARE temp INT;
+      SET temp = N-1;
+  RETURN (      
+      Select DISTINCT Salary from Employee
+      Order by Salary Desc
+      LIMIT 1 Offset temp      
+  );
+END
+`
+</pre></div>
+</div>
 </div>
 </div>
 

@@ -150,7 +150,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Algorithms/Generative%20VS%20Discriminative%20Models.html">
-   Generative VS Discriminative Models
+   Generative vs Discriminative Models
   </a>
  </li>
  <li class="toctree-l1">
@@ -355,11 +355,9 @@
 <div class="dropdown admonition">
 <p class="admonition-title">Solution:</p>
 <p>Type 1 error will scale the more the number of t-tests are run. If <span class="math notranslate nohighlight">\(\alpha = 0.05\)</span> then there is <span class="math notranslate nohighlight">\(5%\)</span> chance of Type 1 error on a single test, then across many tests <span class="math notranslate nohighlight">\(p(Type I)\)</span> will increase. For example with 2 tests:</p>
-<p><span class="math notranslate nohighlight">\(
-P(type I error) = p(type I error on A OR type I error on B) 
-= 2p(type I error on single test) - p(type I error on A AND type I error on B) 
-= 2*.05 - .05^2 (assuming independence of tests) = 0.5 - .025 = .075
-\)</span></p>
+<p><span class="math notranslate nohighlight">\( P(\text{type I error}) = p(\text{type I error on A OR type I error on B}) \)</span>
+<span class="math notranslate nohighlight">\( = 2p(\text{type I error on single test}) - p(\text{type I error on A AND type I error on B}) \)</span>
+<span class="math notranslate nohighlight">\( = 2*.05 - .05^2 (\text{assuming independence of tests}) = 0.5 - .025 = .075 \)</span></p>
 <p>If you want your <span class="math notranslate nohighlight">\(p(type I error)\)</span> across n-tests to remain at <span class="math notranslate nohighlight">\(5%\)</span>, you will need to decrease the  $\alpha\ in each individual test. Bonferroni correction can be applied. Basically alpha will be reduced to alpha/n. n is number of experiments you are running.</p>
 <p>Otherwise, you can try and run an F-test to start in order to identify if a least <span class="math notranslate nohighlight">\(1\)</span> test sees some significant effect. Then run a t-test on the specific experiment with the highest effect size. Granted, the p-value of the test will also depend on the variance of the sample in the given test, if we assume constant variance across tests, then the test with the highest effect size is in expectation the best performing test. Only running a single t-test will keep your p(type I error) low.</p>
 </div>

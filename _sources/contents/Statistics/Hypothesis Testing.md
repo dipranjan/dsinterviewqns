@@ -14,11 +14,10 @@ You are testing hundreds of hypotheses with a t-test, what considerations should
 
 Type 1 error will scale the more the number of t-tests are run. If $\alpha = 0.05$ then there is $5%$ chance of Type 1 error on a single test, then across many tests $p(Type I)$ will increase. For example with 2 tests:
 
-$
-P(type I error) = p(type I error on A OR type I error on B) 
-= 2p(type I error on single test) - p(type I error on A AND type I error on B) 
-= 2*.05 - .05^2 (assuming independence of tests) = 0.5 - .025 = .075
-$
+$ P(\text{type I error}) = p(\text{type I error on A OR type I error on B}) $
+$ = 2p(\text{type I error on single test}) - p(\text{type I error on A AND type I error on B}) $
+$ = 2*.05 - .05^2 (\text{assuming independence of tests}) = 0.5 - .025 = .075 $
+
 
 If you want your $p(type I error)$ across n-tests to remain at $5%$, you will need to decrease the  $\alpha\ in each individual test. Bonferroni correction can be applied. Basically alpha will be reduced to alpha/n. n is number of experiments you are running.
 
