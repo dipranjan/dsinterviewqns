@@ -250,6 +250,7 @@ You have 2 tables:
 :class: tip, dropdown
 
 **Reference - [Leetcode](https://leetcode.com/problems/employees-earning-more-than-their-managers/)**
+**Asked By - SALESFORCE**
 
 Write an SQL query to find the employees who earn more than their managers.
 
@@ -301,20 +302,19 @@ scale: 100%
 ```{admonition} Solution:
 :class: dropdown
 
-
-`
-	with cte as(
-	select Name, Salary, DepartmentId,
-	RANK() over(Partition by DepartmentId order by salary desc) as Rank
-	from Employee
-	    )
-	    
-	select b.Name as Department, a.Name as Employee, a.Salary
-	from cte a
-	inner join Department b
-	on a.DepartmentId = b.Id
-	where a.Rank = 1
-`
+	`
+		with cte as(
+		select Name, Salary, DepartmentId,
+		RANK() over(Partition by DepartmentId order by salary desc) as Rank
+		from Employee
+		    )
+		    
+		select b.Name as Department, a.Name as Employee, a.Salary
+		from cte a
+		inner join Department b
+		on a.DepartmentId = b.Id
+		where a.Rank = 1
+	`
 
 ```
 

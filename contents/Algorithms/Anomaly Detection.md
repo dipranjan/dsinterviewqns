@@ -1,6 +1,6 @@
 ## Anomaly Detection
 
-```{admonition} Problem:
+```{admonition} Problem: Anomaly in Univariate Dataset
 :class: tip, dropdown
 
 **Asked By - AKAMAI**

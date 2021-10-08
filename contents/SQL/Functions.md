@@ -21,17 +21,17 @@ For example, given the above Employee table, the query should return 200 as the 
 
 Multiple solutions are possible only one approach is given below for reference
 
-`
-CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
-BEGIN
-      DECLARE temp INT;
-      SET temp = N-1;
-  RETURN (      
-      Select DISTINCT Salary from Employee
-      Order by Salary Desc
-      LIMIT 1 Offset temp      
-  );
-END
-`
+	`
+	CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
+	BEGIN
+	      DECLARE temp INT;
+	      SET temp = N-1;
+	  RETURN (      
+	      Select DISTINCT Salary from Employee
+	      Order by Salary Desc
+	      LIMIT 1 Offset temp      
+	  );
+	END
+	`
 
 ```

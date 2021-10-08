@@ -132,7 +132,7 @@ Despite the different shapes, all forms of the normal distribution have the foll
 
 An unbiased estimator is an accurate statistic that’s used to approximate a population parameter. “Accurate” in this sense means that it’s neither an overestimate nor an underestimate. If an overestimate or underestimate does happen, the mean of the difference is called a “bias.” That’s just saying if the estimator (i.e. the sample mean) equals the parameter (i.e. the population mean), then it’s an unbiased estimator.
 
-```{admonition} Problem:
+```{admonition} Problem: Example of unbiased estimator
 :class: tip, dropdown
 
 **Asked By - LIME**
@@ -163,7 +163,7 @@ So, say you've got a data set of $y={−1,3,7}$. The most consistent Gaussian fr
 
 Maximum Likelihood Estimation can be applied to both regression and classification problems.
 
-```{admonition} Problem:
+```{admonition} Problem: MLE of Uniform Distribution
 :class: tip, dropdown
 
 **Asked By - SPOTIFY**

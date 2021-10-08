@@ -52,11 +52,11 @@ Now once you have the model fit next comes the metrics to measure how good the f
 
 **Asked By - UPSTART**
 
-Suppose we have two variables, X and Y, where Y = X + some normal white noise.
+Suppose we have two variables, $X$ and $Y$, where $Y = X +$ some normal white noise.
 
-1. What will our coefficient be of we run a regression of Y on X?
+1. What will our coefficient be of we run a regression of $Y$ on $X$?
 
-2. What happens if we run a regression of X on Y?
+2. What happens if we run a regression of $X$ on $Y$?
 ```
 
 ```{admonition} Solution:
