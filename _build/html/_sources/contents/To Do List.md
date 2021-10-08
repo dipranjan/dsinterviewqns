@@ -19,19 +19,18 @@
 - ⌛ Gradient Descent
 - ⌛ A/B Testing
 - ⌛ Clustering
+- ⌛ GAN
 - ✔ Generative VS Discriminative Models
 
 
 ```{admonition} Change Log
 :class: tip, dropdown
 
-**8Oct,2021**
+
+**Week 3rd Oct - 9th Oct**
 
 - Cleaned up the formatting issues
 - Added this change log section
-
-**7Oct,2021**
-
 - Added Generative VS Discriminative Models section
 
 ```

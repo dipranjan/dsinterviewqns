@@ -5,11 +5,11 @@ Preparing for interviews is a stressful task. There is an enormous amount of res
 
 This book does not cover the topics in depth, it covers just enough to get you ready for the interview. The assumption here is that the person using it is already familiar with the topic and is here to brush up on the same. Additonal resources for someone eager to explore the topic in depth is added.
 
-This book **IS AND ALWAYS WILL BE** a work in progress. The book gets updated weekly with new sections, more questions and richer content, so please keep visiting.
+This book **IS AND ALWAYS WILL** be *free* and *a work in progress*. The book gets updated weekly with new sections, more questions and richer content, so please keep visiting.
 
-If this has helped you in any way please feel free to contribute. 
-
-- The best way to do so is by adding more content to make this more relevant, feel free to create a merge request
-- You can also [support](https://www.buymeacoffee.com/dearc) the project, click on the button at the left bottom corner to do so 
+If this has helped you in any way please feel free to contribute:
+- The best way to do so is by adding more content to make this book more relevant, feel free to create a merge request or post in [forum](https://github.com/dipranjan/dsinterviewqns/discussions)
+- If you want to share your interview experience via mail, please drop a ✉️ to *thedatascienceinterviewbook@gmail.com*
+- You can also support the project, [click here](https://www.buymeacoffee.com/dearc) or click on the button at the left bottom corner to do so 
 
 The Discussion Forum (🙊🙈🙉) of the book is available at [this link.](https://github.com/dipranjan/dsinterviewqns/discussions)
