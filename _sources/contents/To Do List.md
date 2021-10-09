@@ -1,5 +1,6 @@
 # To Do
 
+- 🚧 Confidence Intervals
 - 🚧 Anamoly Detection
 - 🚧 NLP
 - 🚧 Regularization
@@ -33,5 +34,4 @@
 - Added this change log section
 - Added Generative VS Discriminative Models section
 - Completed Hypothesis Testing
-
 ```
