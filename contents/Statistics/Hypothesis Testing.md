@@ -145,3 +145,27 @@ If you want your $p(type I error)$ across n-tests to remain at $5%$, you will ne
 Otherwise, you can try and run an F-test to start in order to identify if a least $1$ test sees some significant effect. Then run a t-test on the specific experiment with the highest effect size. Granted, the p-value of the test will also depend on the variance of the sample in the given test, if we assume constant variance across tests, then the test with the highest effect size is in expectation the best performing test. Only running a single t-test will keep your p(type I error) low.
 
 ```
+
+
+```{admonition} Problem: Selection Bias
+:class: tip, dropdown
+[📖Source](https://towardsdatascience.com/40-statistics-interview-problems-and-answers-for-data-scientists-6971a02b7eee)
+
+Explain selection bias (with regard to a dataset, not variable selection). Why is it important? How can data management procedures such as missing data handling make it worse?
+```
+
+```{admonition} Solution:
+:class: dropdown
+
+Selection bias is the phenomenon of selecting individuals, groups or data for analysis in such a way that proper randomization is not achieved, ultimately resulting in a sample that is not representative of the population.
+Understanding and identifying selection bias is important because it can significantly skew results and provide false insights about a particular population group.
+Types of selection bias include:
+- sampling bias: a biased sample caused by non-random sampling
+- time interval: selecting a specific time frame that supports the desired conclusion. e.g. conducting a sales analysis near Christmas.
+- exposure: includes clinical susceptibility bias, protopathic bias, indication bias. Read more here.
+- data: includes cherry-picking, suppressing evidence, and the fallacy of incomplete evidence.
+- attrition: attrition bias is similar to survivorship bias, where only those that ‘survived’ a long process are included in an analysis, or failure bias, where those that ‘failed’ are only included
+- observer selection: related to the Anthropic principle, which is a philosophical consideration that any data we collect about the universe is filtered by the fact that, in order for it to be observable, it must be compatible with the conscious and sapient life that observes it.
+
+Handling missing data can make selection bias worse because different methods impact the data in different ways. For example, if you replace null values with the mean of the data, you adding bias in the sense that you’re assuming that the data is not as spread out as it might actually be.
+```

@@ -7,9 +7,9 @@ This book does not cover the topics in depth, it covers just enough to get you r
 
 This book **IS AND ALWAYS WILL** be **free** and **a work in progress**. The book gets updated weekly with new sections, more questions and richer content, so please keep visiting.
 
-If this has helped you in any way please feel free to contribute:
+If this book has helped you in any way please feel free to contribute:
 - The best way to do so is by adding more content to make this book more relevant, feel free to create a merge request or post in [forum](https://github.com/dipranjan/dsinterviewqns/discussions)
-- If you want to share your interview experience via ✉️, please drop one to *thedatascienceinterviewbook@gmail.com*
-- You can also support the project, [click here](https://www.buymeacoffee.com/dearc) or click on the button at the left bottom corner to do so 
+- If you want to share your interview experience via ✉️, please drop one to *thedatascienceinterviewbook@gmail.com*, it will just be used to improve and enhance the book not for any other purpose
+- It takes a lot of man-hours to maintain this project. You can help by supporting the project, [click here](https://www.buymeacoffee.com/dearc) or click on the button at the left bottom corner to do so
 
 The Discussion Forum (🙊🙈🙉) of the book is available at [this link.](https://github.com/dipranjan/dsinterviewqns/discussions)
