@@ -3,6 +3,8 @@
 
 # ## Data Manipulation
 
+# ### Questions
+
 # ```{admonition} Problem: Score Bucketization
 # :class: dropdown, tip
 # 

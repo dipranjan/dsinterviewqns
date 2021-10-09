@@ -45,7 +45,7 @@ Now once you have the model fit next comes the metrics to measure how good the f
 
 
 
-#### Problems
+### Questions
 
 ```{admonition} Problem: Regression Coefficient
 :class: tip, dropdown

@@ -1,6 +1,11 @@
 ## SQL Basics
 
 
+
+
+
+### Questions
+
 ```{admonition} Problem: Second Highest Salary
 :class: tip, dropdown
 

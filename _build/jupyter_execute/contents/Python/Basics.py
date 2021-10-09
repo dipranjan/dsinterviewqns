@@ -3,6 +3,8 @@
 
 # ## Basics
 
+# ### Questions
+
 # ```{admonition} Problem: Palindrome Checker
 # :class: dropdown, tip
 # 

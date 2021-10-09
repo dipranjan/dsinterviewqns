@@ -394,6 +394,11 @@
    Maximum Likelihood Estimation (MLE)
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#questions">
+   Questions
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -530,16 +535,6 @@ Following are the measures of central tendency:</p>
 <div class="section" id="unbiased-estimator">
 <h2>Unbiased Estimator<a class="headerlink" href="#unbiased-estimator" title="Permalink to this headline">¶</a></h2>
 <p>An unbiased estimator is an accurate statistic that’s used to approximate a population parameter. “Accurate” in this sense means that it’s neither an overestimate nor an underestimate. If an overestimate or underestimate does happen, the mean of the difference is called a “bias.” That’s just saying if the estimator (i.e. the sample mean) equals the parameter (i.e. the population mean), then it’s an unbiased estimator.</p>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Problem: Example of unbiased estimator</p>
-<p><strong>Asked By - LIME</strong></p>
-<p>What is an unbiased estimator and can you provide an example for a layman to understand?</p>
-</div>
-<div class="dropdown admonition">
-<p class="admonition-title">Solution:</p>
-<p>One famous example of an unrepresentative sample is the literary digest voter survey, which predicted Alfred Landon would win the 1936 presidential election. The survey was biased, as it failed to include a representative sample of low income voters who were more likely to be democrat and vote for Theodore Roosevelt.</p>
-<p>If the sampling had been done correctly then the estimator would have been unbiased as it would match with the actual output from the population, which was win for Theodore Roosevelt.</p>
-</div>
 </div>
 <div class="section" id="maximum-likelihood-estimation-mle">
 <h2>Maximum Likelihood Estimation (MLE)<a class="headerlink" href="#maximum-likelihood-estimation-mle" title="Permalink to this headline">¶</a></h2>
@@ -550,6 +545,19 @@ Following are the measures of central tendency:</p>
 <p>Say you have some data. Say you’re willing to assume that the data comes from some distribution – perhaps Gaussian. There are an infinite number of different Gaussians that the data could have come from (which correspond to the combination of the infinite number of means and variances that a Gaussian distribution can have). MLE will pick the Gaussian (i.e., the mean and variance) that is “most consistent” with your data (the precise meaning of consistent is explained below).</p>
 <p>So, say you’ve got a data set of <span class="math notranslate nohighlight">\(y={−1,3,7}\)</span>. The most consistent Gaussian from which that data could have come has a mean of <span class="math notranslate nohighlight">\(3\)</span> and a variance of <span class="math notranslate nohighlight">\(16\)</span>. It could have been sampled from some other Gaussian. But one with a mean of <span class="math notranslate nohighlight">\(3\)</span> and variance of <span class="math notranslate nohighlight">\(16\)</span> is most consistent with the data in the following sense: the probability of getting the particular <span class="math notranslate nohighlight">\(y\)</span> values you observed is greater with this choice of mean and variance, than it is with any other choice.</p>
 <p>Maximum Likelihood Estimation can be applied to both regression and classification problems.</p>
+</div>
+<div class="section" id="questions">
+<h2>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h2>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: Example of unbiased estimator</p>
+<p><strong>Asked By - LIME</strong></p>
+<p>What is an unbiased estimator and can you provide an example for a layman to understand?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>One famous example of an unrepresentative sample is the literary digest voter survey, which predicted Alfred Landon would win the 1936 presidential election. The survey was biased, as it failed to include a representative sample of low income voters who were more likely to be democrat and vote for Theodore Roosevelt.</p>
+<p>If the sampling had been done correctly then the estimator would have been unbiased as it would match with the actual output from the population, which was win for Theodore Roosevelt.</p>
+</div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Problem: MLE of Uniform Distribution</p>
 <p><strong>Asked By - SPOTIFY</strong></p>

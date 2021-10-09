@@ -3,6 +3,8 @@
 
 # ## Statistics
 
+# ### Questions
+
 # ```{admonition} Problem: JOIN Dataframes
 # :class: dropdown, tip
 # Can you tell me the ways in which 2 pandas data frames can be joined?

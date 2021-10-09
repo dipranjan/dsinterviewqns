@@ -1,6 +1,5 @@
 # To Do
 
-- 🚧 Hypothesis Testing
 - 🚧 Anamoly Detection
 - 🚧 NLP
 - 🚧 Regularization
@@ -21,6 +20,7 @@
 - ⌛ Clustering
 - ⌛ GAN
 - ✔ Generative VS Discriminative Models
+- ✔ Hypothesis Testing
 
 
 ```{admonition} Change Log
@@ -32,5 +32,6 @@
 - Cleaned up the formatting issues
 - Added this change log section
 - Added Generative VS Discriminative Models section
+- Completed Hypothesis Testing
 
 ```

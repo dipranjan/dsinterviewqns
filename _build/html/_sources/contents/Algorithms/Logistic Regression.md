@@ -11,7 +11,7 @@ scale: 60%
 Logistic regression uses Sigmoid function to transform linear regression into the logit function. Logit is nothing but log of Odds. Then using log of Odds it calculate the required probability.([📖Source](https://www.vebuso.com/2020/02/linear-to-logistic-regression-explained-step-by-step/))
 ```
 
-#### Cost Function
+### Cost Function
 
 One more thing to note here is that logistic regression uses maximum likelihood estimation (MLE) instead of least squares method of minimizing the error which is used in linear models. In Linear regression we minimized SSE. In Logistic Regression we maximize log likelihood instead. Linear regression uses mean squared error as its cost function. If this is used for logistic regression, then it will be a non-convex function of parameters (theta). Gradient descent will converge into global minimum only if the function is convex.
 
@@ -24,7 +24,7 @@ Cost function([📖Source](https://pvgisours.tistory.com/59))
 ```
 
 
-#### Metrics
+### Metrics
 
 ```{figure} ../Algorithms/images/image5.PNG
 ---
@@ -45,7 +45,7 @@ scale: 80%
 
 
 
-#### Problems
+### Questions
 
 ```{admonition} Problem: Interpret Coefficients
 :class: tip, dropdown

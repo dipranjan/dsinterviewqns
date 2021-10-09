@@ -36,7 +36,7 @@ One problem is you cannot add window functions to the WHERE clause.
 
 
 
-#### Questions
+### Questions
 
 ```{admonition} Problem: Rank Scores
 :class: tip, dropdown

@@ -55,6 +55,7 @@ Baye's Theorem
 $P(Banana|Long,Sweet,Yellow) = \frac{P(Long|Banana)*P(Sweet|Banana)*P(Yellow|Banana)*P(Banana)}{P(Long)*P(Sweet)*P(Yellow)}$
 
 
+### Questions
 
 ```{admonition} Problem: Dice in increasing order
 :class: tip, dropdown
