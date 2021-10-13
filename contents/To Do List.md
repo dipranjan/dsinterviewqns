@@ -4,6 +4,7 @@
 - 🚧 Anamoly Detection
 - 🚧 NLP
 - 🚧 Regularization
+- 🚧 Excel [new section]
 - ⌛ Missing Value Treatment
 - ⌛ Decision Tree and RF (Bagging Boosting)
 - ⌛ Plots
@@ -14,7 +15,6 @@
 - ⌛ Survivor Analysis
 - ⌛ Association Rule Mining
 - ⌛ Market Basket Analysis
-- ⌛ Excel [new section]
 - ⌛ Power BI [new section]
 - ⌛ Gradient Descent
 - ⌛ A/B Testing
@@ -27,6 +27,9 @@
 ```{admonition} Change Log
 :class: tip, dropdown
 
+**Week 10th Oct - 16th Oct**
+
+- Excel Section added
 
 **Week 3rd Oct - 9th Oct**
 

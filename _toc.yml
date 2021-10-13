@@ -32,9 +32,10 @@ parts:
     - file: contents/SQL/Joins
     - file: contents/SQL/Windows Functions
     - file: contents/SQL/Functions
-  - caption: Machine Learning Hardware
+  - caption: Excel
     chapters:
-    - file: contents/ML Hardware/Machine Learning Hardware
+    - file: contents/Excel/Excel Basics
   - caption: Analytical Thinking
     chapters:
     - file: contents/Analytical Thinking/Business Scenarios
+
