@@ -1,5 +1,6 @@
 # To Do
 
+- 🚧 Tensorflow
 - 🚧 Confidence Intervals
 - 🚧 Anamoly Detection
 - 🚧 NLP
@@ -26,6 +27,10 @@
 
 ```{admonition} Change Log
 :class: tip, dropdown
+
+**Week 17th Oct - 23rd Oct**
+
+- Tensorflow Section added
 
 **Week 10th Oct - 16th Oct**
 

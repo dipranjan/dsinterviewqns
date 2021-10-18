@@ -2,6 +2,14 @@
 
 ### Linear Regression
 
+```{figure} ../Algorithms/images/image8.PNG
+---
+name: image2
+scale: 60%
+---
+[📖Source](https://xkcd.com/605/) 
+```
+
 $Y = b_0 + b_1 * x_1 + b_2 * x_2 + \epsilon$
 
 The idea is to find the line or plane which best fits the data. Collectively, $b_0, b_1, b_2$ are called regression coefficients. $\epsilon$ is the error term, the part of $Y$ the regression model is unable to explain.
