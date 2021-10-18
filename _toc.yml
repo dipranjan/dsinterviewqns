@@ -35,6 +35,9 @@ parts:
   - caption: Excel
     chapters:
     - file: contents/Excel/Excel Basics
+  - caption: Tensorflow
+    chapters:
+    - file: contents/Tensorflow/Basics
   - caption: Analytical Thinking
     chapters:
     - file: contents/Analytical Thinking/Business Scenarios
