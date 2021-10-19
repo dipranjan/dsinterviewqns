@@ -533,6 +533,61 @@ sell –&gt; 32</p>
 </div>
 </div>
 </div>
+<div class="dropdown tip admonition">
+<p class="admonition-title">Problem: Isomorphic string check</p>
+<p><strong>Asked By - IBM</strong>
+Write a function which will check if each character of string1 can be mapped to a unique character of string2.</p>
+<p>Example:
+string1 = ‘donut’
+string2 = ‘fatty’</p>
+<p>string_map(string1, string2) == False # as n and u both get mapped to t</p>
+<p>string1 = ‘enemy’
+string2 = ‘enemy’</p>
+<p>string_map(string1, string2) == True # as e’s get mapped to e even though there is two e</p>
+<p>string1 = ‘enemy’
+string2 = ‘yneme’</p>
+<p>string_map(string1, string2) == False # as e’s dont get mapped uniquely</p>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">string_map</span><span class="p">(</span><span class="n">string1</span><span class="p">,</span> <span class="n">string2</span><span class="p">):</span>    
+    <span class="k">if</span><span class="p">(</span><span class="n">string1</span><span class="o">==</span><span class="n">string2</span><span class="p">):</span>
+        <span class="n">status</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">elif</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">string1</span><span class="p">)</span><span class="o">!=</span><span class="nb">len</span><span class="p">(</span><span class="n">string2</span><span class="p">)):</span>
+        <span class="n">status</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">tempstore</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">string1</span><span class="p">):</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">j</span> <span class="ow">in</span> <span class="n">tempstore</span><span class="p">):</span>               
+                <span class="k">if</span><span class="p">(</span><span class="n">tempstore</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">!=</span> <span class="n">string2</span><span class="p">[</span><span class="n">i</span><span class="p">]):</span>
+                    <span class="n">status</span> <span class="o">=</span> <span class="kc">False</span>
+                    <span class="k">break</span>
+            <span class="k">elif</span><span class="p">(</span><span class="n">string2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">in</span> <span class="n">tempstore</span><span class="o">.</span><span class="n">values</span><span class="p">()):</span>
+                    <span class="n">status</span> <span class="o">=</span> <span class="kc">False</span>
+                    <span class="k">break</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">tempstore</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">string2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+                <span class="n">status</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="n">status</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">string_map</span><span class="p">(</span><span class="s1">&#39;enemy&#39;</span><span class="p">,</span> <span class="s1">&#39;enemy&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">string_map</span><span class="p">(</span><span class="s1">&#39;enemy&#39;</span><span class="p">,</span> <span class="s1">&#39;yneme&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">string_map</span><span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;ftt&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">string_map</span><span class="p">(</span><span class="s1">&#39;ctt&#39;</span><span class="p">,</span> <span class="s1">&#39;fat&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">string_map</span><span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;fat&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+False
+False
+False
+True
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 

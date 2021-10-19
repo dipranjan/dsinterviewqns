@@ -165,6 +165,26 @@ One famous example of an unrepresentative sample is the literary digest voter su
 If the sampling had been done correctly then the estimator would have been unbiased as it would match with the actual output from the population, which was win for Theodore Roosevelt.
 ```
 
+```{admonition} Problem: Median of Uniform Distribution
+:class: tip, dropdown
+
+**Asked By - GOOGLE**
+
+Given 3 i.i.d. variables from an uniform distribution of $0$ to $4$, what’s the chance the median is greater than $3$?
+```
+
+```{admonition} Solution:
+:class: dropdown
+
+This will only be possible if atleast $2$ random variables are greater than $3$.
+
+$P(M>3) = P(GGL) + P(GLG) + P(LGG) + P(GGG)
+= 3 * (1/4)^2 * 3/4 + (1/4)^3 = 5/32$
+
+where, $G$ stands for probability of number $> 3$ which is probability of it being $4$ out of $1,2,3,4 = 1/4$; 
+$L$ for probability of number $< 3$ which is probability of it being $1,2,3$ out of $1,2,3,4 = 3/4$; 
+```
+
 ```{admonition} Problem: MLE of Uniform Distribution
 :class: tip, dropdown
 

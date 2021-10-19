@@ -571,6 +571,19 @@ Following are the measures of central tendency:</p>
 <p>If the sampling had been done correctly then the estimator would have been unbiased as it would match with the actual output from the population, which was win for Theodore Roosevelt.</p>
 </div>
 <div class="tip dropdown admonition">
+<p class="admonition-title">Problem: Median of Uniform Distribution</p>
+<p><strong>Asked By - GOOGLE</strong></p>
+<p>Given 3 i.i.d. variables from an uniform distribution of <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(4\)</span>, what’s the chance the median is greater than <span class="math notranslate nohighlight">\(3\)</span>?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>This will only be possible if atleast <span class="math notranslate nohighlight">\(2\)</span> random variables are greater than <span class="math notranslate nohighlight">\(3\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(P(M&gt;3) = P(GGL) + P(GLG) + P(LGG) + P(GGG)
+= 3 * (1/4)^2 * 3/4 + (1/4)^3 = 5/32\)</span></p>
+<p>where, <span class="math notranslate nohighlight">\(G\)</span> stands for probability of number <span class="math notranslate nohighlight">\(&gt; 3\)</span> which is probability of it being <span class="math notranslate nohighlight">\(4\)</span> out of <span class="math notranslate nohighlight">\(1,2,3,4 = 1/4\)</span>;
+<span class="math notranslate nohighlight">\(L\)</span> for probability of number <span class="math notranslate nohighlight">\(&lt; 3\)</span> which is probability of it being <span class="math notranslate nohighlight">\(1,2,3\)</span> out of <span class="math notranslate nohighlight">\(1,2,3,4 = 3/4\)</span>;</p>
+</div>
+<div class="tip dropdown admonition">
 <p class="admonition-title">Problem: MLE of Uniform Distribution</p>
 <p><strong>Asked By - SPOTIFY</strong></p>
 <p>Suppose you draw n samples from a uniform distribution U(a, b). What is the MLE estimate of a and b?</p>
