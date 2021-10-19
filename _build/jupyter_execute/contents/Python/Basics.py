@@ -136,3 +136,56 @@ for i,j in enumerate(stock_prices):
 
 print(buy,sell)
 
+
+# ```{admonition} Problem: Isomorphic string check
+# :class: dropdown, tip
+# **Asked By - IBM**
+# Write a function which will check if each character of string1 can be mapped to a unique character of string2.
+# 
+# Example: 
+# string1 = 'donut'
+# string2 = 'fatty'
+# 
+# string_map(string1, string2) == False # as n and u both get mapped to t
+# 
+# string1 = 'enemy'
+# string2 = 'enemy'
+# 
+# string_map(string1, string2) == True # as e's get mapped to e even though there is two e
+# 
+# string1 = 'enemy'
+# string2 = 'yneme'
+# 
+# string_map(string1, string2) == False # as e's dont get mapped uniquely
+# 
+# ```
+
+# In[49]:
+
+
+def string_map(string1, string2):    
+    if(string1==string2):
+        status = True
+    elif(len(string1)!=len(string2)):
+        status = False
+    else:
+        tempstore = {}
+        for i,j in enumerate(string1):
+            if(j in tempstore):               
+                if(tempstore[j] != string2[i]):
+                    status = False
+                    break
+            elif(string2[i] in tempstore.values()):
+                    status = False
+                    break
+            else:
+                tempstore[j] = string2[i]
+                status = True
+    return status
+
+print(string_map('enemy', 'enemy'))
+print(string_map('enemy', 'yneme'))
+print(string_map('cat', 'ftt'))
+print(string_map('ctt', 'fat'))
+print(string_map('cat', 'fat'))
+

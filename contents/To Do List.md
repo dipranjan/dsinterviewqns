@@ -31,6 +31,7 @@
 **Week 17th Oct - 23rd Oct**
 
 - Tensorflow Section added
+- Added new problems in probability distribution, Python basics
 
 **Week 10th Oct - 16th Oct**
 
