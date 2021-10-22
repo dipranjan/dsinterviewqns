@@ -200,3 +200,20 @@ Suppose you draw n samples from a uniform distribution U(a, b). What is the MLE 
 Solution Pending
 
 ```
+
+```{admonition} Problem: Flipping Coins
+:class: tip, dropdown
+
+**Asked By - MCKINSEY**
+
+You flip a fair coin 576 times. Without using a calculator, calculate the probability of flipping at least 312 heads.
+
+```
+
+```{admonition} Solution:
+:class: dropdown
+
+This is an example of a Binomial Distribution.
+The number will be ${}^{576} \mathrm{ C }_{312} (\frac{1}{2})^{312} (\frac{1}{2})^{264}$
+
+```
