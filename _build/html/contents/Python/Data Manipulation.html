@@ -567,6 +567,112 @@
 </table>
 </div></div></div>
 </div>
+<div class="dropdown tip admonition">
+<p class="admonition-title">Problem: Complete Addresses</p>
+<p><strong>Asked By - NEXTDOOR</strong></p>
+<p>You’re given two dataframes. One contains information about addresses and the other contains relationships between various cities and states:</p>
+<p>df_addresses</p>
+<p>address</p>
+<p>4860 Sunset Boulevard, San Francisco, 94105
+3055 Paradise Lane, Salt Lake City, 84103
+682 Main Street, Detroit, 48204
+9001 Cascade Road, Kansas City, 64102
+5853 Leon Street, Tampa, 33605</p>
+<p>df_cities</p>
+<p>city	state
+Salt Lake City	Utah
+Kansas City	Missouri
+Detroit	Michigan
+Tampa	Florida
+San Francisco	California</p>
+<p>Write a function complete_address to create a single dataframe with complete addresses in the format of street, city, state, zipcode.</p>
+<p>Input:</p>
+<p>import pandas as pd</p>
+<p>addresses = {“address”: [“4860 Sunset Boulevard, San Francisco, 94105”, “3055 Paradise Lane, Salt Lake City, 84103”, “682 Main Street, Detroit, 48204”, “9001 Cascade Road, Kansas City, 64102”, “5853 Leon Street, Tampa, 33605”]}</p>
+<p>cities = {“city”: [“Salt Lake City”, “Kansas City”, “Detroit”, “Tampa”, “San Francisco”], “state”: [“Utah”, “Missouri”, “Michigan”, “Florida”, “California”]}</p>
+<p>df_addresses = pd.DataFrame(addresses)
+df_cities = pd.DataFrame(cities)</p>
+<p>Output:</p>
+<p>def complete_address(df_addresses,df_cities) -&gt;</p>
+<p>address
+4860 Sunset Boulevard, San Francisco, California, 94105
+3055 Paradise Lane, Salt Lake City, Utah, 84103
+682 Main Street, Detroit, Michigan, 48204
+9001 Cascade Road, Kansas City, Missouri, 64102
+5853 Leon Street, Tampa, Florida, 33605</p>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">addresses</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;address&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;4860 Sunset Boulevard, San Francisco, 94105&quot;</span><span class="p">,</span> <span class="s2">&quot;3055 Paradise Lane, Salt Lake City, 84103&quot;</span><span class="p">,</span> <span class="s2">&quot;682 Main Street, Detroit, 48204&quot;</span><span class="p">,</span> <span class="s2">&quot;9001 Cascade Road, Kansas City, 64102&quot;</span><span class="p">,</span> <span class="s2">&quot;5853 Leon Street, Tampa, 33605&quot;</span><span class="p">]}</span>
+
+<span class="n">cities</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;city&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Salt Lake City&quot;</span><span class="p">,</span> <span class="s2">&quot;Kansas City&quot;</span><span class="p">,</span> <span class="s2">&quot;Detroit&quot;</span><span class="p">,</span> <span class="s2">&quot;Tampa&quot;</span><span class="p">,</span> <span class="s2">&quot;San Francisco&quot;</span><span class="p">],</span> <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Utah&quot;</span><span class="p">,</span> <span class="s2">&quot;Missouri&quot;</span><span class="p">,</span> <span class="s2">&quot;Michigan&quot;</span><span class="p">,</span> <span class="s2">&quot;Florida&quot;</span><span class="p">,</span> <span class="s2">&quot;California&quot;</span><span class="p">]}</span>
+
+<span class="n">df_addresses</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">addresses</span><span class="p">)</span>
+<span class="n">df_cities</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">cities</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">complete_address</span><span class="p">(</span><span class="n">df_addresses</span><span class="p">,</span><span class="n">df_cities</span><span class="p">):</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">df_addresses</span><span class="p">[</span><span class="s1">&#39;address&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;, &quot;</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">expand</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="n">temp</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;street&#39;</span><span class="p">,</span><span class="s1">&#39;city&#39;</span><span class="p">,</span><span class="s1">&#39;zip&#39;</span><span class="p">]</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">temp</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_cities</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;city&quot;</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span><span class="p">)</span>
+    <span class="n">temp</span><span class="p">[</span><span class="s2">&quot;final&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span><span class="p">[[</span><span class="s2">&quot;street&quot;</span><span class="p">,</span><span class="s2">&quot;city&quot;</span><span class="p">,</span><span class="s2">&quot;state&quot;</span><span class="p">,</span><span class="s2">&quot;zip&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;, &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">temp</span><span class="p">[[</span><span class="s2">&quot;final&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">temp</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;address&quot;</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">temp</span>
+
+<span class="n">complete_address</span><span class="p">(</span><span class="n">df_addresses</span><span class="p">,</span><span class="n">df_cities</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>address</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>4860 Sunset Boulevard, San Francisco, Californ...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3055 Paradise Lane, Salt Lake City, Utah, 84103</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>682 Main Street, Detroit, Michigan, 48204</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>9001 Cascade Road, Kansas City, Missouri, 64102</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5853 Leon Street, Tampa, Florida, 33605</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
 </div>
 </div>
 

@@ -535,8 +535,8 @@ sell –&gt; 32</p>
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">Problem: Isomorphic string check</p>
-<p><strong>Asked By - IBM</strong>
-Write a function which will check if each character of string1 can be mapped to a unique character of string2.</p>
+<p><strong>Asked By - IBM</strong></p>
+<p>Write a function which will check if each character of string1 can be mapped to a unique character of string2.</p>
 <p>Example:
 string1 = ‘donut’
 string2 = ‘fatty’</p>
@@ -584,6 +584,72 @@ False
 False
 False
 True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="dropdown tip admonition">
+<p class="admonition-title">Problem: Sorted String merge</p>
+<p><strong>Asked By - WORKDAY</strong></p>
+<p>Given two sorted lists, write a function to merge them into one sorted list.</p>
+<p>What’s the time complexity?</p>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mergeArrays</span><span class="p">(</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">):</span>
+    
+    <span class="n">n1</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr1</span><span class="p">)</span>
+    <span class="n">n2</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr2</span><span class="p">)</span>
+    <span class="n">arr3</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">n1</span> <span class="o">+</span> <span class="n">n2</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="c1"># Traverse both array</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n1</span> <span class="ow">and</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n2</span><span class="p">:</span>     
+        <span class="c1"># Check if current element of first array is smaller than current element of second array. </span>
+        <span class="c1"># If yes, store first array element and increment first array index. Otherwise do same with second array</span>
+        
+        <span class="k">if</span> <span class="n">arr1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">arr2</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+            <span class="n">arr3</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">k</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">arr3</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr2</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+            <span class="n">k</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="n">j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span>
+     
+ 
+    <span class="c1"># Store remaining elements</span>
+    <span class="c1"># of first array</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n1</span><span class="p">:</span>
+        <span class="n">arr3</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr1</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+ 
+    <span class="c1"># Store remaining elements</span>
+    <span class="c1"># of second array</span>
+    <span class="k">while</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n2</span><span class="p">:</span>
+        <span class="n">arr3</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr2</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Array after merging&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n1</span> <span class="o">+</span> <span class="n">n2</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">arr3</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span> <span class="n">end</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="p">)</span>
+ 
+
+<span class="n">arr1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="n">arr2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+<span class="n">mergeArrays</span><span class="p">(</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">)</span>
+
+<span class="c1"># Next coming to the time complexity it is linear as the execution time of the algorithm grows in direct proportion to the size of the data set it is processing.</span>
+<span class="c1"># For merging two arrays, we are always going to iterate through both of them no matter what, </span>
+<span class="c1"># so the number of iterations will always be m+n and the time complexity being O(m+n) where m = len(arr1) and n = len(arr2)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Array after merging
+1 2 3 4 5 6 7 8 
 </pre></div>
 </div>
 </div>

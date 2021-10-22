@@ -140,6 +140,7 @@ print(buy,sell)
 # ```{admonition} Problem: Isomorphic string check
 # :class: dropdown, tip
 # **Asked By - IBM**
+# 
 # Write a function which will check if each character of string1 can be mapped to a unique character of string2.
 # 
 # Example: 
@@ -188,4 +189,67 @@ print(string_map('enemy', 'yneme'))
 print(string_map('cat', 'ftt'))
 print(string_map('ctt', 'fat'))
 print(string_map('cat', 'fat'))
+
+
+# ```{admonition} Problem: Sorted String merge
+# :class: dropdown, tip
+# **Asked By - WORKDAY**
+# 
+# Given two sorted lists, write a function to merge them into one sorted list.
+# 
+# What's the time complexity?
+# 
+# ```
+
+# In[58]:
+
+
+def mergeArrays(arr1, arr2):
+    
+    n1 = len(arr1)
+    n2 = len(arr2)
+    arr3 = [None] * (n1 + n2)
+    i = 0
+    j = 0
+    k = 0
+    # Traverse both array
+    while i < n1 and j < n2:     
+        # Check if current element of first array is smaller than current element of second array. 
+        # If yes, store first array element and increment first array index. Otherwise do same with second array
+        
+        if arr1[i] < arr2[j]:
+            arr3[k] = arr1[i]
+            k = k + 1
+            i = i + 1
+        else:
+            arr3[k] = arr2[j]
+            k = k + 1
+            j = j + 1
+     
+ 
+    # Store remaining elements
+    # of first array
+    while i < n1:
+        arr3[k] = arr1[i];
+        k = k + 1
+        i = i + 1
+ 
+    # Store remaining elements
+    # of second array
+    while j < n2:
+        arr3[k] = arr2[j];
+        k = k + 1
+        j = j + 1
+    print("Array after merging")
+    for i in range(n1 + n2):
+        print(str(arr3[i]), end = " ")
+ 
+
+arr1 = [1, 3, 5, 7]
+arr2 = [2, 4, 6, 8]
+mergeArrays(arr1, arr2)
+
+# Next coming to the time complexity it is linear as the execution time of the algorithm grows in direct proportion to the size of the data set it is processing.
+# For merging two arrays, we are always going to iterate through both of them no matter what, 
+# so the number of iterations will always be m+n and the time complexity being O(m+n) where m = len(arr1) and n = len(arr2)
 

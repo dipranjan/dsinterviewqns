@@ -63,3 +63,80 @@ df["percentage"] = df["percentage"] + "%"
 
 df.head(10)
 
+
+# ```{admonition} Problem: Complete Addresses
+# :class: dropdown, tip
+# 
+# **Asked By - NEXTDOOR**
+# 
+# You’re given two dataframes. One contains information about addresses and the other contains relationships between various cities and states:
+# 
+# df_addresses
+# 
+# address
+# 
+# 4860 Sunset Boulevard, San Francisco, 94105
+# 3055 Paradise Lane, Salt Lake City, 84103
+# 682 Main Street, Detroit, 48204
+# 9001 Cascade Road, Kansas City, 64102
+# 5853 Leon Street, Tampa, 33605
+# 
+# df_cities
+# 
+# city	state
+# Salt Lake City	Utah
+# Kansas City	Missouri
+# Detroit	Michigan
+# Tampa	Florida
+# San Francisco	California
+# 
+# Write a function complete_address to create a single dataframe with complete addresses in the format of street, city, state, zipcode.
+# 
+# Input:
+# 
+# import pandas as pd
+# 
+# addresses = {"address": ["4860 Sunset Boulevard, San Francisco, 94105", "3055 Paradise Lane, Salt Lake City, 84103", "682 Main Street, Detroit, 48204", "9001 Cascade Road, Kansas City, 64102", "5853 Leon Street, Tampa, 33605"]}
+# 
+# cities = {"city": ["Salt Lake City", "Kansas City", "Detroit", "Tampa", "San Francisco"], "state": ["Utah", "Missouri", "Michigan", "Florida", "California"]}
+# 
+# df_addresses = pd.DataFrame(addresses)
+# df_cities = pd.DataFrame(cities)
+# 
+# Output:
+# 
+# def complete_address(df_addresses,df_cities) ->
+# 
+# address
+# 4860 Sunset Boulevard, San Francisco, California, 94105
+# 3055 Paradise Lane, Salt Lake City, Utah, 84103
+# 682 Main Street, Detroit, Michigan, 48204
+# 9001 Cascade Road, Kansas City, Missouri, 64102
+# 5853 Leon Street, Tampa, Florida, 33605
+# 
+# ```
+
+# In[28]:
+
+
+import pandas as pd
+
+addresses = {"address": ["4860 Sunset Boulevard, San Francisco, 94105", "3055 Paradise Lane, Salt Lake City, 84103", "682 Main Street, Detroit, 48204", "9001 Cascade Road, Kansas City, 64102", "5853 Leon Street, Tampa, 33605"]}
+
+cities = {"city": ["Salt Lake City", "Kansas City", "Detroit", "Tampa", "San Francisco"], "state": ["Utah", "Missouri", "Michigan", "Florida", "California"]}
+
+df_addresses = pd.DataFrame(addresses)
+df_cities = pd.DataFrame(cities)
+
+
+def complete_address(df_addresses,df_cities):
+    temp = df_addresses['address'].str.split(", ", n = 4, expand = True)
+    temp.columns = ['street','city','zip']
+    temp = temp.merge(df_cities, on=["city"], how="inner")
+    temp["final"] = temp[["street","city","state","zip"]].apply(lambda x: (", ").join(x), axis = 1)
+    temp = temp[["final"]].copy()
+    temp.columns = ["address"]
+    return temp
+
+complete_address(df_addresses,df_cities)
+
