@@ -292,12 +292,7 @@ Output will be : Joe
 
 Write an SQL query to find employees who have the highest salary in each of the departments.
 
-```{figure} ../SQL/images/image3.PNG
----
-name: image3
-scale: 100%
----
-```
+![image 3](../SQL/images/image3.PNG)
 
 ```
 
