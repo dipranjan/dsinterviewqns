@@ -42,6 +42,9 @@ Multiple solutions are possible only one approach is given below for reference
 
 ```{admonition} Problem: HAVING vs WHERE
 :class: tip, dropdown
+
+**Asked By - MICROSOFT**
+
 Can you elborate on the differences between HAVING and WHERE clause in a SQL query?
 
 ```

@@ -84,6 +84,8 @@ The tie resolving method which is being asked in the question is called Dense Ra
 ```{admonition} Problem: 2nd Highest score
 :class: tip, dropdown
 
+**Asked By - CHEWY**
+
 | Id | subject | marks |
 |---:|---------|------:|
 |  1 | Maths   |    30 |
