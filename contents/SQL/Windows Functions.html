@@ -723,29 +723,25 @@ Select Employee from cte where Emp_Sal &gt; Man_Salary
 <p class="admonition-title">Problem: Highest Salary in each Department</p>
 <p><strong>Reference - <a class="reference external" href="https://leetcode.com/problems/department-highest-salary/">Leetcode</a></strong></p>
 <p>Write an SQL query to find employees who have the highest salary in each of the departments.</p>
-<div class="figure align-default" id="image3">
-<a class="reference internal image-reference" href="../../_images/image33.PNG"><img alt="../../_images/image33.PNG" src="../../_images/image33.PNG" style="width: 706.0px; height: 222.0px;" /></a>
+<p><img alt="image 3" src="../../_images/image33.PNG" /></p>
 </div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-```{admonition} Solution:
-:class: dropdown
-
-	`
-		with cte as(
-		select Name, Salary, DepartmentId,
-		RANK() over(Partition by DepartmentId order by salary desc) as Rank
-		from Employee
-		    )
-		    
-		select b.Name as Department, a.Name as Employee, a.Salary
-		from cte a
-		inner join Department b
-		on a.DepartmentId = b.Id
-		where a.Rank = 1
-	`
-
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>`
+	with cte as(
+	select Name, Salary, DepartmentId,
+	RANK() over(Partition by DepartmentId order by salary desc) as Rank
+	from Employee
+	    )
+	    
+	select b.Name as Department, a.Name as Employee, a.Salary
+	from cte a
+	inner join Department b
+	on a.DepartmentId = b.Id
+	where a.Rank = 1
+`
 </pre></div>
+</div>
 </div>
 </div>
 </div>
