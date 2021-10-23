@@ -440,6 +440,37 @@
 <p class="admonition-title">Solution:</p>
 <p>Solution pending, [Reference material link](Given a random Bernoulli trial generator, how do you return a value sampled from a normal distribution?)</p>
 </div>
+<div class="dropdown tip admonition">
+<p class="admonition-title">Problem: Interquartile Distance</p>
+<p><strong>Asked By - PINTEREST</strong></p>
+<p>Given an array of unsorted random numbers (decimals) find the interquartile distance.</p>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Interquartile distance is the difference between first and third quartile</span>
+
+<span class="c1"># first let&#39;s generate a list of random numbers</span>
+
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">li</span> <span class="o">=</span> <span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">33.33</span><span class="p">,</span> <span class="mf">66.66</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">li</span><span class="p">)</span>
+
+<span class="n">qtl_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">li</span><span class="p">,</span><span class="o">.</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">qtl_3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">li</span><span class="p">,</span><span class="o">.</span><span class="mi">75</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Interquartile distance: &quot;</span><span class="p">,</span> <span class="n">qtl_1</span> <span class="o">-</span> <span class="n">qtl_3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[54.81, 65.68, 63.85, 58.29, 60.14, 53.23, 52.58, 51.62, 61.6, 57.85, 51.37, 38.7, 35.87, 33.95, 61.65, 33.59, 61.33, 44.97, 62.49, 39.67, 51.03, 45.79, 60.99, 60.49, 64.8, 46.16, 46.61, 34.06, 37.78, 56.72, 39.62, 61.38, 55.27, 40.53, 49.31, 58.95, 37.49, 34.39, 60.47, 56.12, 61.41, 34.56, 58.18, 56.35, 63.59, 50.59, 61.51, 42.02, 52.43, 56.71]
+Interquartile distance:  -17.7275
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 
