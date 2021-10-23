@@ -62,3 +62,30 @@ normal_sample_generator(10000)
 # :class: dropdown
 # Solution pending, [Reference material link](Given a random Bernoulli trial generator, how do you return a value sampled from a normal distribution?)
 # ```
+
+# ```{admonition} Problem: Interquartile Distance
+# :class: dropdown, tip
+# 
+# **Asked By - PINTEREST**
+# 
+# Given an array of unsorted random numbers (decimals) find the interquartile distance.
+# ```
+
+# In[9]:
+
+
+# Interquartile distance is the difference between first and third quartile
+
+# first let's generate a list of random numbers
+
+import random
+import numpy as np
+
+li = [round(random.uniform(33.33, 66.66), 2) for i in range(50)]
+print(li)
+
+qtl_1 = np.quantile(li,.25)
+qtl_3 = np.quantile(li,.75)
+
+print("Interquartile distance: ", qtl_1 - qtl_3)
+
