@@ -315,3 +315,24 @@ Write an SQL query to find employees who have the highest salary in each of the 
 
 ```
 
+```{admonition} Problem: Cumulative Sum
+:class: tip, dropdown
+**Asked By - AMAZON**
+
+Given a users table, write a query to get the cumulative number of new users added by day, with the total reset every month.
+
+[🔫Playground](https://dbfiddle.uk/?rdbms=sqlserver_2017&fiddle=516b59f188aaf8c5c1296143d1b13bcd)
+
+```
+
+```{admonition} Solution:
+:class: dropdown
+
+	`
+		Select Created_date
+		,SUM(Count(Id)) OVER(partition by month(Created_date) order by Created_date) as Total_users
+		from users
+		group by Created_date
+	`
+
+```

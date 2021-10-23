@@ -743,6 +743,23 @@ Select Employee from cte where Emp_Sal &gt; Man_Salary
 </pre></div>
 </div>
 </div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: Cumulative Sum</p>
+<p><strong>Asked By - AMAZON</strong></p>
+<p>Given a users table, write a query to get the cumulative number of new users added by day, with the total reset every month.</p>
+<p><a class="reference external" href="https://dbfiddle.uk/?rdbms=sqlserver_2017&amp;fiddle=516b59f188aaf8c5c1296143d1b13bcd">🔫Playground</a></p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>`
+	Select Created_date
+	,SUM(Count(Id)) OVER(partition by month(Created_date) order by Created_date) as Total_users
+	from users
+	group by Created_date
+`
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
