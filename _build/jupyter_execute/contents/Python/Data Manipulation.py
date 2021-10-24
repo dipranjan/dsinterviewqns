@@ -5,10 +5,8 @@
 
 # ### Questions
 
-# ```{admonition} Problem: Score Bucketization
+# ```{admonition} Problem: [GOOGLE] Score Bucketization
 # :class: dropdown, tip
-# 
-# **Asked By - GOOGLE**
 # 
 # Let's say you're given a list of standardized test scores from high schoolers from grades $9$ to $12$.
 # 
@@ -64,10 +62,8 @@ df["percentage"] = df["percentage"] + "%"
 df.head(10)
 
 
-# ```{admonition} Problem: Complete Addresses
+# ```{admonition} Problem: [NEXTDOOR] Complete Addresses
 # :class: dropdown, tip
-# 
-# **Asked By - NEXTDOOR**
 # 
 # You’re given two dataframes. One contains information about addresses and the other contains relationships between various cities and states:
 # 

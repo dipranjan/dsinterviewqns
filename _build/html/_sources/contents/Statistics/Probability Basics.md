@@ -57,10 +57,8 @@ $P(Banana|Long,Sweet,Yellow) = \frac{P(Long|Banana)*P(Sweet|Banana)*P(Yellow|Ban
 
 ### Questions
 
-```{admonition} Problem: Dice in increasing order
+```{admonition} Problem: [UBER] Dice in increasing order
 :class: tip, dropdown
-
-**Asked By - UBER**
 
 We throw 3 dice one by one. What is the probability that we obtain 3 points in strictly increasing order?
 
@@ -80,10 +78,8 @@ Taking into consideration $P(1)$ and $P(2)$ we have the total as $= 10/216 + 6/2
 ```
 
 
-```{admonition} Problem: Cards without replacement
+```{admonition} Problem: [STATE FARM] Cards without replacement
 :class: tip, dropdown
-
-**Asked By - STATE FARM**
 
 Pull $2$ cards from a deck without replacement what is probability that both are of different colors.
 
@@ -102,10 +98,8 @@ $52$ cards = $26$ Red + $26$ Black
 - Same Color With Replacement    	  $= 26/52 * 25/52$
 ```
 
-```{admonition} Problem: N Dice
+```{admonition} Problem: [FACEBOOK] N Dice
 :class: tip, dropdown
-
-**Asked By - FACEBOOK**
 
 Suppose you're playing a dice game. You have 2 die.
 
@@ -125,5 +119,26 @@ P(at least 1 three) $= 2*(5^1/6^2) + 5^0/6^2$
 Now for N dice: P(at least 1 three) $=$ P(exactly 1 three) $+$  P(2 three) $+$  P(3 three) ... $+$  P(N three)
 
 Combining both $= N * \frac{5^{N-1}}{6^N} + N * \frac{5^{N-2}}{6^N} + N * \frac{5^{N-3}}{6^N} + ... + N * \frac{5^0}{6^N} = \frac{N}{6^N}(5^{N-1} + 5^{N-2} + .. + 1)$
+
+```
+
+```{admonition} Problem: [FACEBOOK] 3 Zebras
+:class: tip, dropdown
+
+Three zebras are chilling in the desert. Suddenly a lion attacks.
+
+Each zebra is sitting on a corner of an equally length triangle. Each zebra randomly picks a direction and only runs along the outline of the triangle to either edge of the triangle.
+
+What is the probability that none of the zebras collide?
+```
+
+```{admonition} Solution:
+:class: dropdown
+
+Each zebra has 2 options of travel: clockwise or anticlockwise. So a total of $2*2*2 = 8$ options.
+
+Out of this only way in which they donot collide is if all of them travel clockwise or anticlockwise. So a total of $2$.
+
+Therefore the probability of no collision $= 2/8 = 25%$
 
 ```

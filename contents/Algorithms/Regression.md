@@ -55,10 +55,8 @@ Now once you have the model fit next comes the metrics to measure how good the f
 
 ### Questions
 
-```{admonition} Problem: Regression Coefficient
+```{admonition} Problem: [UPSTART] Regression Coefficient
 :class: tip, dropdown
-
-**Asked By - UPSTART**
 
 Suppose we have two variables, $X$ and $Y$, where $Y = X +$ some normal white noise.
 

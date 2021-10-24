@@ -28,17 +28,10 @@
 ```{admonition} Change Log
 :class: tip, dropdown
 
-**Week 17th Oct - 23rd Oct**
+** Month of October, 2021**
 
-- Tensorflow Section added
-- Added new problems in Probability, Python, SQL
-
-**Week 10th Oct - 16th Oct**
-
-- Excel Section added
-
-**Week 3rd Oct - 9th Oct**
-
+- Tensorflow, Excel Sections added
+- Added new problems in Probability, Python, SQL, Business Case
 - Cleaned up the formatting issues
 - Added this change log section
 - Added Generative VS Discriminative Models section

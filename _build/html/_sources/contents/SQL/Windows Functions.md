@@ -38,7 +38,7 @@ One problem is you cannot add window functions to the WHERE clause.
 
 ### Questions
 
-```{admonition} Problem: Rank Scores
+```{admonition} Problem: [Leetcode] Rank Scores
 :class: tip, dropdown
 
 **Reference - [Leetcode](https://leetcode.com/problems/rank-scores/)**
@@ -81,10 +81,8 @@ The tie resolving method which is being asked in the question is called Dense Ra
 ```
 
 
-```{admonition} Problem: 2nd Highest score
+```{admonition} Problem: [CHEWY] 2nd Highest score
 :class: tip, dropdown
-
-**Asked By - CHEWY**
 
 | Id | subject | marks |
 |---:|---------|------:|
@@ -114,7 +112,7 @@ Select the second highest mark for each student.
 
 
 
-```{admonition} Problem: Consecutive Numbers
+```{admonition} Problem: [Leetcode] Consecutive Numbers
 :class: tip, dropdown
 
 **Reference - [Leetcode](https://leetcode.com/problems/consecutive-numbers/)**
@@ -176,9 +174,9 @@ Multiple solutions are possible, one of them is given below
 
 
 
-```{admonition} Problem: User Growth
+```{admonition} Problem: [SALESFORCE] User Growth
 :class: tip, dropdown
-**Asked By - SALESFORCE**
+
 **[🔫Playground](https://dbfiddle.uk/?rdbms=sqlserver_2017&fiddle=ce4ded37fa37bf552365c18cb7840c3b)**
 
 Given you have user data for 2 accounts for 2 months. Calculate the growth rate of users in each account where growth rate is defined as unique users in month 2 divided by unique users in month 1.
@@ -207,9 +205,9 @@ Given you have user data for 2 accounts for 2 months. Calculate the growth rate 
 
 ```
 
-```{admonition} Problem: Month over Month Revenue
+```{admonition} Problem: [SALESFORCE] Month over Month Revenue
 :class: tip, dropdown
-**Asked By - SALESFORCE**
+
 **[🔫Playground](https://dbfiddle.uk/?rdbms=sqlserver_2017&fiddle=72569e574e670b477d2f62fdfc4276ca)**
 
 You have 2 tables:
@@ -248,11 +246,10 @@ You have 2 tables:
 ```
 
 
-```{admonition} Problem: Employee earning more than their manager
+```{admonition} Problem: [SALESFORCE] Employee earning more than their manager
 :class: tip, dropdown
 
 **Reference - [Leetcode](https://leetcode.com/problems/employees-earning-more-than-their-managers/)**
-**Asked By - SALESFORCE**
 
 Write an SQL query to find the employees who earn more than their managers.
 
@@ -285,7 +282,7 @@ Output will be : Joe
 
 ```
 
-```{admonition} Problem: Highest Salary in each Department
+```{admonition} Problem: [Leetcode] Highest Salary in each Department
 :class: tip, dropdown
 
 **Reference - [Leetcode](https://leetcode.com/problems/department-highest-salary/)**
@@ -315,9 +312,8 @@ Write an SQL query to find employees who have the highest salary in each of the 
 
 ```
 
-```{admonition} Problem: Cumulative Sum
+```{admonition} Problem: [AMAZON] Cumulative Sum
 :class: tip, dropdown
-**Asked By - AMAZON**
 
 Given a users table, write a query to get the cumulative number of new users added by day, with the total reset every month.
 

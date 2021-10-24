@@ -19,10 +19,8 @@
 # ![Combine DataFrames](images/image1.PNG)
 # ```
 
-# ```{admonition} Problem: Normal Distribution
+# ```{admonition} Problem: [GOOGLE] Normal Distribution
 # :class: dropdown, tip
-# 
-# **Asked By - GOOGLE**
 # 
 # Write a function to generate N samples from a normal distribution and plot the histogram.
 # ```
@@ -50,10 +48,8 @@ def normal_sample_generator(N):
 normal_sample_generator(10000)
 
 
-# ```{admonition} Problem: Bernoulli trial generator
+# ```{admonition} Problem: [UBER] Bernoulli trial generator
 # :class: dropdown, tip
-# 
-# **Asked By - UBER**
 # 
 # Given a random Bernoulli trial generator, write a function to return a value sampled from a normal distribution.
 # ```
@@ -63,10 +59,8 @@ normal_sample_generator(10000)
 # Solution pending, [Reference material link](Given a random Bernoulli trial generator, how do you return a value sampled from a normal distribution?)
 # ```
 
-# ```{admonition} Problem: Interquartile Distance
+# ```{admonition} Problem: [PINTEREST] Interquartile Distance
 # :class: dropdown, tip
-# 
-# **Asked By - PINTEREST**
 # 
 # Given an array of unsorted random numbers (decimals) find the interquartile distance.
 # ```

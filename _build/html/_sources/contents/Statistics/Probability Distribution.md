@@ -148,10 +148,8 @@ Maximum Likelihood Estimation can be applied to both regression and classificati
 
 ### Questions
 
-```{admonition} Problem: Example of unbiased estimator
+```{admonition} Problem: [LIME] Example of unbiased estimator
 :class: tip, dropdown
-
-**Asked By - LIME**
 
 What is an unbiased estimator and can you provide an example for a layman to understand?
 
@@ -165,10 +163,8 @@ One famous example of an unrepresentative sample is the literary digest voter su
 If the sampling had been done correctly then the estimator would have been unbiased as it would match with the actual output from the population, which was win for Theodore Roosevelt.
 ```
 
-```{admonition} Problem: Median of Uniform Distribution
+```{admonition} Problem: [GOOGLE] Median of Uniform Distribution
 :class: tip, dropdown
-
-**Asked By - GOOGLE**
 
 Given 3 i.i.d. variables from an uniform distribution of $0$ to $4$, what’s the chance the median is greater than $3$?
 ```
@@ -185,10 +181,8 @@ where, $G$ stands for probability of number $> 3$ which is probability of it bei
 $L$ for probability of number $< 3$ which is probability of it being $1,2,3$ out of $1,2,3,4 = 3/4$; 
 ```
 
-```{admonition} Problem: MLE of Uniform Distribution
+```{admonition} Problem: [SPOTIFY] MLE of Uniform Distribution
 :class: tip, dropdown
-
-**Asked By - SPOTIFY**
 
 Suppose you draw n samples from a uniform distribution U(a, b). What is the MLE estimate of a and b?
 
@@ -201,10 +195,8 @@ Solution Pending
 
 ```
 
-```{admonition} Problem: Flipping Coins
+```{admonition} Problem: [MCKINSEY] Flipping Coins
 :class: tip, dropdown
-
-**Asked By - MCKINSEY**
 
 You flip a fair coin 576 times. Without using a calculator, calculate the probability of flipping at least 312 heads.
 

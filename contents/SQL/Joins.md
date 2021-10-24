@@ -15,7 +15,7 @@ In case multiple joins each single join produces a **single derived table** that
 
 ### Questions
 
-```{admonition} Problem: Join 2 tables
+```{admonition} Problem: [Leetcode] Join 2 tables
 :class: tip, dropdown
 
 **Reference - [Leetcode](https://leetcode.com/problems/combine-two-tables/)**

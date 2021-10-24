@@ -122,10 +122,8 @@ Some limitations of p-value are as follows:
 
 
 
-```{admonition} Problem: Testing Hypotheses with t-Test
+```{admonition} Problem: [AMAZON] Testing Hypotheses with t-Test
 :class: tip, dropdown
-
-**Asked By - AMAZON**
 
 You are testing hundreds of hypotheses with a t-test, what considerations should be made?
 ```

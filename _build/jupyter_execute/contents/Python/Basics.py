@@ -5,10 +5,8 @@
 
 # ### Questions
 
-# ```{admonition} Problem: Palindrome Checker
+# ```{admonition} Problem: [SNAPCHAT] Palindrome Checker
 # :class: dropdown, tip
-# 
-# **Asked By - SNAPCHAT**
 # 
 # Given a string, determine whether any permutation of it is a palindrome.
 # 
@@ -73,9 +71,9 @@ def pyramid(n):
 pyramid(6)
 
 
-# ```{admonition} Problem: Sum to N
+# ```{admonition} Problem: [UBER] Sum to N
 # :class: dropdown, tip
-# **Asked By - UBER**
+# 
 # Given a list of integers, find all combinations that equal the value N.
 # 
 # Example: 
@@ -106,9 +104,8 @@ def a(lst, target):
 a([2,3,5],8)
 
 
-# ```{admonition} Problem: Max Profit
+# ```{admonition} Problem: [STARBUCKS] Max Profit
 # :class: dropdown, tip
-# **Asked By - STARBUCKS**
 # 
 # Given a list of stock prices in ascending order by datetime, write a function that outputs the max profit by buying and selling at a specific interval.
 # 
@@ -137,9 +134,8 @@ for i,j in enumerate(stock_prices):
 print(buy,sell)
 
 
-# ```{admonition} Problem: Isomorphic string check
+# ```{admonition} Problem: [IBM] Isomorphic string check
 # :class: dropdown, tip
-# **Asked By - IBM**
 # 
 # Write a function which will check if each character of string1 can be mapped to a unique character of string2.
 # 
@@ -191,9 +187,8 @@ print(string_map('ctt', 'fat'))
 print(string_map('cat', 'fat'))
 
 
-# ```{admonition} Problem: Sorted String merge
+# ```{admonition} Problem: [WORKDAY] Sorted String merge
 # :class: dropdown, tip
-# **Asked By - WORKDAY**
 # 
 # Given two sorted lists, write a function to merge them into one sorted list.
 # 
