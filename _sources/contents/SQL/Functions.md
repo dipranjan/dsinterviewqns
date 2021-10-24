@@ -1,6 +1,6 @@
 ## Functions
 
-```{admonition} Problem:
+```{admonition} Problem: [Leetcode] Nth Highest Salary
 :class: tip
 
 **Reference - [Leetcode](https://leetcode.com/problems/nth-highest-salary/)**

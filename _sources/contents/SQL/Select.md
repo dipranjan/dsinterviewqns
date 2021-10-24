@@ -6,7 +6,7 @@
 
 ### Questions
 
-```{admonition} Problem: Second Highest Salary
+```{admonition} Problem: [Leetcode] Second Highest Salary
 :class: tip, dropdown
 
 **Reference - [Leetcode](https://leetcode.com/problems/second-highest-salary/)**
@@ -40,7 +40,7 @@ Multiple solutions are possible only one approach is given below for reference
 
 ```
 
-```{admonition} Problem: HAVING vs WHERE
+```{admonition} Problem: [MICROSOFT] HAVING vs WHERE
 :class: tip, dropdown
 
 **Asked By - MICROSOFT**

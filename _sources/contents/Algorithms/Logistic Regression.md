@@ -47,10 +47,8 @@ scale: 80%
 
 ### Questions
 
-```{admonition} Problem: Interpret Coefficients
+```{admonition} Problem: [ROBINHOOD] Interpret Coefficients
 :class: tip, dropdown
-
-**Asked By - ROBINHOOD**
 
 How would you interpret coefficients of logistic regression for categorical and boolean variables?
 

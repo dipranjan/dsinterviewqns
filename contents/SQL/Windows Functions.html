@@ -410,7 +410,7 @@ They allow you to add your favourite aggregate function to a non-aggregate query
 <div class="section" id="questions">
 <h2>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h2>
 <div class="tip dropdown admonition">
-<p class="admonition-title">Problem: Rank Scores</p>
+<p class="admonition-title">Problem: [Leetcode] Rank Scores</p>
 <p><strong>Reference - <a class="reference external" href="https://leetcode.com/problems/rank-scores/">Leetcode</a></strong></p>
 <p>Write a SQL query to rank scores. If there is a tie between two scores, both should have the same ranking. Note that after a tie, the next ranking number should be the next consecutive integer value. In other words, there should be no “holes” between ranks.</p>
 <table class="colwidths-auto table">
@@ -481,8 +481,7 @@ from Scores
 </div>
 </div>
 <div class="tip dropdown admonition">
-<p class="admonition-title">Problem: 2nd Highest score</p>
-<p><strong>Asked By - CHEWY</strong></p>
+<p class="admonition-title">Problem: [CHEWY] 2nd Highest score</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:right head"><p>Id</p></th>
@@ -532,7 +531,7 @@ select Id, subject, marks from CTE where Rank = 1
 </div>
 </div>
 <div class="tip dropdown admonition">
-<p class="admonition-title">Problem: Consecutive Numbers</p>
+<p class="admonition-title">Problem: [Leetcode] Consecutive Numbers</p>
 <p><strong>Reference - <a class="reference external" href="https://leetcode.com/problems/consecutive-numbers/">Leetcode</a></strong></p>
 <p>Write an SQL query to find all numbers that appear at least three times consecutively.</p>
 <p>Return the result table in any order.</p>
@@ -605,9 +604,8 @@ and Num = SecondNextNum
 </div>
 </div>
 <div class="tip dropdown admonition">
-<p class="admonition-title">Problem: User Growth</p>
-<p><strong>Asked By - SALESFORCE</strong>
-<strong><a class="reference external" href="https://dbfiddle.uk/?rdbms=sqlserver_2017&amp;fiddle=ce4ded37fa37bf552365c18cb7840c3b">🔫Playground</a></strong></p>
+<p class="admonition-title">Problem: [SALESFORCE] User Growth</p>
+<p><strong><a class="reference external" href="https://dbfiddle.uk/?rdbms=sqlserver_2017&amp;fiddle=ce4ded37fa37bf552365c18cb7840c3b">🔫Playground</a></strong></p>
 <p>Given you have user data for 2 accounts for 2 months. Calculate the growth rate of users in each account where growth rate is defined as unique users in month 2 divided by unique users in month 1.</p>
 </div>
 <div class="dropdown admonition">
@@ -631,9 +629,8 @@ on (a.account_id = b.account_id)
 </div>
 </div>
 <div class="tip dropdown admonition">
-<p class="admonition-title">Problem: Month over Month Revenue</p>
-<p><strong>Asked By - SALESFORCE</strong>
-<strong><a class="reference external" href="https://dbfiddle.uk/?rdbms=sqlserver_2017&amp;fiddle=72569e574e670b477d2f62fdfc4276ca">🔫Playground</a></strong></p>
+<p class="admonition-title">Problem: [SALESFORCE] Month over Month Revenue</p>
+<p><strong><a class="reference external" href="https://dbfiddle.uk/?rdbms=sqlserver_2017&amp;fiddle=72569e574e670b477d2f62fdfc4276ca">🔫Playground</a></strong></p>
 <p>You have 2 tables:</p>
 <ul class="simple">
 <li><p>transactions: date, prod_id, quantity</p></li>
@@ -666,9 +663,8 @@ prev_month is not null
 </div>
 </div>
 <div class="tip dropdown admonition">
-<p class="admonition-title">Problem: Employee earning more than their manager</p>
-<p><strong>Reference - <a class="reference external" href="https://leetcode.com/problems/employees-earning-more-than-their-managers/">Leetcode</a></strong>
-<strong>Asked By - SALESFORCE</strong></p>
+<p class="admonition-title">Problem: [SALESFORCE] Employee earning more than their manager</p>
+<p><strong>Reference - <a class="reference external" href="https://leetcode.com/problems/employees-earning-more-than-their-managers/">Leetcode</a></strong></p>
 <p>Write an SQL query to find the employees who earn more than their managers.</p>
 <table class="colwidths-auto table">
 <thead>
@@ -720,7 +716,7 @@ Select Employee from cte where Emp_Sal &gt; Man_Salary
 </div>
 </div>
 <div class="tip dropdown admonition">
-<p class="admonition-title">Problem: Highest Salary in each Department</p>
+<p class="admonition-title">Problem: [Leetcode] Highest Salary in each Department</p>
 <p><strong>Reference - <a class="reference external" href="https://leetcode.com/problems/department-highest-salary/">Leetcode</a></strong></p>
 <p>Write an SQL query to find employees who have the highest salary in each of the departments.</p>
 <p><img alt="image 3" src="../../_images/image33.PNG" /></p>
@@ -744,8 +740,7 @@ Select Employee from cte where Emp_Sal &gt; Man_Salary
 </div>
 </div>
 <div class="tip dropdown admonition">
-<p class="admonition-title">Problem: Cumulative Sum</p>
-<p><strong>Asked By - AMAZON</strong></p>
+<p class="admonition-title">Problem: [AMAZON] Cumulative Sum</p>
 <p>Given a users table, write a query to get the cumulative number of new users added by day, with the total reset every month.</p>
 <p><a class="reference external" href="https://dbfiddle.uk/?rdbms=sqlserver_2017&amp;fiddle=516b59f188aaf8c5c1296143d1b13bcd">🔫Playground</a></p>
 </div>
