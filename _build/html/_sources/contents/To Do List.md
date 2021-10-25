@@ -28,7 +28,7 @@
 
 **Month of October, 2021**
 
-- Tensorflow, Excel Sections added
+- Tensorflow, Excel, Data Sections added
 - Added new problems in Probability, Python, SQL, Business Case
 - Cleaned up the formatting issues
 - Added this change log section

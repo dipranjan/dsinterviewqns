@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SQL Basics &#8212; The Data Science Interview Book</title>
+    <title>Scaling &#8212; The Data Science Interview Book</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -42,6 +42,8 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -49,12 +51,12 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/SQL/Select.html" />
+    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/Data/Scaling.html" />
     <link rel="shortcut icon" href="../../_static/logo.gif"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Joins" href="Joins.html" />
-    <link rel="prev" title="Statistics" href="../Python/Statistics.html" />
+    <link rel="next" title="Regression" href="../Algorithms/Regression.html" />
+    <link rel="prev" title="Hypothesis Testing" href="../Statistics/Hypothesis%20Testing.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -140,9 +142,9 @@
   Data
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../Data/Scaling.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Scaling
   </a>
  </li>
@@ -218,24 +220,24 @@
   SQL
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../SQL/Select.html">
    SQL Basics
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Joins.html">
+  <a class="reference internal" href="../SQL/Joins.html">
    Joins
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Windows%20Functions.html">
+  <a class="reference internal" href="../SQL/Windows%20Functions.html">
    Windows Functions
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Functions.html">
+  <a class="reference internal" href="../SQL/Functions.html">
    Functions
   </a>
  </li>
@@ -316,7 +318,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/contents/SQL/Select.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/contents/Data/Scaling.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -336,10 +338,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/SQL/Select.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/Data/Scaling.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/dipranjan/dsinterviewqns/edit/master/contents/SQL/Select.md"><button
+        <a class="edit-button" href="https://github.com/dipranjan/dsinterviewqns/edit/master/contents/Data/Scaling.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -365,8 +367,23 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#questions">
-   Questions
+  <a class="reference internal nav-link" href="#rescaling-min-max-normalization">
+   Rescaling (min-max normalization)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mean-normalization">
+   Mean normalization
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#standardization">
+   Standardization
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scaling-to-unit-length">
+   Scaling to Unit length
   </a>
  </li>
 </ul>
@@ -380,63 +397,31 @@
         
               <div>
                 
-  <div class="section" id="sql-basics">
-<h1>SQL Basics<a class="headerlink" href="#sql-basics" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="questions">
-<h2>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h2>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Problem: [Leetcode] Second Highest Salary</p>
-<p><strong>Reference - <a class="reference external" href="https://leetcode.com/problems/second-highest-salary/">Leetcode</a></strong>
-** For a similar problem with different approach check Nth highest salary problem **</p>
-<p>Write a SQL query to get the second highest salary from the Employee table.</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Id</p></th>
-<th class="head"><p>Salary</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>1</p></td>
-<td><p>100</p></td>
-</tr>
-<tr class="row-odd"><td><p>2</p></td>
-<td><p>200</p></td>
-</tr>
-<tr class="row-even"><td><p>3</p></td>
-<td><p>300</p></td>
-</tr>
-</tbody>
-</table>
-<p>For example, given the above Employee table, the query should return 200 as the second highest salary. If there is no second highest salary, then the query should return null.</p>
+  <div class="section" id="scaling">
+<h1>Scaling<a class="headerlink" href="#scaling" title="Permalink to this headline">¶</a></h1>
+<p>Feature scaling is a method used to standardize the range of independent variables or features of data. In data processing, it is also known as data normalization and is generally performed during the data preprocessing step.</p>
+<p>Since the range of values of raw data varies widely, in some machine learning algorithms, objective functions will not work properly without normalization. For example, the majority of classifiers calculate the distance between two points by the Euclidean distance. If one of the features has a broad range of values, the distance will be governed by this particular feature. Therefore, the range of all features should be normalized so that each feature contributes approximately proportionately to the final distance.
+Another reason why feature scaling is applied is that gradient descent converges much faster with feature scaling than without it.</p>
+<div class="section" id="rescaling-min-max-normalization">
+<h2>Rescaling (min-max normalization)<a class="headerlink" href="#rescaling-min-max-normalization" title="Permalink to this headline">¶</a></h2>
+<p>Also known as min-max scaling or min-max normalization, is the simplest method and consists in rescaling the range of features to scale the range in <span class="math notranslate nohighlight">\([0, 1]\)</span> or <span class="math notranslate nohighlight">\([−1, 1]\)</span>. Selecting the target range depends on the nature of the data. The general formula is given as:</p>
+<p><span class="math notranslate nohighlight">\(x^{\prime} = \frac{x - min(x)}{max(x) - min(x)}\)</span></p>
 </div>
-<div class="dropdown admonition">
-<p class="admonition-title">Solution:</p>
-<p>Multiple solutions are possible only one approach is given below for reference</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>`
-SELECT
-(SELECT DISTINCT(Salary)
-FROM Employee
-ORDER BY Salary DESC
-LIMIT 1 OFFSET 1) 
-AS SecondHighestSalary
-`
-</pre></div>
+<div class="section" id="mean-normalization">
+<h2>Mean normalization<a class="headerlink" href="#mean-normalization" title="Permalink to this headline">¶</a></h2>
+<p>This is similar to above with a slight change:
+<span class="math notranslate nohighlight">\(x^{\prime} = \frac{x - average(x)}{max(x) - min(x)}\)</span></p>
 </div>
+<div class="section" id="standardization">
+<h2>Standardization<a class="headerlink" href="#standardization" title="Permalink to this headline">¶</a></h2>
+<p>In machine learning, we can handle various types of data, e.g. audio signals and pixel values for image data, and this data can include multiple dimensions. Feature standardization makes the values of each feature in the data have zero-mean (when subtracting the mean in the numerator) and unit-variance. This method is widely used for normalization in many machine learning algorithms (e.g., support vector machines, logistic regression, and artificial neural networks).</p>
+<p><span class="math notranslate nohighlight">\(x^{\prime} = \frac{x - \bar x}{\sigma}\)</span></p>
 </div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Problem: [MICROSOFT] HAVING vs WHERE</p>
-<p><strong>Asked By - MICROSOFT</strong></p>
-<p>Can you elborate on the differences between HAVING and WHERE clause in a SQL query?</p>
-</div>
-<div class="dropdown admonition">
-<p class="admonition-title">Solution:</p>
-<p>The major differences between between HAVING and WHERE are as follows:</p>
-<ul class="simple">
-<li><p>WHERE can be used with Select, Insert, Update, Delete statements. HAVING can only be used with Select statements</p></li>
-<li><p>WHERE filters rows before aggregation, HAVING filters after that</p></li>
-</ul>
-<p>Performance wise there is not much of a difference, the best practice is to filter out unwanted rows as early as possible</p>
-</div>
+<div class="section" id="scaling-to-unit-length">
+<h2>Scaling to Unit length<a class="headerlink" href="#scaling-to-unit-length" title="Permalink to this headline">¶</a></h2>
+<p>Another option that is widely used in machine-learning is to scale the components of a feature vector such that the complete vector has length one. This usually means dividing each component by the Euclidean length of the vector:</p>
+<p><span class="math notranslate nohighlight">\(x^{\prime} = \frac{x}{\Vert x \Vert}\)</span></p>
+<p>In some applications (e.g. Histogram features) it can be more practical to use the L1 norm (i.e. Manhattan Distance, City-Block Length or Taxicab Geometry) of the feature vector. This is especially important if in the following learning steps the Scalar Metric is used as a distance measure.</p>
 </div>
 </div>
 
@@ -453,7 +438,7 @@ AS SecondHighestSalary
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./contents\SQL"
+            path: "./contents\Data"
         },
         predefinedOutput: true
     }
@@ -470,19 +455,19 @@ AS SecondHighestSalary
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="../Python/Statistics.html" title="previous page">
+        <a class="left-prev" href="../Statistics/Hypothesis%20Testing.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Statistics</p>
+                <p class="prevnext-title">Hypothesis Testing</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="Joins.html" title="next page">
+        <a class="right-next" href="../Algorithms/Regression.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Joins</p>
+                <p class="prevnext-title">Regression</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

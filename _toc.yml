@@ -11,11 +11,14 @@ parts:
     - file: contents/Statistics/Central Limit Theorem
     - file: contents/Statistics/Bayesian vs Frequentist Reasoning
     - file: contents/Statistics/Hypothesis Testing
+  - caption: Data
+    chapters:
+    - file: contents/Data/Scaling
   - caption: Algorithms
     chapters:
     - file: contents/Algorithms/Regression
     - file: contents/Algorithms/Generative VS Discriminative Models
-    - file: contents/Algorithms/Logistic Regression
+    - file: contents/Algorithms/Classification
     - file: contents/Algorithms/Time Series Analysis
     - file: contents/Algorithms/Anomaly Detection
   - caption: NLP
