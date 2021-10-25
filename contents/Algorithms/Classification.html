@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Logistic Regression &#8212; The Data Science Interview Book</title>
+    <title>Classification &#8212; The Data Science Interview Book</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,7 +51,7 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/Algorithms/Logistic Regression.html" />
+    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/Algorithms/Classification.html" />
     <link rel="shortcut icon" href="../../_static/logo.gif"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -139,6 +139,18 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
+  Data
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Data/Scaling.html">
+   Scaling
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
   Algorithms
  </span>
 </p>
@@ -155,7 +167,7 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Logistic Regression
+   Classification
   </a>
  </li>
  <li class="toctree-l1">
@@ -306,7 +318,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/contents/Algorithms/Logistic Regression.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/contents/Algorithms/Classification.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -326,10 +338,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/Algorithms/Logistic Regression.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/Algorithms/Classification.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/dipranjan/dsinterviewqns/edit/master/contents/Algorithms/Logistic Regression.md"><button
+        <a class="edit-button" href="https://github.com/dipranjan/dsinterviewqns/edit/master/contents/Algorithms/Classification.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -355,9 +367,16 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cost-function">
-   Cost Function
+  <a class="reference internal nav-link" href="#logistic-regression">
+   Logistic Regression
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cost-function">
+     Cost Function
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#metrics">
@@ -380,8 +399,10 @@
         
               <div>
                 
-  <div class="section" id="logistic-regression">
-<h1>Logistic Regression<a class="headerlink" href="#logistic-regression" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="classification">
+<h1>Classification<a class="headerlink" href="#classification" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="logistic-regression">
+<h2>Logistic Regression<a class="headerlink" href="#logistic-regression" title="Permalink to this headline">¶</a></h2>
 <p>It is easy to say that the linear regression predicts a “value” of the targeted variable through a linear combination of the given features, while on the other hand, a Logistic regression predicts “probability value” through a linear combination of the given features plugged inside a logistic function.
 Linear regression is unbounded, and this brings logistic regression into picture. Their value strictly ranges from 0 to 1.</p>
 <div class="figure align-default" id="image3">
@@ -389,11 +410,12 @@ Linear regression is unbounded, and this brings logistic regression into picture
 <p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">Logistic regression uses Sigmoid function to transform linear regression into the logit function. Logit is nothing but log of Odds. Then using log of Odds it calculate the required probability.(<a class="reference external" href="https://www.vebuso.com/2020/02/linear-to-logistic-regression-explained-step-by-step/">📖Source</a>)</span><a class="headerlink" href="#image3" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="cost-function">
-<h2>Cost Function<a class="headerlink" href="#cost-function" title="Permalink to this headline">¶</a></h2>
+<h3>Cost Function<a class="headerlink" href="#cost-function" title="Permalink to this headline">¶</a></h3>
 <p>One more thing to note here is that logistic regression uses maximum likelihood estimation (MLE) instead of least squares method of minimizing the error which is used in linear models. In Linear regression we minimized SSE. In Logistic Regression we maximize log likelihood instead. Linear regression uses mean squared error as its cost function. If this is used for logistic regression, then it will be a non-convex function of parameters (theta). Gradient descent will converge into global minimum only if the function is convex.</p>
 <div class="figure align-default" id="image4">
 <a class="reference internal image-reference" href="../../_images/image4.PNG"><img alt="../../_images/image4.PNG" src="../../_images/image4.PNG" style="width: 356.8px; height: 192.4px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">Cost function(<a class="reference external" href="https://pvgisours.tistory.com/59">📖Source</a>)</span><a class="headerlink" href="#image4" title="Permalink to this image">¶</a></p>
+</div>
 </div>
 </div>
 <div class="section" id="metrics">
@@ -438,6 +460,14 @@ Linear regression is unbounded, and this brings logistic regression into picture
 <p class="admonition-title">Solution:</p>
 <p>Logistic regression, by default, is limited to two-class classification problems. Some extensions like one-vs-rest can allow logistic regression to be used for multi-class classification problems, although they require that the classification problem first be transformed into multiple binary classification problems.</p>
 <p>Multinomial logistic regression algorithm is an extension to the logistic regression model that involves changing the loss function to cross-entropy loss and predict probability distribution to a multinomial probability distribution to natively support multi-class classification problems.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: Choice of Cost Function</p>
+<p>In what situations would you recommend using one metric over the another for classification models?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>It all depends on the use case. For example, a diagnostic lab will be concerned with incorrect positive diagnosis. Hence, they will aim for a high specificity value. On the other hand, for a model predicting loan default rate the goal is to identify even a small chance of default, hence we need the model to maximize sensitivity.</p>
 </div>
 </div>
 </div>

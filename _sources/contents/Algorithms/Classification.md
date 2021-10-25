@@ -1,4 +1,6 @@
-## Logistic Regression
+## Classification
+
+### Logistic Regression
 
 It is easy to say that the linear regression predicts a “value” of the targeted variable through a linear combination of the given features, while on the other hand, a Logistic regression predicts “probability value” through a linear combination of the given features plugged inside a logistic function.
 Linear regression is unbounded, and this brings logistic regression into picture. Their value strictly ranges from 0 to 1.
@@ -11,7 +13,7 @@ scale: 60%
 Logistic regression uses Sigmoid function to transform linear regression into the logit function. Logit is nothing but log of Odds. Then using log of Odds it calculate the required probability.([📖Source](https://www.vebuso.com/2020/02/linear-to-logistic-regression-explained-step-by-step/))
 ```
 
-### Cost Function
+#### Cost Function
 
 One more thing to note here is that logistic regression uses maximum likelihood estimation (MLE) instead of least squares method of minimizing the error which is used in linear models. In Linear regression we minimized SSE. In Logistic Regression we maximize log likelihood instead. Linear regression uses mean squared error as its cost function. If this is used for logistic regression, then it will be a non-convex function of parameters (theta). Gradient descent will converge into global minimum only if the function is convex.
 
@@ -94,4 +96,16 @@ Logistic regression, by default, is limited to two-class classification problems
 
 Multinomial logistic regression algorithm is an extension to the logistic regression model that involves changing the loss function to cross-entropy loss and predict probability distribution to a multinomial probability distribution to natively support multi-class classification problems.
 
+```
+
+```{admonition} Problem: Choice of Cost Function
+:class: tip, dropdown
+
+In what situations would you recommend using one metric over the another for classification models?
+```
+
+```{admonition} Solution:
+:class: dropdown
+
+It all depends on the use case. For example, a diagnostic lab will be concerned with incorrect positive diagnosis. Hence, they will aim for a high specificity value. On the other hand, for a model predicting loan default rate the goal is to identify even a small chance of default, hence we need the model to maximize sensitivity.
 ```
