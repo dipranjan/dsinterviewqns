@@ -136,3 +136,17 @@ def complete_address(df_addresses,df_cities):
 
 complete_address(df_addresses,df_cities)
 
+
+# ```{admonition} Problem: PANDAS vs SQL
+# :class: tip, dropdown
+# 
+# Can you tell me what is approximately Windows function equivalent in Pandas?
+# 
+# ```
+# 
+# ```{admonition} Solution:
+# :class: dropdown
+# 
+# Windows function in SQL brings row wise calculation capabilities. An approximate equivalent of it can be `transform` in pandas it brings row wise calculation capabilities in Python.
+# 
+# ```
