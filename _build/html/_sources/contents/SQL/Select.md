@@ -5,18 +5,20 @@
 DDL stands for Data Defination Language. These commands are used to change the structure of a database and database objects.
 Some common commands are as follows:
 - **CREATE:** is used to create the database or its objects (like table, index, function, views, store procedure and triggers).
-	
-	`CREATE DATABASE databasename;`
 
 	The generic format of the create table is as follows:
-	
-`
+
+	```sql
+	CREATE DATABASE databasename;
+
 	CREATE TABLE table_name (
-	    column1 datatype CONSTRAINT,
-	    column2 datatype CONSTRAINT,
-	    column3 datatype CONSTRAINT);
-`
+	column1 datatype CONSTRAINT,
+	column2 datatype CONSTRAINT,
+	column3 datatype CONSTRAINT); 
+	```
+
 	Using constraints we can specify the limit on the type of data that can be stored in a particular column in a table. Some of the constraints are:
+
 	- **NOT NULL:** This constraint tells that the value of a column cannot be null.
 	- **UNIQUE:** This constraint tells that the values in any row of a column must not be repeated.
 	- **PRIMARY KEY:** A primary key is a field which can uniquely identify each row in a table. We can say that PRIMARY KEY is combination of NOT NULL and UNIQUE constraints. A table can have only one field as primary key.
@@ -41,6 +43,7 @@ For referential integrity to hold in a relational database, any column in a base
 :class: tip, dropdown
 
 **Reference - [Leetcode](https://leetcode.com/problems/second-highest-salary/)**
+
 *For a similar problem with different approach check Nth highest salary problem*
 
 Write a SQL query to get the second highest salary from the Employee table.
@@ -55,21 +58,21 @@ For example, given the above Employee table, the query should return 200 as the 
 
 ```
 
-```{admonition} Solution:
+````{admonition} Solution:
 :class: dropdown
 
 Multiple solutions are possible only one approach is given below for reference
 
-	`
-	SELECT
-	(SELECT DISTINCT(Salary)
-	FROM Employee
-	ORDER BY Salary DESC
-	LIMIT 1 OFFSET 1) 
-	AS SecondHighestSalary
-	`
-
+```sql
+SELECT
+(SELECT DISTINCT(Salary)
+FROM Employee
+ORDER BY Salary DESC
+LIMIT 1 OFFSET 1) 
+AS SecondHighestSalary
 ```
+
+````
 
 ```{admonition} Problem: [MICROSOFT] HAVING vs WHERE
 :class: tip, dropdown

@@ -16,12 +16,12 @@ For example, given the above Employee table, the query should return 200 as the 
 
 ```
 
-```{admonition} Solution:
+````{admonition} Solution:
 :class: dropdown
 
 Multiple solutions are possible only one approach is given below for reference
 
-	`
+```sql
 	CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
 	BEGIN
 	      DECLARE temp INT;
@@ -32,6 +32,6 @@ Multiple solutions are possible only one approach is given below for reference
 	      LIMIT 1 Offset temp      
 	  );
 	END
-	`
-
 ```
+
+````

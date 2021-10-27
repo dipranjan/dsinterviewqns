@@ -48,14 +48,13 @@ FirstName, LastName, City, State
 
 ```
 
-```{admonition} Solution:
+````{admonition} Solution:
 :class: dropdown
 
-`
+```sql
 select a.FirstName, a.LastName, b.City, b.State
 from Person a
 left join Address b
 on a.PersonId = b.PersonID
-`
-
 ```
+````

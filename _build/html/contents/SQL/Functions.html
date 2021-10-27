@@ -396,18 +396,16 @@ Write a SQL query to get the Nth highest salary from the Employee table.</p>
 <div class="dropdown admonition">
 <p class="admonition-title">Solution:</p>
 <p>Multiple solutions are possible only one approach is given below for reference</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>`
-CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
-BEGIN
-      DECLARE temp INT;
-      SET temp = N-1;
-  RETURN (      
-      Select DISTINCT Salary from Employee
-      Order by Salary Desc
-      LIMIT 1 Offset temp      
-  );
-END
-`
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span>	<span class="k">CREATE</span> <span class="k">FUNCTION</span> <span class="n">getNthHighestSalary</span><span class="p">(</span><span class="n">N</span> <span class="nb">INT</span><span class="p">)</span> <span class="k">RETURNS</span> <span class="nb">INT</span>
+	<span class="k">BEGIN</span>
+	      <span class="k">DECLARE</span> <span class="n">temp</span> <span class="nb">INT</span><span class="p">;</span>
+	      <span class="k">SET</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+	  <span class="k">RETURN</span> <span class="p">(</span>      
+	      <span class="k">Select</span> <span class="k">DISTINCT</span> <span class="n">Salary</span> <span class="k">from</span> <span class="n">Employee</span>
+	      <span class="k">Order</span> <span class="k">by</span> <span class="n">Salary</span> <span class="k">Desc</span>
+	      <span class="k">LIMIT</span> <span class="mi">1</span> <span class="k">Offset</span> <span class="n">temp</span>      
+	  <span class="p">);</span>
+	<span class="k">END</span>
 </pre></div>
 </div>
 </div>

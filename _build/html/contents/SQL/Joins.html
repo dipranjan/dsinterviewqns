@@ -441,7 +441,12 @@
 </div>
 <div class="dropdown admonition">
 <p class="admonition-title">Solution:</p>
-<p><code class="docutils literal notranslate"><span class="pre">select</span> <span class="pre">a.FirstName,</span> <span class="pre">a.LastName,</span> <span class="pre">b.City,</span> <span class="pre">b.State</span> <span class="pre">from</span> <span class="pre">Person</span> <span class="pre">a</span> <span class="pre">left</span> <span class="pre">join</span> <span class="pre">Address</span> <span class="pre">b</span> <span class="pre">on</span> <span class="pre">a.PersonId</span> <span class="pre">=</span> <span class="pre">b.PersonID</span></code></p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">select</span> <span class="n">a</span><span class="p">.</span><span class="n">FirstName</span><span class="p">,</span> <span class="n">a</span><span class="p">.</span><span class="n">LastName</span><span class="p">,</span> <span class="n">b</span><span class="p">.</span><span class="n">City</span><span class="p">,</span> <span class="n">b</span><span class="p">.</span><span class="k">State</span>
+<span class="k">from</span> <span class="n">Person</span> <span class="n">a</span>
+<span class="k">left</span> <span class="k">join</span> <span class="n">Address</span> <span class="n">b</span>
+<span class="k">on</span> <span class="n">a</span><span class="p">.</span><span class="n">PersonId</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">PersonID</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>

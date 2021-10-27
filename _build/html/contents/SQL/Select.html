@@ -398,19 +398,25 @@
 Some common commands are as follows:</p>
 <ul>
 <li><p><strong>CREATE:</strong> is used to create the database or its objects (like table, index, function, views, store procedure and triggers).</p>
-<p><code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">DATABASE</span> <span class="pre">databasename;</span></code></p>
 <p>The generic format of the create table is as follows:</p>
-</li>
-</ul>
-<p><code class="docutils literal notranslate"><span class="pre">	CREATE</span> <span class="pre">TABLE</span> <span class="pre">table_name</span> <span class="pre">(</span> &#160;&#160;&#160;  <span class="pre">column1</span> <span class="pre">datatype</span> <span class="pre">CONSTRAINT,</span> &#160;&#160;&#160;  <span class="pre">column2</span> <span class="pre">datatype</span> <span class="pre">CONSTRAINT,</span> &#160;&#160;&#160;  <span class="pre">column3</span> <span class="pre">datatype</span> <span class="pre">CONSTRAINT);</span></code>
-Using constraints we can specify the limit on the type of data that can be stored in a particular column in a table. Some of the constraints are:
-- <strong>NOT NULL:</strong> This constraint tells that the value of a column cannot be null.
-- <strong>UNIQUE:</strong> This constraint tells that the values in any row of a column must not be repeated.
-- <strong>PRIMARY KEY:</strong> A primary key is a field which can uniquely identify each row in a table. We can say that PRIMARY KEY is combination of NOT NULL and UNIQUE constraints. A table can have only one field as primary key.
-- <strong>FOREIGN KEY:</strong> Foreign Key is a field in a table which uniquely identifies each row of another table. This field points to primary key of another table. This usually creates a relation between the tables.
-- <strong>CHECK:</strong> This constraint helps to ensure that the value stored in a column meets a specific condition.
-- <strong>DEFAULT:</strong> This constraint specifies a default value for the column when no value is specified by the user.</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="n">databasename</span><span class="p">;</span>
+
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="k">table_name</span> <span class="p">(</span>
+<span class="n">column1</span> <span class="n">datatype</span> <span class="k">CONSTRAINT</span><span class="p">,</span>
+<span class="n">column2</span> <span class="n">datatype</span> <span class="k">CONSTRAINT</span><span class="p">,</span>
+<span class="n">column3</span> <span class="n">datatype</span> <span class="k">CONSTRAINT</span><span class="p">);</span> 
+</pre></div>
+</div>
+<p>Using constraints we can specify the limit on the type of data that can be stored in a particular column in a table. Some of the constraints are:</p>
 <ul class="simple">
+<li><p><strong>NOT NULL:</strong> This constraint tells that the value of a column cannot be null.</p></li>
+<li><p><strong>UNIQUE:</strong> This constraint tells that the values in any row of a column must not be repeated.</p></li>
+<li><p><strong>PRIMARY KEY:</strong> A primary key is a field which can uniquely identify each row in a table. We can say that PRIMARY KEY is combination of NOT NULL and UNIQUE constraints. A table can have only one field as primary key.</p></li>
+<li><p><strong>FOREIGN KEY:</strong> Foreign Key is a field in a table which uniquely identifies each row of another table. This field points to primary key of another table. This usually creates a relation between the tables.</p></li>
+<li><p><strong>CHECK:</strong> This constraint helps to ensure that the value stored in a column meets a specific condition.</p></li>
+<li><p><strong>DEFAULT:</strong> This constraint specifies a default value for the column when no value is specified by the user.</p></li>
+</ul>
+</li>
 <li><p><strong>DROP:</strong> is used to delete databases or tables.</p></li>
 <li><p><strong>ALTER:</strong> is used to alter the structure of the database. You can use this to add/modify/delete a column.</p></li>
 <li><p><strong>TRUNCATE:</strong> The TRUNCATE TABLE statement is used to delete the data inside a table, <em>but not the table itself.</em></p></li>
@@ -426,8 +432,8 @@ For referential integrity to hold in a relational database, any column in a base
 <h2>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h2>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Problem: [Leetcode] Second Highest Salary</p>
-<p><strong>Reference - <a class="reference external" href="https://leetcode.com/problems/second-highest-salary/">Leetcode</a></strong>
-<em>For a similar problem with different approach check Nth highest salary problem</em></p>
+<p><strong>Reference - <a class="reference external" href="https://leetcode.com/problems/second-highest-salary/">Leetcode</a></strong></p>
+<p><em>For a similar problem with different approach check Nth highest salary problem</em></p>
 <p>Write a SQL query to get the second highest salary from the Employee table.</p>
 <table class="colwidths-auto table">
 <thead>
@@ -452,14 +458,12 @@ For referential integrity to hold in a relational database, any column in a base
 <div class="dropdown admonition">
 <p class="admonition-title">Solution:</p>
 <p>Multiple solutions are possible only one approach is given below for reference</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>`
-SELECT
-(SELECT DISTINCT(Salary)
-FROM Employee
-ORDER BY Salary DESC
-LIMIT 1 OFFSET 1) 
-AS SecondHighestSalary
-`
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span>
+<span class="p">(</span><span class="k">SELECT</span> <span class="k">DISTINCT</span><span class="p">(</span><span class="n">Salary</span><span class="p">)</span>
+<span class="k">FROM</span> <span class="n">Employee</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">Salary</span> <span class="k">DESC</span>
+<span class="k">LIMIT</span> <span class="mi">1</span> <span class="k">OFFSET</span> <span class="mi">1</span><span class="p">)</span> 
+<span class="k">AS</span> <span class="n">SecondHighestSalary</span>
 </pre></div>
 </div>
 </div>
