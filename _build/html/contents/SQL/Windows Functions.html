@@ -42,6 +42,8 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -365,6 +367,11 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#common-windows-functions">
+   Common Windows Functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#questions">
    Questions
   </a>
@@ -385,14 +392,15 @@
 <p><strong>Reference:</strong> <a class="reference external" href="https://www.red-gate.com/simple-talk/sql/t-sql-programming/introduction-to-t-sql-window-functions/">📖Explanation</a>, <a class="reference external" href="https://dbfiddle.uk/?rdbms=sqlserver_2017&amp;fiddle=6379904805d1f465cc0f6ea33fc3c0d6">🔫Playground</a></p>
 <p>Window (also, windowing or windowed) functions perform a calculation over a set of rows. I like to think of “looking through the window” at the rows that are being returned and having one last chance to perform a calculation. The window is defined by the OVER clause which determines if the rows are partitioned into smaller sets and if they are ordered.
 They allow you to add your favourite aggregate function to a non-aggregate query. Similar to Transform is pandas group by clause.</p>
-<p>Some common windows functions are as follows:</p>
+<div class="section" id="common-windows-functions">
+<h2>Common Windows Functions<a class="headerlink" href="#common-windows-functions" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><strong>Ranking functions</strong></p>
 <ul>
-<li><p>ROW_NUMBER: <em>is used to add unique row numbers to a partition or to the entire result set. It has the ability to turn non-unique rows into unique rows.</em></p></li>
-<li><p>RANK: <em>it will give numbers same as row_number just that same data will get same rank</em></p></li>
-<li><p>DENSE_RANK: <em>doesnot skip and rank number</em></p></li>
-<li><p>NTILE: <em>It assigns bucket numbers to the rows instead of row numbers or ranks</em></p></li>
+<li><p><strong>ROW_NUMBER:</strong> is used to add unique row numbers to a partition or to the entire result set. It has the ability to turn non-unique rows into unique rows</p></li>
+<li><p><strong>RANK:</strong> it will give numbers same as row_number just that same data will get same rank</p></li>
+<li><p><strong>DENSE_RANK:</strong> doesnot skip and rank number</p></li>
+<li><p><strong>NTILE:</strong> It assigns bucket numbers to the rows instead of row numbers or ranks</p></li>
 </ul>
 </li>
 </ul>
@@ -403,22 +411,22 @@ They allow you to add your favourite aggregate function to a non-aggregate query
 <ul class="simple">
 <li><p><strong>Offset functions</strong></p>
 <ul>
-<li><p>LAG</p></li>
-<li><p>LEAD</p></li>
-<li><p>FIRST_VALUE</p></li>
-<li><p>LAST_VALUE</p></li>
+<li><p><strong>LAG:</strong>  the function allows you to pull columns or expressions from a row before the current row</p></li>
+<li><p><strong>LEAD:</strong> the function allows you to pull columns or expressions from a row after the current row</p></li>
+<li><p><strong>FIRST_VALUE:</strong> the functions allows you to return values from the first row of the partition</p></li>
+<li><p><strong>LAST_VALUE:</strong> the functions allows you to return values from the last row of the partition</p></li>
 </ul>
 </li>
 <li><p><strong>Statistical functions</strong>
-– PERCENT_RANK</p>
+– <strong>PERCENT_RANK:</strong> returns the percentage of rows that rank lower than the current row, its formula is <span class="math notranslate nohighlight">\(\frac{\text{Rank} -1}{\text{Row count} -1}\)</span></p>
 <ul>
-<li><p>CUME_DIST</p></li>
-<li><p>PERCENTILE_DISC</p></li>
-<li><p>PERCENTILE_CONT</p></li>
+<li><p><strong>CUME_DIST:</strong> cumulative distribution, returns the exact rank, its formula is <span class="math notranslate nohighlight">\(\frac{\text{Rank}}{\text{Row count}}\)</span></p></li>
+<li><p><strong>PERCENTILE_DISC &amp; PERCENTILE_CONT:</strong> these two work in the opposite way. Given a percent rank, find the value at that rank. They differ in that PERCENTILE_DISC will return a value that exists in the set while PERCENTILE_CONT will calculate an exact value if none of the values in the set falls precisely at that rank. You can use PERCENTILE_CONT to calculate a median by supplying 0.5 as the percent rank. For example, which temperature ranks at 50% in St. Louis?</p></li>
 </ul>
 </li>
 </ul>
-<p>One problem is you cannot add window functions to the WHERE clause.</p>
+<p><strong>One problem is you cannot add window functions to the WHERE clause.</strong></p>
+</div>
 <div class="section" id="questions">
 <h2>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h2>
 <div class="tip dropdown admonition">

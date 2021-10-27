@@ -1,5 +1,7 @@
 ## SQL Basics
 
+If you are new to SQL [this ▶️](https://www.youtube.com/watch?v=7GVFYt6_ZFM&list=PL08903FB7ACA1C2FB) is one of the most comprehensive material of SQL that is available in the internet. Please go through the portions of interest to you.
+
 ### DDL
 
 DDL stands for Data Defination Language. These commands are used to change the structure of a database and database objects.
@@ -35,6 +37,22 @@ Some common commands are as follows:
 
 Referential integrity is a property of data stating references within it are valid. In the context of relational databases, it requires every value of one attribute (column) of a relation (table) to exist as a value of another attribute (column) in a different (or the same) relation (table).
 For referential integrity to hold in a relational database, any column in a base table that is declared a foreign key can contain either a null value, or only values from a parent table's primary key or a candidate key. In other words, when a foreign key value is used it must reference a valid, existing primary key in the parent table. For instance, deleting a record that contains a value referred to by a foreign key in another table would break referential integrity. Some relational database management systems (RDBMS) can enforce referential integrity, normally either by deleting the foreign key rows as well to maintain integrity, or by returning an error and not performing the delete. Which method is used may be determined by a referential integrity constraint defined in a data dictionary.
+
+### UNION & UNION ALL
+
+- UNION removes duplicate rows, UNION ALL doesnot
+- UNION has to perform a distinct sort to remove duplicates, hence is a little slow
+- UNION combines rows of two tables, JOIN combines columns
+
+### NULL
+
+There are 3 ways to take care of NULL values:
+
+Let's take an example suppose we want to fill the Manager name as 'No Manager' if an employee does have a manager assigned in the manager column. This can be done using:
+- ``` ISNULL(manager, 'No Manager') ```
+- ``` CASE WHEN manager IS NULL THEN 'No Manager' ELSE manager END as manager ```
+- The other option is ``` COALESCE ``` but it esentially takes the first non-null value out of the passed columns
+
 
 
 ### Questions
