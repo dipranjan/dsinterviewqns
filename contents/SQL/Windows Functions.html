@@ -484,11 +484,9 @@ They allow you to add your favourite aggregate function to a non-aggregate query
 <div class="dropdown admonition">
 <p class="admonition-title">Solution:</p>
 <p>The tie resolving method which is being asked in the question is called Dense Rank, if we use Rank it will have “holes”</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>`
-select 
-Score, dense_rank() over(order by score desc) as Rank
-from Scores
-`
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">select</span> 
+<span class="n">Score</span><span class="p">,</span> <span class="n">dense_rank</span><span class="p">()</span> <span class="n">over</span><span class="p">(</span><span class="k">order</span> <span class="k">by</span> <span class="n">score</span> <span class="k">desc</span><span class="p">)</span> <span class="k">as</span> <span class="n">Rank</span>
+<span class="k">from</span> <span class="n">Scores</span>
 </pre></div>
 </div>
 </div>
@@ -532,13 +530,10 @@ from Scores
 </div>
 <div class="dropdown admonition">
 <p class="admonition-title">Solution:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>`
-with CTE as(
-select *, rank() over(partition by Id order by marks desc) as Rank from tablename
-)
-
-select Id, subject, marks from CTE where Rank = 1
-`
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">CTE</span> <span class="k">as</span><span class="p">(</span>
+	<span class="k">select</span> <span class="o">*</span><span class="p">,</span> <span class="n">rank</span><span class="p">()</span> <span class="n">over</span><span class="p">(</span><span class="n">partition</span> <span class="k">by</span> <span class="n">Id</span> <span class="k">order</span> <span class="k">by</span> <span class="n">marks</span> <span class="k">desc</span><span class="p">)</span> <span class="k">as</span> <span class="n">Rank</span> <span class="k">from</span> <span class="n">tablename</span>
+<span class="p">)</span>
+<span class="k">select</span> <span class="n">Id</span><span class="p">,</span> <span class="n">subject</span><span class="p">,</span> <span class="n">marks</span> <span class="k">from</span> <span class="n">CTE</span> <span class="k">where</span> <span class="n">Rank</span> <span class="o">=</span> <span class="mi">1</span>
 </pre></div>
 </div>
 </div>
@@ -595,23 +590,19 @@ select Id, subject, marks from CTE where Rank = 1
 <div class="dropdown admonition">
 <p class="admonition-title">Solution:</p>
 <p>Multiple solutions are possible, one of them is given below</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>`
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">a</span><span class="p">(</span><span class="n">Num</span><span class="p">,</span><span class="n">NextNum</span><span class="p">,</span><span class="n">SecondNextNum</span> <span class="p">)</span> <span class="k">as</span><span class="p">(</span>
 
-with a(Num,NextNum,SecondNextNum ) as(
+	<span class="k">SELECT</span>   <span class="n">Num</span>
+	         <span class="p">,</span> <span class="n">LEAD</span><span class="p">(</span><span class="n">Num</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="n">OVER</span> <span class="p">(</span><span class="k">ORDER</span> <span class="k">BY</span> <span class="n">Id</span><span class="p">)</span> <span class="k">AS</span> <span class="n">NextNum</span>
+	         <span class="p">,</span> <span class="n">LEAD</span><span class="p">(</span><span class="n">Num</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="n">OVER</span> <span class="p">(</span><span class="k">ORDER</span> <span class="k">BY</span> <span class="n">Id</span><span class="p">)</span> <span class="k">AS</span> <span class="n">SecondNextNum</span>
+	      <span class="k">FROM</span> <span class="n">Logs</span>
+	      
+	<span class="p">)</span>
 
-SELECT   Num
-         , LEAD(Num, 1) OVER (ORDER BY Id) AS NextNum
-         , LEAD(Num, 2) OVER (ORDER BY Id) AS SecondNextNum
-      FROM Logs
-      
-)
-
-select distinct(Num) as ConsecutiveNums from a
-where
-Num = NextNum
-and Num = SecondNextNum
-
-`
+	<span class="k">select</span> <span class="k">distinct</span><span class="p">(</span><span class="n">Num</span><span class="p">)</span> <span class="k">as</span> <span class="n">ConsecutiveNums</span> <span class="k">from</span> <span class="n">a</span>
+	<span class="k">where</span>
+	<span class="n">Num</span> <span class="o">=</span> <span class="n">NextNum</span>
+	<span class="k">and</span> <span class="n">Num</span> <span class="o">=</span> <span class="n">SecondNextNum</span>
 </pre></div>
 </div>
 </div>
@@ -622,21 +613,19 @@ and Num = SecondNextNum
 </div>
 <div class="dropdown admonition">
 <p class="admonition-title">Solution:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>`
-with cte as (
-select account_id, count(distinct(user_id)) as unique_user, MONTH(date_details) as user_month from tablename
-group by account_id, MONTH(date_details)
-)
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">cte</span> <span class="k">as</span> <span class="p">(</span>
+	<span class="k">select</span> <span class="n">account_id</span><span class="p">,</span> <span class="k">count</span><span class="p">(</span><span class="k">distinct</span><span class="p">(</span><span class="n">user_id</span><span class="p">))</span> <span class="k">as</span> <span class="n">unique_user</span><span class="p">,</span> <span class="k">MONTH</span><span class="p">(</span><span class="n">date_details</span><span class="p">)</span> <span class="k">as</span> <span class="n">user_month</span> <span class="k">from</span> <span class="n">tablename</span>
+	<span class="k">group</span> <span class="k">by</span> <span class="n">account_id</span><span class="p">,</span> <span class="k">MONTH</span><span class="p">(</span><span class="n">date_details</span><span class="p">)</span>
+	<span class="p">)</span>
 
-select a.account_id,month_2,month_1,
-cast((month_2/month_1)as float) as growth  from 
-(select account_id, unique_user as month_1
-from cte where user_month = 1)a
-left join
-(select account_id, unique_user as month_2
-from cte where user_month = 2)b
-on (a.account_id = b.account_id)
-`
+<span class="k">select</span> <span class="n">a</span><span class="p">.</span><span class="n">account_id</span><span class="p">,</span><span class="n">month_2</span><span class="p">,</span><span class="n">month_1</span><span class="p">,</span>
+<span class="k">cast</span><span class="p">((</span><span class="n">month_2</span><span class="o">/</span><span class="n">month_1</span><span class="p">)</span><span class="k">as</span> <span class="nb">float</span><span class="p">)</span> <span class="k">as</span> <span class="n">growth</span>  <span class="k">from</span> 
+<span class="p">(</span><span class="k">select</span> <span class="n">account_id</span><span class="p">,</span> <span class="n">unique_user</span> <span class="k">as</span> <span class="n">month_1</span>
+<span class="k">from</span> <span class="n">cte</span> <span class="k">where</span> <span class="n">user_month</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span><span class="n">a</span>
+<span class="k">left</span> <span class="k">join</span>
+<span class="p">(</span><span class="k">select</span> <span class="n">account_id</span><span class="p">,</span> <span class="n">unique_user</span> <span class="k">as</span> <span class="n">month_2</span>
+<span class="k">from</span> <span class="n">cte</span> <span class="k">where</span> <span class="n">user_month</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span><span class="n">b</span>
+<span class="k">on</span> <span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">account_id</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">account_id</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -652,25 +641,22 @@ on (a.account_id = b.account_id)
 </div>
 <div class="dropdown admonition">
 <p class="admonition-title">Solution:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>`
-with 
-cte as(
-select MONTH(a.date_details) as month, sum(b.price*a.qty) as Rev
-from transactions a
-inner join products b
-on a.prod_id = b.prod_id
-group by MONTH(a.date_details)
-),
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">cte</span> <span class="k">as</span><span class="p">(</span>
+	<span class="k">select</span> <span class="k">MONTH</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">date_details</span><span class="p">)</span> <span class="k">as</span> <span class="k">month</span><span class="p">,</span> <span class="k">sum</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">price</span><span class="o">*</span><span class="n">a</span><span class="p">.</span><span class="n">qty</span><span class="p">)</span> <span class="k">as</span> <span class="n">Rev</span>
+	<span class="k">from</span> <span class="n">transactions</span> <span class="n">a</span>
+	<span class="k">inner</span> <span class="k">join</span> <span class="n">products</span> <span class="n">b</span>
+	<span class="k">on</span> <span class="n">a</span><span class="p">.</span><span class="n">prod_id</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">prod_id</span>
+	<span class="k">group</span> <span class="k">by</span> <span class="k">MONTH</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">date_details</span><span class="p">)</span>
+	<span class="p">),</span>
 
-cte2 as(
-select month, Rev, lag(Rev,1) over(order by month) as prev_month
-from cte
-)
+	<span class="n">cte2</span> <span class="k">as</span><span class="p">(</span>
+	<span class="k">select</span> <span class="k">month</span><span class="p">,</span> <span class="n">Rev</span><span class="p">,</span> <span class="n">lag</span><span class="p">(</span><span class="n">Rev</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="n">over</span><span class="p">(</span><span class="k">order</span> <span class="k">by</span> <span class="k">month</span><span class="p">)</span> <span class="k">as</span> <span class="n">prev_month</span>
+	<span class="k">from</span> <span class="n">cte</span>
+	<span class="p">)</span>
 
-select month, (Rev-Prev_month) as extra_rev  from cte2
-where 
-prev_month is not null
-`
+<span class="k">select</span> <span class="k">month</span><span class="p">,</span> <span class="p">(</span><span class="n">Rev</span><span class="o">-</span><span class="n">Prev_month</span><span class="p">)</span> <span class="k">as</span> <span class="n">extra_rev</span>  <span class="k">from</span> <span class="n">cte2</span>
+<span class="k">where</span> 
+<span class="n">prev_month</span> <span class="k">is</span> <span class="k">not</span> <span class="k">null</span>
 </pre></div>
 </div>
 </div>
@@ -713,17 +699,13 @@ prev_month is not null
 </div>
 <div class="dropdown admonition">
 <p class="admonition-title">Solution:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>`
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">cte</span> <span class="k">as</span><span class="p">(</span>
+	<span class="k">Select</span> <span class="n">a</span><span class="p">.</span><span class="n">Name</span> <span class="k">as</span> <span class="n">Employee</span><span class="p">,</span> <span class="n">b</span><span class="p">.</span><span class="n">Name</span> <span class="k">as</span> <span class="n">Manager</span><span class="p">,</span> <span class="n">a</span><span class="p">.</span><span class="n">Salary</span> <span class="k">as</span> <span class="n">Emp_Sal</span><span class="p">,</span> <span class="n">b</span><span class="p">.</span><span class="n">Salary</span> <span class="k">as</span> <span class="n">Man_Salary</span>
+	<span class="k">from</span> <span class="n">Employee</span> <span class="n">a</span>
+	<span class="k">inner</span> <span class="k">join</span> <span class="n">Employee</span> <span class="n">b</span>
+	<span class="k">on</span> <span class="n">a</span><span class="p">.</span><span class="n">ManagerId</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">id</span><span class="p">)</span>
 
-with cte as(
-Select a.Name as Employee, b.Name as Manager, a.Salary as Emp_Sal, b.Salary as Man_Salary
-from Employee a
-inner join Employee b
-on a.ManagerId = b.id)
-
-Select Employee from cte where Emp_Sal &gt; Man_Salary
-
-`
+<span class="k">Select</span> <span class="n">Employee</span> <span class="k">from</span> <span class="n">cte</span> <span class="k">where</span> <span class="n">Emp_Sal</span> <span class="o">&gt;</span> <span class="n">Man_Salary</span>
 </pre></div>
 </div>
 </div>
@@ -735,19 +717,17 @@ Select Employee from cte where Emp_Sal &gt; Man_Salary
 </div>
 <div class="dropdown admonition">
 <p class="admonition-title">Solution:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>`
-	with cte as(
-	select Name, Salary, DepartmentId,
-	RANK() over(Partition by DepartmentId order by salary desc) as Rank
-	from Employee
-	    )
-	    
-	select b.Name as Department, a.Name as Employee, a.Salary
-	from cte a
-	inner join Department b
-	on a.DepartmentId = b.Id
-	where a.Rank = 1
-`
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">cte</span> <span class="k">as</span><span class="p">(</span>
+	<span class="k">select</span> <span class="n">Name</span><span class="p">,</span> <span class="n">Salary</span><span class="p">,</span> <span class="n">DepartmentId</span><span class="p">,</span>
+	<span class="n">RANK</span><span class="p">()</span> <span class="n">over</span><span class="p">(</span><span class="n">Partition</span> <span class="k">by</span> <span class="n">DepartmentId</span> <span class="k">order</span> <span class="k">by</span> <span class="n">salary</span> <span class="k">desc</span><span class="p">)</span> <span class="k">as</span> <span class="n">Rank</span>
+	<span class="k">from</span> <span class="n">Employee</span>
+<span class="p">)</span>
+		    
+<span class="k">select</span> <span class="n">b</span><span class="p">.</span><span class="n">Name</span> <span class="k">as</span> <span class="n">Department</span><span class="p">,</span> <span class="n">a</span><span class="p">.</span><span class="n">Name</span> <span class="k">as</span> <span class="n">Employee</span><span class="p">,</span> <span class="n">a</span><span class="p">.</span><span class="n">Salary</span>
+<span class="k">from</span> <span class="n">cte</span> <span class="n">a</span>
+<span class="k">inner</span> <span class="k">join</span> <span class="n">Department</span> <span class="n">b</span>
+<span class="k">on</span> <span class="n">a</span><span class="p">.</span><span class="n">DepartmentId</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">Id</span>
+<span class="k">where</span> <span class="n">a</span><span class="p">.</span><span class="n">Rank</span> <span class="o">=</span> <span class="mi">1</span>
 </pre></div>
 </div>
 </div>
@@ -758,12 +738,10 @@ Select Employee from cte where Emp_Sal &gt; Man_Salary
 </div>
 <div class="dropdown admonition">
 <p class="admonition-title">Solution:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>`
-	Select Created_date
-	,SUM(Count(Id)) OVER(partition by month(Created_date) order by Created_date) as Total_users
-	from users
-	group by Created_date
-`
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">Select</span> <span class="n">Created_date</span>
+<span class="p">,</span><span class="k">SUM</span><span class="p">(</span><span class="k">Count</span><span class="p">(</span><span class="n">Id</span><span class="p">))</span> <span class="n">OVER</span><span class="p">(</span><span class="n">partition</span> <span class="k">by</span> <span class="k">month</span><span class="p">(</span><span class="n">Created_date</span><span class="p">)</span> <span class="k">order</span> <span class="k">by</span> <span class="n">Created_date</span><span class="p">)</span> <span class="k">as</span> <span class="n">Total_users</span>
+<span class="k">from</span> <span class="n">users</span>
+<span class="k">group</span> <span class="k">by</span> <span class="n">Created_date</span>
 </pre></div>
 </div>
 </div>

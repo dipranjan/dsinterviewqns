@@ -67,18 +67,18 @@ For example, given the above Scores table, your query should generate the follow
 
 ```
 
-```{admonition} Solution:
+````{admonition} Solution:
 :class: dropdown
 
 The tie resolving method which is being asked in the question is called Dense Rank, if we use Rank it will have "holes"
 
-	`
-	select 
-	Score, dense_rank() over(order by score desc) as Rank
-	from Scores
-	`
-
+```sql
+select 
+Score, dense_rank() over(order by score desc) as Rank
+from Scores
 ```
+
+````
 
 
 ```{admonition} Problem: [CHEWY] 2nd Highest score
@@ -97,18 +97,16 @@ Select the second highest mark for each student.
 
 ```
 
-```{admonition} Solution:
+````{admonition} Solution:
 :class: dropdown
 
-	`
-	with CTE as(
+```sql
+with CTE as(
 	select *, rank() over(partition by Id order by marks desc) as Rank from tablename
-	)
-
-	select Id, subject, marks from CTE where Rank = 1
-	`
-
+)
+select Id, subject, marks from CTE where Rank = 1
 ```
+````
 
 
 
@@ -147,14 +145,12 @@ Result table:
 
 ```
 
-```{admonition} Solution:
+````{admonition} Solution:
 :class: dropdown
 
 Multiple solutions are possible, one of them is given below
-
-	`
-
-	with a(Num,NextNum,SecondNextNum ) as(
+```sql
+with a(Num,NextNum,SecondNextNum ) as(
 
 	SELECT   Num
 	         , LEAD(Num, 1) OVER (ORDER BY Id) AS NextNum
@@ -167,12 +163,8 @@ Multiple solutions are possible, one of them is given below
 	where
 	Num = NextNum
 	and Num = SecondNextNum
-
-	`
-
 ```
-
-
+````
 
 ```{admonition} Problem: [SALESFORCE] User Growth
 :class: tip, dropdown
@@ -184,26 +176,26 @@ Given you have user data for 2 accounts for 2 months. Calculate the growth rate 
 
 ```
 
-```{admonition} Solution:
+````{admonition} Solution:
 :class: dropdown
 
-	`
-	with cte as (
+```sql
+with cte as (
 	select account_id, count(distinct(user_id)) as unique_user, MONTH(date_details) as user_month from tablename
 	group by account_id, MONTH(date_details)
 	)
 
-	select a.account_id,month_2,month_1,
-	cast((month_2/month_1)as float) as growth  from 
-	(select account_id, unique_user as month_1
-	from cte where user_month = 1)a
-	left join
-	(select account_id, unique_user as month_2
-	from cte where user_month = 2)b
-	on (a.account_id = b.account_id)
-	`
-
+select a.account_id,month_2,month_1,
+cast((month_2/month_1)as float) as growth  from 
+(select account_id, unique_user as month_1
+from cte where user_month = 1)a
+left join
+(select account_id, unique_user as month_2
+from cte where user_month = 2)b
+on (a.account_id = b.account_id)
 ```
+
+````
 
 ```{admonition} Problem: [SALESFORCE] Month over Month Revenue
 :class: tip, dropdown
@@ -220,12 +212,11 @@ You have 2 tables:
 
 ```
 
-```{admonition} Solution:
+````{admonition} Solution:
 :class: dropdown
 
-	`
-	with 
-	cte as(
+```sql
+with cte as(
 	select MONTH(a.date_details) as month, sum(b.price*a.qty) as Rev
 	from transactions a
 	inner join products b
@@ -238,12 +229,12 @@ You have 2 tables:
 	from cte
 	)
 
-	select month, (Rev-Prev_month) as extra_rev  from cte2
-	where 
-	prev_month is not null
-	`
-
+select month, (Rev-Prev_month) as extra_rev  from cte2
+where 
+prev_month is not null
 ```
+
+````
 
 
 ```{admonition} Problem: [SALESFORCE] Employee earning more than their manager
@@ -264,23 +255,19 @@ Output will be : Joe
 
 ```
 
-```{admonition} Solution:
+````{admonition} Solution:
 :class: dropdown
-
-
-	`
-
-	with cte as(
+```sql
+with cte as(
 	Select a.Name as Employee, b.Name as Manager, a.Salary as Emp_Sal, b.Salary as Man_Salary
 	from Employee a
 	inner join Employee b
 	on a.ManagerId = b.id)
 
-	Select Employee from cte where Emp_Sal > Man_Salary
-
-	`
-
+Select Employee from cte where Emp_Sal > Man_Salary
 ```
+
+````
 
 ```{admonition} Problem: [Leetcode] Highest Salary in each Department
 :class: tip, dropdown
@@ -293,24 +280,24 @@ Write an SQL query to find employees who have the highest salary in each of the 
 
 ```
 
-```{admonition} Solution:
+````{admonition} Solution:
 :class: dropdown
 
-	`
-		with cte as(
-		select Name, Salary, DepartmentId,
-		RANK() over(Partition by DepartmentId order by salary desc) as Rank
-		from Employee
-		    )
+```sql
+with cte as(
+	select Name, Salary, DepartmentId,
+	RANK() over(Partition by DepartmentId order by salary desc) as Rank
+	from Employee
+)
 		    
-		select b.Name as Department, a.Name as Employee, a.Salary
-		from cte a
-		inner join Department b
-		on a.DepartmentId = b.Id
-		where a.Rank = 1
-	`
-
+select b.Name as Department, a.Name as Employee, a.Salary
+from cte a
+inner join Department b
+on a.DepartmentId = b.Id
+where a.Rank = 1
 ```
+
+````
 
 ```{admonition} Problem: [AMAZON] Cumulative Sum
 :class: tip, dropdown
@@ -321,14 +308,14 @@ Given a users table, write a query to get the cumulative number of new users add
 
 ```
 
-```{admonition} Solution:
+````{admonition} Solution:
 :class: dropdown
 
-	`
-		Select Created_date
-		,SUM(Count(Id)) OVER(partition by month(Created_date) order by Created_date) as Total_users
-		from users
-		group by Created_date
-	`
-
+```sql
+Select Created_date
+,SUM(Count(Id)) OVER(partition by month(Created_date) order by Created_date) as Total_users
+from users
+group by Created_date
 ```
+
+````

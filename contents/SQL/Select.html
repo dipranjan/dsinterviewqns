@@ -398,14 +398,15 @@
 Some common commands are as follows:</p>
 <ul>
 <li><p><strong>CREATE:</strong> is used to create the database or its objects (like table, index, function, views, store procedure and triggers).</p>
-<p><code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">DATABASE</span> <span class="pre">databasename;</span></code></p>
 <p>The generic format of the create table is as follows:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  `CREATE TABLE table_name (
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="n">databasename</span><span class="p">;</span>
+
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="k">table_name</span> <span class="p">(</span>
+<span class="n">column1</span> <span class="n">datatype</span> <span class="k">CONSTRAINT</span><span class="p">,</span>
+<span class="n">column2</span> <span class="n">datatype</span> <span class="k">CONSTRAINT</span><span class="p">,</span>
+<span class="n">column3</span> <span class="n">datatype</span> <span class="k">CONSTRAINT</span><span class="p">);</span> 
 </pre></div>
 </div>
-<p>column1 datatype CONSTRAINT,
-    column2 datatype CONSTRAINT,
-    column3 datatype CONSTRAINT);`</p>
 <p>Using constraints we can specify the limit on the type of data that can be stored in a particular column in a table. Some of the constraints are:</p>
 <ul class="simple">
 <li><p><strong>NOT NULL:</strong> This constraint tells that the value of a column cannot be null.</p></li>
@@ -457,14 +458,12 @@ For referential integrity to hold in a relational database, any column in a base
 <div class="dropdown admonition">
 <p class="admonition-title">Solution:</p>
 <p>Multiple solutions are possible only one approach is given below for reference</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>`
-SELECT
-(SELECT DISTINCT(Salary)
-FROM Employee
-ORDER BY Salary DESC
-LIMIT 1 OFFSET 1) 
-AS SecondHighestSalary
-`
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span>
+<span class="p">(</span><span class="k">SELECT</span> <span class="k">DISTINCT</span><span class="p">(</span><span class="n">Salary</span><span class="p">)</span>
+<span class="k">FROM</span> <span class="n">Employee</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">Salary</span> <span class="k">DESC</span>
+<span class="k">LIMIT</span> <span class="mi">1</span> <span class="k">OFFSET</span> <span class="mi">1</span><span class="p">)</span> 
+<span class="k">AS</span> <span class="n">SecondHighestSalary</span>
 </pre></div>
 </div>
 </div>
