@@ -1,7 +1,7 @@
 ## Functions
 
 ```{admonition} Problem: [Leetcode] Nth Highest Salary
-:class: tip
+:class: tip, dropdown
 
 **Reference - [Leetcode](https://leetcode.com/problems/nth-highest-salary/)**
 Write a SQL query to get the Nth highest salary from the Employee table.
