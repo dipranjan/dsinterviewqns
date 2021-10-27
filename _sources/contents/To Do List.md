@@ -27,8 +27,7 @@
 :class: tip, dropdown
 
 **Month of October, 2021**
-- Updated SQL formatting issues
-- Updated SQL Basics
+- Major updates to the SQL section
 - Tensorflow, Excel, Data Sections added
 - Added new problems in Probability, Python, SQL, Business Case
 - Cleaned up the formatting issues
