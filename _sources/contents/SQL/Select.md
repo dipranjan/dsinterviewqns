@@ -9,13 +9,14 @@ Some common commands are as follows:
 	`CREATE DATABASE databasename;`
 
 	The generic format of the create table is as follows:
-	
+
 `
 	CREATE TABLE table_name (
 	    column1 datatype CONSTRAINT,
 	    column2 datatype CONSTRAINT,
 	    column3 datatype CONSTRAINT);
 `
+
 	Using constraints we can specify the limit on the type of data that can be stored in a particular column in a table. Some of the constraints are:
 	- **NOT NULL:** This constraint tells that the value of a column cannot be null.
 	- **UNIQUE:** This constraint tells that the values in any row of a column must not be repeated.
@@ -41,6 +42,7 @@ For referential integrity to hold in a relational database, any column in a base
 :class: tip, dropdown
 
 **Reference - [Leetcode](https://leetcode.com/problems/second-highest-salary/)**
+
 *For a similar problem with different approach check Nth highest salary problem*
 
 Write a SQL query to get the second highest salary from the Employee table.
