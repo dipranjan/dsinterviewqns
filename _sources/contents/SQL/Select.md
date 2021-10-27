@@ -10,14 +10,13 @@ Some common commands are as follows:
 
 	The generic format of the create table is as follows:
 
-`
-	CREATE TABLE table_name (
+		`CREATE TABLE table_name (
 	    column1 datatype CONSTRAINT,
 	    column2 datatype CONSTRAINT,
-	    column3 datatype CONSTRAINT);
-`
+	    column3 datatype CONSTRAINT);`
 
 	Using constraints we can specify the limit on the type of data that can be stored in a particular column in a table. Some of the constraints are:
+	
 	- **NOT NULL:** This constraint tells that the value of a column cannot be null.
 	- **UNIQUE:** This constraint tells that the values in any row of a column must not be repeated.
 	- **PRIMARY KEY:** A primary key is a field which can uniquely identify each row in a table. We can say that PRIMARY KEY is combination of NOT NULL and UNIQUE constraints. A table can have only one field as primary key.

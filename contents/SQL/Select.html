@@ -400,19 +400,22 @@ Some common commands are as follows:</p>
 <li><p><strong>CREATE:</strong> is used to create the database or its objects (like table, index, function, views, store procedure and triggers).</p>
 <p><code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">DATABASE</span> <span class="pre">databasename;</span></code></p>
 <p>The generic format of the create table is as follows:</p>
-</li>
-</ul>
-<p><code class="docutils literal notranslate"><span class="pre">	CREATE</span> <span class="pre">TABLE</span> <span class="pre">table_name</span> <span class="pre">(</span> &#160;&#160;&#160;  <span class="pre">column1</span> <span class="pre">datatype</span> <span class="pre">CONSTRAINT,</span> &#160;&#160;&#160;  <span class="pre">column2</span> <span class="pre">datatype</span> <span class="pre">CONSTRAINT,</span> &#160;&#160;&#160;  <span class="pre">column3</span> <span class="pre">datatype</span> <span class="pre">CONSTRAINT);</span></code></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Using constraints we can specify the limit on the type of data that can be stored in a particular column in a table. Some of the constraints are:
-- **NOT NULL:** This constraint tells that the value of a column cannot be null.
-- **UNIQUE:** This constraint tells that the values in any row of a column must not be repeated.
-- **PRIMARY KEY:** A primary key is a field which can uniquely identify each row in a table. We can say that PRIMARY KEY is combination of NOT NULL and UNIQUE constraints. A table can have only one field as primary key.
-- **FOREIGN KEY:** Foreign Key is a field in a table which uniquely identifies each row of another table. This field points to primary key of another table. This usually creates a relation between the tables.
-- **CHECK:** This constraint helps to ensure that the value stored in a column meets a specific condition.
-- **DEFAULT:** This constraint specifies a default value for the column when no value is specified by the user.
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  `CREATE TABLE table_name (
 </pre></div>
 </div>
+<p>column1 datatype CONSTRAINT,
+    column2 datatype CONSTRAINT,
+    column3 datatype CONSTRAINT);`</p>
+<p>Using constraints we can specify the limit on the type of data that can be stored in a particular column in a table. Some of the constraints are:</p>
 <ul class="simple">
+<li><p><strong>NOT NULL:</strong> This constraint tells that the value of a column cannot be null.</p></li>
+<li><p><strong>UNIQUE:</strong> This constraint tells that the values in any row of a column must not be repeated.</p></li>
+<li><p><strong>PRIMARY KEY:</strong> A primary key is a field which can uniquely identify each row in a table. We can say that PRIMARY KEY is combination of NOT NULL and UNIQUE constraints. A table can have only one field as primary key.</p></li>
+<li><p><strong>FOREIGN KEY:</strong> Foreign Key is a field in a table which uniquely identifies each row of another table. This field points to primary key of another table. This usually creates a relation between the tables.</p></li>
+<li><p><strong>CHECK:</strong> This constraint helps to ensure that the value stored in a column meets a specific condition.</p></li>
+<li><p><strong>DEFAULT:</strong> This constraint specifies a default value for the column when no value is specified by the user.</p></li>
+</ul>
+</li>
 <li><p><strong>DROP:</strong> is used to delete databases or tables.</p></li>
 <li><p><strong>ALTER:</strong> is used to alter the structure of the database. You can use this to add/modify/delete a column.</p></li>
 <li><p><strong>TRUNCATE:</strong> The TRUNCATE TABLE statement is used to delete the data inside a table, <em>but not the table itself.</em></p></li>
