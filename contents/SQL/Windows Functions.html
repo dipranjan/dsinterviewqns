@@ -241,6 +241,11 @@
    Functions
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Problems.html">
+   Problems
+  </a>
+ </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
@@ -371,11 +376,6 @@
    Common Windows Functions
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#questions">
-   Questions
-  </a>
- </li>
 </ul>
 
             </nav>
@@ -389,6 +389,10 @@
                 
   <div class="section" id="windows-functions">
 <h1>Windows Functions<a class="headerlink" href="#windows-functions" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Since solving any reasonable SQL problem requires a combination of all the topics covered here, hence it becomes difficult to seggregate problems based on one topic alone. So for SQL we are creating a dedicated <strong>Problems</strong> section. Theoritical and Basic questions will still be under their dedicated sections.</p>
+</div>
 <p><strong>Reference:</strong> <a class="reference external" href="https://www.red-gate.com/simple-talk/sql/t-sql-programming/introduction-to-t-sql-window-functions/">📖Explanation</a>, <a class="reference external" href="https://dbfiddle.uk/?rdbms=sqlserver_2017&amp;fiddle=6379904805d1f465cc0f6ea33fc3c0d6">🔫Playground</a></p>
 <p>Window (also, windowing or windowed) functions perform a calculation over a set of rows. I like to think of “looking through the window” at the rows that are being returned and having one last chance to perform a calculation. The window is defined by the OVER clause which determines if the rows are partitioned into smaller sets and if they are ordered.
 They allow you to add your favourite aggregate function to a non-aggregate query. Similar to Transform is pandas group by clause.</p>
@@ -426,333 +430,6 @@ They allow you to add your favourite aggregate function to a non-aggregate query
 </li>
 </ul>
 <p><strong>One problem is you cannot add window functions to the WHERE clause.</strong></p>
-</div>
-<div class="section" id="questions">
-<h2>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h2>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Problem: [Leetcode] Rank Scores</p>
-<p><strong>Reference - <a class="reference external" href="https://leetcode.com/problems/rank-scores/">Leetcode</a></strong></p>
-<p>Write a SQL query to rank scores. If there is a tie between two scores, both should have the same ranking. Note that after a tie, the next ranking number should be the next consecutive integer value. In other words, there should be no “holes” between ranks.</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Id</p></th>
-<th class="head"><p>Score</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>1</p></td>
-<td><p>3.40</p></td>
-</tr>
-<tr class="row-odd"><td><p>2</p></td>
-<td><p>3.65</p></td>
-</tr>
-<tr class="row-even"><td><p>3</p></td>
-<td><p>4.00</p></td>
-</tr>
-<tr class="row-odd"><td><p>4</p></td>
-<td><p>3.50</p></td>
-</tr>
-<tr class="row-even"><td><p>5</p></td>
-<td><p>4.00</p></td>
-</tr>
-<tr class="row-odd"><td><p>6</p></td>
-<td><p>3.65</p></td>
-</tr>
-</tbody>
-</table>
-<p>For example, given the above Scores table, your query should generate the following report (order by highest score):</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p>score</p></th>
-<th class="head"><p>Rank</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>4.00</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-odd"><td><p>4.00</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-even"><td><p>3.95</p></td>
-<td><p>2</p></td>
-</tr>
-<tr class="row-odd"><td><p>3.65</p></td>
-<td><p>3</p></td>
-</tr>
-<tr class="row-even"><td><p>3.65</p></td>
-<td><p>3</p></td>
-</tr>
-<tr class="row-odd"><td><p>3.40</p></td>
-<td><p>4</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="dropdown admonition">
-<p class="admonition-title">Solution:</p>
-<p>The tie resolving method which is being asked in the question is called Dense Rank, if we use Rank it will have “holes”</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">select</span> 
-<span class="n">Score</span><span class="p">,</span> <span class="n">dense_rank</span><span class="p">()</span> <span class="n">over</span><span class="p">(</span><span class="k">order</span> <span class="k">by</span> <span class="n">score</span> <span class="k">desc</span><span class="p">)</span> <span class="k">as</span> <span class="n">Rank</span>
-<span class="k">from</span> <span class="n">Scores</span>
-</pre></div>
-</div>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Problem: [CHEWY] 2nd Highest score</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="text-align:right head"><p>Id</p></th>
-<th class="head"><p>subject</p></th>
-<th class="text-align:right head"><p>marks</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-align:right"><p>1</p></td>
-<td><p>Maths</p></td>
-<td class="text-align:right"><p>30</p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:right"><p>1</p></td>
-<td><p>Phy</p></td>
-<td class="text-align:right"><p>50</p></td>
-</tr>
-<tr class="row-even"><td class="text-align:right"><p>1</p></td>
-<td><p>Chem</p></td>
-<td class="text-align:right"><p>85</p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:right"><p>2</p></td>
-<td><p>Maths</p></td>
-<td class="text-align:right"><p>90</p></td>
-</tr>
-<tr class="row-even"><td class="text-align:right"><p>2</p></td>
-<td><p>Phy</p></td>
-<td class="text-align:right"><p>50</p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:right"><p>2</p></td>
-<td><p>Chem</p></td>
-<td class="text-align:right"><p>85</p></td>
-</tr>
-</tbody>
-</table>
-<p>Select the second highest mark for each student.</p>
-</div>
-<div class="dropdown admonition">
-<p class="admonition-title">Solution:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">CTE</span> <span class="k">as</span><span class="p">(</span>
-	<span class="k">select</span> <span class="o">*</span><span class="p">,</span> <span class="n">rank</span><span class="p">()</span> <span class="n">over</span><span class="p">(</span><span class="n">partition</span> <span class="k">by</span> <span class="n">Id</span> <span class="k">order</span> <span class="k">by</span> <span class="n">marks</span> <span class="k">desc</span><span class="p">)</span> <span class="k">as</span> <span class="n">Rank</span> <span class="k">from</span> <span class="n">tablename</span>
-<span class="p">)</span>
-<span class="k">select</span> <span class="n">Id</span><span class="p">,</span> <span class="n">subject</span><span class="p">,</span> <span class="n">marks</span> <span class="k">from</span> <span class="n">CTE</span> <span class="k">where</span> <span class="n">Rank</span> <span class="o">=</span> <span class="mi">1</span>
-</pre></div>
-</div>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Problem: [Leetcode] Consecutive Numbers</p>
-<p><strong>Reference - <a class="reference external" href="https://leetcode.com/problems/consecutive-numbers/">Leetcode</a></strong></p>
-<p>Write an SQL query to find all numbers that appear at least three times consecutively.</p>
-<p>Return the result table in any order.</p>
-<p>Input:</p>
-<p>Logs table:</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Id</p></th>
-<th class="head"><p>Num</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>1</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-odd"><td><p>2</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-even"><td><p>3</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-odd"><td><p>4</p></td>
-<td><p>2</p></td>
-</tr>
-<tr class="row-even"><td><p>5</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="row-odd"><td><p>6</p></td>
-<td><p>2</p></td>
-</tr>
-<tr class="row-even"><td><p>7</p></td>
-<td><p>2</p></td>
-</tr>
-</tbody>
-</table>
-<p>Result table:</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p>ConsecutiveNums</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>1</p></td>
-</tr>
-</tbody>
-</table>
-<p>1 is the only number that appears consecutively for at least three times.</p>
-</div>
-<div class="dropdown admonition">
-<p class="admonition-title">Solution:</p>
-<p>Multiple solutions are possible, one of them is given below</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">a</span><span class="p">(</span><span class="n">Num</span><span class="p">,</span><span class="n">NextNum</span><span class="p">,</span><span class="n">SecondNextNum</span> <span class="p">)</span> <span class="k">as</span><span class="p">(</span>
-
-	<span class="k">SELECT</span>   <span class="n">Num</span>
-	         <span class="p">,</span> <span class="n">LEAD</span><span class="p">(</span><span class="n">Num</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="n">OVER</span> <span class="p">(</span><span class="k">ORDER</span> <span class="k">BY</span> <span class="n">Id</span><span class="p">)</span> <span class="k">AS</span> <span class="n">NextNum</span>
-	         <span class="p">,</span> <span class="n">LEAD</span><span class="p">(</span><span class="n">Num</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="n">OVER</span> <span class="p">(</span><span class="k">ORDER</span> <span class="k">BY</span> <span class="n">Id</span><span class="p">)</span> <span class="k">AS</span> <span class="n">SecondNextNum</span>
-	      <span class="k">FROM</span> <span class="n">Logs</span>
-	      
-	<span class="p">)</span>
-
-	<span class="k">select</span> <span class="k">distinct</span><span class="p">(</span><span class="n">Num</span><span class="p">)</span> <span class="k">as</span> <span class="n">ConsecutiveNums</span> <span class="k">from</span> <span class="n">a</span>
-	<span class="k">where</span>
-	<span class="n">Num</span> <span class="o">=</span> <span class="n">NextNum</span>
-	<span class="k">and</span> <span class="n">Num</span> <span class="o">=</span> <span class="n">SecondNextNum</span>
-</pre></div>
-</div>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Problem: [SALESFORCE] User Growth</p>
-<p><strong><a class="reference external" href="https://dbfiddle.uk/?rdbms=sqlserver_2017&amp;fiddle=ce4ded37fa37bf552365c18cb7840c3b">🔫Playground</a></strong></p>
-<p>Given you have user data for 2 accounts for 2 months. Calculate the growth rate of users in each account where growth rate is defined as unique users in month 2 divided by unique users in month 1.</p>
-</div>
-<div class="dropdown admonition">
-<p class="admonition-title">Solution:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">cte</span> <span class="k">as</span> <span class="p">(</span>
-	<span class="k">select</span> <span class="n">account_id</span><span class="p">,</span> <span class="k">count</span><span class="p">(</span><span class="k">distinct</span><span class="p">(</span><span class="n">user_id</span><span class="p">))</span> <span class="k">as</span> <span class="n">unique_user</span><span class="p">,</span> <span class="k">MONTH</span><span class="p">(</span><span class="n">date_details</span><span class="p">)</span> <span class="k">as</span> <span class="n">user_month</span> <span class="k">from</span> <span class="n">tablename</span>
-	<span class="k">group</span> <span class="k">by</span> <span class="n">account_id</span><span class="p">,</span> <span class="k">MONTH</span><span class="p">(</span><span class="n">date_details</span><span class="p">)</span>
-	<span class="p">)</span>
-
-<span class="k">select</span> <span class="n">a</span><span class="p">.</span><span class="n">account_id</span><span class="p">,</span><span class="n">month_2</span><span class="p">,</span><span class="n">month_1</span><span class="p">,</span>
-<span class="k">cast</span><span class="p">((</span><span class="n">month_2</span><span class="o">/</span><span class="n">month_1</span><span class="p">)</span><span class="k">as</span> <span class="nb">float</span><span class="p">)</span> <span class="k">as</span> <span class="n">growth</span>  <span class="k">from</span> 
-<span class="p">(</span><span class="k">select</span> <span class="n">account_id</span><span class="p">,</span> <span class="n">unique_user</span> <span class="k">as</span> <span class="n">month_1</span>
-<span class="k">from</span> <span class="n">cte</span> <span class="k">where</span> <span class="n">user_month</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span><span class="n">a</span>
-<span class="k">left</span> <span class="k">join</span>
-<span class="p">(</span><span class="k">select</span> <span class="n">account_id</span><span class="p">,</span> <span class="n">unique_user</span> <span class="k">as</span> <span class="n">month_2</span>
-<span class="k">from</span> <span class="n">cte</span> <span class="k">where</span> <span class="n">user_month</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span><span class="n">b</span>
-<span class="k">on</span> <span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">account_id</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">account_id</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Problem: [SALESFORCE] Month over Month Revenue</p>
-<p><strong><a class="reference external" href="https://dbfiddle.uk/?rdbms=sqlserver_2017&amp;fiddle=72569e574e670b477d2f62fdfc4276ca">🔫Playground</a></strong></p>
-<p>You have 2 tables:</p>
-<ul class="simple">
-<li><p>transactions: date, prod_id, quantity</p></li>
-<li><p>products: prod_id, price</p></li>
-</ul>
-<p>Calculate the month over month revenue, example month over month revenue for month2 is month2_Revenue- month1_Revenue</p>
-</div>
-<div class="dropdown admonition">
-<p class="admonition-title">Solution:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">cte</span> <span class="k">as</span><span class="p">(</span>
-	<span class="k">select</span> <span class="k">MONTH</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">date_details</span><span class="p">)</span> <span class="k">as</span> <span class="k">month</span><span class="p">,</span> <span class="k">sum</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">price</span><span class="o">*</span><span class="n">a</span><span class="p">.</span><span class="n">qty</span><span class="p">)</span> <span class="k">as</span> <span class="n">Rev</span>
-	<span class="k">from</span> <span class="n">transactions</span> <span class="n">a</span>
-	<span class="k">inner</span> <span class="k">join</span> <span class="n">products</span> <span class="n">b</span>
-	<span class="k">on</span> <span class="n">a</span><span class="p">.</span><span class="n">prod_id</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">prod_id</span>
-	<span class="k">group</span> <span class="k">by</span> <span class="k">MONTH</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">date_details</span><span class="p">)</span>
-	<span class="p">),</span>
-
-	<span class="n">cte2</span> <span class="k">as</span><span class="p">(</span>
-	<span class="k">select</span> <span class="k">month</span><span class="p">,</span> <span class="n">Rev</span><span class="p">,</span> <span class="n">lag</span><span class="p">(</span><span class="n">Rev</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="n">over</span><span class="p">(</span><span class="k">order</span> <span class="k">by</span> <span class="k">month</span><span class="p">)</span> <span class="k">as</span> <span class="n">prev_month</span>
-	<span class="k">from</span> <span class="n">cte</span>
-	<span class="p">)</span>
-
-<span class="k">select</span> <span class="k">month</span><span class="p">,</span> <span class="p">(</span><span class="n">Rev</span><span class="o">-</span><span class="n">Prev_month</span><span class="p">)</span> <span class="k">as</span> <span class="n">extra_rev</span>  <span class="k">from</span> <span class="n">cte2</span>
-<span class="k">where</span> 
-<span class="n">prev_month</span> <span class="k">is</span> <span class="k">not</span> <span class="k">null</span>
-</pre></div>
-</div>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Problem: [SALESFORCE] Employee earning more than their manager</p>
-<p><strong>Reference - <a class="reference external" href="https://leetcode.com/problems/employees-earning-more-than-their-managers/">Leetcode</a></strong></p>
-<p>Write an SQL query to find the employees who earn more than their managers.</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="text-align:right head"><p>Id</p></th>
-<th class="head"><p>Name</p></th>
-<th class="text-align:right head"><p>Salary</p></th>
-<th class="text-align:right head"><p>ManagerId</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-align:right"><p>1</p></td>
-<td><p>Joe</p></td>
-<td class="text-align:right"><p>70000</p></td>
-<td class="text-align:right"><p>3</p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:right"><p>2</p></td>
-<td><p>Henry</p></td>
-<td class="text-align:right"><p>80000</p></td>
-<td class="text-align:right"><p>4</p></td>
-</tr>
-<tr class="row-even"><td class="text-align:right"><p>3</p></td>
-<td><p>Sam</p></td>
-<td class="text-align:right"><p>60000</p></td>
-<td class="text-align:right"><p></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:right"><p>4</p></td>
-<td><p>Max</p></td>
-<td class="text-align:right"><p>90000</p></td>
-<td class="text-align:right"><p></p></td>
-</tr>
-</tbody>
-</table>
-<p>Output will be : Joe</p>
-</div>
-<div class="dropdown admonition">
-<p class="admonition-title">Solution:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">cte</span> <span class="k">as</span><span class="p">(</span>
-	<span class="k">Select</span> <span class="n">a</span><span class="p">.</span><span class="n">Name</span> <span class="k">as</span> <span class="n">Employee</span><span class="p">,</span> <span class="n">b</span><span class="p">.</span><span class="n">Name</span> <span class="k">as</span> <span class="n">Manager</span><span class="p">,</span> <span class="n">a</span><span class="p">.</span><span class="n">Salary</span> <span class="k">as</span> <span class="n">Emp_Sal</span><span class="p">,</span> <span class="n">b</span><span class="p">.</span><span class="n">Salary</span> <span class="k">as</span> <span class="n">Man_Salary</span>
-	<span class="k">from</span> <span class="n">Employee</span> <span class="n">a</span>
-	<span class="k">inner</span> <span class="k">join</span> <span class="n">Employee</span> <span class="n">b</span>
-	<span class="k">on</span> <span class="n">a</span><span class="p">.</span><span class="n">ManagerId</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">id</span><span class="p">)</span>
-
-<span class="k">Select</span> <span class="n">Employee</span> <span class="k">from</span> <span class="n">cte</span> <span class="k">where</span> <span class="n">Emp_Sal</span> <span class="o">&gt;</span> <span class="n">Man_Salary</span>
-</pre></div>
-</div>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Problem: [Leetcode] Highest Salary in each Department</p>
-<p><strong>Reference - <a class="reference external" href="https://leetcode.com/problems/department-highest-salary/">Leetcode</a></strong></p>
-<p>Write an SQL query to find employees who have the highest salary in each of the departments.</p>
-<p><img alt="image 3" src="../../_images/image33.PNG" /></p>
-</div>
-<div class="dropdown admonition">
-<p class="admonition-title">Solution:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">cte</span> <span class="k">as</span><span class="p">(</span>
-	<span class="k">select</span> <span class="n">Name</span><span class="p">,</span> <span class="n">Salary</span><span class="p">,</span> <span class="n">DepartmentId</span><span class="p">,</span>
-	<span class="n">RANK</span><span class="p">()</span> <span class="n">over</span><span class="p">(</span><span class="n">Partition</span> <span class="k">by</span> <span class="n">DepartmentId</span> <span class="k">order</span> <span class="k">by</span> <span class="n">salary</span> <span class="k">desc</span><span class="p">)</span> <span class="k">as</span> <span class="n">Rank</span>
-	<span class="k">from</span> <span class="n">Employee</span>
-<span class="p">)</span>
-		    
-<span class="k">select</span> <span class="n">b</span><span class="p">.</span><span class="n">Name</span> <span class="k">as</span> <span class="n">Department</span><span class="p">,</span> <span class="n">a</span><span class="p">.</span><span class="n">Name</span> <span class="k">as</span> <span class="n">Employee</span><span class="p">,</span> <span class="n">a</span><span class="p">.</span><span class="n">Salary</span>
-<span class="k">from</span> <span class="n">cte</span> <span class="n">a</span>
-<span class="k">inner</span> <span class="k">join</span> <span class="n">Department</span> <span class="n">b</span>
-<span class="k">on</span> <span class="n">a</span><span class="p">.</span><span class="n">DepartmentId</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">Id</span>
-<span class="k">where</span> <span class="n">a</span><span class="p">.</span><span class="n">Rank</span> <span class="o">=</span> <span class="mi">1</span>
-</pre></div>
-</div>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Problem: [AMAZON] Cumulative Sum</p>
-<p>Given a users table, write a query to get the cumulative number of new users added by day, with the total reset every month.</p>
-<p><a class="reference external" href="https://dbfiddle.uk/?rdbms=sqlserver_2017&amp;fiddle=516b59f188aaf8c5c1296143d1b13bcd">🔫Playground</a></p>
-</div>
-<div class="dropdown admonition">
-<p class="admonition-title">Solution:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">Select</span> <span class="n">Created_date</span>
-<span class="p">,</span><span class="k">SUM</span><span class="p">(</span><span class="k">Count</span><span class="p">(</span><span class="n">Id</span><span class="p">))</span> <span class="n">OVER</span><span class="p">(</span><span class="n">partition</span> <span class="k">by</span> <span class="k">month</span><span class="p">(</span><span class="n">Created_date</span><span class="p">)</span> <span class="k">order</span> <span class="k">by</span> <span class="n">Created_date</span><span class="p">)</span> <span class="k">as</span> <span class="n">Total_users</span>
-<span class="k">from</span> <span class="n">users</span>
-<span class="k">group</span> <span class="k">by</span> <span class="n">Created_date</span>
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 
