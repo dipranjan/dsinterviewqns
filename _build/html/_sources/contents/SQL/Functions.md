@@ -1,5 +1,9 @@
 ## Functions
 
+```{note}
+Since solving any reasonable SQL problem requires a combination of all the topics covered here, hence it becomes difficult to seggregate problems based on one topic alone. So for SQL we are creating a dedicated **Problems** section. Theoritical and Basic questions will still be under their dedicated sections.
+```
+
 ```{admonition} Problem: [Leetcode] Nth Highest Salary
 :class: tip, dropdown
 

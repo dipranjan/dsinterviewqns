@@ -1,5 +1,9 @@
 ## Joins
 
+```{note}
+Since solving any reasonable SQL problem requires a combination of all the topics covered here, hence it becomes difficult to seggregate problems based on one topic alone. So for SQL we are creating a dedicated **Problems** section. Theoritical and Basic questions will still be under their dedicated sections.
+```
+
 Joins are best explained using Venn diagrams
 
 ```{figure} ../SQL/images/image1.PNG

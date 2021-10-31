@@ -1,5 +1,9 @@
 ## SQL Basics
 
+```{note}
+Since solving any reasonable SQL problem requires a combination of all the topics covered here, hence it becomes difficult to seggregate problems based on one topic alone. So for SQL we are creating a dedicated **Problems** section. Theoritical and Basic questions will still be under their dedicated sections.
+```
+
 If you are new to SQL [this ▶️](https://www.youtube.com/watch?v=7GVFYt6_ZFM&list=PL08903FB7ACA1C2FB) is one of the most comprehensive material of SQL that is available in the internet. Please go through the portions of interest to you.
 
 ### DDL
@@ -56,41 +60,6 @@ Let's take an example suppose we want to fill the Manager name as 'No Manager' i
 
 
 ### Questions
-
-```{admonition} Problem: [Leetcode] Second Highest Salary
-:class: tip, dropdown
-
-**Reference - [Leetcode](https://leetcode.com/problems/second-highest-salary/)**
-
-*For a similar problem with different approach check Nth highest salary problem*
-
-Write a SQL query to get the second highest salary from the Employee table.
-
-| Id | Salary |
-|----|--------|
-| 1  | 100    |
-| 2  | 200    |
-| 3  | 300    |
-
-For example, given the above Employee table, the query should return 200 as the second highest salary. If there is no second highest salary, then the query should return null.
-
-```
-
-````{admonition} Solution:
-:class: dropdown
-
-Multiple solutions are possible only one approach is given below for reference
-
-```sql
-SELECT
-(SELECT DISTINCT(Salary)
-FROM Employee
-ORDER BY Salary DESC
-LIMIT 1 OFFSET 1) 
-AS SecondHighestSalary
-```
-
-````
 
 ```{admonition} Problem: [MICROSOFT] HAVING vs WHERE
 :class: tip, dropdown

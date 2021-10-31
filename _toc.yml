@@ -35,6 +35,7 @@ parts:
     - file: contents/SQL/Joins
     - file: contents/SQL/Windows Functions
     - file: contents/SQL/Functions
+    - file: contents/SQL/Problems
   - caption: Excel
     chapters:
     - file: contents/Excel/Excel Basics
