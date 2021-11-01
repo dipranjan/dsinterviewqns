@@ -37,4 +37,3 @@ Ranking functions, check playground to work with this
 
 
 **One problem is you cannot add window functions to the WHERE clause.**
-

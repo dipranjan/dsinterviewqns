@@ -77,6 +77,18 @@ Taking into consideration $P(1)$ and $P(2)$ we have the total as $= 10/216 + 6/2
 
 ```
 
+```{admonition} Problem: [LINKEDIN] Cards in increasing order
+:class: tip, dropdown
+
+Imagine a deck of $500$ cards numbered from $1$ to $500$. If all the cards are shuffled randomly and you are asked to pick three cards, one at a time, what's the probability of each subsequent card being larger than the previous drawn card?
+```
+
+```{admonition} Solution:
+:class: dropdown
+
+It is actually easy to solve this if you think on it a little. Let's pick any $3$ cards, now if you rearrange it there will only be $1$ way in which each subsequent card is larger the previous card. So a total of $6$ ways to arrange the cards out of which only $1$ is valid. So the result is $\frac{1}{6}$.
+```
+
 
 ```{admonition} Problem: [STATE FARM] Cards without replacement
 :class: tip, dropdown
@@ -142,3 +154,23 @@ Out of this only way in which they donot collide is if all of them travel clockw
 Therefore the probability of no collision $= 2/8 = 25%$
 
 ```
+
+```{admonition} Problem: [POSTMATES] Four Person Elevator
+:class: tip, dropdown
+
+There are four people on the ground floor of a building that has five levels not including the ground floor. They all get into the same elevator.
+
+If each person is equally likely to get on any floor and they leave independently of each other, what is the probability that no two passengers will get off at the same floor?
+
+```
+
+```{admonition} Solution:
+:class: dropdown
+
+The number of ways to assigning five floors to four different people is to get the total sample space. In this case it would be $5 * 5 * 5 * 5$.
+
+The number of ways to assign five floors to four people without repetition of floors is $5 * 4 * 3 * 2$ because for the first passenger you have five different options. The second person has four, and so on. Note that this number counts all possible orders betwen passengers as well.
+
+The result is then $\frac{5 * 4 * 3 * 2}{5 * 5 * 5 * 5} = 0.192$
+```
+

@@ -456,6 +456,14 @@ The square root of the variance is called the <strong>standard deviation.</stron
 <p>Taking into consideration <span class="math notranslate nohighlight">\(P(1)\)</span> and <span class="math notranslate nohighlight">\(P(2)\)</span> we have the total as <span class="math notranslate nohighlight">\(= 10/216 + 6/216 + 3/216 + 1/216 = 20/216\)</span></p>
 </div>
 <div class="tip dropdown admonition">
+<p class="admonition-title">Problem: [LINKEDIN] Cards in increasing order</p>
+<p>Imagine a deck of <span class="math notranslate nohighlight">\(500\)</span> cards numbered from <span class="math notranslate nohighlight">\(1\)</span> to <span class="math notranslate nohighlight">\(500\)</span>. If all the cards are shuffled randomly and you are asked to pick three cards, one at a time, what’s the probability of each subsequent card being larger than the previous drawn card?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>It is actually easy to solve this if you think on it a little. Let’s pick any <span class="math notranslate nohighlight">\(3\)</span> cards, now if you rearrange it there will only be <span class="math notranslate nohighlight">\(1\)</span> way in which each subsequent card is larger the previous card. So a total of <span class="math notranslate nohighlight">\(6\)</span> ways to arrange the cards out of which only <span class="math notranslate nohighlight">\(1\)</span> is valid. So the result is <span class="math notranslate nohighlight">\(\frac{1}{6}\)</span>.</p>
+</div>
+<div class="tip dropdown admonition">
 <p class="admonition-title">Problem: [STATE FARM] Cards without replacement</p>
 <p>Pull <span class="math notranslate nohighlight">\(2\)</span> cards from a deck without replacement what is probability that both are of different colors.</p>
 <p>There can be many variants to this question.</p>
@@ -497,6 +505,17 @@ The square root of the variance is called the <strong>standard deviation.</stron
 <p>Each zebra has 2 options of travel: clockwise or anticlockwise. So a total of <span class="math notranslate nohighlight">\(2*2*2 = 8\)</span> options.</p>
 <p>Out of this only way in which they donot collide is if all of them travel clockwise or anticlockwise. So a total of <span class="math notranslate nohighlight">\(2\)</span>.</p>
 <p>Therefore the probability of no collision <span class="math notranslate nohighlight">\(= 2/8 = 25%\)</span></p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: [POSTMATES] Four Person Elevator</p>
+<p>There are four people on the ground floor of a building that has five levels not including the ground floor. They all get into the same elevator.</p>
+<p>If each person is equally likely to get on any floor and they leave independently of each other, what is the probability that no two passengers will get off at the same floor?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>The number of ways to assigning five floors to four different people is to get the total sample space. In this case it would be <span class="math notranslate nohighlight">\(5 * 5 * 5 * 5\)</span>.</p>
+<p>The number of ways to assign five floors to four people without repetition of floors is <span class="math notranslate nohighlight">\(5 * 4 * 3 * 2\)</span> because for the first passenger you have five different options. The second person has four, and so on. Note that this number counts all possible orders betwen passengers as well.</p>
+<p>The result is then <span class="math notranslate nohighlight">\(\frac{5 * 4 * 3 * 2}{5 * 5 * 5 * 5} = 0.192\)</span></p>
 </div>
 </div>
 </div>

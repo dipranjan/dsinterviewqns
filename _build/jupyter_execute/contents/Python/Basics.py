@@ -248,3 +248,52 @@ mergeArrays(arr1, arr2)
 # For merging two arrays, we are always going to iterate through both of them no matter what, 
 # so the number of iterations will always be m+n and the time complexity being O(m+n) where m = len(arr1) and n = len(arr2)
 
+
+# ```{admonition} Problem: [POSTMATES] Weekly Aggregation
+# :class: dropdown, tip
+# 
+# Given a list of timestamps in sequential order, return a list of lists grouped by week (7 days) using the first timestamp as the starting point.
+# 
+# Example:
+# 
+# ts = [
+#     '2019-01-01', 
+#     '2019-01-02',
+#     '2019-01-08', 
+#     '2019-02-01', 
+#     '2019-02-02',
+#     '2019-02-05',
+# ]
+# 
+# output = [
+#     ['2019-01-01', '2019-01-02'], 
+#     ['2019-01-08'], 
+#     ['2019-02-01', '2019-02-02'],
+#     ['2019-02-05'],
+# ]
+# 
+# ```
+
+# In[8]:
+
+
+ts = [
+    '2019-01-01', 
+    '2019-01-02',
+    '2019-01-08', 
+    '2019-02-01', 
+    '2019-02-02',
+    '2019-02-05',
+]
+
+from datetime import datetime as dt
+from itertools import groupby
+
+first = dt.strptime(inp[0], "%Y-%m-%d")
+out = []
+
+for k, g in groupby(ts, key=lambda d: (dt.strptime(d, "%Y-%m-%d") - first).days // 7 ):
+    out.append(list(g))
+
+print(out)
+

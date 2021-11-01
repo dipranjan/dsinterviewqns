@@ -374,9 +374,9 @@ from tree
 ````
 
 
-```{admonition} Problem: Binning data
+```{admonition} Problem: [FACEBOOK] Binning data
 :class: tip, dropdown
-[🔫Playground](https://dbfiddle.uk/?rdbms=sqlserver_2019&fiddle=922326a37527cc50e64fe896c6d70608)
+[🔫Playground](https://dbfiddle.uk/?rdbms=sqlserver_2019&fiddle=813e35800a6e3d955f57ac7e6c7c2e91)
 Input:
 
 | id | length |
@@ -399,6 +399,8 @@ Output:
 | 5-10    |     3 |
 | 110-115 |     2 |
 
+Another similar question was asked in Facebook but instead of video length the ask was to write a SQL query to create a histogram of number of comments per user in the month of January 2020. As the approach is similar hence not including it here.
+
 ```
 
 ````{admonition} Solution:
@@ -413,5 +415,49 @@ select bucket, count(id) as 'count'
 from cte
 group by bucket
 order by len(bucket) asc, bucket desc
+```
+````
+
+```{admonition} Problem: [DROPBOX] Closest SAT Scores
+:class: tip, dropdown
+[🔫Playground](https://dbfiddle.uk/?rdbms=sqlserver_2019&fiddle=b7d44c3f8ec7caaab70d11fd7502f65f)
+
+Given a table of students and their SAT test scores, write a query to return the two students with the closest test scores with the score difference. Assume a random pick if there are multiple students with the same score difference.
+
+Input:
+
+| id | score |
+|---:|------:|
+|  1 |    40 |
+|  2 |    35 |
+|  3 |    70 |
+|  4 |    80 |
+
+Output:
+
+| id | other_student | diff |
+|---:|--------------:|-----:|
+|  1 |             2 |    5 |
+
+```
+
+````{admonition} Solution:
+:class: dropdown
+
+```sql
+with cte as(
+select id, score, LEAD(score, 1) over(order by score desc) as prior_score,
+LEAD(id, 1) over(order by score desc) as other_student
+from score
+),
+
+cte2 as (
+select id,other_student, (score-prior_score) as diff
+from cte
+)
+
+select top 1* from cte2
+where diff is not null
+order by diff asc
 ```
 ````

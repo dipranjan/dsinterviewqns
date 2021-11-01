@@ -661,6 +661,55 @@ True
 </div>
 </div>
 </div>
+<div class="dropdown tip admonition">
+<p class="admonition-title">Problem: [POSTMATES] Weekly Aggregation</p>
+<p>Given a list of timestamps in sequential order, return a list of lists grouped by week (7 days) using the first timestamp as the starting point.</p>
+<p>Example:</p>
+<p>ts = [
+‘2019-01-01’,
+‘2019-01-02’,
+‘2019-01-08’,
+‘2019-02-01’,
+‘2019-02-02’,
+‘2019-02-05’,
+]</p>
+<p>output = [
+[‘2019-01-01’, ‘2019-01-02’],
+[‘2019-01-08’],
+[‘2019-02-01’, ‘2019-02-02’],
+[‘2019-02-05’],
+]</p>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ts</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;2019-01-01&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;2019-01-02&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;2019-01-08&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;2019-02-01&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;2019-02-02&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;2019-02-05&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">groupby</span>
+
+<span class="n">first</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">inp</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">out</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">groupby</span><span class="p">(</span><span class="n">ts</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="p">(</span><span class="n">dt</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span> <span class="o">-</span> <span class="n">first</span><span class="p">)</span><span class="o">.</span><span class="n">days</span> <span class="o">//</span> <span class="mi">7</span> <span class="p">):</span>
+    <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">g</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[&#39;2019-01-01&#39;, &#39;2019-01-02&#39;], [&#39;2019-01-08&#39;], [&#39;2019-02-01&#39;, &#39;2019-02-02&#39;], [&#39;2019-02-05&#39;]]
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 
