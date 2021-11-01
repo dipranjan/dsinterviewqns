@@ -297,3 +297,26 @@ for k, g in groupby(ts, key=lambda d: (dt.strptime(d, "%Y-%m-%d") - first).days 
 
 print(out)
 
+
+# ```{admonition} Problem: [MICROSOFT] Find the missing number
+# :class: dropdown, tip
+# 
+# You have an array of integers of length n spanning 0 to n with one missing. Write a function that returns the missing number in the array
+# 
+# Example:
+# 
+# nums = [0,1,2,4,5] 
+# missingNumber(nums) -> 3
+# Complexity of O(N) required.
+# 
+# ```
+
+# In[13]:
+
+
+nums = [0,1,2,4,5]
+
+for i in range(0,len(nums)-1):
+    if(nums[i+1]-nums[i]>1):
+        print(nums[i]+1)        
+
