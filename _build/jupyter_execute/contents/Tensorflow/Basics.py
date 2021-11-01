@@ -15,7 +15,7 @@
 # - Data type of a tesnor can be changed with `tf.cast(t1, dtype=tf.float16)`
 # - You can squeeze a tensor to remove single-dimensions (dimensions with size 1) using `tf.squeeze()`.
 
-# In[16]:
+# In[1]:
 
 
 # Some common commands are as follows
@@ -39,7 +39,7 @@ print("Details of the tensor: ",t1)
 print("Index tensors: ", t1[:1,:])
 
 
-# In[27]:
+# In[2]:
 
 
 import tensorflow as tf
@@ -66,7 +66,7 @@ print("Max Position: ", tf.argmax(t1)) # same or min
 
 # Randomness is often used in deep learning, be it initializing weights in a Neural Network or shuffling images while feeding data to the model. 
 
-# In[5]:
+# In[3]:
 
 
 random_1 = tf.random.Generator.from_seed(35) # setting seed ensures reproducibility

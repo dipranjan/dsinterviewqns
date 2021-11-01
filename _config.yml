@@ -3,6 +3,7 @@ title: The Data Science Interview Book
 author: Dip Ranjan Chatterjee
 copyright: "MIT License"  # Copyright year to be placed in the footer
 logo: logo.gif
+email: "thedatascienceinterviewbook@gmail.com"
 
 latex:
   latex_documents:
@@ -12,8 +13,8 @@ latex:
 # HTML-specific settings
 html:
   favicon                   : "logo.gif"  # A path to a favicon image
-  use_edit_page_button      : true  # Whether to add an "edit this page" button to pages. If `true`, repository information in repository: must be filled in
-  use_repository_button     : true  # Whether to add a link to your repository button
+  use_edit_page_button      : false  # Whether to add an "edit this page" button to pages. If `true`, repository information in repository: must be filled in
+  use_repository_button     : false  # Whether to add a link to your repository button
   use_issues_button         : true  # Whether to add an "open an issue" button
   extra_navbar              : <a href="https://www.buymeacoffee.com/dearc" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>  # Will be displayed underneath the left navbar.
   extra_footer              : ""  # Will be displayed underneath the footer.
@@ -30,4 +31,13 @@ repository:
   branch                    : master  # Which branch of the repository should be used when creating links
 
 execute:
-  execute_notebooks: cache
+  execute_notebooks         : auto  # Whether to execute notebooks at build time. Must be one of ("auto", "force", "cache", "off")
+  cache                     : ""  # A path to the jupyter cache that will be used to store execution artifacs. Defaults to `_build/.jupyter_cache/`
+  
+sphinx:
+  config:
+    html_baseurl: 'https://dipranjan.github.io/dsinterviewqns/'
+  extra_extensions:
+    - sphinx_sitemap
+  config                    :  # key-value pairs to directly over-ride the Sphinx configuration
+    language                : en
