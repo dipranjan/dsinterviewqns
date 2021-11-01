@@ -26,6 +26,9 @@
 ```{admonition} Change Log
 :class: tip, dropdown
 
+**Month of November, 2021**
+- Added new problems in Probability, Python, SQL
+
 **Month of October, 2021**
 - Major updates to the SQL section
 - Tensorflow, Excel, Data Sections added

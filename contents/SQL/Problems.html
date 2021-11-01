@@ -864,8 +864,8 @@ Input:</p>
 </div>
 </div>
 <div class="tip dropdown admonition">
-<p class="admonition-title">Problem: Binning data</p>
-<p><a class="reference external" href="https://dbfiddle.uk/?rdbms=sqlserver_2019&amp;fiddle=922326a37527cc50e64fe896c6d70608">🔫Playground</a>
+<p class="admonition-title">Problem: [FACEBOOK] Binning data</p>
+<p><a class="reference external" href="https://dbfiddle.uk/?rdbms=sqlserver_2019&amp;fiddle=813e35800a6e3d955f57ac7e6c7c2e91">🔫Playground</a>
 Input:</p>
 <table class="colwidths-auto table">
 <thead>
@@ -917,6 +917,7 @@ Input:</p>
 </tr>
 </tbody>
 </table>
+<p>Another similar question was asked in Facebook but instead of video length the ask was to write a SQL query to create a histogram of number of comments per user in the month of January 2020. As the approach is similar hence not including it here.</p>
 </div>
 <div class="dropdown admonition">
 <p class="admonition-title">Solution:</p>
@@ -928,6 +929,67 @@ Input:</p>
 <span class="k">from</span> <span class="n">cte</span>
 <span class="k">group</span> <span class="k">by</span> <span class="n">bucket</span>
 <span class="k">order</span> <span class="k">by</span> <span class="n">len</span><span class="p">(</span><span class="n">bucket</span><span class="p">)</span> <span class="k">asc</span><span class="p">,</span> <span class="n">bucket</span> <span class="k">desc</span>
+</pre></div>
+</div>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: [DROPBOX] Closest SAT Scores</p>
+<p><a class="reference external" href="https://dbfiddle.uk/?rdbms=sqlserver_2019&amp;fiddle=b7d44c3f8ec7caaab70d11fd7502f65f">🔫Playground</a></p>
+<p>Given a table of students and their SAT test scores, write a query to return the two students with the closest test scores with the score difference. Assume a random pick if there are multiple students with the same score difference.</p>
+<p>Input:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:right head"><p>id</p></th>
+<th class="text-align:right head"><p>score</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:right"><p>1</p></td>
+<td class="text-align:right"><p>40</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>2</p></td>
+<td class="text-align:right"><p>35</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>3</p></td>
+<td class="text-align:right"><p>70</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>4</p></td>
+<td class="text-align:right"><p>80</p></td>
+</tr>
+</tbody>
+</table>
+<p>Output:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:right head"><p>id</p></th>
+<th class="text-align:right head"><p>other_student</p></th>
+<th class="text-align:right head"><p>diff</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:right"><p>1</p></td>
+<td class="text-align:right"><p>2</p></td>
+<td class="text-align:right"><p>5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">cte</span> <span class="k">as</span><span class="p">(</span>
+<span class="k">select</span> <span class="n">id</span><span class="p">,</span> <span class="n">score</span><span class="p">,</span> <span class="n">LEAD</span><span class="p">(</span><span class="n">score</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="n">over</span><span class="p">(</span><span class="k">order</span> <span class="k">by</span> <span class="n">score</span> <span class="k">desc</span><span class="p">)</span> <span class="k">as</span> <span class="n">prior_score</span><span class="p">,</span>
+<span class="n">LEAD</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="n">over</span><span class="p">(</span><span class="k">order</span> <span class="k">by</span> <span class="n">score</span> <span class="k">desc</span><span class="p">)</span> <span class="k">as</span> <span class="n">other_student</span>
+<span class="k">from</span> <span class="n">score</span>
+<span class="p">),</span>
+
+<span class="n">cte2</span> <span class="k">as</span> <span class="p">(</span>
+<span class="k">select</span> <span class="n">id</span><span class="p">,</span><span class="n">other_student</span><span class="p">,</span> <span class="p">(</span><span class="n">score</span><span class="o">-</span><span class="n">prior_score</span><span class="p">)</span> <span class="k">as</span> <span class="n">diff</span>
+<span class="k">from</span> <span class="n">cte</span>
+<span class="p">)</span>
+
+<span class="k">select</span> <span class="n">top</span> <span class="mi">1</span><span class="o">*</span> <span class="k">from</span> <span class="n">cte2</span>
+<span class="k">where</span> <span class="n">diff</span> <span class="k">is</span> <span class="k">not</span> <span class="k">null</span>
+<span class="k">order</span> <span class="k">by</span> <span class="n">diff</span> <span class="k">asc</span>
 </pre></div>
 </div>
 </div>
