@@ -36,7 +36,8 @@ execute:
   
 sphinx:
   config:
-    html_baseurl: 'https://dipranjan.github.io/dsinterviewqns/'
+    html_theme              : sphinx_material
+    html_baseurl            : 'https://dipranjan.github.io/dsinterviewqns/'
   extra_extensions:
     - sphinx_sitemap
   config                    :  # key-value pairs to directly over-ride the Sphinx configuration
