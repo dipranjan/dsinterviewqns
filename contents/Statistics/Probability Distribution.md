@@ -1,4 +1,12 @@
-# Probability Distribution
+---
+html_meta:
+  "description lang=en": "Interview resource of Data Science Interview focusing on Probability."
+  "keywords": "interview, data science, machine learning, probability"
+  "property=og:locale": "en_US"
+---
+
+
+## Probability Distribution
 
 ### Random Variable
 

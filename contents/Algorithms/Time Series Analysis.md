@@ -1,3 +1,10 @@
+---
+html_meta:
+  "description lang=en": "Interview resource of Data Science Interview focusing on Time Series Analysis."
+  "keywords": "interview, data science, machine learning, Time Series, ARIMA, SARIMA, ARIMAX, Prophet"
+  "property=og:locale": "en_US"
+---
+
 ## Time Series Analysis
 
 **Reference:** [📖Explanation](https://nbviewer.jupyter.org/github/Yorko/mlcourse_open/blob/master/jupyter_english/topic09_time_series/topic9_part1_time_series_python.ipynb)

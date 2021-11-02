@@ -1,3 +1,10 @@
+---
+html_meta:
+  "description lang=en": "Interview resource of Data Science Interview focusing on Central Limit Theorem."
+  "keywords": "interview, data science, machine learning, CLT, Central Limit Theorem"
+  "property=og:locale": "en_US"
+---
+
 ## Central Limit Theorem
 
 ### Sampling distribution

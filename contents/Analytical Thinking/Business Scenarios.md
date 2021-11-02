@@ -1,3 +1,10 @@
+---
+html_meta:
+  "description lang=en": "Interview resource of Data Science Interview focusing on Business Scenarios."
+  "keywords": "interview, data science, machine learning, Business Scenarios, practice questions"
+  "property=og:locale": "en_US"
+---
+
 ## Business Scenarios
 
 ```{admonition} Problem: [SALESFORCE] User Aquisition

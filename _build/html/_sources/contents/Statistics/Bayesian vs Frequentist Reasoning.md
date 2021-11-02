@@ -1,4 +1,11 @@
-# Bayesian vs Frequentist Reasoning
+---
+html_meta:
+  "description lang=en": "Interview resource of Data Science Interview focusing on Bayesian vs Frequentist Reasoning."
+  "keywords": "interview, data science, machine learning, Bayesian, Frequentist"
+  "property=og:locale": "en_US"
+---
+
+## Bayesian vs Frequentist Reasoning
 
 Bayesian statistics concerns itself with trying to represent your beliefs in a DeFinetti consistent manner, simply put - you want a logically rigorous way of describing your initial (prior) belief and the update in your belief as you observe new data (thus creating posterior belief).
 

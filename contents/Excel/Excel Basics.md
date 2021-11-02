@@ -1,3 +1,10 @@
+---
+html_meta:
+  "description lang=en": "Interview resource of Data Science Interview focusing on Excel basics."
+  "keywords": "interview, data science, machine learning, Excel, practice questions"
+  "property=og:locale": "en_US"
+---
+
 ## Excel Basics
 
 ```{figure} ../Excel/images/image1.PNG
