@@ -1,3 +1,10 @@
+---
+html_meta:
+  "description lang=en": "Interview resource of Data Science Interview focusing on SQL."
+  "keywords": "interview, data science, machine learning, SQL"
+  "property=og:locale": "en_US"
+---
+
 ## SQL Basics
 
 ```{note}

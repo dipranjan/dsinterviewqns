@@ -1,3 +1,11 @@
+---
+html_meta:
+  "description lang=en": "Interview resource of Data Science Interview focusing on Regression."
+  "keywords": "interview, data science, machine learning, Regression, Linear Regression"
+  "property=og:locale": "en_US"
+---
+
+
 ## Regression
 
 ### Linear Regression

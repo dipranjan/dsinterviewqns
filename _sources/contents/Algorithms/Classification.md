@@ -1,3 +1,10 @@
+---
+html_meta:
+  "description lang=en": "Interview resource of Data Science Interview focusing on Classification."
+  "keywords": "interview, data science, machine learning, Classification, Logistic Regression"
+  "property=og:locale": "en_US"
+---
+
 ## Classification
 
 ### Logistic Regression
@@ -43,8 +50,6 @@ scale: 80%
 ---
 (a) ROC curve (b) Precision-Recall curve. Both are a helpful diagnostic tool for evaluating a single classifier but challenging for comparing classifiers. Like ROC AUC, we can calculate the area under the curve as a score and use that score to compare classifiers. The focus on the minority class makes the Precision-Recall AUC more useful for imbalanced classification problems. ([📖Source](https://machinelearningmastery.com/tour-of-evaluation-metrics-for-imbalanced-classification/))
 ```
-
-
 
 
 ### Questions

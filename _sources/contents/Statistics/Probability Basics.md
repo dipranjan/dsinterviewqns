@@ -1,4 +1,12 @@
-# Probability Basics
+---
+html_meta:
+  "description lang=en": "Interview resource of Data Science Interview focusing on Probability."
+  "keywords": "interview, data science, machine learning, probability"
+  "property=og:locale": "en_US"
+---
+
+
+## Probability Basics
 
 Probability theory is the mathematical framework that allows us to analyze chance events in a logically sound manner. The probability of an event is a number indicating how likely that event will occur.
 

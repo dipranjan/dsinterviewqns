@@ -1,3 +1,10 @@
+---
+html_meta:
+  "description lang=en": "Interview resource of Data Science Interview focusing on Lexical Processing."
+  "keywords": "interview, data science, machine learning, Lexical Processing, Soundex, Tokenize, Stemming"
+  "property=og:locale": "en_US"
+---
+
 ## Lexical Processing
 
 In any large text document (say, a hundred thousand words), the word frequencies follow Zipf distribution:

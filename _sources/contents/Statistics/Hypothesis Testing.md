@@ -1,5 +1,11 @@
-## Hypothesis Testing
+---
+html_meta:
+  "description lang=en": "Interview resource of Data Science Interview focusing on Hypothesis Testing."
+  "keywords": "interview, data science, machine learning, Hypothesis Testing"
+  "property=og:locale": "en_US"
+---
 
+## Hypothesis Testing
 
 ### Inferential Statistics
 

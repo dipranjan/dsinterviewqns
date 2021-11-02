@@ -1,3 +1,10 @@
+---
+html_meta:
+  "description lang=en": "Interview resource of Data Science Interview focusing on Data Scaling."
+  "keywords": "interview, data science, machine learning, Scaling, Data Normalization"
+  "property=og:locale": "en_US"
+---
+
 ## Scaling
 
 Feature scaling is a method used to standardize the range of independent variables or features of data. In data processing, it is also known as data normalization and is generally performed during the data preprocessing step. 

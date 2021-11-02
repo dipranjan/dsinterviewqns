@@ -1,7 +1,11 @@
+---
+html_meta:
+  "description lang=en": "Interview resource of Data Science Interview focusing on Anomaly Detection."
+  "keywords": "interview, data science, machine learning, Anomaly Detection, Isolation Forest"
+  "property=og:locale": "en_US"
+---
+
 ## Anomaly Detection
-
-
-
 
 ### Questions
 
