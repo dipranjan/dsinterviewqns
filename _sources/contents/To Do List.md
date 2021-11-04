@@ -29,6 +29,7 @@
 **Month of November, 2021**
 - Added new problems in Probability, Python, SQL
 - Added Temporary Datasets and Time page in SQL covering CTEs
+- Regression section extensively updated
 
 **Month of October, 2021**
 - Major updates to the SQL section
