@@ -4,8 +4,11 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>To Do &#8212; The Data Science Interview Book</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Interview resource of Data Science focusing on Time and related functions." lang="en" name="description" xml:lang="en" />
+<meta content="interview, data science, machine learning, Time" name="keywords" />
+<meta content="en_US" property="og:locale" />
+
+    <title>Time &#8212; The Data Science Interview Book</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -49,10 +52,12 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/ML Hardware/To Do.html" />
+    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/SQL/Time.html" />
     <link rel="shortcut icon" href="../../_static/logo.gif"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Functions" href="Functions.html" />
+    <link rel="prev" title="Windows Functions" href="Windows%20Functions.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -216,39 +221,39 @@
   SQL
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../SQL/Select.html">
+  <a class="reference internal" href="Select.html">
    SQL Basics
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../SQL/Joins.html">
+  <a class="reference internal" href="Joins.html">
    Joins
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../SQL/Temporary%20Datasets.html">
+  <a class="reference internal" href="Temporary%20Datasets.html">
    Temporary Datasets
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../SQL/Windows%20Functions.html">
+  <a class="reference internal" href="Windows%20Functions.html">
    Windows Functions
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../SQL/Time.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Time
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../SQL/Functions.html">
+  <a class="reference internal" href="Functions.html">
    Functions
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../SQL/Problems.html">
+  <a class="reference internal" href="Problems.html">
    Problems
   </a>
  </li>
@@ -329,7 +334,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/contents/ML Hardware/To Do.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/contents/SQL/Time.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -346,7 +351,7 @@
     <div class="dropdown-buttons sourcebuttons">
         
         <a class="issues-button"
-            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/ML Hardware/To Do.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/SQL/Time.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -375,23 +380,35 @@
         
               <div>
                 
-  <div class="section" id="to-do">
-<h1>To Do<a class="headerlink" href="#to-do" title="Permalink to this headline">¶</a></h1>
-<div class="tip admonition">
-<p class="admonition-title">Additional Reads:</p>
-<ul class="simple">
-<li><p>systomlic array</p></li>
-<li><p>moores law</p></li>
-<li><p>MLPerf, hardware benchmarking</p></li>
-<li><p>cuda vs opencl</p></li>
-<li><p>FPGA (field-programmable gate arrays)</p></li>
-<li><p>mlops - model drift</p></li>
-<li><p>float32.. etc param</p></li>
-<li><p>how is tensorflow built</p></li>
-<li><p>random seed</p></li>
-<li><p>distribution</p></li>
-</ul>
+  <div class="section" id="time">
+<h1>Time<a class="headerlink" href="#time" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Since solving any reasonable SQL problem requires a combination of all the topics covered here, hence it becomes difficult to seggregate problems based on one topic alone. So for SQL we are creating a dedicated <strong>Problems</strong> section. Theoritical and Basic questions will still be under their dedicated sections.</p>
 </div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The below commands are for SQL Server, a lot of databases tend to do the Time part of things a little differently, many of them has additional commands or does not support a few commands. Please be cautious as the commands might change depending on the DB you are using.</p>
+</div>
+<p><strong>Reference:</strong> <a class="reference external" href="https://www.sqlshack.com/learn-sql-sql-server-date-and-time-functions/">📖Explanation</a></p>
+<p>In most product companies like Google, Salesforce, Facebook, etc. in short any company that deals with user interaction will store data about user interaction and more often than not will ask questions which leverages the querying or manipulating time part of stored data. While time part is not very difficult to solve people face problems in that they donot remember the right command to do what they are trying, so here we will share the list of common commands along with their intended usage.</p>
+<p>To get system values:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">GETDATE()</span></code> or <code class="docutils literal notranslate"><span class="pre">CURRENT_TIMESTAMP</span></code> : return the datetime value from the server where SQL Server runs</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SYSDATETIME()</span></code> : same as above but with more precision</p></li>
+</ul>
+<p>Next we will see how can we extract specific feature from a date column:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">YEAR('2021/07/06</span> <span class="pre">14:08:52')</span></code> or <code class="docutils literal notranslate"><span class="pre">DATEPART(YEAR,</span> <span class="pre">'2021/07/06</span> <span class="pre">14:08:52')</span></code> or <code class="docutils literal notranslate"><span class="pre">DATENAME(YEAR,</span> <span class="pre">'2021/07/06</span> <span class="pre">14:08:52')</span></code> : will return the year</p></li>
+<li><p>Same command can be used for MONTH, DAY, HOUR, MINUTE, SECOND</p></li>
+<li><p>DATENAME for Month will return the name of the month</p></li>
+</ul>
+<p>The next 3 functions are used to create date or modify/combine dates:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">DATEFROMPARTS(year,</span> <span class="pre">month,</span> <span class="pre">day)</span></code> takes a year, month and day as integer values and creates 1 date out of them.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DATEADD(date_part,</span> <span class="pre">interval,</span> <span class="pre">date)</span></code> takes 3 arguments and returns a date that is interval (date_parts) number of given units (date_part) distant from the given date (date)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DATEDIFF(date_part,</span> <span class="pre">start_date,</span> <span class="pre">end_date)</span></code> returns the number of units (date_part) between end_date and start_date (end_date – start_date).</p></li>
+</ul>
 </div>
 
     <script type="text/x-thebe-config">
@@ -407,7 +424,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./contents\ML Hardware"
+            path: "./contents\SQL"
         },
         predefinedOutput: true
     }
@@ -423,6 +440,24 @@
 
 <div class='prev-next-bottom'>
     
+    <div id="prev">
+        <a class="left-prev" href="Windows%20Functions.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Windows Functions</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="Functions.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Functions</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
 
 </div>
         

@@ -4,8 +4,11 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>To Do &#8212; The Data Science Interview Book</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Interview resource of Data Science focusing on Common Table Expression and Views." lang="en" name="description" xml:lang="en" />
+<meta content="interview, data science, machine learning, SQL, CTE, View, Common Table Expression" name="keywords" />
+<meta content="en_US" property="og:locale" />
+
+    <title>Temporary Datasets &#8212; The Data Science Interview Book</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -49,10 +52,12 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/ML Hardware/To Do.html" />
+    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/SQL/Temporary Datasets.html" />
     <link rel="shortcut icon" href="../../_static/logo.gif"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Windows Functions" href="Windows%20Functions.html" />
+    <link rel="prev" title="Joins" href="Joins.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -216,39 +221,39 @@
   SQL
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../SQL/Select.html">
+  <a class="reference internal" href="Select.html">
    SQL Basics
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../SQL/Joins.html">
+  <a class="reference internal" href="Joins.html">
    Joins
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../SQL/Temporary%20Datasets.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Temporary Datasets
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../SQL/Windows%20Functions.html">
+  <a class="reference internal" href="Windows%20Functions.html">
    Windows Functions
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../SQL/Time.html">
+  <a class="reference internal" href="Time.html">
    Time
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../SQL/Functions.html">
+  <a class="reference internal" href="Functions.html">
    Functions
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../SQL/Problems.html">
+  <a class="reference internal" href="Problems.html">
    Problems
   </a>
  </li>
@@ -329,7 +334,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/contents/ML Hardware/To Do.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/contents/SQL/Temporary Datasets.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -346,7 +351,7 @@
     <div class="dropdown-buttons sourcebuttons">
         
         <a class="issues-button"
-            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/ML Hardware/To Do.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/SQL/Temporary Datasets.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -375,22 +380,23 @@
         
               <div>
                 
-  <div class="section" id="to-do">
-<h1>To Do<a class="headerlink" href="#to-do" title="Permalink to this headline">¶</a></h1>
-<div class="tip admonition">
-<p class="admonition-title">Additional Reads:</p>
+  <div class="section" id="temporary-datasets">
+<h1>Temporary Datasets<a class="headerlink" href="#temporary-datasets" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Since solving any reasonable SQL problem requires a combination of all the topics covered here, hence it becomes difficult to seggregate problems based on one topic alone. So for SQL we are creating a dedicated <strong>Problems</strong> section. Theoritical and Basic questions will still be under their dedicated sections.</p>
+</div>
+<p><strong>Reference:</strong> <a class="reference external" href="https://www.red-gate.com/simple-talk/databases/sql-server/t-sql-programming-sql-server/sql-server-cte-basics/">📖Explanation</a></p>
+<p>Sometimes in order to ease things out you need to create a temporary version of the data for either viewing it or for running some further calculations to it. Now if it is just that you want to run the same query daily and get the results you might as well save it as a <code class="docutils literal notranslate"><span class="pre">VIEW</span></code> . <strong>You can consider view as a SQL statement saved with a name</strong>.</p>
+<p>While it is very important to know what a <code class="docutils literal notranslate"><span class="pre">VIEW</span></code> is, however in most cases the ask will be to solve some question which for which you need to create a temporary dataset and run queries on that. You can use Common Table Expression or CTE for that. It uses the <code class="docutils literal notranslate"><span class="pre">WITH</span></code> keyword.</p>
+<p>CTE can be of 2 types:</p>
 <ul class="simple">
-<li><p>systomlic array</p></li>
-<li><p>moores law</p></li>
-<li><p>MLPerf, hardware benchmarking</p></li>
-<li><p>cuda vs opencl</p></li>
-<li><p>FPGA (field-programmable gate arrays)</p></li>
-<li><p>mlops - model drift</p></li>
-<li><p>float32.. etc param</p></li>
-<li><p>how is tensorflow built</p></li>
-<li><p>random seed</p></li>
-<li><p>distribution</p></li>
+<li><p>A <strong>recursive CTE</strong> is one that references itself within that CTE. The recursive CTE is useful when working with hierarchical data because the CTE continues to execute until the query returns the entire hierarchy</p></li>
+<li><p>A <strong>non-recursive CTE</strong> is one that does not reference itself within the CTE. Nonrecursive CTEs tend to be simpler than recursive CTEs</p></li>
 </ul>
+<div class="figure align-default" id="image4">
+<img alt="../../_images/image42.PNG" src="../../_images/image42.PNG" />
+<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">The above image shows a case where we need to use CTE to answer a question</span><a class="headerlink" href="#image4" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 
@@ -407,7 +413,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./contents\ML Hardware"
+            path: "./contents\SQL"
         },
         predefinedOutput: true
     }
@@ -423,6 +429,24 @@
 
 <div class='prev-next-bottom'>
     
+    <div id="prev">
+        <a class="left-prev" href="Joins.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Joins</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="Windows%20Functions.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Windows Functions</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
 
 </div>
         
