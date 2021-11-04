@@ -1,6 +1,6 @@
 ---
 html_meta:
-  "description lang=en": "Interview resource of Data Science Interview focusing on Lexical Processing."
+  "description lang=en": "Interview resource of Data Science focusing on Lexical Processing."
   "keywords": "interview, data science, machine learning, Lexical Processing, Soundex, Tokenize, Stemming"
   "property=og:locale": "en_US"
 ---

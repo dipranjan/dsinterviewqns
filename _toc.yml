@@ -33,7 +33,9 @@ parts:
     chapters:
     - file: contents/SQL/Select
     - file: contents/SQL/Joins
+    - file: contents/SQL/Temporary Datasets
     - file: contents/SQL/Windows Functions
+    - file: contents/SQL/Time
     - file: contents/SQL/Functions
     - file: contents/SQL/Problems
   - caption: Excel

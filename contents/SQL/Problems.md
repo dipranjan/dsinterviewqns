@@ -1,6 +1,6 @@
 ---
 html_meta:
-  "description lang=en": "Interview resource of Data Science Interview focusing on SQL."
+  "description lang=en": "Interview resource of Data Science focusing on SQL problems, containing questions asked in Top Tech companies."
   "keywords": "interview, data science, machine learning, SQL, practice questions"
   "property=og:locale": "en_US"
 ---
@@ -466,5 +466,46 @@ from cte
 select top 1* from cte2
 where diff is not null
 order by diff asc
+```
+````
+
+```{admonition} Problem: [AMAZON] Average Distance between Cities
+:class: tip, dropdown
+[🔫Playground](https://dbfiddle.uk/?rdbms=sqlserver_2017&fiddle=876bddb9c3e31a222ce95fbb8eef7a00)
+
+You are given a table with varying distances from various cities. How do you find the average distance between each of the pairs of the cities?
+
+| scity  | dcity  | distance |
+|--------|--------|---------:|
+| City A | City B |       30 |
+| City A | City B |       32 |
+| City B | City A |       29 |
+| City A | City C |       40 |
+| City C | City A |       41 |
+
+Output:
+| city1  | city2  |         distance |
+|--------|--------|-----------------:|
+| City A | City C |             40.5 |
+| City A | City B | 30.3333333333333 |
+
+Another variant of this question is 
+
+"Write a query to create a new table, named flight routes, that displays unique pairs of two locations?"
+
+```
+
+````{admonition} Solution:
+:class: dropdown
+```sql
+select 
+  (case when scity < dcity then scity else dcity end) city1, 
+  (case when scity < dcity then dcity else scity end) city2,
+  avg(cast(distance as float)) distance
+from tablename 
+group by
+  (case when scity < dcity then scity else dcity end), 
+  (case when scity < dcity then dcity else scity end)
+order by avg(cast(distance as float)) desc
 ```
 ````

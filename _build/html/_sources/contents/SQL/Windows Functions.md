@@ -1,3 +1,11 @@
+---
+html_meta:
+  "description lang=en": "Interview resource of Data Science focusing on Windows Functions."
+  "keywords": "interview, data science, machine learning, SQL, Windows functions"
+  "property=og:locale": "en_US"
+---
+
+
 ## Windows Functions
 
 ```{note}

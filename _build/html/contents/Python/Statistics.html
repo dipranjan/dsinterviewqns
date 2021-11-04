@@ -230,8 +230,18 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../SQL/Temporary%20Datasets.html">
+   Temporary Datasets
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../SQL/Windows%20Functions.html">
    Windows Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../SQL/Time.html">
+   Time
   </a>
  </li>
  <li class="toctree-l1">
@@ -479,6 +489,108 @@ Interquartile distance:  -17.7275
 </pre></div>
 </div>
 </div>
+</div>
+<div class="dropdown tip admonition">
+<p class="admonition-title">Problem: [GENENTECH] Imputing the mdeian</p>
+<p>Write a function cheese_median to impute the median price of the selected California cheeses in place of the missing values. You may assume at least one cheese is not missing its price.</p>
+<p>Input:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">cheeses</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Bohemian Goat&quot;</span><span class="p">,</span> <span class="s2">&quot;Central Coast Bleu&quot;</span><span class="p">,</span> <span class="s2">&quot;Cowgirl Mozzarella&quot;</span><span class="p">,</span> <span class="s2">&quot;Cypress Grove Cheddar&quot;</span><span class="p">,</span> <span class="s2">&quot;Oakdale Colby&quot;</span><span class="p">],</span> <span class="s2">&quot;Price&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="mf">15.00</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mf">30.00</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mf">45.00</span><span class="p">]}</span>
+
+<span class="n">df_cheeses</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">cheeses</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>Name</p></th>
+<th class="text-align:center head"><p>Price</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>Bohemian Goat</p></td>
+<td class="text-align:center"><p>15.00</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>Central Coast Bleu</p></td>
+<td class="text-align:center"><p>30.00</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>Cowgirl Mozzarella</p></td>
+<td class="text-align:center"><p>30.00</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>Cypress Grove Cheddar</p></td>
+<td class="text-align:center"><p>30.00</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>Oakdale Colby</p></td>
+<td class="text-align:center"><p>45.00</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">cheeses</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Bohemian Goat&quot;</span><span class="p">,</span> <span class="s2">&quot;Central Coast Bleu&quot;</span><span class="p">,</span> <span class="s2">&quot;Cowgirl Mozzarella&quot;</span><span class="p">,</span> <span class="s2">&quot;Cypress Grove Cheddar&quot;</span><span class="p">,</span> <span class="s2">&quot;Oakdale Colby&quot;</span><span class="p">],</span> <span class="s2">&quot;Price&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="mf">15.00</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mf">30.00</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mf">45.00</span><span class="p">]}</span>
+
+<span class="n">df_cheeses</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">cheeses</span><span class="p">)</span>
+
+<span class="n">df_cheeses</span><span class="p">[</span><span class="s1">&#39;Price&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_cheeses</span><span class="p">[</span><span class="s1">&#39;Price&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">df_cheeses</span><span class="p">[</span><span class="s1">&#39;Price&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">())</span>
+<span class="n">df_cheeses</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Bohemian Goat</td>
+      <td>15.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Central Coast Bleu</td>
+      <td>30.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Cowgirl Mozzarella</td>
+      <td>30.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Cypress Grove Cheddar</td>
+      <td>30.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Oakdale Colby</td>
+      <td>45.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </div>
 </div>

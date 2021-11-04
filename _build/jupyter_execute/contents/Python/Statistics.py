@@ -83,3 +83,41 @@ qtl_3 = np.quantile(li,.75)
 
 print("Interquartile distance: ", qtl_1 - qtl_3)
 
+
+# ````{admonition} Problem: [GENENTECH] Imputing the mdeian
+# :class: dropdown, tip
+# 
+# Write a function cheese_median to impute the median price of the selected California cheeses in place of the missing values. You may assume at least one cheese is not missing its price.
+# 
+# Input:
+# 
+# ```python
+# import pandas as pd
+# 
+# cheeses = {"Name": ["Bohemian Goat", "Central Coast Bleu", "Cowgirl Mozzarella", "Cypress Grove Cheddar", "Oakdale Colby"], "Price" : [15.00, None, 30.00, None, 45.00]}
+# 
+# df_cheeses = pd.DataFrame(cheeses)
+# ```
+# 
+# |          Name         | Price |
+# |:---------------------:|:-----:|
+# | Bohemian Goat         | 15.00 |
+# | Central Coast Bleu    | 30.00 |
+# | Cowgirl Mozzarella    | 30.00 |
+# | Cypress Grove Cheddar | 30.00 |
+# | Oakdale Colby         | 45.00 |
+# 
+# ````
+
+# In[9]:
+
+
+import pandas as pd
+
+cheeses = {"Name": ["Bohemian Goat", "Central Coast Bleu", "Cowgirl Mozzarella", "Cypress Grove Cheddar", "Oakdale Colby"], "Price" : [15.00, None, 30.00, None, 45.00]}
+
+df_cheeses = pd.DataFrame(cheeses)
+
+df_cheeses['Price'] = df_cheeses['Price'].fillna(df_cheeses['Price'].median())
+df_cheeses.head()
+

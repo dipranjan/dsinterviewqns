@@ -4,11 +4,11 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Interview resource of Data Science focusing on SQL, specifically the Basics." lang="en" name="description" xml:lang="en" />
-<meta content="interview, data science, machine learning, SQL" name="keywords" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Interview resource of Data Science focusing on Time and related functions." lang="en" name="description" xml:lang="en" />
+<meta content="interview, data science, machine learning, Time" name="keywords" />
 <meta content="en_US" property="og:locale" />
 
-    <title>SQL Basics &#8212; The Data Science Interview Book</title>
+    <title>Time &#8212; The Data Science Interview Book</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -52,12 +52,12 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/SQL/Select.html" />
+    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/SQL/Time.html" />
     <link rel="shortcut icon" href="../../_static/logo.gif"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Joins" href="Joins.html" />
-    <link rel="prev" title="Statistics" href="../Python/Statistics.html" />
+    <link rel="next" title="Functions" href="Functions.html" />
+    <link rel="prev" title="Windows Functions" href="Windows%20Functions.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -222,8 +222,8 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Select.html">
    SQL Basics
   </a>
  </li>
@@ -242,8 +242,8 @@
    Windows Functions
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Time.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Time
   </a>
  </li>
@@ -334,7 +334,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/contents/SQL/Select.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/contents/SQL/Time.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -351,7 +351,7 @@
     <div class="dropdown-buttons sourcebuttons">
         
         <a class="issues-button"
-            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/SQL/Select.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/SQL/Time.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -372,39 +372,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ddl">
-   DDL
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#referential-integrity">
-   Referential Integrity
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#union-union-all">
-   UNION &amp; UNION ALL
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#null">
-   NULL
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#questions">
-   Questions
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -413,84 +380,35 @@
         
               <div>
                 
-  <div class="section" id="sql-basics">
-<h1>SQL Basics<a class="headerlink" href="#sql-basics" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="time">
+<h1>Time<a class="headerlink" href="#time" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Since solving any reasonable SQL problem requires a combination of all the topics covered here, hence it becomes difficult to seggregate problems based on one topic alone. So for SQL we are creating a dedicated <strong>Problems</strong> section. Theoritical and Basic questions will still be under their dedicated sections.</p>
 </div>
-<p>If you are new to SQL <a class="reference external" href="https://www.youtube.com/watch?v=7GVFYt6_ZFM&amp;list=PL08903FB7ACA1C2FB">this ▶️</a> is one of the most comprehensive material of SQL that is available in the internet. Please go through the portions of interest to you.</p>
-<div class="section" id="ddl">
-<h2>DDL<a class="headerlink" href="#ddl" title="Permalink to this headline">¶</a></h2>
-<p>DDL stands for Data Defination Language. These commands are used to change the structure of a database and database objects.
-Some common commands are as follows:</p>
-<ul>
-<li><p><strong>CREATE:</strong> is used to create the database or its objects (like table, index, function, views, store procedure and triggers).</p>
-<p>The generic format of the create table is as follows:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="n">databasename</span><span class="p">;</span>
-
-<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="k">table_name</span> <span class="p">(</span>
-<span class="n">column1</span> <span class="n">datatype</span> <span class="k">CONSTRAINT</span><span class="p">,</span>
-<span class="n">column2</span> <span class="n">datatype</span> <span class="k">CONSTRAINT</span><span class="p">,</span>
-<span class="n">column3</span> <span class="n">datatype</span> <span class="k">CONSTRAINT</span><span class="p">);</span> 
-</pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The below commands are for SQL Server, a lot of databases tend to do the Time part of things a little differently, many of them has additional commands or does not support a few commands. Please be cautious as the commands might change depending on the DB you are using.</p>
 </div>
-<p>Using constraints we can specify the limit on the type of data that can be stored in a particular column in a table. Some of the constraints are:</p>
+<p><strong>Reference:</strong> <a class="reference external" href="https://www.sqlshack.com/learn-sql-sql-server-date-and-time-functions/">📖Explanation</a></p>
+<p>In most product companies like Google, Salesforce, Facebook, etc. in short any company that deals with user interaction will store data about user interaction and more often than not will ask questions which leverages the querying or manipulating time part of stored data. While time part is not very difficult to solve people face problems in that they donot remember the right command to do what they are trying, so here we will share the list of common commands along with their intended usage.</p>
+<p>To get system values:</p>
 <ul class="simple">
-<li><p><strong>NOT NULL:</strong> This constraint tells that the value of a column cannot be null.</p></li>
-<li><p><strong>UNIQUE:</strong> This constraint tells that the values in any row of a column must not be repeated.</p></li>
-<li><p><strong>PRIMARY KEY:</strong> A primary key is a field which can uniquely identify each row in a table. We can say that PRIMARY KEY is combination of NOT NULL and UNIQUE constraints. A table can have only one field as primary key.</p></li>
-<li><p><strong>FOREIGN KEY:</strong> Foreign Key is a field in a table which uniquely identifies each row of another table. This field points to primary key of another table. This usually creates a relation between the tables.</p></li>
-<li><p><strong>CHECK:</strong> This constraint helps to ensure that the value stored in a column meets a specific condition.</p></li>
-<li><p><strong>DEFAULT:</strong> This constraint specifies a default value for the column when no value is specified by the user.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GETDATE()</span></code> or <code class="docutils literal notranslate"><span class="pre">CURRENT_TIMESTAMP</span></code> : return the datetime value from the server where SQL Server runs</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SYSDATETIME()</span></code> : same as above but with more precision</p></li>
 </ul>
-</li>
-<li><p><strong>DROP:</strong> is used to delete databases or tables.</p></li>
-<li><p><strong>ALTER:</strong> is used to alter the structure of the database. You can use this to add/modify/delete a column.</p></li>
-<li><p><strong>TRUNCATE:</strong> The TRUNCATE TABLE statement is used to delete the data inside a table, <em>but not the table itself.</em></p></li>
-<li><p><strong>RENAME:</strong> is used to rename an object existing in the database.</p></li>
-</ul>
-</div>
-<div class="section" id="referential-integrity">
-<h2>Referential Integrity<a class="headerlink" href="#referential-integrity" title="Permalink to this headline">¶</a></h2>
-<p>Referential integrity is a property of data stating references within it are valid. In the context of relational databases, it requires every value of one attribute (column) of a relation (table) to exist as a value of another attribute (column) in a different (or the same) relation (table).
-For referential integrity to hold in a relational database, any column in a base table that is declared a foreign key can contain either a null value, or only values from a parent table’s primary key or a candidate key. In other words, when a foreign key value is used it must reference a valid, existing primary key in the parent table. For instance, deleting a record that contains a value referred to by a foreign key in another table would break referential integrity. Some relational database management systems (RDBMS) can enforce referential integrity, normally either by deleting the foreign key rows as well to maintain integrity, or by returning an error and not performing the delete. Which method is used may be determined by a referential integrity constraint defined in a data dictionary.</p>
-</div>
-<div class="section" id="union-union-all">
-<h2>UNION &amp; UNION ALL<a class="headerlink" href="#union-union-all" title="Permalink to this headline">¶</a></h2>
+<p>Next we will see how can we extract specific feature from a date column:</p>
 <ul class="simple">
-<li><p>UNION removes duplicate rows, UNION ALL doesnot</p></li>
-<li><p>UNION has to perform a distinct sort to remove duplicates, hence is a little slow</p></li>
-<li><p>UNION combines rows of two tables, JOIN combines columns</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">YEAR('2021/07/06</span> <span class="pre">14:08:52')</span></code> or <code class="docutils literal notranslate"><span class="pre">DATEPART(YEAR,</span> <span class="pre">'2021/07/06</span> <span class="pre">14:08:52')</span></code> or <code class="docutils literal notranslate"><span class="pre">DATENAME(YEAR,</span> <span class="pre">'2021/07/06</span> <span class="pre">14:08:52')</span></code> : will return the year</p></li>
+<li><p>Same command can be used for MONTH, DAY, HOUR, MINUTE, SECOND</p></li>
+<li><p>DATENAME for Month will return the name of the month</p></li>
 </ul>
-</div>
-<div class="section" id="null">
-<h2>NULL<a class="headerlink" href="#null" title="Permalink to this headline">¶</a></h2>
-<p>There are 3 ways to take care of NULL values:</p>
-<p>Let’s take an example suppose we want to fill the Manager name as ‘No Manager’ if an employee does have a manager assigned in the manager column. This can be done using:</p>
+<p>The next 3 functions are used to create date or modify/combine dates:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">ISNULL(manager,</span> <span class="pre">'No</span> <span class="pre">Manager')</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">CASE</span> <span class="pre">WHEN</span> <span class="pre">manager</span> <span class="pre">IS</span> <span class="pre">NULL</span> <span class="pre">THEN</span> <span class="pre">'No</span> <span class="pre">Manager'</span> <span class="pre">ELSE</span> <span class="pre">manager</span> <span class="pre">END</span> <span class="pre">as</span> <span class="pre">manager</span></code></p></li>
-<li><p>The other option is <code class="docutils literal notranslate"><span class="pre">COALESCE</span></code> but it esentially takes the first non-null value out of the passed columns</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DATEFROMPARTS(year,</span> <span class="pre">month,</span> <span class="pre">day)</span></code> takes a year, month and day as integer values and creates 1 date out of them.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DATEADD(date_part,</span> <span class="pre">interval,</span> <span class="pre">date)</span></code> takes 3 arguments and returns a date that is interval (date_parts) number of given units (date_part) distant from the given date (date)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DATEDIFF(date_part,</span> <span class="pre">start_date,</span> <span class="pre">end_date)</span></code> returns the number of units (date_part) between end_date and start_date (end_date – start_date).</p></li>
 </ul>
-</div>
-<div class="section" id="questions">
-<h2>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h2>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Problem: [MICROSOFT] HAVING vs WHERE</p>
-<p><strong>Asked By - MICROSOFT</strong></p>
-<p>Can you elborate on the differences between HAVING and WHERE clause in a SQL query?</p>
-</div>
-<div class="dropdown admonition">
-<p class="admonition-title">Solution:</p>
-<p>The major differences between between HAVING and WHERE are as follows:</p>
-<ul class="simple">
-<li><p>WHERE can be used with Select, Insert, Update, Delete statements. HAVING can only be used with Select statements</p></li>
-<li><p>WHERE filters rows before aggregation, HAVING filters after that</p></li>
-</ul>
-<p>Performance wise there is not much of a difference, the best practice is to filter out unwanted rows as early as possible</p>
-</div>
-</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -523,19 +441,19 @@ For referential integrity to hold in a relational database, any column in a base
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="../Python/Statistics.html" title="previous page">
+        <a class="left-prev" href="Windows%20Functions.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Statistics</p>
+                <p class="prevnext-title">Windows Functions</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="Joins.html" title="next page">
+        <a class="right-next" href="Functions.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Joins</p>
+                <p class="prevnext-title">Functions</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
