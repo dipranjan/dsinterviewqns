@@ -63,5 +63,19 @@ Can you describe the distinction between Generative and Discriminative Models fr
 :class: dropdown
 
 In mathematical terms, a discriminative machine learning trains a model which is done by learning parameters that maximize the conditional probability $P(Y|X)$, while on the other hand, a generative model learns parameters by maximizing the joint probability of $P(X,Y)$.
+```
 
+```{admonition} Problem: [AMAZON] Difference between Generative and Discriminative Models
+:class: tip, dropdown
+
+Describe both generative and discriminative models and give an example of each?
+
+```
+
+```{admonition} Solution:
+:class: dropdown
+
+In simple words, a discriminative model makes predictions on the unseen data based on conditional probability and can be used either for classification or regression problem statements. On the contrary, a generative model focuses on the distribution of a dataset to return a probability for a given example.
+
+Linear Discriminant Analysis (LDA) is a generative model, whereas Logistic Regression is a discriminative model.
 ```
