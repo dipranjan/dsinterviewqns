@@ -27,7 +27,7 @@
 :class: tip, dropdown
 
 **Month of November, 2021**
-- Added new problems in Probability, Python, SQL
+- Added new problems in Probability, Python, Regression, SQL
 - Added Temporary Datasets and Time page in SQL covering CTEs
 - Regression section extensively updated
 
