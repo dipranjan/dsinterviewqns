@@ -1,4 +1,7 @@
-# To Do
+## To Do
+
+```{admonition} Items
+:class: tip, dropdown
 
 - 🚧 Tensorflow
 - 🚧 Excel [new section]
@@ -22,11 +25,13 @@
 - ⌛ Clustering
 - ⌛ Model Explainability - SHAP, LIME, Integrated Gradients, etc.
 - ⌛ GAN
+```
 
 ```{admonition} Change Log
 :class: tip, dropdown
 
 **Month of November, 2021**
+- Added support for dark theme
 - Added new problems in Probability, Python, Regression, SQL
 - Added Temporary Datasets and Time page in SQL covering CTEs
 - Regression section extensively updated
