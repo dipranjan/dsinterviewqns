@@ -31,7 +31,7 @@
 :class: tip, dropdown
 
 **Month of November, 2021**
-- Added support for dark theme
+- Added support for dark theme, had to remove it as it was breaking a lot of other stuff
 - Added new problems in Probability, Python, Regression, SQL
 - Added Temporary Datasets and Time page in SQL covering CTEs
 - Regression section extensively updated
