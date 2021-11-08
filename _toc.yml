@@ -1,7 +1,7 @@
 format: jb-book
 root: intro
 parts:
-  - caption: To Do
+  - caption: Journey of this project
     chapters:
     - file: contents/To Do List
   - caption: Statistics
@@ -19,6 +19,7 @@ parts:
     - file: contents/Algorithms/Regression
     - file: contents/Algorithms/Generative VS Discriminative Models
     - file: contents/Algorithms/Classification
+    - file: contents/Algorithms/Tree based approaches
     - file: contents/Algorithms/Time Series Analysis
     - file: contents/Algorithms/Anomaly Detection
   - caption: NLP
@@ -47,4 +48,5 @@ parts:
   - caption: Analytical Thinking
     chapters:
     - file: contents/Analytical Thinking/Business Scenarios
+    - file: contents/Analytical Thinking/Industry Application
 

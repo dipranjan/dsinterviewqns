@@ -4,11 +4,11 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Interview resource of Data Science Interview focusing on Central Limit Theorem." lang="en" name="description" xml:lang="en" />
-<meta content="interview, data science, machine learning, CLT, Central Limit Theorem" name="keywords" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Interview resource of Data Science Interview focusing on Industry application, practical success or failure of Data Science and Machine Learning Projects." lang="en" name="description" xml:lang="en" />
+<meta content="interview, data science, machine learning, Generative, Discriminative" name="keywords" />
 <meta content="en_US" property="og:locale" />
 
-    <title>Central Limit Theorem &#8212; The Data Science Interview Book</title>
+    <title>Industry Application &#8212; The Data Science Interview Book</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -54,12 +54,11 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/Statistics/Central Limit Theorem.html" />
+    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/Analytical Thinking/Industry Application.html" />
     <link rel="shortcut icon" href="../../_static/logo.gif"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Bayesian vs Frequentist Reasoning" href="Bayesian%20vs%20Frequentist%20Reasoning.html" />
-    <link rel="prev" title="Probability Distribution" href="Probability%20Distribution.html" />
+    <link rel="prev" title="Business Scenarios" href="Business%20Scenarios.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -113,29 +112,29 @@
   Statistics
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="Probability%20Basics.html">
+  <a class="reference internal" href="../Statistics/Probability%20Basics.html">
    Probability Basics
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Probability%20Distribution.html">
+  <a class="reference internal" href="../Statistics/Probability%20Distribution.html">
    Probability Distribution
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Statistics/Central%20Limit%20Theorem.html">
    Central Limit Theorem
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Bayesian%20vs%20Frequentist%20Reasoning.html">
+  <a class="reference internal" href="../Statistics/Bayesian%20vs%20Frequentist%20Reasoning.html">
    Bayesian vs Frequentist Reasoning
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Hypothesis%20Testing.html">
+  <a class="reference internal" href="../Statistics/Hypothesis%20Testing.html">
    Hypothesis Testing
   </a>
  </li>
@@ -294,14 +293,14 @@
   Analytical Thinking
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../Analytical%20Thinking/Business%20Scenarios.html">
+  <a class="reference internal" href="Business%20Scenarios.html">
    Business Scenarios
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Analytical%20Thinking/Industry%20Application.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Industry Application
   </a>
  </li>
@@ -346,7 +345,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/contents/Statistics/Central Limit Theorem.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/contents/Analytical Thinking/Industry Application.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -363,7 +362,7 @@
     <div class="dropdown-buttons sourcebuttons">
         
         <a class="issues-button"
-            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/Statistics/Central Limit Theorem.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/Analytical Thinking/Industry Application.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -384,19 +383,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sampling-distribution">
-   Sampling distribution
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -405,30 +391,22 @@
         
               <div>
                 
-  <div class="section" id="central-limit-theorem">
-<h1>Central Limit Theorem<a class="headerlink" href="#central-limit-theorem" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="sampling-distribution">
-<h2>Sampling distribution<a class="headerlink" href="#sampling-distribution" title="Permalink to this headline">¶</a></h2>
-<p>Let’s start with an example, suppose from the SAT MATH SCORES</p>
+  <div class="section" id="industry-application">
+<h1>Industry Application<a class="headerlink" href="#industry-application" title="Permalink to this headline">¶</a></h1>
+<div class="warning dropdown admonition">
+<p class="admonition-title">Zillow</p>
+<p>Zillow’s rise and fall is a classic casestudy on both what to do and what not to do with data science and machine learning.</p>
 <ul class="simple">
-<li><p>You take a sample of 10 random students from a population of 100. You might get a mean of 502 for that sample.</p></li>
-<li><p>Then, you do it again with a new sample of 10 students. You might get a mean of 480 this time.</p></li>
-<li><p>Then, you do it again. And again. And again…… and get the following means for each of those three new samples of 10 people: 550, 517, 472</p></li>
+<li><p>Zillow was the brainchild of Richard Barton, the 54 year old American internet entrepreneur who also founded Expedia and Glassdoor</p></li>
+<li><p>Zestimate, which debuted in 2006, it was a proprietary algorithm based on a neural network model which used house facts, location, housing market trends, property values, data from county, tax assessor records, as well as direct feeds from hundreds of multiple listing services and brokerages to determine the price of a house</p></li>
+<li><p>It was very successful in driving conversation around property, so much so that browsing property valuations became a hobby for many. With shows like Saturday Night Live encouraging the habit, it became trendy to find the value of your neighboring houses to identify how posh of an area you live in.</p></li>
+<li><p>Zestimate has a median error rate of <span class="math notranslate nohighlight">\(1.9%\)</span> for homes that are on-market and <span class="math notranslate nohighlight">\(6.9%\)</span> for homes that are off-market. But this accuracy varies widely across cities and their corresponding housing markets. In Cincinnati, for instance, approximately <span class="math notranslate nohighlight">\(35%\)</span> of Zestimates for off-market homes were within <span class="math notranslate nohighlight">\(5%\)</span> of the eventual sales prices, and <span class="math notranslate nohighlight">\(82%\)</span> were within <span class="math notranslate nohighlight">\(20%\)</span> of the price. Comparatively, in Denver, <span class="math notranslate nohighlight">\(51%\)</span> of Zestimates were within <span class="math notranslate nohighlight">\(5%\)</span> of the sales price, and <span class="math notranslate nohighlight">\(94%\)</span> were within <span class="math notranslate nohighlight">\(20%\)</span> of the sales figure</p></li>
+<li><p>Zillow, had recognized the need to improve the accuracy of its valuation model. In 2017, the company launched a contest with a $1M prize money, Zestimate was on average around <span class="math notranslate nohighlight">\(10K off of the actual sales price of a median-priced home, and that the information provided by the winning team would reduce that margin by around \)</span>1.3K, the prize went to a group of data scientists and engineers from three different countries: Chahhou Mohamed of Morocco, Jordan Meyer of the United States and Nima Shahbazi of Canada</p></li>
+<li><p>In February Zillow announced that the Zestimate would represent “an initial cash offer” for eligible homes spread across 20 cities, from Nashville, Houston, Phoenix, Miami to Denver and Los Angeles</p></li>
+<li><p>The problem started due to the pandemic, since summer of 2020 the housing market in USA was hot and quite some unforeseen trends had cropped up. For example, post pandemic there was a sudden increase in demand for bigger houses in the suburbs, which based on historical data was difficult to generate an estimate of. There were data issues too, Zillow missed out on having real time brokering data in new markets, post sales data also takes time to be updated hence there was always a lag as to what prices the recent houses have sold at. Other issues have also been pointed at, Zillow said it did not find enough workers to revamp and repair the houses it had bought in order to put them in the market. Zillow had tweaked its algorithms to price houses aggressively and at the end it had a purchased houses at a higher price that it could sell in a market that was cooling down</p></li>
+<li><p>By October 17th, there were signs of trouble: Zillow had paused new house offers for the year as it sorted through a backlog of properties under contract. On November 1st, Zillow marketed nearly 7,000 houses for a total of $2.8 Billion. The operation was shut down a day later by its board of directors</p></li>
 </ul>
-<div class="figure align-default" id="image8">
-<a class="reference internal image-reference" href="../../_images/image81.PNG"><img alt="../../_images/image81.PNG" src="../../_images/image81.PNG" style="width: 608.0px; height: 464.8px;" /></a>
-</div>
-<p>The sampling distribution, which is basically the distribution of sample means of a population, has some interesting properties which are collectively called the <strong>central limit theorem</strong>, which states that no matter how the original population is distributed, the sampling distribution will follow these three properties –</p>
-<ul class="simple">
-<li><p>Sampling Distribution’s Mean <span class="math notranslate nohighlight">\((\mu \bar{x}) =\)</span> Population Mean <span class="math notranslate nohighlight">\((\mu)\)</span></p></li>
-<li><p>Sampling Distribution’s Standard Deviation (Standard Error) <span class="math notranslate nohighlight">\(= \sigma\sqrt{n}\)</span>, where <span class="math notranslate nohighlight">\(\sigma\)</span> is the population’s standard deviation and <span class="math notranslate nohighlight">\(n\)</span> is the sample size</p></li>
-<li><p>For <span class="math notranslate nohighlight">\(n &gt; 30\)</span>, the sampling distribution becomes a normal distribution. Strongly skewed distributions can require larger sample sizes.</p></li>
-</ul>
-<p>Let’s take a uniform distribution, in the image below <span class="math notranslate nohighlight">\(500,000\)</span> times for each sample size <span class="math notranslate nohighlight">\((5, 20, 40)\)</span> have been drawn and their mean plotted.
-We’d expect the average to be <span class="math notranslate nohighlight">\((1 + 2 + 3 + 4 + 5 + 6 / 6 = 3.5)\)</span>. The sampling distributions of the means center on this value. Just as the central limit theorem predicts, as we increase the sample size, the sampling distributions more closely approximate a normal distribution and have a tighter spread of values.</p>
-<div class="figure align-default" id="image9">
-<a class="reference internal image-reference" href="../../_images/image91.PNG"><img alt="../../_images/image91.PNG" src="../../_images/image91.PNG" style="width: 373.8px; height: 228.0px;" /></a>
-</div>
+<p>So what went wrong, nothing that we already don’t know of, extrapolating existing data in new pandemic era market, unforeseen market dynamics, over reliance on algorithmic outputs while not considering ground realities.</p>
 </div>
 </div>
 
@@ -445,7 +423,7 @@ We’d expect the average to be <span class="math notranslate nohighlight">\((1 
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./contents\Statistics"
+            path: "./contents\Analytical Thinking"
         },
         predefinedOutput: true
     }
@@ -462,23 +440,14 @@ We’d expect the average to be <span class="math notranslate nohighlight">\((1 
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="Probability%20Distribution.html" title="previous page">
+        <a class="left-prev" href="Business%20Scenarios.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Probability Distribution</p>
+                <p class="prevnext-title">Business Scenarios</p>
             </div>
         </a>
     </div>
-     <div id="next">
-        <a class="right-next" href="Bayesian%20vs%20Frequentist%20Reasoning.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Bayesian vs Frequentist Reasoning</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
 
 </div>
         

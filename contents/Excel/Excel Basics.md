@@ -7,6 +7,10 @@ html_meta:
 
 ## Excel Basics
 
+```{warning}
+This page is a work in progress
+```
+
 ```{figure} ../Excel/images/image1.PNG
 ---
 name: image1

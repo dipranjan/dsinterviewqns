@@ -4,11 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Interview resource of Data Science Interview focusing on Central Limit Theorem." lang="en" name="description" xml:lang="en" />
-<meta content="interview, data science, machine learning, CLT, Central Limit Theorem" name="keywords" />
-<meta content="en_US" property="og:locale" />
-
-    <title>Central Limit Theorem &#8212; The Data Science Interview Book</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tree based approaches &#8212; The Data Science Interview Book</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -54,12 +51,12 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/Statistics/Central Limit Theorem.html" />
+    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/Algorithms/Tree based approaches.html" />
     <link rel="shortcut icon" href="../../_static/logo.gif"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Bayesian vs Frequentist Reasoning" href="Bayesian%20vs%20Frequentist%20Reasoning.html" />
-    <link rel="prev" title="Probability Distribution" href="Probability%20Distribution.html" />
+    <link rel="next" title="Time Series Analysis" href="Time%20Series%20Analysis.html" />
+    <link rel="prev" title="Classification" href="Classification.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -113,29 +110,29 @@
   Statistics
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="Probability%20Basics.html">
+  <a class="reference internal" href="../Statistics/Probability%20Basics.html">
    Probability Basics
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Probability%20Distribution.html">
+  <a class="reference internal" href="../Statistics/Probability%20Distribution.html">
    Probability Distribution
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Statistics/Central%20Limit%20Theorem.html">
    Central Limit Theorem
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Bayesian%20vs%20Frequentist%20Reasoning.html">
+  <a class="reference internal" href="../Statistics/Bayesian%20vs%20Frequentist%20Reasoning.html">
    Bayesian vs Frequentist Reasoning
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Hypothesis%20Testing.html">
+  <a class="reference internal" href="../Statistics/Hypothesis%20Testing.html">
    Hypothesis Testing
   </a>
  </li>
@@ -157,34 +154,34 @@
   Algorithms
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../Algorithms/Regression.html">
+  <a class="reference internal" href="Regression.html">
    Regression
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Algorithms/Generative%20VS%20Discriminative%20Models.html">
+  <a class="reference internal" href="Generative%20VS%20Discriminative%20Models.html">
    Generative vs Discriminative Models
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Algorithms/Classification.html">
+  <a class="reference internal" href="Classification.html">
    Classification
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Algorithms/Tree%20based%20approaches.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Tree based approaches
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Algorithms/Time%20Series%20Analysis.html">
+  <a class="reference internal" href="Time%20Series%20Analysis.html">
    Time Series Analysis
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Algorithms/Anomaly%20Detection.html">
+  <a class="reference internal" href="Anomaly%20Detection.html">
    Anomaly Detection
   </a>
  </li>
@@ -346,7 +343,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/contents/Statistics/Central Limit Theorem.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/contents/Algorithms/Tree based approaches.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -363,7 +360,7 @@
     <div class="dropdown-buttons sourcebuttons">
         
         <a class="issues-button"
-            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/Statistics/Central Limit Theorem.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/Algorithms/Tree based approaches.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -390,8 +387,18 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sampling-distribution">
-   Sampling distribution
+  <a class="reference internal nav-link" href="#boosting">
+   Boosting
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adaboost">
+   AdaBoost
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#xgboost">
+   XGBoost
   </a>
  </li>
 </ul>
@@ -405,30 +412,48 @@
         
               <div>
                 
-  <div class="section" id="central-limit-theorem">
-<h1>Central Limit Theorem<a class="headerlink" href="#central-limit-theorem" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="sampling-distribution">
-<h2>Sampling distribution<a class="headerlink" href="#sampling-distribution" title="Permalink to this headline">¶</a></h2>
-<p>Let’s start with an example, suppose from the SAT MATH SCORES</p>
-<ul class="simple">
-<li><p>You take a sample of 10 random students from a population of 100. You might get a mean of 502 for that sample.</p></li>
-<li><p>Then, you do it again with a new sample of 10 students. You might get a mean of 480 this time.</p></li>
-<li><p>Then, you do it again. And again. And again…… and get the following means for each of those three new samples of 10 people: 550, 517, 472</p></li>
-</ul>
-<div class="figure align-default" id="image8">
-<a class="reference internal image-reference" href="../../_images/image81.PNG"><img alt="../../_images/image81.PNG" src="../../_images/image81.PNG" style="width: 608.0px; height: 464.8px;" /></a>
+  <div class="section" id="tree-based-approaches">
+<h1>Tree based approaches<a class="headerlink" href="#tree-based-approaches" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This page is a work in progress</p>
 </div>
-<p>The sampling distribution, which is basically the distribution of sample means of a population, has some interesting properties which are collectively called the <strong>central limit theorem</strong>, which states that no matter how the original population is distributed, the sampling distribution will follow these three properties –</p>
+<hr class="docutils" />
+<div class="section" id="boosting">
+<h2>Boosting<a class="headerlink" href="#boosting" title="Permalink to this headline">¶</a></h2>
+<p>A horse-racing gambler, hoping to maximize his winnings, decides to create a computer program that will accurately predict the winner of a horse race based on the usual information (number of races recently won by each horse, betting odds for each horse, etc.). To create such a program, he asks a highly successful expert gambler to explain his betting strategy. Not surprisingly, the expert is unable to articulate a grand set of rules for selecting a horse. On the other hand, when presented with the data for a specific set of races, the expert has no trouble coming up with a “rule of thumb” for that set of races (such as, “Bet on the horse that has recently won the most races” or “Bet on the horse with the most favored odds”).</p>
+<p>Although such a rule of thumb, by itself, is obviously very rough and inaccurate, it is not unreasonable to expect it to provide predictions that are at least a little bit better than random guessing. Furthermore, by repeatedly asking the expert’s opinion on different collections of races, the gambler is able to extract many rules of thumb.</p>
+<p>In order to use these rules of thumb to maximum advantage, there are two problems faced by the gambler:</p>
 <ul class="simple">
-<li><p>Sampling Distribution’s Mean <span class="math notranslate nohighlight">\((\mu \bar{x}) =\)</span> Population Mean <span class="math notranslate nohighlight">\((\mu)\)</span></p></li>
-<li><p>Sampling Distribution’s Standard Deviation (Standard Error) <span class="math notranslate nohighlight">\(= \sigma\sqrt{n}\)</span>, where <span class="math notranslate nohighlight">\(\sigma\)</span> is the population’s standard deviation and <span class="math notranslate nohighlight">\(n\)</span> is the sample size</p></li>
-<li><p>For <span class="math notranslate nohighlight">\(n &gt; 30\)</span>, the sampling distribution becomes a normal distribution. Strongly skewed distributions can require larger sample sizes.</p></li>
+<li><p>First, how should he choose the collections of races presented to the expert so as to extract rules of thumb from the expert that will be the most useful?</p></li>
+<li><p>Second, once he has collected many rules of thumb, how can they be combined into a single, highly accurate prediction rule?</p></li>
 </ul>
-<p>Let’s take a uniform distribution, in the image below <span class="math notranslate nohighlight">\(500,000\)</span> times for each sample size <span class="math notranslate nohighlight">\((5, 20, 40)\)</span> have been drawn and their mean plotted.
-We’d expect the average to be <span class="math notranslate nohighlight">\((1 + 2 + 3 + 4 + 5 + 6 / 6 = 3.5)\)</span>. The sampling distributions of the means center on this value. Just as the central limit theorem predicts, as we increase the sample size, the sampling distributions more closely approximate a normal distribution and have a tighter spread of values.</p>
-<div class="figure align-default" id="image9">
-<a class="reference internal image-reference" href="../../_images/image91.PNG"><img alt="../../_images/image91.PNG" src="../../_images/image91.PNG" style="width: 373.8px; height: 228.0px;" /></a>
+<p>Boosting refers to a general and provably effective method of producing a very accurate prediction rule by combining rough and moderately inaccurate rules of thumb in a manner similar to that suggested above.</p>
 </div>
+<hr class="docutils" />
+<div class="section" id="adaboost">
+<h2>AdaBoost<a class="headerlink" href="#adaboost" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://towardsdatascience.com/log-book-adaboost-the-math-behind-the-algorithm-a014c8afbbcc">📖Read</a></p>
+<ul class="simple">
+<li><p>AdaBoost starts by assigning equal weight to each datapoint, the idea is to adjust the weights of each observation after every iteration such that the the algorithm is forced to take a harder look at these difficult to classify observations</p></li>
+<li><p>Post each iteration we will have a weak learner using which we will calculate 2 things:</p>
+<ul>
+<li><p>the updated weights of each <span class="math notranslate nohighlight">\(N\)</span> observation for the next iteration</p></li>
+<li><p>the weight that the weak learner itself will have on the final output, in each of the <span class="math notranslate nohighlight">\(t\)</span> iterations we will have a learner <span class="math notranslate nohighlight">\(h_1\)</span>, <span class="math notranslate nohighlight">\(h_2\)</span>, <span class="math notranslate nohighlight">\(h_3\)</span> .. <span class="math notranslate nohighlight">\(h_t\)</span> each of which will be combined to make the final model, the weight of each of these individual learners in the final output is given by <span class="math notranslate nohighlight">\(\alpha_t\)</span>. The models with low error rate will have higher values of <span class="math notranslate nohighlight">\(\alpha_t\)</span> and hence higher weight in the final output.</p></li>
+</ul>
+</li>
+</ul>
+<div class="figure align-default" id="image10">
+<a class="reference internal image-reference" href="../../_images/image10.PNG"><img alt="../../_images/image10.PNG" src="../../_images/image10.PNG" style="width: 594.4px; height: 396.8px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">Adaboost Pseudocode</span><a class="headerlink" href="#image10" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="xgboost">
+<h2>XGBoost<a class="headerlink" href="#xgboost" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://towardsdatascience.com/log-book-xgboost-the-math-behind-the-algorithm-54ddc5008850">📖Source</a></p>
+<p>XGBoost stands for “Extreme Gradient Boosting”, where the term “Gradient Boosting” originates from the paper Greedy Function Approximation: A Gradient Boosting Machine, by Friedman.</p>
+<hr class="docutils" />
 </div>
 </div>
 
@@ -445,7 +470,7 @@ We’d expect the average to be <span class="math notranslate nohighlight">\((1 
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./contents\Statistics"
+            path: "./contents\Algorithms"
         },
         predefinedOutput: true
     }
@@ -462,19 +487,19 @@ We’d expect the average to be <span class="math notranslate nohighlight">\((1 
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="Probability%20Distribution.html" title="previous page">
+        <a class="left-prev" href="Classification.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Probability Distribution</p>
+                <p class="prevnext-title">Classification</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="Bayesian%20vs%20Frequentist%20Reasoning.html" title="next page">
+        <a class="right-next" href="Time%20Series%20Analysis.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Bayesian vs Frequentist Reasoning</p>
+                <p class="prevnext-title">Time Series Analysis</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
