@@ -4,11 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Interview resource of Data Science focusing on SQL, specifically the Basics." lang="en" name="description" xml:lang="en" />
-<meta content="interview, data science, machine learning, SQL" name="keywords" />
-<meta content="en_US" property="og:locale" />
-
-    <title>SQL Basics &#8212; The Data Science Interview Book</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tree based approaches &#8212; The Data Science Interview Book</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -45,6 +42,8 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -52,12 +51,12 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/SQL/Select.html" />
+    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/Algorithms/Tree based approaches.html" />
     <link rel="shortcut icon" href="../../_static/logo.gif"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Joins" href="Joins.html" />
-    <link rel="prev" title="Statistics" href="../Python/Statistics.html" />
+    <link rel="next" title="Time Series Analysis" href="Time%20Series%20Analysis.html" />
+    <link rel="prev" title="Classification" href="Classification.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -155,34 +154,34 @@
   Algorithms
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../Algorithms/Regression.html">
+  <a class="reference internal" href="Regression.html">
    Regression
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Algorithms/Generative%20VS%20Discriminative%20Models.html">
+  <a class="reference internal" href="Generative%20VS%20Discriminative%20Models.html">
    Generative vs Discriminative Models
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Algorithms/Classification.html">
+  <a class="reference internal" href="Classification.html">
    Classification
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Algorithms/Tree%20based%20approaches.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Tree based approaches
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Algorithms/Time%20Series%20Analysis.html">
+  <a class="reference internal" href="Time%20Series%20Analysis.html">
    Time Series Analysis
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Algorithms/Anomaly%20Detection.html">
+  <a class="reference internal" href="Anomaly%20Detection.html">
    Anomaly Detection
   </a>
  </li>
@@ -226,39 +225,39 @@
   SQL
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../SQL/Select.html">
    SQL Basics
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Joins.html">
+  <a class="reference internal" href="../SQL/Joins.html">
    Joins
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Temporary%20Datasets.html">
+  <a class="reference internal" href="../SQL/Temporary%20Datasets.html">
    Temporary Datasets
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Windows%20Functions.html">
+  <a class="reference internal" href="../SQL/Windows%20Functions.html">
    Windows Functions
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Time.html">
+  <a class="reference internal" href="../SQL/Time.html">
    Time
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Functions.html">
+  <a class="reference internal" href="../SQL/Functions.html">
    Functions
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Problems.html">
+  <a class="reference internal" href="../SQL/Problems.html">
    Problems
   </a>
  </li>
@@ -344,7 +343,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/contents/SQL/Select.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/contents/Algorithms/Tree based approaches.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -361,7 +360,7 @@
     <div class="dropdown-buttons sourcebuttons">
         
         <a class="issues-button"
-            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/SQL/Select.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/Algorithms/Tree based approaches.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -388,28 +387,18 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ddl">
-   DDL
+  <a class="reference internal nav-link" href="#boosting">
+   Boosting
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#referential-integrity">
-   Referential Integrity
+  <a class="reference internal nav-link" href="#adaboost">
+   AdaBoost
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#union-union-all">
-   UNION &amp; UNION ALL
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#null">
-   NULL
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#questions">
-   Questions
+  <a class="reference internal nav-link" href="#xgboost">
+   XGBoost
   </a>
  </li>
 </ul>
@@ -423,83 +412,48 @@
         
               <div>
                 
-  <div class="section" id="sql-basics">
-<h1>SQL Basics<a class="headerlink" href="#sql-basics" title="Permalink to this headline">¶</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Since solving any reasonable SQL problem requires a combination of all the topics covered here, hence it becomes difficult to seggregate problems based on one topic alone. So for SQL we are creating a dedicated <strong>Problems</strong> section. Theoritical and Basic questions will still be under their dedicated sections.</p>
+  <div class="section" id="tree-based-approaches">
+<h1>Tree based approaches<a class="headerlink" href="#tree-based-approaches" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This page is a work in progress</p>
 </div>
-<p>If you are new to SQL <a class="reference external" href="https://www.youtube.com/watch?v=7GVFYt6_ZFM&amp;list=PL08903FB7ACA1C2FB">this ▶️</a> is one of the most comprehensive material of SQL that is available in the internet. Please go through the portions of interest to you.</p>
-<div class="section" id="ddl">
-<h2>DDL<a class="headerlink" href="#ddl" title="Permalink to this headline">¶</a></h2>
-<p>DDL stands for Data Defination Language. These commands are used to change the structure of a database and database objects.
-Some common commands are as follows:</p>
-<ul>
-<li><p><strong>CREATE:</strong> is used to create the database or its objects (like table, index, function, views, store procedure and triggers).</p>
-<p>The generic format of the create table is as follows:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="n">databasename</span><span class="p">;</span>
-
-<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="k">table_name</span> <span class="p">(</span>
-<span class="n">column1</span> <span class="n">datatype</span> <span class="k">CONSTRAINT</span><span class="p">,</span>
-<span class="n">column2</span> <span class="n">datatype</span> <span class="k">CONSTRAINT</span><span class="p">,</span>
-<span class="n">column3</span> <span class="n">datatype</span> <span class="k">CONSTRAINT</span><span class="p">);</span> 
-</pre></div>
-</div>
-<p>Using constraints we can specify the limit on the type of data that can be stored in a particular column in a table. Some of the constraints are:</p>
+<hr class="docutils" />
+<div class="section" id="boosting">
+<h2>Boosting<a class="headerlink" href="#boosting" title="Permalink to this headline">¶</a></h2>
+<p>A horse-racing gambler, hoping to maximize his winnings, decides to create a computer program that will accurately predict the winner of a horse race based on the usual information (number of races recently won by each horse, betting odds for each horse, etc.). To create such a program, he asks a highly successful expert gambler to explain his betting strategy. Not surprisingly, the expert is unable to articulate a grand set of rules for selecting a horse. On the other hand, when presented with the data for a specific set of races, the expert has no trouble coming up with a “rule of thumb” for that set of races (such as, “Bet on the horse that has recently won the most races” or “Bet on the horse with the most favored odds”).</p>
+<p>Although such a rule of thumb, by itself, is obviously very rough and inaccurate, it is not unreasonable to expect it to provide predictions that are at least a little bit better than random guessing. Furthermore, by repeatedly asking the expert’s opinion on different collections of races, the gambler is able to extract many rules of thumb.</p>
+<p>In order to use these rules of thumb to maximum advantage, there are two problems faced by the gambler:</p>
 <ul class="simple">
-<li><p><strong>NOT NULL:</strong> This constraint tells that the value of a column cannot be null.</p></li>
-<li><p><strong>UNIQUE:</strong> This constraint tells that the values in any row of a column must not be repeated.</p></li>
-<li><p><strong>PRIMARY KEY:</strong> A primary key is a field which can uniquely identify each row in a table. We can say that PRIMARY KEY is combination of NOT NULL and UNIQUE constraints. A table can have only one field as primary key.</p></li>
-<li><p><strong>FOREIGN KEY:</strong> Foreign Key is a field in a table which uniquely identifies each row of another table. This field points to primary key of another table. This usually creates a relation between the tables.</p></li>
-<li><p><strong>CHECK:</strong> This constraint helps to ensure that the value stored in a column meets a specific condition.</p></li>
-<li><p><strong>DEFAULT:</strong> This constraint specifies a default value for the column when no value is specified by the user.</p></li>
+<li><p>First, how should he choose the collections of races presented to the expert so as to extract rules of thumb from the expert that will be the most useful?</p></li>
+<li><p>Second, once he has collected many rules of thumb, how can they be combined into a single, highly accurate prediction rule?</p></li>
+</ul>
+<p>Boosting refers to a general and provably effective method of producing a very accurate prediction rule by combining rough and moderately inaccurate rules of thumb in a manner similar to that suggested above.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="adaboost">
+<h2>AdaBoost<a class="headerlink" href="#adaboost" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://towardsdatascience.com/log-book-adaboost-the-math-behind-the-algorithm-a014c8afbbcc">📖Read</a></p>
+<ul class="simple">
+<li><p>AdaBoost starts by assigning equal weight to each datapoint, the idea is to adjust the weights of each observation after every iteration such that the the algorithm is forced to take a harder look at these difficult to classify observations</p></li>
+<li><p>Post each iteration we will have a weak learner using which we will calculate 2 things:</p>
+<ul>
+<li><p>the updated weights of each <span class="math notranslate nohighlight">\(N\)</span> observation for the next iteration</p></li>
+<li><p>the weight that the weak learner itself will have on the final output, in each of the <span class="math notranslate nohighlight">\(t\)</span> iterations we will have a learner <span class="math notranslate nohighlight">\(h_1\)</span>, <span class="math notranslate nohighlight">\(h_2\)</span>, <span class="math notranslate nohighlight">\(h_3\)</span> .. <span class="math notranslate nohighlight">\(h_t\)</span> each of which will be combined to make the final model, the weight of each of these individual learners in the final output is given by <span class="math notranslate nohighlight">\(\alpha_t\)</span>. The models with low error rate will have higher values of <span class="math notranslate nohighlight">\(\alpha_t\)</span> and hence higher weight in the final output.</p></li>
 </ul>
 </li>
-<li><p><strong>DROP:</strong> is used to delete databases or tables.</p></li>
-<li><p><strong>ALTER:</strong> is used to alter the structure of the database. You can use this to add/modify/delete a column.</p></li>
-<li><p><strong>TRUNCATE:</strong> The TRUNCATE TABLE statement is used to delete the data inside a table, <em>but not the table itself.</em></p></li>
-<li><p><strong>RENAME:</strong> is used to rename an object existing in the database.</p></li>
 </ul>
+<div class="figure align-default" id="image10">
+<a class="reference internal image-reference" href="../../_images/image10.PNG"><img alt="../../_images/image10.PNG" src="../../_images/image10.PNG" style="width: 594.4px; height: 396.8px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">Adaboost Pseudocode</span><a class="headerlink" href="#image10" title="Permalink to this image">¶</a></p>
 </div>
-<div class="section" id="referential-integrity">
-<h2>Referential Integrity<a class="headerlink" href="#referential-integrity" title="Permalink to this headline">¶</a></h2>
-<p>Referential integrity is a property of data stating references within it are valid. In the context of relational databases, it requires every value of one attribute (column) of a relation (table) to exist as a value of another attribute (column) in a different (or the same) relation (table).
-For referential integrity to hold in a relational database, any column in a base table that is declared a foreign key can contain either a null value, or only values from a parent table’s primary key or a candidate key. In other words, when a foreign key value is used it must reference a valid, existing primary key in the parent table. For instance, deleting a record that contains a value referred to by a foreign key in another table would break referential integrity. Some relational database management systems (RDBMS) can enforce referential integrity, normally either by deleting the foreign key rows as well to maintain integrity, or by returning an error and not performing the delete. Which method is used may be determined by a referential integrity constraint defined in a data dictionary.</p>
 </div>
-<div class="section" id="union-union-all">
-<h2>UNION &amp; UNION ALL<a class="headerlink" href="#union-union-all" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>UNION removes duplicate rows, UNION ALL doesnot</p></li>
-<li><p>UNION has to perform a distinct sort to remove duplicates, hence is a little slow</p></li>
-<li><p>UNION combines rows of two tables, JOIN combines columns</p></li>
-</ul>
-</div>
-<div class="section" id="null">
-<h2>NULL<a class="headerlink" href="#null" title="Permalink to this headline">¶</a></h2>
-<p>There are 3 ways to take care of NULL values:</p>
-<p>Let’s take an example suppose we want to fill the Manager name as ‘No Manager’ if an employee does have a manager assigned in the manager column. This can be done using:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">ISNULL(manager,</span> <span class="pre">'No</span> <span class="pre">Manager')</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">CASE</span> <span class="pre">WHEN</span> <span class="pre">manager</span> <span class="pre">IS</span> <span class="pre">NULL</span> <span class="pre">THEN</span> <span class="pre">'No</span> <span class="pre">Manager'</span> <span class="pre">ELSE</span> <span class="pre">manager</span> <span class="pre">END</span> <span class="pre">as</span> <span class="pre">manager</span></code></p></li>
-<li><p>The other option is <code class="docutils literal notranslate"><span class="pre">COALESCE</span></code> but it esentially takes the first non-null value out of the passed columns</p></li>
-</ul>
-</div>
-<div class="section" id="questions">
-<h2>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h2>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Problem: [MICROSOFT] HAVING vs WHERE</p>
-<p><strong>Asked By - MICROSOFT</strong></p>
-<p>Can you elborate on the differences between HAVING and WHERE clause in a SQL query?</p>
-</div>
-<div class="dropdown admonition">
-<p class="admonition-title">Solution:</p>
-<p>The major differences between between HAVING and WHERE are as follows:</p>
-<ul class="simple">
-<li><p>WHERE can be used with Select, Insert, Update, Delete statements. HAVING can only be used with Select statements</p></li>
-<li><p>WHERE filters rows before aggregation, HAVING filters after that</p></li>
-</ul>
-<p>Performance wise there is not much of a difference, the best practice is to filter out unwanted rows as early as possible</p>
-</div>
+<hr class="docutils" />
+<div class="section" id="xgboost">
+<h2>XGBoost<a class="headerlink" href="#xgboost" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://towardsdatascience.com/log-book-xgboost-the-math-behind-the-algorithm-54ddc5008850">📖Source</a></p>
+<p>XGBoost stands for “Extreme Gradient Boosting”, where the term “Gradient Boosting” originates from the paper Greedy Function Approximation: A Gradient Boosting Machine, by Friedman.</p>
+<hr class="docutils" />
 </div>
 </div>
 
@@ -516,7 +470,7 @@ For referential integrity to hold in a relational database, any column in a base
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./contents\SQL"
+            path: "./contents\Algorithms"
         },
         predefinedOutput: true
     }
@@ -533,19 +487,19 @@ For referential integrity to hold in a relational database, any column in a base
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="../Python/Statistics.html" title="previous page">
+        <a class="left-prev" href="Classification.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Statistics</p>
+                <p class="prevnext-title">Classification</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="Joins.html" title="next page">
+        <a class="right-next" href="Time%20Series%20Analysis.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Joins</p>
+                <p class="prevnext-title">Time Series Analysis</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

@@ -4,11 +4,11 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Interview resource of Data Science focusing on SQL, specifically the Basics." lang="en" name="description" xml:lang="en" />
-<meta content="interview, data science, machine learning, SQL" name="keywords" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Interview resource of Data Science Interview focusing on Industry application, practical success or failure of Data Science and Machine Learning Projects." lang="en" name="description" xml:lang="en" />
+<meta content="interview, data science, machine learning, Generative, Discriminative" name="keywords" />
 <meta content="en_US" property="og:locale" />
 
-    <title>SQL Basics &#8212; The Data Science Interview Book</title>
+    <title>Industry Application &#8212; The Data Science Interview Book</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -45,6 +45,8 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -52,12 +54,11 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/SQL/Select.html" />
+    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/Analytical Thinking/Industry Application.html" />
     <link rel="shortcut icon" href="../../_static/logo.gif"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Joins" href="Joins.html" />
-    <link rel="prev" title="Statistics" href="../Python/Statistics.html" />
+    <link rel="prev" title="Business Scenarios" href="Business%20Scenarios.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -226,39 +227,39 @@
   SQL
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../SQL/Select.html">
    SQL Basics
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Joins.html">
+  <a class="reference internal" href="../SQL/Joins.html">
    Joins
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Temporary%20Datasets.html">
+  <a class="reference internal" href="../SQL/Temporary%20Datasets.html">
    Temporary Datasets
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Windows%20Functions.html">
+  <a class="reference internal" href="../SQL/Windows%20Functions.html">
    Windows Functions
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Time.html">
+  <a class="reference internal" href="../SQL/Time.html">
    Time
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Functions.html">
+  <a class="reference internal" href="../SQL/Functions.html">
    Functions
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Problems.html">
+  <a class="reference internal" href="../SQL/Problems.html">
    Problems
   </a>
  </li>
@@ -292,14 +293,14 @@
   Analytical Thinking
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../Analytical%20Thinking/Business%20Scenarios.html">
+  <a class="reference internal" href="Business%20Scenarios.html">
    Business Scenarios
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Analytical%20Thinking/Industry%20Application.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Industry Application
   </a>
  </li>
@@ -344,7 +345,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/contents/SQL/Select.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/contents/Analytical Thinking/Industry Application.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -361,7 +362,7 @@
     <div class="dropdown-buttons sourcebuttons">
         
         <a class="issues-button"
-            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/SQL/Select.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/Analytical Thinking/Industry Application.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -382,39 +383,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ddl">
-   DDL
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#referential-integrity">
-   Referential Integrity
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#union-union-all">
-   UNION &amp; UNION ALL
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#null">
-   NULL
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#questions">
-   Questions
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -423,83 +391,22 @@
         
               <div>
                 
-  <div class="section" id="sql-basics">
-<h1>SQL Basics<a class="headerlink" href="#sql-basics" title="Permalink to this headline">¶</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Since solving any reasonable SQL problem requires a combination of all the topics covered here, hence it becomes difficult to seggregate problems based on one topic alone. So for SQL we are creating a dedicated <strong>Problems</strong> section. Theoritical and Basic questions will still be under their dedicated sections.</p>
-</div>
-<p>If you are new to SQL <a class="reference external" href="https://www.youtube.com/watch?v=7GVFYt6_ZFM&amp;list=PL08903FB7ACA1C2FB">this ▶️</a> is one of the most comprehensive material of SQL that is available in the internet. Please go through the portions of interest to you.</p>
-<div class="section" id="ddl">
-<h2>DDL<a class="headerlink" href="#ddl" title="Permalink to this headline">¶</a></h2>
-<p>DDL stands for Data Defination Language. These commands are used to change the structure of a database and database objects.
-Some common commands are as follows:</p>
-<ul>
-<li><p><strong>CREATE:</strong> is used to create the database or its objects (like table, index, function, views, store procedure and triggers).</p>
-<p>The generic format of the create table is as follows:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="n">databasename</span><span class="p">;</span>
-
-<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="k">table_name</span> <span class="p">(</span>
-<span class="n">column1</span> <span class="n">datatype</span> <span class="k">CONSTRAINT</span><span class="p">,</span>
-<span class="n">column2</span> <span class="n">datatype</span> <span class="k">CONSTRAINT</span><span class="p">,</span>
-<span class="n">column3</span> <span class="n">datatype</span> <span class="k">CONSTRAINT</span><span class="p">);</span> 
-</pre></div>
-</div>
-<p>Using constraints we can specify the limit on the type of data that can be stored in a particular column in a table. Some of the constraints are:</p>
+  <div class="section" id="industry-application">
+<h1>Industry Application<a class="headerlink" href="#industry-application" title="Permalink to this headline">¶</a></h1>
+<div class="warning dropdown admonition">
+<p class="admonition-title">Zillow</p>
+<p>Zillow’s rise and fall is a classic casestudy on both what to do and what not to do with data science and machine learning.</p>
 <ul class="simple">
-<li><p><strong>NOT NULL:</strong> This constraint tells that the value of a column cannot be null.</p></li>
-<li><p><strong>UNIQUE:</strong> This constraint tells that the values in any row of a column must not be repeated.</p></li>
-<li><p><strong>PRIMARY KEY:</strong> A primary key is a field which can uniquely identify each row in a table. We can say that PRIMARY KEY is combination of NOT NULL and UNIQUE constraints. A table can have only one field as primary key.</p></li>
-<li><p><strong>FOREIGN KEY:</strong> Foreign Key is a field in a table which uniquely identifies each row of another table. This field points to primary key of another table. This usually creates a relation between the tables.</p></li>
-<li><p><strong>CHECK:</strong> This constraint helps to ensure that the value stored in a column meets a specific condition.</p></li>
-<li><p><strong>DEFAULT:</strong> This constraint specifies a default value for the column when no value is specified by the user.</p></li>
+<li><p>Zillow was the brainchild of Richard Barton, the 54 year old American internet entrepreneur who also founded Expedia and Glassdoor</p></li>
+<li><p>Zestimate, which debuted in 2006, it was a proprietary algorithm based on a neural network model which used house facts, location, housing market trends, property values, data from county, tax assessor records, as well as direct feeds from hundreds of multiple listing services and brokerages to determine the price of a house</p></li>
+<li><p>It was very successful in driving conversation around property, so much so that browsing property valuations became a hobby for many. With shows like Saturday Night Live encouraging the habit, it became trendy to find the value of your neighboring houses to identify how posh of an area you live in.</p></li>
+<li><p>Zestimate has a median error rate of <span class="math notranslate nohighlight">\(1.9%\)</span> for homes that are on-market and <span class="math notranslate nohighlight">\(6.9%\)</span> for homes that are off-market. But this accuracy varies widely across cities and their corresponding housing markets. In Cincinnati, for instance, approximately <span class="math notranslate nohighlight">\(35%\)</span> of Zestimates for off-market homes were within <span class="math notranslate nohighlight">\(5%\)</span> of the eventual sales prices, and <span class="math notranslate nohighlight">\(82%\)</span> were within <span class="math notranslate nohighlight">\(20%\)</span> of the price. Comparatively, in Denver, <span class="math notranslate nohighlight">\(51%\)</span> of Zestimates were within <span class="math notranslate nohighlight">\(5%\)</span> of the sales price, and <span class="math notranslate nohighlight">\(94%\)</span> were within <span class="math notranslate nohighlight">\(20%\)</span> of the sales figure</p></li>
+<li><p>Zillow, had recognized the need to improve the accuracy of its valuation model. In 2017, the company launched a contest with a $1M prize money, Zestimate was on average around <span class="math notranslate nohighlight">\(10K off of the actual sales price of a median-priced home, and that the information provided by the winning team would reduce that margin by around \)</span>1.3K, the prize went to a group of data scientists and engineers from three different countries: Chahhou Mohamed of Morocco, Jordan Meyer of the United States and Nima Shahbazi of Canada</p></li>
+<li><p>In February Zillow announced that the Zestimate would represent “an initial cash offer” for eligible homes spread across 20 cities, from Nashville, Houston, Phoenix, Miami to Denver and Los Angeles</p></li>
+<li><p>The problem started due to the pandemic, since summer of 2020 the housing market in USA was hot and quite some unforeseen trends had cropped up. For example, post pandemic there was a sudden increase in demand for bigger houses in the suburbs, which based on historical data was difficult to generate an estimate of. There were data issues too, Zillow missed out on having real time brokering data in new markets, post sales data also takes time to be updated hence there was always a lag as to what prices the recent houses have sold at. Other issues have also been pointed at, Zillow said it did not find enough workers to revamp and repair the houses it had bought in order to put them in the market. Zillow had tweaked its algorithms to price houses aggressively and at the end it had a purchased houses at a higher price that it could sell in a market that was cooling down</p></li>
+<li><p>By October 17th, there were signs of trouble: Zillow had paused new house offers for the year as it sorted through a backlog of properties under contract. On November 1st, Zillow marketed nearly 7,000 houses for a total of $2.8 Billion. The operation was shut down a day later by its board of directors</p></li>
 </ul>
-</li>
-<li><p><strong>DROP:</strong> is used to delete databases or tables.</p></li>
-<li><p><strong>ALTER:</strong> is used to alter the structure of the database. You can use this to add/modify/delete a column.</p></li>
-<li><p><strong>TRUNCATE:</strong> The TRUNCATE TABLE statement is used to delete the data inside a table, <em>but not the table itself.</em></p></li>
-<li><p><strong>RENAME:</strong> is used to rename an object existing in the database.</p></li>
-</ul>
-</div>
-<div class="section" id="referential-integrity">
-<h2>Referential Integrity<a class="headerlink" href="#referential-integrity" title="Permalink to this headline">¶</a></h2>
-<p>Referential integrity is a property of data stating references within it are valid. In the context of relational databases, it requires every value of one attribute (column) of a relation (table) to exist as a value of another attribute (column) in a different (or the same) relation (table).
-For referential integrity to hold in a relational database, any column in a base table that is declared a foreign key can contain either a null value, or only values from a parent table’s primary key or a candidate key. In other words, when a foreign key value is used it must reference a valid, existing primary key in the parent table. For instance, deleting a record that contains a value referred to by a foreign key in another table would break referential integrity. Some relational database management systems (RDBMS) can enforce referential integrity, normally either by deleting the foreign key rows as well to maintain integrity, or by returning an error and not performing the delete. Which method is used may be determined by a referential integrity constraint defined in a data dictionary.</p>
-</div>
-<div class="section" id="union-union-all">
-<h2>UNION &amp; UNION ALL<a class="headerlink" href="#union-union-all" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>UNION removes duplicate rows, UNION ALL doesnot</p></li>
-<li><p>UNION has to perform a distinct sort to remove duplicates, hence is a little slow</p></li>
-<li><p>UNION combines rows of two tables, JOIN combines columns</p></li>
-</ul>
-</div>
-<div class="section" id="null">
-<h2>NULL<a class="headerlink" href="#null" title="Permalink to this headline">¶</a></h2>
-<p>There are 3 ways to take care of NULL values:</p>
-<p>Let’s take an example suppose we want to fill the Manager name as ‘No Manager’ if an employee does have a manager assigned in the manager column. This can be done using:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">ISNULL(manager,</span> <span class="pre">'No</span> <span class="pre">Manager')</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">CASE</span> <span class="pre">WHEN</span> <span class="pre">manager</span> <span class="pre">IS</span> <span class="pre">NULL</span> <span class="pre">THEN</span> <span class="pre">'No</span> <span class="pre">Manager'</span> <span class="pre">ELSE</span> <span class="pre">manager</span> <span class="pre">END</span> <span class="pre">as</span> <span class="pre">manager</span></code></p></li>
-<li><p>The other option is <code class="docutils literal notranslate"><span class="pre">COALESCE</span></code> but it esentially takes the first non-null value out of the passed columns</p></li>
-</ul>
-</div>
-<div class="section" id="questions">
-<h2>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h2>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Problem: [MICROSOFT] HAVING vs WHERE</p>
-<p><strong>Asked By - MICROSOFT</strong></p>
-<p>Can you elborate on the differences between HAVING and WHERE clause in a SQL query?</p>
-</div>
-<div class="dropdown admonition">
-<p class="admonition-title">Solution:</p>
-<p>The major differences between between HAVING and WHERE are as follows:</p>
-<ul class="simple">
-<li><p>WHERE can be used with Select, Insert, Update, Delete statements. HAVING can only be used with Select statements</p></li>
-<li><p>WHERE filters rows before aggregation, HAVING filters after that</p></li>
-</ul>
-<p>Performance wise there is not much of a difference, the best practice is to filter out unwanted rows as early as possible</p>
-</div>
+<p>So what went wrong, nothing that we already don’t know of, extrapolating existing data in new pandemic era market, unforeseen market dynamics, over reliance on algorithmic outputs while not considering ground realities.</p>
 </div>
 </div>
 
@@ -516,7 +423,7 @@ For referential integrity to hold in a relational database, any column in a base
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./contents\SQL"
+            path: "./contents\Analytical Thinking"
         },
         predefinedOutput: true
     }
@@ -533,23 +440,14 @@ For referential integrity to hold in a relational database, any column in a base
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="../Python/Statistics.html" title="previous page">
+        <a class="left-prev" href="Business%20Scenarios.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Statistics</p>
+                <p class="prevnext-title">Business Scenarios</p>
             </div>
         </a>
     </div>
-     <div id="next">
-        <a class="right-next" href="Joins.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Joins</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
 
 </div>
         
