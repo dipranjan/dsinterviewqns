@@ -4,7 +4,10 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Interview resource of Data Science Interview focusing on Decision Tree based models." lang="en" name="description" xml:lang="en" />
+<meta content="interview, data science, machine learning, Boosting, Bagging, Random Forest, Decision Tree, Classification" name="keywords" />
+<meta content="en_US" property="og:locale" />
+
     <title>Tree based approaches &#8212; The Data Science Interview Book</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
@@ -397,6 +400,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gradient-boosting">
+   Gradient Boosting
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#xgboost">
    XGBoost
   </a>
@@ -442,6 +450,7 @@
 <li><p>the weight that the weak learner itself will have on the final output, in each of the <span class="math notranslate nohighlight">\(t\)</span> iterations we will have a learner <span class="math notranslate nohighlight">\(h_1\)</span>, <span class="math notranslate nohighlight">\(h_2\)</span>, <span class="math notranslate nohighlight">\(h_3\)</span> .. <span class="math notranslate nohighlight">\(h_t\)</span> each of which will be combined to make the final model, the weight of each of these individual learners in the final output is given by <span class="math notranslate nohighlight">\(\alpha_t\)</span>. The models with low error rate will have higher values of <span class="math notranslate nohighlight">\(\alpha_t\)</span> and hence higher weight in the final output.</p></li>
 </ul>
 </li>
+<li><p>Before you apply the AdaBoost algorithm, you should specifically remove the Outliers. Since AdaBoost tends to boost up the probabilities of misclassified points and there is a high chance that outliers will be misclassified, it will keep increasing the probability associated with the outliers and make the progress difficult.</p></li>
 </ul>
 <div class="figure align-default" id="image10">
 <a class="reference internal image-reference" href="../../_images/image10.PNG"><img alt="../../_images/image10.PNG" src="../../_images/image10.PNG" style="width: 594.4px; height: 396.8px;" /></a>
@@ -449,11 +458,23 @@
 </div>
 </div>
 <hr class="docutils" />
+<div class="section" id="gradient-boosting">
+<h2>Gradient Boosting<a class="headerlink" href="#gradient-boosting" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>As always let’s start with a crude initial function F₀, something like average of all values in case of regression. It will give us some output, however bad.</p></li>
+<li><p>Calculate the loss function</p></li>
+<li><p>Next, we should have fit a new model on the residuals given by the Loss function, but there is a subtle twist: we will instead fit on the negative gradient of the loss function (for mathematical proof check the <a class="reference external" href="https://towardsdatascience.com/log-book-xgboost-the-math-behind-the-algorithm-54ddc5008850">link</a></p></li>
+<li><p>This process of fitting the model iteratively on the -ve gradient will continue till we have reached the minima or the limit of the number of weak learners given by T, this is called the additive approach</p></li>
+<li><p>Recall that, in Adaboost,“shortcomings” are identified by high-weight data points. In Gradient Boosting, “shortcomings” are identified by gradients.
+This is in short of the intuition as to how Gradient Boosting works. In case of regression and classification the only thing that differs is the loss function that is used.</p></li>
+</ul>
+</div>
+<hr class="docutils" />
 <div class="section" id="xgboost">
 <h2>XGBoost<a class="headerlink" href="#xgboost" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://towardsdatascience.com/log-book-xgboost-the-math-behind-the-algorithm-54ddc5008850">📖Source</a></p>
-<p>XGBoost stands for “Extreme Gradient Boosting”, where the term “Gradient Boosting” originates from the paper Greedy Function Approximation: A Gradient Boosting Machine, by Friedman.</p>
-<hr class="docutils" />
+<p><a class="reference external" href="https://towardsdatascience.com/log-book-xgboost-the-math-behind-the-algorithm-54ddc5008850">📖Read</a></p>
+<p>XGBoost stands for “Extreme Gradient Boosting”, where the term “Gradient Boosting” originates from the paper Greedy Function Approximation: A Gradient Boosting Machine, by Friedman. It initially started as a research project by Tianqi Chen as part of the Distributed (Deep) Machine Learning Community (DMLC) group. It became well known in the ML competition circles after its use in the winning solution of the Higgs Machine Learning Challenge.</p>
+<p>XGBoost and GBM both follow the principle of gradient boosted trees, but XGBoost uses a more regularized (by taking the model complexity into account) model formulation to control over-fitting, which gives it better performance, which is why it’s also known as ‘regularized boosting’ technique. In Stochastic Gradient Descent, used by Gradient Boosting, we use less point to take less time to compute the direction we should go towards, in order to make more of them, in the hope we go there quicker. In Newton’s method, used by XGBoost, we take more time to compute the direction we want to go into, in the hope we have to take fewer steps in order to get there.</p>
 </div>
 </div>
 
