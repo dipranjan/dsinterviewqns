@@ -311,7 +311,7 @@
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  <a href="https://www.buymeacoffee.com/dearc" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
 </div>
 
 </div>
@@ -390,6 +390,16 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#decision-tree">
+   Decision Tree
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#random-forest">
+   Random Forest
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#boosting">
    Boosting
   </a>
@@ -426,6 +436,66 @@
 <p class="admonition-title">Warning</p>
 <p>This page is a work in progress</p>
 </div>
+<div class="section" id="decision-tree">
+<h2>Decision Tree<a class="headerlink" href="#decision-tree" title="Permalink to this headline">¶</a></h2>
+<p>A decision tree is a flowchart-like structure in which each internal node represents a “test” on an attribute (e.g. whether a coin flip comes up heads or tails), each branch represents the outcome of the test, and each leaf node represents a class label (decision taken after computing all attributes). It is immensly popular primarily due to its ease of explanation which is often a critical requirement in business.</p>
+<p>Decision Trees follow Sum of Product (SOP) representation. The Sum of product (SOP) is also known as Disjunctive Normal Form. For a class, every branch from the root of the tree to a leaf node having the same class is conjunction (product) of values, different branches ending in that class form a disjunction (sum).</p>
+<p>The primary challenge in the decision tree implementation is to identify which attributes do we need to consider as the root node and each level. Handling this is to know as the attributes selection. We have different attributes selection measures to identify the attribute which can be considered as the root note at each level.</p>
+<p>The decision of making strategic splits heavily affects a tree’s accuracy. The decision criteria are different for classification and regression trees.</p>
+<p>Decision trees use multiple algorithms to decide to split a node into two or more sub-nodes. The creation of sub-nodes increases the homogeneity of resultant sub-nodes. In other words, we can say that the purity of the node increases with respect to the target variable. The decision tree splits the nodes on all available variables and then selects the split which results in most homogeneous sub-nodes.</p>
+<div class="figure align-default" id="image11">
+<a class="reference internal image-reference" href="../../_images/image112.PNG"><img alt="../../_images/image112.PNG" src="../../_images/image112.PNG" style="width: 641.6px; height: 397.6px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">Decision Tree</span><a class="headerlink" href="#image11" title="Permalink to this image">¶</a></p>
+</div>
+<p>The algorithm selection is also based on the type of target variables. Let us look at some algorithms used in Decision Trees:</p>
+<ul class="simple">
+<li><p>ID3 → (extension of D3)</p></li>
+<li><p>C4.5 → (successor of ID3)</p></li>
+<li><p>CART → (Classification And Regression Tree)</p></li>
+<li><p>CHAID → (Chi-square automatic interaction detection Performs multi-level splits when computing classification trees)</p></li>
+<li><p>MARS → (multivariate adaptive regression splines)</p></li>
+</ul>
+<p>The ID3 algorithm builds decision trees using a top-down greedy search approach through the space of possible branches with no backtracking. A greedy algorithm, as the name suggests, always makes the choice that seems to be the best at that moment.</p>
+<p><strong>Steps in the ID3 algorithm:</strong></p>
+<ul class="simple">
+<li><p>It begins with the original set as the root node.</p></li>
+<li><p>On each iteration of the algorithm, it iterates through the unused attributes of the set and calculates a measure of Homogeneity:</p>
+<ul>
+<li><p><strong>Gini Index:</strong> Gini Index uses the probability of finding a data point with one label as an indicator for homogeneity — if the dataset is completely homogeneous, then the probability of finding a datapoint with one of the labels is 1 and the probability of finding a data point with the other label is zero</p></li>
+<li><p><strong>Information Gain / Entropy-based:</strong> The idea is to use the notion of entropy which is a central concept in information theory. Entropy quantifies the degree of disorder in the data. Entropy is always a positive number between zero and 1. Another interpretation of entropy is in terms of information content. A completely homogeneous dataset has no information content in it (there is nothing non-trivial to be learnt from the dataset) whereas a dataset with a lot of disorder has a lot of latent information waiting to be learnt.</p></li>
+<li><p>For Regression models the split can happen by checking metrics like <span class="math notranslate nohighlight">\(R^2\)</span></p></li>
+</ul>
+</li>
+<li><p>It then selects the attribute which has the smallest Entropy or Largest Information gain</p></li>
+<li><p>The set is then split by the selected attribute to produce a subset of the data</p></li>
+<li><p>The algorithm continues to recur on each subset, considering only attributes never selected before</p></li>
+</ul>
+<p>Decision trees have a strong tendency to overfit the data. So practical uses of the decision tree must necessarily incorporate some ’regularization’ measures to ensure the decision tree built does not become more complex than is necessary and starts to overfit. There are broadly two ways of regularization on decision trees:</p>
+<ul class="simple">
+<li><p><strong>Truncation:</strong> Truncate the decision tree during the training (growing) process preventing it from degenerating into one with one leaf for every data point in the training dataset. Below criterion are used to decide if the decision tree needs to be grown further:</p>
+<ul>
+<li><p>Minimum Size of the Partition for a Split: Stop partitioning further when the current partition is small enough.</p></li>
+<li><p>Minimum Change in Homogeneity Measure: Do not partition further when even the best split causes an insignificant change in the purity measure (difference between the current purity and the purity of the partitions created by the split).</p></li>
+<li><p>Limit on Tree Depth: If the current node is farther away from the root than a threshold, then stop partitioning further.</p></li>
+<li><p>Minimum Size of the Partition at a Leaf: If any of partitions from a split has fewer than this threshold minimum, then do not consider the split. Notice the subtle difference between this condition and the minimum size required for a split.</p></li>
+<li><p>Maxmimum number of leaves in the Tree: If the current number of the bottom-most nodes in the tree exceeds this limit then stop partitioning.</p></li>
+</ul>
+</li>
+<li><p><strong>Pruning:</strong> Let the tree grow to any complexity. However add a post-processing step in which we prune the tree in a bottom-up fashion starting from the leaves. It is more common to use pruning strategies to avoid overfitting in practical implementations. One popular approach to pruning is to use a validation set. This method called reduced-error pruning, considers every one of the test (non-leaf ) nodes for pruning. Pruning a node means removing the entire subtree below the node, making it a leaf, and assigning the majority class (or the average of the values in case it is regression) among the training data points that pass through that node. A node in the tree is pruned only if the decision tree obtained after the pruning has an accuracy that is no worse on the validation dataset than the tree prior to pruning. This ensures that parts of the tree that were added due to accidental irregularities in the data are removed, as these irregularities are not likely to repeat.</p></li>
+</ul>
+<p>Though there are various ways to truncate or prune trees, the <code class="docutils literal notranslate"><span class="pre">DecisionTreeClassifier</span></code> function in sklearn provides the following hyperparameters which you can control:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">criterion</span> <span class="pre">(Gini/IG</span> <span class="pre">or</span> <span class="pre">entropy)</span></code>: It defines the function to measure the quality of a split. Sklearn supports “gini” criteria for Gini Index &amp; “entropy” for Information Gain. By default, it takes the value “gini”.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max_features</span></code>: It defines the no. of features to consider when looking for the best split</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max_depth</span></code>: denotes maximum depth of the tree. It can take any integer value or None. If None, then nodes are expanded until all leaves are pure or until all leaves contain less than min_samples_split samples. By default, it takes “None” value.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">min_samples_split</span></code>: This tells above the minimum no. of samples reqd. to split an internal node</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">min_samples_leaf</span></code>: The minimum number of samples required to be at a leaf node</p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="random-forest">
+<h2>Random Forest<a class="headerlink" href="#random-forest" title="Permalink to this headline">¶</a></h2>
+</div>
 <hr class="docutils" />
 <div class="section" id="boosting">
 <h2>Boosting<a class="headerlink" href="#boosting" title="Permalink to this headline">¶</a></h2>
@@ -454,7 +524,7 @@
 </ul>
 <div class="figure align-default" id="image10">
 <a class="reference internal image-reference" href="../../_images/image10.PNG"><img alt="../../_images/image10.PNG" src="../../_images/image10.PNG" style="width: 594.4px; height: 396.8px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">Adaboost Pseudocode</span><a class="headerlink" href="#image10" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">Adaboost Pseudocode</span><a class="headerlink" href="#image10" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <hr class="docutils" />
@@ -536,7 +606,15 @@ This is in short of the intuition as to how Gradient Boosting works. In case of 
         
           By Dip Ranjan Chatterjee<br/>
         
-            &copy; Copyright MIT License.<br/>
+          <div class="extra_footer">
+            <p>
+© Copyright MIT License <a href="https://www.buymeacoffee.com/dearc" target="_blank"><img src="https://img.shields.io/badge/Support-Buy%20me%20a%20%E2%98%95-orange?style=flat-square&logo=appveyor.svg" alt="Buy Me A Coffee"></a>
+<a href="https://dearc.medium.com/membership" target="_blank"><img src="https://img.shields.io/badge/Support-Medium%20Referral-lightgrey?style=flat-square&logo=appveyor.svg" alt="Medium Membership"></a>
+<a href="https://www.linkedin.com/company/the-data-science-interview-book/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BeglbXB3xT0mopZBzReqMEQ%3D%3D" target="_blank"><img src="https://img.shields.io/badge/Follow-LinkedIn-0077B5?style=flat-square&logo=appveyor.svg" alt="Follow LinkedIn"></a>
+<a href="https://github.com/dipranjan/dsinterviewqns/discussions" target="_blank"><img src="https://img.shields.io/badge/Discussion%20Forum-%F0%9F%99%8A%20%20%F0%9F%99%88%20%20%F0%9F%99%89-0172B3?style=flat-square&logo=appveyor.svg" alt="Discussion Forum"></a>
+</p>
+
+          </div>
       </p>
     </div>
   </footer>

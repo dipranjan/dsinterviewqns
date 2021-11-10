@@ -11,6 +11,67 @@ html_meta:
 This page is a work in progress
 ```
 
+### Decision Tree
+
+A decision tree is a flowchart-like structure in which each internal node represents a "test" on an attribute (e.g. whether a coin flip comes up heads or tails), each branch represents the outcome of the test, and each leaf node represents a class label (decision taken after computing all attributes). It is immensly popular primarily due to its ease of explanation which is often a critical requirement in business.
+
+Decision Trees follow Sum of Product (SOP) representation. The Sum of product (SOP) is also known as Disjunctive Normal Form. For a class, every branch from the root of the tree to a leaf node having the same class is conjunction (product) of values, different branches ending in that class form a disjunction (sum).
+
+The primary challenge in the decision tree implementation is to identify which attributes do we need to consider as the root node and each level. Handling this is to know as the attributes selection. We have different attributes selection measures to identify the attribute which can be considered as the root note at each level.
+
+The decision of making strategic splits heavily affects a tree’s accuracy. The decision criteria are different for classification and regression trees.
+
+Decision trees use multiple algorithms to decide to split a node into two or more sub-nodes. The creation of sub-nodes increases the homogeneity of resultant sub-nodes. In other words, we can say that the purity of the node increases with respect to the target variable. The decision tree splits the nodes on all available variables and then selects the split which results in most homogeneous sub-nodes.
+
+```{figure} ../Algorithms/images/image11.PNG
+---
+name: image11
+scale: 80%
+---
+Decision Tree
+```
+
+The algorithm selection is also based on the type of target variables. Let us look at some algorithms used in Decision Trees:
+
+- ID3 → (extension of D3)
+- C4.5 → (successor of ID3)
+- CART → (Classification And Regression Tree)
+- CHAID → (Chi-square automatic interaction detection Performs multi-level splits when computing classification trees)
+- MARS → (multivariate adaptive regression splines)
+
+The ID3 algorithm builds decision trees using a top-down greedy search approach through the space of possible branches with no backtracking. A greedy algorithm, as the name suggests, always makes the choice that seems to be the best at that moment.
+
+**Steps in the ID3 algorithm:**
+
+- It begins with the original set as the root node.
+- On each iteration of the algorithm, it iterates through the unused attributes of the set and calculates a measure of Homogeneity:
+	- **Gini Index:** Gini Index uses the probability of finding a data point with one label as an indicator for homogeneity — if the dataset is completely homogeneous, then the probability of finding a datapoint with one of the labels is 1 and the probability of finding a data point with the other label is zero
+	- **Information Gain / Entropy-based:** The idea is to use the notion of entropy which is a central concept in information theory. Entropy quantifies the degree of disorder in the data. Entropy is always a positive number between zero and 1. Another interpretation of entropy is in terms of information content. A completely homogeneous dataset has no information content in it (there is nothing non-trivial to be learnt from the dataset) whereas a dataset with a lot of disorder has a lot of latent information waiting to be learnt.
+	- For Regression models the split can happen by checking metrics like $R^2$
+- It then selects the attribute which has the smallest Entropy or Largest Information gain
+- The set is then split by the selected attribute to produce a subset of the data
+- The algorithm continues to recur on each subset, considering only attributes never selected before
+
+Decision trees have a strong tendency to overfit the data. So practical uses of the decision tree must necessarily incorporate some ’regularization’ measures to ensure the decision tree built does not become more complex than is necessary and starts to overfit. There are broadly two ways of regularization on decision trees:
+- **Truncation:** Truncate the decision tree during the training (growing) process preventing it from degenerating into one with one leaf for every data point in the training dataset. Below criterion are used to decide if the decision tree needs to be grown further:
+	- Minimum Size of the Partition for a Split: Stop partitioning further when the current partition is small enough.
+	- Minimum Change in Homogeneity Measure: Do not partition further when even the best split causes an insignificant change in the purity measure (difference between the current purity and the purity of the partitions created by the split).
+	- Limit on Tree Depth: If the current node is farther away from the root than a threshold, then stop partitioning further.
+	- Minimum Size of the Partition at a Leaf: If any of partitions from a split has fewer than this threshold minimum, then do not consider the split. Notice the subtle difference between this condition and the minimum size required for a split.
+	- Maxmimum number of leaves in the Tree: If the current number of the bottom-most nodes in the tree exceeds this limit then stop partitioning.
+- **Pruning:** Let the tree grow to any complexity. However add a post-processing step in which we prune the tree in a bottom-up fashion starting from the leaves. It is more common to use pruning strategies to avoid overfitting in practical implementations. One popular approach to pruning is to use a validation set. This method called reduced-error pruning, considers every one of the test (non-leaf ) nodes for pruning. Pruning a node means removing the entire subtree below the node, making it a leaf, and assigning the majority class (or the average of the values in case it is regression) among the training data points that pass through that node. A node in the tree is pruned only if the decision tree obtained after the pruning has an accuracy that is no worse on the validation dataset than the tree prior to pruning. This ensures that parts of the tree that were added due to accidental irregularities in the data are removed, as these irregularities are not likely to repeat.
+
+Though there are various ways to truncate or prune trees, the `DecisionTreeClassifier` function in sklearn provides the following hyperparameters which you can control:
+- `criterion (Gini/IG or entropy)`: It defines the function to measure the quality of a split. Sklearn supports “gini” criteria for Gini Index & “entropy” for Information Gain. By default, it takes the value “gini”.
+- `max_features`: It defines the no. of features to consider when looking for the best split
+- `max_depth`: denotes maximum depth of the tree. It can take any integer value or None. If None, then nodes are expanded until all leaves are pure or until all leaves contain less than min_samples_split samples. By default, it takes “None” value.
+- `min_samples_split`: This tells above the minimum no. of samples reqd. to split an internal node
+- `min_samples_leaf`: The minimum number of samples required to be at a leaf node
+
+---
+### Random Forest
+
+
 ---
 
 ### Boosting
