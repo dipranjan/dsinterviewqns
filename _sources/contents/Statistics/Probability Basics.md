@@ -181,4 +181,3 @@ The number of ways to assign five floors to four people without repetition of fl
 
 The result is then $\frac{5 * 4 * 3 * 2}{5 * 5 * 5 * 5} = 0.192$
 ```
-

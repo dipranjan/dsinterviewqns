@@ -215,5 +215,4 @@ You flip a fair coin 576 times. Without using a calculator, calculate the probab
 
 This is an example of a Binomial Distribution.
 The number will be ${}^{576} \mathrm{ C }_{312} (\frac{1}{2})^{312} (\frac{1}{2})^{264}$
-
 ```
