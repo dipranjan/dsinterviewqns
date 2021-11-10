@@ -8,7 +8,7 @@ html_meta:
 ## Tree based approaches
 
 ```{warning}
-This page is a work in progress
+Problem section is pending
 ```
 
 ### Decision Tree
@@ -41,7 +41,7 @@ The algorithm selection is also based on the type of target variables. Let us lo
 
 The ID3 algorithm builds decision trees using a top-down greedy search approach through the space of possible branches with no backtracking. A greedy algorithm, as the name suggests, always makes the choice that seems to be the best at that moment.
 
-**Steps in the ID3 algorithm:**
+#### Steps in the ID3 algorithm:
 
 - It begins with the original set as the root node.
 - On each iteration of the algorithm, it iterates through the unused attributes of the set and calculates a measure of Homogeneity:
@@ -61,6 +61,8 @@ Decision trees have a strong tendency to overfit the data. So practical uses of 
 	- Maxmimum number of leaves in the Tree: If the current number of the bottom-most nodes in the tree exceeds this limit then stop partitioning.
 - **Pruning:** Let the tree grow to any complexity. However add a post-processing step in which we prune the tree in a bottom-up fashion starting from the leaves. It is more common to use pruning strategies to avoid overfitting in practical implementations. One popular approach to pruning is to use a validation set. This method called reduced-error pruning, considers every one of the test (non-leaf ) nodes for pruning. Pruning a node means removing the entire subtree below the node, making it a leaf, and assigning the majority class (or the average of the values in case it is regression) among the training data points that pass through that node. A node in the tree is pruned only if the decision tree obtained after the pruning has an accuracy that is no worse on the validation dataset than the tree prior to pruning. This ensures that parts of the tree that were added due to accidental irregularities in the data are removed, as these irregularities are not likely to repeat.
 
+#### Hyperparameters
+
 Though there are various ways to truncate or prune trees, the `DecisionTreeClassifier` function in sklearn provides the following hyperparameters which you can control:
 - `criterion (Gini/IG or entropy)`: It defines the function to measure the quality of a split. Sklearn supports “gini” criteria for Gini Index & “entropy” for Information Gain. By default, it takes the value “gini”.
 - `max_features`: It defines the no. of features to consider when looking for the best split
@@ -71,20 +73,53 @@ Though there are various ways to truncate or prune trees, the `DecisionTreeClass
 ---
 ### Random Forest
 
+*Ensemble means a group of things viewed as a whole rather than individually. In ensembles, a collection of models is used to make predictions, rather than individual models. Arguably, the most popular in the family of ensemble models is the random forest: an ensemble made by the combination of a large number of decision trees.*
 
+For an ensemble to work, each model of the ensemble should comply with the following conditions: 
+- Each model should be diverse. Diversity ensures that the models serve complementary purposes, which means that the individual models make predictions independent of each other.
+- Each model should be acceptable. Acceptability implies that each model is at least better than a random model.
+
+Random forests are created using a special ensemble method called **bagging(Bootstrap Aggregation)**. Bootstrapping means creating bootstrap samples from a given data set. A bootstrap sample is created by sampling the given data set uniformly and with replacement. A bootstrap sample typically contains about $30$-$70$% data from the data set. Aggregation implies combining the results of different models present in the ensemble.
+
+#### Steps
+
+- Create a bootstrap sample from the training set
+- Now construct a decision tree using the bootstrap sample. While splitting a node of the tree, only consider a random subset of features. Every time a node has to split, a different random subset of features will be considered.
+- Repeat the steps 1 and 2 for $n$ times, to construct $n$ trees in the forest. Remember each tree is constructed independently, so it is possible to construct each tree in parallel.
+- While predicting a test case, each tree predicts individually, and the final prediction is given by the majority vote of all the trees
+
+#### OOB (Out-of-Bag) Error
+
+The OOB error is calculated by using each observation of the training set as a test observation. Since each tree is built on a bootstrap sample, each observation can used as a test observation by those trees which did not have it in their bootstrap sample. All these trees predict on this observation and you get an error for a single observation. The final OOB error is calculated by calculating the error on each observation and aggregating it.
+
+It turns out that the OOB error is as good as cross validation error.
+
+#### Advantages
+
+- A random forest is more stable than any single decision tree because the results get averaged out; it is not affected by the instability and bias of an individual tree.
+- A random forest is immune to the curse of dimensionality since only a subset of features is used to split a node.
+- You can parallelize the training of a forest since each tree is constructed independently.
+- You can calculate the OOB (Out-of-Bag) error using the training set which gives a really good estimate of the performance of the forest on unseen data. Hence there is no need to split the data into training and validation; you can use all the data to train the forest.
+
+#### Hyperparameters
+
+- `n_estimators`: The number of trees in the forest.
+- `criterion`: The function to measure the quality of a split. Supported criteria are “gini” for the Gini impurity and “entropy” for the information gain. This parameter is tree-specific.
+- `max_features`: The number of features to consider when looking for the best split
+- `max_depth`: The maximum depth of the tree
+- `min_samples_split`: The minimum number of samples required to split an internal node
+- `min_samples_leaf`: The minimum number of samples required to be at a leaf node
+- `min_weight_fraction_leaf`: The minimum weighted fraction of the sum total of weights (of all the input samples) required to be at a leaf node. Samples have equal weight when sample_weight is not provided
+- `max_leaf_nodes`: Grow trees with max_leaf_nodes in best-first fashion. Best nodes are defined as relative reduction in impurity
+- `min_impurity_split`: Threshold for early stopping in tree growth. A node will split if its impurity is above the threshold, otherwise it is a leaf
 ---
 
 ### Boosting
 
-A horse-racing gambler, hoping to maximize his winnings, decides to create a computer program that will accurately predict the winner of a horse race based on the usual information (number of races recently won by each horse, betting odds for each horse, etc.). To create such a program, he asks a highly successful expert gambler to explain his betting strategy. Not surprisingly, the expert is unable to articulate a grand set of rules for selecting a horse. On the other hand, when presented with the data for a specific set of races, the expert has no trouble coming up with a “rule of thumb” for that set of races (such as, “Bet on the horse that has recently won the most races” or “Bet on the horse with the most favored odds”). 
+Boosting was first introduced in 1997 by Freund and Schapire in the popular algorithm, AdaBoost. It was originally designed for classification problems. Since its inception, many new boosting algorithms have been developed those tackle regression problems also and have become famous as they are used in the top
+solutions of many Kaggle competitions.
 
-Although such a rule of thumb, by itself, is obviously very rough and inaccurate, it is not unreasonable to expect it to provide predictions that are at least a little bit better than random guessing. Furthermore, by repeatedly asking the expert’s opinion on different collections of races, the gambler is able to extract many rules of thumb.
-
-In order to use these rules of thumb to maximum advantage, there are two problems faced by the gambler:
-- First, how should he choose the collections of races presented to the expert so as to extract rules of thumb from the expert that will be the most useful?
-- Second, once he has collected many rules of thumb, how can they be combined into a single, highly accurate prediction rule?
-
-Boosting refers to a general and provably effective method of producing a very accurate prediction rule by combining rough and moderately inaccurate rules of thumb in a manner similar to that suggested above.
+An ensemble is a collection of models which ideally should predict better than individual models. The key idea of boosting is to create an ensemble which makes high errors only on the less frequent data points. Boosting leverages the fact that we can build a series of models specifically targeted at the data points which have been incorrectly predicted by the other models in the ensemble. If a series of models keep reducing the average error, we will have an ensemble having extremely high accuracy. Boosting is a way of generating a strong model from a weak learning algorithm.
 
 ---
 
@@ -125,3 +160,12 @@ XGBoost stands for "Extreme Gradient Boosting", where the term "Gradient Boostin
 
 XGBoost and GBM both follow the principle of gradient boosted trees, but XGBoost uses a more regularized (by taking the model complexity into account) model formulation to control over-fitting, which gives it better performance, which is why it’s also known as ‘regularized boosting’ technique. In Stochastic Gradient Descent, used by Gradient Boosting, we use less point to take less time to compute the direction we should go towards, in order to make more of them, in the hope we go there quicker. In Newton’s method, used by XGBoost, we take more time to compute the direction we want to go into, in the hope we have to take fewer steps in order to get there.
 
+**Why is XGBoost so good?**
+
+- *Parallel Computing:* when you run xgboost, by default, it would use all the cores of your laptop/machine enabling its capacity to do parallel computation
+- *Regularization:* The biggest advantage of xgboost is that it uses regularization and controls the overfitting and simplicity of the model which gives it better performance.
+- *Enabled Cross Validation:* XGBoost is enabled with internal Cross Validation function 
+- *Missing Values:* XGBoost is designed to handle missing values internally. The missing values are treated in such a manner that if there exists any trend in missing values, it is captured by the model
+- *Flexibility:* XGBoost is not just limited to regression, classification, and ranking problems, it supports user-defined objective functions as well. Furthermore, it supports user-defined evaluation metrics as well.
+
+---
