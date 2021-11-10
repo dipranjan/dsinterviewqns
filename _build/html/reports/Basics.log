@@ -1,0 +1,39 @@
+Traceback (most recent call last):
+  File "c:\python\python37\lib\site-packages\nbclient\client.py", line 604, in _async_poll_for_reply
+    msg = await ensure_async(self.kc.shell_channel.get_msg(timeout=new_timeout))
+  File "c:\python\python37\lib\site-packages\nbclient\util.py", line 85, in ensure_async
+    result = await obj
+  File "c:\python\python37\lib\site-packages\jupyter_client\asynchronous\channels.py", line 48, in get_msg
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\python\python37\lib\site-packages\jupyter_cache\executors\utils.py", line 56, in single_nb_execution
+    record_timing=False,
+  File "c:\python\python37\lib\site-packages\nbclient\client.py", line 1082, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "c:\python\python37\lib\site-packages\nbclient\util.py", line 74, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "c:\python\python37\lib\site-packages\nbclient\util.py", line 53, in just_run
+    return loop.run_until_complete(coro)
+  File "c:\python\python37\lib\asyncio\base_events.py", line 579, in run_until_complete
+    return future.result()
+  File "c:\python\python37\lib\site-packages\nbclient\client.py", line 536, in async_execute
+    cell, index, execution_count=self.code_cells_executed + 1
+  File "c:\python\python37\lib\site-packages\nbclient\client.py", line 811, in async_execute_cell
+    exec_reply = await self.task_poll_for_reply
+  File "c:\python\python37\lib\site-packages\nbclient\client.py", line 628, in _async_poll_for_reply
+    await self._async_handle_timeout(timeout, cell)
+  File "c:\python\python37\lib\site-packages\nbclient\client.py", line 679, in _async_handle_timeout
+    "Cell execution timed out", timeout, cell
+nbclient.exceptions.CellTimeoutError: A cell timed out while it was being executed, after 30 seconds.
+The message was: Cell execution timed out.
+Here is a preview of the cell contents:
+-------------------
+['# Some common commands are as follows', 'import tensorflow as tf', 'print("Check TF version: ",tf.__version__)', '', 't1 = tf.constant([[10., 7.],']
+...
+['print("Elements along last axis of tensor:", t1.shape[-1])', 'print("Total number of elements:", tf.size(t1).numpy()) # .numpy() converts to NumPy array', 'print("Details of the tensor: ",t1)', '', 'print("Index tensors: ", t1[:1,:])']
+-------------------
+
