@@ -31,6 +31,7 @@
 :class: tip, dropdown
 
 **Month of November, 2021**
+- Took some break, was obsessively working on this 😌
 - New section - Tree based approaches, Industry application added
 - Decided to make this page a little more interesting
 - Launched our LinkedIn page do [![Follow LinkedIn](https://img.shields.io/badge/Follow-LinkedIn-0077B5?style=flat-square&logo=appveyor.svg)](https://www.linkedin.com/company/the-data-science-interview-book/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BeglbXB3xT0mopZBzReqMEQ%3D%3D), have some interesting plans for it in near future
