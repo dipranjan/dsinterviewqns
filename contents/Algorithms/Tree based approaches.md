@@ -169,3 +169,142 @@ XGBoost and GBM both follow the principle of gradient boosted trees, but XGBoost
 - *Flexibility:* XGBoost is not just limited to regression, classification, and ranking problems, it supports user-defined objective functions as well. Furthermore, it supports user-defined evaluation metrics as well.
 
 ---
+
+### Questions
+
+```{admonition} Problem: [AMAZON] Random Forest Explanation
+:class: tip, dropdown
+
+How does random forest generate the forest? Additionally why would we use it over other algorithms such as logistic regression?
+
+```
+
+```{admonition} Solution:
+:class: dropdown
+
+Random forest is a supervised learning algorithm. The "forest" it builds, is an ensemble of decision trees, usually trained with the “bagging” method. The general idea of the bagging method is that a combination of learning models increases the overall result.
+Put simply: random forest builds multiple decision trees and merges them together to get a more accurate and stable prediction.
+
+Steps:
+- Create a bootstrap sample from the training set
+- Now construct a decision tree using the bootstrap sample. While splitting a node of the tree, only consider a random subset of features. Every time a node has to split, a different random subset of features will be considered.
+- Repeat the steps 1 and 2 for $n$ times, to construct $n$ trees in the forest. Remember each tree is constructed independently, so it is possible to construct each tree in parallel.
+- While predicting a test case, each tree predicts individually, and the final prediction is given by the majority vote of all the trees
+
+As for why or when we use it over logistic regression, the answer is it depends:
+
+- If your problem/data is linearly separable, then first try logistic regression. If you don’t know, then still start with logistic regression because that will be your baseline, followed by non-linear classifier such as random forest. Do not forget to tune the parameters of logistic regression / random forest for maximizing their performance on your data.
+- If your data is categorical, then random forest should be your first choice; however, logistic regression can be dealt with categorical data
+- If you want easy to understand results, logistic regression is a better choice because it leads to simple interpretation of the explanatory variables.
+- If speed is your criteria, then logistic regression should be your choice
+- If your data is unbalanced, then random forest may be a better choice
+- If number of data objects are less than the number of features, logistic regression should not be used
+- Lastly for either of the random forest or logistic regression “models appear to perform similarly across the datasets with performance more influenced by choice of dataset rather than model selection”
+```
+
+```{admonition} Problem: Explain CART
+:class: tip, dropdown
+
+[📖Source](https://www.analyticsvidhya.com/blog/2021/05/25-questions-to-test-your-skills-on-decision-trees/)
+
+Explain the CART Algorithm for Decision Trees.
+
+```
+
+```{admonition} Solution:
+:class: dropdown
+
+The CART stands for Classification and Regression Trees is a greedy algorithm that greedily searches for an optimum split at the top level, then repeats the same process at each of the subsequent levels.
+
+Moreover, it does verify whether the split will lead to the lowest impurity or not as well as the solution provided by the greedy algorithm is not guaranteed to be optimal, it often produces a solution that’s reasonably good since finding the optimal Tree is an NP-Complete problem that requires exponential time complexity.
+
+As a result, it makes the problem intractable even for small training sets. This is why we must go for a “reasonably good” solution instead of an optimal solution.
+```
+
+```{admonition} Problem: Properties of Gini Impurity
+:class: tip, dropdown
+
+[📖Source](https://www.analyticsvidhya.com/blog/2021/05/25-questions-to-test-your-skills-on-decision-trees/)
+
+Briefly explain the properties of Gini Impurity.
+
+```
+
+```{admonition} Solution:
+:class: dropdown
+
+Gini Impurity is the probability of incorrectly classifying a randomly chosen element in the dataset if it were randomly labeled according to the class distribution in the dataset. It’s calculated as
+
+$\text{Gini Impurity} = 1 - \text{Gini Index}$
+
+So there can be 2 cases:
+
+- When all the data points belong to a single class: $G = 1 - (1^2 + 0^2) = 0$
+- When $50%$ of the data points belong to a class: $G = 1 - (0.5^2 + 0.5^2) = 0.5$
+
+![image 12](../Algorithms/images/image12.PNG)
+
+Gini impurity tends to isolate the most frequent class in its own branch of the Tree, while entropy tends to produce slightly more balanced Trees.
+```
+
+```{admonition} Problem: CART vs ID3
+:class: tip, dropdown
+
+[📖Source](https://www.analyticsvidhya.com/blog/2021/05/25-questions-to-test-your-skills-on-decision-trees/)
+
+Explain the difference between the CART and ID3 Algorithms.
+
+```
+
+```{admonition} Solution:
+:class: dropdown
+
+The CART algorithm produces only binary Trees: non-leaf nodes always have two children (i.e., questions only have yes/no answers).
+
+On the contrary, other Tree algorithms such as ID3 can produce Decision Trees with nodes having more than two children.
+```
+
+```{admonition} Problem: Types of nodes
+:class: tip, dropdown
+
+[📖Source](https://www.analyticsvidhya.com/blog/2021/05/25-questions-to-test-your-skills-on-decision-trees/)
+
+List down the different types of nodes in Decision Trees.
+
+```
+
+```{admonition} Solution:
+:class: dropdown
+
+The Decision Tree consists of the following different types of nodes:
+
+- Root node: It is the top-most node of the Tree from where the Tree starts
+- Decision nodes: One or more Decision nodes that result in the splitting of data into multiple data segments and our main goal is to have the children nodes with maximum homogeneity or purity
+- Leaf nodes: These nodes represent the data section having the highest homogeneity
+```
+
+```{admonition} Problem: Information Gain
+:class: tip, dropdown
+
+[📖Source](https://www.analyticsvidhya.com/blog/2021/05/25-questions-to-test-your-skills-on-decision-trees/)
+
+What do you understand of Information gain? Any disadvantages that you can think of?
+
+```
+
+```{admonition} Solution:
+:class: dropdown
+
+Information gain is the difference between the entropy of a data segment before the split and after the split i.e, reduction in impurity due to the selection of an attribute.
+
+Some points keep in mind about information gain:
+
+- The high difference represents high information gain.
+- Higher the difference implies the lower entropy of all data segments resulting from the split.
+- Thus, the higher the difference, the higher the information gain, and the better the feature used for the split.
+Mathematically, the information gain can be computed by the equation as follows:
+
+Information Gain = $E(S1) – E(S2)$, $E(S1)$ denotes the entropy of data belonging to the node before the split and $E(S2)$ denotes the weighted summation of the entropy of children nodes by considering the weights as the proportion of data instances falling in specific children nodes.
+
+As for the disadvantages, Information gain biases the Decision Tree against considering attributes with a large number of distinct values which might lead to overfitting. In order to solve this problem, the Information Gain Ratio is used.
+```

@@ -18,6 +18,8 @@ scale: 50%
 ---
 ```
 
+---
+
 ### Questions
 
 ```{admonition} Problem: Find the Revenue
