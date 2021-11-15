@@ -453,6 +453,11 @@
    XGBoost
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#questions">
+   Questions
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -466,10 +471,6 @@
                 
   <div class="section" id="tree-based-approaches">
 <h1>Tree based approaches<a class="headerlink" href="#tree-based-approaches" title="Permalink to this headline">¶</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Problem section is pending</p>
-</div>
 <div class="section" id="decision-tree">
 <h2>Decision Tree<a class="headerlink" href="#decision-tree" title="Permalink to this headline">¶</a></h2>
 <p>A decision tree is a flowchart-like structure in which each internal node represents a “test” on an attribute (e.g. whether a coin flip comes up heads or tails), each branch represents the outcome of the test, and each leaf node represents a class label (decision taken after computing all attributes). It is immensly popular primarily due to its ease of explanation which is often a critical requirement in business.</p>
@@ -631,7 +632,207 @@ This is in short of the intuition as to how Gradient Boosting works. In case of 
 <li><p><em>Missing Values:</em> XGBoost is designed to handle missing values internally. The missing values are treated in such a manner that if there exists any trend in missing values, it is captured by the model</p></li>
 <li><p><em>Flexibility:</em> XGBoost is not just limited to regression, classification, and ranking problems, it supports user-defined objective functions as well. Furthermore, it supports user-defined evaluation metrics as well.</p></li>
 </ul>
+</div>
 <hr class="docutils" />
+<div class="section" id="questions">
+<h2>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h2>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: [AMAZON] Random Forest Explanation</p>
+<p>How does random forest generate the forest? Additionally why would we use it over other algorithms such as logistic regression?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>Random forest is a supervised learning algorithm. The “forest” it builds, is an ensemble of decision trees, usually trained with the “bagging” method. The general idea of the bagging method is that a combination of learning models increases the overall result.
+Put simply: random forest builds multiple decision trees and merges them together to get a more accurate and stable prediction.</p>
+<p>Steps:</p>
+<ul class="simple">
+<li><p>Create a bootstrap sample from the training set</p></li>
+<li><p>Now construct a decision tree using the bootstrap sample. While splitting a node of the tree, only consider a random subset of features. Every time a node has to split, a different random subset of features will be considered.</p></li>
+<li><p>Repeat the steps 1 and 2 for <span class="math notranslate nohighlight">\(n\)</span> times, to construct <span class="math notranslate nohighlight">\(n\)</span> trees in the forest. Remember each tree is constructed independently, so it is possible to construct each tree in parallel.</p></li>
+<li><p>While predicting a test case, each tree predicts individually, and the final prediction is given by the majority vote of all the trees</p></li>
+</ul>
+<p>As for why or when we use it over logistic regression, the answer is it depends:</p>
+<ul class="simple">
+<li><p>If your problem/data is linearly separable, then first try logistic regression. If you don’t know, then still start with logistic regression because that will be your baseline, followed by non-linear classifier such as random forest. Do not forget to tune the parameters of logistic regression / random forest for maximizing their performance on your data.</p></li>
+<li><p>If your data is categorical, then random forest should be your first choice; however, logistic regression can be dealt with categorical data</p></li>
+<li><p>If you want easy to understand results, logistic regression is a better choice because it leads to simple interpretation of the explanatory variables.</p></li>
+<li><p>If speed is your criteria, then logistic regression should be your choice</p></li>
+<li><p>If your data is unbalanced, then random forest may be a better choice</p></li>
+<li><p>If number of data objects are less than the number of features, logistic regression should not be used</p></li>
+<li><p>Lastly for either of the random forest or logistic regression “models appear to perform similarly across the datasets with performance more influenced by choice of dataset rather than model selection”</p></li>
+</ul>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: Explain CART</p>
+<p><a class="reference external" href="https://www.analyticsvidhya.com/blog/2021/05/25-questions-to-test-your-skills-on-decision-trees/">📖Source</a></p>
+<p>Explain the CART Algorithm for Decision Trees.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>The CART stands for Classification and Regression Trees is a greedy algorithm that greedily searches for an optimum split at the top level, then repeats the same process at each of the subsequent levels.</p>
+<p>Moreover, it does verify whether the split will lead to the lowest impurity or not as well as the solution provided by the greedy algorithm is not guaranteed to be optimal, it often produces a solution that’s reasonably good since finding the optimal Tree is an NP-Complete problem that requires exponential time complexity.</p>
+<p>As a result, it makes the problem intractable even for small training sets. This is why we must go for a “reasonably good” solution instead of an optimal solution.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: Properties of Gini Impurity</p>
+<p><a class="reference external" href="https://www.analyticsvidhya.com/blog/2021/05/25-questions-to-test-your-skills-on-decision-trees/">📖Source</a></p>
+<p>Briefly explain the properties of Gini Impurity.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>Gini Impurity is the probability of incorrectly classifying a randomly chosen element in the dataset if it were randomly labeled according to the class distribution in the dataset. It’s calculated as</p>
+<p><span class="math notranslate nohighlight">\(\text{Gini Impurity} = 1 - \text{Gini Index}\)</span></p>
+<p>So there can be 2 cases:</p>
+<ul class="simple">
+<li><p>When all the data points belong to a single class: <span class="math notranslate nohighlight">\(G = 1 - (1^2 + 0^2) = 0\)</span></p></li>
+<li><p>When <span class="math notranslate nohighlight">\(50%\)</span> of the data points belong to a class: <span class="math notranslate nohighlight">\(G = 1 - (0.5^2 + 0.5^2) = 0.5\)</span></p></li>
+</ul>
+<p><img alt="image 12" src="../../_images/image121.PNG" /></p>
+<p>Gini impurity tends to isolate the most frequent class in its own branch of the Tree, while entropy tends to produce slightly more balanced Trees.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: CART vs ID3</p>
+<p><a class="reference external" href="https://www.analyticsvidhya.com/blog/2021/05/25-questions-to-test-your-skills-on-decision-trees/">📖Source</a></p>
+<p>Explain the difference between the CART and ID3 Algorithms.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>The CART algorithm produces only binary Trees: non-leaf nodes always have two children (i.e., questions only have yes/no answers).</p>
+<p>On the contrary, other Tree algorithms such as ID3 can produce Decision Trees with nodes having more than two children.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: Types of nodes</p>
+<p><a class="reference external" href="https://www.analyticsvidhya.com/blog/2021/05/25-questions-to-test-your-skills-on-decision-trees/">📖Source</a></p>
+<p>List down the different types of nodes in Decision Trees.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>The Decision Tree consists of the following different types of nodes:</p>
+<ul class="simple">
+<li><p>Root node: It is the top-most node of the Tree from where the Tree starts</p></li>
+<li><p>Decision nodes: One or more Decision nodes that result in the splitting of data into multiple data segments and our main goal is to have the children nodes with maximum homogeneity or purity</p></li>
+<li><p>Leaf nodes: These nodes represent the data section having the highest homogeneity</p></li>
+</ul>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: Information Gain</p>
+<p><a class="reference external" href="https://www.analyticsvidhya.com/blog/2021/05/25-questions-to-test-your-skills-on-decision-trees/">📖Source</a></p>
+<p>What do you understand of Information gain? Any disadvantages that you can think of?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>Information gain is the difference between the entropy of a data segment before the split and after the split i.e, reduction in impurity due to the selection of an attribute.</p>
+<p>Some points keep in mind about information gain:</p>
+<ul class="simple">
+<li><p>The high difference represents high information gain.</p></li>
+<li><p>Higher the difference implies the lower entropy of all data segments resulting from the split.</p></li>
+<li><p>Thus, the higher the difference, the higher the information gain, and the better the feature used for the split.
+Mathematically, the information gain can be computed by the equation as follows:</p></li>
+</ul>
+<p>Information Gain = <span class="math notranslate nohighlight">\(E(S1) – E(S2)\)</span>, <span class="math notranslate nohighlight">\(E(S1)\)</span> denotes the entropy of data belonging to the node before the split and <span class="math notranslate nohighlight">\(E(S2)\)</span> denotes the weighted summation of the entropy of children nodes by considering the weights as the proportion of data instances falling in specific children nodes.</p>
+<p>As for the disadvantages, Information gain biases the Decision Tree against considering attributes with a large number of distinct values which might lead to overfitting. In order to solve this problem, the Information Gain Ratio is used.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: Space Time complexity of a Decision tree</p>
+<p><a class="reference external" href="https://www.analyticsvidhya.com/blog/2021/05/25-questions-to-test-your-skills-on-decision-trees/">📖Source</a></p>
+<p>Explain the time and space complexity of training and testing in the case of a Decision Tree.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>What happens in the training stage is that for each of the features (dimensions) in the dataset we’ll sort the data which takes <span class="math notranslate nohighlight">\(O(n log n)\)</span> time following which we traverse the data points to find the right threshold which takes <span class="math notranslate nohighlight">\(O(n)\)</span> time. For <span class="math notranslate nohighlight">\(d\)</span> dimensions, total time complexity would be:</p>
+<p><span class="math notranslate nohighlight">\(O(n * log n * d) + O(n*d) \text{which asymptotically is } O(n * log n * d)\)</span></p>
+<p>Train space complexity:
+The things we need while training a decision tree are the nodes which are typically stored as if-else conditions.
+Hence, the train space complexity would be: <span class="math notranslate nohighlight">\(O(nodes)\)</span></p>
+<p>Test time complexity would be <span class="math notranslate nohighlight">\(O(depth)\)</span> since we have to move from root to a leaf node of the decision tree.
+Test space complexity would be <span class="math notranslate nohighlight">\(O(nodes)\)</span></p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: Training time</p>
+<p><a class="reference external" href="https://www.analyticsvidhya.com/blog/2021/05/25-questions-to-test-your-skills-on-decision-trees/">📖Source</a></p>
+<p>If it takes one hour to train a Decision Tree on a training set containing 1 million instances, roughly how much time will it take to train another Decision Tree on a training set containing 10 million instances?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>As we know that the computational complexity of training a Decision Tree is given by O(n × m log(m)). So, when we multiplied the size of the training set by 10, then the training time will be multiplied by some factor, say K.</p>
+<p>Now, we have to determine the value of K. To finds K, divide the complexity of both:</p>
+<p><span class="math notranslate nohighlight">\(K = (n × 10m × log(10m)) / (n × m × log(m)) = 10 × log(10m) / log(m)\)</span></p>
+<p>For <span class="math notranslate nohighlight">\(10\)</span> million instances i.e., <span class="math notranslate nohighlight">\(m = 106\)</span>, then we get the value of <span class="math notranslate nohighlight">\(K ≈ 11.7\)</span>.</p>
+<p>Therefore, we can expect the training time to be roughly <span class="math notranslate nohighlight">\(11.7\)</span> hours.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: Missing data and neumerical values</p>
+<p><a class="reference external" href="https://www.analyticsvidhya.com/blog/2021/05/25-questions-to-test-your-skills-on-decision-trees/">📖Source</a></p>
+<p>How does a Decision Tree handle missing attribute values? How does it deal with continuous(numerical) features?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>Decision Trees handle missing values in the following ways:</p>
+<ul class="simple">
+<li><p>Fill the missing attribute value by the most common value of that attribute</p></li>
+<li><p>Fill the missing value by assigning a probability to each of the possible values of the attribute based on other samples</p></li>
+</ul>
+<p>Decision Trees handle continuous features by converting these continuous features to a threshold-based boolean feature. To decide The threshold value, we use the concept of Information Gain, choosing that threshold that maximizes the information gain.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: Inductive Bias</p>
+<p><a class="reference external" href="https://www.analyticsvidhya.com/blog/2021/05/25-questions-to-test-your-skills-on-decision-trees/">📖Source</a></p>
+<p>What is the Inductive Bias of Decision Trees?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>The ID3 algorithm preferred Shorter Trees over longer Trees. In Decision Trees, attributes having high information gain are placed close to the root are preferred over those that do not.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: Compare different selection measures</p>
+<p><a class="reference external" href="https://www.analyticsvidhya.com/blog/2021/05/25-questions-to-test-your-skills-on-decision-trees/">📖Source</a></p>
+<p>Compare the different attribute selection measures.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>The three measures, in general, returns good results, but:</p>
+<ul class="simple">
+<li><p>Information Gain: It is biased towards multivalued attributes</p></li>
+<li><p>Gain ratio: It prefers unbalanced splits in which one data segment is much smaller than the other segment</p></li>
+<li><p>Gini Index: It is biased to multivalued attributes, has difficulty when the number of classes is large, tends to favor tests that result in equal-sized partitions and purity in both partitions</p></li>
+</ul>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: Effect of Outliers</p>
+<p><a class="reference external" href="https://www.analyticsvidhya.com/blog/2021/05/25-questions-to-test-your-skills-on-decision-trees/">📖Source</a></p>
+<p>Are Decision Trees affected by the outliers? Explain</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>Decision Trees are not sensitive to noisy data or outliers since, extreme values or outliers, never cause much reduction in Residual Sum of Squares(RSS), because they are never involved in the split.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: Advantages and Disadvantages of Decision Tree</p>
+<p><a class="reference external" href="https://www.analyticsvidhya.com/blog/2021/05/25-questions-to-test-your-skills-on-decision-trees/">📖Source</a></p>
+<p>Discuss the advantages and disadvantages of Decision tree</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p><strong>Advantages:</strong></p>
+<ul class="simple">
+<li><p><strong>Clear Visualization:</strong>  This algorithm is simple to understand, interpret and visualize as the idea is mostly used in our daily lives. The output of a Decision Tree can be easily interpreted by humans.</p></li>
+<li><p><strong>Simple and easy to understand:</strong> Decision Tree works in the same manner as simple if-else statements which are very easy to understand.</p></li>
+<li><p>This can be used for both classification and regression problems.</p></li>
+<li><p>Decision Trees can handle both continuous and categorical variables.</p></li>
+<li><p><strong>No feature scaling required:</strong> There is no requirement of feature scaling techniques such as standardization and normalization in the case of Decision Tree as it uses a rule-based approach instead of calculation of distances.</p></li>
+<li><p><strong>Handles nonlinear parameters efficiently:</strong> Unlike curve-based algorithms, the performance of decision trees can’t be affected by the Non-linear parameters. So, if there is high non-linearity present between the independent variables, Decision Trees may outperform as compared to other curve-based algorithms.</p></li>
+<li><p>Decision Tree can automatically handle missing values.</p></li>
+<li><p>Decision Tree handles the outliers automatically, hence they are usually robust to outliers.</p></li>
+<li><p><strong>Less Training Period:</strong> The training period of decision trees is less as compared to ensemble techniques like Random Forest because it generates only one Tree unlike the forest of trees in the Random Forest.</p></li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul class="simple">
+<li><p><strong>Overfitting:</strong> This is the major problem associated with the Decision Trees. It generally leads to overfitting of the data which ultimately leads to wrong predictions for testing data points. it keeps generating new nodes in order to fit the data including even noisy data and ultimately the Tree becomes too complex to interpret. In this way, it loses its generalization capabilities. Therefore, it performs well on the training dataset but starts making a lot of mistakes on the test dataset.</p></li>
+<li><p><strong>High variance:</strong> As mentioned, a Decision Tree generally leads to the overfitting of data. Due to the overfitting, there is more likely a chance of high variance in the output which leads to many errors in the final predictions and shows high inaccuracy in the results. So, in order to achieve zero bias (overfitting), it leads to high variance due to the bias-variance tradeoff.</p></li>
+<li><p><strong>Unstable:</strong> When we add new data points it can lead to regeneration of the overall Tree. Therefore, all nodes need to be recalculated and reconstructed.</p></li>
+<li><p><strong>Not suitable for large datasets:</strong> If the data size is large, then one single Tree may grow complex and lead to overfitting. So in this case, we should use Random Forest instead, an ensemble technique of a single Decision Tree.</p></li>
+</ul>
+</div>
 </div>
 </div>
 
