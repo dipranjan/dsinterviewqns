@@ -3,8 +3,7 @@
 ```{admonition} What's Happening
 :class: tip, dropdown
 
-- 🔥 Decision Tree and RF (Bagging Boosting)
-- ⌛ Tensorflow
+- 🔥 Tensorflow
 - ⌛ Excel [new section]
 - ⌛ Anamoly Detection
 - ⌛ NLP

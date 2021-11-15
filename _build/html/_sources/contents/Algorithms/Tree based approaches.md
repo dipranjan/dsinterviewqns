@@ -7,10 +7,6 @@ html_meta:
 
 ## Tree based approaches
 
-```{warning}
-Problem section is pending
-```
-
 ### Decision Tree
 
 A decision tree is a flowchart-like structure in which each internal node represents a "test" on an attribute (e.g. whether a coin flip comes up heads or tails), each branch represents the outcome of the test, and each leaf node represents a class label (decision taken after computing all attributes). It is immensly popular primarily due to its ease of explanation which is often a critical requirement in business.
@@ -307,4 +303,145 @@ Mathematically, the information gain can be computed by the equation as follows:
 Information Gain = $E(S1) – E(S2)$, $E(S1)$ denotes the entropy of data belonging to the node before the split and $E(S2)$ denotes the weighted summation of the entropy of children nodes by considering the weights as the proportion of data instances falling in specific children nodes.
 
 As for the disadvantages, Information gain biases the Decision Tree against considering attributes with a large number of distinct values which might lead to overfitting. In order to solve this problem, the Information Gain Ratio is used.
+```
+
+```{admonition} Problem: Space Time complexity of a Decision tree
+:class: tip, dropdown
+
+[📖Source](https://www.analyticsvidhya.com/blog/2021/05/25-questions-to-test-your-skills-on-decision-trees/)
+
+Explain the time and space complexity of training and testing in the case of a Decision Tree.
+
+```
+
+```{admonition} Solution:
+:class: dropdown
+
+What happens in the training stage is that for each of the features (dimensions) in the dataset we’ll sort the data which takes $O(n log n)$ time following which we traverse the data points to find the right threshold which takes $O(n)$ time. For $d$ dimensions, total time complexity would be:
+
+$O(n * log n * d) + O(n*d) \text{which asymptotically is } O(n * log n * d)$
+
+Train space complexity:
+The things we need while training a decision tree are the nodes which are typically stored as if-else conditions.
+Hence, the train space complexity would be: $O(nodes)$
+
+Test time complexity would be $O(depth)$ since we have to move from root to a leaf node of the decision tree.
+Test space complexity would be $O(nodes)$
+```
+
+```{admonition} Problem: Training time
+:class: tip, dropdown
+
+[📖Source](https://www.analyticsvidhya.com/blog/2021/05/25-questions-to-test-your-skills-on-decision-trees/)
+
+If it takes one hour to train a Decision Tree on a training set containing 1 million instances, roughly how much time will it take to train another Decision Tree on a training set containing 10 million instances?
+
+```
+
+```{admonition} Solution:
+:class: dropdown
+
+As we know that the computational complexity of training a Decision Tree is given by O(n × m log(m)). So, when we multiplied the size of the training set by 10, then the training time will be multiplied by some factor, say K.
+
+Now, we have to determine the value of K. To finds K, divide the complexity of both:
+
+$K = (n × 10m × log(10m)) / (n × m × log(m)) = 10 × log(10m) / log(m)$
+
+For $10$ million instances i.e., $m = 106$, then we get the value of $K ≈ 11.7$.
+
+Therefore, we can expect the training time to be roughly $11.7$ hours.
+```
+
+```{admonition} Problem: Missing data and neumerical values
+:class: tip, dropdown
+
+[📖Source](https://www.analyticsvidhya.com/blog/2021/05/25-questions-to-test-your-skills-on-decision-trees/)
+
+How does a Decision Tree handle missing attribute values? How does it deal with continuous(numerical) features?
+
+```
+
+```{admonition} Solution:
+:class: dropdown
+
+Decision Trees handle missing values in the following ways:
+- Fill the missing attribute value by the most common value of that attribute
+- Fill the missing value by assigning a probability to each of the possible values of the attribute based on other samples
+
+Decision Trees handle continuous features by converting these continuous features to a threshold-based boolean feature. To decide The threshold value, we use the concept of Information Gain, choosing that threshold that maximizes the information gain.
+```
+
+```{admonition} Problem: Inductive Bias
+:class: tip, dropdown
+
+[📖Source](https://www.analyticsvidhya.com/blog/2021/05/25-questions-to-test-your-skills-on-decision-trees/)
+
+What is the Inductive Bias of Decision Trees?
+```
+
+```{admonition} Solution:
+:class: dropdown
+
+The ID3 algorithm preferred Shorter Trees over longer Trees. In Decision Trees, attributes having high information gain are placed close to the root are preferred over those that do not.
+```
+
+```{admonition} Problem: Compare different selection measures
+:class: tip, dropdown
+
+[📖Source](https://www.analyticsvidhya.com/blog/2021/05/25-questions-to-test-your-skills-on-decision-trees/)
+
+Compare the different attribute selection measures.
+```
+
+```{admonition} Solution:
+:class: dropdown
+
+The three measures, in general, returns good results, but:
+
+- Information Gain: It is biased towards multivalued attributes
+- Gain ratio: It prefers unbalanced splits in which one data segment is much smaller than the other segment
+- Gini Index: It is biased to multivalued attributes, has difficulty when the number of classes is large, tends to favor tests that result in equal-sized partitions and purity in both partitions
+```
+
+```{admonition} Problem: Effect of Outliers
+:class: tip, dropdown
+
+[📖Source](https://www.analyticsvidhya.com/blog/2021/05/25-questions-to-test-your-skills-on-decision-trees/)
+
+Are Decision Trees affected by the outliers? Explain
+```
+
+```{admonition} Solution:
+:class: dropdown
+
+Decision Trees are not sensitive to noisy data or outliers since, extreme values or outliers, never cause much reduction in Residual Sum of Squares(RSS), because they are never involved in the split.
+```
+
+```{admonition} Problem: Advantages and Disadvantages of Decision Tree
+:class: tip, dropdown
+
+[📖Source](https://www.analyticsvidhya.com/blog/2021/05/25-questions-to-test-your-skills-on-decision-trees/)
+
+Discuss the advantages and disadvantages of Decision tree
+```
+
+```{admonition} Solution:
+:class: dropdown
+
+**Advantages:**
+- **Clear Visualization:**  This algorithm is simple to understand, interpret and visualize as the idea is mostly used in our daily lives. The output of a Decision Tree can be easily interpreted by humans.
+- **Simple and easy to understand:** Decision Tree works in the same manner as simple if-else statements which are very easy to understand.
+- This can be used for both classification and regression problems.
+- Decision Trees can handle both continuous and categorical variables.
+- **No feature scaling required:** There is no requirement of feature scaling techniques such as standardization and normalization in the case of Decision Tree as it uses a rule-based approach instead of calculation of distances.
+- **Handles nonlinear parameters efficiently:** Unlike curve-based algorithms, the performance of decision trees can’t be affected by the Non-linear parameters. So, if there is high non-linearity present between the independent variables, Decision Trees may outperform as compared to other curve-based algorithms.
+- Decision Tree can automatically handle missing values.
+- Decision Tree handles the outliers automatically, hence they are usually robust to outliers.
+- **Less Training Period:** The training period of decision trees is less as compared to ensemble techniques like Random Forest because it generates only one Tree unlike the forest of trees in the Random Forest.
+
+**Disadvantages:**
+- **Overfitting:** This is the major problem associated with the Decision Trees. It generally leads to overfitting of the data which ultimately leads to wrong predictions for testing data points. it keeps generating new nodes in order to fit the data including even noisy data and ultimately the Tree becomes too complex to interpret. In this way, it loses its generalization capabilities. Therefore, it performs well on the training dataset but starts making a lot of mistakes on the test dataset.
+- **High variance:** As mentioned, a Decision Tree generally leads to the overfitting of data. Due to the overfitting, there is more likely a chance of high variance in the output which leads to many errors in the final predictions and shows high inaccuracy in the results. So, in order to achieve zero bias (overfitting), it leads to high variance due to the bias-variance tradeoff.
+- **Unstable:** When we add new data points it can lead to regeneration of the overall Tree. Therefore, all nodes need to be recalculated and reconstructed.
+- **Not suitable for large datasets:** If the data size is large, then one single Tree may grow complex and lead to overfitting. So in this case, we should use Random Forest instead, an ensemble technique of a single Decision Tree.
 ```
