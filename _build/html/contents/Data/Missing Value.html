@@ -4,8 +4,11 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CPU vs GPU vs TPU &#8212; The Data Science Interview Book</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Interview resource of Data Science Interview focusing on Missing value treatment." lang="en" name="description" xml:lang="en" />
+<meta content="interview, data science, machine learning, Missing value" name="keywords" />
+<meta content="en_US" property="og:locale" />
+
+    <title>Missing Value &#8212; The Data Science Interview Book</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -49,10 +52,12 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/ML Hardware/Machine Learning Hardware.html" />
+    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/Data/Missing Value.html" />
     <link rel="shortcut icon" href="../../_static/logo.gif"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Regression" href="../Algorithms/Regression.html" />
+    <link rel="prev" title="Scaling" href="Scaling.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -138,14 +143,14 @@
   Data
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../Data/Scaling.html">
+  <a class="reference internal" href="Scaling.html">
    Scaling
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Data/Missing%20Value.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Missing Value
   </a>
  </li>
@@ -344,7 +349,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/contents/ML Hardware/Machine Learning Hardware.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/contents/Data/Missing Value.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -361,7 +366,7 @@
     <div class="dropdown-buttons sourcebuttons">
         
         <a class="issues-button"
-            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/ML Hardware/Machine Learning Hardware.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/Data/Missing Value.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -382,29 +387,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-does-a-cpu-work">
-   How does a CPU work?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-does-a-gpu-work">
-   How does a GPU work?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-does-a-tpu-work">
-   How does a TPU work?
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -413,48 +395,56 @@
         
               <div>
                 
-  <div class="section" id="cpu-vs-gpu-vs-tpu">
-<h1>CPU vs GPU vs TPU<a class="headerlink" href="#cpu-vs-gpu-vs-tpu" title="Permalink to this headline">¶</a></h1>
-<div class="tip admonition">
-<p class="admonition-title">Additional Reads:</p>
+  <div class="section" id="missing-value">
+<h1>Missing Value<a class="headerlink" href="#missing-value" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://www.analyticsvidhya.com/blog/2016/01/guide-data-exploration/">📖Source</a></p>
+<p>Data can have missing values and it is very common. The reason of such missing data can be any of the following:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://storage.googleapis.com/nexttpu/index.html">TPU presentation from Google</a></p></li>
-<li><p><a class="reference external" href="https://cloud.google.com/tpu/docs/system-architecture">TPU architecture in details</a></p></li>
+<li><p><strong>Data Extraction:</strong> It is possible that there are problems with extraction process. In such cases, we should double-check for correct data with data guardians.</p></li>
+<li><p><strong>Data collection:</strong> These errors occur at time of data collection and are harder to correct. They can be categorized in four types:</p>
+<ul>
+<li><p><strong>Missing completely at random:</strong> This is a case when the probability of missing variable is same for all observations</p></li>
+<li><p><strong>Missing at random:</strong> This is a case when variable is missing at random and missing ratio varies for different values / level of other input variables. For example: We are collecting data for age and female has higher missing value compare to male.</p></li>
+<li><p><strong>Missing that depends on unobserved predictors:</strong> This is a case when the missing values are not random and are related to the unobserved input variable. For example: In a medical study, if a particular diagnostic causes discomfort, then there is higher chance of drop out from the study. This missing value is not at random unless we have included “discomfort” as an input variable for all patients.</p></li>
+<li><p><strong>Missing that depends on the missing value itself:</strong> This is a case when the probability of missing value is directly correlated with missing value itself. For example: People with higher or lower income are likely to provide non-response to their earning.</p></li>
 </ul>
-</div>
-<p>According to <a class="reference external" href="https://en.wikipedia.org/wiki/John_L._Hennessy">John Henssey</a>, father of modern computer, we are almost at an end of Moores’s law. End of exponential growth in CPU and he suggested domain specific software as the solution.</p>
-<div class="figure align-default" id="image1">
-<a class="reference internal image-reference" href="../../_images/image22.PNG"><img alt="../../_images/image22.PNG" src="../../_images/image22.PNG" style="height: 250px;" /></a>
-</div>
-<div class="section" id="how-does-a-cpu-work">
-<h2>How does a CPU work?<a class="headerlink" href="#how-does-a-cpu-work" title="Permalink to this headline">¶</a></h2>
-<p>The CPU is a general purpose processor based on the von Neumann architecture. The greatest benefit of CPU is its flexibility. With its Von Neumann architecture, you can load any kind of software for millions of different applications. You could use a CPU for word processing in a PC, controlling rocket engines, executing bank transactions, or classifying images with a neural network.</p>
-<p>But, because the CPU is so flexible, the hardware doesn’t always know what would be next calculation until it reads the next instruction from the software. A CPU has to store the calculation results on memory inside CPU (so called registers or L1 cache) for every single calculation. This memory access becomes the downside of CPU architecture called the von Neumann bottleneck. Even though the huge scale of neural network calculations means that these future steps are entirely predictable, each CPU’s Arithmetic Logic Units (ALU, the component that holds and controls multipliers and adders) executes them one by one, accessing the memory every time, limiting the total throughput and consuming significant energy.</p>
-<div class="figure align-default" id="image2">
-<a class="reference internal image-reference" href="../../_images/image14.PNG"><img alt="../../_images/image14.PNG" src="../../_images/image14.PNG" style="height: 250px;" /></a>
-<p class="caption"><span class="caption-text">von Neumann Architecture</span><a class="headerlink" href="#image2" title="Permalink to this image">¶</a></p>
-</div>
-<p>Since memory and the CPU are separated in this architecture, the performance of the system is often limited by the speed of accessing memory. Historically, the memory access speed is orders of magnitude slower than the actual processing speed, creating a bottleneck in the system performance.</p>
-<p>Furthermore, the physical movement of data consumes a significant amount of energy due to interconnect parasitics. In given situations, it has been observed that the physical movement of data from memory can consume up to 500 times more energy than the actual processing of that data. This trend is only expected to worsen as chips scale.</p>
-</div>
-<div class="section" id="how-does-a-gpu-work">
-<h2>How does a GPU work?<a class="headerlink" href="#how-does-a-gpu-work" title="Permalink to this headline">¶</a></h2>
-<p>To gain higher throughput than a CPU, a GPU uses a simple strategy: why not have thousands of ALUs in a processor? The modern GPU usually has 2,500–5,000 ALUs  in a single processor that means you could execute thousands of multiplications and additions simultaneously.</p>
-<p>This GPU architecture works well on applications with massive parallelism, such as matrix multiplication in a neural network. Actually, you would see order of magnitude higher throughput than CPU on typical training workload for deep learning. This is why the GPU is the most popular processor architecture used in deep learning at time of writing.</p>
-<p>But, the GPU is still a general purpose processor that has to support millions of different applications and software. This leads back to our fundamental problem, the von Neumann bottleneck. For every single calculation in the thousands of ALUs, GPU need to access registers or shared memory to read and store the intermediate calculation results. Because the GPU performs more parallel calculations on its thousands of ALUs, it also spends proportionally more energy accessing memory and also increases footprint of GPU for complex wiring.</p>
-</div>
-<div class="section" id="how-does-a-tpu-work">
-<h2>How does a TPU work?<a class="headerlink" href="#how-does-a-tpu-work" title="Permalink to this headline">¶</a></h2>
-<p>When Google designed the TPU, we built a domain-specific architecture. That means, instead of designing a general purpose processor, we designed it as a matrix processor specialized for neural network work loads. TPUs can’t run word processors, control rocket engines, or execute bank transactions, but they can handle the massive multiplications and additions for neural networks, at blazingly fast speeds while consuming much less power and inside a smaller physical footprint.</p>
-<p>The key enabler is a major reduction of the von Neumann bottleneck. Because the primary task for this processor is matrix processing, hardware designer of the TPU knew every calculation step to perform that operation. So they were able to place thousands of multipliers and adders and connect them to each other directly to form a large physical matrix of those operators. This is called systolic array architecture. In case of Cloud TPU v2, there are two systolic arrays of 128 x 128, aggregating 32,768 ALUs for 16 bit floating point values in a single processor.</p>
-<p>Let’s see how a systolic array executes the neural network calculations. At first, TPU loads the parameters from memory into the matrix of multipliers and adders.</p>
-<p>Then, the TPU loads data from memory. As each multiplication is executed, the result will be passed to next multipliers while taking summation at the same time. So the output will be the summation of all multiplication result between data and parameters. During the whole process of massive calculations and data passing, no memory access is required at all.</p>
-<p>This is why the TPU can achieve a high computational throughput on neural network calculations with much less power consumption and smaller footprint.</p>
-<div class="figure align-default" id="image3">
-<a class="reference internal image-reference" href="../../_images/image32.PNG"><img alt="../../_images/image32.PNG" src="../../_images/image32.PNG" style="height: 300px;" /></a>
-<p class="caption"><span class="caption-text">CPU vs GPU vs TPU</span><a class="headerlink" href="#image3" title="Permalink to this image">¶</a></p>
-</div>
-</div>
+</li>
+</ul>
+<p>There are many standard practices of dealing with missing data-</p>
+<ul class="simple">
+<li><p><strong>Deletion:</strong>  It is of two types: <em>List Wise Deletion</em> and <em>Pair Wise Deletion</em>.
+In list wise deletion, we delete observations where any of the variable is missing. Simplicity is one of the major advantage of this method, but this method reduces the power of model because it reduces the sample size.
+In pair wise deletion, we perform analysis with all cases in which the variables of interest are present. Advantage of this method is, it keeps as many cases available for analysis. One of the disadvantage of this method, it uses different sample size for different variables.</p></li>
+</ul>
+<p><strong>Deletion methods are used when the nature of missing data is “Missing completely at random” else non random missing values can bias the model output.</strong></p>
+<ul>
+<li><p><strong>Mean/ Mode/ Median Imputation:</strong> Imputation is a method to fill in the missing values with estimated ones. The objective is to employ known relationships that can be identified in the valid values of the data set to assist in estimating the missing values. Mean/Mode/Median imputation is one of the most frequently used methods. It consists of replacing the missing data for a given attribute by the mean or median (quantitative attribute) or mode (qualitative attribute) of all known values of that variable. It can be of two types:-</p>
+<ul class="simple">
+<li><p><strong>Generalized Imputation:</strong> In this case, we calculate the mean or median for all non missing values of that variable then replace missing value with mean or median.</p></li>
+<li><p><strong>Similar case Imputation:</strong> In this case, for example, we calculate average for gender “Male” (29.75) and “Female” (25) individually of non missing values then replace the missing value based on gender. For “Male“, we will replace missing values of manpower with 29.75 and for “Female” with 25.</p></li>
+</ul>
+</li>
+<li><p><strong>Prediction Model:</strong>  Prediction model is one of the sophisticated method for handling missing data. Here, we create a predictive model to estimate values that will substitute the missing data.  In this case, we divide our data set into two sets: One set with no missing values for the variable and another one with missing values. First data set become training data set of the model while second data set with missing values is test data set and variable with missing values is treated as target variable. Next, we create a model to predict target variable based on other attributes of the training data set and populate missing values of test data set.We can use regression, ANOVA, Logistic regression and various modeling technique to perform this. There are 2 drawbacks for this approach:</p>
+<ul class="simple">
+<li><p>The model estimated values are usually more well-behaved than the true values</p></li>
+<li><p>If there are no relationships with attributes in the data set and the attribute with missing values, then the model will not be precise for estimating missing values</p></li>
+</ul>
+</li>
+<li><p><strong>KNN Imputation:</strong> In this method of imputation, the missing values of an attribute are imputed using the given number of attributes that are most similar to the attribute whose values are missing. The similarity of two attributes is determined using a distance function.</p>
+<p><strong>Advantages:</strong></p>
+<ul class="simple">
+<li><p>k-nearest neighbour can predict both qualitative &amp; quantitative attributes</p></li>
+<li><p>Creation of predictive model for each attribute with missing data is not required</p></li>
+<li><p>Attributes with multiple missing values can be easily treated</p></li>
+<li><p>Correlation structure of the data is taken into consideration</p></li>
+</ul>
+<p><strong>Disadvantage:</strong></p>
+<ul class="simple">
+<li><p>KNN algorithm is very time-consuming in analyzing large database. It searches through all the dataset looking for the most similar instances.</p></li>
+<li><p>Choice of k-value is very critical. Higher value of k would include attributes which are significantly different from what we need whereas lower value of k implies missing out of significant attributes.</p></li>
+</ul>
+</li>
+</ul>
 </div>
 
     <script type="text/x-thebe-config">
@@ -470,7 +460,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./contents\ML Hardware"
+            path: "./contents\Data"
         },
         predefinedOutput: true
     }
@@ -486,6 +476,24 @@
 
 <div class='prev-next-bottom'>
     
+    <div id="prev">
+        <a class="left-prev" href="Scaling.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Scaling</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../Algorithms/Regression.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Regression</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
 
 </div>
         

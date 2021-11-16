@@ -10,7 +10,7 @@ html_meta:
 
 Probability theory is the mathematical framework that allows us to analyze chance events in a logically sound manner. The probability of an event is a number indicating how likely that event will occur.
 
-Note that when we say the probability of a head is $1/2$, we are not claiming that any sequence of coin tosses will consist of exactly $50$% heads. If we toss a fair coin ten times, it would not be surprising to observe $6$ heads and $4$ tails, or even $3$ heads and $7$ tails. But as we continue to toss the coin over and over again, we expect the long-run frequency of heads to get ever closer to $50$%. In general, it is important in statistics to understand the distinction between theoretical and empirical quantities. Here, the true (theoretical) probability of a head was $1/2$, but any realized (empirical) sequence of coin tosses may have more or less than exactly $50$% heads.
+Note that when we say the probability of a head is $1/2$, we are not claiming that any sequence of coin tosses will consist of exactly $50$% heads. If we toss a fair coin ten times, it would not be surprising to observe $6$ heads and $4$ tails, or even $3$ heads and $7$ tails. But as we continue to toss the coin over and over again, we expect the long-run frequency of heads to get ever closer to $50$%. **In general, it is important in statistics to understand the distinction between theoretical and empirical quantities. Here, the true (theoretical) probability of a head was $1/2$, but any realized (empirical) sequence of coin tosses may have more or less than exactly $50$% heads.**
 
 ### Common Terminologies
 
@@ -29,6 +29,7 @@ The square root of the variance is called the **standard deviation.**
 
 $Var(X) = \frac{(1−3.5)^2+(2−3.5)^2+(3−3.5)^2+(4−3.5)^2+(5−3.5)^2+(6−3.5)^2}{6} = \frac{17.5}{6}$
 
+---
 ### Set
 
 A set, broadly defined, is a collection of objects. In the context of probability theory, we use set notation to specify compound events. For example, we can represent the event "roll an even number" by the set {2, 4, 6}.
@@ -41,16 +42,16 @@ It can be surprisingly difficult to count the number of sequences or sets satisf
 - Permutation($AB \neq BA$ , order matters) = $nPr = \frac{n!}{(n-r)!}$
 - Combination($AB = BA$ , order does not matter) = $nCr = \frac{n!}{r!(n-r)!}$
 
-
-
-
-
 ### Joint & Conditional Probability
 
-- Joint Probability is the probability of 2 independent events occuring : $P(A \cap B) = P(A)*P(B)$
-- Conditional probability tells the probability of B given A has occured, it allow us to account for information we have about our system of interest: $P(B|A) = \frac{P(A \cap B)}{P(A)}$
+- Joint Probability is the probability of $2$ independent events occuring : $P(A \cap B) = P(A)*P(B)$
+- Conditional probability tells the probability of $B$ given $A$ has occured, it allow us to account for information we have about our system of interest: $P(B|A) = \frac{P(A \cap B)}{P(A)}$
 
-If both are same then A and B are independent events.
+**If both are same then A and B are independent events.**
+
+### Bayes' Theorem
+
+Bayes' theorem, named after 18th-century British mathematician Thomas Bayes, is a mathematical formula for determining conditional probability. Conditional probability is the likelihood of an outcome occurring, based on a previous outcome occurring.
 
 ```{figure} ../Statistics/images/image1.PNG
 ---
@@ -60,9 +61,13 @@ name: image1
 Baye's Theorem
 ```
 
+An easy way of remembering it is using the below example:
+
+What is the probability of a fruit being banana given that it is long, sweet and yellow?
+
 $P(Banana|Long,Sweet,Yellow) = \frac{P(Long|Banana)*P(Sweet|Banana)*P(Yellow|Banana)*P(Banana)}{P(Long)*P(Sweet)*P(Yellow)}$
 
-
+---
 ### Questions
 
 ```{admonition} Problem: [UBER] Dice in increasing order

@@ -148,6 +148,11 @@
    Scaling
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Data/Missing%20Value.html">
+   Missing Value
+  </a>
+ </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
@@ -463,24 +468,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Check TF version:  2.3.1
-Access a specific feature of the tensor, in this case shape of t1:  (3, 2)
-Size of t1:  tf.Tensor(6, shape=(), dtype=int32)
-Datatype of every element: &lt;dtype: &#39;float16&#39;&gt;
-Number of dimensions (rank): 2
-Shape of tensor: (3, 2)
-Elements along axis 0 of tensor: 3
-Elements along last axis of tensor: 2
-Total number of elements: 6
-Details of the tensor:  tf.Tensor(
-[[10.  7.]
- [ 3.  2.]
- [ 8.  9.]], shape=(3, 2), dtype=float16)
-Index tensors:  tf.Tensor([[10.  7.]], shape=(1, 2), dtype=float16)
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -551,9 +538,9 @@ Max Position:  tf.Tensor([0 2], shape=(2,), dtype=int64)
  [-1.8700892   2.7830641 ]
  [-0.645002    0.18022095]], shape=(3, 2), dtype=float32)
 Shuffling the elements of the tesnor:  tf.Tensor(
-[[ 0.495291   -0.648484  ]
- [-1.8700892   2.7830641 ]
- [-0.645002    0.18022095]], shape=(3, 2), dtype=float32)
+[[-0.645002    0.18022095]
+ [ 0.495291   -0.648484  ]
+ [-1.8700892   2.7830641 ]], shape=(3, 2), dtype=float32)
 </pre></div>
 </div>
 </div>

@@ -30,6 +30,8 @@
 :class: tip, dropdown
 
 **Month of November, 2021**
+- Missing values section added
+- Formatting changes in the Statistics section
 - Took some break, was obsessively working on this 😌
 - New section - Tree based approaches, Industry application added
 - Decided to make this page a little more interesting
