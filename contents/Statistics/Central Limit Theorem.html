@@ -151,6 +151,11 @@
    Scaling
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Data/Missing%20Value.html">
+   Missing Value
+  </a>
+ </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
@@ -409,22 +414,22 @@
 <h1>Central Limit Theorem<a class="headerlink" href="#central-limit-theorem" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="sampling-distribution">
 <h2>Sampling distribution<a class="headerlink" href="#sampling-distribution" title="Permalink to this headline">¶</a></h2>
-<p>Let’s start with an example, suppose from the SAT MATH SCORES</p>
+<p>Let’s start with an example, suppose from the SAT math scores</p>
 <ul class="simple">
-<li><p>You take a sample of 10 random students from a population of 100. You might get a mean of 502 for that sample.</p></li>
-<li><p>Then, you do it again with a new sample of 10 students. You might get a mean of 480 this time.</p></li>
-<li><p>Then, you do it again. And again. And again…… and get the following means for each of those three new samples of 10 people: 550, 517, 472</p></li>
+<li><p>You take a sample of <span class="math notranslate nohighlight">\(10\)</span> random students from a population of <span class="math notranslate nohighlight">\(100\)</span>. You might get a mean of <span class="math notranslate nohighlight">\(502\)</span> for that sample.</p></li>
+<li><p>Then, you do it again with a new sample of <span class="math notranslate nohighlight">\(10\)</span> students. You might get a mean of <span class="math notranslate nohighlight">\(480\)</span> this time.</p></li>
+<li><p>Then, you do it again. And again. And again…… and get the following means for each of those three new samples of <span class="math notranslate nohighlight">\(10\)</span> people: <span class="math notranslate nohighlight">\(550\)</span>, <span class="math notranslate nohighlight">\(517\)</span>, <span class="math notranslate nohighlight">\(472\)</span></p></li>
 </ul>
 <div class="figure align-default" id="image8">
 <a class="reference internal image-reference" href="../../_images/image81.PNG"><img alt="../../_images/image81.PNG" src="../../_images/image81.PNG" style="width: 608.0px; height: 464.8px;" /></a>
 </div>
-<p>The sampling distribution, which is basically the distribution of sample means of a population, has some interesting properties which are collectively called the <strong>central limit theorem</strong>, which states that no matter how the original population is distributed, the sampling distribution will follow these three properties –</p>
+<p>The sampling distribution, which is basically the distribution of sample means of a population, has some interesting properties which are collectively called the <strong>central limit theorem</strong>, <em>which states that no matter how the original population is distributed, the sampling distribution will follow these three properties</em> –</p>
 <ul class="simple">
-<li><p>Sampling Distribution’s Mean <span class="math notranslate nohighlight">\((\mu \bar{x}) =\)</span> Population Mean <span class="math notranslate nohighlight">\((\mu)\)</span></p></li>
+<li><p>Sampling Distribution’s Mean <span class="math notranslate nohighlight">\((\mu_{\bar{x}}) =\)</span> Population Mean <span class="math notranslate nohighlight">\((\mu)\)</span></p></li>
 <li><p>Sampling Distribution’s Standard Deviation (Standard Error) <span class="math notranslate nohighlight">\(= \sigma\sqrt{n}\)</span>, where <span class="math notranslate nohighlight">\(\sigma\)</span> is the population’s standard deviation and <span class="math notranslate nohighlight">\(n\)</span> is the sample size</p></li>
 <li><p>For <span class="math notranslate nohighlight">\(n &gt; 30\)</span>, the sampling distribution becomes a normal distribution. Strongly skewed distributions can require larger sample sizes.</p></li>
 </ul>
-<p>Let’s take a uniform distribution, in the image below <span class="math notranslate nohighlight">\(500,000\)</span> times for each sample size <span class="math notranslate nohighlight">\((5, 20, 40)\)</span> have been drawn and their mean plotted.
+<p>To prove the thrid point let’s take a uniform distribution, in the image below <span class="math notranslate nohighlight">\(500,000\)</span> times for each sample size <span class="math notranslate nohighlight">\((5, 20, 40)\)</span> have been drawn and their mean plotted.
 We’d expect the average to be <span class="math notranslate nohighlight">\((1 + 2 + 3 + 4 + 5 + 6 / 6 = 3.5)\)</span>. The sampling distributions of the means center on this value. Just as the central limit theorem predicts, as we increase the sample size, the sampling distributions more closely approximate a normal distribution and have a tighter spread of values.</p>
 <div class="figure align-default" id="image9">
 <a class="reference internal image-reference" href="../../_images/image91.PNG"><img alt="../../_images/image91.PNG" src="../../_images/image91.PNG" style="width: 373.8px; height: 228.0px;" /></a>

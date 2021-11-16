@@ -144,6 +144,11 @@
    Scaling
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Data/Missing%20Value.html">
+   Missing Value
+  </a>
+ </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
@@ -426,7 +431,7 @@
 <p>The CPU is a general purpose processor based on the von Neumann architecture. The greatest benefit of CPU is its flexibility. With its Von Neumann architecture, you can load any kind of software for millions of different applications. You could use a CPU for word processing in a PC, controlling rocket engines, executing bank transactions, or classifying images with a neural network.</p>
 <p>But, because the CPU is so flexible, the hardware doesn’t always know what would be next calculation until it reads the next instruction from the software. A CPU has to store the calculation results on memory inside CPU (so called registers or L1 cache) for every single calculation. This memory access becomes the downside of CPU architecture called the von Neumann bottleneck. Even though the huge scale of neural network calculations means that these future steps are entirely predictable, each CPU’s Arithmetic Logic Units (ALU, the component that holds and controls multipliers and adders) executes them one by one, accessing the memory every time, limiting the total throughput and consuming significant energy.</p>
 <div class="figure align-default" id="image2">
-<a class="reference internal image-reference" href="../../_images/image12.PNG"><img alt="../../_images/image12.PNG" src="../../_images/image12.PNG" style="height: 250px;" /></a>
+<a class="reference internal image-reference" href="../../_images/image14.PNG"><img alt="../../_images/image14.PNG" src="../../_images/image14.PNG" style="height: 250px;" /></a>
 <p class="caption"><span class="caption-text">von Neumann Architecture</span><a class="headerlink" href="#image2" title="Permalink to this image">¶</a></p>
 </div>
 <p>Since memory and the CPU are separated in this architecture, the performance of the system is often limited by the speed of accessing memory. Historically, the memory access speed is orders of magnitude slower than the actual processing speed, creating a bottleneck in the system performance.</p>

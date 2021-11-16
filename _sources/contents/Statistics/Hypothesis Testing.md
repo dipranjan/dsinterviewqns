@@ -12,9 +12,9 @@ html_meta:
 Sometimes, you may require a very large amount of data for your analysis which may need too much time and resources to acquire. In such situations, you are forced to work with a smaller sample of the data, instead of having the entire data to work with.
 
 Situations like these arise all the time at big companies like Amazon. For example, say the Amazon QC department wants to know what proportion of the products in its warehouses are defective. Instead of going through all of its products (which would be a lot!), the Amazon QC team can just check a small sample of 1,000 products and then find, for this sample, the defect rate (i.e. the proportion of defective products). Then, based on this sample's defect rate, the team can "infer" what the defect rate is for all the products in the warehouses.
-This process of “inferring” insights from sample data is called “Inferential Statistics”.
+**This process of “inferring” insights from sample data is called “Inferential Statistics”.**
 
-
+---
 ### Hypothesis Testing
 
 
@@ -56,7 +56,7 @@ The former report is adequate, the latter gives a more detailed explanation of t
 
 #### Example
 
-A manufacturer claims that the average life of its products is $36$ months. An auditor selects a sample of $49$ unitsof the product and calculates the average life to be $34.5$ months. The population standard deviation is $4$ months. Test the manufacturer's claim at $3\%$ significance level.
+A manufacturer claims that the average life of its products is $36$ months. An auditor selects a sample of $49$ units of the product and calculates the average life to be $34.5$ months. The population standard deviation is $4$ months. Test the manufacturer's claim at $3\%$ significance level.
 
 So as per the above problem:
 
@@ -109,6 +109,7 @@ scale: 60%
 Types of Errors in Hypothesis testing [(📖Source)](https://www.sixsigmadaily.com/type-i-and-type-ii-errors-in-hypothesis-testing/)
 ```
 
+---
 ### Questions
 
 ```{admonition} Problem: Limitations of p-value

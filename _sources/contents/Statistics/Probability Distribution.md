@@ -10,14 +10,12 @@ html_meta:
 
 ### Random Variable
 
-Random Variable maps the outcome of sample space into real numbers.
+**Random Variable maps the outcome of sample space into real numbers.**
 
 Example: How many heads when we toss 3 coins?
 
-$X$ could be $0, 1, 2$ or $3$ randomly.
-And they might each have a different probability.
+$X$ could be $0, 1, 2$ or $3$ randomly, and they might each have a different probability. **$X$ = "The number of Heads" is the Random Variable.**
 
-$X$ = "The number of Heads" is the Random Variable.
 In this case, there could be 0 Heads (if all the coins land Tails up), 1 Head, 2 Heads or 3 Heads.
 So the Sample Space = ${0, 1, 2, 3}$
 But this time the outcomes are NOT all equally likely. 
@@ -39,14 +37,14 @@ name: image2
 Probability Distribution vs Frequency Distribution
 ```
 
-**Frequency distribution** comes from actually doing the experiment $n$ number of times as $n --> \infty$ the shape comes closer and closer to the Probability distribution
+**Frequency distribution** comes from actually doing the experiment $n$ number of times as $n->\infty$ the shape comes closer and closer to the Probability distribution
 
-Now the probability distribution can be of 2 types, discrete and continous. An example of Discrete is shown above. When we use a probability function to describe a discrete probability distribution we call it a **probability mass function (pmf)**. The probability mass function, $f$, just returns the probability of the outcome. Therefore the probability of rolling a $3$ is $f(3) = 1/6$.
+Now the probability distribution can be of $2$ types, **discrete and continous**. An example of Discrete is shown above. 
 
-When we use a probability function to describe a continuous probability distribution we call it a **probability density function (pdf)**.
+- When we use a probability function to describe a discrete probability distribution we call it a **probability mass function (pmf)**. The probability mass function, $f$, just returns the probability of the outcome. Therefore the probability of rolling a $3$ is $f(3) = 1/6$.
+- When we use a probability function to describe a continuous probability distribution we call it a **probability density function (pdf)**.
 
 Now depending on the problem type one can choose the corresponding distribution and find the probability for some value of the random variable.
-
 
 ### Types of Distribution
 Some common types of probability distribution are as follows:
@@ -58,6 +56,23 @@ name: image3
 Types of Probability Distribution
 ```
 
+### Normal(Gaussian) Distribution
+
+The normal distribution is the most important probability distribution in statistics because it fits many natural phenomena. For example, heights, blood pressure, measurement error, and IQ scores follow the normal distribution.
+
+Despite the different shapes, all forms of the normal distribution have the following characteristic properties.
+- They’re all symmetric. The normal distribution cannot model skewed distributions.
+- The mean, median, and mode are all equal.
+- Half of the population is less than the mean and half is greater than the mean.
+- The Empirical Rule, which describes the percentage of the data that fall within specific numbers of standard deviations from the mean for bell-shaped curves.
+
+|     Mean +/- standard deviations    |     Percentage of data contained    |
+|-------------------------------------|-------------------------------------|
+|     1                               |     68%                             |
+|     2                               |     95%                             |
+|     3                               |     99.7%                           |
+
+---
 ### Measures to understand a distribution:
 
 There are 3 variety of measures, required to understand a distribution:
@@ -69,9 +84,9 @@ There are 3 variety of measures, required to understand a distribution:
 
 Measures of central tendencies are measures, which help you describe a population, through a single metric. For example, if you were to compare Saving habits of people across various nations, you will compare average Savings rate in each of these nations.
 Following are the measures of central tendency:
-- Mean: or the average
-- Median: the value, which divides the population in two half
-- Mode: the most frequent value in a population
+- **Mean:** or the average
+- **Median:** the value, which divides the population in two half
+- **Mode:** the most frequent value in a population
 
 ```{figure} ../Statistics/images/image4.PNG
 ---
@@ -83,11 +98,11 @@ Measure of Central Tendency. Mean is typically affected the most by Outliers, fo
 #### Measure of Dispersion
 
 Measures of dispersion reveal how is the population distributed around the measures of central tendency.
-- Range: Difference in the maximum and minimum value in the population
-- Quartiles: Values, which divide the population in 4 equal subsets (typically referred to as first quartile, second quartile and third quartile)
-- Inter-quartile range: The difference in third quartile (Q3) and first quartile (Q1). By definition of quartiles, 50% of the population lies in the inter-quartile range.
-- Variance: The average of the squared differences from the Mean.
-- Standard Deviation: is square root of Variance
+- **Range:** Difference in the maximum and minimum value in the population
+- **Quartiles:** Values, which divide the population in 4 equal subsets (typically referred to as first quartile, second quartile and third quartile)
+- **Inter-quartile range:** The difference in third quartile (Q3) and first quartile (Q1). By definition of quartiles, 50% of the population lies in the inter-quartile range.
+- **Variance:** The average of the squared differences from the Mean.
+- **Standard Deviation:** is square root of Variance
 
 ```{figure} ../Statistics/images/image5.PNG
 ---
@@ -118,24 +133,7 @@ scale: 60%
 ---
 ```
 
-### Normal(Gaussian) Distribution
-
-The normal distribution is the most important probability distribution in statistics because it fits many natural phenomena. For example, heights, blood pressure, measurement error, and IQ scores follow the normal distribution.
-
-Despite the different shapes, all forms of the normal distribution have the following characteristic properties.
-- They’re all symmetric. The normal distribution cannot model skewed distributions.
-- The mean, median, and mode are all equal.
-- Half of the population is less than the mean and half is greater than the mean.
-- The Empirical Rule, which describes the percentage of the data that fall within specific numbers of standard deviations from the mean for bell-shaped curves.
-
-|     Mean +/- standard deviations    |     Percentage of data contained    |
-|-------------------------------------|-------------------------------------|
-|     1                               |     68%                             |
-|     2                               |     95%                             |
-|     3                               |     99.7%                           |
-
-
-
+---
 ### Unbiased Estimator
 
 An unbiased estimator is an accurate statistic that’s used to approximate a population parameter. “Accurate” in this sense means that it’s neither an overestimate nor an underestimate. If an overestimate or underestimate does happen, the mean of the difference is called a “bias.” That’s just saying if the estimator (i.e. the sample mean) equals the parameter (i.e. the population mean), then it’s an unbiased estimator.
@@ -154,6 +152,7 @@ So, say you've got a data set of $y={−1,3,7}$. The most consistent Gaussian fr
 
 Maximum Likelihood Estimation can be applied to both regression and classification problems.
 
+---
 ### Questions
 
 ```{admonition} Problem: [LIME] Example of unbiased estimator

@@ -151,6 +151,11 @@
    Scaling
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Data/Missing%20Value.html">
+   Missing Value
+  </a>
+ </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
@@ -410,6 +415,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bayes-theorem">
+   Bayes’ Theorem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#questions">
    Questions
   </a>
@@ -428,7 +438,7 @@
   <div class="section" id="probability-basics">
 <h1>Probability Basics<a class="headerlink" href="#probability-basics" title="Permalink to this headline">¶</a></h1>
 <p>Probability theory is the mathematical framework that allows us to analyze chance events in a logically sound manner. The probability of an event is a number indicating how likely that event will occur.</p>
-<p>Note that when we say the probability of a head is <span class="math notranslate nohighlight">\(1/2\)</span>, we are not claiming that any sequence of coin tosses will consist of exactly <span class="math notranslate nohighlight">\(50\)</span>% heads. If we toss a fair coin ten times, it would not be surprising to observe <span class="math notranslate nohighlight">\(6\)</span> heads and <span class="math notranslate nohighlight">\(4\)</span> tails, or even <span class="math notranslate nohighlight">\(3\)</span> heads and <span class="math notranslate nohighlight">\(7\)</span> tails. But as we continue to toss the coin over and over again, we expect the long-run frequency of heads to get ever closer to <span class="math notranslate nohighlight">\(50\)</span>%. In general, it is important in statistics to understand the distinction between theoretical and empirical quantities. Here, the true (theoretical) probability of a head was <span class="math notranslate nohighlight">\(1/2\)</span>, but any realized (empirical) sequence of coin tosses may have more or less than exactly <span class="math notranslate nohighlight">\(50\)</span>% heads.</p>
+<p>Note that when we say the probability of a head is <span class="math notranslate nohighlight">\(1/2\)</span>, we are not claiming that any sequence of coin tosses will consist of exactly <span class="math notranslate nohighlight">\(50\)</span>% heads. If we toss a fair coin ten times, it would not be surprising to observe <span class="math notranslate nohighlight">\(6\)</span> heads and <span class="math notranslate nohighlight">\(4\)</span> tails, or even <span class="math notranslate nohighlight">\(3\)</span> heads and <span class="math notranslate nohighlight">\(7\)</span> tails. But as we continue to toss the coin over and over again, we expect the long-run frequency of heads to get ever closer to <span class="math notranslate nohighlight">\(50\)</span>%. <strong>In general, it is important in statistics to understand the distinction between theoretical and empirical quantities. Here, the true (theoretical) probability of a head was <span class="math notranslate nohighlight">\(1/2\)</span>, but any realized (empirical) sequence of coin tosses may have more or less than exactly <span class="math notranslate nohighlight">\(50\)</span>% heads.</strong></p>
 <div class="section" id="common-terminologies">
 <h2>Common Terminologies<a class="headerlink" href="#common-terminologies" title="Permalink to this headline">¶</a></h2>
 <p>The <strong>sample space is the set of all possible outcomes in the experiment</strong> : for a dice <span class="math notranslate nohighlight">\(Ω = {1, 2, 3, 4, 5, 6}\)</span>.</p>
@@ -440,6 +450,7 @@
 The square root of the variance is called the <strong>standard deviation.</strong></p>
 <p><span class="math notranslate nohighlight">\(Var(X) = \frac{(1−3.5)^2+(2−3.5)^2+(3−3.5)^2+(4−3.5)^2+(5−3.5)^2+(6−3.5)^2}{6} = \frac{17.5}{6}\)</span></p>
 </div>
+<hr class="docutils" />
 <div class="section" id="set">
 <h2>Set<a class="headerlink" href="#set" title="Permalink to this headline">¶</a></h2>
 <p>A set, broadly defined, is a collection of objects. In the context of probability theory, we use set notation to specify compound events. For example, we can represent the event “roll an even number” by the set {2, 4, 6}.</p>
@@ -455,16 +466,23 @@ The square root of the variance is called the <strong>standard deviation.</stron
 <div class="section" id="joint-conditional-probability">
 <h2>Joint &amp; Conditional Probability<a class="headerlink" href="#joint-conditional-probability" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Joint Probability is the probability of 2 independent events occuring : <span class="math notranslate nohighlight">\(P(A \cap B) = P(A)*P(B)\)</span></p></li>
-<li><p>Conditional probability tells the probability of B given A has occured, it allow us to account for information we have about our system of interest: <span class="math notranslate nohighlight">\(P(B|A) = \frac{P(A \cap B)}{P(A)}\)</span></p></li>
+<li><p>Joint Probability is the probability of <span class="math notranslate nohighlight">\(2\)</span> independent events occuring : <span class="math notranslate nohighlight">\(P(A \cap B) = P(A)*P(B)\)</span></p></li>
+<li><p>Conditional probability tells the probability of <span class="math notranslate nohighlight">\(B\)</span> given <span class="math notranslate nohighlight">\(A\)</span> has occured, it allow us to account for information we have about our system of interest: <span class="math notranslate nohighlight">\(P(B|A) = \frac{P(A \cap B)}{P(A)}\)</span></p></li>
 </ul>
-<p>If both are same then A and B are independent events.</p>
+<p><strong>If both are same then A and B are independent events.</strong></p>
+</div>
+<div class="section" id="bayes-theorem">
+<h2>Bayes’ Theorem<a class="headerlink" href="#bayes-theorem" title="Permalink to this headline">¶</a></h2>
+<p>Bayes’ theorem, named after 18th-century British mathematician Thomas Bayes, is a mathematical formula for determining conditional probability. Conditional probability is the likelihood of an outcome occurring, based on a previous outcome occurring.</p>
 <div class="figure align-default" id="image1">
-<a class="reference internal image-reference" href="../../_images/image16.PNG"><img alt="../../_images/image16.PNG" src="../../_images/image16.PNG" style="height: 150px;" /></a>
+<a class="reference internal image-reference" href="../../_images/image18.PNG"><img alt="../../_images/image18.PNG" src="../../_images/image18.PNG" style="height: 150px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Baye’s Theorem</span><a class="headerlink" href="#image1" title="Permalink to this image">¶</a></p>
 </div>
+<p>An easy way of remembering it is using the below example:</p>
+<p>What is the probability of a fruit being banana given that it is long, sweet and yellow?</p>
 <p><span class="math notranslate nohighlight">\(P(Banana|Long,Sweet,Yellow) = \frac{P(Long|Banana)*P(Sweet|Banana)*P(Yellow|Banana)*P(Banana)}{P(Long)*P(Sweet)*P(Yellow)}\)</span></p>
 </div>
+<hr class="docutils" />
 <div class="section" id="questions">
 <h2>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h2>
 <div class="tip dropdown admonition">

@@ -327,6 +327,15 @@ Hence, the train space complexity would be: $O(nodes)$
 
 Test time complexity would be $O(depth)$ since we have to move from root to a leaf node of the decision tree.
 Test space complexity would be $O(nodes)$
+
+For Random forest the same would be:
+
+Training Time Complexity = $O(n*log(n)*d*k)$, $k$=number of Decision Trees
+Notes: When we have a large number of data with reasonable features. Then we can use multi-core to parallelize our model to train different Decision Trees.
+Run-time Complexity= $O(depth of tree* k)$
+Space Complexity= $O(depth of tree *k)$
+
+Note: Random Forest is comparatively faster than other algorithms.
 ```
 
 ```{admonition} Problem: Training time
