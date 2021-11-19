@@ -26,6 +26,7 @@ parts:
   - caption: NLP
     chapters:
     - file: contents/NLP/Lexical Processing
+    - file: contents/NLP/Syntactic Processing
   - caption: Python
     chapters:
     - file: contents/Python/Basics

@@ -3,10 +3,10 @@
 ```{admonition} What's Happening
 :class: tip, dropdown
 
-- 🔥 Tensorflow
+- 🔥 NLP
+- ⌛ Tensorflow
 - ⌛ Excel [new section]
 - ⌛ Anamoly Detection
-- ⌛ NLP
 - ⌛ Regularization
 - ⌛ Confidence Intervals
 - ⌛ Missing Value Treatment
@@ -30,6 +30,7 @@
 :class: tip, dropdown
 
 **Month of November, 2021**
+- NLP section updated
 - Missing values section added
 - Formatting changes in the Statistics section
 - Took some break, was obsessively working on this 😌
