@@ -157,3 +157,63 @@ scale: 80%
 Apart from dependencies defined in the form of subject-verb-object, there's a non-exhaustive list of dependency relationships, which are called **universal dependencies**.
 
 Dependencies are represented as labelled arcs of the form $h → d(l)$ where '$h$' is called the “head” of the dependency, '$d$' is the “dependent” and $l$ is the “label” assigned to the arc. In a dependency parse, we start from the root of the sentence, which is often a verb. And then start to establish dependencies between root and other words.
+
+---
+### Information Extraction
+
+Information Extraction (IE) system can extract entities relevant for booking flights (such as source and destination cities, time, date, budget constraints etc.) in a structured format from unstructured user-generated input. IE is used in many applications such as chatbots, extracting information from websites, etc.
+
+A generic pipeline for Information Extraction is as follows:
+- Preprocessing:
+	- Sentence Tokenization: sequence segmentation of text
+	- Word Tokenization: breaks down sentences into tokens
+	- POS tagging: assigning Parts of Speech tags to the tokens. The POS tags can be helpful in defining what words could form an entity
+- Entity Recognition:
+	- Rule-based models
+	- Probabilistic models
+
+Most IE pipelines start with the usual text preprocessing steps - sentence segmentation, word tokenisation and POS tagging. After preprocessing, the common tasks are **Named Entity Recognition (NER)**, and optionally relation recognition and record linkage. NER is arguably the most important and non-trivial task in the pipeline.
+There are various techniques and models for building Named Entity Recognition (NER) system, which is a key component in information extraction systems:
+- Rule-based techniques
+	- Regular expression based techniques
+	- Chunking
+- Probabilistic models
+	- Unigram & Bigram models
+	- Naive Bayes Classifier
+	- Decision trees
+	- Conditional Random Fields (CRFs)
+
+IOB (or BIO) method tags each token in the sentence with one of the three labels: **I - inside (the entity), O- outside (the entity) and B - beginning (of entity).** You saw that IOB labeling is especially helpful if the entities contain multiple words. For example: words like ‘Delta Airlines’, ‘New York, etc, are single entities.
+
+#### Rule-based method for NER
+
+Chunking is a common shallow parsing technique used to chunk words that constitute some meaningful phrase in the sentence. A noun phrase chunk (NP chunk) is commonly used in NER tasks to identify groups of words that correspond to some 'entity'.
+
+**Sentence:** She bought *a new car* from *the BMW showroom*.
+
+**Noun phrase chunks:** *a new car*, *the BMW showroom*
+
+The idea of chunking in the context of entity recognition is simple - most entities are nouns and noun phrases, so rules can be written to extract these noun phrases and hopefully extract a large number of named entities. Example of chunking done using regular expressions:
+
+**Sentence:** John booked the hotel.
+
+**Noun phrase chunks:** 'John', 'the hotel'
+
+**Grammar:** $\text{NP_chunk: {<DT>?<NN>}}$
+
+#### Probabilistic method for NER
+
+The following two probabilistic models to get the most probable IOB tags for word:
+- **Unigram chunker** computes the unigram probabilities P(IOB label | pos) for each word and assigns the label that is most likely for the POS tag.
+- **Bigram chunker** works similar to a unigram chunker, the only difference being that now the probability of a POS tag having an IOB label is computed using the current and the previous POS tags, i.e. P(label | pos, prev_pos).
+
+**Gazetteer Lookup**, another way to identify named entities (like cities and states) is to look up a dictionary or a gazetteer. A gazetteer is a geographical directory which stores data regarding the names of geographical entities (cities, states, countries) and some other features related to the geographies.
+
+**Naive Bayes and Decision Tree classifier can also be used in NER.**
+
+#### Conditional Random Fields
+
+HMMs can be used for any sequence classification task, such as NER. However, many NER tasks and datasets are far more complex than tasks such as POS tagging, and therefore, more sophisticated sequence models have been developed and widely accepted in the NLP community. One of these models is Conditional Random Fields (CRFs).
+
+CRFs are used in a wide variety of sequence labelling tasks across various domains - POS tagging, speech recognition, NER, and even in computational biology for modelling genetic patterns etc.
+
