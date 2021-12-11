@@ -480,7 +480,7 @@
 <h1>Syntactic Processing<a class="headerlink" href="#syntactic-processing" title="Permalink to this headline">¶</a></h1>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This page is a work in progress</p>
+<p>Questions section is a work in progress</p>
 </div>
 <p>Syntactic processing is widely used in applications such as question answering systems, information extraction, sentiment analysis, grammar checking etc. There are 3 broad levels of syntactic processing:</p>
 <ul class="simple">
@@ -662,7 +662,40 @@ There are various techniques and models for building Named Entity Recognition (N
 <div class="section" id="conditional-random-fields">
 <h3>Conditional Random Fields<a class="headerlink" href="#conditional-random-fields" title="Permalink to this headline">¶</a></h3>
 <p>HMMs can be used for any sequence classification task, such as NER. However, many NER tasks and datasets are far more complex than tasks such as POS tagging, and therefore, more sophisticated sequence models have been developed and widely accepted in the NLP community. One of these models is Conditional Random Fields (CRFs).</p>
-<p>CRFs are used in a wide variety of sequence labelling tasks across various domains - POS tagging, speech recognition, NER, and even in computational biology for modelling genetic patterns etc.</p>
+<p>CRFs are used in a wide variety of sequence labelling tasks across various domains - POS tagging, speech recognition, NER, and even in computational biology for modelling genetic patterns etc. CRFs model the <strong>conditional probability</strong> <span class="math notranslate nohighlight">\(P(Y|X)\)</span>, where <span class="math notranslate nohighlight">\(Y\)</span> is the vector of output sequence (IOB labels here) and <span class="math notranslate nohighlight">\(X\)</span> is the input sequence (words to be tagged), which are similar to Logistic Regression classifier. Broadly, there are two types of classifiers in ML:</p>
+<ul class="simple">
+<li><p><strong>Discriminative classifiers</strong> learn the boundary between classes by modelling the conditional probability distribution <span class="math notranslate nohighlight">\(P(Y|X)\)</span>, where <span class="math notranslate nohighlight">\(Y\)</span> is the vector of class labels and <span class="math notranslate nohighlight">\(X\)</span> represents the input features. Examples are Logistic Regression, SVMs etc.</p></li>
+<li><p><strong>Generative classifiers</strong> model the joint probability distribution <span class="math notranslate nohighlight">\(P(Y|X)\)</span>. Examples of generative classifiers are Naive Bayes, HMMs etc.</p></li>
+</ul>
+<p>CRFs use ‘feature functions’ rather than the input word sequence <span class="math notranslate nohighlight">\(x\)</span> itself. The idea is similar to how features are extracted for building the naive Bayes and decision tree classifiers in a previous section. Some example ‘word-features’ (each word has these features) are:</p>
+<ul class="simple">
+<li><p>Word and POS tag based features: word_is_city, word_is_digit, pos, previous_pos, etc.</p></li>
+<li><p>Label-based features: previous_label</p></li>
+</ul>
+<p>A feature function takes the following four inputs:</p>
+<ul class="simple">
+<li><p>The input sequence of words: <span class="math notranslate nohighlight">\(x\)</span></p></li>
+<li><p>The position of a word in the sentence (whose features are to be extracted)</p></li>
+<li><p>The label <span class="math notranslate nohighlight">\(y_i\)</span> of the current word (the target label)</p></li>
+<li><p>The label <span class="math notranslate nohighlight">\(y_{i-1}\)</span> of the previous word</p></li>
+</ul>
+<p>Let’s see an example of a feature function:</p>
+<p>A feature function <span class="math notranslate nohighlight">\(f_1\)</span> which returns <span class="math notranslate nohighlight">\(1\)</span> if the word <span class="math notranslate nohighlight">\(x_i\)</span> is a city and the corresponding label <span class="math notranslate nohighlight">\(y_i\)</span> is ‘I-location’, else <span class="math notranslate nohighlight">\(0\)</span>. This can be represented as:</p>
+<p><span class="math notranslate nohighlight">\(f_{1}(x,i,y_i,y_{i-1})= [[x_i \text{ is in city last name}] \text{ and } [y_i \text{ is I-location}]]\)</span></p>
+<p>The feature function returns <span class="math notranslate nohighlight">\(1\)</span> only if both the conditions are satisfied, i.e. when the word is a city name and is tagged as ‘I-location’ (e.g. Tokyo/I-location).</p>
+<p>Every feature function <span class="math notranslate nohighlight">\(f_i\)</span> has a weight <span class="math notranslate nohighlight">\(w_i\)</span> associated with it, which represents the ‘importance’ of that feature function. This is almost exactly the same as logistic regression where coefficients of features represent their importance. Training a CRF means to compute the optimal weight vector <span class="math notranslate nohighlight">\(w\)</span> which best represents the observed sequences <span class="math notranslate nohighlight">\(y\)</span> for the given word sequences <span class="math notranslate nohighlight">\(x\)</span>. In other words, we want to find the set of weights <span class="math notranslate nohighlight">\(w\)</span> which maximises <span class="math notranslate nohighlight">\(P(y|x,w)\)</span>.</p>
+<p>In CRFs, the conditional probabilities <span class="math notranslate nohighlight">\(P(y|x,w)\)</span> are modeled using a scoring function. If there are <span class="math notranslate nohighlight">\(k\)</span> feature functions (and thus <span class="math notranslate nohighlight">\(k\)</span> weights), for each word <span class="math notranslate nohighlight">\(i\)</span> in the sequence <span class="math notranslate nohighlight">\(x\)</span>, a scoring function for a word is defined as follows:</p>
+<p><span class="math notranslate nohighlight">\(score_i = exp(w_1.f_1 + w_2.f_2 ... + w_k.f_k) = exp(w.f(y_i,x_i,y_{i-1},i))\)</span></p>
+<p>and the overall sequence score for the sentence can be defined as:</p>
+<p><span class="math notranslate nohighlight">\(\text{sequence-score}(y|x) = \prod_{i=1}^n (exp(w.f(y_i,x_i,y_{i-1},i))) = exp(\sum_1^n(w.f(y_i,x_i,y_{i-1},i)))\)</span></p>
+<p>The probability of observing the label sequence <span class="math notranslate nohighlight">\(y\)</span> given the input sequence <span class="math notranslate nohighlight">\(x\)</span> is given by:</p>
+<p><span class="math notranslate nohighlight">\(P(y|x,w) = exp(\sum_1^n(w.f(y_i,x_i,y_{i-1},i)))/Z(x) = exp(w.f(x,y))/Z(x)\)</span></p>
+<p>where <span class="math notranslate nohighlight">\(Z(x)\)</span> is sum of scores of all possible tag sequences <span class="math notranslate nohighlight">\(N\)</span> <span class="math notranslate nohighlight">\(= \sum_1^N(exp(w.f(x,y)))\)</span></p>
+<p>Training a CRF model means to compute the optimal set of weights <span class="math notranslate nohighlight">\(w\)</span> which best represents the observed sequences <span class="math notranslate nohighlight">\(y\)</span> for the given word sequences <span class="math notranslate nohighlight">\(x\)</span>. In other words, we want to find the set of weights <span class="math notranslate nohighlight">\(w\)</span> which maximises the conditional probability <span class="math notranslate nohighlight">\(P(y|x,w)\)</span> for all the observed sequences <span class="math notranslate nohighlight">\((x,y)\)</span>, by taking log and simplifying the equations and adding a regularization term to prevent overfitting, the final equation comes out as:</p>
+<p><span class="math notranslate nohighlight">\(L(w) = \sum_1^N[(w.f)-log(Z)] - \text{regularization term}\)</span></p>
+<p>The inference task to assign the label sequence <span class="math notranslate nohighlight">\(y^*\)</span> to <span class="math notranslate nohighlight">\(x\)</span> which maximises the score of the sequence, i.e.</p>
+<p><span class="math notranslate nohighlight">\(y^* = argmax(w.f(x,y))\)</span></p>
+<p>The naive way to get <span class="math notranslate nohighlight">\(y^*\)</span> is by calculating <span class="math notranslate nohighlight">\(w.f(x,y)\)</span> for every possible label sequence , and then choose the label sequence that has maximum <span class="math notranslate nohighlight">\((w.f(x,y))\)</span> value. However, there are an exponential number of possible labels (<span class="math notranslate nohighlight">\(t^n\)</span> for a tag set of size <span class="math notranslate nohighlight">\(t\)</span> and a sentence of length <span class="math notranslate nohighlight">\(n\)</span>), and this task is computationally heavy.</p>
 </div>
 </div>
 </div>

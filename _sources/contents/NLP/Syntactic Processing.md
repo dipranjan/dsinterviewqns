@@ -8,7 +8,7 @@ html_meta:
 ## Syntactic Processing
 
 ```{warning}
-This page is a work in progress
+Questions section is a work in progress
 ```
 
 Syntactic processing is widely used in applications such as question answering systems, information extraction, sentiment analysis, grammar checking etc. There are 3 broad levels of syntactic processing:
@@ -215,5 +215,51 @@ The following two probabilistic models to get the most probable IOB tags for wor
 
 HMMs can be used for any sequence classification task, such as NER. However, many NER tasks and datasets are far more complex than tasks such as POS tagging, and therefore, more sophisticated sequence models have been developed and widely accepted in the NLP community. One of these models is Conditional Random Fields (CRFs).
 
-CRFs are used in a wide variety of sequence labelling tasks across various domains - POS tagging, speech recognition, NER, and even in computational biology for modelling genetic patterns etc.
+CRFs are used in a wide variety of sequence labelling tasks across various domains - POS tagging, speech recognition, NER, and even in computational biology for modelling genetic patterns etc. CRFs model the **conditional probability** $P(Y|X)$, where $Y$ is the vector of output sequence (IOB labels here) and $X$ is the input sequence (words to be tagged), which are similar to Logistic Regression classifier. Broadly, there are two types of classifiers in ML:
+- **Discriminative classifiers** learn the boundary between classes by modelling the conditional probability distribution $P(Y|X)$, where $Y$ is the vector of class labels and $X$ represents the input features. Examples are Logistic Regression, SVMs etc.
+- **Generative classifiers** model the joint probability distribution $P(Y|X)$. Examples of generative classifiers are Naive Bayes, HMMs etc.
 
+CRFs use ‘feature functions’ rather than the input word sequence $x$ itself. The idea is similar to how features are extracted for building the naive Bayes and decision tree classifiers in a previous section. Some example ‘word-features’ (each word has these features) are:
+- Word and POS tag based features: word_is_city, word_is_digit, pos, previous_pos, etc.
+- Label-based features: previous_label
+
+A feature function takes the following four inputs:
+- The input sequence of words: $x$
+- The position of a word in the sentence (whose features are to be extracted)
+- The label $y_i$ of the current word (the target label)
+- The label $y_{i-1}$ of the previous word
+
+Let's see an example of a feature function:
+
+A feature function $f_1$ which returns $1$ if the word $x_i$ is a city and the corresponding label $y_i$ is ‘I-location’, else $0$. This can be represented as:
+
+$f_{1}(x,i,y_i,y_{i-1})= [[x_i \text{ is in city last name}] \text{ and } [y_i \text{ is I-location}]]$
+
+The feature function returns $1$ only if both the conditions are satisfied, i.e. when the word is a city name and is tagged as ‘I-location’ (e.g. Tokyo/I-location).
+
+Every feature function $f_i$ has a weight $w_i$ associated with it, which represents the ‘importance’ of that feature function. This is almost exactly the same as logistic regression where coefficients of features represent their importance. Training a CRF means to compute the optimal weight vector $w$ which best represents the observed sequences $y$ for the given word sequences $x$. In other words, we want to find the set of weights $w$ which maximises $P(y|x,w)$.
+
+In CRFs, the conditional probabilities $P(y|x,w)$ are modeled using a scoring function. If there are $k$ feature functions (and thus $k$ weights), for each word $i$ in the sequence $x$, a scoring function for a word is defined as follows:
+
+$score_i = exp(w_1.f_1 + w_2.f_2 ... + w_k.f_k) = exp(w.f(y_i,x_i,y_{i-1},i))$
+
+and the overall sequence score for the sentence can be defined as:
+
+$\text{sequence-score}(y|x) = \prod_{i=1}^n (exp(w.f(y_i,x_i,y_{i-1},i))) = exp(\sum_1^n(w.f(y_i,x_i,y_{i-1},i)))$
+
+The probability of observing the label sequence $y$ given the input sequence $x$ is given by:
+
+$P(y|x,w) = exp(\sum_1^n(w.f(y_i,x_i,y_{i-1},i)))/Z(x) = exp(w.f(x,y))/Z(x)$
+
+where $Z(x)$ is sum of scores of all possible tag sequences $N$ $= \sum_1^N(exp(w.f(x,y)))$
+
+Training a CRF model means to compute the optimal set of weights $w$ which best represents the observed sequences $y$ for the given word sequences $x$. In other words, we want to find the set of weights $w$ which maximises the conditional probability $P(y|x,w)$ for all the observed sequences $(x,y)$, by taking log and simplifying the equations and adding a regularization term to prevent overfitting, the final equation comes out as:
+
+$L(w) = \sum_1^N[(w.f)-log(Z)] - \text{regularization term}$
+
+The inference task to assign the label sequence $y^*$ to $x$ which maximises the score of the sequence, i.e.
+
+$y^* = argmax(w.f(x,y))$
+
+The naive way to get $y^*$ is by calculating $w.f(x,y)$ for every possible label sequence , and then choose the label sequence that has maximum $(w.f(x,y))$ value. However, there are an exponential number of possible labels ($t^n$ for a tag set of size $t$ and a sentence of length $n$), and this task is computationally heavy.
+ 

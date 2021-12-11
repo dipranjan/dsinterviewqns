@@ -6,7 +6,7 @@
 - 🔥 NLP
 - ⌛ Tensorflow
 - ⌛ Excel [new section]
-- ⌛ Anamoly Detection
+- ⌛ Anomaly Detection
 - ⌛ Regularization
 - ⌛ Confidence Intervals
 - ⌛ Missing Value Treatment
@@ -14,7 +14,7 @@
 - ⌛ Case Studies
 - ⌛ Hyper Parameter Tuning
 - ⌛ Deep Learning [new section]
-- ⌛ Collaboraitive Filtering
+- ⌛ Collaborative Filtering
 - ⌛ Survivor Analysis
 - ⌛ Association Rule Mining
 - ⌛ Market Basket Analysis
@@ -28,6 +28,10 @@
 
 ```{admonition} What Happened
 :class: tip, dropdown
+
+**Month of December, 2021**
+- NLP section updated
+- Got our first bug reported by a reader 😍
 
 **Month of November, 2021**
 - NLP section updated
