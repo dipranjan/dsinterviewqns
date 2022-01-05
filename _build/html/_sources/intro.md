@@ -21,7 +21,7 @@ This book **IS AND ALWAYS WILL** be **free** and **a work in progress**. The boo
 
 ---
 
-If this book has helped you in any way please feel free to contribute:
+If this book has helped you in any way show it some ❤:
 - The best way to do so is by adding more content to make this book more relevant, feel free to create a merge request or post in [forum](https://github.com/dipranjan/dsinterviewqns/discussions)
 - If you want to share your interview experience via ✉, please drop one to *thedatascienceinterviewbook@gmail.com*, it will just be used to improve and enhance the book not for any other purpose
-- It takes a lot of hard work to maintain this project, check below for options to support the project. You can either Buy me a Coffee ☕ or take a paid subscription to Medium using the referral link below
+- It takes a lot of hard work to maintain this project, check below for options to **support the project**. You can either Buy me a Coffee ☕ or take a paid subscription to Medium using the referral link below

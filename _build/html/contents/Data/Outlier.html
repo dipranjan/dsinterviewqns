@@ -4,11 +4,11 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Interview resource of Data Science focusing on Common Table Expression and Views." lang="en" name="description" xml:lang="en" />
-<meta content="interview, data science, machine learning, SQL, CTE, View, Common Table Expression" name="keywords" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Interview resource of Data Science Interview focusing on Probability." lang="en" name="description" xml:lang="en" />
+<meta content="interview, data science, machine learning, outlier" name="keywords" />
 <meta content="en_US" property="og:locale" />
 
-    <title>Temporary Datasets &#8212; The Data Science Interview Book</title>
+    <title>Outlier &#8212; The Data Science Interview Book</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -45,6 +45,8 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -52,12 +54,12 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/SQL/Temporary Datasets.html" />
+    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/Data/Outlier.html" />
     <link rel="shortcut icon" href="../../_static/logo.gif"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Windows Functions" href="Windows%20Functions.html" />
-    <link rel="prev" title="Joins" href="Joins.html" />
+    <link rel="next" title="Regression" href="../Algorithms/Regression.html" />
+    <link rel="prev" title="Missing Value" href="Missing%20Value.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -143,19 +145,19 @@
   Data
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../Data/Scaling.html">
+  <a class="reference internal" href="Scaling.html">
    Scaling
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Data/Missing%20Value.html">
+  <a class="reference internal" href="Missing%20Value.html">
    Missing Value
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Data/Outlier.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Outlier
   </a>
  </li>
@@ -241,39 +243,39 @@
   SQL
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="Select.html">
+  <a class="reference internal" href="../SQL/Select.html">
    SQL Basics
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Joins.html">
+  <a class="reference internal" href="../SQL/Joins.html">
    Joins
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../SQL/Temporary%20Datasets.html">
    Temporary Datasets
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Windows%20Functions.html">
+  <a class="reference internal" href="../SQL/Windows%20Functions.html">
    Windows Functions
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Time.html">
+  <a class="reference internal" href="../SQL/Time.html">
    Time
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Functions.html">
+  <a class="reference internal" href="../SQL/Functions.html">
    Functions
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Problems.html">
+  <a class="reference internal" href="../SQL/Problems.html">
    Problems
   </a>
  </li>
@@ -359,7 +361,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/contents/SQL/Temporary Datasets.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/contents/Data/Outlier.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -376,7 +378,7 @@
     <div class="dropdown-buttons sourcebuttons">
         
         <a class="issues-button"
-            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/SQL/Temporary Datasets.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/Data/Outlier.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -397,6 +399,24 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#detecting-outliers">
+   Detecting Outliers
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dealing-with-outliers">
+   Dealing with Outliers
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -405,23 +425,70 @@
         
               <div>
                 
-  <div class="section" id="temporary-datasets">
-<h1>Temporary Datasets<a class="headerlink" href="#temporary-datasets" title="Permalink to this headline">¶</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Since solving any reasonable SQL problem requires a combination of all the topics covered here, hence it becomes difficult to seggregate problems based on one topic alone. So for SQL we are creating a dedicated <strong>Problems</strong> section. Theoritical and Basic questions will still be under their dedicated sections.</p>
+  <div class="section" id="outlier">
+<h1>Outlier<a class="headerlink" href="#outlier" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-default" id="image1">
+<a class="reference internal image-reference" href="../../_images/image19.PNG"><img alt="../../_images/image19.PNG" src="../../_images/image19.PNG" style="width: 193.60000000000002px; height: 264.0px;" /></a>
 </div>
-<p><strong>Reference:</strong> <a class="reference external" href="https://www.red-gate.com/simple-talk/databases/sql-server/t-sql-programming-sql-server/sql-server-cte-basics/">📖Explanation</a></p>
-<p>Sometimes in order to ease things out you need to create a temporary version of the data for either viewing it or for running some further calculations to it. Now if it is just that you want to run the same query daily and get the results you might as well save it as a <code class="docutils literal notranslate"><span class="pre">VIEW</span></code> . <strong>You can consider view as a SQL statement saved with a name</strong>.</p>
-<p>While it is very important to know what a <code class="docutils literal notranslate"><span class="pre">VIEW</span></code> is, however in most cases the ask will be to solve some question which for which you need to create a temporary dataset and run queries on that. You can use Common Table Expression or CTE for that. It uses the <code class="docutils literal notranslate"><span class="pre">WITH</span></code> keyword.</p>
-<p>CTE can be of 2 types:</p>
+<p>Outliers are the extreme values that exhibit significant deviation from the other observations in our data set. By looking at the outlier, it initially seems that this data probably does not belong with the rest of the data set as they look different from the rest.</p>
+<p>An outlier may occur due to the variability in the data, or due to experimental error/human error. They may indicate an experimental error or heavy skewness in the data(heavy-tailed distribution).</p>
+<p>In the cases when you have a small sample size, outliers can significantly mess up all your results. For statistical analysis of data, outliers can impact the normality test results of our data, invalidate the basic assumptions like constant variances for regression testing etc.</p>
+<div class="figure align-default" id="image2">
+<a class="reference internal image-reference" href="../../_images/image26.PNG"><img alt="../../_images/image26.PNG" src="../../_images/image26.PNG" style="width: 375.20000000000005px; height: 177.60000000000002px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Outliers tend to affect mean more than mdeian or mode</span><a class="headerlink" href="#image2" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="detecting-outliers">
+<h2>Detecting Outliers<a class="headerlink" href="#detecting-outliers" title="Permalink to this headline">¶</a></h2>
+<p>When starting an outlier detection quest you need to answer 2 important questions about your dataset:</p>
 <ul class="simple">
-<li><p>A <strong>recursive CTE</strong> is one that references itself within that CTE. The recursive CTE is useful when working with hierarchical data because the CTE continues to execute until the query returns the entire hierarchy</p></li>
-<li><p>A <strong>non-recursive CTE</strong> is one that does not reference itself within the CTE. Nonrecursive CTEs tend to be simpler than recursive CTEs</p></li>
+<li><p><em>Which and how many features am I taking into account to detect outliers ? (univariate / multivariate)</em></p></li>
+<li><p><em>Can I assume a distribution(s) of values for my selected features? (parametric / non-parametric)</em></p></li>
+</ul>
+<p>Here are some of the techniques for detecting outliers:</p>
+<ul class="simple">
+<li><p><strong>IQR and Boxplots:</strong> Usually data points which lie 1.5 times of IQR above Q3 and below Q1 are considered outliers</p></li>
+</ul>
+<div class="figure align-default" id="image3">
+<a class="reference internal image-reference" href="../../_images/image36.PNG"><img alt="../../_images/image36.PNG" src="../../_images/image36.PNG" style="width: 384.8px; height: 192.0px;" /></a>
+</div>
+<ul class="simple">
+<li><p><strong>Z-Score or Extreme Value Analysis (parametric):</strong> The z-score or standard score of an observation is a metric that indicates how many standard deviations a data point is from the sample’s mean, assuming a gaussian distribution. This makes z-score a parametric method. Very frequently data points are not to described by a gaussian distribution, this problem can be solved by applying transformations to data ie: scaling it. It is a very effective method if you can describe the values in the feature space with a gaussian distribution. However, it is only convenient to use in a low dimensional feature space, in a small to medium sized dataset.</p></li>
 </ul>
 <div class="figure align-default" id="image4">
-<img alt="../../_images/image43.PNG" src="../../_images/image43.PNG" />
-<p class="caption"><span class="caption-number">Fig. 24 </span><span class="caption-text">The above image shows a case where we need to use CTE to answer a question</span><a class="headerlink" href="#image4" title="Permalink to this image">¶</a></p>
+<a class="reference internal image-reference" href="../../_images/image45.PNG"><img alt="../../_images/image45.PNG" src="../../_images/image45.PNG" style="width: 326.8px; height: 178.8px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">Any data point whose Z-score falls out of 3rd standard deviation is usually considered an outlier</span><a class="headerlink" href="#image4" title="Permalink to this image">¶</a></p>
+</div>
+<ul class="simple">
+<li><p><strong>Dbscan:</strong> Dbscan is a density based clustering algorithm, it is focused on finding neighbors by density (MinPts) on an ‘n-dimensional sphere’ with radius <span class="math notranslate nohighlight">\(\epsilon\)</span>. A cluster can be defined as the maximal set of ‘density connected points’ in the feature space.Dbscan then defines different classes of points:</p>
+<ul>
+<li><p><strong>Core point:</strong> A is a core point if its neighborhood (defined by <span class="math notranslate nohighlight">\(\epsilon\)</span>) contains at least the same number or more points than the parameter MinPts.</p></li>
+<li><p><strong>Border point:</strong> C is a border point that lies in a cluster and its neighborhood does not contain more points than MinPts, but it is still ‘density reachable’ by other points in the cluster.</p></li>
+<li><p><strong>Outlier:</strong> N is an outlier point that lies in no cluster and it is not ‘density reachable’ nor ‘density connected’ to any other point. Thus this point will have “his own cluster”.</p></li>
+</ul>
+</li>
+</ul>
+<p>It is an unsupervised model and needs to be re-calibrated each time a new batch of data is analyzed.</p>
+<div class="figure align-default" id="image5">
+<a class="reference internal image-reference" href="../../_images/image53.PNG"><img alt="../../_images/image53.PNG" src="../../_images/image53.PNG" style="width: 220.00000000000003px; height: 158.4px;" /></a>
+</div>
+<ul class="simple">
+<li><p><strong>Isolation Forests:</strong> Isolation forests are an effective method for detecting outliers or novelties in data. The basic principle is that outliers are few and far from the rest of the observations. To build a tree (training), the algorithm randomly picks a feature from the feature space and a random split value ranging between the maximums and minimums. This is made for all the observations in the training set. To build the forest a tree ensemble is made averaging all the trees in the forest.</p></li>
+</ul>
+<p>Then for prediction, it compares an observation against that splitting value in a “node”, that node will have two node children on which another random comparisons will be made. The number of “splittings” made by the algorithm for an instance is named: “path length”. As expected, outliers will have shorter path lengths than the rest of the observations.</p>
+<p>If not correctly optimized, training time can be very long and computationally expensive.</p>
+<div class="figure align-default" id="image6">
+<a class="reference internal image-reference" href="../../_images/image63.PNG"><img alt="../../_images/image63.PNG" src="../../_images/image63.PNG" style="width: 539.5500000000001px; height: 202.95000000000002px;" /></a>
+</div>
+</div>
+<div class="section" id="dealing-with-outliers">
+<h2>Dealing with Outliers<a class="headerlink" href="#dealing-with-outliers" title="Permalink to this headline">¶</a></h2>
+<p>Below are a few common practices to deal with Outliers:</p>
+<ul class="simple">
+<li><p>Drop the outlier records</p></li>
+<li><p>Cap your outliers data or even you can try binning them</p></li>
+<li><p>Assign a new value: If an outlier seems to be due to a mistake in the data, you try imputing a value. Common imputation methods include using the mean of a variable or utilizing a regression model to predict the missing value</p></li>
+<li><p>Try a transformation: A different approach to true outliers could be to try creating a transformation of the data rather than using the data itself. For example, try creating a percentile version of your original field and working with that new field instead.</p></li>
+</ul>
 </div>
 </div>
 
@@ -438,7 +505,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./contents\SQL"
+            path: "./contents\Data"
         },
         predefinedOutput: true
     }
@@ -455,19 +522,19 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="Joins.html" title="previous page">
+        <a class="left-prev" href="Missing%20Value.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Joins</p>
+                <p class="prevnext-title">Missing Value</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="Windows%20Functions.html" title="next page">
+        <a class="right-next" href="../Algorithms/Regression.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Windows Functions</p>
+                <p class="prevnext-title">Regression</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

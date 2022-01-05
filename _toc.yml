@@ -15,6 +15,7 @@ parts:
     chapters:
     - file: contents/Data/Scaling
     - file: contents/Data/Missing Value
+    - file: contents/Data/Outlier
   - caption: Algorithms
     chapters:
     - file: contents/Algorithms/Regression
