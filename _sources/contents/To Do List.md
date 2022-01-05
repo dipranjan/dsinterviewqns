@@ -29,6 +29,9 @@
 ```{admonition} What Happened
 :class: tip, dropdown
 
+**Month of January, 2022**
+- Added cartoons in a few sections
+
 **Month of December, 2021**
 - NLP section updated
 - Got our first bug reported by a reader 😍

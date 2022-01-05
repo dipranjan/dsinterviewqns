@@ -4,11 +4,11 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Interview resource of Data Science Interview focusing on Classification." lang="en" name="description" xml:lang="en" />
-<meta content="interview, data science, machine learning, Classification, Logistic Regression" name="keywords" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Interview resource of Data Science Interview focusing on Probability." lang="en" name="description" xml:lang="en" />
+<meta content="interview, data science, machine learning, outlier" name="keywords" />
 <meta content="en_US" property="og:locale" />
 
-    <title>Classification &#8212; The Data Science Interview Book</title>
+    <title>Outlier &#8212; The Data Science Interview Book</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -54,12 +54,12 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/Algorithms/Classification.html" />
+    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/Data/Outlier.html" />
     <link rel="shortcut icon" href="../../_static/logo.gif"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Tree based approaches" href="Tree%20based%20approaches.html" />
-    <link rel="prev" title="Generative vs Discriminative Models" href="Generative%20VS%20Discriminative%20Models.html" />
+    <link rel="next" title="Regression" href="../Algorithms/Regression.html" />
+    <link rel="prev" title="Missing Value" href="Missing%20Value.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -145,19 +145,19 @@
   Data
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../Data/Scaling.html">
+  <a class="reference internal" href="Scaling.html">
    Scaling
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Data/Missing%20Value.html">
+  <a class="reference internal" href="Missing%20Value.html">
    Missing Value
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Data/Outlier.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Outlier
   </a>
  </li>
@@ -167,34 +167,34 @@
   Algorithms
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="Regression.html">
+  <a class="reference internal" href="../Algorithms/Regression.html">
    Regression
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Generative%20VS%20Discriminative%20Models.html">
+  <a class="reference internal" href="../Algorithms/Generative%20VS%20Discriminative%20Models.html">
    Generative vs Discriminative Models
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Algorithms/Classification.html">
    Classification
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Tree%20based%20approaches.html">
+  <a class="reference internal" href="../Algorithms/Tree%20based%20approaches.html">
    Tree based approaches
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Time%20Series%20Analysis.html">
+  <a class="reference internal" href="../Algorithms/Time%20Series%20Analysis.html">
    Time Series Analysis
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Anomaly%20Detection.html">
+  <a class="reference internal" href="../Algorithms/Anomaly%20Detection.html">
    Anomaly Detection
   </a>
  </li>
@@ -361,7 +361,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/contents/Algorithms/Classification.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/contents/Data/Outlier.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -378,7 +378,7 @@
     <div class="dropdown-buttons sourcebuttons">
         
         <a class="issues-button"
-            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/Algorithms/Classification.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/Data/Outlier.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -405,25 +405,13 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#logistic-regression">
-   Logistic Regression
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cost-function">
-     Cost Function
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#metrics">
-   Metrics
+  <a class="reference internal nav-link" href="#detecting-outliers">
+   Detecting Outliers
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#questions">
-   Questions
+  <a class="reference internal nav-link" href="#dealing-with-outliers">
+   Dealing with Outliers
   </a>
  </li>
 </ul>
@@ -437,76 +425,70 @@
         
               <div>
                 
-  <div class="section" id="classification">
-<h1>Classification<a class="headerlink" href="#classification" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="logistic-regression">
-<h2>Logistic Regression<a class="headerlink" href="#logistic-regression" title="Permalink to this headline">¶</a></h2>
-<p>It is easy to say that the linear regression predicts a “value” of the targeted variable through a linear combination of the given features, while on the other hand, a Logistic regression predicts “probability value” through a linear combination of the given features plugged inside a logistic function.
-Linear regression is unbounded, and this brings logistic regression into picture. Their value strictly ranges from 0 to 1.</p>
-<div class="figure align-default" id="image3">
-<a class="reference internal image-reference" href="../../_images/image3.PNG"><img alt="../../_images/image3.PNG" src="../../_images/image3.PNG" style="width: 687.6px; height: 345.59999999999997px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">Logistic regression uses Sigmoid function to transform linear regression into the logit function. Logit is nothing but log of Odds. Then using log of Odds it calculate the required probability.(<a class="reference external" href="https://www.vebuso.com/2020/02/linear-to-logistic-regression-explained-step-by-step/">📖Source</a>)</span><a class="headerlink" href="#image3" title="Permalink to this image">¶</a></p>
+  <div class="section" id="outlier">
+<h1>Outlier<a class="headerlink" href="#outlier" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-default" id="image1">
+<a class="reference internal image-reference" href="../../_images/image19.PNG"><img alt="../../_images/image19.PNG" src="../../_images/image19.PNG" style="width: 193.60000000000002px; height: 264.0px;" /></a>
 </div>
-<div class="section" id="cost-function">
-<h3>Cost Function<a class="headerlink" href="#cost-function" title="Permalink to this headline">¶</a></h3>
-<p>One more thing to note here is that logistic regression uses maximum likelihood estimation (MLE) instead of least squares method of minimizing the error which is used in linear models. In Linear regression we minimized SSE. In Logistic Regression we maximize log likelihood instead. Linear regression uses mean squared error as its cost function. If this is used for logistic regression, then it will be a non-convex function of parameters (theta). Gradient descent will converge into global minimum only if the function is convex.</p>
-<div class="figure align-default" id="image4">
-<a class="reference internal image-reference" href="../../_images/image4.PNG"><img alt="../../_images/image4.PNG" src="../../_images/image4.PNG" style="width: 356.8px; height: 192.4px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">Cost function(<a class="reference external" href="https://pvgisours.tistory.com/59">📖Source</a>)</span><a class="headerlink" href="#image4" title="Permalink to this image">¶</a></p>
+<p>Outliers are the extreme values that exhibit significant deviation from the other observations in our data set. By looking at the outlier, it initially seems that this data probably does not belong with the rest of the data set as they look different from the rest.</p>
+<p>An outlier may occur due to the variability in the data, or due to experimental error/human error. They may indicate an experimental error or heavy skewness in the data(heavy-tailed distribution).</p>
+<p>In the cases when you have a small sample size, outliers can significantly mess up all your results. For statistical analysis of data, outliers can impact the normality test results of our data, invalidate the basic assumptions like constant variances for regression testing etc.</p>
+<div class="figure align-default" id="image2">
+<a class="reference internal image-reference" href="../../_images/image26.PNG"><img alt="../../_images/image26.PNG" src="../../_images/image26.PNG" style="width: 375.20000000000005px; height: 177.60000000000002px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Outliers tend to affect mean more than mdeian or mode</span><a class="headerlink" href="#image2" title="Permalink to this image">¶</a></p>
 </div>
-</div>
-</div>
-<div class="section" id="metrics">
-<h2>Metrics<a class="headerlink" href="#metrics" title="Permalink to this headline">¶</a></h2>
-<div class="figure align-default" id="image5">
-<a class="reference internal image-reference" href="../../_images/image5.PNG"><img alt="../../_images/image5.PNG" src="../../_images/image5.PNG" style="width: 601.6px; height: 344.8px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">Confusion Matrix and key Metrics</span><a class="headerlink" href="#image5" title="Permalink to this image">¶</a></p>
-</div>
-<div class="figure align-default" id="image6">
-<a class="reference internal image-reference" href="../../_images/image6.PNG"><img alt="../../_images/image6.PNG" src="../../_images/image6.PNG" style="width: 636.8000000000001px; height: 365.6px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">(a) ROC curve (b) Precision-Recall curve. Both are a helpful diagnostic tool for evaluating a single classifier but challenging for comparing classifiers. Like ROC AUC, we can calculate the area under the curve as a score and use that score to compare classifiers. The focus on the minority class makes the Precision-Recall AUC more useful for imbalanced classification problems. (<a class="reference external" href="https://machinelearningmastery.com/tour-of-evaluation-metrics-for-imbalanced-classification/">📖Source</a>)</span><a class="headerlink" href="#image6" title="Permalink to this image">¶</a></p>
-</div>
-</div>
-<div class="section" id="questions">
-<h2>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h2>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Problem: [ROBINHOOD] Interpret Coefficients</p>
-<p>How would you interpret coefficients of logistic regression for categorical and boolean variables?</p>
-</div>
-<div class="dropdown admonition">
-<p class="admonition-title">Solution:</p>
-<p><strong>Reference:</strong> <a class="reference external" href="https://www.displayr.com/how-to-interpret-logistic-regression-coefficients/">Explanation</a></p>
-<p>Let’s explain this using an example. The table below shows the main outputs from the logistic regression. It is very obvious which are the categorial variables out here:</p>
-<p><img alt="Estimate of Coefficients" src="../../_images/image1.PNG" /></p>
-<p>The first category (usually not shown) has a coefficient of <span class="math notranslate nohighlight">\(0\)</span>. So, if we can say, for example, that:</p>
+<div class="section" id="detecting-outliers">
+<h2>Detecting Outliers<a class="headerlink" href="#detecting-outliers" title="Permalink to this headline">¶</a></h2>
+<p>When starting an outlier detection quest you need to answer 2 important questions about your dataset:</p>
 <ul class="simple">
-<li><p>The effect of having a DSL service versus having no DSL service <span class="math notranslate nohighlight">\((0.92 - 0 = 0.92)\)</span> is a little more than twice as big in terms of leading to churn as is the effect of being a senior citizen <span class="math notranslate nohighlight">\((0.41)\)</span>.</p></li>
-<li><p>The effect of having a Fiber optic service is approximately twice as big as having a DSL service.</p></li>
-<li><p>If somebody has a One year contract and a DSL service, these two effects almost completely cancel each other out.</p></li>
+<li><p><em>Which and how many features am I taking into account to detect outliers ? (univariate / multivariate)</em></p></li>
+<li><p><em>Can I assume a distribution(s) of values for my selected features? (parametric / non-parametric)</em></p></li>
 </ul>
-<p>Consider the scenario of a senior citizen with a <span class="math notranslate nohighlight">\(2\)</span> month tenure, with no internet service, a one year contract and a monthly charge of $<span class="math notranslate nohighlight">\(100\)</span>. If we compute all the effects and add them up we have:</p>
-<p><span class="math notranslate nohighlight">\(0.41\)</span> (Senior Citizen = Yes) <span class="math notranslate nohighlight">\(- 0.06 (2*-0.03\)</span>; tenure) <span class="math notranslate nohighlight">\(+ 0\)</span> (no internet service) <span class="math notranslate nohighlight">\(- 0.88\)</span> (one year contract) <span class="math notranslate nohighlight">\(+ 0 (100*0\)</span>; monthly charge) <span class="math notranslate nohighlight">\(= -0.53\)</span>.</p>
-<p>We then need to add the (Intercept), also sometimes called the constant, which gives us <span class="math notranslate nohighlight">\(-0.53- 1.41 = -1.94\)</span>. To make the next bit a little more transparent, I am going to substitute <span class="math notranslate nohighlight">\(-1.94\)</span> with <span class="math notranslate nohighlight">\(x\)</span>. The logistic transformation is:</p>
-<p>Probability <span class="math notranslate nohighlight">\(= \frac{1} {1 + \exp^{-x}} = \frac{1}{1 + \exp^{1.94}} = 0.13 = 13\%\)</span>.</p>
-<p>Thus, the senior citizen with a <span class="math notranslate nohighlight">\(2\)</span> month tenure, no internet service, a one year contract, and a monthly charge of $<span class="math notranslate nohighlight">\(100\)</span>, is predicted as having a <span class="math notranslate nohighlight">\(13\%\)</span> chance of cancelling their subscription. By contrast if we redo this, just changing one thing, which is substituting the effect for no internet service <span class="math notranslate nohighlight">\((0)\)</span> with that for a fiber optic connection <span class="math notranslate nohighlight">\((1.86)\)</span>, we compute that they have a <span class="math notranslate nohighlight">\(48\%\)</span> chance of cancelling.</p>
+<p>Here are some of the techniques for detecting outliers:</p>
+<ul class="simple">
+<li><p><strong>IQR and Boxplots:</strong> Usually data points which lie 1.5 times of IQR above Q3 and below Q1 are considered outliers</p></li>
+</ul>
+<div class="figure align-default" id="image3">
+<a class="reference internal image-reference" href="../../_images/image36.PNG"><img alt="../../_images/image36.PNG" src="../../_images/image36.PNG" style="width: 384.8px; height: 192.0px;" /></a>
 </div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Problem: Multinomial Logistic Regression</p>
-<p>Can Logistic Regression be used for multi class classification?</p>
+<ul class="simple">
+<li><p><strong>Z-Score or Extreme Value Analysis (parametric):</strong> The z-score or standard score of an observation is a metric that indicates how many standard deviations a data point is from the sample’s mean, assuming a gaussian distribution. This makes z-score a parametric method. Very frequently data points are not to described by a gaussian distribution, this problem can be solved by applying transformations to data ie: scaling it. It is a very effective method if you can describe the values in the feature space with a gaussian distribution. However, it is only convenient to use in a low dimensional feature space, in a small to medium sized dataset.</p></li>
+</ul>
+<div class="figure align-default" id="image4">
+<a class="reference internal image-reference" href="../../_images/image45.PNG"><img alt="../../_images/image45.PNG" src="../../_images/image45.PNG" style="width: 326.8px; height: 178.8px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">Any data point whose Z-score falls out of 3rd standard deviation is usually considered an outlier</span><a class="headerlink" href="#image4" title="Permalink to this image">¶</a></p>
 </div>
-<div class="dropdown admonition">
-<p class="admonition-title">Solution:</p>
-<p>Logistic regression, by default, is limited to two-class classification problems. Some extensions like one-vs-rest can allow logistic regression to be used for multi-class classification problems, although they require that the classification problem first be transformed into multiple binary classification problems.</p>
-<p>Multinomial logistic regression algorithm is an extension to the logistic regression model that involves changing the loss function to cross-entropy loss and predict probability distribution to a multinomial probability distribution to natively support multi-class classification problems.</p>
+<ul class="simple">
+<li><p><strong>Dbscan:</strong> Dbscan is a density based clustering algorithm, it is focused on finding neighbors by density (MinPts) on an ‘n-dimensional sphere’ with radius <span class="math notranslate nohighlight">\(\epsilon\)</span>. A cluster can be defined as the maximal set of ‘density connected points’ in the feature space.Dbscan then defines different classes of points:</p>
+<ul>
+<li><p><strong>Core point:</strong> A is a core point if its neighborhood (defined by <span class="math notranslate nohighlight">\(\epsilon\)</span>) contains at least the same number or more points than the parameter MinPts.</p></li>
+<li><p><strong>Border point:</strong> C is a border point that lies in a cluster and its neighborhood does not contain more points than MinPts, but it is still ‘density reachable’ by other points in the cluster.</p></li>
+<li><p><strong>Outlier:</strong> N is an outlier point that lies in no cluster and it is not ‘density reachable’ nor ‘density connected’ to any other point. Thus this point will have “his own cluster”.</p></li>
+</ul>
+</li>
+</ul>
+<p>It is an unsupervised model and needs to be re-calibrated each time a new batch of data is analyzed.</p>
+<div class="figure align-default" id="image5">
+<a class="reference internal image-reference" href="../../_images/image53.PNG"><img alt="../../_images/image53.PNG" src="../../_images/image53.PNG" style="width: 220.00000000000003px; height: 158.4px;" /></a>
 </div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Problem: Choice of Cost Function</p>
-<p>In what situations would you recommend using one metric over the another for classification models?</p>
+<ul class="simple">
+<li><p><strong>Isolation Forests:</strong> Isolation forests are an effective method for detecting outliers or novelties in data. The basic principle is that outliers are few and far from the rest of the observations. To build a tree (training), the algorithm randomly picks a feature from the feature space and a random split value ranging between the maximums and minimums. This is made for all the observations in the training set. To build the forest a tree ensemble is made averaging all the trees in the forest.</p></li>
+</ul>
+<p>Then for prediction, it compares an observation against that splitting value in a “node”, that node will have two node children on which another random comparisons will be made. The number of “splittings” made by the algorithm for an instance is named: “path length”. As expected, outliers will have shorter path lengths than the rest of the observations.</p>
+<p>If not correctly optimized, training time can be very long and computationally expensive.</p>
+<div class="figure align-default" id="image6">
+<a class="reference internal image-reference" href="../../_images/image63.PNG"><img alt="../../_images/image63.PNG" src="../../_images/image63.PNG" style="width: 539.5500000000001px; height: 202.95000000000002px;" /></a>
 </div>
-<div class="dropdown admonition">
-<p class="admonition-title">Solution:</p>
-<p>It all depends on the use case. For example, a diagnostic lab will be concerned with incorrect positive diagnosis. Hence, they will aim for a high specificity value. On the other hand, for a model predicting loan default rate the goal is to identify even a small chance of default, hence we need the model to maximize sensitivity.</p>
 </div>
+<div class="section" id="dealing-with-outliers">
+<h2>Dealing with Outliers<a class="headerlink" href="#dealing-with-outliers" title="Permalink to this headline">¶</a></h2>
+<p>Below are a few common practices to deal with Outliers:</p>
+<ul class="simple">
+<li><p>Drop the outlier records</p></li>
+<li><p>Cap your outliers data or even you can try binning them</p></li>
+<li><p>Assign a new value: If an outlier seems to be due to a mistake in the data, you try imputing a value. Common imputation methods include using the mean of a variable or utilizing a regression model to predict the missing value</p></li>
+<li><p>Try a transformation: A different approach to true outliers could be to try creating a transformation of the data rather than using the data itself. For example, try creating a percentile version of your original field and working with that new field instead.</p></li>
+</ul>
 </div>
 </div>
 
@@ -523,7 +505,7 @@ Linear regression is unbounded, and this brings logistic regression into picture
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./contents\Algorithms"
+            path: "./contents\Data"
         },
         predefinedOutput: true
     }
@@ -540,19 +522,19 @@ Linear regression is unbounded, and this brings logistic regression into picture
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="Generative%20VS%20Discriminative%20Models.html" title="previous page">
+        <a class="left-prev" href="Missing%20Value.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Generative vs Discriminative Models</p>
+                <p class="prevnext-title">Missing Value</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="Tree%20based%20approaches.html" title="next page">
+        <a class="right-next" href="../Algorithms/Regression.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Tree based approaches</p>
+                <p class="prevnext-title">Regression</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

@@ -9,6 +9,13 @@ html_meta:
 
 **Reference:** [📖Explanation](https://nbviewer.jupyter.org/github/Yorko/mlcourse_open/blob/master/jupyter_english/topic09_time_series/topic9_part1_time_series_python.ipynb)
 
+```{figure} ../Algorithms/images/image14.PNG
+---
+name: image14
+scale: 70%
+---
+```
+
 A time series is simply a series of data points ordered in time. In a time series, time is often the independent variable and the goal is usually to make a forecast for the future.
 
 - **Moving Average:** Here the assumption is that future value of our variable depends on the average of its $k$ previous values. Moving average has another use case - smoothing the original time series to identify trends. The wider the window, the smoother the trend. In the case of very noisy data, which is often encountered in finance, this procedure can help detect common patterns. This can also be used to determine anamolies based on the confidence level.

@@ -113,8 +113,8 @@ name: image5
 
 #### Measure to describe shape of distribution
 
-- Skewness: Skewness is a measure of the asymmetry. Negatively skewed curve has a long left tail and vice versa.
-- Kurtosis: Kurtosis is a measure of the “peaked ness”. Distributions with higher peaks have positive kurtosis and vice-versa
+- **Skewness:** Skewness is a measure of the asymmetry. Negatively skewed curve has a long left tail and vice versa.
+- **Kurtosis:** Kurtosis is a measure of the “peaked ness”. Distributions with higher peaks have positive kurtosis and vice-versa
 
 ```{figure} ../Statistics/images/image6.PNG
 ---
