@@ -201,6 +201,18 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
+  Neural Network
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../NN/Neural%20Network.html">
+   Neural Network
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
   NLP
  </span>
 </p>
@@ -554,8 +566,8 @@ There are different solutions extending the linear regression model for capturin
 </div>
 <div class="section" id="regression-splines">
 <h3>Regression Splines<a class="headerlink" href="#regression-splines" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="https://www.analyticsvidhya.com/blog/2018/03/introduction-regression-splines-python-codes/">📖Explanation</a>
-In order to overcome the disadvantages of polynomial regression, we can use an improved regression technique which, instead of building one model for the entire dataset, divides the dataset into multiple bins and fits each bin with a separate model. Such a technique is known as Regression spline.</p>
+<p><a class="reference external" href="https://www.analyticsvidhya.com/blog/2018/03/introduction-regression-splines-python-codes/">📖Explanation</a></p>
+<p>In order to overcome the disadvantages of polynomial regression, we can use an improved regression technique which, instead of building one model for the entire dataset, divides the dataset into multiple bins and fits each bin with a separate model. Such a technique is known as Regression spline.</p>
 <p>In polynomial regression, we generated new features by using various polynomial functions on the existing features which imposed a global structure on the dataset. To overcome this, we can divide the distribution of the data into separate portions and fit linear or low degree polynomial functions on each of these portions. The points where the division occurs are called <strong>Knots</strong>. Functions which we can use for modelling each piece/bin are known as Piecewise functions. There are various piecewise functions that we can use to fit these individual bins.</p>
 </div>
 <div class="section" id="generalized-additive-models">
@@ -585,7 +597,7 @@ In order to overcome the disadvantages of polynomial regression, we can use an i
 </div>
 <div class="dropdown admonition">
 <p class="admonition-title">Solution:</p>
-<p>Linear Regression as per me can be used in Time Series but might not always give good results. 2 reasons which come up are:</p>
+<p>Linear Regression as per me can be used in Time Series but might not always give good results. Few reasons which come up are:</p>
 <ul class="simple">
 <li><p>Linear Regression is good for intrapolation but not for extrapolation so the results can vary wildly</p></li>
 <li><p>When Linear Regression is used but observations are correlated (as in time series data) you will have a biased estimate of the variance</p></li>

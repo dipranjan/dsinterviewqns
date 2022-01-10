@@ -9,8 +9,8 @@ html_meta:
 
 ### Logistic Regression
 
-It is easy to say that the linear regression predicts a “value” of the targeted variable through a linear combination of the given features, while on the other hand, a Logistic regression predicts “probability value” through a linear combination of the given features plugged inside a logistic function.
-Linear regression is unbounded, and this brings logistic regression into picture. Their value strictly ranges from 0 to 1.
+*It is easy to say that the linear regression predicts a “value” of the targeted variable through a linear combination of the given features, while on the other hand, a Logistic regression predicts “probability value” through a linear combination of the given features plugged inside a logistic function.
+Linear regression is unbounded, and this brings logistic regression into picture. Their value strictly ranges from 0 to 1.*
 
 ```{figure} ../Algorithms/images/image3.PNG
 ---

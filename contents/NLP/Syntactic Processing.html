@@ -201,6 +201,18 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
+  Neural Network
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../NN/Neural%20Network.html">
+   Neural Network
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
   NLP
  </span>
 </p>
@@ -509,7 +521,7 @@
 <p>Markov processes are commonly used to model sequential data, such as text and speech. The first-order Markov assumption states that the probability of an event (or state) depends only on the previous state. The Hidden Markov Model, an extension to the Markov process, is used to model phenomena where the states are hidden and they emit observations.
 The transition and the emission probabilities specify the probabilities of transition between states and emission of observations from states, respectively. In POS tagging, the states are the POS tags while the words are the observations. To summarise, a Hidden Markov Model is defined by the initial state, emission, and the transition probabilities.</p>
 <div class="figure align-default" id="image3">
-<a class="reference internal image-reference" href="../../_images/image33.PNG"><img alt="../../_images/image33.PNG" src="../../_images/image33.PNG" style="width: 592.9px; height: 267.4px;" /></a>
+<a class="reference internal image-reference" href="../../_images/image34.PNG"><img alt="../../_images/image34.PNG" src="../../_images/image34.PNG" style="width: 592.9px; height: 267.4px;" /></a>
 </div>
 <p>The POS tag <span class="math notranslate nohighlight">\(T_i\)</span> for given word <span class="math notranslate nohighlight">\(W_i\)</span> depends on two things: POS tag of the previous word and the word itself.</p>
 <p><span class="math notranslate nohighlight">\(P(T_i| W_i) = P(W_i|T_i) * P(T_i-1|T_i)\)</span></p>
@@ -562,15 +574,15 @@ The transition and the emission probabilities specify the probabilities of trans
 <p>Top-down parsers have a specific limitation- Left Recursion.</p>
 <p>Example of a left recursion: VP -&gt; VP NP. Whenever a top-down parser encounters such a rule, it runs into an infinite loop, thus no parse tree is obtained. Following is the illustration of top-down parse:</p>
 <div class="figure align-default" id="image4">
-<a class="reference internal image-reference" href="../../_images/image42.PNG"><img alt="../../_images/image42.PNG" src="../../_images/image42.PNG" style="width: 664.8000000000001px; height: 388.8px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 21 </span><span class="caption-text">Top-down parse</span><a class="headerlink" href="#image4" title="Permalink to this image">¶</a></p>
+<a class="reference internal image-reference" href="../../_images/image43.PNG"><img alt="../../_images/image43.PNG" src="../../_images/image43.PNG" style="width: 664.8000000000001px; height: 388.8px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 25 </span><span class="caption-text">Top-down parse</span><a class="headerlink" href="#image4" title="Permalink to this image">¶</a></p>
 </div>
 <ul class="simple">
 <li><p><strong>Bottom-up parsing:</strong> reduces each terminal word to a production rule, i.e. reduces the right-hand-side of the grammar to the left-hand-side. It continues the reduction process until the entire sentence has been reduced to the start symbol S. Shift-Reduce Parser algorithm, which parses the words of the sentence one-by-one either by shifting a word to the stack or reducing the stack by using the production rules. Below is an example of bottom-up parse tree.</p></li>
 </ul>
 <div class="figure align-default" id="image5">
-<a class="reference internal image-reference" href="../../_images/image51.PNG"><img alt="../../_images/image51.PNG" src="../../_images/image51.PNG" style="width: 701.6px; height: 357.6px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 22 </span><span class="caption-text">Bottom-up parse</span><a class="headerlink" href="#image5" title="Permalink to this image">¶</a></p>
+<a class="reference internal image-reference" href="../../_images/image52.PNG"><img alt="../../_images/image52.PNG" src="../../_images/image52.PNG" style="width: 701.6px; height: 357.6px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 26 </span><span class="caption-text">Bottom-up parse</span><a class="headerlink" href="#image5" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="probabilistic-cfg">
 <h3>Probabilistic CFG<a class="headerlink" href="#probabilistic-cfg" title="Permalink to this headline">¶</a></h3>
@@ -600,7 +612,7 @@ Overall probability for a parsed structure of the sentence is probabilities of a
 <p>Free word order languages such as Hindi, Bengali are difficult to parse using constituency parsing techniques. This is because, in such free-word-order languages, the order of words/constituents may change significantly while keeping the meaning exactly the same. It is thus difficult to fit the sentences into the finite set of production rules that CFGs offer.
 Dependencies in a sentence are defined using the elements Subject-Verb-Object (SVO). The following table shows SVO dependencies in three types of sentences - declarative, interrogative, and imperative</p>
 <div class="figure align-default" id="image6">
-<a class="reference internal image-reference" href="../../_images/image61.PNG"><img alt="../../_images/image61.PNG" src="../../_images/image61.PNG" style="width: 444.8px; height: 330.40000000000003px;" /></a>
+<a class="reference internal image-reference" href="../../_images/image62.PNG"><img alt="../../_images/image62.PNG" src="../../_images/image62.PNG" style="width: 444.8px; height: 330.40000000000003px;" /></a>
 </div>
 <p>Apart from dependencies defined in the form of subject-verb-object, there’s a non-exhaustive list of dependency relationships, which are called <strong>universal dependencies</strong>.</p>
 <p>Dependencies are represented as labelled arcs of the form <span class="math notranslate nohighlight">\(h → d(l)\)</span> where ‘<span class="math notranslate nohighlight">\(h\)</span>’ is called the “head” of the dependency, ‘<span class="math notranslate nohighlight">\(d\)</span>’ is the “dependent” and <span class="math notranslate nohighlight">\(l\)</span> is the “label” assigned to the arc. In a dependency parse, we start from the root of the sentence, which is often a verb. And then start to establish dependencies between root and other words.</p>

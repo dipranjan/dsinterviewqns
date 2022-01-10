@@ -3,6 +3,7 @@
 ```{admonition} What's Happening
 :class: tip, dropdown
 
+- 🔥 NN
 - 🔥 NLP
 - ⌛ Tensorflow
 - ⌛ Excel [new section]
@@ -30,7 +31,9 @@
 :class: tip, dropdown
 
 **Month of January, 2022**
+- Neural Network section added
 - Added cartoons in a few sections
+- Outlier section added
 
 **Month of December, 2021**
 - NLP section updated
