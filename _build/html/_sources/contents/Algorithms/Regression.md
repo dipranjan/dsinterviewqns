@@ -101,7 +101,9 @@ $Y = b_0 + b_1 * x_1 + b_2 * x_1^2 + b_n * x_1^n $ and so on...
 The degree of order which to use is a Hyperparameter, and we need to choose it wisely. But using a high degree of polynomial tries to overfit the data and for smaller values of degree, the model tries to underfit so we need to find the optimum value of a degree. **Polynomial Regression on datasets with high variability chances to result in over-fitting.**
 
 #### Regression Splines
+
 [📖Explanation](https://www.analyticsvidhya.com/blog/2018/03/introduction-regression-splines-python-codes/)
+
 In order to overcome the disadvantages of polynomial regression, we can use an improved regression technique which, instead of building one model for the entire dataset, divides the dataset into multiple bins and fits each bin with a separate model. Such a technique is known as Regression spline.
 
 In polynomial regression, we generated new features by using various polynomial functions on the existing features which imposed a global structure on the dataset. To overcome this, we can divide the distribution of the data into separate portions and fit linear or low degree polynomial functions on each of these portions. The points where the division occurs are called **Knots**. Functions which we can use for modelling each piece/bin are known as Piecewise functions. There are various piecewise functions that we can use to fit these individual bins.
@@ -143,7 +145,7 @@ Do you think Linear Regression should be used in Time series analysis?
 ```{admonition} Solution:
 :class: dropdown
 
-Linear Regression as per me can be used in Time Series but might not always give good results. 2 reasons which come up are:
+Linear Regression as per me can be used in Time Series but might not always give good results. Few reasons which come up are:
 
 - Linear Regression is good for intrapolation but not for extrapolation so the results can vary wildly
 - When Linear Regression is used but observations are correlated (as in time series data) you will have a biased estimate of the variance

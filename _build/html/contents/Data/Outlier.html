@@ -201,6 +201,18 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
+  Neural Network
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../NN/Neural%20Network.html">
+   Neural Network
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
   NLP
  </span>
 </p>
@@ -428,13 +440,13 @@
   <div class="section" id="outlier">
 <h1>Outlier<a class="headerlink" href="#outlier" title="Permalink to this headline">¶</a></h1>
 <div class="figure align-default" id="image1">
-<a class="reference internal image-reference" href="../../_images/image19.PNG"><img alt="../../_images/image19.PNG" src="../../_images/image19.PNG" style="width: 193.60000000000002px; height: 264.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/image15.PNG"><img alt="../../_images/image15.PNG" src="../../_images/image15.PNG" style="width: 193.60000000000002px; height: 264.0px;" /></a>
 </div>
 <p>Outliers are the extreme values that exhibit significant deviation from the other observations in our data set. By looking at the outlier, it initially seems that this data probably does not belong with the rest of the data set as they look different from the rest.</p>
 <p>An outlier may occur due to the variability in the data, or due to experimental error/human error. They may indicate an experimental error or heavy skewness in the data(heavy-tailed distribution).</p>
 <p>In the cases when you have a small sample size, outliers can significantly mess up all your results. For statistical analysis of data, outliers can impact the normality test results of our data, invalidate the basic assumptions like constant variances for regression testing etc.</p>
 <div class="figure align-default" id="image2">
-<a class="reference internal image-reference" href="../../_images/image26.PNG"><img alt="../../_images/image26.PNG" src="../../_images/image26.PNG" style="width: 375.20000000000005px; height: 177.60000000000002px;" /></a>
+<a class="reference internal image-reference" href="../../_images/image21.PNG"><img alt="../../_images/image21.PNG" src="../../_images/image21.PNG" style="width: 375.20000000000005px; height: 177.60000000000002px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Outliers tend to affect mean more than mdeian or mode</span><a class="headerlink" href="#image2" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="detecting-outliers">
@@ -449,13 +461,13 @@
 <li><p><strong>IQR and Boxplots:</strong> Usually data points which lie 1.5 times of IQR above Q3 and below Q1 are considered outliers</p></li>
 </ul>
 <div class="figure align-default" id="image3">
-<a class="reference internal image-reference" href="../../_images/image36.PNG"><img alt="../../_images/image36.PNG" src="../../_images/image36.PNG" style="width: 384.8px; height: 192.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/image31.PNG"><img alt="../../_images/image31.PNG" src="../../_images/image31.PNG" style="width: 384.8px; height: 192.0px;" /></a>
 </div>
 <ul class="simple">
 <li><p><strong>Z-Score or Extreme Value Analysis (parametric):</strong> The z-score or standard score of an observation is a metric that indicates how many standard deviations a data point is from the sample’s mean, assuming a gaussian distribution. This makes z-score a parametric method. Very frequently data points are not to described by a gaussian distribution, this problem can be solved by applying transformations to data ie: scaling it. It is a very effective method if you can describe the values in the feature space with a gaussian distribution. However, it is only convenient to use in a low dimensional feature space, in a small to medium sized dataset.</p></li>
 </ul>
 <div class="figure align-default" id="image4">
-<a class="reference internal image-reference" href="../../_images/image45.PNG"><img alt="../../_images/image45.PNG" src="../../_images/image45.PNG" style="width: 326.8px; height: 178.8px;" /></a>
+<a class="reference internal image-reference" href="../../_images/image41.PNG"><img alt="../../_images/image41.PNG" src="../../_images/image41.PNG" style="width: 326.8px; height: 178.8px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">Any data point whose Z-score falls out of 3rd standard deviation is usually considered an outlier</span><a class="headerlink" href="#image4" title="Permalink to this image">¶</a></p>
 </div>
 <ul class="simple">
@@ -469,7 +481,7 @@
 </ul>
 <p>It is an unsupervised model and needs to be re-calibrated each time a new batch of data is analyzed.</p>
 <div class="figure align-default" id="image5">
-<a class="reference internal image-reference" href="../../_images/image53.PNG"><img alt="../../_images/image53.PNG" src="../../_images/image53.PNG" style="width: 220.00000000000003px; height: 158.4px;" /></a>
+<a class="reference internal image-reference" href="../../_images/image51.PNG"><img alt="../../_images/image51.PNG" src="../../_images/image51.PNG" style="width: 220.00000000000003px; height: 158.4px;" /></a>
 </div>
 <ul class="simple">
 <li><p><strong>Isolation Forests:</strong> Isolation forests are an effective method for detecting outliers or novelties in data. The basic principle is that outliers are few and far from the rest of the observations. To build a tree (training), the algorithm randomly picks a feature from the feature space and a random split value ranging between the maximums and minimums. This is made for all the observations in the training set. To build the forest a tree ensemble is made averaging all the trees in the forest.</p></li>
@@ -477,7 +489,7 @@
 <p>Then for prediction, it compares an observation against that splitting value in a “node”, that node will have two node children on which another random comparisons will be made. The number of “splittings” made by the algorithm for an instance is named: “path length”. As expected, outliers will have shorter path lengths than the rest of the observations.</p>
 <p>If not correctly optimized, training time can be very long and computationally expensive.</p>
 <div class="figure align-default" id="image6">
-<a class="reference internal image-reference" href="../../_images/image63.PNG"><img alt="../../_images/image63.PNG" src="../../_images/image63.PNG" style="width: 539.5500000000001px; height: 202.95000000000002px;" /></a>
+<a class="reference internal image-reference" href="../../_images/image61.PNG"><img alt="../../_images/image61.PNG" src="../../_images/image61.PNG" style="width: 539.5500000000001px; height: 202.95000000000002px;" /></a>
 </div>
 </div>
 <div class="section" id="dealing-with-outliers">

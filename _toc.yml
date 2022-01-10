@@ -24,6 +24,9 @@ parts:
     - file: contents/Algorithms/Tree based approaches
     - file: contents/Algorithms/Time Series Analysis
     - file: contents/Algorithms/Anomaly Detection
+  - caption: Neural Network
+    chapters:
+    - file: contents/NN/Neural Network
   - caption: NLP
     chapters:
     - file: contents/NLP/Lexical Processing
