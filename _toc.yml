@@ -27,6 +27,7 @@ parts:
   - caption: Neural Network
     chapters:
     - file: contents/NN/Neural Network
+    - file: contents/NN/Recurrent Neural Network
   - caption: NLP
     chapters:
     - file: contents/NLP/Lexical Processing

@@ -4,11 +4,11 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Interview resource of Data Science Interview focusing on Excel basics." lang="en" name="description" xml:lang="en" />
-<meta content="interview, data science, machine learning, Excel, practice questions" name="keywords" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Interview resource of Data Science Interview focusing on Regression." lang="en" name="description" xml:lang="en" />
+<meta content="interview, data science, machine learning, Recurrent Neural Network, RNN, LSTM, GRU" name="keywords" />
 <meta content="en_US" property="og:locale" />
 
-    <title>Excel Basics &#8212; The Data Science Interview Book</title>
+    <title>Recurrent Neural Network &#8212; The Data Science Interview Book</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -45,6 +45,8 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -52,12 +54,12 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/Excel/Excel Basics.html" />
+    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/NN/Recurrent Neural Network.html" />
     <link rel="shortcut icon" href="../../_static/logo.gif"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Basics" href="../Tensorflow/Basics.html" />
-    <link rel="prev" title="Problems" href="../SQL/Problems.html" />
+    <link rel="next" title="Lexical Processing" href="../NLP/Lexical%20Processing.html" />
+    <link rel="prev" title="Neural Network" href="Neural%20Network.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -202,14 +204,14 @@
   Neural Network
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../NN/Neural%20Network.html">
+  <a class="reference internal" href="Neural%20Network.html">
    Neural Network
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../NN/Recurrent%20Neural%20Network.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Recurrent Neural Network
   </a>
  </li>
@@ -300,9 +302,9 @@
   Excel
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Excel/Excel%20Basics.html">
    Excel Basics
   </a>
  </li>
@@ -376,7 +378,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/contents/Excel/Excel Basics.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/contents/NN/Recurrent Neural Network.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -393,7 +395,7 @@
     <div class="dropdown-buttons sourcebuttons">
         
         <a class="issues-button"
-            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/Excel/Excel Basics.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/NN/Recurrent Neural Network.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -420,8 +422,40 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#questions">
-   Questions
+  <a class="reference internal nav-link" href="#types-of-rnn">
+   Types of RNN
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#backpropagation-through-time-bptt">
+   Backpropagation Through Time (BPTT)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exploding-and-vanishing-gradient">
+   Exploding and Vanishing gradient:
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-to-understand">
+     How to understand
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-to-rectify">
+     How to rectify
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bidirectional-rnns">
+   Bidirectional RNNs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lstm">
+   LSTM
   </a>
  </li>
 </ul>
@@ -435,48 +469,88 @@
         
               <div>
                 
-  <div class="section" id="excel-basics">
-<h1>Excel Basics<a class="headerlink" href="#excel-basics" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="recurrent-neural-network">
+<h1>Recurrent Neural Network<a class="headerlink" href="#recurrent-neural-network" title="Permalink to this headline">¶</a></h1>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This page is a work in progress</p>
 </div>
-<div class="figure align-default" id="image1">
-<a class="reference internal image-reference" href="../../_images/image16.PNG"><img alt="../../_images/image16.PNG" src="../../_images/image16.PNG" style="width: 350.0px; height: 184.0px;" /></a>
+<p>Normal neural network is insufficient to train sequence data. Some examples of sequence data are:</p>
+<ul class="simple">
+<li><p>Time series</p></li>
+<li><p>Music</p></li>
+<li><p>Videos</p></li>
+<li><p>Text</p></li>
+</ul>
+<p>Sequential data contains multiple entities​ and the order in which these entities are present is important.</p>
+<div class="figure align-default" id="image2">
+<a class="reference internal image-reference" href="../../_images/image25.PNG"><img alt="../../_images/image25.PNG" src="../../_images/image25.PNG" style="width: 445.9px; height: 339.5px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 23 </span><span class="caption-text">In RNN each activation is dependent on two things: the activation in the previous layer <span class="math notranslate nohighlight">\(l-1\)</span> at the current timestep <span class="math notranslate nohighlight">\(t\)</span>, and the activation in the same layer <span class="math notranslate nohighlight">\(l\)</span> at the previous timestep <span class="math notranslate nohighlight">\(t-1\)</span></span><a class="headerlink" href="#image2" title="Permalink to this image">¶</a></p>
 </div>
-<hr class="docutils" />
-<div class="section" id="questions">
-<h2>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h2>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Problem: Find the Revenue</p>
-<p>From the source below can you find the Revenue the specified account?</p>
-<p><img alt="Table" src="../../_images/image22.PNG" /></p>
+<div class="section" id="types-of-rnn">
+<h2>Types of RNN<a class="headerlink" href="#types-of-rnn" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Many to One:</strong> This architecture involves a sequence as an input and a single entity as an output​. E.g: next word prediction</p></li>
+<li><p><strong>Many to Many:</strong> Model data which involves sequences in the input as well as the output​. Both the input and output sequences must have a one-to-one correspondence ​and therefore the input and output sequences are equal in length​. E.g: POS tagging of sentences</p></li>
+<li><p><strong>Encoder-decoder:</strong> Here the length of the input and the output sequence is not equal​. It is used in problems such as language translation and document summarization. Here the errors are backpropagated from the decoder to the encoder. The encoder and decoder have a different set of weights and they are different RNNs altogether. The loss is calculated at each timestep which can either be backpropagated at each timestep, or the cumulative loss (sum of all the losses from all the timesteps of a sequence) can be backpropagated after the entire sequence is ingested. Generally, the errors are backpropagated once an RNN ingests an entire batch</p></li>
+</ul>
+<div class="figure align-default" id="image3">
+<a class="reference internal image-reference" href="../../_images/image35.PNG"><img alt="../../_images/image35.PNG" src="../../_images/image35.PNG" style="width: 599.9px; height: 366.09999999999997px;" /></a>
 </div>
-<div class="dropdown admonition">
-<p class="admonition-title">Solution:</p>
-<p>This can be solved with a simple VLOOKUP, the formula to find the answer is given below:</p>
-<p><code class="docutils literal notranslate"><span class="pre">	=VLOOKUP(F3,B2:D12,3,FALSE)</span></code></p>
+<ul class="simple">
+<li><p><strong>One to Many:</strong> This type of architecture has a single entity as an input and a sequence as the output​. It is used for generation such as music generation, creating drawings, generating text, etc.</p></li>
+</ul>
 </div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Problem: Find the Customer Number</p>
-<p>From the source below can you find the Customer Number corresponding to the Account Name?</p>
-<p><img alt="Table" src="../../_images/image32.PNG" /></p>
+<div class="section" id="backpropagation-through-time-bptt">
+<h2>Backpropagation Through Time (BPTT)<a class="headerlink" href="#backpropagation-through-time-bptt" title="Permalink to this headline">¶</a></h2>
+<p>Any given term in an RNN depends not only on the current input but also on the input from previous timesteps​. The gradients not only flow back from the output layer to the input layer, but they also flow back in time from the last timestep to the first timestep. Hence the name backpropagation through time.</p>
 </div>
-<div class="dropdown admonition">
-<p class="admonition-title">Solution:</p>
-<p>VLOOKUP won’t work as Customer Num is to the LEFT of the Account Name. We need INDEX MATCH <a class="reference external" href="https://exceljet.net/index-and-match">📖Explanation</a></p>
-<p><code class="docutils literal notranslate"><span class="pre">	=INDEX(A2:D12,MATCH(F7,B2:B12),1)</span></code></p>
+<div class="section" id="exploding-and-vanishing-gradient">
+<h2>Exploding and Vanishing gradient:<a class="headerlink" href="#exploding-and-vanishing-gradient" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Vanishing:</strong> The vanishing gradient problem describes a situation encountered in the training of neural networks where the gradients used to update the weights shrink exponentially. As a consequence, the weights are not updated anymore, and learning stalls.</p></li>
+<li><p><strong>Exploding:</strong> The exploding gradient problem describes a situation in the training of neural networks where the gradients used to update the weights grow exponentially. This prevents the backpropagation algorithm from making reasonable updates to the weights, and learning becomes unstable.</p></li>
+</ul>
+<div class="section" id="how-to-understand">
+<h3>How to understand<a class="headerlink" href="#how-to-understand" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Vanishing:</strong></p>
+<ul>
+<li><p>The parameters of the higher layers change significantly whereas the parameters of lower layers would not change much (or not at all)</p></li>
+<li><p>The model weights may become 0 during training</p></li>
+<li><p>The model learns very slowly and perhaps the training stagnates at a very early stage just after a few iterations</p></li>
+</ul>
+</li>
+<li><p><strong>Exploding:</strong></p>
+<ul>
+<li><p>There is an exponential growth in the model parameters</p></li>
+<li><p>The model weights may become NaN during training</p></li>
+<li><p>The model experiences  avalanche learning</p></li>
+</ul>
+</li>
+</ul>
 </div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Problem: Total Revenue per Sales Rep</p>
-<p>From the source below can you find the total revenue per sales rep?</p>
-<p><img alt="Table" src="../../_images/image42.PNG" /></p>
+<div class="section" id="how-to-rectify">
+<h3>How to rectify<a class="headerlink" href="#how-to-rectify" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Use the ReLU Activation Function over the sigmoid activation function as it is prone to creating vanishing gradients, especially when several of them are chained together. This is due to the fact that the sigmoid function saturates towards 0 for large negative or towards 1 for large positive values.</p></li>
+<li><p>Another way to address vanishing and exploding gradients is through weight initialization techniques. In a neural network, we initialize the weights randomly. Certain techniques such as He initialization and Xavier initialization ensure that the weights are close to 1.</p></li>
+<li><p>Another simple option is gradient clipping. This way, you just define an interval within which you expected the gradients to fall. If the gradients exceed the permissible maximum, you automatically set them to the maximum upper bound of your interval. Similarly, if they fall below the permissible minimum, you automatically set them to the lower bound.</p></li>
+<li><p>To get rid of the vanishing gradients problem, the researchers came up with another type of cell that can be used inside an RNN layer, called the LSTM cell. We will take a look into that later.</p></li>
+</ul>
 </div>
-<div class="dropdown admonition">
-<p class="admonition-title">Solution:</p>
-<p>This can be solved with a simple SUMIF. For the first row the answer is given below. It will be similar for other rows.
-<code class="docutils literal notranslate"><span class="pre">	=SUMIF(C3:C12,&quot;=&quot;&amp;F11,D3:D12)</span></code></p>
 </div>
+<div class="section" id="bidirectional-rnns">
+<h2>Bidirectional RNNs<a class="headerlink" href="#bidirectional-rnns" title="Permalink to this headline">¶</a></h2>
+<p>There are two kinds of problems in sequences:</p>
+<ul class="simple">
+<li><p><strong>Offline sequences​:</strong> These allow for a lookahead in time. The entire sequence is present for your perusal. For example, a document present in your local drive where you have access to the entire document.</p></li>
+<li><p><strong>Online sequences​:</strong> These don’t allow for a lookahead. For example, a person is speaking and you need to transcribe the speech. In this case, you don’t know what is going to come next.</p></li>
+</ul>
+<p>You can make use of offline sequences by looking ahead. You can feed the offline sequences to an RNN in regular order as well as the reverse order to get better results in whatever task you’re doing. Such an RNN is called a bidirectional RNN​. In a bidirectional RNN, the input at each timestep is a concatenation of the entity present in regular order and the entity present in reverse order. For example, for a sentence of length <span class="math notranslate nohighlight">\(100\)</span>, the input at the first timestep will be a concatenation of the first word <span class="math notranslate nohighlight">\(x_1\)</span> and the last word <span class="math notranslate nohighlight">\(x_{100}\)</span>. A bidirectional RNN has <span class="math notranslate nohighlight">\(2\)</span>x number of parameters​ than a vanilla RNN.</p>
+</div>
+<div class="section" id="lstm">
+<h2>LSTM<a class="headerlink" href="#lstm" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -493,7 +567,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./contents\Excel"
+            path: "./contents\NN"
         },
         predefinedOutput: true
     }
@@ -510,19 +584,19 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="../SQL/Problems.html" title="previous page">
+        <a class="left-prev" href="Neural%20Network.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Problems</p>
+                <p class="prevnext-title">Neural Network</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="../Tensorflow/Basics.html" title="next page">
+        <a class="right-next" href="../NLP/Lexical%20Processing.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Basics</p>
+                <p class="prevnext-title">Lexical Processing</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
