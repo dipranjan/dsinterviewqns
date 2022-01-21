@@ -190,7 +190,99 @@ If each person is equally likely to get on any floor and they leave independentl
 
 The number of ways to assigning five floors to four different people is to get the total sample space. In this case it would be $5 * 5 * 5 * 5$.
 
-The number of ways to assign five floors to four people without repetition of floors is $5 * 4 * 3 * 2$ because for the first passenger you have five different options. The second person has four, and so on. Note that this number counts all possible orders betwen passengers as well.
+The number of ways to assign five floors to four people without repetition of floors is $5 * 4 * 3 * 2$ because for the first passenger you have five different options. The second person has four, and so on. Note that this number counts all possible orders between passengers as well.
 
 The result is then $\frac{5 * 4 * 3 * 2}{5 * 5 * 5 * 5} = 0.192$
 ```
+
+```{admonition} Problem: [AMAZON] Found Item
+:class: tip, dropdown
+
+Amazon has a warehouse system where items on the website are located at different distribution centers across a city. Let's say in one example city, the probability that a specific item X at location A is 0.6, and at location B the probability is 0.8.
+
+Given you're a customer in this example city and the items are only found on the website if they exist in the distribution centers, what is the probability that the item X would be found on Amazon's website?
+
+```
+
+```{admonition} Solution:
+:class: dropdown
+Probability of the item being present= $1-$ p(item NOT in A AND NOT in B) $= 1-(0.4*0.2)=0.92$
+```
+
+```{admonition} Problem: [SPOTIFY] Max Dice Roll
+:class: tip, dropdown
+
+A fair die is rolled $n$ times. What is the probability that the largest number rolled is $r$, for each $r$ in $1..6$?
+```
+
+```{admonition} Solution:
+:class: dropdown
+If $r(1≤r≤6)$ is the largest number you have allowed for your $n$ rolls, then you forbid any number larger than $r$. That is, you forbid $6−r$ values. The probability that your single roll does not show any of these $6−r$ values is $\frac{6−r}{6}$ and the probability that this happens each time during a series of $n$ rolls is the obviously $(\frac{6−r}{6})^n$
+```
+
+```{admonition} Problem: [FACEBOOK] Labeling Content
+:class: tip, dropdown
+
+Facebook has a content team that labels pieces of content on the platform as spam or not spam. $90%$ of them are diligent raters and will label $20%$ of the content as spam and $80%$ as non-spam. The remaining $10%$ are non-diligent raters and will label $0%$ of the content as spam and $100%$ as non-spam. Assume the pieces of content are labeled independently from one another, for every rater. Given that a rater has labeled $4$ pieces of content as good, what is the probability that they are a diligent rater?
+```
+
+```{admonition} Solution:
+:class: dropdown
+
+This can be solved using Baye's theorem:
+
+- Not Spam = $NS$
+- Spam = $S$
+- Diligent =$D$
+- NotDiligent =$ND$
+
+$P(D|NS, NS, NS, NS) = \frac{P(NS, NS, NS, NS|D)*P(D)}{P(NS, NS, NS, NS|D)*P(D)+P(NS, NS, NS, NS|ND)*P(ND)}$
+$P(D|NS, NS, NS, NS) = \frac{0.8^4*0.9}{0.8^4*0.9+1^4*0.1}$ = ~$0.787$
+```
+
+```{admonition} Problem: [FACEBOOK] Raining
+:class: tip, dropdown
+
+You are about to get on a plane to Seattle. You want to know if you should bring an umbrella. You call $3$ random friends of yours who live there and ask each independently if it's raining. Each of your friends has a $2/3$ chance of telling you the truth and a $1/3$ chance of messing with you by lying. All $3$ friends tell you that "Yes" it is raining.
+
+What is the probability that it's actually raining in Seattle?
+```
+
+```{admonition} Solution:
+:class: dropdown
+
+Even though the problem is straightforward one can interpret the problem in many ways. Taking a Bayesian approach is probably appropriate in a real world sense, but if you are told by the interviewer you have no ability to determine the priors, you can't use Bayesian. [Check this thread](https://math.stackexchange.com/questions/1335235/facebook-question-data-science) for a detailed discussion on this problem.
+
+For it to be not raining, all friends must be lying. Therefore, the solution must be the inverse of the probability that all three are "messing with you." 
+$(1/3)x(1/3)*(1/3)=1/27$ (3.7% chance they are all lying). 
+
+Since there is only a $3.7%$ chance all three friends are messing with you, there is a $96.3%$ chance it is raining.
+```
+
+```{admonition} Problem: [MICROSOFT] First to Six
+:class: tip, dropdown
+
+Amy and Brad take turns in rolling a fair six-sided die. Whoever rolls a $6$ first wins the game. Amy starts by rolling first.
+
+What's the probability that Amy wins?
+```
+
+```{admonition} Solution:
+:class: dropdown
+Amy can win on the first roll, third roll, fifth roll, and so on.
+
+Probability of Amy winning in the first roll = P(six rolled by her) = $1/6$
+
+Probability of Amy winning in the third roll = P(six NOT rolled by her in first try) * P(six NOT rolled by Brad in first try) * P(six rolled by her in 2nd try) = $(5/6) * (5/6) * (1/6) = 1/6 * (5/6)^2$
+
+Similarly, the probability of Amy winning in the fifth roll = $(1/6) * (5/6)^4$
+
+Similarly, the probability of Amy winning in the seventh roll = $(1/6) * (5/6)^6$
+
+Hence, total probability of Amy winning = Sum of all such events = $(1/6) + (1/6 * (5/6)^2) + (1/6 * (5/6)^4) + (1/6 * (5/6)^6) + ...$
+
+The sum of such an infinite Geometric Progression series is = $\frac{a}{1-r} = (1/6) / (1 - 25/36) = (1/6) / (11/36) = 6/11$
+
+Hence, probability of Amy winning in any of her turns = $6/11$
+```
+

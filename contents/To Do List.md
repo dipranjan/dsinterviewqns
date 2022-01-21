@@ -32,6 +32,7 @@
 
 **Month of January, 2022**
 - Neural Network section added
+- Added new problems in the Probability section
 - Added cartoons in a few sections
 - Outlier section added
 

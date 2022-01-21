@@ -202,7 +202,7 @@ Solution Pending
 
 ```
 
-```{admonition} Problem: [MCKINSEY] Flipping Coins
+```{admonition} Problem: [MCKINSEY]  Flipping 576 Times
 :class: tip, dropdown
 
 You flip a fair coin 576 times. Without using a calculator, calculate the probability of flipping at least 312 heads.
@@ -212,6 +212,11 @@ You flip a fair coin 576 times. Without using a calculator, calculate the probab
 ```{admonition} Solution:
 :class: dropdown
 
-This is an example of a Binomial Distribution.
-The number will be ${}^{576} \mathrm{ C }_{312} (\frac{1}{2})^{312} (\frac{1}{2})^{264}$
+Fair coin, $p(H)=0.5$ Since this experiment has only $2$ outcomes hence we can use a binomial distribution, 
+
+mean = $np$ = $576*0.5 = 288$, var= $np(1-p)= 576*0.5*0.5 = 144$, stddev = sqrt(var) = $12$.
+
+For normal distribution, *68% of the data falls within one standard deviation, 95% percent within two standard deviations, and 99.7% within three standard deviations from the mean.*
+
+$312= 288$(mean)$+2*12$(stddev), which means the probability of flipping at least $312$ heads or tails is $5%$. Since we are only looking at the probability of at least $321$ heads, it is the right tail area of the distribution, which is $5%/2= 2.5%$. So the probability of flipping at least $312$ heads is $2.5%$.
 ```

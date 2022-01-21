@@ -585,8 +585,69 @@ The square root of the variance is called the <strong>standard deviation.</stron
 <div class="dropdown admonition">
 <p class="admonition-title">Solution:</p>
 <p>The number of ways to assigning five floors to four different people is to get the total sample space. In this case it would be <span class="math notranslate nohighlight">\(5 * 5 * 5 * 5\)</span>.</p>
-<p>The number of ways to assign five floors to four people without repetition of floors is <span class="math notranslate nohighlight">\(5 * 4 * 3 * 2\)</span> because for the first passenger you have five different options. The second person has four, and so on. Note that this number counts all possible orders betwen passengers as well.</p>
+<p>The number of ways to assign five floors to four people without repetition of floors is <span class="math notranslate nohighlight">\(5 * 4 * 3 * 2\)</span> because for the first passenger you have five different options. The second person has four, and so on. Note that this number counts all possible orders between passengers as well.</p>
 <p>The result is then <span class="math notranslate nohighlight">\(\frac{5 * 4 * 3 * 2}{5 * 5 * 5 * 5} = 0.192\)</span></p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: [AMAZON] Found Item</p>
+<p>Amazon has a warehouse system where items on the website are located at different distribution centers across a city. Let’s say in one example city, the probability that a specific item X at location A is 0.6, and at location B the probability is 0.8.</p>
+<p>Given you’re a customer in this example city and the items are only found on the website if they exist in the distribution centers, what is the probability that the item X would be found on Amazon’s website?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>Probability of the item being present= <span class="math notranslate nohighlight">\(1-\)</span> p(item NOT in A AND NOT in B) <span class="math notranslate nohighlight">\(= 1-(0.4*0.2)=0.92\)</span></p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: [SPOTIFY] Max Dice Roll</p>
+<p>A fair die is rolled <span class="math notranslate nohighlight">\(n\)</span> times. What is the probability that the largest number rolled is <span class="math notranslate nohighlight">\(r\)</span>, for each <span class="math notranslate nohighlight">\(r\)</span> in <span class="math notranslate nohighlight">\(1..6\)</span>?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>If <span class="math notranslate nohighlight">\(r(1≤r≤6)\)</span> is the largest number you have allowed for your <span class="math notranslate nohighlight">\(n\)</span> rolls, then you forbid any number larger than <span class="math notranslate nohighlight">\(r\)</span>. That is, you forbid <span class="math notranslate nohighlight">\(6−r\)</span> values. The probability that your single roll does not show any of these <span class="math notranslate nohighlight">\(6−r\)</span> values is <span class="math notranslate nohighlight">\(\frac{6−r}{6}\)</span> and the probability that this happens each time during a series of <span class="math notranslate nohighlight">\(n\)</span> rolls is the obviously <span class="math notranslate nohighlight">\((\frac{6−r}{6})^n\)</span></p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: [FACEBOOK] Labeling Content</p>
+<p>Facebook has a content team that labels pieces of content on the platform as spam or not spam. <span class="math notranslate nohighlight">\(90%\)</span> of them are diligent raters and will label <span class="math notranslate nohighlight">\(20%\)</span> of the content as spam and <span class="math notranslate nohighlight">\(80%\)</span> as non-spam. The remaining <span class="math notranslate nohighlight">\(10%\)</span> are non-diligent raters and will label <span class="math notranslate nohighlight">\(0%\)</span> of the content as spam and <span class="math notranslate nohighlight">\(100%\)</span> as non-spam. Assume the pieces of content are labeled independently from one another, for every rater. Given that a rater has labeled <span class="math notranslate nohighlight">\(4\)</span> pieces of content as good, what is the probability that they are a diligent rater?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>This can be solved using Baye’s theorem:</p>
+<ul class="simple">
+<li><p>Not Spam = <span class="math notranslate nohighlight">\(NS\)</span></p></li>
+<li><p>Spam = <span class="math notranslate nohighlight">\(S\)</span></p></li>
+<li><p>Diligent =<span class="math notranslate nohighlight">\(D\)</span></p></li>
+<li><p>NotDiligent =<span class="math notranslate nohighlight">\(ND\)</span></p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(P(D|NS, NS, NS, NS) = \frac{P(NS, NS, NS, NS|D)*P(D)}{P(NS, NS, NS, NS|D)*P(D)+P(NS, NS, NS, NS|ND)*P(ND)}\)</span>
+<span class="math notranslate nohighlight">\(P(D|NS, NS, NS, NS) = \frac{0.8^4*0.9}{0.8^4*0.9+1^4*0.1}\)</span> = ~<span class="math notranslate nohighlight">\(0.787\)</span></p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: [FACEBOOK] Raining</p>
+<p>You are about to get on a plane to Seattle. You want to know if you should bring an umbrella. You call <span class="math notranslate nohighlight">\(3\)</span> random friends of yours who live there and ask each independently if it’s raining. Each of your friends has a <span class="math notranslate nohighlight">\(2/3\)</span> chance of telling you the truth and a <span class="math notranslate nohighlight">\(1/3\)</span> chance of messing with you by lying. All <span class="math notranslate nohighlight">\(3\)</span> friends tell you that “Yes” it is raining.</p>
+<p>What is the probability that it’s actually raining in Seattle?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>Even though the problem is straightforward one can interpret the problem in many ways. Taking a Bayesian approach is probably appropriate in a real world sense, but if you are told by the interviewer you have no ability to determine the priors, you can’t use Bayesian. <a class="reference external" href="https://math.stackexchange.com/questions/1335235/facebook-question-data-science">Check this thread</a> for a detailed discussion on this problem.</p>
+<p>For it to be not raining, all friends must be lying. Therefore, the solution must be the inverse of the probability that all three are “messing with you.”
+<span class="math notranslate nohighlight">\((1/3)x(1/3)*(1/3)=1/27\)</span> (3.7% chance they are all lying).</p>
+<p>Since there is only a <span class="math notranslate nohighlight">\(3.7%\)</span> chance all three friends are messing with you, there is a <span class="math notranslate nohighlight">\(96.3%\)</span> chance it is raining.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: [MICROSOFT] First to Six</p>
+<p>Amy and Brad take turns in rolling a fair six-sided die. Whoever rolls a <span class="math notranslate nohighlight">\(6\)</span> first wins the game. Amy starts by rolling first.</p>
+<p>What’s the probability that Amy wins?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>Amy can win on the first roll, third roll, fifth roll, and so on.</p>
+<p>Probability of Amy winning in the first roll = P(six rolled by her) = <span class="math notranslate nohighlight">\(1/6\)</span></p>
+<p>Probability of Amy winning in the third roll = P(six NOT rolled by her in first try) * P(six NOT rolled by Brad in first try) * P(six rolled by her in 2nd try) = <span class="math notranslate nohighlight">\((5/6) * (5/6) * (1/6) = 1/6 * (5/6)^2\)</span></p>
+<p>Similarly, the probability of Amy winning in the fifth roll = <span class="math notranslate nohighlight">\((1/6) * (5/6)^4\)</span></p>
+<p>Similarly, the probability of Amy winning in the seventh roll = <span class="math notranslate nohighlight">\((1/6) * (5/6)^6\)</span></p>
+<p>Hence, total probability of Amy winning = Sum of all such events = <span class="math notranslate nohighlight">\((1/6) + (1/6 * (5/6)^2) + (1/6 * (5/6)^4) + (1/6 * (5/6)^6) + ...\)</span></p>
+<p>The sum of such an infinite Geometric Progression series is = <span class="math notranslate nohighlight">\(\frac{a}{1-r} = (1/6) / (1 - 25/36) = (1/6) / (11/36) = 6/11\)</span></p>
+<p>Hence, probability of Amy winning in any of her turns = <span class="math notranslate nohighlight">\(6/11\)</span></p>
 </div>
 </div>
 </div>

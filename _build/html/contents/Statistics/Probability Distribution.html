@@ -661,13 +661,15 @@ Following are the measures of central tendency:</p>
 <p>Solution Pending</p>
 </div>
 <div class="tip dropdown admonition">
-<p class="admonition-title">Problem: [MCKINSEY] Flipping Coins</p>
+<p class="admonition-title">Problem: [MCKINSEY]  Flipping 576 Times</p>
 <p>You flip a fair coin 576 times. Without using a calculator, calculate the probability of flipping at least 312 heads.</p>
 </div>
 <div class="dropdown admonition">
 <p class="admonition-title">Solution:</p>
-<p>This is an example of a Binomial Distribution.
-The number will be <span class="math notranslate nohighlight">\({}^{576} \mathrm{ C }_{312} (\frac{1}{2})^{312} (\frac{1}{2})^{264}\)</span></p>
+<p>Fair coin, <span class="math notranslate nohighlight">\(p(H)=0.5\)</span> Since this experiment has only <span class="math notranslate nohighlight">\(2\)</span> outcomes hence we can use a binomial distribution,</p>
+<p>mean = <span class="math notranslate nohighlight">\(np\)</span> = <span class="math notranslate nohighlight">\(576*0.5 = 288\)</span>, var= <span class="math notranslate nohighlight">\(np(1-p)= 576*0.5*0.5 = 144\)</span>, stddev = sqrt(var) = <span class="math notranslate nohighlight">\(12\)</span>.</p>
+<p>For normal distribution, <em>68% of the data falls within one standard deviation, 95% percent within two standard deviations, and 99.7% within three standard deviations from the mean.</em></p>
+<p><span class="math notranslate nohighlight">\(312= 288\)</span>(mean)<span class="math notranslate nohighlight">\(+2*12\)</span>(stddev), which means the probability of flipping at least <span class="math notranslate nohighlight">\(312\)</span> heads or tails is <span class="math notranslate nohighlight">\(5%\)</span>. Since we are only looking at the probability of at least <span class="math notranslate nohighlight">\(321\)</span> heads, it is the right tail area of the distribution, which is <span class="math notranslate nohighlight">\(5%/2= 2.5%\)</span>. So the probability of flipping at least <span class="math notranslate nohighlight">\(312\)</span> heads is <span class="math notranslate nohighlight">\(2.5%\)</span>.</p>
 </div>
 </div>
 </div>

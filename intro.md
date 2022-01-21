@@ -5,13 +5,7 @@ html_meta:
   "property=og:locale": "en_US"
 ---
 
-
 ## About this Book
- 
----
-**Wish everyone a happy, prosperous and peaceful new year ahead** 🎊🎉🪄🎁🥳😊🙏
-
----
  
 Preparing for interviews is a stressful task. There is an enormous amount of resources available in the internet, multiple repositories, there are even companies that help students prepare for interviews at the Big Tech companies. The idea here is to create an accessible version of these resources so people on this journey can benefit from it.
 
