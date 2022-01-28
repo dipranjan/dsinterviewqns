@@ -649,6 +649,81 @@ The square root of the variance is called the <strong>standard deviation.</stron
 <p>The sum of such an infinite Geometric Progression series is = <span class="math notranslate nohighlight">\(\frac{a}{1-r} = (1/6) / (1 - 25/36) = (1/6) / (11/36) = 6/11\)</span></p>
 <p>Hence, probability of Amy winning in any of her turns = <span class="math notranslate nohighlight">\(6/11\)</span></p>
 </div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: [GOOGLE][FACEBOOK] Double Sided Coin</p>
+<p>A jar has <span class="math notranslate nohighlight">\(1000\)</span> coins, of which <span class="math notranslate nohighlight">\(999\)</span> are fair and <span class="math notranslate nohighlight">\(1\)</span> is double headed. Pick a coin at random, and toss it <span class="math notranslate nohighlight">\(10\)</span> times. Given that you see <span class="math notranslate nohighlight">\(10\)</span> heads, what is the probability that the next toss of that coin is also a head?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>There are two ways of choosing the coin. One is to pick a fair coin and the other is to pick the one with two heads.</p>
+<ul class="simple">
+<li><p>Probability of selecting fair coin <span class="math notranslate nohighlight">\(= 999/1000 = 0.999\)</span></p></li>
+<li><p>Probability of selecting unfair coin <span class="math notranslate nohighlight">\(= 1/1000 = 0.001\)</span></p></li>
+</ul>
+<p>Selecting <span class="math notranslate nohighlight">\(10\)</span> heads in a row = Selecting fair coin * Getting 10 heads + Selecting an unfair coin</p>
+<ul class="simple">
+<li><p>P (A) <span class="math notranslate nohighlight">\(= 0.999 * (1/2)^5 = 0.999 * (1/1024) = 0.000976\)</span></p></li>
+<li><p>P (B) <span class="math notranslate nohighlight">\(= 0.001 * 1 = 0.001\)</span></p></li>
+<li><p>P( A / A + B ) <span class="math notranslate nohighlight">\(= 0.000976 / (0.000976 + 0.001) = 0.4939\)</span></p></li>
+<li><p>P( B / A + B ) <span class="math notranslate nohighlight">\(= 0.001 / 0.001976 = 0.5061\)</span></p></li>
+</ul>
+<p>Probability of selecting another head <span class="math notranslate nohighlight">\(= P(A/A+B) * 0.5 + P(B/A+B) * 1 = 0.4939 * 0.5 + 0.5061 = 0.7531\)</span></p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: [GOOGLE] Forming a triangle</p>
+<p>A 10 feet pole is randomly cut into 3 pieces. What is the probability that exactly form a triangle?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p><a class="reference external" href="https://www.quora.com/A-10-feet-pole-is-randomly-cut-into-3-pieces-What-is-the-probability-that-exactly-form-a-triangle">Source</a></p>
+<p>Suppose the pole is <span class="math notranslate nohighlight">\(AB\)</span> and there are two points <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(Q\)</span> such that <span class="math notranslate nohighlight">\(AP = x\)</span> and <span class="math notranslate nohighlight">\(PQ = y\)</span>, so that <span class="math notranslate nohighlight">\(QB = 10 – x – y\)</span> as we know that sum of two sides of a triangle is greater than the 3rd side. Hence</p>
+<p><span class="math notranslate nohighlight">\(x + y &gt; (10 – x – y)\)</span> or <span class="math notranslate nohighlight">\(x + y &gt; 5\)</span></p>
+<p><span class="math notranslate nohighlight">\(y + (10 – x – y) &gt; x\)</span> or <span class="math notranslate nohighlight">\(x &lt; 5\)</span></p>
+<p><span class="math notranslate nohighlight">\((10 – x – y) &gt; y\)</span> or <span class="math notranslate nohighlight">\(y &lt; 5\)</span></p>
+<p>Also we know that, all the parts of pole must be greater than <span class="math notranslate nohighlight">\(0\)</span>,</p>
+<p>or <span class="math notranslate nohighlight">\(x &gt; 0, y &gt; 0, 10 – x – y &gt; 0 or x &gt; 0, y &gt; 0, x + y &lt; 10\)</span></p>
+<p>Plotting the lines <span class="math notranslate nohighlight">\(x + y = 10 x + y = 5, x = 5, y = 5\)</span>. Now favorable area is the area of the middle red shaded triangle.</p>
+<div class="figure align-default" id="image13">
+<a class="reference internal image-reference" href="../../_images/image131.PNG"><img alt="../../_images/image131.PNG" src="../../_images/image131.PNG" style="width: 354.0px; height: 321.59999999999997px;" /></a>
+</div>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: [Lyft] Flips until two heads</p>
+<p>What is the expected number of coin flips needed to get two consecutive heads?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p><a class="reference external" href="http://www.codechef.com/wiki/tutorial-expectation">Source</a>:</p>
+<p>Let’s first assume <span class="math notranslate nohighlight">\(x\)</span> is the expected number of coin flips required for getting two heads in a row. Now:</p>
+<ul class="simple">
+<li><p>If the first flip turns out to be tail you need <span class="math notranslate nohighlight">\(x\)</span> more flips since the events are independent. Probability of the event <span class="math notranslate nohighlight">\(1/2\)</span>. Since <span class="math notranslate nohighlight">\(1\)</span> flip was wasted total number of flips required <span class="math notranslate nohighlight">\((1+x)\)</span>.</p></li>
+<li><p>If the first flip becomes head, but the second one is tail(<span class="math notranslate nohighlight">\(HT\)</span>) - <span class="math notranslate nohighlight">\(2\)</span> flips are wasted, here total number flips required would be <span class="math notranslate nohighlight">\((2+x)\)</span>. Probability of <span class="math notranslate nohighlight">\(HT\)</span> out of <span class="math notranslate nohighlight">\(HH, HT, TH, TT\)</span> is <span class="math notranslate nohighlight">\((1/4)\)</span></p></li>
+<li><p>The best case, the first two flips turn out to be heads both(<span class="math notranslate nohighlight">\(HH\)</span>). Probability, <span class="math notranslate nohighlight">\(1/4\)</span> i.e. <span class="math notranslate nohighlight">\(HH\)</span> out of <span class="math notranslate nohighlight">\(HH, HT, TH, TT\)</span>. No of flips required <span class="math notranslate nohighlight">\(2\)</span>.</p></li>
+</ul>
+<p>So from the above scenarios,
+<span class="math notranslate nohighlight">\(x = 1/2(1+x) + 1/4(2+x) + (1/4 )* 2\)</span>
+<span class="math notranslate nohighlight">\(= 1/2 [ (1+x) + 1/2(2+x) + 1 ]\)</span>
+<span class="math notranslate nohighlight">\(= 1/2 [ 1 + x + 1 + x/2 + 1 ]\)</span></p>
+<p><span class="math notranslate nohighlight">\(x / 4 = 3/2\)</span>
+<span class="math notranslate nohighlight">\(x = 6\)</span></p>
+<p>So the expected number of flips would be <span class="math notranslate nohighlight">\(6\)</span></p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: [Lyft] Number of cards before an ace</p>
+<p>How many cards would you expect to draw from a standard deck before seeing the first ace?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p><a class="reference external" href="https://aksoy.io/math/probability/book/2020/03/10/problem-40-first-ace.html#:~:text=Thus%2C%20on%20average%20it%20will,get%20the%201%20st%20ace.">Source</a>:</p>
+<p>Let <span class="math notranslate nohighlight">\(X\)</span> represent the number of cards that are turned up to produce the <span class="math notranslate nohighlight">\(1^{st}\)</span> ace. For this problem, we cannot apply the Geometric Distribution because cards are sampled without replacement.</p>
+<p>Instead, we begin by considering the probabilities of drawing the <span class="math notranslate nohighlight">\(1^{st}\)</span> ace on the <span class="math notranslate nohighlight">\(1^{st}\)</span> card, <span class="math notranslate nohighlight">\(2^{nd}\)</span> card, and so on:</p>
+<p><span class="math notranslate nohighlight">\(P(1^{st} card)= \frac{4}{52}\)</span></p>
+<p><span class="math notranslate nohighlight">\(P(2^{nd} card)= \frac{48}{52}\frac{4}{51}\)</span></p>
+<p><span class="math notranslate nohighlight">\(P(3^{rd} card)= \frac{48}{52}\frac{47}{51}\frac{4}{50}\)</span></p>
+<p><span class="math notranslate nohighlight">\(P(n^{th} card)= 4* \frac{48!}{(49-x)!}\frac{(52-x)!}{(52)!}\)</span></p>
+<p>With this we can calculate the average number of cards by applying the definition of expected value:</p>
+<p><span class="math notranslate nohighlight">\(E[X]= \sum\limits_{x=1}^{52} 4x \frac{48!}{(49-x)!}\frac{(52-x)!}{(52)!} = \frac{53}{5} = 10.6\)</span></p>
+</div>
 </div>
 </div>
 

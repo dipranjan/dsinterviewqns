@@ -286,3 +286,114 @@ The sum of such an infinite Geometric Progression series is = $\frac{a}{1-r} = (
 Hence, probability of Amy winning in any of her turns = $6/11$
 ```
 
+```{admonition} Problem: [GOOGLE][FACEBOOK] Double Sided Coin
+:class: tip, dropdown
+
+A jar has $1000$ coins, of which $999$ are fair and $1$ is double headed. Pick a coin at random, and toss it $10$ times. Given that you see $10$ heads, what is the probability that the next toss of that coin is also a head?
+```
+
+```{admonition} Solution:
+:class: dropdown
+
+There are two ways of choosing the coin. One is to pick a fair coin and the other is to pick the one with two heads.
+
+- Probability of selecting fair coin $= 999/1000 = 0.999$
+- Probability of selecting unfair coin $= 1/1000 = 0.001$
+
+Selecting $10$ heads in a row = Selecting fair coin * Getting 10 heads + Selecting an unfair coin
+
+- P (A) $= 0.999 * (1/2)^5 = 0.999 * (1/1024) = 0.000976$
+- P (B) $= 0.001 * 1 = 0.001$
+- P( A / A + B ) $= 0.000976 / (0.000976 + 0.001) = 0.4939$
+- P( B / A + B ) $= 0.001 / 0.001976 = 0.5061$
+
+Probability of selecting another head $= P(A/A+B) * 0.5 + P(B/A+B) * 1 = 0.4939 * 0.5 + 0.5061 = 0.7531$
+```
+
+```{admonition} Problem: [GOOGLE] Forming a triangle
+:class: tip, dropdown
+
+A 10 feet pole is randomly cut into 3 pieces. What is the probability that exactly form a triangle?
+```
+
+```{admonition} Solution:
+:class: dropdown
+
+[Source](https://www.quora.com/A-10-feet-pole-is-randomly-cut-into-3-pieces-What-is-the-probability-that-exactly-form-a-triangle)
+
+Suppose the pole is $AB$ and there are two points $P$ and $Q$ such that $AP = x$ and $PQ = y$, so that $QB = 10 – x – y$ as we know that sum of two sides of a triangle is greater than the 3rd side. Hence
+
+$x + y > (10 – x – y)$ or $x + y > 5$
+
+$y + (10 – x – y) > x$ or $x < 5$
+
+$(10 – x – y) > y$ or $y < 5$
+
+Also we know that, all the parts of pole must be greater than $0$,
+
+or $x > 0, y > 0, 10 – x – y > 0 or x > 0, y > 0, x + y < 10$
+
+Plotting the lines $x + y = 10 x + y = 5, x = 5, y = 5$. Now favorable area is the area of the middle red shaded triangle.
+
+```{figure} ../Statistics/images/image13.PNG
+---
+name: image13
+scale: 60%
+---
+```
+
+```{admonition} Problem: [Lyft] Flips until two heads
+:class: tip, dropdown
+
+What is the expected number of coin flips needed to get two consecutive heads?
+```
+
+```{admonition} Solution:
+:class: dropdown
+
+[Source](http://www.codechef.com/wiki/tutorial-expectation):
+
+Let's first assume $x$ is the expected number of coin flips required for getting two heads in a row. Now:
+
+- If the first flip turns out to be tail you need $x$ more flips since the events are independent. Probability of the event $1/2$. Since $1$ flip was wasted total number of flips required $(1+x)$.
+- If the first flip becomes head, but the second one is tail($HT$) - $2$ flips are wasted, here total number flips required would be $(2+x)$. Probability of $HT$ out of $HH, HT, TH, TT$ is $(1/4)$
+- The best case, the first two flips turn out to be heads both($HH$). Probability, $1/4$ i.e. $HH$ out of $HH, HT, TH, TT$. No of flips required $2$.
+
+So from the above scenarios,
+$x = 1/2(1+x) + 1/4(2+x) + (1/4 )* 2$
+$= 1/2 [ (1+x) + 1/2(2+x) + 1 ]$
+$= 1/2 [ 1 + x + 1 + x/2 + 1 ]$
+
+$x / 4 = 3/2$
+$x = 6$
+
+So the expected number of flips would be $6$
+```
+
+```{admonition} Problem: [Lyft] Number of cards before an ace
+:class: tip, dropdown
+
+How many cards would you expect to draw from a standard deck before seeing the first ace?
+```
+
+```{admonition} Solution:
+:class: dropdown
+
+[Source](https://aksoy.io/math/probability/book/2020/03/10/problem-40-first-ace.html#:~:text=Thus%2C%20on%20average%20it%20will,get%20the%201%20st%20ace.):
+
+Let $X$ represent the number of cards that are turned up to produce the $1^{st}$ ace. For this problem, we cannot apply the Geometric Distribution because cards are sampled without replacement.
+
+Instead, we begin by considering the probabilities of drawing the $1^{st}$ ace on the $1^{st}$ card, $2^{nd}$ card, and so on:
+
+$P(1^{st} card)= \frac{4}{52}$
+
+$P(2^{nd} card)= \frac{48}{52}\frac{4}{51}$
+
+$P(3^{rd} card)= \frac{48}{52}\frac{47}{51}\frac{4}{50}$
+
+$P(n^{th} card)= 4* \frac{48!}{(49-x)!}\frac{(52-x)!}{(52)!}$
+
+With this we can calculate the average number of cards by applying the definition of expected value:
+
+$E[X]= \sum\limits_{x=1}^{52} 4x \frac{48!}{(49-x)!}\frac{(52-x)!}{(52)!} = \frac{53}{5} = 10.6$
+```
