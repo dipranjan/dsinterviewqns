@@ -122,13 +122,26 @@ There can be many variants to this question.
 
 ```{admonition} Solution:
 :class: dropdown
- 
-$52$ cards = $26$ Red + $26$ Black
 
-- Different Color Without Replacement $= 26/52 * 26/51$
-- Different Color With Replacement    $= 26/52 * 26/52$
-- Same Color Without Replacement 	  $= 26/52 * 25/51$
-- Same Color With Replacement    	  $= 26/52 * 25/52$
+[Source](https://www.quora.com/Two-cards-are-drawn-for-a-pack-of-52-cards-What-is-the-probability-that-both-the-cards-are-of-the-same-colour)
+ 
+Here it is not specified which colour the cards should be - so, they can be either red or black.
+
+The probability that the first card drawn is either red or black is $1$ since these two are the only possible outcomes.
+
+After the first draw, the total number of cards remaining in the pack is $51$, out of which $25$ cards are of the same colour as that of the card that is already drawn. Hence the probability of drawing a card of the same colour as the first one is $\frac{25}{51}$.
+
+⇒ The probability of drawing two cards of the same colour is $1*\frac{25}{51}=\frac{25}{51}$.
+
+*Another approach to this can be:*
+
+Two cards of a particular colour can be drawn in $C(26,2)$ ways.
+
+⇒ Two cards of either red or black can be drawn in $2×C(26,2)$ ways.
+
+The total number of ways of drawing any two cards from the pack is $C(52,2)$.
+
+⇒ The probability of drawing two cards of the same colour is $\frac{2×C(26,2)}{C(52,2)} = \frac{2×26!}{2!×24!}\frac{2!×50!}{52!}=\frac{25}{51}$
 ```
 
 ```{admonition} Problem: [FACEBOOK] N Dice
@@ -254,7 +267,7 @@ What is the probability that it's actually raining in Seattle?
 Even though the problem is straightforward one can interpret the problem in many ways. Taking a Bayesian approach is probably appropriate in a real world sense, but if you are told by the interviewer you have no ability to determine the priors, you can't use Bayesian. [Check this thread](https://math.stackexchange.com/questions/1335235/facebook-question-data-science) for a detailed discussion on this problem.
 
 For it to be not raining, all friends must be lying. Therefore, the solution must be the inverse of the probability that all three are "messing with you." 
-$(1/3)x(1/3)*(1/3)=1/27$ (3.7% chance they are all lying). 
+$(1/3)*(1/3)*(1/3)=1/27$ (3.7% chance they are all lying). 
 
 Since there is only a $3.7%$ chance all three friends are messing with you, there is a $96.3%$ chance it is raining.
 ```
@@ -335,6 +348,8 @@ or $x > 0, y > 0, 10 – x – y > 0 or x > 0, y > 0, x + y < 10$
 
 Plotting the lines $x + y = 10 x + y = 5, x = 5, y = 5$. Now favorable area is the area of the middle red shaded triangle.
 
+Required probability $= 1/4$
+
 ```{figure} ../Statistics/images/image13.PNG
 ---
 name: image13
@@ -342,7 +357,7 @@ scale: 60%
 ---
 ```
 
-```{admonition} Problem: [Lyft] Flips until two heads
+```{admonition} Problem: [LYFT] Flips until two heads
 :class: tip, dropdown
 
 What is the expected number of coin flips needed to get two consecutive heads?
@@ -370,7 +385,7 @@ $x = 6$
 So the expected number of flips would be $6$
 ```
 
-```{admonition} Problem: [Lyft] Number of cards before an ace
+```{admonition} Problem: [LYFT] Number of cards before an ace
 :class: tip, dropdown
 
 How many cards would you expect to draw from a standard deck before seeing the first ace?
@@ -396,4 +411,39 @@ $P(n^{th} card)= 4* \frac{48!}{(49-x)!}\frac{(52-x)!}{(52)!}$
 With this we can calculate the average number of cards by applying the definition of expected value:
 
 $E[X]= \sum\limits_{x=1}^{52} 4x \frac{48!}{(49-x)!}\frac{(52-x)!}{(52)!} = \frac{53}{5} = 10.6$
+```
+
+```{admonition} Problem: [FACEBOOK] Ad Raters
+:class: tip, dropdown
+
+Let’s say we use people to rate ads.
+
+There are two types of raters. Random and independent from our point of view:
+
+80% of raters are careful and they rate an ad as good (60% chance) or bad (40% chance). 
+20% of raters are lazy and they rate every ad as good (100% chance).
+
+- Suppose we have 100 raters each rating one ad independently. What’s the expected number of good ads?
+
+- Now suppose we have 1 rater rating 100 ads. What’s the expected number of good ads?
+
+- Suppose we have 1 ad, rated as bad. What’s the probability the rater was lazy?
+```
+
+```{admonition} Solution:
+:class: dropdown
+
+- 100 raters are divided into 2 groups according to probabilities:
+
+$20$ lazy raters: $100%$ good ads -> $20$ good ads;
+$80$ careful raters: $60%$ good ads -> $80 * 0.6 = 48$ good ads.
+Total $68$ good ads.
+
+- There could be 2 cases:
+
+Random rater is careful with probability of $0.8: 0.8 * 0.6 = 0.48$ - probability or rating good ad
+Random rater is lazy with probability of $0.2: 0.2 * 1 = 0.2$ - probability or rating good ad
+Total probability of rating ad as good is $0.48+0.2 = 0.68$. The expected amount of good rates $100*0.68 = 68$.
+
+- It’s $0$ probability that the rater is lazy because lazy raters always rate ads as good.
 ```

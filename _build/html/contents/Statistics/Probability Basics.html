@@ -541,13 +541,16 @@ The square root of the variance is called the <strong>standard deviation.</stron
 </div>
 <div class="dropdown admonition">
 <p class="admonition-title">Solution:</p>
-<p><span class="math notranslate nohighlight">\(52\)</span> cards = <span class="math notranslate nohighlight">\(26\)</span> Red + <span class="math notranslate nohighlight">\(26\)</span> Black</p>
-<ul class="simple">
-<li><p>Different Color Without Replacement <span class="math notranslate nohighlight">\(= 26/52 * 26/51\)</span></p></li>
-<li><p>Different Color With Replacement    <span class="math notranslate nohighlight">\(= 26/52 * 26/52\)</span></p></li>
-<li><p>Same Color Without Replacement 	  <span class="math notranslate nohighlight">\(= 26/52 * 25/51\)</span></p></li>
-<li><p>Same Color With Replacement    	  <span class="math notranslate nohighlight">\(= 26/52 * 25/52\)</span></p></li>
-</ul>
+<p><a class="reference external" href="https://www.quora.com/Two-cards-are-drawn-for-a-pack-of-52-cards-What-is-the-probability-that-both-the-cards-are-of-the-same-colour">Source</a></p>
+<p>Here it is not specified which colour the cards should be - so, they can be either red or black.</p>
+<p>The probability that the first card drawn is either red or black is <span class="math notranslate nohighlight">\(1\)</span> since these two are the only possible outcomes.</p>
+<p>After the first draw, the total number of cards remaining in the pack is <span class="math notranslate nohighlight">\(51\)</span>, out of which <span class="math notranslate nohighlight">\(25\)</span> cards are of the same colour as that of the card that is already drawn. Hence the probability of drawing a card of the same colour as the first one is <span class="math notranslate nohighlight">\(\frac{25}{51}\)</span>.</p>
+<p>⇒ The probability of drawing two cards of the same colour is <span class="math notranslate nohighlight">\(1*\frac{25}{51}=\frac{25}{51}\)</span>.</p>
+<p><em>Another approach to this can be:</em></p>
+<p>Two cards of a particular colour can be drawn in <span class="math notranslate nohighlight">\(C(26,2)\)</span> ways.</p>
+<p>⇒ Two cards of either red or black can be drawn in <span class="math notranslate nohighlight">\(2×C(26,2)\)</span> ways.</p>
+<p>The total number of ways of drawing any two cards from the pack is <span class="math notranslate nohighlight">\(C(52,2)\)</span>.</p>
+<p>⇒ The probability of drawing two cards of the same colour is <span class="math notranslate nohighlight">\(\frac{2×C(26,2)}{C(52,2)} = \frac{2×26!}{2!×24!}\frac{2!×50!}{52!}=\frac{25}{51}\)</span></p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Problem: [FACEBOOK] N Dice</p>
@@ -630,7 +633,7 @@ The square root of the variance is called the <strong>standard deviation.</stron
 <p class="admonition-title">Solution:</p>
 <p>Even though the problem is straightforward one can interpret the problem in many ways. Taking a Bayesian approach is probably appropriate in a real world sense, but if you are told by the interviewer you have no ability to determine the priors, you can’t use Bayesian. <a class="reference external" href="https://math.stackexchange.com/questions/1335235/facebook-question-data-science">Check this thread</a> for a detailed discussion on this problem.</p>
 <p>For it to be not raining, all friends must be lying. Therefore, the solution must be the inverse of the probability that all three are “messing with you.”
-<span class="math notranslate nohighlight">\((1/3)x(1/3)*(1/3)=1/27\)</span> (3.7% chance they are all lying).</p>
+<span class="math notranslate nohighlight">\((1/3)*(1/3)*(1/3)=1/27\)</span> (3.7% chance they are all lying).</p>
 <p>Since there is only a <span class="math notranslate nohighlight">\(3.7%\)</span> chance all three friends are messing with you, there is a <span class="math notranslate nohighlight">\(96.3%\)</span> chance it is raining.</p>
 </div>
 <div class="tip dropdown admonition">
@@ -683,12 +686,13 @@ The square root of the variance is called the <strong>standard deviation.</stron
 <p>Also we know that, all the parts of pole must be greater than <span class="math notranslate nohighlight">\(0\)</span>,</p>
 <p>or <span class="math notranslate nohighlight">\(x &gt; 0, y &gt; 0, 10 – x – y &gt; 0 or x &gt; 0, y &gt; 0, x + y &lt; 10\)</span></p>
 <p>Plotting the lines <span class="math notranslate nohighlight">\(x + y = 10 x + y = 5, x = 5, y = 5\)</span>. Now favorable area is the area of the middle red shaded triangle.</p>
+<p>Required probability <span class="math notranslate nohighlight">\(= 1/4\)</span></p>
 <div class="figure align-default" id="image13">
 <a class="reference internal image-reference" href="../../_images/image131.PNG"><img alt="../../_images/image131.PNG" src="../../_images/image131.PNG" style="width: 354.0px; height: 321.59999999999997px;" /></a>
 </div>
 </div>
 <div class="tip dropdown admonition">
-<p class="admonition-title">Problem: [Lyft] Flips until two heads</p>
+<p class="admonition-title">Problem: [LYFT] Flips until two heads</p>
 <p>What is the expected number of coin flips needed to get two consecutive heads?</p>
 </div>
 <div class="dropdown admonition">
@@ -709,7 +713,7 @@ The square root of the variance is called the <strong>standard deviation.</stron
 <p>So the expected number of flips would be <span class="math notranslate nohighlight">\(6\)</span></p>
 </div>
 <div class="tip dropdown admonition">
-<p class="admonition-title">Problem: [Lyft] Number of cards before an ace</p>
+<p class="admonition-title">Problem: [LYFT] Number of cards before an ace</p>
 <p>How many cards would you expect to draw from a standard deck before seeing the first ace?</p>
 </div>
 <div class="dropdown admonition">
@@ -723,6 +727,36 @@ The square root of the variance is called the <strong>standard deviation.</stron
 <p><span class="math notranslate nohighlight">\(P(n^{th} card)= 4* \frac{48!}{(49-x)!}\frac{(52-x)!}{(52)!}\)</span></p>
 <p>With this we can calculate the average number of cards by applying the definition of expected value:</p>
 <p><span class="math notranslate nohighlight">\(E[X]= \sum\limits_{x=1}^{52} 4x \frac{48!}{(49-x)!}\frac{(52-x)!}{(52)!} = \frac{53}{5} = 10.6\)</span></p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: [FACEBOOK] Ad Raters</p>
+<p>Let’s say we use people to rate ads.</p>
+<p>There are two types of raters. Random and independent from our point of view:</p>
+<p>80% of raters are careful and they rate an ad as good (60% chance) or bad (40% chance).
+20% of raters are lazy and they rate every ad as good (100% chance).</p>
+<ul class="simple">
+<li><p>Suppose we have 100 raters each rating one ad independently. What’s the expected number of good ads?</p></li>
+<li><p>Now suppose we have 1 rater rating 100 ads. What’s the expected number of good ads?</p></li>
+<li><p>Suppose we have 1 ad, rated as bad. What’s the probability the rater was lazy?</p></li>
+</ul>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<ul class="simple">
+<li><p>100 raters are divided into 2 groups according to probabilities:</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(20\)</span> lazy raters: <span class="math notranslate nohighlight">\(100%\)</span> good ads -&gt; <span class="math notranslate nohighlight">\(20\)</span> good ads;
+<span class="math notranslate nohighlight">\(80\)</span> careful raters: <span class="math notranslate nohighlight">\(60%\)</span> good ads -&gt; <span class="math notranslate nohighlight">\(80 * 0.6 = 48\)</span> good ads.
+Total <span class="math notranslate nohighlight">\(68\)</span> good ads.</p>
+<ul class="simple">
+<li><p>There could be 2 cases:</p></li>
+</ul>
+<p>Random rater is careful with probability of <span class="math notranslate nohighlight">\(0.8: 0.8 * 0.6 = 0.48\)</span> - probability or rating good ad
+Random rater is lazy with probability of <span class="math notranslate nohighlight">\(0.2: 0.2 * 1 = 0.2\)</span> - probability or rating good ad
+Total probability of rating ad as good is <span class="math notranslate nohighlight">\(0.48+0.2 = 0.68\)</span>. The expected amount of good rates <span class="math notranslate nohighlight">\(100*0.68 = 68\)</span>.</p>
+<ul class="simple">
+<li><p>It’s <span class="math notranslate nohighlight">\(0\)</span> probability that the rater is lazy because lazy raters always rate ads as good.</p></li>
+</ul>
 </div>
 </div>
 </div>
