@@ -509,3 +509,76 @@ group by
 order by avg(cast(distance as float)) desc
 ```
 ````
+
+```{admonition} Problem: [AMAZON] Duplicate Rows
+:class: tip, dropdown
+
+Given a users table, write a query to return only its duplicate rows
+```
+
+````{admonition} Solution:
+:class: dropdown
+
+Multiple solutions are possible only one approach is given below for reference
+
+Let's assume there are 2 columns: id, name
+
+```sql
+SELECT *, COUNT(*) FROM userstable
+GROUP BY id, name
+HAVING COUNT(*) > 1
+```
+
+````
+
+```{admonition} Problem: [INTUIT] Product Average
+:class: tip, dropdown
+
+**transactions table**
+
+|   column   |   type   |
+|:----------:|:--------:|
+| id         | integer  |
+| user_id    | integer  |
+| created_at | datetime |
+| product_id | integer  |
+| quantity   | integer  |
+
+**products table**
+
+| column |   type  |
+|:------:|:-------:|
+| id     | integer |
+| name   | string  |
+| price  | float   |
+
+Given a table of transactions and products, write a query to return the product id, product price, and average transaction price of all products with price greater than the average transaction price.
+```
+
+````{admonition} Solution:
+:class: dropdown
+
+[Source](https://www.interviewquery.com/questions/zipcode-average?ref=question_email)
+
+```sql
+with cte as (
+select 
+    t.product_id, 
+    avg(t.quantity * p.price) as avg_trans_price
+from transactions t
+inner join products p
+	on t.product_id = p.id
+group by t.product_id
+)
+
+select 
+    p.id as product_id, 
+    p.price as product_price, 
+    c.avg_trans_price as avg_price
+from products p
+inner join cte c
+	on p.id = c.product_id
+where p.price > c.avg_trans_price
+```
+
+````

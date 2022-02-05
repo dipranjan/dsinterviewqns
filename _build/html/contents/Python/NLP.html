@@ -4,11 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Interview resource of Data Science Interview focusing on Classification." lang="en" name="description" xml:lang="en" />
-<meta content="interview, data science, machine learning, Classification, Logistic Regression" name="keywords" />
-<meta content="en_US" property="og:locale" />
-
-    <title>Classification &#8212; The Data Science Interview Book</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NLP &#8212; The Data Science Interview Book</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -45,8 +42,6 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -54,12 +49,12 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/Algorithms/Classification.html" />
+    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/Python/NLP.html" />
     <link rel="shortcut icon" href="../../_static/logo.gif"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Tree based approaches" href="Tree%20based%20approaches.html" />
-    <link rel="prev" title="Generative vs Discriminative Models" href="Generative%20VS%20Discriminative%20Models.html" />
+    <link rel="next" title="SQL Basics" href="../SQL/Select.html" />
+    <link rel="prev" title="Statistics" href="Statistics.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -167,34 +162,34 @@
   Algorithms
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="Regression.html">
+  <a class="reference internal" href="../Algorithms/Regression.html">
    Regression
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Generative%20VS%20Discriminative%20Models.html">
+  <a class="reference internal" href="../Algorithms/Generative%20VS%20Discriminative%20Models.html">
    Generative vs Discriminative Models
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Algorithms/Classification.html">
    Classification
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Tree%20based%20approaches.html">
+  <a class="reference internal" href="../Algorithms/Tree%20based%20approaches.html">
    Tree based approaches
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Time%20Series%20Analysis.html">
+  <a class="reference internal" href="../Algorithms/Time%20Series%20Analysis.html">
    Time Series Analysis
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Anomaly%20Detection.html">
+  <a class="reference internal" href="../Algorithms/Anomaly%20Detection.html">
    Anomaly Detection
   </a>
  </li>
@@ -238,24 +233,24 @@
   Python
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../Python/Basics.html">
+  <a class="reference internal" href="Basics.html">
    Basics
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Python/Data%20Manipulation.html">
+  <a class="reference internal" href="Data%20Manipulation.html">
    Data Manipulation
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Python/Statistics.html">
+  <a class="reference internal" href="Statistics.html">
    Statistics
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Python/NLP.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    NLP
   </a>
  </li>
@@ -383,9 +378,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/contents/Algorithms/Classification.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/contents/Python/NLP.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -400,7 +395,7 @@
     <div class="dropdown-buttons sourcebuttons">
         
         <a class="issues-button"
-            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/Algorithms/Classification.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/Python/NLP.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -416,41 +411,28 @@
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/dipranjan/dsinterviewqns/master?urlpath=tree/contents/Python/NLP.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#logistic-regression">
-   Logistic Regression
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cost-function">
-     Cost Function
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#metrics">
-   Metrics
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#questions">
-   Questions
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -459,75 +441,43 @@
         
               <div>
                 
-  <div class="section" id="classification">
-<h1>Classification<a class="headerlink" href="#classification" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="logistic-regression">
-<h2>Logistic Regression<a class="headerlink" href="#logistic-regression" title="Permalink to this headline">¶</a></h2>
-<p><em>It is easy to say that the linear regression predicts a “value” of the targeted variable through a linear combination of the given features, while on the other hand, a Logistic regression predicts “probability value” through a linear combination of the given features plugged inside a logistic function.
-Linear regression is unbounded, and this brings logistic regression into picture. Their value strictly ranges from 0 to 1.</em></p>
-<div class="figure align-default" id="image3">
-<a class="reference internal image-reference" href="../../_images/image3.PNG"><img alt="../../_images/image3.PNG" src="../../_images/image3.PNG" style="width: 687.6px; height: 345.59999999999997px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">Logistic regression uses Sigmoid function to transform linear regression into the logit function. Logit is nothing but log of Odds. Then using log of Odds it calculate the required probability.(<a class="reference external" href="https://www.vebuso.com/2020/02/linear-to-logistic-regression-explained-step-by-step/">📖Source</a>)</span><a class="headerlink" href="#image3" title="Permalink to this image">¶</a></p>
+  <div class="section" id="nlp">
+<h1>NLP<a class="headerlink" href="#nlp" title="Permalink to this headline">¶</a></h1>
+<div class="dropdown tip admonition">
+<p class="admonition-title">Problem: [OKCUPID] Term Frequency</p>
+<p>Say you are given a text document in the form of a string with the following sentences:</p>
+<p><strong>Input</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">document</span> <span class="pre">=</span> <span class="pre">&quot;I</span> <span class="pre">have</span> <span class="pre">a</span> <span class="pre">nice</span> <span class="pre">car</span> <span class="pre">with</span> <span class="pre">a</span> <span class="pre">nice</span> <span class="pre">tires&quot;</span></code></p>
+<p><strong>Output</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">&quot;I&quot;:0.11,</span> <span class="pre">&quot;have&quot;:0.11,</span> <span class="pre">&quot;a&quot;:0.22,</span> <span class="pre">&quot;nice&quot;:0.22,</span> <span class="pre">&quot;car&quot;:</span> <span class="pre">0.11,</span> <span class="pre">&quot;with&quot;:0.11,</span> <span class="pre">&quot;tires&quot;:0.11</span> <span class="pre">}</span></code>
+Write a program in python to determine the TF (term frequency) values for each term of this document.</p>
 </div>
-<div class="section" id="cost-function">
-<h3>Cost Function<a class="headerlink" href="#cost-function" title="Permalink to this headline">¶</a></h3>
-<p>One more thing to note here is that logistic regression uses maximum likelihood estimation (MLE) instead of least squares method of minimizing the error which is used in linear models. In Linear regression we minimized SSE. In Logistic Regression we maximize log likelihood instead. Linear regression uses mean squared error as its cost function. If this is used for logistic regression, then it will be a non-convex function of parameters (theta). Gradient descent will converge into global minimum only if the function is convex.</p>
-<div class="figure align-default" id="image4">
-<a class="reference internal image-reference" href="../../_images/image4.PNG"><img alt="../../_images/image4.PNG" src="../../_images/image4.PNG" style="width: 356.8px; height: 192.4px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">Cost function(<a class="reference external" href="https://pvgisours.tistory.com/59">📖Source</a>)</span><a class="headerlink" href="#image4" title="Permalink to this image">¶</a></p>
-</div>
-</div>
-</div>
-<div class="section" id="metrics">
-<h2>Metrics<a class="headerlink" href="#metrics" title="Permalink to this headline">¶</a></h2>
-<div class="figure align-default" id="image5">
-<a class="reference internal image-reference" href="../../_images/image5.PNG"><img alt="../../_images/image5.PNG" src="../../_images/image5.PNG" style="width: 601.6px; height: 344.8px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">Confusion Matrix and key Metrics</span><a class="headerlink" href="#image5" title="Permalink to this image">¶</a></p>
-</div>
-<div class="figure align-default" id="image6">
-<a class="reference internal image-reference" href="../../_images/image6.PNG"><img alt="../../_images/image6.PNG" src="../../_images/image6.PNG" style="width: 636.8000000000001px; height: 365.6px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">(a) ROC curve (b) Precision-Recall curve. Both are a helpful diagnostic tool for evaluating a single classifier but challenging for comparing classifiers. Like ROC AUC, we can calculate the area under the curve as a score and use that score to compare classifiers. The focus on the minority class makes the Precision-Recall AUC more useful for imbalanced classification problems. (<a class="reference external" href="https://machinelearningmastery.com/tour-of-evaluation-metrics-for-imbalanced-classification/">📖Source</a>)</span><a class="headerlink" href="#image6" title="Permalink to this image">¶</a></p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># term freq = freq of term &#39;t&#39; in doc &#39;d&#39; / total terms in &#39;d&#39;</span>
+
+<span class="k">def</span> <span class="nf">tf</span><span class="p">(</span><span class="n">doc</span><span class="p">):</span>
+    <span class="n">temp_list</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span> <span class="c1"># split terms</span>
+    <span class="n">final_dict</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1"># store final dictionary with term freq</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">temp_list</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">final_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span> <span class="c1"># check if term is already present in dict</span>
+            <span class="n">final_dict</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">temp_list</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">temp_list</span><span class="p">),</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># calculating tf</span>
+    <span class="k">return</span> <span class="n">final_dict</span>
+
+<span class="n">tf</span><span class="p">(</span><span class="s2">&quot;I have a nice car with a nice tires&quot;</span><span class="p">)</span>
+</pre></div>
 </div>
 </div>
-<div class="section" id="questions">
-<h2>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h2>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Problem: [ROBINHOOD] Interpret Coefficients</p>
-<p>How would you interpret coefficients of logistic regression for categorical and boolean variables?</p>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;I&#39;: 0.11,
+ &#39;have&#39;: 0.11,
+ &#39;a&#39;: 0.22,
+ &#39;nice&#39;: 0.22,
+ &#39;car&#39;: 0.11,
+ &#39;with&#39;: 0.11,
+ &#39;tires&#39;: 0.11}
+</pre></div>
 </div>
-<div class="dropdown admonition">
-<p class="admonition-title">Solution:</p>
-<p><strong>Reference:</strong> <a class="reference external" href="https://www.displayr.com/how-to-interpret-logistic-regression-coefficients/">Explanation</a></p>
-<p>Let’s explain this using an example. The table below shows the main outputs from the logistic regression. It is very obvious which are the categorial variables out here:</p>
-<p><img alt="Estimate of Coefficients" src="../../_images/image1.PNG" /></p>
-<p>The first category (usually not shown) has a coefficient of <span class="math notranslate nohighlight">\(0\)</span>. So, if we can say, for example, that:</p>
-<ul class="simple">
-<li><p>The effect of having a DSL service versus having no DSL service <span class="math notranslate nohighlight">\((0.92 - 0 = 0.92)\)</span> is a little more than twice as big in terms of leading to churn as is the effect of being a senior citizen <span class="math notranslate nohighlight">\((0.41)\)</span>.</p></li>
-<li><p>The effect of having a Fiber optic service is approximately twice as big as having a DSL service.</p></li>
-<li><p>If somebody has a One year contract and a DSL service, these two effects almost completely cancel each other out.</p></li>
-</ul>
-<p>Consider the scenario of a senior citizen with a <span class="math notranslate nohighlight">\(2\)</span> month tenure, with no internet service, a one year contract and a monthly charge of $<span class="math notranslate nohighlight">\(100\)</span>. If we compute all the effects and add them up we have:</p>
-<p><span class="math notranslate nohighlight">\(0.41\)</span> (Senior Citizen = Yes) <span class="math notranslate nohighlight">\(- 0.06 (2*-0.03\)</span>; tenure) <span class="math notranslate nohighlight">\(+ 0\)</span> (no internet service) <span class="math notranslate nohighlight">\(- 0.88\)</span> (one year contract) <span class="math notranslate nohighlight">\(+ 0 (100*0\)</span>; monthly charge) <span class="math notranslate nohighlight">\(= -0.53\)</span>.</p>
-<p>We then need to add the (Intercept), also sometimes called the constant, which gives us <span class="math notranslate nohighlight">\(-0.53- 1.41 = -1.94\)</span>. To make the next bit a little more transparent, I am going to substitute <span class="math notranslate nohighlight">\(-1.94\)</span> with <span class="math notranslate nohighlight">\(x\)</span>. The logistic transformation is:</p>
-<p>Probability <span class="math notranslate nohighlight">\(= \frac{1} {1 + \exp^{-x}} = \frac{1}{1 + \exp^{1.94}} = 0.13 = 13\%\)</span>.</p>
-<p>Thus, the senior citizen with a <span class="math notranslate nohighlight">\(2\)</span> month tenure, no internet service, a one year contract, and a monthly charge of $<span class="math notranslate nohighlight">\(100\)</span>, is predicted as having a <span class="math notranslate nohighlight">\(13\%\)</span> chance of cancelling their subscription. By contrast if we redo this, just changing one thing, which is substituting the effect for no internet service <span class="math notranslate nohighlight">\((0)\)</span> with that for a fiber optic connection <span class="math notranslate nohighlight">\((1.86)\)</span>, we compute that they have a <span class="math notranslate nohighlight">\(48\%\)</span> chance of cancelling.</p>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Problem: Multinomial Logistic Regression</p>
-<p>Can Logistic Regression be used for multi class classification?</p>
-</div>
-<div class="dropdown admonition">
-<p class="admonition-title">Solution:</p>
-<p>Logistic regression, by default, is limited to two-class classification problems. Some extensions like one-vs-rest can allow logistic regression to be used for multi-class classification problems, although they require that the classification problem first be transformed into multiple binary classification problems.</p>
-<p>Multinomial logistic regression algorithm is an extension to the logistic regression model that involves changing the loss function to cross-entropy loss and predict probability distribution to a multinomial probability distribution to natively support multi-class classification problems.</p>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Problem: Choice of Cost Function</p>
-<p>In what situations would you recommend using one metric over the another for classification models?</p>
-</div>
-<div class="dropdown admonition">
-<p class="admonition-title">Solution:</p>
-<p>It all depends on the use case. For example, a diagnostic lab will be concerned with incorrect positive diagnosis. Hence, they will aim for a high specificity value. On the other hand, for a model predicting loan default rate the goal is to identify even a small chance of default, hence we need the model to maximize sensitivity.</p>
 </div>
 </div>
 </div>
@@ -545,7 +495,7 @@ Linear regression is unbounded, and this brings logistic regression into picture
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./contents\Algorithms"
+            path: "./contents\Python"
         },
         predefinedOutput: true
     }
@@ -562,19 +512,19 @@ Linear regression is unbounded, and this brings logistic regression into picture
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="Generative%20VS%20Discriminative%20Models.html" title="previous page">
+        <a class="left-prev" href="Statistics.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Generative vs Discriminative Models</p>
+                <p class="prevnext-title">Statistics</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="Tree%20based%20approaches.html" title="next page">
+        <a class="right-next" href="../SQL/Select.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Tree based approaches</p>
+                <p class="prevnext-title">SQL Basics</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

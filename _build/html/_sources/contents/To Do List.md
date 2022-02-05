@@ -3,6 +3,7 @@
 ```{admonition} What's Happening
 :class: tip, dropdown
 
+- 🔥 Focus is on adding more problems
 - 🔥 NN
 - 🔥 NLP
 - ⌛ Tensorflow
@@ -29,6 +30,9 @@
 
 ```{admonition} What Happened
 :class: tip, dropdown
+
+**Month of February, 2022**
+- Added problems in Python, SQL, Probability
 
 **Month of January, 2022**
 - Neural Network section added

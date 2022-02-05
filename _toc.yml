@@ -37,6 +37,7 @@ parts:
     - file: contents/Python/Basics
     - file: contents/Python/Data Manipulation
     - file: contents/Python/Statistics
+    - file: contents/Python/NLP
   - caption: SQL
     chapters:
     - file: contents/SQL/Select
