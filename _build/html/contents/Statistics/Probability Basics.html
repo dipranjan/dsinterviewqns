@@ -612,6 +612,18 @@ The square root of the variance is called the <strong>standard deviation.</stron
 <div class="dropdown admonition">
 <p class="admonition-title">Solution:</p>
 <p>If <span class="math notranslate nohighlight">\(r(1≤r≤6)\)</span> is the largest number you have allowed for your <span class="math notranslate nohighlight">\(n\)</span> rolls, then you forbid any number larger than <span class="math notranslate nohighlight">\(r\)</span>. That is, you forbid <span class="math notranslate nohighlight">\(6−r\)</span> values. The probability that your single roll does not show any of these <span class="math notranslate nohighlight">\(6−r\)</span> values is <span class="math notranslate nohighlight">\(\frac{6−r}{6}\)</span> and the probability that this happens each time during a series of <span class="math notranslate nohighlight">\(n\)</span> rolls is the obviously <span class="math notranslate nohighlight">\((\frac{6−r}{6})^n\)</span></p>
+<p>There is a subtle nuance to this problem, in the above solution we have assumed the <span class="math notranslate nohighlight">\(max&lt;=r\)</span> which is different from <span class="math notranslate nohighlight">\(max=r\)</span> or in other words if <span class="math notranslate nohighlight">\(r=3\)</span>, the above solution gives results for <span class="math notranslate nohighlight">\(r= 1,2,3\)</span>. The solution of <span class="math notranslate nohighlight">\(r=3\)</span> is a little more involved:</p>
+<p>Let’s take <span class="math notranslate nohighlight">\(r=3\)</span>, for <span class="math notranslate nohighlight">\(n\)</span> die rolls we should have atleast one <span class="math notranslate nohighlight">\(r\)</span>. The Probability of that is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+P(r=3) \\
+&amp; = P(\text{of getting all n values as 1,2,3} * P(\text{atleast one 3})) \\
+&amp; = (\frac{3}{6})^n * (1-P(\text{no 3's occuring})) \\
+&amp; = (\frac{3}{6})^n * (1-(\frac{\text{only getting 1,2}}{\text{out of 1,2,3}})^n) \\
+&amp; = (\frac{3}{6})^n * (1-(\frac{2}{3})^n) \\
+&amp; = \text{generalizing } (\frac{r}{6})^n * (1-(\frac{r-1}{r})^n) \\
+&amp; = \frac{r^n - (r-1)^n}{6^n}\\
+\end{split}\]</div>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Problem: [FACEBOOK] Labeling Content</p>

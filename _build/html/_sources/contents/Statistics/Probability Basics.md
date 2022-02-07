@@ -231,6 +231,21 @@ A fair die is rolled $n$ times. What is the probability that the largest number 
 ```{admonition} Solution:
 :class: dropdown
 If $r(1≤r≤6)$ is the largest number you have allowed for your $n$ rolls, then you forbid any number larger than $r$. That is, you forbid $6−r$ values. The probability that your single roll does not show any of these $6−r$ values is $\frac{6−r}{6}$ and the probability that this happens each time during a series of $n$ rolls is the obviously $(\frac{6−r}{6})^n$
+
+There is a subtle nuance to this problem, in the above solution we have assumed the $max<=r$ which is different from $max=r$ or in other words if $r=3$, the above solution gives results for $r= 1,2,3$. The solution of $r=3$ is a little more involved:
+
+Let's take $r=3$, for $n$ die rolls we should have atleast one $r$. The Probability of that is:
+
+$$
+P(r=3) \\
+& = P(\text{of getting all n values as 1,2,3} * P(\text{atleast one 3})) \\
+& = (\frac{3}{6})^n * (1-P(\text{no 3's occuring})) \\
+& = (\frac{3}{6})^n * (1-(\frac{\text{only getting 1,2}}{\text{out of 1,2,3}})^n) \\
+& = (\frac{3}{6})^n * (1-(\frac{2}{3})^n) \\
+& = \text{generalizing } (\frac{r}{6})^n * (1-(\frac{r-1}{r})^n) \\
+& = \frac{r^n - (r-1)^n}{6^n}\\
+$$
+
 ```
 
 ```{admonition} Problem: [FACEBOOK] Labeling Content

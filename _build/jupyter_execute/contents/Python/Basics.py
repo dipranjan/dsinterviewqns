@@ -3,6 +3,13 @@
 
 # ## Basics
 
+# ```{figure} ../Python/images/image2.PNG
+# ---
+# name: image2
+# scale: 100%
+# ---
+# ```
+
 # ### Questions
 
 # ```{admonition} Problem: [SNAPCHAT] Palindrome Checker
