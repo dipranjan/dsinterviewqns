@@ -313,6 +313,11 @@
    Excel Basics
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Excel/Data%20Manipulation.html">
+   Data Manipulation
+  </a>
+ </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
@@ -591,7 +596,7 @@ The transition and the emission probabilities specify the probabilities of trans
 <li><p><strong>Bottom-up parsing:</strong> reduces each terminal word to a production rule, i.e. reduces the right-hand-side of the grammar to the left-hand-side. It continues the reduction process until the entire sentence has been reduced to the start symbol S. Shift-Reduce Parser algorithm, which parses the words of the sentence one-by-one either by shifting a word to the stack or reducing the stack by using the production rules. Below is an example of bottom-up parse tree.</p></li>
 </ul>
 <div class="figure align-default" id="image5">
-<a class="reference internal image-reference" href="../../_images/image52.PNG"><img alt="../../_images/image52.PNG" src="../../_images/image52.PNG" style="width: 701.6px; height: 357.6px;" /></a>
+<a class="reference internal image-reference" href="../../_images/image53.PNG"><img alt="../../_images/image53.PNG" src="../../_images/image53.PNG" style="width: 701.6px; height: 357.6px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 27 </span><span class="caption-text">Bottom-up parse</span><a class="headerlink" href="#image5" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="probabilistic-cfg">
@@ -622,7 +627,7 @@ Overall probability for a parsed structure of the sentence is probabilities of a
 <p>Free word order languages such as Hindi, Bengali are difficult to parse using constituency parsing techniques. This is because, in such free-word-order languages, the order of words/constituents may change significantly while keeping the meaning exactly the same. It is thus difficult to fit the sentences into the finite set of production rules that CFGs offer.
 Dependencies in a sentence are defined using the elements Subject-Verb-Object (SVO). The following table shows SVO dependencies in three types of sentences - declarative, interrogative, and imperative</p>
 <div class="figure align-default" id="image6">
-<a class="reference internal image-reference" href="../../_images/image62.PNG"><img alt="../../_images/image62.PNG" src="../../_images/image62.PNG" style="width: 444.8px; height: 330.40000000000003px;" /></a>
+<a class="reference internal image-reference" href="../../_images/image63.PNG"><img alt="../../_images/image63.PNG" src="../../_images/image63.PNG" style="width: 444.8px; height: 330.40000000000003px;" /></a>
 </div>
 <p>Apart from dependencies defined in the form of subject-verb-object, there’s a non-exhaustive list of dependency relationships, which are called <strong>universal dependencies</strong>.</p>
 <p>Dependencies are represented as labelled arcs of the form <span class="math notranslate nohighlight">\(h → d(l)\)</span> where ‘<span class="math notranslate nohighlight">\(h\)</span>’ is called the “head” of the dependency, ‘<span class="math notranslate nohighlight">\(d\)</span>’ is the “dependent” and <span class="math notranslate nohighlight">\(l\)</span> is the “label” assigned to the arc. In a dependency parse, we start from the root of the sentence, which is often a verb. And then start to establish dependencies between root and other words.</p>

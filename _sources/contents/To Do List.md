@@ -1,13 +1,15 @@
 ## Log
 
+📢 **Last updated on**  <span style="color:red">9 Feb 2022</span>
+
 ```{admonition} What's Happening
 :class: tip, dropdown
 
+- 🔥 Excel
 - 🔥 Focus is on adding more problems
 - 🔥 NN
 - 🔥 NLP
 - ⌛ Tensorflow
-- ⌛ Excel [new section]
 - ⌛ Anomaly Detection
 - ⌛ Regularization
 - ⌛ Confidence Intervals
@@ -33,6 +35,7 @@
 
 **Month of February, 2022**
 - Added problems in Python, SQL, Probability
+- Excel section updated
 
 **Month of January, 2022**
 - Neural Network section added
