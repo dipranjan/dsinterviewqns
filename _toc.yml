@@ -50,6 +50,7 @@ parts:
   - caption: Excel
     chapters:
     - file: contents/Excel/Excel Basics
+    - file: contents/Excel/Data Manipulation
   - caption: Tensorflow
     chapters:
     - file: contents/Tensorflow/Basics

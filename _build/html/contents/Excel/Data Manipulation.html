@@ -8,7 +8,7 @@
 <meta content="interview, data science, machine learning, Excel, practice questions" name="keywords" />
 <meta content="en_US" property="og:locale" />
 
-    <title>Excel Basics &#8212; The Data Science Interview Book</title>
+    <title>Data Manipulation &#8212; The Data Science Interview Book</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -52,12 +52,12 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/Excel/Excel Basics.html" />
+    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/Excel/Data Manipulation.html" />
     <link rel="shortcut icon" href="../../_static/logo.gif"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Data Manipulation" href="Data%20Manipulation.html" />
-    <link rel="prev" title="Problems" href="../SQL/Problems.html" />
+    <link rel="next" title="Basics" href="../Tensorflow/Basics.html" />
+    <link rel="prev" title="Excel Basics" href="Excel%20Basics.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -306,13 +306,13 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Excel%20Basics.html">
    Excel Basics
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Data%20Manipulation.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Data Manipulation
   </a>
  </li>
@@ -386,7 +386,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/contents/Excel/Excel Basics.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/contents/Excel/Data Manipulation.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -403,7 +403,7 @@
     <div class="dropdown-buttons sourcebuttons">
         
         <a class="issues-button"
-            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/Excel/Excel Basics.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/Excel/Data Manipulation.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -424,19 +424,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#questions">
-   Questions
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -445,48 +432,82 @@
         
               <div>
                 
-  <div class="section" id="excel-basics">
-<h1>Excel Basics<a class="headerlink" href="#excel-basics" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="data-manipulation">
+<h1>Data Manipulation<a class="headerlink" href="#data-manipulation" title="Permalink to this headline">¶</a></h1>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This page is a work in progress</p>
 </div>
-<div class="figure align-default" id="image1">
-<a class="reference internal image-reference" href="../../_images/image16.PNG"><img alt="../../_images/image16.PNG" src="../../_images/image16.PNG" style="width: 350.0px; height: 184.0px;" /></a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Excel, as a product, always remains under active development from Microsoft. With new releases, new features are brought in whereas old ones are discarded. Due to this there might be changes to the solutions mentioned below depending on the version that you are using.</p>
 </div>
-<hr class="docutils" />
-<div class="section" id="questions">
-<h2>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h2>
 <div class="tip dropdown admonition">
-<p class="admonition-title">Problem: Find the Revenue</p>
-<p>From the source below can you find the Revenue the specified account?</p>
-<p><img alt="Table" src="../../_images/image22.PNG" /></p>
+<p class="admonition-title">Problem: SUM of Digits in a cell</p>
+<p>Can you write a formula to generate the SUM of all digits in a cell?</p>
 </div>
 <div class="dropdown admonition">
 <p class="admonition-title">Solution:</p>
-<p>This can be solved with a simple VLOOKUP, the formula to find the answer is given below:</p>
-<p><code class="docutils literal notranslate"><span class="pre">	=VLOOKUP(F3,B2:D12,3,FALSE)</span></code></p>
+<p><img alt="Solution" src="../../_images/image52.PNG" /></p>
+<p>To use when you are sure that there are only digits in the column:</p>
+<p><code class="docutils literal notranslate"><span class="pre">	=SUMPRODUCT(--MID(B2,ROW(INDIRECT(&quot;1:&quot;&amp;LEN(B2))),1))</span></code></p>
+<p>But if there are other characters too use this:</p>
+<p><code class="docutils literal notranslate"><span class="pre">	=SUMPRODUCT((LEN(B3)-LEN(SUBSTITUTE(B3,ROW(1:9),&quot;&quot;)))*ROW(1:9))</span></code></p>
 </div>
 <div class="tip dropdown admonition">
-<p class="admonition-title">Problem: Find the Customer Number</p>
-<p>From the source below can you find the Customer Number corresponding to the Account Name?</p>
-<p><img alt="Table" src="../../_images/image32.PNG" /></p>
+<p class="admonition-title">Problem: Uniqueness Check</p>
+<p>Given the data below, please answer the following questions</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Region</p></th>
+<th class="head"><p>ID</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>A</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>B</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>C</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p>C</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>B</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p>C</p></td>
+<td><p>4</p></td>
+</tr>
+</tbody>
+</table>
+<p>This is a 3 part question:</p>
+<ul class="simple">
+<li><p>Given a table of data how do you tell if it has duplicates?</p></li>
+<li><p>Create a table with distinct values from this</p></li>
+<li><p>Can you do a conditional duplicate check on this table?</p></li>
+</ul>
 </div>
 <div class="dropdown admonition">
 <p class="admonition-title">Solution:</p>
-<p>VLOOKUP won’t work as Customer Num is to the LEFT of the Account Name. We need INDEX MATCH <a class="reference external" href="https://exceljet.net/index-and-match">📖Explanation</a></p>
-<p><code class="docutils literal notranslate"><span class="pre">	=INDEX(A2:D12,MATCH(F7,B2:B12),1)</span></code></p>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Problem: Total Revenue per Sales Rep</p>
-<p>From the source below can you find the total revenue per sales rep?</p>
-<p><img alt="Table" src="../../_images/image42.PNG" /></p>
-</div>
-<div class="dropdown admonition">
-<p class="admonition-title">Solution:</p>
-<p>This can be solved with a simple SUMIF. For the first row the answer is given below. It will be similar for other rows.
-<code class="docutils literal notranslate"><span class="pre">	=SUMIF(C3:C12,&quot;=&quot;&amp;F11,D3:D12)</span></code></p>
-</div>
+<p><img alt="Solution" src="../../_images/image62.PNG" /></p>
+<p>You can check for duplicates using:</p>
+<p><code class="docutils literal notranslate"><span class="pre">=</span> <span class="pre">COUNTIF($B$2:$B$7)</span></code>
+Rows with value &gt; 1 has duplicates</p>
+<p>Inorder to create a table with Unique values there are 2 ways:</p>
+<ul class="simple">
+<li><p>Select the table and click on remove duplicates</p></li>
+</ul>
+<p><img alt="Solution" src="../../_images/image71.PNG" /></p>
+<ul class="simple">
+<li><p>If you want to keep the source table and create the unique value table elsewhere use:</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">=UNIQUE(A2:B7)</span></code></p>
+<p>Conditional check can be done using IF clause, for example if you want to check duplicates only for ID &gt; 3 you can use something like:</p>
+<p><code class="docutils literal notranslate"><span class="pre">=IF(B2&gt;3,COUNTIF($B$2:$B$7,B4),0)</span></code></p>
 </div>
 </div>
 
@@ -520,19 +541,19 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="../SQL/Problems.html" title="previous page">
+        <a class="left-prev" href="Excel%20Basics.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Problems</p>
+                <p class="prevnext-title">Excel Basics</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="Data%20Manipulation.html" title="next page">
+        <a class="right-next" href="../Tensorflow/Basics.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Data Manipulation</p>
+                <p class="prevnext-title">Basics</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
