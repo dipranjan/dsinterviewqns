@@ -11,7 +11,7 @@ Preparing for interviews is a stressful task. There is an enormous amount of res
 
 This book does not cover the topics in depth, it covers just enough to get you ready for the interview. The assumption here is that the person using it is already familiar with the topic and is here to brush up on the same. Additonal resources for someone eager to explore the topic in depth is added. **In short, don't use this as text book, use it as a revision note.** In order to make it easier to practice, the answers are collapsed by default, the idea is that you should try to solve it before checking out the answers.
 
-This book **IS AND ALWAYS WILL** be **free** and **a work in progress**. The book gets updated weekly with new sections, more questions and richer content, so please keep visiting.
+This book **IS AND ALWAYS WILL** be **free** and **a work in progress**. The book gets updated weekly with new sections, more questions and richer content, check the [Log](https://dipranjan.github.io/dsinterviewqns/contents/To%20Do%20List.html) page for the latest updates and keep visiting for new content.
 
 ---
 

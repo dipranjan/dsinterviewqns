@@ -1,22 +1,22 @@
 ## Log
 
-📢 **Last updated on**  <span style="color:red">9 Feb 2022</span>
+📢 **Last updated on <span style="color:red">22 Feb 2022</span>**
 
 ```{admonition} What's Happening
 :class: tip, dropdown
 
 - 🔥 Excel
-- 🔥 Focus is on adding more problems
+- 🔥 Hyperparameter Optimization
 - 🔥 NN
 - 🔥 NLP
 - ⌛ Tensorflow
+- ⌛ Airflow
+- ⌛ Neo4j
 - ⌛ Anomaly Detection
 - ⌛ Regularization
 - ⌛ Confidence Intervals
-- ⌛ Missing Value Treatment
 - ⌛ Plots
 - ⌛ Case Studies
-- ⌛ Hyper Parameter Tuning
 - ⌛ Deep Learning [new section]
 - ⌛ Collaborative Filtering
 - ⌛ Survivor Analysis
@@ -36,6 +36,9 @@
 **Month of February, 2022**
 - Added problems in Python, SQL, Probability
 - Excel section updated
+- Data section has been moved into a new and broader section called Model Building
+- To keep the table of contents clean collapsable headers used in Model Building section
+- Hyperparameter optimization section added 
 
 **Month of January, 2022**
 - Neural Network section added

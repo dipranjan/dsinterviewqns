@@ -5,11 +5,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta content="Interview resource of Data Science Interview focusing on Business Scenarios." lang="en" name="description" xml:lang="en" />
-<meta content="interview, data science, machine learning, Business Scenarios, practice questions" name="keywords" />
+<meta content="Interview resource of Data Science Interview focusing on Hyperparameter optimization." lang="en" name="description" xml:lang="en" />
+<meta content="interview, data science, machine learning, Hyperparameter, optimization, tuning" name="keywords" />
 <meta content="en_US" property="og:locale" />
 
-    <title>Business Scenarios &#8212; The Data Science Interview Book</title>
+    <title>Hyperparameter Optimization &#8212; The Data Science Interview Book</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -49,8 +49,6 @@
     <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -58,12 +56,12 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/Analytical Thinking/Business Scenarios.html" />
+    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/Data/Hyperparameter optimization.html" />
     <link rel="shortcut icon" href="../../_static/logo.gif"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Industry Application" href="Industry%20Application.html" />
-    <link rel="prev" title="Basics" href="../Tensorflow/Basics.html" />
+    <link rel="next" title="Regression" href="../Algorithms/Regression.html" />
+    <link rel="prev" title="Outlier" href="Outlier.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -166,9 +164,9 @@
   Model Building
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Data/Data.html">
+  <a class="reference internal" href="Data.html">
    Data
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -178,25 +176,25 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Data/Scaling.html">
+    <a class="reference internal" href="Scaling.html">
      Scaling
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Data/Missing%20Value.html">
+    <a class="reference internal" href="Missing%20Value.html">
      Missing Value
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Data/Outlier.html">
+    <a class="reference internal" href="Outlier.html">
      Outlier
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Data/Hyperparameter%20optimization.html">
-   Hyperparameter optimization
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Hyperparameter Optimization
   </a>
  </li>
 </ul>
@@ -379,14 +377,14 @@
   Analytical Thinking
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Analytical%20Thinking/Business%20Scenarios.html">
    Business Scenarios
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Industry%20Application.html">
+  <a class="reference internal" href="../Analytical%20Thinking/Industry%20Application.html">
    Industry Application
   </a>
  </li>
@@ -431,7 +429,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/contents/Analytical Thinking/Business Scenarios.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/contents/Data/Hyperparameter optimization.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -448,7 +446,7 @@
     <div class="dropdown-buttons sourcebuttons">
         
         <a class="issues-button"
-            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/Analytical Thinking/Business Scenarios.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/Data/Hyperparameter optimization.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -469,6 +467,56 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-s-a-hyperparameter">
+   What’s a Hyperparameter?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tuning">
+   Tuning
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#grid-search">
+     Grid Search
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#randomized-search">
+     Randomized Search
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#halving-grid-search">
+     Halving Grid Search
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bayesian-optimization">
+     Bayesian Optimization
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#evolutionary-optimization">
+     Evolutionary Optimization
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#population-based-training">
+     Population-based training
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -476,108 +524,115 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Business Scenarios</h1>
+                <h1>Hyperparameter Optimization</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-s-a-hyperparameter">
+   What’s a Hyperparameter?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tuning">
+   Tuning
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#grid-search">
+     Grid Search
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#randomized-search">
+     Randomized Search
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#halving-grid-search">
+     Halving Grid Search
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bayesian-optimization">
+     Bayesian Optimization
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#evolutionary-optimization">
+     Evolutionary Optimization
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#population-based-training">
+     Population-based training
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <section id="business-scenarios">
-<h1>Business Scenarios<a class="headerlink" href="#business-scenarios" title="Permalink to this headline">¶</a></h1>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Problem: [SALESFORCE] User Aquisition</p>
-<p>Suppose as a Netflix product Analyst you are speaking with a Product Manager of Netflix. You get the question as to “I would want to understand user base of Netflix”. What would be your approach?</p>
+  <section id="hyperparameter-optimization">
+<h1>Hyperparameter Optimization<a class="headerlink" href="#hyperparameter-optimization" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This page is a work in progress</p>
 </div>
-<div class="dropdown admonition">
-<p class="admonition-title">Solution:</p>
-<p>This type of questions are basically a coversation and tries to judge your skills in breaking down the problem statement and providing an analytical solution.</p>
+<p>While building a machine learning model, many design choices need to be made as in how to define the model architecture. For example what should be the depth of my Decision Tree, how many trees should be present in my Random Forest, how many layers should be there in my Meural network, so on and so forth.</p>
+<p>In most cases the optimal model architecture is not obvious or readily available to us. <strong>This exploration to select the optimal model architecture automatically from a defined range of options is referred to as hyperparameter optimization or tuning.</strong></p>
+<section id="what-s-a-hyperparameter">
+<h2>What’s a Hyperparameter?<a class="headerlink" href="#what-s-a-hyperparameter" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://cloud.google.com/ai-platform/training/docs/hyperparameter-tuning-overview">📚 Source</a></p>
+<p>Hyperparameters contain the data that govern the training process itself.</p>
+<p>Your training application handles <strong>three categories of data</strong> as it trains your model:</p>
 <ul class="simple">
-<li><p>Ask follow up questions, these problem statements are kept vague to encourage you to ask questions</p></li>
-<li><p>Define KPIs</p></li>
-<li><p>Speak about your assumptions</p></li>
-<li><p>Break down the problem statement into 2-3 pieces and tell how would you solve them</p></li>
+<li><p>Your <strong>input data (also called training data)</strong>, however, the values in your input data never directly become part of your model.</p></li>
+<li><p>Your <strong>model’s parameters</strong> are the variables that your chosen machine learning technique uses to adjust to your data. For example, a deep neural network (DNN) is composed of processing nodes (neurons), each with an operation performed on data as it travels through the network. When your DNN is trained, each node has a weight value that tells your model how much impact it has on the final prediction. Those weights are an example of your model’s parameters. In many ways, your model’s parameters are the model—they are what distinguishes your particular model from other models of the same type working on similar data.</p></li>
+<li><p>Your <strong>hyperparameters</strong> are the variables that govern the training process itself. For example, part of setting up a deep neural network is deciding how many hidden layers of nodes to use between the input layer and the output layer, and how many nodes each layer should use. These variables are not directly related to the training data. They are configuration variables. Note that parameters change during a training job, while hyperparameters are usually constant during a job.</p></li>
 </ul>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Problem: [SALESFORCE] Survey Monkey Alternative</p>
-<p>Suppose your company has launched a Survey Monkey competitor and the PM wants to understand user growth. There are 2 flavors of the product:</p>
+</section>
+<hr class="docutils" />
+<section id="tuning">
+<h2>Tuning<a class="headerlink" href="#tuning" title="Permalink to this headline">¶</a></h2>
+<p>The process of Hyperparameter Tuning usually involves the following steps:</p>
 <ul class="simple">
-<li><p>Unlimited survey’s for 3 for a pro license</p></li>
-<li><p>One survey per license for a normal license</p></li>
+<li><p>Decide on the hyperparameters that is applicable for the model</p></li>
+<li><p>Provide a range or set of values for all the hyperparameters</p></li>
+<li><p>Run the training process on the set of parameter combinations to find the best hyperparameter which optimizes your model performance</p></li>
 </ul>
-</div>
-<div class="dropdown admonition">
-<p class="admonition-title">Solution:</p>
-<p>This type of questions are basically a coversation and tries to judge your skills in breaking down the problem statement and providing an analytical solution.</p>
-<ul class="simple">
-<li><p>Ask follow up questions, these problem statements are kept vague to encourage you to ask questions</p></li>
-<li><p>Define KPIs</p></li>
-<li><p>Speak about your assumptions</p></li>
-<li><p>Break down the problem statement into 2-3 pieces and tell how would you solve them</p></li>
-</ul>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Problem: [NETFLIX] Licensing Valuation</p>
-<p>Let’s say that you’re working at Netflix.</p>
-<p>The company executives are working to renew a deal with another TV network that grants Netflix exclusive licensing to stream their hit TV series (think something like Friends or The Office). One of the executives wants to know how to approach this deal.</p>
-<p>We know that the TV show has been on Netflix for a year already.</p>
-<p>How would you approach valuing the benefit of keeping this show on Netflix?</p>
-</div>
-<div class="dropdown admonition">
-<p class="admonition-title">Solution:</p>
-<p>Some of the factors which you can consider are as follows:</p>
-<ul class="simple">
-<li><p>Has the viewership stayed consistent or waned?</p></li>
-<li><p>Has there been any Social media backlash?</p></li>
-<li><p>Is there a new season or reunion or movie coming up?</p></li>
-<li><p>How many people who viewed this on Netflix renewed their subscriptions?</p></li>
-<li><p>What percent of viewers who saw this completed the entire series?</p></li>
-<li><p>How many of the people are repeat viewers of this seris?</p></li>
-</ul>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Problem: [SQUARE] Growing Small Business</p>
-<p>Let’s say that you’re in charge of Square’s small business division.</p>
-<p>The CEO wants to hire a customer success manager for help managing a new software product. Another executive thinks that it’s worth just instituting a free trial instead.</p>
-<p>What would be your recommendation on utilizing a customer success manager versus just a free trial to get new or existing customers to use the new product?</p>
-</div>
-<div class="dropdown admonition">
-<p class="admonition-title">Solution:</p>
-<p>SOLUTION PENDING</p>
-</div>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Problem: [INSTAGRAM] Promoting Instagram</p>
-<p><a class="reference external" href="https://www.interviewquery.com/questions/promoting-instagram">📖Source</a></p>
-<p>Let’s say you work on the growth team at Facebook and are tasked with promoting Instagram from within the Facebook app.</p>
-<p>Where and how could you promote Instagram through Facebook?</p>
-</div>
-<div class="dropdown admonition">
-<p class="admonition-title">Solution:</p>
-<p>Goal: Increase awareness of Instragram through Facebook Hypothesis: Showing Instragram ads to users in their News Feed will increase the likelihood that they will login to Instragram by <span class="math notranslate nohighlight">\(X%\)</span>.</p>
-<p>Run A/B test:</p>
-<ul class="simple">
-<li><p>Control group: no changes</p></li>
-<li><p>Variant group: will be shown Instagram ads as the first ad they see when scrolling through their News Feed.</p></li>
-<li><p>Randomly assign users to each group, making sure they’re not biased and are representative of the population.</p></li>
-<li><p>Set a significance level like 95%</p></li>
-<li><p>Set experiment time, how long the long experiement run</p></li>
-<li><p>Set the power,usually 80%</p></li>
-<li><p>Esimate intended effect size - 20%</p></li>
-</ul>
-<p>Metrics:</p>
-<ul class="simple">
-<li><p>Number of Instagram logins after being exposed to the Instagram ad, 24 hours</p></li>
-<li><p>Instagram logins / number of users - Percent logging into Instagram after using Facebook</p></li>
-<li><p>Stop-gap metric: Ad revenue, CTR, revenue per session. Since we’re taking up ad space, we want to see how much these ads cost us</p></li>
-<li><p>The other idea is: Notifying ppl on Facebook when their friends join Instagram. We can do a regression of number of friends on Instagram vs % of those users who use Instagram</p></li>
-</ul>
-<p>Another thing to add to this would be to look at including an Instagram reference/clickable when a user uploads a new photo/video to Facebook. It is a natural fit there since Instagram is a photo/video sharing paltform and it is a natural integration to bring those together for those users who do not have Instagram.</p>
-</div>
+<p>Now this last step can be an extremely time and resource intensive process depending upon the model and range of the hyperparameters provided. There are many ways to perfrom the last step. Let’s start with an example, suppose</p>
+<section id="grid-search">
+<h3>Grid Search<a class="headerlink" href="#grid-search" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="randomized-search">
+<h3>Randomized Search<a class="headerlink" href="#randomized-search" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="halving-grid-search">
+<h3>Halving Grid Search<a class="headerlink" href="#halving-grid-search" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="bayesian-optimization">
+<h3>Bayesian Optimization<a class="headerlink" href="#bayesian-optimization" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="evolutionary-optimization">
+<h3>Evolutionary Optimization<a class="headerlink" href="#evolutionary-optimization" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="population-based-training">
+<h3>Population-based training<a class="headerlink" href="#population-based-training" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -593,7 +648,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./contents\Analytical Thinking"
+            path: "./contents\Data"
         },
         predefinedOutput: true
     }
@@ -605,17 +660,17 @@
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../Tensorflow/Basics.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="Outlier.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Basics</p>
+            <p class="prev-next-title">Outlier</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="Industry%20Application.html" title="next page">
+    <a class='right-next' id="next-link" href="../Algorithms/Regression.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Industry Application</p>
+        <p class="prev-next-title">Regression</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

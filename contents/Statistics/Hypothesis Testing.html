@@ -4,14 +4,15 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Interview resource of Data Science Interview focusing on Hypothesis Testing." lang="en" name="description" xml:lang="en" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<meta content="Interview resource of Data Science Interview focusing on Hypothesis Testing." lang="en" name="description" xml:lang="en" />
 <meta content="interview, data science, machine learning, Hypothesis Testing" name="keywords" />
 <meta content="en_US" property="og:locale" />
 
     <title>Hypothesis Testing &#8212; The Data Science Interview Book</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -25,8 +26,8 @@
       
 
     
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -34,21 +35,24 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -58,11 +62,24 @@
     <link rel="shortcut icon" href="../../_static/logo.gif"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Scaling" href="../Data/Scaling.html" />
+    <link rel="next" title="Data" href="../Data/Data.html" />
     <link rel="prev" title="Bayesian vs Frequentist Reasoning" href="Bayesian%20vs%20Frequentist%20Reasoning.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
     
+
+    <!-- Google Analytics -->
+    
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-60403888-2', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
@@ -77,6 +94,10 @@
     
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
       
       <img src="../../_static/logo.gif" class="logo" alt="logo">
       
@@ -96,7 +117,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Journey of this project
  </span>
@@ -108,7 +129,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Statistics
  </span>
@@ -140,29 +161,46 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Data
+  Model Building
  </span>
 </p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../Data/Scaling.html">
-   Scaling
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Data/Data.html">
+   Data
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Data/Scaling.html">
+     Scaling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Data/Missing%20Value.html">
+     Missing Value
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Data/Outlier.html">
+     Outlier
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Data/Missing%20Value.html">
-   Missing Value
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Data/Outlier.html">
-   Outlier
+  <a class="reference internal" href="../Data/Hyperparameter%20optimization.html">
+   Hyperparameter Optimization
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Algorithms
  </span>
@@ -199,7 +237,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Neural Network
  </span>
@@ -216,7 +254,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   NLP
  </span>
@@ -233,7 +271,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Python
  </span>
@@ -260,7 +298,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   SQL
  </span>
@@ -302,7 +340,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Excel
  </span>
@@ -318,8 +356,13 @@
    Data Manipulation
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Excel/Time%20and%20Date.html">
+   Time and Date
+  </a>
+ </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Tensorflow
  </span>
@@ -331,7 +374,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Analytical Thinking
  </span>
@@ -393,7 +436,7 @@
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -424,7 +467,7 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -471,26 +514,76 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Hypothesis Testing</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inferential-statistics">
+   Inferential Statistics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Hypothesis Testing
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#steps">
+     Steps
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example">
+     Example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#errors-in-hypothesis-testing">
+     Errors in Hypothesis Testing
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#questions">
+   Questions
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
-  <div class="section" id="hypothesis-testing">
+  <section id="hypothesis-testing">
 <h1>Hypothesis Testing<a class="headerlink" href="#hypothesis-testing" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="inferential-statistics">
+<section id="inferential-statistics">
 <h2>Inferential Statistics<a class="headerlink" href="#inferential-statistics" title="Permalink to this headline">¶</a></h2>
 <p>Sometimes, you may require a very large amount of data for your analysis which may need too much time and resources to acquire. In such situations, you are forced to work with a smaller sample of the data, instead of having the entire data to work with.</p>
 <p>Situations like these arise all the time at big companies like Amazon. For example, say the Amazon QC department wants to know what proportion of the products in its warehouses are defective. Instead of going through all of its products (which would be a lot!), the Amazon QC team can just check a small sample of 1,000 products and then find, for this sample, the defect rate (i.e. the proportion of defective products). Then, based on this sample’s defect rate, the team can “infer” what the defect rate is for all the products in the warehouses.
 <strong>This process of “inferring” insights from sample data is called “Inferential Statistics”.</strong></p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="id1">
+<section id="id1">
 <h2>Hypothesis Testing<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>Hypothesis testing is used to confirm your conclusions about the population parameter. Through this we can conclude if there is enough evidence to confirm the hypothesis about the population.</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(H_0 =\)</span> null hypothesis, what is already present; always has the following signs: = OR ≤ OR ≥</p></li>
 <li><p><span class="math notranslate nohighlight">\(H_1 =\)</span> alternate hypothesis, a challenge to the null hypothesis; always has the following signs: ≠ OR &gt; OR &lt;</p></li>
 </ul>
-<div class="section" id="steps">
+<section id="steps">
 <h3>Steps<a class="headerlink" href="#steps" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Statistical_hypothesis_testing">📖Source</a></p>
 <ul class="simple">
@@ -517,8 +610,8 @@
 <li><p>“The Geiger-counter reading is high; <span class="math notranslate nohighlight">\(97\%\)</span> of safe suitcases have lower readings. The limit is <span class="math notranslate nohighlight">\(95\%\)</span>. Check the suitcase.”</p></li>
 </ul>
 <p>The former report is adequate, the latter gives a more detailed explanation of the data and the reason why the suitcase is being checked.</p>
-</div>
-<div class="section" id="example">
+</section>
+<section id="example">
 <h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
 <p>A manufacturer claims that the average life of its products is <span class="math notranslate nohighlight">\(36\)</span> months. An auditor selects a sample of <span class="math notranslate nohighlight">\(49\)</span> units of the product and calculates the average life to be <span class="math notranslate nohighlight">\(34.5\)</span> months. The population standard deviation is <span class="math notranslate nohighlight">\(4\)</span> months. Test the manufacturer’s claim at <span class="math notranslate nohighlight">\(3\%\)</span> significance level.</p>
 <p>So as per the above problem:</p>
@@ -536,26 +629,28 @@
 <p>Calculating the critical values UCV/LCV <span class="math notranslate nohighlight">\(= \mu \pm Z_c * \frac{\sigma}{\sqrt{N}} \)</span></p>
 <p>UCV/LCV <span class="math notranslate nohighlight">\(= 36 \pm 2.17 * \frac{4}{\sqrt{49}} = 37.24 \text{ and } 34.76\)</span></p>
 <p>Now as the sample mean <span class="math notranslate nohighlight">\(34.5\)</span> is not between UCV and LCV hence we reject the null hypothesis.</p>
-<div class="figure align-default" id="image10">
+<figure class="align-default" id="image10">
 <img alt="../../_images/image101.PNG" src="../../_images/image101.PNG" />
-</div>
+</figure>
 <p>Now let’s solve it using the <span class="math notranslate nohighlight">\(p\)</span>-value method:</p>
 <p>Calculate the <span class="math notranslate nohighlight">\(z\)</span>-score of <span class="math notranslate nohighlight">\(34.5 = \frac{\bar{x} -\mu}{\frac{\sigma}{\sqrt{N}}} = -2.62\)</span></p>
 <p>Calculate the p-value from <a class="reference external" href="https://goodcalculators.com/p-value-calculator/">table</a> <span class="math notranslate nohighlight">\(= 0.0044\)</span>, which is cumulative area till sample point$</p>
 <p>As this it is in the left hand side hence there is no need to substract from <span class="math notranslate nohighlight">\(1\)</span>.</p>
 <p>Now this will be a 2-tailed test as we are checking for inequality, we need to multiply by <span class="math notranslate nohighlight">\(2 = 0.0088\)</span>, <em>remember 1-tailed test provides more power to detect an effect because the entire weight is allocated to one direction only.</em></p>
 <p>As <span class="math notranslate nohighlight">\(p\)</span>-value is <span class="math notranslate nohighlight">\(&lt; \alpha\)</span> so we reject null-hypothesis.</p>
-</div>
-<div class="section" id="errors-in-hypothesis-testing">
+</section>
+<section id="errors-in-hypothesis-testing">
 <h3>Errors in Hypothesis Testing<a class="headerlink" href="#errors-in-hypothesis-testing" title="Permalink to this headline">¶</a></h3>
-<div class="figure align-default" id="image11">
+<figure class="align-default" id="image11">
 <a class="reference internal image-reference" href="../../_images/image112.PNG"><img alt="../../_images/image112.PNG" src="../../_images/image112.PNG" style="width: 492.59999999999997px; height: 307.2px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Types of Errors in Hypothesis testing <a class="reference external" href="https://www.sixsigmadaily.com/type-i-and-type-ii-errors-in-hypothesis-testing/">(📖Source)</a></span><a class="headerlink" href="#image11" title="Permalink to this image">¶</a></p>
-</div>
-</div>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Types of Errors in Hypothesis testing <a class="reference external" href="https://www.sixsigmadaily.com/type-i-and-type-ii-errors-in-hypothesis-testing/">(📖Source)</a></span><a class="headerlink" href="#image11" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="questions">
+<section id="questions">
 <h2>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h2>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Problem: Limitations of p-value</p>
@@ -602,8 +697,8 @@ Types of selection bias include:</p>
 </ul>
 <p>Handling missing data can make selection bias worse because different methods impact the data in different ways. For example, if you replace null values with the mean of the data, you adding bias in the sense that you’re assuming that the data is not as spread out as it might actually be.</p>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -627,72 +722,50 @@ Types of selection bias include:</p>
 
               </div>
               
-        
             
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="Bayesian%20vs%20Frequentist%20Reasoning.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Bayesian vs Frequentist Reasoning</p>
-            </div>
-        </a>
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Bayesian%20vs%20Frequentist%20Reasoning.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Bayesian vs Frequentist Reasoning</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../Data/Data.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Data</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="../Data/Scaling.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Scaling</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-        
+            
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Dip Ranjan Chatterjee | © MIT License - 2021<br/>
-        
-          <div class="extra_footer">
-            <p>
+    <footer class="footer">
+  <p>
+    
+      By Dip Ranjan Chatterjee | © MIT License - 2021<br/>
+    
+      <div class="extra_footer">
+        <p>
 <a href="https://www.buymeacoffee.com/dearc" target="_blank"><img src="https://img.shields.io/badge/Support-Buy%20me%20a%20%E2%98%95-orange?style=flat-square&logo=appveyor.svg" alt="Buy Me A Coffee"></a>
 <a href="https://dearc.medium.com/membership" target="_blank"><img src="https://img.shields.io/badge/Support-Medium%20Referral-lightgrey?style=flat-square&logo=appveyor.svg" alt="Medium Membership"></a>
 <a href="https://www.linkedin.com/company/the-data-science-interview-book/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BeglbXB3xT0mopZBzReqMEQ%3D%3D" target="_blank"><img src="https://img.shields.io/badge/Follow-LinkedIn-0077B5?style=flat-square&logo=appveyor.svg" alt="Follow LinkedIn"></a>
 <a href="https://github.com/dipranjan/dsinterviewqns/discussions" target="_blank"><img src="https://img.shields.io/badge/Discussion%20Forum-%F0%9F%99%8A%20%20%F0%9F%99%88%20%20%F0%9F%99%89-0172B3?style=flat-square&logo=appveyor.svg" alt="Discussion Forum"></a>
 </p>
 
-          </div>
-      </p>
-    </div>
-  </footer>
+      </div>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
-
-  
-<script async="" src="https://www.google-analytics.com/analytics.js"></script>
-<script>
-                        window.ga = window.ga || function () {
-                            (ga.q = ga.q || []).push(arguments) };
-                        ga.l = +new Date;
-                        ga('create', 'UA-60403888-2', 'auto');
-                        ga('set', 'anonymizeIp', true);
-                        ga('send', 'pageview');
-                    </script>
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

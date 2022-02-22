@@ -4,14 +4,15 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Interview resource of Data Science focusing on Syntactic Processing." lang="en" name="description" xml:lang="en" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<meta content="Interview resource of Data Science focusing on Syntactic Processing." lang="en" name="description" xml:lang="en" />
 <meta content="interview, data science, machine learning, Syntactic Processing" name="keywords" />
 <meta content="en_US" property="og:locale" />
 
     <title>Syntactic Processing &#8212; The Data Science Interview Book</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -25,8 +26,8 @@
       
 
     
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -34,21 +35,24 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -61,8 +65,21 @@
     <link rel="next" title="Basics" href="../Python/Basics.html" />
     <link rel="prev" title="Lexical Processing" href="Lexical%20Processing.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
     
+
+    <!-- Google Analytics -->
+    
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-60403888-2', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
@@ -77,6 +94,10 @@
     
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
       
       <img src="../../_static/logo.gif" class="logo" alt="logo">
       
@@ -96,7 +117,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Journey of this project
  </span>
@@ -108,7 +129,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Statistics
  </span>
@@ -140,29 +161,46 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Data
+  Model Building
  </span>
 </p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../Data/Scaling.html">
-   Scaling
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Data/Data.html">
+   Data
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Data/Scaling.html">
+     Scaling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Data/Missing%20Value.html">
+     Missing Value
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Data/Outlier.html">
+     Outlier
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Data/Missing%20Value.html">
-   Missing Value
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Data/Outlier.html">
-   Outlier
+  <a class="reference internal" href="../Data/Hyperparameter%20optimization.html">
+   Hyperparameter Optimization
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Algorithms
  </span>
@@ -199,7 +237,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Neural Network
  </span>
@@ -216,7 +254,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   NLP
  </span>
@@ -233,7 +271,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Python
  </span>
@@ -260,7 +298,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   SQL
  </span>
@@ -302,7 +340,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Excel
  </span>
@@ -318,8 +356,13 @@
    Data Manipulation
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Excel/Time%20and%20Date.html">
+   Time and Date
+  </a>
+ </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Tensorflow
  </span>
@@ -331,7 +374,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Analytical Thinking
  </span>
@@ -393,7 +436,7 @@
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -424,7 +467,7 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -505,10 +548,94 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Syntactic Processing</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pos-tagging">
+   POS tagging
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hidden-markov-models">
+     Hidden Markov Models
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#viterbi-heuristic">
+     Viterbi Heuristic
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#learning-hmm-model-parameters">
+     Learning HMM Model Parameters
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#constituency-parsing">
+   Constituency Parsing
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#probabilistic-cfg">
+     Probabilistic CFG
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#chomsky-normal-form">
+     Chomsky Normal Form
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dependency-parsing">
+   Dependency Parsing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#information-extraction">
+   Information Extraction
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rule-based-method-for-ner">
+     Rule-based method for NER
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#probabilistic-method-for-ner">
+     Probabilistic method for NER
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conditional-random-fields">
+     Conditional Random Fields
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
-  <div class="section" id="syntactic-processing">
+  <section id="syntactic-processing">
 <h1>Syntactic Processing<a class="headerlink" href="#syntactic-processing" title="Permalink to this headline">¶</a></h1>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -522,7 +649,7 @@
 </ul>
 <p>POS tagging is a crucial task in syntactic processing and is used as a preprocessing step in many NLP applications</p>
 <hr class="docutils" />
-<div class="section" id="pos-tagging">
+<section id="pos-tagging">
 <h2>POS tagging<a class="headerlink" href="#pos-tagging" title="Permalink to this headline">¶</a></h2>
 <p>The four main techniques used for POS tagging:</p>
 <ul class="simple">
@@ -531,28 +658,28 @@
 <li><p><strong>Probabilistic (or stochastic)</strong> techniques don’t naively assign the highest frequency tag to each word, instead, they look at slightly longer parts of the sequence and often use the tag(s) and the word(s) appearing before the target word to be tagged. The commonly used probabilistic algorithm for POS tagging is Hidden Markov Model (HMM)</p></li>
 <li><p><strong>Deep-learning based</strong> POS tagging: Recurrent Neural Networks (RNNs) are used for sequential modeling processes</p></li>
 </ul>
-<div class="section" id="hidden-markov-models">
+<section id="hidden-markov-models">
 <h3>Hidden Markov Models<a class="headerlink" href="#hidden-markov-models" title="Permalink to this headline">¶</a></h3>
 <p>Markov processes are commonly used to model sequential data, such as text and speech. The first-order Markov assumption states that the probability of an event (or state) depends only on the previous state. The Hidden Markov Model, an extension to the Markov process, is used to model phenomena where the states are hidden and they emit observations.
 The transition and the emission probabilities specify the probabilities of transition between states and emission of observations from states, respectively. In POS tagging, the states are the POS tags while the words are the observations. To summarise, a Hidden Markov Model is defined by the initial state, emission, and the transition probabilities.</p>
-<div class="figure align-default" id="image3">
+<figure class="align-default" id="image3">
 <a class="reference internal image-reference" href="../../_images/image34.PNG"><img alt="../../_images/image34.PNG" src="../../_images/image34.PNG" style="width: 592.9px; height: 267.4px;" /></a>
-</div>
+</figure>
 <p>The POS tag <span class="math notranslate nohighlight">\(T_i\)</span> for given word <span class="math notranslate nohighlight">\(W_i\)</span> depends on two things: POS tag of the previous word and the word itself.</p>
 <p><span class="math notranslate nohighlight">\(P(T_i| W_i) = P(W_i|T_i) * P(T_i-1|T_i)\)</span></p>
 <p>So, the probability of a tag sequence <span class="math notranslate nohighlight">\((T_1, T_2, T_3,\)</span> …<span class="math notranslate nohighlight">\(, T_n)\)</span> for a given the word sequence <span class="math notranslate nohighlight">\((W_1, W_2, W_3,\)</span> …<span class="math notranslate nohighlight">\(, W_n)\)</span> can be defined as:</p>
 <p><span class="math notranslate nohighlight">\(P(T|W) = (P(W_1|T_1) * P(T_1|start)) * (P(W_2|T_2) * P(T_2|T_1)) * ...* (P(W_n|T_n) * P(T_n|T_{n-1}))\)</span></p>
 <p><strong>For a sequence of <span class="math notranslate nohighlight">\(n\)</span> words and <span class="math notranslate nohighlight">\(t\)</span> tags, a total of <span class="math notranslate nohighlight">\(t_n\)</span> tag sequences are possible.</strong></p>
-</div>
-<div class="section" id="viterbi-heuristic">
+</section>
+<section id="viterbi-heuristic">
 <h3>Viterbi Heuristic<a class="headerlink" href="#viterbi-heuristic" title="Permalink to this headline">¶</a></h3>
 <p>Viterbi Heuristic can deal with this problem by taking a greedy approach. The basic idea of the Viterbi algorithm is as follows - given a list of observations (words) <span class="math notranslate nohighlight">\(O_1,O_2....O_n\)</span> to be tagged, rather than computing the probabilities of all possible tag sequences, you assign tags sequentially, i.e. assign the most likely tag to each word using the previous tag.</p>
 <p>More formally, you assign the tag <span class="math notranslate nohighlight">\(T_i\)</span> to each word <span class="math notranslate nohighlight">\(W_i\)</span> such that it maximises the likelihood:</p>
 <p><span class="math notranslate nohighlight">\(P(T_i| W_i) = P(W_i|T_i) * P(T_i-1|T_i)\)</span></p>
 <p>where <span class="math notranslate nohighlight">\(T_i-1\)</span> is the tag assigned to the previous word. The probability of a tag <span class="math notranslate nohighlight">\(T_i\)</span> is assumed to be dependent only on the previous tag <span class="math notranslate nohighlight">\(T_{i-1}\)</span>, and hence the term <span class="math notranslate nohighlight">\(P(T_i|T_{i-1})\)</span> - Markov Assumption.</p>
 <p><strong>Viterbi algorithm is an example of a dynamic programming algorithm.</strong> In general, algorithms which break down a complex problem into subproblems and solve each subproblem optimally are called dynamic programming algorithms.</p>
-</div>
-<div class="section" id="learning-hmm-model-parameters">
+</section>
+<section id="learning-hmm-model-parameters">
 <h3>Learning HMM Model Parameters<a class="headerlink" href="#learning-hmm-model-parameters" title="Permalink to this headline">¶</a></h3>
 <p>The process of learning the probabilities from a tagged corpus is called <strong>training an HMM model</strong>. The emission and the transition probabilities can be learnt as follows:</p>
 <ul>
@@ -565,10 +692,10 @@ The transition and the emission probabilities specify the probabilities of trans
 <p>Example: <span class="math notranslate nohighlight">\(P(Noun|Adj)\)</span> = number of times adjective is followed by Noun/ Number of times Adjective is appearing</p>
 </li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="constituency-parsing">
+<section id="constituency-parsing">
 <h2>Constituency Parsing<a class="headerlink" href="#constituency-parsing" title="Permalink to this headline">¶</a></h2>
 <p>shallow parsing is not sufficient. Shallow parsing, as the name suggests, refers to fairly shallow levels of parsing such as POS tagging, chunking, etc. But such techniques would not be able to check the grammatical structure of the sentence, i.e. whether a sentence is grammatically correct, or understand the dependencies between words in a sentence.</p>
 <p>Two most commonly used paradigms of parsing - constituency parsing and dependency parsing, which would help to check the grammatical structure of the sentence.</p>
@@ -588,25 +715,29 @@ The transition and the emission probabilities specify the probabilities of trans
 </ul>
 <p>Top-down parsers have a specific limitation- Left Recursion.</p>
 <p>Example of a left recursion: VP -&gt; VP NP. Whenever a top-down parser encounters such a rule, it runs into an infinite loop, thus no parse tree is obtained. Following is the illustration of top-down parse:</p>
-<div class="figure align-default" id="image4">
+<figure class="align-default" id="image4">
 <a class="reference internal image-reference" href="../../_images/image43.PNG"><img alt="../../_images/image43.PNG" src="../../_images/image43.PNG" style="width: 664.8000000000001px; height: 388.8px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 26 </span><span class="caption-text">Top-down parse</span><a class="headerlink" href="#image4" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 26 </span><span class="caption-text">Top-down parse</span><a class="headerlink" href="#image4" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 <ul class="simple">
 <li><p><strong>Bottom-up parsing:</strong> reduces each terminal word to a production rule, i.e. reduces the right-hand-side of the grammar to the left-hand-side. It continues the reduction process until the entire sentence has been reduced to the start symbol S. Shift-Reduce Parser algorithm, which parses the words of the sentence one-by-one either by shifting a word to the stack or reducing the stack by using the production rules. Below is an example of bottom-up parse tree.</p></li>
 </ul>
-<div class="figure align-default" id="image5">
+<figure class="align-default" id="image5">
 <a class="reference internal image-reference" href="../../_images/image53.PNG"><img alt="../../_images/image53.PNG" src="../../_images/image53.PNG" style="width: 701.6px; height: 357.6px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 27 </span><span class="caption-text">Bottom-up parse</span><a class="headerlink" href="#image5" title="Permalink to this image">¶</a></p>
-</div>
-<div class="section" id="probabilistic-cfg">
+<figcaption>
+<p><span class="caption-number">Fig. 27 </span><span class="caption-text">Bottom-up parse</span><a class="headerlink" href="#image5" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<section id="probabilistic-cfg">
 <h3>Probabilistic CFG<a class="headerlink" href="#probabilistic-cfg" title="Permalink to this headline">¶</a></h3>
 <p>Since natural languages are inherently ambiguous, there are often cases where multiple parse trees are possible. In such cases, we need a way to make the algorithms figure out the most likely parse tree. Probabilistic Context-Free Grammars (PCFGs) are used when we want to find the most probable parsed structure of the sentence. PCFGs are grammar rules, similar to what you have seen before, along with probabilities associated with each production rule. An example production rule is as follows:</p>
 <p>NP -&gt; Det N (0.5) | N (0.3) |N PP (0.2)</p>
 <p>It means that the probability of an NP breaking down to a ‘Det N’ is 0.50, to an ‘N’ is 0.30 and to an ‘N PP’ is 0.20. Note that the sum of probabilities is 1.00.
 Overall probability for a parsed structure of the sentence is probabilities of all rules used in that parsed structure. The parsed tree with maximum probability is best possible interpretation of the sentence.</p>
-</div>
-<div class="section" id="chomsky-normal-form">
+</section>
+<section id="chomsky-normal-form">
 <h3>Chomsky Normal Form<a class="headerlink" href="#chomsky-normal-form" title="Permalink to this headline">¶</a></h3>
 <p>The Chomsky Normal Form (CNF), proposed by the linguist Noam Chomsky, is a normalized version of the CFG with a standard set of rules defining how production rule must be written. The three forms of CNF rules can be written:</p>
 <ul class="simple">
@@ -618,22 +749,22 @@ Overall probability for a parsed structure of the sentence is probabilities of a
 <p>| CFG | VP -&gt; V NP PP |       VP -&gt; V |
 | CNF | VP -&gt; V (NP1) | VP -&gt; V (VP1) |
 |     | NP1 -&gt; NP PP  |      VP1 -&gt; ε |</p>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="dependency-parsing">
+<section id="dependency-parsing">
 <h2>Dependency Parsing<a class="headerlink" href="#dependency-parsing" title="Permalink to this headline">¶</a></h2>
 <p>In dependency grammar, constituencies (such as NP, VP etc.) do not form the basic elements of grammar, but rather dependencies are established between the words themselves.</p>
 <p>Free word order languages such as Hindi, Bengali are difficult to parse using constituency parsing techniques. This is because, in such free-word-order languages, the order of words/constituents may change significantly while keeping the meaning exactly the same. It is thus difficult to fit the sentences into the finite set of production rules that CFGs offer.
 Dependencies in a sentence are defined using the elements Subject-Verb-Object (SVO). The following table shows SVO dependencies in three types of sentences - declarative, interrogative, and imperative</p>
-<div class="figure align-default" id="image6">
+<figure class="align-default" id="image6">
 <a class="reference internal image-reference" href="../../_images/image63.PNG"><img alt="../../_images/image63.PNG" src="../../_images/image63.PNG" style="width: 444.8px; height: 330.40000000000003px;" /></a>
-</div>
+</figure>
 <p>Apart from dependencies defined in the form of subject-verb-object, there’s a non-exhaustive list of dependency relationships, which are called <strong>universal dependencies</strong>.</p>
 <p>Dependencies are represented as labelled arcs of the form <span class="math notranslate nohighlight">\(h → d(l)\)</span> where ‘<span class="math notranslate nohighlight">\(h\)</span>’ is called the “head” of the dependency, ‘<span class="math notranslate nohighlight">\(d\)</span>’ is the “dependent” and <span class="math notranslate nohighlight">\(l\)</span> is the “label” assigned to the arc. In a dependency parse, we start from the root of the sentence, which is often a verb. And then start to establish dependencies between root and other words.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="information-extraction">
+<section id="information-extraction">
 <h2>Information Extraction<a class="headerlink" href="#information-extraction" title="Permalink to this headline">¶</a></h2>
 <p>Information Extraction (IE) system can extract entities relevant for booking flights (such as source and destination cities, time, date, budget constraints etc.) in a structured format from unstructured user-generated input. IE is used in many applications such as chatbots, extracting information from websites, etc.</p>
 <p>A generic pipeline for Information Extraction is as follows:</p>
@@ -671,7 +802,7 @@ There are various techniques and models for building Named Entity Recognition (N
 </li>
 </ul>
 <p>IOB (or BIO) method tags each token in the sentence with one of the three labels: <strong>I - inside (the entity), O- outside (the entity) and B - beginning (of entity).</strong> You saw that IOB labeling is especially helpful if the entities contain multiple words. For example: words like ‘Delta Airlines’, ‘New York, etc, are single entities.</p>
-<div class="section" id="rule-based-method-for-ner">
+<section id="rule-based-method-for-ner">
 <h3>Rule-based method for NER<a class="headerlink" href="#rule-based-method-for-ner" title="Permalink to this headline">¶</a></h3>
 <p>Chunking is a common shallow parsing technique used to chunk words that constitute some meaningful phrase in the sentence. A noun phrase chunk (NP chunk) is commonly used in NER tasks to identify groups of words that correspond to some ‘entity’.</p>
 <p><strong>Sentence:</strong> She bought <em>a new car</em> from <em>the BMW showroom</em>.</p>
@@ -680,8 +811,8 @@ There are various techniques and models for building Named Entity Recognition (N
 <p><strong>Sentence:</strong> John booked the hotel.</p>
 <p><strong>Noun phrase chunks:</strong> ‘John’, ‘the hotel’</p>
 <p><strong>Grammar:</strong> <span class="math notranslate nohighlight">\(\text{NP_chunk: {&lt;DT&gt;?&lt;NN&gt;}}\)</span></p>
-</div>
-<div class="section" id="probabilistic-method-for-ner">
+</section>
+<section id="probabilistic-method-for-ner">
 <h3>Probabilistic method for NER<a class="headerlink" href="#probabilistic-method-for-ner" title="Permalink to this headline">¶</a></h3>
 <p>The following two probabilistic models to get the most probable IOB tags for word:</p>
 <ul class="simple">
@@ -690,8 +821,8 @@ There are various techniques and models for building Named Entity Recognition (N
 </ul>
 <p><strong>Gazetteer Lookup</strong>, another way to identify named entities (like cities and states) is to look up a dictionary or a gazetteer. A gazetteer is a geographical directory which stores data regarding the names of geographical entities (cities, states, countries) and some other features related to the geographies.</p>
 <p><strong>Naive Bayes and Decision Tree classifier can also be used in NER.</strong></p>
-</div>
-<div class="section" id="conditional-random-fields">
+</section>
+<section id="conditional-random-fields">
 <h3>Conditional Random Fields<a class="headerlink" href="#conditional-random-fields" title="Permalink to this headline">¶</a></h3>
 <p>HMMs can be used for any sequence classification task, such as NER. However, many NER tasks and datasets are far more complex than tasks such as POS tagging, and therefore, more sophisticated sequence models have been developed and widely accepted in the NLP community. One of these models is Conditional Random Fields (CRFs).</p>
 <p>CRFs are used in a wide variety of sequence labelling tasks across various domains - POS tagging, speech recognition, NER, and even in computational biology for modelling genetic patterns etc. CRFs model the <strong>conditional probability</strong> <span class="math notranslate nohighlight">\(P(Y|X)\)</span>, where <span class="math notranslate nohighlight">\(Y\)</span> is the vector of output sequence (IOB labels here) and <span class="math notranslate nohighlight">\(X\)</span> is the input sequence (words to be tagged), which are similar to Logistic Regression classifier. Broadly, there are two types of classifiers in ML:</p>
@@ -728,9 +859,9 @@ There are various techniques and models for building Named Entity Recognition (N
 <p>The inference task to assign the label sequence <span class="math notranslate nohighlight">\(y^*\)</span> to <span class="math notranslate nohighlight">\(x\)</span> which maximises the score of the sequence, i.e.</p>
 <p><span class="math notranslate nohighlight">\(y^* = argmax(w.f(x,y))\)</span></p>
 <p>The naive way to get <span class="math notranslate nohighlight">\(y^*\)</span> is by calculating <span class="math notranslate nohighlight">\(w.f(x,y)\)</span> for every possible label sequence , and then choose the label sequence that has maximum <span class="math notranslate nohighlight">\((w.f(x,y))\)</span> value. However, there are an exponential number of possible labels (<span class="math notranslate nohighlight">\(t^n\)</span> for a tag set of size <span class="math notranslate nohighlight">\(t\)</span> and a sentence of length <span class="math notranslate nohighlight">\(n\)</span>), and this task is computationally heavy.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -754,72 +885,50 @@ There are various techniques and models for building Named Entity Recognition (N
 
               </div>
               
-        
             
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="Lexical%20Processing.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Lexical Processing</p>
-            </div>
-        </a>
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Lexical%20Processing.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Lexical Processing</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../Python/Basics.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Basics</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="../Python/Basics.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Basics</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-        
+            
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Dip Ranjan Chatterjee | © MIT License - 2021<br/>
-        
-          <div class="extra_footer">
-            <p>
+    <footer class="footer">
+  <p>
+    
+      By Dip Ranjan Chatterjee | © MIT License - 2021<br/>
+    
+      <div class="extra_footer">
+        <p>
 <a href="https://www.buymeacoffee.com/dearc" target="_blank"><img src="https://img.shields.io/badge/Support-Buy%20me%20a%20%E2%98%95-orange?style=flat-square&logo=appveyor.svg" alt="Buy Me A Coffee"></a>
 <a href="https://dearc.medium.com/membership" target="_blank"><img src="https://img.shields.io/badge/Support-Medium%20Referral-lightgrey?style=flat-square&logo=appveyor.svg" alt="Medium Membership"></a>
 <a href="https://www.linkedin.com/company/the-data-science-interview-book/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BeglbXB3xT0mopZBzReqMEQ%3D%3D" target="_blank"><img src="https://img.shields.io/badge/Follow-LinkedIn-0077B5?style=flat-square&logo=appveyor.svg" alt="Follow LinkedIn"></a>
 <a href="https://github.com/dipranjan/dsinterviewqns/discussions" target="_blank"><img src="https://img.shields.io/badge/Discussion%20Forum-%F0%9F%99%8A%20%20%F0%9F%99%88%20%20%F0%9F%99%89-0172B3?style=flat-square&logo=appveyor.svg" alt="Discussion Forum"></a>
 </p>
 
-          </div>
-      </p>
-    </div>
-  </footer>
+      </div>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
-
-  
-<script async="" src="https://www.google-analytics.com/analytics.js"></script>
-<script>
-                        window.ga = window.ga || function () {
-                            (ga.q = ga.q || []).push(arguments) };
-                        ga.l = +new Date;
-                        ga('create', 'UA-60403888-2', 'auto');
-                        ga('set', 'anonymizeIp', true);
-                        ga('send', 'pageview');
-                    </script>
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

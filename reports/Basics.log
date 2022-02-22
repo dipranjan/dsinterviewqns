@@ -1,39 +1,53 @@
 Traceback (most recent call last):
-  File "c:\python\python37\lib\site-packages\nbclient\client.py", line 604, in _async_poll_for_reply
-    msg = await ensure_async(self.kc.shell_channel.get_msg(timeout=new_timeout))
-  File "c:\python\python37\lib\site-packages\nbclient\util.py", line 85, in ensure_async
-    result = await obj
-  File "c:\python\python37\lib\site-packages\jupyter_client\asynchronous\channels.py", line 48, in get_msg
-    raise Empty
-_queue.Empty
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "c:\python\python37\lib\site-packages\jupyter_cache\executors\utils.py", line 56, in single_nb_execution
-    record_timing=False,
-  File "c:\python\python37\lib\site-packages\nbclient\client.py", line 1082, in execute
+  File "C:\Users\Dip_Chatterjee\AppData\Local\Programs\Python\Python39\lib\site-packages\jupyter_cache\executors\utils.py", line 51, in single_nb_execution
+    executenb(
+  File "C:\Users\Dip_Chatterjee\AppData\Local\Programs\Python\Python39\lib\site-packages\nbclient\client.py", line 1204, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
-  File "c:\python\python37\lib\site-packages\nbclient\util.py", line 74, in wrapped
+  File "C:\Users\Dip_Chatterjee\AppData\Local\Programs\Python\Python39\lib\site-packages\nbclient\util.py", line 84, in wrapped
     return just_run(coro(*args, **kwargs))
-  File "c:\python\python37\lib\site-packages\nbclient\util.py", line 53, in just_run
+  File "C:\Users\Dip_Chatterjee\AppData\Local\Programs\Python\Python39\lib\site-packages\nbclient\util.py", line 62, in just_run
     return loop.run_until_complete(coro)
-  File "c:\python\python37\lib\asyncio\base_events.py", line 579, in run_until_complete
+  File "C:\Users\Dip_Chatterjee\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 642, in run_until_complete
     return future.result()
-  File "c:\python\python37\lib\site-packages\nbclient\client.py", line 536, in async_execute
-    cell, index, execution_count=self.code_cells_executed + 1
-  File "c:\python\python37\lib\site-packages\nbclient\client.py", line 811, in async_execute_cell
-    exec_reply = await self.task_poll_for_reply
-  File "c:\python\python37\lib\site-packages\nbclient\client.py", line 628, in _async_poll_for_reply
-    await self._async_handle_timeout(timeout, cell)
-  File "c:\python\python37\lib\site-packages\nbclient\client.py", line 679, in _async_handle_timeout
-    "Cell execution timed out", timeout, cell
-nbclient.exceptions.CellTimeoutError: A cell timed out while it was being executed, after 30 seconds.
-The message was: Cell execution timed out.
-Here is a preview of the cell contents:
--------------------
-['# Some common commands are as follows', 'import tensorflow as tf', 'print("Check TF version: ",tf.__version__)', '', 't1 = tf.constant([[10., 7.],']
-...
-['print("Elements along last axis of tensor:", t1.shape[-1])', 'print("Total number of elements:", tf.size(t1).numpy()) # .numpy() converts to NumPy array', 'print("Details of the tensor: ",t1)', '', 'print("Index tensors: ", t1[:1,:])']
--------------------
+  File "C:\Users\Dip_Chatterjee\AppData\Local\Programs\Python\Python39\lib\site-packages\nbclient\client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\Dip_Chatterjee\AppData\Local\Programs\Python\Python39\lib\site-packages\nbclient\client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\Dip_Chatterjee\AppData\Local\Programs\Python\Python39\lib\site-packages\nbclient\client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# Some common commands are as follows
+import tensorflow as tf
+print("Check TF version: ",tf.__version__)
+
+t1 = tf.constant([[10., 7.],
+                [3., 2.],
+                [8., 9.]], dtype=tf.float16) # by default TF creates tensors with either an int32 or float32 datatype.
+
+print("Access a specific feature of the tensor, in this case shape of t1: ",t1.shape)
+print("Size of t1: ", tf.size(t1))
+print("Datatype of every element:", t1.dtype)
+print("Number of dimensions (rank):", t1.ndim)
+print("Shape of tensor:", t1.shape)
+print("Elements along axis 0 of tensor:", t1.shape[0])
+print("Elements along last axis of tensor:", t1.shape[-1])
+print("Total number of elements:", tf.size(t1).numpy()) # .numpy() converts to NumPy array
+print("Details of the tensor: ",t1)
+
+print("Index tensors: ", t1[:1,:])
+------------------
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Input [1;32mIn [1][0m, in [0;36m<module>[1;34m[0m
+[0;32m      1[0m [38;5;66;03m# Some common commands are as follows[39;00m
+[1;32m----> 2[0m [38;5;28;01mimport[39;00m [38;5;21;01mtensorflow[39;00m [38;5;28;01mas[39;00m [38;5;21;01mtf[39;00m
+[0;32m      3[0m [38;5;28mprint[39m([38;5;124m"[39m[38;5;124mCheck TF version: [39m[38;5;124m"[39m,tf[38;5;241m.[39m__version__)
+[0;32m      5[0m t1 [38;5;241m=[39m tf[38;5;241m.[39mconstant([[[38;5;241m10.[39m, [38;5;241m7.[39m],
+[0;32m      6[0m                 [[38;5;241m3.[39m, [38;5;241m2.[39m],
+[0;32m      7[0m                 [[38;5;241m8.[39m, [38;5;241m9.[39m]], dtype[38;5;241m=[39mtf[38;5;241m.[39mfloat16) [38;5;66;03m# by default TF creates tensors with either an int32 or float32 datatype.[39;00m
+
+[1;31mModuleNotFoundError[0m: No module named 'tensorflow'
+ModuleNotFoundError: No module named 'tensorflow'
 
