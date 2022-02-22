@@ -4,14 +4,15 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Interview resource of Data Science Interview focusing on Probability." lang="en" name="description" xml:lang="en" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<meta content="Interview resource of Data Science Interview focusing on Probability." lang="en" name="description" xml:lang="en" />
 <meta content="interview, data science, machine learning, probability" name="keywords" />
 <meta content="en_US" property="og:locale" />
 
     <title>Probability Basics &#8212; The Data Science Interview Book</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -25,8 +26,8 @@
       
 
     
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -34,21 +35,24 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -61,8 +65,21 @@
     <link rel="next" title="Probability Distribution" href="Probability%20Distribution.html" />
     <link rel="prev" title="Log" href="../To%20Do%20List.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
     
+
+    <!-- Google Analytics -->
+    
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-60403888-2', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
@@ -77,6 +94,10 @@
     
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
       
       <img src="../../_static/logo.gif" class="logo" alt="logo">
       
@@ -96,7 +117,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Journey of this project
  </span>
@@ -108,7 +129,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Statistics
  </span>
@@ -140,29 +161,46 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Data
+  Model Building
  </span>
 </p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../Data/Scaling.html">
-   Scaling
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Data/Data.html">
+   Data
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Data/Scaling.html">
+     Scaling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Data/Missing%20Value.html">
+     Missing Value
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Data/Outlier.html">
+     Outlier
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Data/Missing%20Value.html">
-   Missing Value
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Data/Outlier.html">
-   Outlier
+  <a class="reference internal" href="../Data/Hyperparameter%20optimization.html">
+   Hyperparameter Optimization
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Algorithms
  </span>
@@ -199,7 +237,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Neural Network
  </span>
@@ -216,7 +254,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   NLP
  </span>
@@ -233,7 +271,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Python
  </span>
@@ -260,7 +298,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   SQL
  </span>
@@ -302,7 +340,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Excel
  </span>
@@ -318,8 +356,13 @@
    Data Manipulation
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Excel/Time%20and%20Date.html">
+   Time and Date
+  </a>
+ </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Tensorflow
  </span>
@@ -331,7 +374,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Analytical Thinking
  </span>
@@ -393,7 +436,7 @@
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -424,7 +467,7 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -469,17 +512,65 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Probability Basics</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#common-terminologies">
+   Common Terminologies
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#set">
+   Set
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#permutation-and-combination">
+   Permutation and Combination
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#joint-conditional-probability">
+   Joint &amp; Conditional Probability
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bayes-theorem">
+   Bayes’ Theorem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#questions">
+   Questions
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
-  <div class="section" id="probability-basics">
+  <section id="probability-basics">
 <h1>Probability Basics<a class="headerlink" href="#probability-basics" title="Permalink to this headline">¶</a></h1>
-<div class="figure align-default" id="image12">
+<figure class="align-default" id="image12">
 <a class="reference internal image-reference" href="../../_images/image121.PNG"><img alt="../../_images/image121.PNG" src="../../_images/image121.PNG" style="width: 400.0px; height: 300.0px;" /></a>
-</div>
+</figure>
 <p>Probability theory is the mathematical framework that allows us to analyze chance events in a logically sound manner. The probability of an event is a number indicating how likely that event will occur.</p>
 <p>Note that when we say the probability of a head is <span class="math notranslate nohighlight">\(1/2\)</span>, we are not claiming that any sequence of coin tosses will consist of exactly <span class="math notranslate nohighlight">\(50\)</span>% heads. If we toss a fair coin ten times, it would not be surprising to observe <span class="math notranslate nohighlight">\(6\)</span> heads and <span class="math notranslate nohighlight">\(4\)</span> tails, or even <span class="math notranslate nohighlight">\(3\)</span> heads and <span class="math notranslate nohighlight">\(7\)</span> tails. But as we continue to toss the coin over and over again, we expect the long-run frequency of heads to get ever closer to <span class="math notranslate nohighlight">\(50\)</span>%. <strong>In general, it is important in statistics to understand the distinction between theoretical and empirical quantities. Here, the true (theoretical) probability of a head was <span class="math notranslate nohighlight">\(1/2\)</span>, but any realized (empirical) sequence of coin tosses may have more or less than exactly <span class="math notranslate nohighlight">\(50\)</span>% heads.</strong></p>
-<div class="section" id="common-terminologies">
+<section id="common-terminologies">
 <h2>Common Terminologies<a class="headerlink" href="#common-terminologies" title="Permalink to this headline">¶</a></h2>
 <p>The <strong>sample space is the set of all possible outcomes in the experiment</strong> : for a dice <span class="math notranslate nohighlight">\(Ω = {1, 2, 3, 4, 5, 6}\)</span>.</p>
 <p>Any <strong>subset of <span class="math notranslate nohighlight">\(Ω\)</span> is a valid event</strong>. we can speak of the event <span class="math notranslate nohighlight">\(F\)</span> of rolling a <span class="math notranslate nohighlight">\(4\)</span>, <span class="math notranslate nohighlight">\(F = {4}\)</span>.</p>
@@ -489,41 +580,43 @@
 <p>The <strong>variance</strong> of a random variable <span class="math notranslate nohighlight">\(X\)</span> is a nonnegative number that summarizes on average how much <span class="math notranslate nohighlight">\(X\)</span> differs from its mean, or expectation.
 The square root of the variance is called the <strong>standard deviation.</strong></p>
 <p><span class="math notranslate nohighlight">\(Var(X) = \frac{(1−3.5)^2+(2−3.5)^2+(3−3.5)^2+(4−3.5)^2+(5−3.5)^2+(6−3.5)^2}{6} = \frac{17.5}{6}\)</span></p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="set">
+<section id="set">
 <h2>Set<a class="headerlink" href="#set" title="Permalink to this headline">¶</a></h2>
 <p>A set, broadly defined, is a collection of objects. In the context of probability theory, we use set notation to specify compound events. For example, we can represent the event “roll an even number” by the set {2, 4, 6}.</p>
-</div>
-<div class="section" id="permutation-and-combination">
+</section>
+<section id="permutation-and-combination">
 <h2>Permutation and Combination<a class="headerlink" href="#permutation-and-combination" title="Permalink to this headline">¶</a></h2>
 <p>It can be surprisingly difficult to count the number of sequences or sets satisfying certain conditions. This is where <strong>Premutation and Combination</strong> comes in. For example, consider a bag of marbles in which each marble is a different color. If we draw marbles one at a time from the bag without replacement, how many different ordered sequences (permutations) of the marbles are possible? How many different unordered sets (combinations)?</p>
 <ul class="simple">
 <li><p>Permutation(<span class="math notranslate nohighlight">\(AB \neq BA\)</span> , order matters) = <span class="math notranslate nohighlight">\(nPr = \frac{n!}{(n-r)!}\)</span></p></li>
 <li><p>Combination(<span class="math notranslate nohighlight">\(AB = BA\)</span> , order does not matter) = <span class="math notranslate nohighlight">\(nCr = \frac{n!}{r!(n-r)!}\)</span></p></li>
 </ul>
-</div>
-<div class="section" id="joint-conditional-probability">
+</section>
+<section id="joint-conditional-probability">
 <h2>Joint &amp; Conditional Probability<a class="headerlink" href="#joint-conditional-probability" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Joint Probability is the probability of <span class="math notranslate nohighlight">\(2\)</span> independent events occuring : <span class="math notranslate nohighlight">\(P(A \cap B) = P(A)*P(B)\)</span></p></li>
 <li><p>Conditional probability tells the probability of <span class="math notranslate nohighlight">\(B\)</span> given <span class="math notranslate nohighlight">\(A\)</span> has occured, it allow us to account for information we have about our system of interest: <span class="math notranslate nohighlight">\(P(B|A) = \frac{P(A \cap B)}{P(A)}\)</span></p></li>
 </ul>
 <p><strong>If both are same then A and B are independent events.</strong></p>
-</div>
-<div class="section" id="bayes-theorem">
+</section>
+<section id="bayes-theorem">
 <h2>Bayes’ Theorem<a class="headerlink" href="#bayes-theorem" title="Permalink to this headline">¶</a></h2>
 <p>Bayes’ theorem, named after 18th-century British mathematician Thomas Bayes, is a mathematical formula for determining conditional probability. <strong>Conditional probability is the likelihood of an outcome occurring, based on a previous outcome occurring.</strong></p>
-<div class="figure align-default" id="image1">
+<figure class="align-default" id="image1">
 <a class="reference internal image-reference" href="../../_images/image113.PNG"><img alt="../../_images/image113.PNG" src="../../_images/image113.PNG" style="height: 150px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Baye’s Theorem</span><a class="headerlink" href="#image1" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Baye’s Theorem</span><a class="headerlink" href="#image1" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 <p>An easy way of remembering it is using the below example:</p>
 <p>What is the probability of a fruit being banana given that it is long, sweet and yellow?</p>
 <p><span class="math notranslate nohighlight">\(P(Banana|Long,Sweet,Yellow) = \frac{P(Long|Banana)*P(Sweet|Banana)*P(Yellow|Banana)*P(Banana)}{P(Long)*P(Sweet)*P(Yellow)}\)</span></p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="questions">
+<section id="questions">
 <h2>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h2>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Problem: [UBER] Dice in increasing order</p>
@@ -709,9 +802,9 @@ P(r=3) \\
 <p>or <span class="math notranslate nohighlight">\(x &gt; 0, y &gt; 0, 10 – x – y &gt; 0 or x &gt; 0, y &gt; 0, x + y &lt; 10\)</span></p>
 <p>Plotting the lines <span class="math notranslate nohighlight">\(x + y = 10 x + y = 5, x = 5, y = 5\)</span>. Now favorable area is the area of the middle red shaded triangle.</p>
 <p>Required probability <span class="math notranslate nohighlight">\(= 1/4\)</span></p>
-<div class="figure align-default" id="image13">
+<figure class="align-default" id="image13">
 <a class="reference internal image-reference" href="../../_images/image131.PNG"><img alt="../../_images/image131.PNG" src="../../_images/image131.PNG" style="width: 354.0px; height: 321.59999999999997px;" /></a>
-</div>
+</figure>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Problem: [LYFT] Flips until two heads</p>
@@ -780,8 +873,8 @@ Total probability of rating ad as good is <span class="math notranslate nohighli
 <li><p>It’s <span class="math notranslate nohighlight">\(0\)</span> probability that the rater is lazy because lazy raters always rate ads as good.</p></li>
 </ul>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -805,72 +898,50 @@ Total probability of rating ad as good is <span class="math notranslate nohighli
 
               </div>
               
-        
             
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="../To%20Do%20List.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Log</p>
-            </div>
-        </a>
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../To%20Do%20List.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Log</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Probability%20Distribution.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Probability Distribution</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="Probability%20Distribution.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Probability Distribution</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-        
+            
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Dip Ranjan Chatterjee | © MIT License - 2021<br/>
-        
-          <div class="extra_footer">
-            <p>
+    <footer class="footer">
+  <p>
+    
+      By Dip Ranjan Chatterjee | © MIT License - 2021<br/>
+    
+      <div class="extra_footer">
+        <p>
 <a href="https://www.buymeacoffee.com/dearc" target="_blank"><img src="https://img.shields.io/badge/Support-Buy%20me%20a%20%E2%98%95-orange?style=flat-square&logo=appveyor.svg" alt="Buy Me A Coffee"></a>
 <a href="https://dearc.medium.com/membership" target="_blank"><img src="https://img.shields.io/badge/Support-Medium%20Referral-lightgrey?style=flat-square&logo=appveyor.svg" alt="Medium Membership"></a>
 <a href="https://www.linkedin.com/company/the-data-science-interview-book/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BeglbXB3xT0mopZBzReqMEQ%3D%3D" target="_blank"><img src="https://img.shields.io/badge/Follow-LinkedIn-0077B5?style=flat-square&logo=appveyor.svg" alt="Follow LinkedIn"></a>
 <a href="https://github.com/dipranjan/dsinterviewqns/discussions" target="_blank"><img src="https://img.shields.io/badge/Discussion%20Forum-%F0%9F%99%8A%20%20%F0%9F%99%88%20%20%F0%9F%99%89-0172B3?style=flat-square&logo=appveyor.svg" alt="Discussion Forum"></a>
 </p>
 
-          </div>
-      </p>
-    </div>
-  </footer>
+      </div>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
-
-  
-<script async="" src="https://www.google-analytics.com/analytics.js"></script>
-<script>
-                        window.ga = window.ga || function () {
-                            (ga.q = ga.q || []).push(arguments) };
-                        ga.l = +new Date;
-                        ga('create', 'UA-60403888-2', 'auto');
-                        ga('set', 'anonymizeIp', true);
-                        ga('send', 'pageview');
-                    </script>
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>
