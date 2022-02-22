@@ -1,6 +1,6 @@
 ## Log
 
-📢 **Last updated on <span style="color:red">22 Feb 2022</span>**
+![Megaphone](../handphoneupd2.gif) **Last updated on <span style="color:red">22 Feb 2022</span>**
 
 ```{admonition} What's Happening
 :class: tip, dropdown
