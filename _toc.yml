@@ -35,6 +35,9 @@ parts:
     chapters:
     - file: contents/NLP/Lexical Processing
     - file: contents/NLP/Syntactic Processing
+  - caption: Story Telling
+    chapters:
+    - file: contents/StoryTelling/Visualization
   - caption: Python
     chapters:
     - file: contents/Python/Basics

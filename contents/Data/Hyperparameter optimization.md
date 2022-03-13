@@ -39,7 +39,11 @@ The process of Hyperparameter Tuning usually involves the following steps:
 - Provide a range or set of values for all the hyperparameters
 - Run the training process on the set of parameter combinations to find the best hyperparameter which optimizes your model performance
 
-Now this last step can be an extremely time and resource intensive process depending upon the model and range of the hyperparameters provided. There are many ways to perfrom the last step. Let's start with an example, suppose 
+Now this last step can be an extremely time and resource intensive process depending upon the model and range of the hyperparameters provided. There are many ways to perfrom the last step. Let's start with an example, suppose you are trying to optimize a XGBoost model and this is the parameter space:
+
+- 'max_depth': [3,6,10],
+- 'learning_rate': [0.01, 0.05, 0.1],
+- 'n_estimators': [100, 500, 1000]
 
 #### Grid Search
 
