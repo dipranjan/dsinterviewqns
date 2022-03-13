@@ -5,11 +5,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta content="Interview resource of Data Science Interview focusing on Missing value treatment." lang="en" name="description" xml:lang="en" />
-<meta content="interview, data science, machine learning, Missing value" name="keywords" />
+<meta content="Interview resource of Data Science Interview focusing on Hyperparameter optimization." lang="en" name="description" xml:lang="en" />
+<meta content="interview, data science, machine learning, visualization, graphs" name="keywords" />
 <meta content="en_US" property="og:locale" />
 
-    <title>Missing Value &#8212; The Data Science Interview Book</title>
+    <title>Visualization &#8212; The Data Science Interview Book</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -56,12 +56,12 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/Data/Missing Value.html" />
+    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/StoryTelling/Visualization.html" />
     <link rel="shortcut icon" href="../../_static/logo.gif"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Outlier" href="Outlier.html" />
-    <link rel="prev" title="Scaling" href="Scaling.html" />
+    <link rel="next" title="Basics" href="../Python/Basics.html" />
+    <link rel="prev" title="Syntactic Processing" href="../NLP/Syntactic%20Processing.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -164,36 +164,36 @@
   Model Building
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="Data.html">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Data/Data.html">
    Data
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="Scaling.html">
+    <a class="reference internal" href="../Data/Scaling.html">
      Scaling
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Data/Missing%20Value.html">
      Missing Value
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Outlier.html">
+    <a class="reference internal" href="../Data/Outlier.html">
      Outlier
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Hyperparameter%20optimization.html">
+  <a class="reference internal" href="../Data/Hyperparameter%20optimization.html">
    Hyperparameter Optimization
   </a>
  </li>
@@ -274,9 +274,9 @@
   Story Telling
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../StoryTelling/Visualization.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Visualization
   </a>
  </li>
@@ -441,7 +441,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/contents/Data/Missing Value.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/contents/StoryTelling/Visualization.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -458,7 +458,7 @@
     <div class="dropdown-buttons sourcebuttons">
         
         <a class="issues-button"
-            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/Data/Missing Value.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/StoryTelling/Visualization.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -486,7 +486,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Missing Value</h1>
+                <h1>Visualization</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -497,56 +497,18 @@
             
               <div>
                 
-  <section id="missing-value">
-<h1>Missing Value<a class="headerlink" href="#missing-value" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://www.analyticsvidhya.com/blog/2016/01/guide-data-exploration/">📖Source</a></p>
-<p>Data can have missing values and it is very common. The reason of such missing data can be any of the following:</p>
-<ul class="simple">
-<li><p><strong>Data Extraction:</strong> It is possible that there are problems with extraction process. In such cases, we should double-check for correct data with data guardians.</p></li>
-<li><p><strong>Data collection:</strong> These errors occur at time of data collection and are harder to correct. They can be categorized in four types:</p>
-<ul>
-<li><p><strong>Missing completely at random:</strong> This is a case when the probability of missing variable is same for all observations</p></li>
-<li><p><strong>Missing at random:</strong> This is a case when variable is missing at random and missing ratio varies for different values / level of other input variables. For example: We are collecting data for age and female has higher missing value compare to male.</p></li>
-<li><p><strong>Missing that depends on unobserved predictors:</strong> This is a case when the missing values are not random and are related to the unobserved input variable. For example: In a medical study, if a particular diagnostic causes discomfort, then there is higher chance of drop out from the study. This missing value is not at random unless we have included “discomfort” as an input variable for all patients.</p></li>
-<li><p><strong>Missing that depends on the missing value itself:</strong> This is a case when the probability of missing value is directly correlated with missing value itself. For example: People with higher or lower income are likely to provide non-response to their earning.</p></li>
-</ul>
-</li>
-</ul>
-<p>There are many standard practices of dealing with missing data-</p>
-<ul class="simple">
-<li><p><strong>Deletion:</strong>  It is of two types: <em>List Wise Deletion</em> and <em>Pair Wise Deletion</em>.
-In list wise deletion, we delete observations where any of the variable is missing. Simplicity is one of the major advantage of this method, but this method reduces the power of model because it reduces the sample size.
-In pair wise deletion, we perform analysis with all cases in which the variables of interest are present. Advantage of this method is, it keeps as many cases available for analysis. One of the disadvantage of this method, it uses different sample size for different variables.</p></li>
-</ul>
-<p><strong>Deletion methods are used when the nature of missing data is “Missing completely at random” else non random missing values can bias the model output.</strong></p>
-<ul>
-<li><p><strong>Mean/ Mode/ Median Imputation:</strong> Imputation is a method to fill in the missing values with estimated ones. The objective is to employ known relationships that can be identified in the valid values of the data set to assist in estimating the missing values. Mean/Mode/Median imputation is one of the most frequently used methods. It consists of replacing the missing data for a given attribute by the mean or median (quantitative attribute) or mode (qualitative attribute) of all known values of that variable. It can be of two types:-</p>
-<ul class="simple">
-<li><p><strong>Generalized Imputation:</strong> In this case, we calculate the mean or median for all non missing values of that variable then replace missing value with mean or median.</p></li>
-<li><p><strong>Similar case Imputation:</strong> In this case, for example, we calculate average for gender “Male” (29.75) and “Female” (25) individually of non missing values then replace the missing value based on gender. For “Male“, we will replace missing values of manpower with 29.75 and for “Female” with 25.</p></li>
-</ul>
-</li>
-<li><p><strong>Prediction Model:</strong>  Prediction model is one of the sophisticated method for handling missing data. Here, we create a predictive model to estimate values that will substitute the missing data.  In this case, we divide our data set into two sets: One set with no missing values for the variable and another one with missing values. First data set become training data set of the model while second data set with missing values is test data set and variable with missing values is treated as target variable. Next, we create a model to predict target variable based on other attributes of the training data set and populate missing values of test data set.We can use regression, ANOVA, Logistic regression and various modeling technique to perform this. There are 2 drawbacks for this approach:</p>
-<ul class="simple">
-<li><p>The model estimated values are usually more well-behaved than the true values</p></li>
-<li><p>If there are no relationships with attributes in the data set and the attribute with missing values, then the model will not be precise for estimating missing values</p></li>
-</ul>
-</li>
-<li><p><strong>KNN Imputation:</strong> In this method of imputation, the missing values of an attribute are imputed using the given number of attributes that are most similar to the attribute whose values are missing. The similarity of two attributes is determined using a distance function.</p>
-<p><strong>Advantages:</strong></p>
-<ul class="simple">
-<li><p>k-nearest neighbour can predict both qualitative &amp; quantitative attributes</p></li>
-<li><p>Creation of predictive model for each attribute with missing data is not required</p></li>
-<li><p>Attributes with multiple missing values can be easily treated</p></li>
-<li><p>Correlation structure of the data is taken into consideration</p></li>
-</ul>
-<p><strong>Disadvantage:</strong></p>
-<ul class="simple">
-<li><p>KNN algorithm is very time-consuming in analyzing large database. It searches through all the dataset looking for the most similar instances.</p></li>
-<li><p>Choice of k-value is very critical. Higher value of k would include attributes which are significantly different from what we need whereas lower value of k implies missing out of significant attributes.</p></li>
-</ul>
-</li>
-</ul>
+  <section id="visualization">
+<h1>Visualization<a class="headerlink" href="#visualization" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This page is a work in progress</p>
+</div>
+<figure class="align-center" id="image1">
+<a class="reference internal image-reference" href="../../_images/image1.jpg"><img alt="../../_images/image1.jpg" src="../../_images/image1.jpg" style="width: 895.57px; height: 1266.8500000000001px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 28 </span><span class="caption-text"><a class="reference external" href="https://experception.net/">📚 Source</a></span><a class="headerlink" href="#image1" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 </section>
 
     <script type="text/x-thebe-config">
@@ -562,7 +524,7 @@ In pair wise deletion, we perform analysis with all cases in which the variables
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./contents\Data"
+            path: "./contents\StoryTelling"
         },
         predefinedOutput: true
     }
@@ -574,17 +536,17 @@ In pair wise deletion, we perform analysis with all cases in which the variables
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="Scaling.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../NLP/Syntactic%20Processing.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Scaling</p>
+            <p class="prev-next-title">Syntactic Processing</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="Outlier.html" title="next page">
+    <a class='right-next' id="next-link" href="../Python/Basics.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Outlier</p>
+        <p class="prev-next-title">Basics</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

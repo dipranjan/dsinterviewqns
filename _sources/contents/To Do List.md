@@ -1,6 +1,6 @@
 ## Log
 
-![Megaphone](../handphoneupd2.gif) **Last updated on <span style="color:red">22 Feb 2022</span>**
+![Megaphone](../handphoneupd2.gif) **Last updated on <span style="color:red">13 March 2022</span>**
 
 ```{admonition} What's Happening
 :class: tip, dropdown
@@ -32,6 +32,11 @@
 
 ```{admonition} What Happened
 :class: tip, dropdown
+
+**Month of March, 2022**
+- Had an extremely busy last few weeks and the next few months are going to be packed too
+- Story Telling section added
+- Quick guide to Visualization added
 
 **Month of February, 2022**
 - Added problems in Python, SQL, Probability

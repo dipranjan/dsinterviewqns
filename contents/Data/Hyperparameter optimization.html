@@ -271,6 +271,18 @@
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  Story Telling
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../StoryTelling/Visualization.html">
+   Visualization
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Python
  </span>
 </p>
@@ -613,7 +625,12 @@
 <li><p>Provide a range or set of values for all the hyperparameters</p></li>
 <li><p>Run the training process on the set of parameter combinations to find the best hyperparameter which optimizes your model performance</p></li>
 </ul>
-<p>Now this last step can be an extremely time and resource intensive process depending upon the model and range of the hyperparameters provided. There are many ways to perfrom the last step. Let’s start with an example, suppose</p>
+<p>Now this last step can be an extremely time and resource intensive process depending upon the model and range of the hyperparameters provided. There are many ways to perfrom the last step. Let’s start with an example, suppose you are trying to optimize a XGBoost model and this is the parameter space:</p>
+<ul class="simple">
+<li><p>‘max_depth’: [3,6,10],</p></li>
+<li><p>‘learning_rate’: [0.01, 0.05, 0.1],</p></li>
+<li><p>‘n_estimators’: [100, 500, 1000]</p></li>
+</ul>
 <section id="grid-search">
 <h3>Grid Search<a class="headerlink" href="#grid-search" title="Permalink to this headline">¶</a></h3>
 </section>
