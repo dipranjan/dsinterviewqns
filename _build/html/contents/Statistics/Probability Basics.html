@@ -1,0 +1,959 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<meta content="Interview resource of Data Science Interview focusing on Probability." lang="en" name="description" xml:lang="en" />
+<meta content="interview, data science, machine learning, probability" name="keywords" />
+<meta content="en_US" property="og:locale" />
+
+    <title>Probability Basics &#8212; The Data Science Interview Book</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/Statistics/Probability Basics.html" />
+    <link rel="shortcut icon" href="../../_static/logo.gif"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Probability Distribution" href="Probability%20Distribution.html" />
+    <link rel="prev" title="Log" href="../To%20Do%20List.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-60403888-2', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.gif" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">The Data Science Interview Book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   About this Book
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Journey of this project
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../To%20Do%20List.html">
+   Log
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Statistics
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Probability Basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Probability%20Distribution.html">
+   Probability Distribution
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Central%20Limit%20Theorem.html">
+   Central Limit Theorem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Bayesian%20vs%20Frequentist%20Reasoning.html">
+   Bayesian vs Frequentist Reasoning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Hypothesis%20Testing.html">
+   Hypothesis Testing
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Model Building
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Data/Data.html">
+   Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Data/Scaling.html">
+     Scaling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Data/Missing%20Value.html">
+     Missing Value
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Data/Outlier.html">
+     Outlier
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Data/Hyperparameter%20optimization.html">
+   Hyperparameter Optimization
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Algorithms
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Algorithms/Regression.html">
+   Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Algorithms/Generative%20VS%20Discriminative%20Models.html">
+   Generative vs Discriminative Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Algorithms/Classification.html">
+   Classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Algorithms/Tree%20based%20approaches.html">
+   Tree based approaches
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Algorithms/Time%20Series%20Analysis.html">
+   Time Series Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Algorithms/Anomaly%20Detection.html">
+   Anomaly Detection
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Neural Network
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../NN/Neural%20Network.html">
+   Neural Network
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../NN/Recurrent%20Neural%20Network.html">
+   Recurrent Neural Network
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  NLP
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../NLP/Lexical%20Processing.html">
+   Lexical Processing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../NLP/Syntactic%20Processing.html">
+   Syntactic Processing
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Story Telling
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../StoryTelling/Visualization.html">
+   Visualization
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Python/Basics.html">
+   Basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Python/Data%20Manipulation.html">
+   Data Manipulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Python/Statistics.html">
+   Statistics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Python/NLP.html">
+   NLP
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  SQL
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../SQL/Select.html">
+   SQL Basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../SQL/Joins.html">
+   Joins
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../SQL/Temporary%20Datasets.html">
+   Temporary Datasets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../SQL/Windows%20Functions.html">
+   Windows Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../SQL/Time.html">
+   Time
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../SQL/Functions.html">
+   Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../SQL/Problems.html">
+   Problems
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Excel
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Excel/Excel%20Basics.html">
+   Excel Basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Excel/Data%20Manipulation.html">
+   Data Manipulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Excel/Time%20and%20Date.html">
+   Time and Date
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tensorflow
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Tensorflow/Basics.html">
+   Basics
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Analytical Thinking
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Analytical%20Thinking/Business%20Scenarios.html">
+   Business Scenarios
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Analytical%20Thinking/Industry%20Application.html">
+   Industry Application
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/contents/Statistics/Probability Basics.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        
+        <a class="issues-button"
+            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/Statistics/Probability Basics.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#common-terminologies">
+   Common Terminologies
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#set">
+   Set
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#permutation-and-combination">
+   Permutation and Combination
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#joint-conditional-probability">
+   Joint &amp; Conditional Probability
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bayes-theorem">
+   Bayes’ Theorem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#questions">
+   Questions
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Probability Basics</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#common-terminologies">
+   Common Terminologies
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#set">
+   Set
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#permutation-and-combination">
+   Permutation and Combination
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#joint-conditional-probability">
+   Joint &amp; Conditional Probability
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bayes-theorem">
+   Bayes’ Theorem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#questions">
+   Questions
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <section id="probability-basics">
+<h1>Probability Basics<a class="headerlink" href="#probability-basics" title="Permalink to this headline">¶</a></h1>
+<figure class="align-default" id="image12">
+<a class="reference internal image-reference" href="../../_images/image121.PNG"><img alt="../../_images/image121.PNG" src="../../_images/image121.PNG" style="width: 400.0px; height: 300.0px;" /></a>
+</figure>
+<p>Probability theory is the mathematical framework that allows us to analyze chance events in a logically sound manner. The probability of an event is a number indicating how likely that event will occur.</p>
+<p>Note that when we say the probability of a head is <span class="math notranslate nohighlight">\(1/2\)</span>, we are not claiming that any sequence of coin tosses will consist of exactly <span class="math notranslate nohighlight">\(50\)</span>% heads. If we toss a fair coin ten times, it would not be surprising to observe <span class="math notranslate nohighlight">\(6\)</span> heads and <span class="math notranslate nohighlight">\(4\)</span> tails, or even <span class="math notranslate nohighlight">\(3\)</span> heads and <span class="math notranslate nohighlight">\(7\)</span> tails. But as we continue to toss the coin over and over again, we expect the long-run frequency of heads to get ever closer to <span class="math notranslate nohighlight">\(50\)</span>%. <strong>In general, it is important in statistics to understand the distinction between theoretical and empirical quantities. Here, the true (theoretical) probability of a head was <span class="math notranslate nohighlight">\(1/2\)</span>, but any realized (empirical) sequence of coin tosses may have more or less than exactly <span class="math notranslate nohighlight">\(50\)</span>% heads.</strong></p>
+<section id="common-terminologies">
+<h2>Common Terminologies<a class="headerlink" href="#common-terminologies" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>sample space is the set of all possible outcomes in the experiment</strong> : for a dice <span class="math notranslate nohighlight">\(Ω = {1, 2, 3, 4, 5, 6}\)</span>.</p>
+<p>Any <strong>subset of <span class="math notranslate nohighlight">\(Ω\)</span> is a valid event</strong>. we can speak of the event <span class="math notranslate nohighlight">\(F\)</span> of rolling a <span class="math notranslate nohighlight">\(4\)</span>, <span class="math notranslate nohighlight">\(F = {4}\)</span>.</p>
+<p>Consider the outcome of a single die roll, and call it <span class="math notranslate nohighlight">\(X\)</span>. A reasonable question one might ask is “What is the average value of <span class="math notranslate nohighlight">\(X\)</span>?”. We define this notion of “average” as a weighted sum of outcomes. This is called the <strong>expected value</strong>, or expectation of <span class="math notranslate nohighlight">\(X\)</span>, denoted by <span class="math notranslate nohighlight">\(E(X)\)</span>,</p>
+<p><span class="math notranslate nohighlight">\(Weighted Average = \frac{1}{6} * (1 + 2 + 3 + 4 + 5 + 6) = 3.5\)</span></p>
+<p>If you play the game <span class="math notranslate nohighlight">\( \infty \)</span> times the average value becomes <span class="math notranslate nohighlight">\(E(X)\)</span></p>
+<p>The <strong>variance</strong> of a random variable <span class="math notranslate nohighlight">\(X\)</span> is a nonnegative number that summarizes on average how much <span class="math notranslate nohighlight">\(X\)</span> differs from its mean, or expectation.
+The square root of the variance is called the <strong>standard deviation.</strong></p>
+<p><span class="math notranslate nohighlight">\(Var(X) = \frac{(1−3.5)^2+(2−3.5)^2+(3−3.5)^2+(4−3.5)^2+(5−3.5)^2+(6−3.5)^2}{6} = \frac{17.5}{6}\)</span></p>
+</section>
+<hr class="docutils" />
+<section id="set">
+<h2>Set<a class="headerlink" href="#set" title="Permalink to this headline">¶</a></h2>
+<p>A set, broadly defined, is a collection of objects. In the context of probability theory, we use set notation to specify compound events. For example, we can represent the event “roll an even number” by the set {2, 4, 6}.</p>
+</section>
+<section id="permutation-and-combination">
+<h2>Permutation and Combination<a class="headerlink" href="#permutation-and-combination" title="Permalink to this headline">¶</a></h2>
+<p>It can be surprisingly difficult to count the number of sequences or sets satisfying certain conditions. This is where <strong>Premutation and Combination</strong> comes in. For example, consider a bag of marbles in which each marble is a different color. If we draw marbles one at a time from the bag without replacement, how many different ordered sequences (permutations) of the marbles are possible? How many different unordered sets (combinations)?</p>
+<ul class="simple">
+<li><p>Permutation(<span class="math notranslate nohighlight">\(AB \neq BA\)</span> , order matters) = <span class="math notranslate nohighlight">\(nPr = \frac{n!}{(n-r)!}\)</span></p></li>
+<li><p>Combination(<span class="math notranslate nohighlight">\(AB = BA\)</span> , order does not matter) = <span class="math notranslate nohighlight">\(nCr = \frac{n!}{r!(n-r)!}\)</span></p></li>
+</ul>
+</section>
+<section id="joint-conditional-probability">
+<h2>Joint &amp; Conditional Probability<a class="headerlink" href="#joint-conditional-probability" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Joint Probability is the probability of <span class="math notranslate nohighlight">\(2\)</span> independent events occuring : <span class="math notranslate nohighlight">\(P(A \cap B) = P(A)*P(B)\)</span></p></li>
+<li><p>Conditional probability tells the probability of <span class="math notranslate nohighlight">\(B\)</span> given <span class="math notranslate nohighlight">\(A\)</span> has occured, it allow us to account for information we have about our system of interest: <span class="math notranslate nohighlight">\(P(B|A) = \frac{P(A \cap B)}{P(A)}\)</span></p></li>
+</ul>
+<p><strong>If both are same then A and B are independent events.</strong></p>
+</section>
+<section id="bayes-theorem">
+<h2>Bayes’ Theorem<a class="headerlink" href="#bayes-theorem" title="Permalink to this headline">¶</a></h2>
+<p>Bayes’ theorem, named after 18th-century British mathematician Thomas Bayes, is a mathematical formula for determining conditional probability. <strong>Conditional probability is the likelihood of an outcome occurring, based on a previous outcome occurring.</strong></p>
+<figure class="align-default" id="image1">
+<a class="reference internal image-reference" href="../../_images/image113.PNG"><img alt="../../_images/image113.PNG" src="../../_images/image113.PNG" style="height: 150px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Baye’s Theorem</span><a class="headerlink" href="#image1" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>An easy way of remembering it is using the below example:</p>
+<p>What is the probability of a fruit being banana given that it is long, sweet and yellow?</p>
+<p><span class="math notranslate nohighlight">\(P(Banana|Long,Sweet,Yellow) = \frac{P(Long|Banana)*P(Sweet|Banana)*P(Yellow|Banana)*P(Banana)}{P(Long)*P(Sweet)*P(Yellow)}\)</span></p>
+</section>
+<hr class="docutils" />
+<section id="questions">
+<h2>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h2>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: [UBER] Dice in increasing order</p>
+<p>We throw 3 dice one by one. What is the probability that we obtain 3 points in strictly increasing order?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>Suppose we get <span class="math notranslate nohighlight">\(4\)</span> in the first roll then,</p>
+<p>Total Probability = <span class="math notranslate nohighlight">\(P(4) * P(5) * P(6) = 1/6 * 1/6 * 1/6 = 1/216\)</span></p>
+<p>Similarly for <span class="math notranslate nohighlight">\(3\)</span>,    <span class="math notranslate nohighlight">\(P(3) * P(4,5 | 4,6 | 5,6) = 1/6 * (1/36 + 1/36 + 1/36) = 3/216\)</span></p>
+<p>Taking into consideration <span class="math notranslate nohighlight">\(P(1)\)</span> and <span class="math notranslate nohighlight">\(P(2)\)</span> we have the total as <span class="math notranslate nohighlight">\(= 10/216 + 6/216 + 3/216 + 1/216 = 20/216\)</span></p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: [LINKEDIN] Cards in increasing order</p>
+<p>Imagine a deck of <span class="math notranslate nohighlight">\(500\)</span> cards numbered from <span class="math notranslate nohighlight">\(1\)</span> to <span class="math notranslate nohighlight">\(500\)</span>. If all the cards are shuffled randomly and you are asked to pick three cards, one at a time, what’s the probability of each subsequent card being larger than the previous drawn card?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>It is actually easy to solve this if you think on it a little. Let’s pick any <span class="math notranslate nohighlight">\(3\)</span> cards, now if you rearrange it there will only be <span class="math notranslate nohighlight">\(1\)</span> way in which each subsequent card is larger the previous card. So a total of <span class="math notranslate nohighlight">\(6\)</span> ways to arrange the cards out of which only <span class="math notranslate nohighlight">\(1\)</span> is valid. So the result is <span class="math notranslate nohighlight">\(\frac{1}{6}\)</span>.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: [STATE FARM] Cards without replacement</p>
+<p>Pull <span class="math notranslate nohighlight">\(2\)</span> cards from a deck without replacement what is probability that both are of different colors.</p>
+<p>There can be many variants to this question.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p><a class="reference external" href="https://www.quora.com/Two-cards-are-drawn-for-a-pack-of-52-cards-What-is-the-probability-that-both-the-cards-are-of-the-same-colour">Source</a></p>
+<p>Here it is not specified which colour the cards should be - so, they can be either red or black.</p>
+<p>The probability that the first card drawn is either red or black is <span class="math notranslate nohighlight">\(1\)</span> since these two are the only possible outcomes.</p>
+<p>After the first draw, the total number of cards remaining in the pack is <span class="math notranslate nohighlight">\(51\)</span>, out of which <span class="math notranslate nohighlight">\(25\)</span> cards are of the same colour as that of the card that is already drawn. Hence the probability of drawing a card of the same colour as the first one is <span class="math notranslate nohighlight">\(\frac{25}{51}\)</span>.</p>
+<p>⇒ The probability of drawing two cards of the same colour is <span class="math notranslate nohighlight">\(1*\frac{25}{51}=\frac{25}{51}\)</span>.</p>
+<p><em>Another approach to this can be:</em></p>
+<p>Two cards of a particular colour can be drawn in <span class="math notranslate nohighlight">\(C(26,2)\)</span> ways.</p>
+<p>⇒ Two cards of either red or black can be drawn in <span class="math notranslate nohighlight">\(2×C(26,2)\)</span> ways.</p>
+<p>The total number of ways of drawing any two cards from the pack is <span class="math notranslate nohighlight">\(C(52,2)\)</span>.</p>
+<p>⇒ The probability of drawing two cards of the same colour is <span class="math notranslate nohighlight">\(\frac{2×C(26,2)}{C(52,2)} = \frac{2×26!}{2!×24!}\frac{2!×50!}{52!}=\frac{25}{51}\)</span></p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: [FACEBOOK] N Dice</p>
+<p>Suppose you’re playing a dice game. You have 2 die.</p>
+<ul class="simple">
+<li><p>What’s the probability of rolling at least one 3?</p></li>
+<li><p>What’s the probability of rolling at least one 3 given N die?</p></li>
+</ul>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>P(at least 1 three) <span class="math notranslate nohighlight">\(=\)</span> P(exactly 1 three) <span class="math notranslate nohighlight">\(+\)</span>  P(2 three) <span class="math notranslate nohighlight">\(= 1/6 * 5/6 + 5/6 * 1/6 + 1/36 = 11/36\)</span></p>
+<p>The second part of the question is a little tricky, let’s start by generalizing the above equation:</p>
+<p>P(at least 1 three) <span class="math notranslate nohighlight">\(= 2*(5^1/6^2) + 5^0/6^2\)</span></p>
+<p>Now for N dice: P(at least 1 three) <span class="math notranslate nohighlight">\(=\)</span> P(exactly 1 three) <span class="math notranslate nohighlight">\(+\)</span>  P(2 three) <span class="math notranslate nohighlight">\(+\)</span>  P(3 three) … <span class="math notranslate nohighlight">\(+\)</span>  P(N three)</p>
+<p>Combining both <span class="math notranslate nohighlight">\(= N * \frac{5^{N-1}}{6^N} + N * \frac{5^{N-2}}{6^N} + N * \frac{5^{N-3}}{6^N} + ... + N * \frac{5^0}{6^N} = \frac{N}{6^N}(5^{N-1} + 5^{N-2} + .. + 1)\)</span></p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: [FACEBOOK] 3 Zebras</p>
+<p>Three zebras are chilling in the desert. Suddenly a lion attacks.</p>
+<p>Each zebra is sitting on a corner of an equally length triangle. Each zebra randomly picks a direction and only runs along the outline of the triangle to either edge of the triangle.</p>
+<p>What is the probability that none of the zebras collide?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>Each zebra has 2 options of travel: clockwise or anticlockwise. So a total of <span class="math notranslate nohighlight">\(2*2*2 = 8\)</span> options.</p>
+<p>Out of this only way in which they donot collide is if all of them travel clockwise or anticlockwise. So a total of <span class="math notranslate nohighlight">\(2\)</span>.</p>
+<p>Therefore the probability of no collision <span class="math notranslate nohighlight">\(= 2/8 = 25%\)</span></p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: [POSTMATES] Four Person Elevator</p>
+<p>There are four people on the ground floor of a building that has five levels not including the ground floor. They all get into the same elevator.</p>
+<p>If each person is equally likely to get on any floor and they leave independently of each other, what is the probability that no two passengers will get off at the same floor?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>The number of ways to assigning five floors to four different people is to get the total sample space. In this case it would be <span class="math notranslate nohighlight">\(5 * 5 * 5 * 5\)</span>.</p>
+<p>The number of ways to assign five floors to four people without repetition of floors is <span class="math notranslate nohighlight">\(5 * 4 * 3 * 2\)</span> because for the first passenger you have five different options. The second person has four, and so on. Note that this number counts all possible orders between passengers as well.</p>
+<p>The result is then <span class="math notranslate nohighlight">\(\frac{5 * 4 * 3 * 2}{5 * 5 * 5 * 5} = 0.192\)</span></p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: [AMAZON] Found Item</p>
+<p>Amazon has a warehouse system where items on the website are located at different distribution centers across a city. Let’s say in one example city, the probability that a specific item X at location A is 0.6, and at location B the probability is 0.8.</p>
+<p>Given you’re a customer in this example city and the items are only found on the website if they exist in the distribution centers, what is the probability that the item X would be found on Amazon’s website?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>Probability of the item being present= <span class="math notranslate nohighlight">\(1-\)</span> p(item NOT in A AND NOT in B) <span class="math notranslate nohighlight">\(= 1-(0.4*0.2)=0.92\)</span></p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: [SPOTIFY] Max Dice Roll</p>
+<p>A fair die is rolled <span class="math notranslate nohighlight">\(n\)</span> times. What is the probability that the largest number rolled is <span class="math notranslate nohighlight">\(r\)</span>, for each <span class="math notranslate nohighlight">\(r\)</span> in <span class="math notranslate nohighlight">\(1..6\)</span>?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>If <span class="math notranslate nohighlight">\(r(1≤r≤6)\)</span> is the largest number you have allowed for your <span class="math notranslate nohighlight">\(n\)</span> rolls, then you forbid any number larger than <span class="math notranslate nohighlight">\(r\)</span>. That is, you forbid <span class="math notranslate nohighlight">\(6−r\)</span> values. The probability that your single roll does not show any of these <span class="math notranslate nohighlight">\(6−r\)</span> values is <span class="math notranslate nohighlight">\(\frac{6−r}{6}\)</span> and the probability that this happens each time during a series of <span class="math notranslate nohighlight">\(n\)</span> rolls is the obviously <span class="math notranslate nohighlight">\((\frac{6−r}{6})^n\)</span></p>
+<p>There is a subtle nuance to this problem, in the above solution we have assumed the <span class="math notranslate nohighlight">\(max&lt;=r\)</span> which is different from <span class="math notranslate nohighlight">\(max=r\)</span> or in other words if <span class="math notranslate nohighlight">\(r=3\)</span>, the above solution gives results for <span class="math notranslate nohighlight">\(r= 1,2,3\)</span>. The solution of <span class="math notranslate nohighlight">\(r=3\)</span> is a little more involved:</p>
+<p>Let’s take <span class="math notranslate nohighlight">\(r=3\)</span>, for <span class="math notranslate nohighlight">\(n\)</span> die rolls we should have atleast one <span class="math notranslate nohighlight">\(r\)</span>. The Probability of that is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+P(r=3) \\
+&amp; = P(\text{of getting all n values as 1,2,3} * P(\text{atleast one 3})) \\
+&amp; = (\frac{3}{6})^n * (1-P(\text{no 3's occuring})) \\
+&amp; = (\frac{3}{6})^n * (1-(\frac{\text{only getting 1,2}}{\text{out of 1,2,3}})^n) \\
+&amp; = (\frac{3}{6})^n * (1-(\frac{2}{3})^n) \\
+&amp; = \text{generalizing } (\frac{r}{6})^n * (1-(\frac{r-1}{r})^n) \\
+&amp; = \frac{r^n - (r-1)^n}{6^n}\\
+\end{split}\]</div>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: [FACEBOOK] Labeling Content</p>
+<p>Facebook has a content team that labels pieces of content on the platform as spam or not spam. <span class="math notranslate nohighlight">\(90%\)</span> of them are diligent raters and will label <span class="math notranslate nohighlight">\(20%\)</span> of the content as spam and <span class="math notranslate nohighlight">\(80%\)</span> as non-spam. The remaining <span class="math notranslate nohighlight">\(10%\)</span> are non-diligent raters and will label <span class="math notranslate nohighlight">\(0%\)</span> of the content as spam and <span class="math notranslate nohighlight">\(100%\)</span> as non-spam. Assume the pieces of content are labeled independently from one another, for every rater. Given that a rater has labeled <span class="math notranslate nohighlight">\(4\)</span> pieces of content as good, what is the probability that they are a diligent rater?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>This can be solved using Baye’s theorem:</p>
+<ul class="simple">
+<li><p>Not Spam = <span class="math notranslate nohighlight">\(NS\)</span></p></li>
+<li><p>Spam = <span class="math notranslate nohighlight">\(S\)</span></p></li>
+<li><p>Diligent =<span class="math notranslate nohighlight">\(D\)</span></p></li>
+<li><p>NotDiligent =<span class="math notranslate nohighlight">\(ND\)</span></p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(P(D|NS, NS, NS, NS) = \frac{P(NS, NS, NS, NS|D)*P(D)}{P(NS, NS, NS, NS|D)*P(D)+P(NS, NS, NS, NS|ND)*P(ND)}\)</span>
+<span class="math notranslate nohighlight">\(P(D|NS, NS, NS, NS) = \frac{0.8^4*0.9}{0.8^4*0.9+1^4*0.1}\)</span> = ~<span class="math notranslate nohighlight">\(0.787\)</span></p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: [FACEBOOK] Raining</p>
+<p>You are about to get on a plane to Seattle. You want to know if you should bring an umbrella. You call <span class="math notranslate nohighlight">\(3\)</span> random friends of yours who live there and ask each independently if it’s raining. Each of your friends has a <span class="math notranslate nohighlight">\(2/3\)</span> chance of telling you the truth and a <span class="math notranslate nohighlight">\(1/3\)</span> chance of messing with you by lying. All <span class="math notranslate nohighlight">\(3\)</span> friends tell you that “Yes” it is raining.</p>
+<p>What is the probability that it’s actually raining in Seattle?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>Even though the problem is straightforward one can interpret the problem in many ways. Taking a Bayesian approach is probably appropriate in a real world sense, but if you are told by the interviewer you have no ability to determine the priors, you can’t use Bayesian. <a class="reference external" href="https://math.stackexchange.com/questions/1335235/facebook-question-data-science">Check this thread</a> for a detailed discussion on this problem.</p>
+<p>For it to be not raining, all friends must be lying. Therefore, the solution must be the inverse of the probability that all three are “messing with you.”
+<span class="math notranslate nohighlight">\((1/3)*(1/3)*(1/3)=1/27\)</span> (3.7% chance they are all lying).</p>
+<p>Since there is only a <span class="math notranslate nohighlight">\(3.7%\)</span> chance all three friends are messing with you, there is a <span class="math notranslate nohighlight">\(96.3%\)</span> chance it is raining.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: [MICROSOFT] First to Six</p>
+<p>Amy and Brad take turns in rolling a fair six-sided die. Whoever rolls a <span class="math notranslate nohighlight">\(6\)</span> first wins the game. Amy starts by rolling first.</p>
+<p>What’s the probability that Amy wins?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>Amy can win on the first roll, third roll, fifth roll, and so on.</p>
+<p>Probability of Amy winning in the first roll = P(six rolled by her) = <span class="math notranslate nohighlight">\(1/6\)</span></p>
+<p>Probability of Amy winning in the third roll = P(six NOT rolled by her in first try) * P(six NOT rolled by Brad in first try) * P(six rolled by her in 2nd try) = <span class="math notranslate nohighlight">\((5/6) * (5/6) * (1/6) = 1/6 * (5/6)^2\)</span></p>
+<p>Similarly, the probability of Amy winning in the fifth roll = <span class="math notranslate nohighlight">\((1/6) * (5/6)^4\)</span></p>
+<p>Similarly, the probability of Amy winning in the seventh roll = <span class="math notranslate nohighlight">\((1/6) * (5/6)^6\)</span></p>
+<p>Hence, total probability of Amy winning = Sum of all such events = <span class="math notranslate nohighlight">\((1/6) + (1/6 * (5/6)^2) + (1/6 * (5/6)^4) + (1/6 * (5/6)^6) + ...\)</span></p>
+<p>The sum of such an infinite Geometric Progression series is = <span class="math notranslate nohighlight">\(\frac{a}{1-r} = (1/6) / (1 - 25/36) = (1/6) / (11/36) = 6/11\)</span></p>
+<p>Hence, probability of Amy winning in any of her turns = <span class="math notranslate nohighlight">\(6/11\)</span></p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: [GOOGLE][FACEBOOK] Double Sided Coin</p>
+<p>A jar has <span class="math notranslate nohighlight">\(1000\)</span> coins, of which <span class="math notranslate nohighlight">\(999\)</span> are fair and <span class="math notranslate nohighlight">\(1\)</span> is double headed. Pick a coin at random, and toss it <span class="math notranslate nohighlight">\(10\)</span> times. Given that you see <span class="math notranslate nohighlight">\(10\)</span> heads, what is the probability that the next toss of that coin is also a head?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>There are two ways of choosing the coin. One is to pick a fair coin and the other is to pick the one with two heads.</p>
+<ul class="simple">
+<li><p>Probability of selecting fair coin <span class="math notranslate nohighlight">\(= 999/1000 = 0.999\)</span></p></li>
+<li><p>Probability of selecting unfair coin <span class="math notranslate nohighlight">\(= 1/1000 = 0.001\)</span></p></li>
+</ul>
+<p>Selecting <span class="math notranslate nohighlight">\(10\)</span> heads in a row = Selecting fair coin * Getting 10 heads + Selecting an unfair coin</p>
+<ul class="simple">
+<li><p>P (A) <span class="math notranslate nohighlight">\(= 0.999 * (1/2)^5 = 0.999 * (1/1024) = 0.000976\)</span></p></li>
+<li><p>P (B) <span class="math notranslate nohighlight">\(= 0.001 * 1 = 0.001\)</span></p></li>
+<li><p>P( A / A + B ) <span class="math notranslate nohighlight">\(= 0.000976 / (0.000976 + 0.001) = 0.4939\)</span></p></li>
+<li><p>P( B / A + B ) <span class="math notranslate nohighlight">\(= 0.001 / 0.001976 = 0.5061\)</span></p></li>
+</ul>
+<p>Probability of selecting another head <span class="math notranslate nohighlight">\(= P(A/A+B) * 0.5 + P(B/A+B) * 1 = 0.4939 * 0.5 + 0.5061 = 0.7531\)</span></p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: [GOOGLE] Forming a triangle</p>
+<p>A 10 feet pole is randomly cut into 3 pieces. What is the probability that exactly form a triangle?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p><a class="reference external" href="https://www.quora.com/A-10-feet-pole-is-randomly-cut-into-3-pieces-What-is-the-probability-that-exactly-form-a-triangle">Source</a></p>
+<p>Suppose the pole is <span class="math notranslate nohighlight">\(AB\)</span> and there are two points <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(Q\)</span> such that <span class="math notranslate nohighlight">\(AP = x\)</span> and <span class="math notranslate nohighlight">\(PQ = y\)</span>, so that <span class="math notranslate nohighlight">\(QB = 10 – x – y\)</span> as we know that sum of two sides of a triangle is greater than the 3rd side. Hence</p>
+<p><span class="math notranslate nohighlight">\(x + y &gt; (10 – x – y)\)</span> or <span class="math notranslate nohighlight">\(x + y &gt; 5\)</span></p>
+<p><span class="math notranslate nohighlight">\(y + (10 – x – y) &gt; x\)</span> or <span class="math notranslate nohighlight">\(x &lt; 5\)</span></p>
+<p><span class="math notranslate nohighlight">\((10 – x – y) &gt; y\)</span> or <span class="math notranslate nohighlight">\(y &lt; 5\)</span></p>
+<p>Also we know that, all the parts of pole must be greater than <span class="math notranslate nohighlight">\(0\)</span>,</p>
+<p>or <span class="math notranslate nohighlight">\(x &gt; 0, y &gt; 0, 10 – x – y &gt; 0 or x &gt; 0, y &gt; 0, x + y &lt; 10\)</span></p>
+<p>Plotting the lines <span class="math notranslate nohighlight">\(x + y = 10 x + y = 5, x = 5, y = 5\)</span>. Now favorable area is the area of the middle red shaded triangle.</p>
+<p>Required probability <span class="math notranslate nohighlight">\(= 1/4\)</span></p>
+<figure class="align-default" id="image13">
+<a class="reference internal image-reference" href="../../_images/image131.PNG"><img alt="../../_images/image131.PNG" src="../../_images/image131.PNG" style="width: 354.0px; height: 321.59999999999997px;" /></a>
+</figure>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: [LYFT] Flips until two heads</p>
+<p>What is the expected number of coin flips needed to get two consecutive heads?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p><a class="reference external" href="http://www.codechef.com/wiki/tutorial-expectation">Source</a>:</p>
+<p>Let’s first assume <span class="math notranslate nohighlight">\(x\)</span> is the expected number of coin flips required for getting two heads in a row. Now:</p>
+<ul class="simple">
+<li><p>If the first flip turns out to be tail you need <span class="math notranslate nohighlight">\(x\)</span> more flips since the events are independent. Probability of the event <span class="math notranslate nohighlight">\(1/2\)</span>. Since <span class="math notranslate nohighlight">\(1\)</span> flip was wasted total number of flips required <span class="math notranslate nohighlight">\((1+x)\)</span>.</p></li>
+<li><p>If the first flip becomes head, but the second one is tail(<span class="math notranslate nohighlight">\(HT\)</span>) - <span class="math notranslate nohighlight">\(2\)</span> flips are wasted, here total number flips required would be <span class="math notranslate nohighlight">\((2+x)\)</span>. Probability of <span class="math notranslate nohighlight">\(HT\)</span> out of <span class="math notranslate nohighlight">\(HH, HT, TH, TT\)</span> is <span class="math notranslate nohighlight">\((1/4)\)</span></p></li>
+<li><p>The best case, the first two flips turn out to be heads both(<span class="math notranslate nohighlight">\(HH\)</span>). Probability, <span class="math notranslate nohighlight">\(1/4\)</span> i.e. <span class="math notranslate nohighlight">\(HH\)</span> out of <span class="math notranslate nohighlight">\(HH, HT, TH, TT\)</span>. No of flips required <span class="math notranslate nohighlight">\(2\)</span>.</p></li>
+</ul>
+<p>So from the above scenarios,
+<span class="math notranslate nohighlight">\(x = 1/2(1+x) + 1/4(2+x) + (1/4 )* 2\)</span>
+<span class="math notranslate nohighlight">\(= 1/2 [ (1+x) + 1/2(2+x) + 1 ]\)</span>
+<span class="math notranslate nohighlight">\(= 1/2 [ 1 + x + 1 + x/2 + 1 ]\)</span></p>
+<p><span class="math notranslate nohighlight">\(x / 4 = 3/2\)</span>
+<span class="math notranslate nohighlight">\(x = 6\)</span></p>
+<p>So the expected number of flips would be <span class="math notranslate nohighlight">\(6\)</span></p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: [LYFT] Number of cards before an ace</p>
+<p>How many cards would you expect to draw from a standard deck before seeing the first ace?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p><a class="reference external" href="https://aksoy.io/math/probability/book/2020/03/10/problem-40-first-ace.html#:~:text=Thus%2C%20on%20average%20it%20will,get%20the%201%20st%20ace.">Source</a>:</p>
+<p>Let <span class="math notranslate nohighlight">\(X\)</span> represent the number of cards that are turned up to produce the <span class="math notranslate nohighlight">\(1^{st}\)</span> ace. For this problem, we cannot apply the Geometric Distribution because cards are sampled without replacement.</p>
+<p>Instead, we begin by considering the probabilities of drawing the <span class="math notranslate nohighlight">\(1^{st}\)</span> ace on the <span class="math notranslate nohighlight">\(1^{st}\)</span> card, <span class="math notranslate nohighlight">\(2^{nd}\)</span> card, and so on:</p>
+<p><span class="math notranslate nohighlight">\(P(1^{st} card)= \frac{4}{52}\)</span></p>
+<p><span class="math notranslate nohighlight">\(P(2^{nd} card)= \frac{48}{52}\frac{4}{51}\)</span></p>
+<p><span class="math notranslate nohighlight">\(P(3^{rd} card)= \frac{48}{52}\frac{47}{51}\frac{4}{50}\)</span></p>
+<p><span class="math notranslate nohighlight">\(P(n^{th} card)= 4* \frac{48!}{(49-x)!}\frac{(52-x)!}{(52)!}\)</span></p>
+<p>With this we can calculate the average number of cards by applying the definition of expected value:</p>
+<p><span class="math notranslate nohighlight">\(E[X]= \sum\limits_{x=1}^{52} 4x \frac{48!}{(49-x)!}\frac{(52-x)!}{(52)!} = \frac{53}{5} = 10.6\)</span></p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: [FACEBOOK] Ad Raters</p>
+<p>Let’s say we use people to rate ads.</p>
+<p>There are two types of raters. Random and independent from our point of view:</p>
+<p>80% of raters are careful and they rate an ad as good (60% chance) or bad (40% chance).
+20% of raters are lazy and they rate every ad as good (100% chance).</p>
+<ul class="simple">
+<li><p>Suppose we have 100 raters each rating one ad independently. What’s the expected number of good ads?</p></li>
+<li><p>Now suppose we have 1 rater rating 100 ads. What’s the expected number of good ads?</p></li>
+<li><p>Suppose we have 1 ad, rated as bad. What’s the probability the rater was lazy?</p></li>
+</ul>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<ul class="simple">
+<li><p>100 raters are divided into 2 groups according to probabilities:</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(20\)</span> lazy raters: <span class="math notranslate nohighlight">\(100%\)</span> good ads -&gt; <span class="math notranslate nohighlight">\(20\)</span> good ads;
+<span class="math notranslate nohighlight">\(80\)</span> careful raters: <span class="math notranslate nohighlight">\(60%\)</span> good ads -&gt; <span class="math notranslate nohighlight">\(80 * 0.6 = 48\)</span> good ads.
+Total <span class="math notranslate nohighlight">\(68\)</span> good ads.</p>
+<ul class="simple">
+<li><p>There could be 2 cases:</p></li>
+</ul>
+<p>Random rater is careful with probability of <span class="math notranslate nohighlight">\(0.8: 0.8 * 0.6 = 0.48\)</span> - probability or rating good ad
+Random rater is lazy with probability of <span class="math notranslate nohighlight">\(0.2: 0.2 * 1 = 0.2\)</span> - probability or rating good ad
+Total probability of rating ad as good is <span class="math notranslate nohighlight">\(0.48+0.2 = 0.68\)</span>. The expected amount of good rates <span class="math notranslate nohighlight">\(100*0.68 = 68\)</span>.</p>
+<ul class="simple">
+<li><p>It’s <span class="math notranslate nohighlight">\(0\)</span> probability that the rater is lazy because lazy raters always rate ads as good.</p></li>
+</ul>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./contents\Statistics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../To%20Do%20List.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Log</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Probability%20Distribution.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Probability Distribution</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Dip Ranjan Chatterjee | © MIT License - 2021<br/>
+    
+      <div class="extra_footer">
+        <p>
+<a href="https://www.buymeacoffee.com/dearc" target="_blank"><img src="https://img.shields.io/badge/Support-Buy%20me%20a%20%E2%98%95-orange?style=flat-square&logo=appveyor.svg" alt="Buy Me A Coffee"></a>
+<a href="https://dearc.medium.com/membership" target="_blank"><img src="https://img.shields.io/badge/Support-Medium%20Referral-lightgrey?style=flat-square&logo=appveyor.svg" alt="Medium Membership"></a>
+<a href="https://www.linkedin.com/company/the-data-science-interview-book/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BeglbXB3xT0mopZBzReqMEQ%3D%3D" target="_blank"><img src="https://img.shields.io/badge/Follow-LinkedIn-0077B5?style=flat-square&logo=appveyor.svg" alt="Follow LinkedIn"></a>
+<a href="https://github.com/dipranjan/dsinterviewqns/discussions" target="_blank"><img src="https://img.shields.io/badge/Discussion%20Forum-%F0%9F%99%8A%20%20%F0%9F%99%88%20%20%F0%9F%99%89-0172B3?style=flat-square&logo=appveyor.svg" alt="Discussion Forum"></a>
+</p>
+
+      </div>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,1104 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<meta content="Interview resource of Data Science Interview focusing on Decision Tree based models." lang="en" name="description" xml:lang="en" />
+<meta content="interview, data science, machine learning, Boosting, Bagging, Random Forest, Decision Tree, Classification" name="keywords" />
+<meta content="en_US" property="og:locale" />
+
+    <title>Tree based approaches &#8212; The Data Science Interview Book</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/Algorithms/Tree based approaches.html" />
+    <link rel="shortcut icon" href="../../_static/logo.gif"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Time Series Analysis" href="Time%20Series%20Analysis.html" />
+    <link rel="prev" title="Classification" href="Classification.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-60403888-2', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.gif" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">The Data Science Interview Book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   About this Book
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Journey of this project
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../To%20Do%20List.html">
+   Log
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Statistics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Statistics/Probability%20Basics.html">
+   Probability Basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Statistics/Probability%20Distribution.html">
+   Probability Distribution
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Statistics/Central%20Limit%20Theorem.html">
+   Central Limit Theorem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Statistics/Bayesian%20vs%20Frequentist%20Reasoning.html">
+   Bayesian vs Frequentist Reasoning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Statistics/Hypothesis%20Testing.html">
+   Hypothesis Testing
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Model Building
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Data/Data.html">
+   Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Data/Scaling.html">
+     Scaling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Data/Missing%20Value.html">
+     Missing Value
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Data/Outlier.html">
+     Outlier
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Data/Hyperparameter%20optimization.html">
+   Hyperparameter Optimization
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Algorithms
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Regression.html">
+   Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Generative%20VS%20Discriminative%20Models.html">
+   Generative vs Discriminative Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Classification.html">
+   Classification
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Tree based approaches
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Time%20Series%20Analysis.html">
+   Time Series Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Anomaly%20Detection.html">
+   Anomaly Detection
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Neural Network
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../NN/Neural%20Network.html">
+   Neural Network
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../NN/Recurrent%20Neural%20Network.html">
+   Recurrent Neural Network
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  NLP
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../NLP/Lexical%20Processing.html">
+   Lexical Processing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../NLP/Syntactic%20Processing.html">
+   Syntactic Processing
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Story Telling
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../StoryTelling/Visualization.html">
+   Visualization
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Python/Basics.html">
+   Basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Python/Data%20Manipulation.html">
+   Data Manipulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Python/Statistics.html">
+   Statistics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Python/NLP.html">
+   NLP
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  SQL
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../SQL/Select.html">
+   SQL Basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../SQL/Joins.html">
+   Joins
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../SQL/Temporary%20Datasets.html">
+   Temporary Datasets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../SQL/Windows%20Functions.html">
+   Windows Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../SQL/Time.html">
+   Time
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../SQL/Functions.html">
+   Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../SQL/Problems.html">
+   Problems
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Excel
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Excel/Excel%20Basics.html">
+   Excel Basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Excel/Data%20Manipulation.html">
+   Data Manipulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Excel/Time%20and%20Date.html">
+   Time and Date
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tensorflow
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Tensorflow/Basics.html">
+   Basics
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Analytical Thinking
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Analytical%20Thinking/Business%20Scenarios.html">
+   Business Scenarios
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Analytical%20Thinking/Industry%20Application.html">
+   Industry Application
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/contents/Algorithms/Tree based approaches.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        
+        <a class="issues-button"
+            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/Algorithms/Tree based approaches.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#decision-tree">
+   Decision Tree
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#steps-in-the-id3-algorithm">
+     Steps in the ID3 algorithm:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hyperparameters">
+     Hyperparameters
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#random-forest">
+   Random Forest
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#steps">
+     Steps
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#oob-out-of-bag-error">
+     OOB (Out-of-Bag) Error
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#advantages">
+     Advantages
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Hyperparameters
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#boosting">
+   Boosting
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adaboost">
+   AdaBoost
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gradient-boosting">
+   Gradient Boosting
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#xgboost">
+   XGBoost
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#questions">
+   Questions
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Tree based approaches</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#decision-tree">
+   Decision Tree
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#steps-in-the-id3-algorithm">
+     Steps in the ID3 algorithm:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hyperparameters">
+     Hyperparameters
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#random-forest">
+   Random Forest
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#steps">
+     Steps
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#oob-out-of-bag-error">
+     OOB (Out-of-Bag) Error
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#advantages">
+     Advantages
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Hyperparameters
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#boosting">
+   Boosting
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adaboost">
+   AdaBoost
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gradient-boosting">
+   Gradient Boosting
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#xgboost">
+   XGBoost
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#questions">
+   Questions
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <section id="tree-based-approaches">
+<h1>Tree based approaches<a class="headerlink" href="#tree-based-approaches" title="Permalink to this headline">¶</a></h1>
+<figure class="align-default" id="image13">
+<a class="reference internal image-reference" href="../../_images/image13.PNG"><img alt="../../_images/image13.PNG" src="../../_images/image13.PNG" style="width: 474.59999999999997px; height: 323.4px;" /></a>
+</figure>
+<section id="decision-tree">
+<h2>Decision Tree<a class="headerlink" href="#decision-tree" title="Permalink to this headline">¶</a></h2>
+<p>A decision tree is a flowchart-like structure in which each internal node represents a “test” on an attribute (e.g. whether a coin flip comes up heads or tails), each branch represents the outcome of the test, and each leaf node represents a class label (decision taken after computing all attributes). It is immensly popular primarily due to its ease of explanation which is often a critical requirement in business.</p>
+<p>Decision Trees follow Sum of Product (SOP) representation. The Sum of product (SOP) is also known as Disjunctive Normal Form. For a class, every branch from the root of the tree to a leaf node having the same class is conjunction (product) of values, different branches ending in that class form a disjunction (sum).</p>
+<p>The primary challenge in the decision tree implementation is to identify which attributes do we need to consider as the root node and each level. Handling this is to know as the attributes selection. We have different attributes selection measures to identify the attribute which can be considered as the root note at each level.</p>
+<p>The decision of making strategic splits heavily affects a tree’s accuracy. The decision criteria are different for classification and regression trees.</p>
+<p>Decision trees use multiple algorithms to decide to split a node into two or more sub-nodes. The creation of sub-nodes increases the homogeneity of resultant sub-nodes. In other words, we can say that the purity of the node increases with respect to the target variable. The decision tree splits the nodes on all available variables and then selects the split which results in most homogeneous sub-nodes.</p>
+<figure class="align-default" id="image11">
+<a class="reference internal image-reference" href="../../_images/image11.PNG"><img alt="../../_images/image11.PNG" src="../../_images/image11.PNG" style="width: 641.6px; height: 397.6px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text">Decision Tree</span><a class="headerlink" href="#image11" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>The algorithm selection is also based on the type of target variables. Let us look at some algorithms used in Decision Trees:</p>
+<ul class="simple">
+<li><p>ID3 → (extension of D3)</p></li>
+<li><p>C4.5 → (successor of ID3)</p></li>
+<li><p>CART → (Classification And Regression Tree)</p></li>
+<li><p>CHAID → (Chi-square automatic interaction detection Performs multi-level splits when computing classification trees)</p></li>
+<li><p>MARS → (multivariate adaptive regression splines)</p></li>
+</ul>
+<p>The ID3 algorithm builds decision trees using a top-down greedy search approach through the space of possible branches with no backtracking. A greedy algorithm, as the name suggests, always makes the choice that seems to be the best at that moment.</p>
+<section id="steps-in-the-id3-algorithm">
+<h3>Steps in the ID3 algorithm:<a class="headerlink" href="#steps-in-the-id3-algorithm" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>It begins with the original set as the root node.</p></li>
+<li><p>On each iteration of the algorithm, it iterates through the unused attributes of the set and calculates a measure of Homogeneity:</p>
+<ul>
+<li><p><strong>Gini Index:</strong> Gini Index uses the probability of finding a data point with one label as an indicator for homogeneity — if the dataset is completely homogeneous, then the probability of finding a datapoint with one of the labels is 1 and the probability of finding a data point with the other label is zero</p></li>
+<li><p><strong>Information Gain / Entropy-based:</strong> The idea is to use the notion of entropy which is a central concept in information theory. Entropy quantifies the degree of disorder in the data. Entropy is always a positive number between zero and 1. Another interpretation of entropy is in terms of information content. A completely homogeneous dataset has no information content in it (there is nothing non-trivial to be learnt from the dataset) whereas a dataset with a lot of disorder has a lot of latent information waiting to be learnt.</p></li>
+<li><p>For Regression models the split can happen by checking metrics like <span class="math notranslate nohighlight">\(R^2\)</span></p></li>
+</ul>
+</li>
+<li><p>It then selects the attribute which has the smallest Entropy or Largest Information gain</p></li>
+<li><p>The set is then split by the selected attribute to produce a subset of the data</p></li>
+<li><p>The algorithm continues to recur on each subset, considering only attributes never selected before</p></li>
+</ul>
+<p>Decision trees have a strong tendency to overfit the data. So practical uses of the decision tree must necessarily incorporate some ’regularization’ measures to ensure the decision tree built does not become more complex than is necessary and starts to overfit. There are broadly two ways of regularization on decision trees:</p>
+<ul class="simple">
+<li><p><strong>Truncation:</strong> Truncate the decision tree during the training (growing) process preventing it from degenerating into one with one leaf for every data point in the training dataset. Below criterion are used to decide if the decision tree needs to be grown further:</p>
+<ul>
+<li><p>Minimum Size of the Partition for a Split: Stop partitioning further when the current partition is small enough.</p></li>
+<li><p>Minimum Change in Homogeneity Measure: Do not partition further when even the best split causes an insignificant change in the purity measure (difference between the current purity and the purity of the partitions created by the split).</p></li>
+<li><p>Limit on Tree Depth: If the current node is farther away from the root than a threshold, then stop partitioning further.</p></li>
+<li><p>Minimum Size of the Partition at a Leaf: If any of partitions from a split has fewer than this threshold minimum, then do not consider the split. Notice the subtle difference between this condition and the minimum size required for a split.</p></li>
+<li><p>Maxmimum number of leaves in the Tree: If the current number of the bottom-most nodes in the tree exceeds this limit then stop partitioning.</p></li>
+</ul>
+</li>
+<li><p><strong>Pruning:</strong> Let the tree grow to any complexity. However add a post-processing step in which we prune the tree in a bottom-up fashion starting from the leaves. It is more common to use pruning strategies to avoid overfitting in practical implementations. One popular approach to pruning is to use a validation set. This method called reduced-error pruning, considers every one of the test (non-leaf ) nodes for pruning. Pruning a node means removing the entire subtree below the node, making it a leaf, and assigning the majority class (or the average of the values in case it is regression) among the training data points that pass through that node. A node in the tree is pruned only if the decision tree obtained after the pruning has an accuracy that is no worse on the validation dataset than the tree prior to pruning. This ensures that parts of the tree that were added due to accidental irregularities in the data are removed, as these irregularities are not likely to repeat.</p></li>
+</ul>
+</section>
+<section id="hyperparameters">
+<h3>Hyperparameters<a class="headerlink" href="#hyperparameters" title="Permalink to this headline">¶</a></h3>
+<p>Though there are various ways to truncate or prune trees, the <code class="docutils literal notranslate"><span class="pre">DecisionTreeClassifier</span></code> function in sklearn provides the following hyperparameters which you can control:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">criterion</span> <span class="pre">(Gini/IG</span> <span class="pre">or</span> <span class="pre">entropy)</span></code>: It defines the function to measure the quality of a split. Sklearn supports “gini” criteria for Gini Index &amp; “entropy” for Information Gain. By default, it takes the value “gini”.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max_features</span></code>: It defines the no. of features to consider when looking for the best split</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max_depth</span></code>: denotes maximum depth of the tree. It can take any integer value or None. If None, then nodes are expanded until all leaves are pure or until all leaves contain less than min_samples_split samples. By default, it takes “None” value.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">min_samples_split</span></code>: This tells above the minimum no. of samples reqd. to split an internal node</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">min_samples_leaf</span></code>: The minimum number of samples required to be at a leaf node</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="random-forest">
+<h2>Random Forest<a class="headerlink" href="#random-forest" title="Permalink to this headline">¶</a></h2>
+<p><em>Ensemble means a group of things viewed as a whole rather than individually. In ensembles, a collection of models is used to make predictions, rather than individual models. Arguably, the most popular in the family of ensemble models is the random forest: an ensemble made by the combination of a large number of decision trees.</em></p>
+<p>For an ensemble to work, each model of the ensemble should comply with the following conditions:</p>
+<ul class="simple">
+<li><p>Each model should be diverse. Diversity ensures that the models serve complementary purposes, which means that the individual models make predictions independent of each other.</p></li>
+<li><p>Each model should be acceptable. Acceptability implies that each model is at least better than a random model.</p></li>
+</ul>
+<p>Random forests are created using a special ensemble method called <strong>bagging(Bootstrap Aggregation)</strong>. Bootstrapping means creating bootstrap samples from a given data set. A bootstrap sample is created by sampling the given data set uniformly and with replacement. A bootstrap sample typically contains about <span class="math notranslate nohighlight">\(30\)</span>-<span class="math notranslate nohighlight">\(70\)</span>% data from the data set. Aggregation implies combining the results of different models present in the ensemble.</p>
+<section id="steps">
+<h3>Steps<a class="headerlink" href="#steps" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Create a bootstrap sample from the training set</p></li>
+<li><p>Now construct a decision tree using the bootstrap sample. While splitting a node of the tree, only consider a random subset of features. Every time a node has to split, a different random subset of features will be considered.</p></li>
+<li><p>Repeat the steps 1 and 2 for <span class="math notranslate nohighlight">\(n\)</span> times, to construct <span class="math notranslate nohighlight">\(n\)</span> trees in the forest. Remember each tree is constructed independently, so it is possible to construct each tree in parallel.</p></li>
+<li><p>While predicting a test case, each tree predicts individually, and the final prediction is given by the majority vote of all the trees</p></li>
+</ul>
+</section>
+<section id="oob-out-of-bag-error">
+<h3>OOB (Out-of-Bag) Error<a class="headerlink" href="#oob-out-of-bag-error" title="Permalink to this headline">¶</a></h3>
+<p>The OOB error is calculated by using each observation of the training set as a test observation. Since each tree is built on a bootstrap sample, each observation can used as a test observation by those trees which did not have it in their bootstrap sample. All these trees predict on this observation and you get an error for a single observation. The final OOB error is calculated by calculating the error on each observation and aggregating it.</p>
+<p>It turns out that the OOB error is as good as cross validation error.</p>
+</section>
+<section id="advantages">
+<h3>Advantages<a class="headerlink" href="#advantages" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>A random forest is more stable than any single decision tree because the results get averaged out; it is not affected by the instability and bias of an individual tree.</p></li>
+<li><p>A random forest is immune to the curse of dimensionality since only a subset of features is used to split a node.</p></li>
+<li><p>You can parallelize the training of a forest since each tree is constructed independently.</p></li>
+<li><p>You can calculate the OOB (Out-of-Bag) error using the training set which gives a really good estimate of the performance of the forest on unseen data. Hence there is no need to split the data into training and validation; you can use all the data to train the forest.</p></li>
+</ul>
+</section>
+<section id="id1">
+<h3>Hyperparameters<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">n_estimators</span></code>: The number of trees in the forest.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">criterion</span></code>: The function to measure the quality of a split. Supported criteria are “gini” for the Gini impurity and “entropy” for the information gain. This parameter is tree-specific.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max_features</span></code>: The number of features to consider when looking for the best split</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max_depth</span></code>: The maximum depth of the tree</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">min_samples_split</span></code>: The minimum number of samples required to split an internal node</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">min_samples_leaf</span></code>: The minimum number of samples required to be at a leaf node</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">min_weight_fraction_leaf</span></code>: The minimum weighted fraction of the sum total of weights (of all the input samples) required to be at a leaf node. Samples have equal weight when sample_weight is not provided</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max_leaf_nodes</span></code>: Grow trees with max_leaf_nodes in best-first fashion. Best nodes are defined as relative reduction in impurity</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">min_impurity_split</span></code>: Threshold for early stopping in tree growth. A node will split if its impurity is above the threshold, otherwise it is a leaf</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="boosting">
+<h2>Boosting<a class="headerlink" href="#boosting" title="Permalink to this headline">¶</a></h2>
+<p>Boosting was first introduced in 1997 by Freund and Schapire in the popular algorithm, AdaBoost. It was originally designed for classification problems. Since its inception, many new boosting algorithms have been developed those tackle regression problems also and have become famous as they are used in the top
+solutions of many Kaggle competitions.</p>
+<p>An ensemble is a collection of models which ideally should predict better than individual models. The key idea of boosting is to create an ensemble which makes high errors only on the less frequent data points. Boosting leverages the fact that we can build a series of models specifically targeted at the data points which have been incorrectly predicted by the other models in the ensemble. If a series of models keep reducing the average error, we will have an ensemble having extremely high accuracy. Boosting is a way of generating a strong model from a weak learning algorithm.</p>
+</section>
+<hr class="docutils" />
+<section id="adaboost">
+<h2>AdaBoost<a class="headerlink" href="#adaboost" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://towardsdatascience.com/log-book-adaboost-the-math-behind-the-algorithm-a014c8afbbcc">📖Read</a></p>
+<ul class="simple">
+<li><p>AdaBoost starts by assigning equal weight to each datapoint, the idea is to adjust the weights of each observation after every iteration such that the the algorithm is forced to take a harder look at these difficult to classify observations</p></li>
+<li><p>Post each iteration we will have a weak learner using which we will calculate 2 things:</p>
+<ul>
+<li><p>the updated weights of each <span class="math notranslate nohighlight">\(N\)</span> observation for the next iteration</p></li>
+<li><p>the weight that the weak learner itself will have on the final output, in each of the <span class="math notranslate nohighlight">\(t\)</span> iterations we will have a learner <span class="math notranslate nohighlight">\(h_1\)</span>, <span class="math notranslate nohighlight">\(h_2\)</span>, <span class="math notranslate nohighlight">\(h_3\)</span> .. <span class="math notranslate nohighlight">\(h_t\)</span> each of which will be combined to make the final model, the weight of each of these individual learners in the final output is given by <span class="math notranslate nohighlight">\(\alpha_t\)</span>. The models with low error rate will have higher values of <span class="math notranslate nohighlight">\(\alpha_t\)</span> and hence higher weight in the final output.</p></li>
+</ul>
+</li>
+<li><p>Before you apply the AdaBoost algorithm, you should specifically remove the Outliers. Since AdaBoost tends to boost up the probabilities of misclassified points and there is a high chance that outliers will be misclassified, it will keep increasing the probability associated with the outliers and make the progress difficult.</p></li>
+</ul>
+<figure class="align-default" id="image10">
+<a class="reference internal image-reference" href="../../_images/image10.PNG"><img alt="../../_images/image10.PNG" src="../../_images/image10.PNG" style="width: 594.4px; height: 396.8px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 18 </span><span class="caption-text">Adaboost Pseudocode</span><a class="headerlink" href="#image10" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<hr class="docutils" />
+<section id="gradient-boosting">
+<h2>Gradient Boosting<a class="headerlink" href="#gradient-boosting" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>As always let’s start with a crude initial function F₀, something like average of all values in case of regression. It will give us some output, however bad.</p></li>
+<li><p>Calculate the loss function</p></li>
+<li><p>Next, we should have fit a new model on the residuals given by the Loss function, but there is a subtle twist: we will instead fit on the negative gradient of the loss function (for mathematical proof check the <a class="reference external" href="https://towardsdatascience.com/log-book-xgboost-the-math-behind-the-algorithm-54ddc5008850">link</a></p></li>
+<li><p>This process of fitting the model iteratively on the -ve gradient will continue till we have reached the minima or the limit of the number of weak learners given by T, this is called the additive approach</p></li>
+<li><p>Recall that, in Adaboost,“shortcomings” are identified by high-weight data points. In Gradient Boosting, “shortcomings” are identified by gradients.
+This is in short of the intuition as to how Gradient Boosting works. In case of regression and classification the only thing that differs is the loss function that is used.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="xgboost">
+<h2>XGBoost<a class="headerlink" href="#xgboost" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://towardsdatascience.com/log-book-xgboost-the-math-behind-the-algorithm-54ddc5008850">📖Read</a></p>
+<p>XGBoost stands for “Extreme Gradient Boosting”, where the term “Gradient Boosting” originates from the paper Greedy Function Approximation: A Gradient Boosting Machine, by Friedman. It initially started as a research project by Tianqi Chen as part of the Distributed (Deep) Machine Learning Community (DMLC) group. It became well known in the ML competition circles after its use in the winning solution of the Higgs Machine Learning Challenge.</p>
+<p>XGBoost and GBM both follow the principle of gradient boosted trees, but XGBoost uses a more regularized (by taking the model complexity into account) model formulation to control over-fitting, which gives it better performance, which is why it’s also known as ‘regularized boosting’ technique. In Stochastic Gradient Descent, used by Gradient Boosting, we use less point to take less time to compute the direction we should go towards, in order to make more of them, in the hope we go there quicker. In Newton’s method, used by XGBoost, we take more time to compute the direction we want to go into, in the hope we have to take fewer steps in order to get there.</p>
+<p><strong>Why is XGBoost so good?</strong></p>
+<ul class="simple">
+<li><p><em>Parallel Computing:</em> when you run xgboost, by default, it would use all the cores of your laptop/machine enabling its capacity to do parallel computation</p></li>
+<li><p><em>Regularization:</em> The biggest advantage of xgboost is that it uses regularization and controls the overfitting and simplicity of the model which gives it better performance.</p></li>
+<li><p><em>Enabled Cross Validation:</em> XGBoost is enabled with internal Cross Validation function</p></li>
+<li><p><em>Missing Values:</em> XGBoost is designed to handle missing values internally. The missing values are treated in such a manner that if there exists any trend in missing values, it is captured by the model</p></li>
+<li><p><em>Flexibility:</em> XGBoost is not just limited to regression, classification, and ranking problems, it supports user-defined objective functions as well. Furthermore, it supports user-defined evaluation metrics as well.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="questions">
+<h2>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h2>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: [AMAZON] Random Forest Explanation</p>
+<p>How does random forest generate the forest? Additionally why would we use it over other algorithms such as logistic regression?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>Random forest is a supervised learning algorithm. The “forest” it builds, is an ensemble of decision trees, usually trained with the “bagging” method. The general idea of the bagging method is that a combination of learning models increases the overall result.
+Put simply: random forest builds multiple decision trees and merges them together to get a more accurate and stable prediction.</p>
+<p>Steps:</p>
+<ul class="simple">
+<li><p>Create a bootstrap sample from the training set</p></li>
+<li><p>Now construct a decision tree using the bootstrap sample. While splitting a node of the tree, only consider a random subset of features. Every time a node has to split, a different random subset of features will be considered.</p></li>
+<li><p>Repeat the steps 1 and 2 for <span class="math notranslate nohighlight">\(n\)</span> times, to construct <span class="math notranslate nohighlight">\(n\)</span> trees in the forest. Remember each tree is constructed independently, so it is possible to construct each tree in parallel.</p></li>
+<li><p>While predicting a test case, each tree predicts individually, and the final prediction is given by the majority vote of all the trees</p></li>
+</ul>
+<p>As for why or when we use it over logistic regression, the answer is it depends:</p>
+<ul class="simple">
+<li><p>If your problem/data is linearly separable, then first try logistic regression. If you don’t know, then still start with logistic regression because that will be your baseline, followed by non-linear classifier such as random forest. Do not forget to tune the parameters of logistic regression / random forest for maximizing their performance on your data.</p></li>
+<li><p>If your data is categorical, then random forest should be your first choice; however, logistic regression can be dealt with categorical data</p></li>
+<li><p>If you want easy to understand results, logistic regression is a better choice because it leads to simple interpretation of the explanatory variables.</p></li>
+<li><p>If speed is your criteria, then logistic regression should be your choice</p></li>
+<li><p>If your data is unbalanced, then random forest may be a better choice</p></li>
+<li><p>If number of data objects are less than the number of features, logistic regression should not be used</p></li>
+<li><p>Lastly for either of the random forest or logistic regression “models appear to perform similarly across the datasets with performance more influenced by choice of dataset rather than model selection”</p></li>
+</ul>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: Explain CART</p>
+<p><a class="reference external" href="https://www.analyticsvidhya.com/blog/2021/05/25-questions-to-test-your-skills-on-decision-trees/">📖Source</a></p>
+<p>Explain the CART Algorithm for Decision Trees.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>The CART stands for Classification and Regression Trees is a greedy algorithm that greedily searches for an optimum split at the top level, then repeats the same process at each of the subsequent levels.</p>
+<p>Moreover, it does verify whether the split will lead to the lowest impurity or not as well as the solution provided by the greedy algorithm is not guaranteed to be optimal, it often produces a solution that’s reasonably good since finding the optimal Tree is an NP-Complete problem that requires exponential time complexity.</p>
+<p>As a result, it makes the problem intractable even for small training sets. This is why we must go for a “reasonably good” solution instead of an optimal solution.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: Properties of Gini Impurity</p>
+<p><a class="reference external" href="https://www.analyticsvidhya.com/blog/2021/05/25-questions-to-test-your-skills-on-decision-trees/">📖Source</a></p>
+<p>Briefly explain the properties of Gini Impurity.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>Gini Impurity is the probability of incorrectly classifying a randomly chosen element in the dataset if it were randomly labeled according to the class distribution in the dataset. It’s calculated as</p>
+<p><span class="math notranslate nohighlight">\(\text{Gini Impurity} = 1 - \text{Gini Index}\)</span></p>
+<p>So there can be 2 cases:</p>
+<ul class="simple">
+<li><p>When all the data points belong to a single class: <span class="math notranslate nohighlight">\(G = 1 - (1^2 + 0^2) = 0\)</span></p></li>
+<li><p>When <span class="math notranslate nohighlight">\(50%\)</span> of the data points belong to a class: <span class="math notranslate nohighlight">\(G = 1 - (0.5^2 + 0.5^2) = 0.5\)</span></p></li>
+</ul>
+<p><img alt="image 12" src="../../_images/image12.PNG" /></p>
+<p>Gini impurity tends to isolate the most frequent class in its own branch of the Tree, while entropy tends to produce slightly more balanced Trees.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: CART vs ID3</p>
+<p><a class="reference external" href="https://www.analyticsvidhya.com/blog/2021/05/25-questions-to-test-your-skills-on-decision-trees/">📖Source</a></p>
+<p>Explain the difference between the CART and ID3 Algorithms.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>The CART algorithm produces only binary Trees: non-leaf nodes always have two children (i.e., questions only have yes/no answers).</p>
+<p>On the contrary, other Tree algorithms such as ID3 can produce Decision Trees with nodes having more than two children.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: Types of nodes</p>
+<p><a class="reference external" href="https://www.analyticsvidhya.com/blog/2021/05/25-questions-to-test-your-skills-on-decision-trees/">📖Source</a></p>
+<p>List down the different types of nodes in Decision Trees.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>The Decision Tree consists of the following different types of nodes:</p>
+<ul class="simple">
+<li><p>Root node: It is the top-most node of the Tree from where the Tree starts</p></li>
+<li><p>Decision nodes: One or more Decision nodes that result in the splitting of data into multiple data segments and our main goal is to have the children nodes with maximum homogeneity or purity</p></li>
+<li><p>Leaf nodes: These nodes represent the data section having the highest homogeneity</p></li>
+</ul>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: Information Gain</p>
+<p><a class="reference external" href="https://www.analyticsvidhya.com/blog/2021/05/25-questions-to-test-your-skills-on-decision-trees/">📖Source</a></p>
+<p>What do you understand of Information gain? Any disadvantages that you can think of?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>Information gain is the difference between the entropy of a data segment before the split and after the split i.e, reduction in impurity due to the selection of an attribute.</p>
+<p>Some points keep in mind about information gain:</p>
+<ul class="simple">
+<li><p>The high difference represents high information gain.</p></li>
+<li><p>Higher the difference implies the lower entropy of all data segments resulting from the split.</p></li>
+<li><p>Thus, the higher the difference, the higher the information gain, and the better the feature used for the split.
+Mathematically, the information gain can be computed by the equation as follows:</p></li>
+</ul>
+<p>Information Gain = <span class="math notranslate nohighlight">\(E(S1) – E(S2)\)</span>, <span class="math notranslate nohighlight">\(E(S1)\)</span> denotes the entropy of data belonging to the node before the split and <span class="math notranslate nohighlight">\(E(S2)\)</span> denotes the weighted summation of the entropy of children nodes by considering the weights as the proportion of data instances falling in specific children nodes.</p>
+<p>As for the disadvantages, Information gain biases the Decision Tree against considering attributes with a large number of distinct values which might lead to overfitting. In order to solve this problem, the Information Gain Ratio is used.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: Space Time complexity of a Decision tree</p>
+<p><a class="reference external" href="https://www.analyticsvidhya.com/blog/2021/05/25-questions-to-test-your-skills-on-decision-trees/">📖Source</a></p>
+<p>Explain the time and space complexity of training and testing in the case of a Decision Tree.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>What happens in the training stage is that for each of the features (dimensions) in the dataset we’ll sort the data which takes <span class="math notranslate nohighlight">\(O(n log n)\)</span> time following which we traverse the data points to find the right threshold which takes <span class="math notranslate nohighlight">\(O(n)\)</span> time. For <span class="math notranslate nohighlight">\(d\)</span> dimensions, total time complexity would be:</p>
+<p><span class="math notranslate nohighlight">\(O(n * log n * d) + O(n*d) \text{which asymptotically is } O(n * log n * d)\)</span></p>
+<p>Train space complexity:
+The things we need while training a decision tree are the nodes which are typically stored as if-else conditions.
+Hence, the train space complexity would be: <span class="math notranslate nohighlight">\(O(nodes)\)</span></p>
+<p>Test time complexity would be <span class="math notranslate nohighlight">\(O(depth)\)</span> since we have to move from root to a leaf node of the decision tree.
+Test space complexity would be <span class="math notranslate nohighlight">\(O(nodes)\)</span></p>
+<p>For Random forest the same would be:</p>
+<p>Training Time Complexity = <span class="math notranslate nohighlight">\(O(n*log(n)*d*k)\)</span>, <span class="math notranslate nohighlight">\(k\)</span>=number of Decision Trees
+Notes: When we have a large number of data with reasonable features. Then we can use multi-core to parallelize our model to train different Decision Trees.
+Run-time Complexity= <span class="math notranslate nohighlight">\(O(depth of tree* k)\)</span>
+Space Complexity= <span class="math notranslate nohighlight">\(O(depth of tree *k)\)</span></p>
+<p>Note: Random Forest is comparatively faster than other algorithms.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: Training time</p>
+<p><a class="reference external" href="https://www.analyticsvidhya.com/blog/2021/05/25-questions-to-test-your-skills-on-decision-trees/">📖Source</a></p>
+<p>If it takes one hour to train a Decision Tree on a training set containing 1 million instances, roughly how much time will it take to train another Decision Tree on a training set containing 10 million instances?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>As we know that the computational complexity of training a Decision Tree is given by O(n × m log(m)). So, when we multiplied the size of the training set by 10, then the training time will be multiplied by some factor, say K.</p>
+<p>Now, we have to determine the value of K. To finds K, divide the complexity of both:</p>
+<p><span class="math notranslate nohighlight">\(K = (n × 10m × log(10m)) / (n × m × log(m)) = 10 × log(10m) / log(m)\)</span></p>
+<p>For <span class="math notranslate nohighlight">\(10\)</span> million instances i.e., <span class="math notranslate nohighlight">\(m = 106\)</span>, then we get the value of <span class="math notranslate nohighlight">\(K ≈ 11.7\)</span>.</p>
+<p>Therefore, we can expect the training time to be roughly <span class="math notranslate nohighlight">\(11.7\)</span> hours.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: Missing data and neumerical values</p>
+<p><a class="reference external" href="https://www.analyticsvidhya.com/blog/2021/05/25-questions-to-test-your-skills-on-decision-trees/">📖Source</a></p>
+<p>How does a Decision Tree handle missing attribute values? How does it deal with continuous(numerical) features?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>Decision Trees handle missing values in the following ways:</p>
+<ul class="simple">
+<li><p>Fill the missing attribute value by the most common value of that attribute</p></li>
+<li><p>Fill the missing value by assigning a probability to each of the possible values of the attribute based on other samples</p></li>
+</ul>
+<p>Decision Trees handle continuous features by converting these continuous features to a threshold-based boolean feature. To decide The threshold value, we use the concept of Information Gain, choosing that threshold that maximizes the information gain.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: Inductive Bias</p>
+<p><a class="reference external" href="https://www.analyticsvidhya.com/blog/2021/05/25-questions-to-test-your-skills-on-decision-trees/">📖Source</a></p>
+<p>What is the Inductive Bias of Decision Trees?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>The ID3 algorithm preferred Shorter Trees over longer Trees. In Decision Trees, attributes having high information gain are placed close to the root are preferred over those that do not.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: Compare different selection measures</p>
+<p><a class="reference external" href="https://www.analyticsvidhya.com/blog/2021/05/25-questions-to-test-your-skills-on-decision-trees/">📖Source</a></p>
+<p>Compare the different attribute selection measures.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>The three measures, in general, returns good results, but:</p>
+<ul class="simple">
+<li><p>Information Gain: It is biased towards multivalued attributes</p></li>
+<li><p>Gain ratio: It prefers unbalanced splits in which one data segment is much smaller than the other segment</p></li>
+<li><p>Gini Index: It is biased to multivalued attributes, has difficulty when the number of classes is large, tends to favor tests that result in equal-sized partitions and purity in both partitions</p></li>
+</ul>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: Effect of Outliers</p>
+<p><a class="reference external" href="https://www.analyticsvidhya.com/blog/2021/05/25-questions-to-test-your-skills-on-decision-trees/">📖Source</a></p>
+<p>Are Decision Trees affected by the outliers? Explain</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>Decision Trees are not sensitive to noisy data or outliers since, extreme values or outliers, never cause much reduction in Residual Sum of Squares(RSS), because they are never involved in the split.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: Advantages and Disadvantages of Decision Tree</p>
+<p><a class="reference external" href="https://www.analyticsvidhya.com/blog/2021/05/25-questions-to-test-your-skills-on-decision-trees/">📖Source</a></p>
+<p>Discuss the advantages and disadvantages of Decision tree</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p><strong>Advantages:</strong></p>
+<ul class="simple">
+<li><p><strong>Clear Visualization:</strong>  This algorithm is simple to understand, interpret and visualize as the idea is mostly used in our daily lives. The output of a Decision Tree can be easily interpreted by humans.</p></li>
+<li><p><strong>Simple and easy to understand:</strong> Decision Tree works in the same manner as simple if-else statements which are very easy to understand.</p></li>
+<li><p>This can be used for both classification and regression problems.</p></li>
+<li><p>Decision Trees can handle both continuous and categorical variables.</p></li>
+<li><p><strong>No feature scaling required:</strong> There is no requirement of feature scaling techniques such as standardization and normalization in the case of Decision Tree as it uses a rule-based approach instead of calculation of distances.</p></li>
+<li><p><strong>Handles nonlinear parameters efficiently:</strong> Unlike curve-based algorithms, the performance of decision trees can’t be affected by the Non-linear parameters. So, if there is high non-linearity present between the independent variables, Decision Trees may outperform as compared to other curve-based algorithms.</p></li>
+<li><p>Decision Tree can automatically handle missing values.</p></li>
+<li><p>Decision Tree handles the outliers automatically, hence they are usually robust to outliers.</p></li>
+<li><p><strong>Less Training Period:</strong> The training period of decision trees is less as compared to ensemble techniques like Random Forest because it generates only one Tree unlike the forest of trees in the Random Forest.</p></li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul class="simple">
+<li><p><strong>Overfitting:</strong> This is the major problem associated with the Decision Trees. It generally leads to overfitting of the data which ultimately leads to wrong predictions for testing data points. it keeps generating new nodes in order to fit the data including even noisy data and ultimately the Tree becomes too complex to interpret. In this way, it loses its generalization capabilities. Therefore, it performs well on the training dataset but starts making a lot of mistakes on the test dataset.</p></li>
+<li><p><strong>High variance:</strong> As mentioned, a Decision Tree generally leads to the overfitting of data. Due to the overfitting, there is more likely a chance of high variance in the output which leads to many errors in the final predictions and shows high inaccuracy in the results. So, in order to achieve zero bias (overfitting), it leads to high variance due to the bias-variance tradeoff.</p></li>
+<li><p><strong>Unstable:</strong> When we add new data points it can lead to regeneration of the overall Tree. Therefore, all nodes need to be recalculated and reconstructed.</p></li>
+<li><p><strong>Not suitable for large datasets:</strong> If the data size is large, then one single Tree may grow complex and lead to overfitting. So in this case, we should use Random Forest instead, an ensemble technique of a single Decision Tree.</p></li>
+</ul>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./contents\Algorithms"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Classification.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Classification</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Time%20Series%20Analysis.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Time Series Analysis</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Dip Ranjan Chatterjee | © MIT License - 2021<br/>
+    
+      <div class="extra_footer">
+        <p>
+<a href="https://www.buymeacoffee.com/dearc" target="_blank"><img src="https://img.shields.io/badge/Support-Buy%20me%20a%20%E2%98%95-orange?style=flat-square&logo=appveyor.svg" alt="Buy Me A Coffee"></a>
+<a href="https://dearc.medium.com/membership" target="_blank"><img src="https://img.shields.io/badge/Support-Medium%20Referral-lightgrey?style=flat-square&logo=appveyor.svg" alt="Medium Membership"></a>
+<a href="https://www.linkedin.com/company/the-data-science-interview-book/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BeglbXB3xT0mopZBzReqMEQ%3D%3D" target="_blank"><img src="https://img.shields.io/badge/Follow-LinkedIn-0077B5?style=flat-square&logo=appveyor.svg" alt="Follow LinkedIn"></a>
+<a href="https://github.com/dipranjan/dsinterviewqns/discussions" target="_blank"><img src="https://img.shields.io/badge/Discussion%20Forum-%F0%9F%99%8A%20%20%F0%9F%99%88%20%20%F0%9F%99%89-0172B3?style=flat-square&logo=appveyor.svg" alt="Discussion Forum"></a>
+</p>
+
+      </div>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
