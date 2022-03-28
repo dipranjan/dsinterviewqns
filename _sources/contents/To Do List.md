@@ -1,12 +1,11 @@
 ## Log
 
-![Megaphone](../handphoneupd2.gif) **Last updated on <span style="color:red">13 March 2022</span>**
+![Megaphone](../handphoneupd2.gif) **Last updated on <span style="color:red">28 March 2022</span>**
 
 ```{admonition} What's Happening
 :class: tip, dropdown
 
 - 🔥 Excel
-- 🔥 Hyperparameter Optimization
 - 🔥 NN
 - 🔥 NLP
 - ⌛ Tensorflow
@@ -34,6 +33,7 @@
 :class: tip, dropdown
 
 **Month of March, 2022**
+- Hyperparameter optimization section completed
 - Had an extremely busy last few weeks and the next few months are going to be packed too
 - Story Telling section added
 - Quick guide to Visualization added
