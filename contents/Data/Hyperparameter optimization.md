@@ -7,10 +7,6 @@ html_meta:
 
 ## Hyperparameter Optimization
 
-```{warning}
-This page is a work in progress
-```
-
 While building a machine learning model, many design choices need to be made as in how to define the model architecture. For example what should be the depth of my Decision Tree, how many trees should be present in my Random Forest, how many layers should be there in my Meural network, so on and so forth.
 
 In most cases the optimal model architecture is not obvious or readily available to us. **This exploration to select the optimal model architecture automatically from a defined range of options is referred to as hyperparameter optimization or tuning.**
@@ -103,4 +99,3 @@ Hyperopt is a Python library for serial and parallel optimization over awkward s
 #### Scikit-Optimize
 
 Scikit-Optimize is an open-source library for hyperparameter optimization in Python. It was developed by the team behind Scikit-learn. It’s relatively easy to use compared to other hyperparameter optimization libraries. It has sequential model-based optimization libraries known as Bayesian Hyperparameter Optimization (BHO). The advantage of BHO is that they find better model settings than random search in fewer iterations.
-

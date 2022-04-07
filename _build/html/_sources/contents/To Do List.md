@@ -1,6 +1,6 @@
 ## Log
 
-![Megaphone](../handphoneupd2.gif) **Last updated on <span style="color:red">28 March 2022</span>**
+![Megaphone](../handphoneupd2.gif) **Last updated on <span style="color:red">28 March 2022</span>, we are taking a break and will be back in June.**
 
 ```{admonition} What's Happening
 :class: tip, dropdown
