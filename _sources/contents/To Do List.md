@@ -1,6 +1,6 @@
 ## Log
 
-![Megaphone](../handphoneupd2.gif) **Last updated on <span style="color:red">28 March 2022</span>, we are taking a break and will be back in June.**
+![Megaphone](../handphoneupd2.gif) **Last updated on <span style="color:red">5 June 2022</span>.**
 
 ```{admonition} What's Happening
 :class: tip, dropdown
@@ -31,6 +31,9 @@
 
 ```{admonition} What Happened
 :class: tip, dropdown
+
+**Month of June, 2022**
+- We are back post break, keep checking for new content
 
 **Month of March, 2022**
 - Hyperparameter optimization section completed
