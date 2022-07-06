@@ -1,10 +1,11 @@
 ## Log
 
-![Megaphone](../handphoneupd2.gif) **Last updated on <span style="color:red">5 June 2022</span>.**
+![Megaphone](../handphoneupd2.gif) **Last updated on <span style="color:red">6 July 2022</span>.**
 
 ```{admonition} What's Happening
 :class: tip, dropdown
 
+- 🔥 Sampling
 - 🔥 Excel
 - 🔥 NN
 - 🔥 NLP
@@ -32,8 +33,13 @@
 ```{admonition} What Happened
 :class: tip, dropdown
 
+**Month of July, 2022**
+- Data sampling section added under data
+
 **Month of June, 2022**
 - We are back post break, keep checking for new content
+- Machine Learning Framework section added and Tensorflow moved into it
+- PyCaret added to Machine Learning Framework section
 
 **Month of March, 2022**
 - Hyperparameter optimization section completed

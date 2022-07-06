@@ -5,8 +5,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<meta content="Interview resource of Data Science Interview focusing on Machine Learning Framework Pycaret." lang="en" name="description" xml:lang="en" />
+<meta content="interview, data science, machine learning, Pycaret" name="keywords" />
+<meta content="en_US" property="og:locale" />
 
-    <title>Basics &#8212; The Data Science Interview Book</title>
+    <title>PyCaret &#8212; The Data Science Interview Book</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -46,8 +49,6 @@
     <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -55,11 +56,11 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/Tensorflow/Basics.html" />
+    <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/MLFramework/PyCaret.html" />
     <link rel="shortcut icon" href="../../_static/logo.gif"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Business Scenarios" href="../Analytical%20Thinking/Business%20Scenarios.html" />
+    <link rel="next" title="Tensorflow" href="Tensorflow/Tensorflow.html" />
     <link rel="prev" title="Time and Date" href="../Excel/Time%20and%20Date.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -187,6 +188,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../Data/Outlier.html">
      Outlier
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Data/Sampling.html">
+     Sampling
     </a>
    </li>
   </ul>
@@ -373,14 +379,31 @@
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Tensorflow
+  Machine Learning Frameworks
  </span>
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Basics
+   PyCaret
   </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Tensorflow/Tensorflow.html">
+   Tensorflow
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Tensorflow/Basics.html">
+     Basics
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
@@ -440,9 +463,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/contents/Tensorflow/Basics.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/contents/MLFramework/PyCaret.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+                data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
                 onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -457,7 +480,7 @@
     <div class="dropdown-buttons sourcebuttons">
         
         <a class="issues-button"
-            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/Tensorflow/Basics.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/MLFramework/PyCaret.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -473,23 +496,6 @@
 
             <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/dipranjan/dsinterviewqns/master?urlpath=tree/contents/Tensorflow/Basics.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
         </div>
 
         <!-- Table of contents -->
@@ -501,13 +507,18 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#let-s-start">
-   Let’s Start
+  <a class="reference internal nav-link" href="#setup">
+   Setup
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#random">
-   Random
+  <a class="reference internal nav-link" href="#train-optimize">
+   Train &amp; Optimize
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#predict-deploy">
+   Predict &amp; Deploy
   </a>
  </li>
 </ul>
@@ -520,7 +531,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Basics</h1>
+                <h1>PyCaret</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -531,13 +542,18 @@
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#let-s-start">
-   Let’s Start
+  <a class="reference internal nav-link" href="#setup">
+   Setup
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#random">
-   Random
+  <a class="reference internal nav-link" href="#train-optimize">
+   Train &amp; Optimize
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#predict-deploy">
+   Predict &amp; Deploy
   </a>
  </li>
 </ul>
@@ -549,137 +565,37 @@
             
               <div>
                 
-  <section id="basics">
-<h1>Basics<a class="headerlink" href="#basics" title="Permalink to this headline">¶</a></h1>
-<section id="let-s-start">
-<h2>Let’s Start<a class="headerlink" href="#let-s-start" title="Permalink to this headline">¶</a></h2>
+  <section id="pycaret">
+<h1>PyCaret<a class="headerlink" href="#pycaret" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://pycaret.gitbook.io/docs/">📚 Source</a></p>
+<p>PyCaret is an open-source, low-code machine learning library in Python that automates machine learning workflows. It is an end-to-end machine learning and model management tool that exponentially speeds up the experiment cycle and makes you more productive.</p>
+<p>Compared with the other open-source machine learning libraries, PyCaret is an alternate low-code library that can be used to replace hundreds of lines of code with few lines only. This makes experiments exponentially fast and efficient. PyCaret is essentially a Python wrapper around several machine learning libraries and frameworks such as scikit-learn, XGBoost, LightGBM, CatBoost, spaCy, Optuna, Hyperopt, Ray, and a few more.</p>
+<p>The link shared above has got detailed documentation and is an excellent resource to learn about PyCaret. Some common functions of PyCaret are discussed below.</p>
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<p>This function initializes the training environment and creates the transformation pipeline. Setup function must be called before executing any other function. It takes two mandatory parameters: data and target. All the other parameters are optional. Some of the things that can be done in setup are as follows:</p>
 <ul class="simple">
-<li><p>The main difference between tensors and NumPy arrays is that tensors can be used on GPUs (graphical processing units) and TPUs (tensor processing units).</p></li>
-<li><p>The number of dimensions of a tensor is called its rank. A scalar has rank <span class="math notranslate nohighlight">\(0\)</span>, a vector has rank <span class="math notranslate nohighlight">\(1\)</span>, a matrix is rank <span class="math notranslate nohighlight">\(2\)</span>, a tensor has rank <span class="math notranslate nohighlight">\(n\)</span>.</p></li>
-<li><p>There are <span class="math notranslate nohighlight">\(2\)</span> ways of creating tensors. <code class="docutils literal notranslate"><span class="pre">tf.Variable()</span></code> and <code class="docutils literal notranslate"><span class="pre">tf.constant()</span></code> the difference being tensors created with <code class="docutils literal notranslate"><span class="pre">tf.constant()</span></code> are immutable, tensors created with <code class="docutils literal notranslate"><span class="pre">tf.Variable()</span></code> are mutable. <code class="docutils literal notranslate"><span class="pre">any_tensor[2].assign(7)</span></code> can be used to change a value of a specific element in the tensor, same would fail for <code class="docutils literal notranslate"><span class="pre">tf.constant()</span></code>.</p></li>
-<li><p>There are other ways of creating tensors examples being <code class="docutils literal notranslate"><span class="pre">tf.zeros</span></code> or <code class="docutils literal notranslate"><span class="pre">tf.ones</span></code>. You can also convert numpy arrays into tensors.</p></li>
-<li><p>Tensors can also be indexed just like Python lists.</p></li>
-<li><p>You can an extra dimension by using <code class="docutils literal notranslate"><span class="pre">tf.newaxis</span></code> or <code class="docutils literal notranslate"><span class="pre">tf.expand_dims</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">tf.reshape()</span></code>,<code class="docutils literal notranslate"><span class="pre">tf.transpose()</span></code> allows us to reshape a tensor</p></li>
-<li><p>Data type of a tesnor can be changed with <code class="docutils literal notranslate"><span class="pre">tf.cast(t1,</span> <span class="pre">dtype=tf.float16)</span></code></p></li>
-<li><p>You can squeeze a tensor to remove single-dimensions (dimensions with size 1) using <code class="docutils literal notranslate"><span class="pre">tf.squeeze()</span></code>.</p></li>
+<li><p><strong>Variables:</strong> Define which variables to numerical, categorical or which are the ones to be ignored</p></li>
+<li><p><strong>Missing Value Imputation</strong></p></li>
+<li><p><strong>One Hot Encoding</strong></p></li>
+<li><p><strong>Target Imbalance</strong></p></li>
+<li><p><strong>Outlier Treatment</strong></p></li>
+<li><p><strong>Scaling and Transformation</strong></p></li>
+<li><p><strong>Feature Engineering and Selection</strong></p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Some common commands are as follows</span>
-<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Check TF version: &quot;</span><span class="p">,</span><span class="n">tf</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
-
-<span class="n">t1</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">([[</span><span class="mf">10.</span><span class="p">,</span> <span class="mf">7.</span><span class="p">],</span>
-                <span class="p">[</span><span class="mf">3.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">],</span>
-                <span class="p">[</span><span class="mf">8.</span><span class="p">,</span> <span class="mf">9.</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">float16</span><span class="p">)</span> <span class="c1"># by default TF creates tensors with either an int32 or float32 datatype.</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Access a specific feature of the tensor, in this case shape of t1: &quot;</span><span class="p">,</span><span class="n">t1</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Size of t1: &quot;</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">t1</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Datatype of every element:&quot;</span><span class="p">,</span> <span class="n">t1</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of dimensions (rank):&quot;</span><span class="p">,</span> <span class="n">t1</span><span class="o">.</span><span class="n">ndim</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shape of tensor:&quot;</span><span class="p">,</span> <span class="n">t1</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Elements along axis 0 of tensor:&quot;</span><span class="p">,</span> <span class="n">t1</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Elements along last axis of tensor:&quot;</span><span class="p">,</span> <span class="n">t1</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total number of elements:&quot;</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span><span class="o">.</span><span class="n">numpy</span><span class="p">())</span> <span class="c1"># .numpy() converts to NumPy array</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Details of the tensor: &quot;</span><span class="p">,</span><span class="n">t1</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Index tensors: &quot;</span><span class="p">,</span> <span class="n">t1</span><span class="p">[:</span><span class="mi">1</span><span class="p">,:])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Some common commands are as follows</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Check TF version: &quot;</span><span class="p">,</span><span class="n">tf</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">t1</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">([[</span><span class="mf">10.</span><span class="p">,</span> <span class="mf">7.</span><span class="p">],</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>                 <span class="p">[</span><span class="mf">3.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">],</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>                 <span class="p">[</span><span class="mf">8.</span><span class="p">,</span> <span class="mf">9.</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">float16</span><span class="p">)</span> <span class="c1"># by default TF creates tensors with either an int32 or float32 datatype.</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;tensorflow&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
-
-<span class="c1"># Math operations</span>
-
-<span class="n">t1</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">([[</span><span class="mf">10.</span><span class="p">,</span> <span class="mf">7.</span><span class="p">],</span>
-                <span class="p">[</span><span class="mf">3.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">],</span>
-                <span class="p">[</span><span class="mf">8.</span><span class="p">,</span> <span class="mf">9.</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">float16</span><span class="p">)</span> <span class="c1"># by default TF creates tensors with either an int32 or float32 datatype.</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sum: &quot;</span><span class="p">,</span><span class="n">t1</span><span class="o">+</span><span class="mi">10</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Substraction: &quot;</span><span class="p">,</span><span class="n">t1</span><span class="o">-</span><span class="mi">10</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Multiplication: &quot;</span><span class="p">,</span><span class="n">t1</span><span class="o">*</span><span class="mi">10</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matrix Multiplication: &quot;</span><span class="p">,</span><span class="n">t1</span> <span class="o">@</span> <span class="n">tf</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">t1</span><span class="p">))</span> <span class="c1"># can also be done with tf.tensordot()</span>
-
-<span class="c1"># Aggregation functions</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Max: &quot;</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">reduce_max</span><span class="p">(</span><span class="n">t1</span><span class="p">))</span> <span class="c1"># same or min, mean</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sum: &quot;</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">reduce_sum</span><span class="p">(</span><span class="n">t1</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Max Position: &quot;</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">t1</span><span class="p">))</span> <span class="c1"># same or min</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sum:  tf.Tensor(
-[[20. 17.]
- [13. 12.]
- [18. 19.]], shape=(3, 2), dtype=float16)
-Substraction:  tf.Tensor(
-[[ 0. -3.]
- [-7. -8.]
- [-2. -1.]], shape=(3, 2), dtype=float16)
-Multiplication:  tf.Tensor(
-[[100.  70.]
- [ 30.  20.]
- [ 80.  90.]], shape=(3, 2), dtype=float16) tf.Tensor(
-[[100.  70.]
- [ 30.  20.]
- [ 80.  90.]], shape=(3, 2), dtype=float16)
-Matrix Multiplication:  tf.Tensor(
-[[149.  44. 143.]
- [ 44.  13.  42.]
- [143.  42. 145.]], shape=(3, 3), dtype=float16)
-Max:  tf.Tensor(10.0, shape=(), dtype=float16)
-Sum:  tf.Tensor(39.0, shape=(), dtype=float16)
-Max Position:  tf.Tensor([0 2], shape=(2,), dtype=int64)
-</pre></div>
-</div>
-</div>
-</div>
 </section>
-<section id="random">
-<h2>Random<a class="headerlink" href="#random" title="Permalink to this headline">¶</a></h2>
-<p>Randomness is often used in deep learning, be it initializing weights in a Neural Network or shuffling images while feeding data to the model.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">random_1</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">Generator</span><span class="o">.</span><span class="n">from_seed</span><span class="p">(</span><span class="mi">35</span><span class="p">)</span> <span class="c1"># setting seed ensures reproducibility</span>
-<span class="n">random_1</span> <span class="o">=</span> <span class="n">random_1</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">shape</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Generating tensor from a normal distribution: &quot;</span><span class="p">,</span> <span class="n">random_1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shuffling the elements of the tesnor: &quot;</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">random_1</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Generating tensor from a normal distribution:  tf.Tensor(
-[[ 0.495291   -0.648484  ]
- [-1.8700892   2.7830641 ]
- [-0.645002    0.18022095]], shape=(3, 2), dtype=float32)
-Shuffling the elements of the tesnor:  tf.Tensor(
-[[-0.645002    0.18022095]
- [ 0.495291   -0.648484  ]
- [-1.8700892   2.7830641 ]], shape=(3, 2), dtype=float32)
-</pre></div>
-</div>
-</div>
-</div>
+<section id="train-optimize">
+<h2>Train &amp; Optimize<a class="headerlink" href="#train-optimize" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">compare_models</span></code> trains and evaluates the performance of all estimators available in the model library using cross-validation. Post model selection you can tune the model by optimizing prpbability threshold, stacking and ensembling models. PyCaret also provides an easy way to analyze your model by using the <code class="docutils literal notranslate"><span class="pre">evaluate_model</span></code> command. A single command which show out Hyperparameters, Plots, Feature importance and many things more.</p>
+<figure class="align-default" id="image1">
+<a class="reference internal image-reference" href="../../_images/image18.PNG"><img alt="../../_images/image18.PNG" src="../../_images/image18.PNG" style="width: 476.5px; height: 325.0px;" /></a>
+</figure>
+<p>The <code class="docutils literal notranslate"><span class="pre">interpret_model</span></code> command analyzes the predictions generated from a trained model. Most plots in this function are implemented based on the SHAP (Shapley Additive exPlanations).</p>
+</section>
+<section id="predict-deploy">
+<h2>Predict &amp; Deploy<a class="headerlink" href="#predict-deploy" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">predict_model</span></code> function generates the output using a trained model. You can also get the raw probability scores for classification, set probability threshold and also monitor data drift. Post finalizing the model you can also easily deploy it in GCP, AWS and Azure.</p>
+<p><strong>As of now PyCaret supports Regression, Classification, Clustering, Anamoly detection, NLP, Association Rule Mining and Time series.</strong></p>
 </section>
 </section>
 
@@ -696,7 +612,7 @@ Shuffling the elements of the tesnor:  tf.Tensor(
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./contents\Tensorflow"
+            path: "./contents\MLFramework"
         },
         predefinedOutput: true
     }
@@ -715,10 +631,10 @@ Shuffling the elements of the tesnor:  tf.Tensor(
             <p class="prev-next-title">Time and Date</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../Analytical%20Thinking/Business%20Scenarios.html" title="next page">
+    <a class='right-next' id="next-link" href="Tensorflow/Tensorflow.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Business Scenarios</p>
+        <p class="prev-next-title">Tensorflow</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

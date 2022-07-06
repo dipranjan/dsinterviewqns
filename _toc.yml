@@ -18,6 +18,7 @@ parts:
       - file: contents/Data/Scaling
       - file: contents/Data/Missing Value
       - file: contents/Data/Outlier
+      - file: contents/Data/Sampling
     - file: contents/Data/Hyperparameter optimization
   - caption: Algorithms
     chapters:
@@ -58,9 +59,12 @@ parts:
     - file: contents/Excel/Excel Basics
     - file: contents/Excel/Data Manipulation
     - file: contents/Excel/Time and Date
-  - caption: Tensorflow
+  - caption: Machine Learning Frameworks
     chapters:
-    - file: contents/Tensorflow/Basics
+    - file: contents/MLFramework/PyCaret
+    - file: contents/MLFramework/Tensorflow/Tensorflow
+      sections:
+      - file: contents/MLFramework/Tensorflow/Basics    
   - caption: Analytical Thinking
     chapters:
     - file: contents/Analytical Thinking/Business Scenarios
