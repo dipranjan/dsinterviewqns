@@ -69,4 +69,5 @@ parts:
     chapters:
     - file: contents/Analytical Thinking/Business Scenarios
     - file: contents/Analytical Thinking/Industry Application
+    - file: contents/Analytical Thinking/Behavioral - Management
 

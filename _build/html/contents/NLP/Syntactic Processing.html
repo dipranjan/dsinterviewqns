@@ -11,8 +11,9 @@
 
     <title>Syntactic Processing &#8212; The Data Science Interview Book</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -22,20 +23,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -43,21 +40,21 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/NLP/Syntactic Processing.html" />
     <link rel="shortcut icon" href="../../_static/logo.gif"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -81,7 +78,21 @@
                     </script>
 
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -90,9 +101,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -110,14 +122,15 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../intro.html">
-   About this Book
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    About this Book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Journey of this project
  </span>
@@ -424,90 +437,156 @@
    Industry Application
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Analytical%20Thinking/Behavioral%20-%20Management.html">
+   Behavioral - Management
+  </a>
+ </li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/contents/NLP/Syntactic Processing.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        
-        <a class="issues-button"
-            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/NLP/Syntactic Processing.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/NLP/Syntactic Processing.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/contents/NLP/Syntactic Processing.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#pos-tagging">
    POS tagging
@@ -576,12 +655,11 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Syntactic Processing</h1>
@@ -666,11 +744,12 @@
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
   <section id="syntactic-processing">
-<h1>Syntactic Processing<a class="headerlink" href="#syntactic-processing" title="Permalink to this headline">¶</a></h1>
+<h1>Syntactic Processing<a class="headerlink" href="#syntactic-processing" title="Permalink to this headline">#</a></h1>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Questions section is a work in progress</p>
@@ -684,7 +763,7 @@
 <p>POS tagging is a crucial task in syntactic processing and is used as a preprocessing step in many NLP applications</p>
 <hr class="docutils" />
 <section id="pos-tagging">
-<h2>POS tagging<a class="headerlink" href="#pos-tagging" title="Permalink to this headline">¶</a></h2>
+<h2>POS tagging<a class="headerlink" href="#pos-tagging" title="Permalink to this headline">#</a></h2>
 <p>The four main techniques used for POS tagging:</p>
 <ul class="simple">
 <li><p><strong>Lexicon-based</strong> approach uses the following simple statistical algorithm: for each word, it assigns the POS tag that most frequently occurs for that word in some training corpus. For example, it will assign the tag “verb” to any occurrence of the word “run” if “run” is used as a verb more often than any other tag.</p></li>
@@ -693,7 +772,7 @@
 <li><p><strong>Deep-learning based</strong> POS tagging: Recurrent Neural Networks (RNNs) are used for sequential modeling processes</p></li>
 </ul>
 <section id="hidden-markov-models">
-<h3>Hidden Markov Models<a class="headerlink" href="#hidden-markov-models" title="Permalink to this headline">¶</a></h3>
+<h3>Hidden Markov Models<a class="headerlink" href="#hidden-markov-models" title="Permalink to this headline">#</a></h3>
 <p>Markov processes are commonly used to model sequential data, such as text and speech. The first-order Markov assumption states that the probability of an event (or state) depends only on the previous state. The Hidden Markov Model, an extension to the Markov process, is used to model phenomena where the states are hidden and they emit observations.
 The transition and the emission probabilities specify the probabilities of transition between states and emission of observations from states, respectively. In POS tagging, the states are the POS tags while the words are the observations. To summarise, a Hidden Markov Model is defined by the initial state, emission, and the transition probabilities.</p>
 <figure class="align-default" id="image3">
@@ -706,7 +785,7 @@ The transition and the emission probabilities specify the probabilities of trans
 <p><strong>For a sequence of <span class="math notranslate nohighlight">\(n\)</span> words and <span class="math notranslate nohighlight">\(t\)</span> tags, a total of <span class="math notranslate nohighlight">\(t_n\)</span> tag sequences are possible.</strong></p>
 </section>
 <section id="viterbi-heuristic">
-<h3>Viterbi Heuristic<a class="headerlink" href="#viterbi-heuristic" title="Permalink to this headline">¶</a></h3>
+<h3>Viterbi Heuristic<a class="headerlink" href="#viterbi-heuristic" title="Permalink to this headline">#</a></h3>
 <p>Viterbi Heuristic can deal with this problem by taking a greedy approach. The basic idea of the Viterbi algorithm is as follows - given a list of observations (words) <span class="math notranslate nohighlight">\(O_1,O_2....O_n\)</span> to be tagged, rather than computing the probabilities of all possible tag sequences, you assign tags sequentially, i.e. assign the most likely tag to each word using the previous tag.</p>
 <p>More formally, you assign the tag <span class="math notranslate nohighlight">\(T_i\)</span> to each word <span class="math notranslate nohighlight">\(W_i\)</span> such that it maximises the likelihood:</p>
 <p><span class="math notranslate nohighlight">\(P(T_i| W_i) = P(W_i|T_i) * P(T_i-1|T_i)\)</span></p>
@@ -714,7 +793,7 @@ The transition and the emission probabilities specify the probabilities of trans
 <p><strong>Viterbi algorithm is an example of a dynamic programming algorithm.</strong> In general, algorithms which break down a complex problem into subproblems and solve each subproblem optimally are called dynamic programming algorithms.</p>
 </section>
 <section id="learning-hmm-model-parameters">
-<h3>Learning HMM Model Parameters<a class="headerlink" href="#learning-hmm-model-parameters" title="Permalink to this headline">¶</a></h3>
+<h3>Learning HMM Model Parameters<a class="headerlink" href="#learning-hmm-model-parameters" title="Permalink to this headline">#</a></h3>
 <p>The process of learning the probabilities from a tagged corpus is called <strong>training an HMM model</strong>. The emission and the transition probabilities can be learnt as follows:</p>
 <ul>
 <li><p><strong>Emission Probability</strong> of a word <span class="math notranslate nohighlight">\(w\)</span> for tag <span class="math notranslate nohighlight">\(t\)</span>:
@@ -730,7 +809,7 @@ The transition and the emission probabilities specify the probabilities of trans
 </section>
 <hr class="docutils" />
 <section id="constituency-parsing">
-<h2>Constituency Parsing<a class="headerlink" href="#constituency-parsing" title="Permalink to this headline">¶</a></h2>
+<h2>Constituency Parsing<a class="headerlink" href="#constituency-parsing" title="Permalink to this headline">#</a></h2>
 <p>shallow parsing is not sufficient. Shallow parsing, as the name suggests, refers to fairly shallow levels of parsing such as POS tagging, chunking, etc. But such techniques would not be able to check the grammatical structure of the sentence, i.e. whether a sentence is grammatically correct, or understand the dependencies between words in a sentence.</p>
 <p>Two most commonly used paradigms of parsing - constituency parsing and dependency parsing, which would help to check the grammatical structure of the sentence.</p>
 <p>In constituency parsing, you learnt the basic idea of constituents as grammatically meaningful groups of words, or phrases, such as noun phrase, verb phrase etc. You also learnt the idea of context-free grammars or CFGs which specify a set of production rules. Any production rule can be written as A -&gt; B C, where A is a non-terminal symbol (NP, VP, N etc.) and B and C are either non-terminals or terminal symbols (i.e. words in vocabulary such as flight, man etc.).</p>
@@ -752,7 +831,7 @@ The transition and the emission probabilities specify the probabilities of trans
 <figure class="align-default" id="image4">
 <a class="reference internal image-reference" href="../../_images/image43.PNG"><img alt="../../_images/image43.PNG" src="../../_images/image43.PNG" style="width: 664.8000000000001px; height: 388.8px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 27 </span><span class="caption-text">Top-down parse</span><a class="headerlink" href="#image4" title="Permalink to this image">¶</a></p>
+<p><span class="caption-number">Fig. 27 </span><span class="caption-text">Top-down parse</span><a class="headerlink" href="#image4" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <ul class="simple">
@@ -761,18 +840,18 @@ The transition and the emission probabilities specify the probabilities of trans
 <figure class="align-default" id="image5">
 <a class="reference internal image-reference" href="../../_images/image53.PNG"><img alt="../../_images/image53.PNG" src="../../_images/image53.PNG" style="width: 701.6px; height: 357.6px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 28 </span><span class="caption-text">Bottom-up parse</span><a class="headerlink" href="#image5" title="Permalink to this image">¶</a></p>
+<p><span class="caption-number">Fig. 28 </span><span class="caption-text">Bottom-up parse</span><a class="headerlink" href="#image5" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <section id="probabilistic-cfg">
-<h3>Probabilistic CFG<a class="headerlink" href="#probabilistic-cfg" title="Permalink to this headline">¶</a></h3>
+<h3>Probabilistic CFG<a class="headerlink" href="#probabilistic-cfg" title="Permalink to this headline">#</a></h3>
 <p>Since natural languages are inherently ambiguous, there are often cases where multiple parse trees are possible. In such cases, we need a way to make the algorithms figure out the most likely parse tree. Probabilistic Context-Free Grammars (PCFGs) are used when we want to find the most probable parsed structure of the sentence. PCFGs are grammar rules, similar to what you have seen before, along with probabilities associated with each production rule. An example production rule is as follows:</p>
 <p>NP -&gt; Det N (0.5) | N (0.3) |N PP (0.2)</p>
 <p>It means that the probability of an NP breaking down to a ‘Det N’ is 0.50, to an ‘N’ is 0.30 and to an ‘N PP’ is 0.20. Note that the sum of probabilities is 1.00.
 Overall probability for a parsed structure of the sentence is probabilities of all rules used in that parsed structure. The parsed tree with maximum probability is best possible interpretation of the sentence.</p>
 </section>
 <section id="chomsky-normal-form">
-<h3>Chomsky Normal Form<a class="headerlink" href="#chomsky-normal-form" title="Permalink to this headline">¶</a></h3>
+<h3>Chomsky Normal Form<a class="headerlink" href="#chomsky-normal-form" title="Permalink to this headline">#</a></h3>
 <p>The Chomsky Normal Form (CNF), proposed by the linguist Noam Chomsky, is a normalized version of the CFG with a standard set of rules defining how production rule must be written. The three forms of CNF rules can be written:</p>
 <ul class="simple">
 <li><p>A -&gt; B C</p></li>
@@ -787,7 +866,7 @@ Overall probability for a parsed structure of the sentence is probabilities of a
 </section>
 <hr class="docutils" />
 <section id="dependency-parsing">
-<h2>Dependency Parsing<a class="headerlink" href="#dependency-parsing" title="Permalink to this headline">¶</a></h2>
+<h2>Dependency Parsing<a class="headerlink" href="#dependency-parsing" title="Permalink to this headline">#</a></h2>
 <p>In dependency grammar, constituencies (such as NP, VP etc.) do not form the basic elements of grammar, but rather dependencies are established between the words themselves.</p>
 <p>Free word order languages such as Hindi, Bengali are difficult to parse using constituency parsing techniques. This is because, in such free-word-order languages, the order of words/constituents may change significantly while keeping the meaning exactly the same. It is thus difficult to fit the sentences into the finite set of production rules that CFGs offer.
 Dependencies in a sentence are defined using the elements Subject-Verb-Object (SVO). The following table shows SVO dependencies in three types of sentences - declarative, interrogative, and imperative</p>
@@ -799,7 +878,7 @@ Dependencies in a sentence are defined using the elements Subject-Verb-Object (S
 </section>
 <hr class="docutils" />
 <section id="information-extraction">
-<h2>Information Extraction<a class="headerlink" href="#information-extraction" title="Permalink to this headline">¶</a></h2>
+<h2>Information Extraction<a class="headerlink" href="#information-extraction" title="Permalink to this headline">#</a></h2>
 <p>Information Extraction (IE) system can extract entities relevant for booking flights (such as source and destination cities, time, date, budget constraints etc.) in a structured format from unstructured user-generated input. IE is used in many applications such as chatbots, extracting information from websites, etc.</p>
 <p>A generic pipeline for Information Extraction is as follows:</p>
 <ul class="simple">
@@ -837,7 +916,7 @@ There are various techniques and models for building Named Entity Recognition (N
 </ul>
 <p>IOB (or BIO) method tags each token in the sentence with one of the three labels: <strong>I - inside (the entity), O- outside (the entity) and B - beginning (of entity).</strong> You saw that IOB labeling is especially helpful if the entities contain multiple words. For example: words like ‘Delta Airlines’, ‘New York, etc, are single entities.</p>
 <section id="rule-based-method-for-ner">
-<h3>Rule-based method for NER<a class="headerlink" href="#rule-based-method-for-ner" title="Permalink to this headline">¶</a></h3>
+<h3>Rule-based method for NER<a class="headerlink" href="#rule-based-method-for-ner" title="Permalink to this headline">#</a></h3>
 <p>Chunking is a common shallow parsing technique used to chunk words that constitute some meaningful phrase in the sentence. A noun phrase chunk (NP chunk) is commonly used in NER tasks to identify groups of words that correspond to some ‘entity’.</p>
 <p><strong>Sentence:</strong> She bought <em>a new car</em> from <em>the BMW showroom</em>.</p>
 <p><strong>Noun phrase chunks:</strong> <em>a new car</em>, <em>the BMW showroom</em></p>
@@ -847,7 +926,7 @@ There are various techniques and models for building Named Entity Recognition (N
 <p><strong>Grammar:</strong> <span class="math notranslate nohighlight">\(\text{NP_chunk: {&lt;DT&gt;?&lt;NN&gt;}}\)</span></p>
 </section>
 <section id="probabilistic-method-for-ner">
-<h3>Probabilistic method for NER<a class="headerlink" href="#probabilistic-method-for-ner" title="Permalink to this headline">¶</a></h3>
+<h3>Probabilistic method for NER<a class="headerlink" href="#probabilistic-method-for-ner" title="Permalink to this headline">#</a></h3>
 <p>The following two probabilistic models to get the most probable IOB tags for word:</p>
 <ul class="simple">
 <li><p><strong>Unigram chunker</strong> computes the unigram probabilities P(IOB label | pos) for each word and assigns the label that is most likely for the POS tag.</p></li>
@@ -857,7 +936,7 @@ There are various techniques and models for building Named Entity Recognition (N
 <p><strong>Naive Bayes and Decision Tree classifier can also be used in NER.</strong></p>
 </section>
 <section id="conditional-random-fields">
-<h3>Conditional Random Fields<a class="headerlink" href="#conditional-random-fields" title="Permalink to this headline">¶</a></h3>
+<h3>Conditional Random Fields<a class="headerlink" href="#conditional-random-fields" title="Permalink to this headline">#</a></h3>
 <p>HMMs can be used for any sequence classification task, such as NER. However, many NER tasks and datasets are far more complex than tasks such as POS tagging, and therefore, more sophisticated sequence models have been developed and widely accepted in the NLP community. One of these models is Conditional Random Fields (CRFs).</p>
 <p>CRFs are used in a wide variety of sequence labelling tasks across various domains - POS tagging, speech recognition, NER, and even in computational biology for modelling genetic patterns etc. CRFs model the <strong>conditional probability</strong> <span class="math notranslate nohighlight">\(P(Y|X)\)</span>, where <span class="math notranslate nohighlight">\(Y\)</span> is the vector of output sequence (IOB labels here) and <span class="math notranslate nohighlight">\(X\)</span> is the input sequence (words to be tagged), which are similar to Logistic Regression classifier. Broadly, there are two types of classifiers in ML:</p>
 <ul class="simple">
@@ -919,9 +998,11 @@ There are various techniques and models for building Named Entity Recognition (N
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="Lexical%20Processing.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -937,32 +1018,36 @@ There are various techniques and models for building Named Entity Recognition (N
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
-    
-      By Dip Ranjan Chatterjee | © MIT License - 2021<br/>
-    
-      <div class="extra_footer">
-        <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Dip Ranjan Chatterjee | © MIT License - 2021<br/>
+  
+    <div class="extra_footer">
+      <p>
 <a href="https://www.buymeacoffee.com/dearc" target="_blank"><img src="https://img.shields.io/badge/Support-Buy%20me%20a%20%E2%98%95-orange?style=flat-square&logo=appveyor.svg" alt="Buy Me A Coffee"></a>
 <a href="https://dearc.medium.com/membership" target="_blank"><img src="https://img.shields.io/badge/Support-Medium%20Referral-lightgrey?style=flat-square&logo=appveyor.svg" alt="Medium Membership"></a>
 <a href="https://www.linkedin.com/company/the-data-science-interview-book/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BeglbXB3xT0mopZBzReqMEQ%3D%3D" target="_blank"><img src="https://img.shields.io/badge/Follow-LinkedIn-0077B5?style=flat-square&logo=appveyor.svg" alt="Follow LinkedIn"></a>
 <a href="https://github.com/dipranjan/dsinterviewqns/discussions" target="_blank"><img src="https://img.shields.io/badge/Discussion%20Forum-%F0%9F%99%8A%20%20%F0%9F%99%88%20%20%F0%9F%99%89-0172B3?style=flat-square&logo=appveyor.svg" alt="Discussion Forum"></a>
 </p>
 
-      </div>
-  </p>
-</footer>
-</main>
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

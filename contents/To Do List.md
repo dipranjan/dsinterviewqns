@@ -1,6 +1,6 @@
 ## Log
 
-![Megaphone](../handphoneupd2.gif) **Last updated on <span style="color:red">6 July 2022</span>.**
+![Megaphone](../handphoneupd2.gif) **Last updated on <span style="color:red">30 Aug 2022</span>.**
 
 ```{admonition} What's Happening
 :class: tip, dropdown
@@ -32,6 +32,10 @@
 
 ```{admonition} What Happened
 :class: tip, dropdown
+
+**Month of August, 2022**
+- Behavioral - Management section added
+- New interview questions added
 
 **Month of July, 2022**
 - Data sampling section added under data
