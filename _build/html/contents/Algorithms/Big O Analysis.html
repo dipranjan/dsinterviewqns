@@ -609,39 +609,15 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#constant-complexity-o-c">
-   Constant Complexity (
-   <span class="math notranslate nohighlight">
-    \(O(C)\)
-   </span>
-   )
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#an-analogy">
-   An Analogy
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#time-complexity">
-   Time Complexity
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#o-theta-and-omega">
-   <span class="math notranslate nohighlight">
-    \(O\)
-   </span>
-   ,
-   <span class="math notranslate nohighlight">
-    \(\Theta\)
-   </span>
-   , and
-   <span class="math notranslate nohighlight">
-    \(\Omega\)
-   </span>
+  <a class="reference internal nav-link" href="#analogy">
+   Analogy
   </a>
   <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#time-complexity">
+     Time Complexity
+    </a>
+   </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#big-o-of-ds-algorithms">
      Big O of DS Algorithms
@@ -684,39 +660,15 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#constant-complexity-o-c">
-   Constant Complexity (
-   <span class="math notranslate nohighlight">
-    \(O(C)\)
-   </span>
-   )
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#an-analogy">
-   An Analogy
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#time-complexity">
-   Time Complexity
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#o-theta-and-omega">
-   <span class="math notranslate nohighlight">
-    \(O\)
-   </span>
-   ,
-   <span class="math notranslate nohighlight">
-    \(\Theta\)
-   </span>
-   , and
-   <span class="math notranslate nohighlight">
-    \(\Omega\)
-   </span>
+  <a class="reference internal nav-link" href="#analogy">
+   Analogy
   </a>
   <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#time-complexity">
+     Time Complexity
+    </a>
+   </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#big-o-of-ds-algorithms">
      Big O of DS Algorithms
@@ -736,18 +688,7 @@ title="Print to PDF"
                 
   <section id="big-o-analysis">
 <h1>Big O Analysis<a class="headerlink" href="#big-o-analysis" title="Permalink to this headline">#</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page is a work in progress</p>
-</div>
-<p>Big O notation (with a capital letter O, not a zero), also called Landau’s symbol, is a
-symbolism used in complexity theory, computer science, and mathematics to describe the
-asymptotic behavior of functions. Basically, it tells you how fast a function grows or
-declines.</p>
-<p>Landau’s symbol comes from the name of the German number theoretician Edmund
-Landau who invented the notation. The letter O is used because the rate of growth of a
-function is also called its order.</p>
-<p>Here we will study it in the Alogrithm Analysis context.</p>
+<p>Big O notation (with a capital letter O, not a zero), also called Landau’s symbol, is a symbolism used in complexity theory, computer science, and mathematics to describe the asymptotic behavior of functions. Basically, it tells you how fast a function grows or declines.</p>
 </section>
 <section id="why-is-algorithm-analysis-important">
 <h1>Why is Algorithm Analysis Important?<a class="headerlink" href="#why-is-algorithm-analysis-important" title="Permalink to this headline">#</a></h1>
@@ -756,8 +697,8 @@ function is also called its order.</p>
 <p>The manager has to decide which algorithm to use. To do so, he has to find the complexity of the algorithm. One way to do so is by finding the time required to execute the algorithms.</p>
 <p>In the Jupyter notebook, you can use the <code class="docutils literal notranslate"><span class="pre">%timeit</span></code> literal followed by the function call to find the time taken by the function to execute. Look at the following script:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="eefd1bc1-89d6-4bf7-a41e-4e049dac39eb" name="72ad0d79-dd5f-4233-9d2c-9676292b4853" type="radio">
-</input><label class="sd-tab-label" data-sync-id="tabcode-python" for="eefd1bc1-89d6-4bf7-a41e-4e049dac39eb">
+<input checked="checked" id="bd747fa0-81ce-42a1-811b-3f899cb1b8c7" name="fa2100a0-4da5-4d45-9efa-b2f94bbbe222" type="radio">
+</input><label class="sd-tab-label" data-sync-id="tabcode-python" for="bd747fa0-81ce-42a1-811b-3f899cb1b8c7">
 PYTHON</label><div class="sd-tab-content docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;Alogrithm by Employee 1&#39;&#39;&#39;</span>
 <span class="k">def</span> <span class="nf">fact</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -783,21 +724,17 @@ PYTHON</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="f3763960-52d3-4ed5-86ca-ccb061444019" name="72ad0d79-dd5f-4233-9d2c-9676292b4853" type="radio">
-</input><label class="sd-tab-label" data-sync-id="tabcode-Output" for="f3763960-52d3-4ed5-86ca-ccb061444019">
-OUTPUT</label><div class="sd-tab-content docutils">
-<div class="highlight-Output notranslate"><div class="highlight"><pre><span></span><span class="go">- 4.16 µs ± 15 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)</span>
-<span class="go">- 7.41 µs ± 142 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)</span>
-</pre></div>
 </div>
-</div>
-</div>
-<p>The execution time shows that the first algorithm is faster compared to the second algorithm involving recursion. This example shows the importance of algorithm analysis. In the case of large inputs, the performance difference can become more significant.</p>
-<p>However, execution time is not a good metric to measure the complexity of an algorithm since it depends upon the hardware. A more objective complexity analysis metrics for the algorithms is needed. This is where Big O notation comes to play.</p>
+<p>Output -</p>
+<ul class="simple">
+<li><p>4.16 µs ± 15 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)</p></li>
+<li><p>7.41 µs ± 142 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)</p></li>
+</ul>
+<p>The execution time shows that the first algorithm is faster compared to the second algorithm involving recursion. This example shows the importance of algorithm analysis. In the case of large inputs, the performance difference can become more significant. However, <strong>execution time is not a good metric to measure the complexity of an algorithm since it depends upon the hardware. A more objective complexity analysis metrics for the algorithms is needed.</strong> This is where Big O notation comes to play.</p>
 </section>
 <section id="algorithm-analysis-with-big-o-notation">
 <h1>Algorithm Analysis with Big-O Notation<a class="headerlink" href="#algorithm-analysis-with-big-o-notation" title="Permalink to this headline">#</a></h1>
-<p>Big-O notation is a metrics used to find algorithm complexity. Basically, Big-O notation signifies the relationship between the input to the algorithm and the steps required to execute the algorithm. It is denoted by a big <span class="math notranslate nohighlight">\(O\)</span> followed by opening and closing parenthesis. Inside the parenthesis, the relationship between the input and the steps taken by the algorithm is presented using <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<p>Big-O notation signifies the relationship between the input to the algorithm and the steps required to execute the algorithm. It is denoted by a big <span class="math notranslate nohighlight">\(O\)</span> followed by opening and closing parenthesis. Inside the parenthesis, the relationship between the input and the steps taken by the algorithm is presented using <span class="math notranslate nohighlight">\(n\)</span>.</p>
 <p>For instance, if there is a linear relationship between the input and the step taken by the algorithm to complete its execution, the Big-O notation used will be <span class="math notranslate nohighlight">\(O(n)\)</span>. Similarly, the Big-O notation for quadratic functions is <span class="math notranslate nohighlight">\(O(n^2)\)</span></p>
 <p>The following are some of the most common Big-O functions:</p>
 <table class="colwidths-auto table">
@@ -833,77 +770,36 @@ OUTPUT</label><div class="sd-tab-content docutils">
 <figure class="align-default" id="image16">
 <a class="reference internal image-reference" href="../../_images/image161.PNG"><img alt="../../_images/image161.PNG" src="../../_images/image161.PNG" style="height: 200px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 20 </span><span class="caption-text">n is the input size and c is a positive constant</span><a class="headerlink" href="#image16" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 22 </span><span class="caption-text">n is the input size and c is a positive constant</span><a class="headerlink" href="#image16" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>To get an idea of how Big-O notation in is calculated, let’s take a look at some examples of constant, linear, and quadratic complexity.</p>
 </section>
-<section id="constant-complexity-o-c">
-<h1>Constant Complexity (<span class="math notranslate nohighlight">\(O(C)\)</span>)<a class="headerlink" href="#constant-complexity-o-c" title="Permalink to this headline">#</a></h1>
-<p>The complexity of an algorithm is said to be constant if the steps required to complete the execution of an algorithm remain constant, irrespective of the number of inputs. The constant complexity is denoted by <span class="math notranslate nohighlight">\(O(c)\)</span> where <span class="math notranslate nohighlight">\(c\)</span> can be any constant number.</p>
-<p>Let’s write a simple algorithm in Python that finds the square of the first item in the list and then prints it on the screen.</p>
-</section>
-<section id="an-analogy">
-<h1>An Analogy<a class="headerlink" href="#an-analogy" title="Permalink to this headline">#</a></h1>
-<p>Imagine the following scenario: You’ve got a file on a hard drive and you need to send it to your friend who
-lives across the country. You need to get the file to your friend as fast as possible. How should you send it?
-Most people’s first thought would be email, FTP, or some other means of electronic transfer. That thought is
-reasonable, but only half correct. If it’s a small file, you’re certainly right. It would take 5 - 10 hours to get to an airport, hop on a flight, and
-then deliver it to your friend.
-But what if the file were really, really large? Is it possible that it’s faster to physically deliver it via plane?
-Yes, actually it is. A one-terabyte (1 TB) file could take more than a day to transfer electronically. It would be
-much faster to just fly it across the country. If your file is that urgent (and cost isn’t an issue), you might just
-want to do that.
-What if there were no flights, and instead you had to drive across the country? Even then, for a really huge
-file, it would be faster to drive.</p>
-</section>
+<section id="analogy">
+<h1>Analogy<a class="headerlink" href="#analogy" title="Permalink to this headline">#</a></h1>
+<p>Imagine the following scenario: You’ve got a file on a hard drive and you need to send it to your friend who lives across the country. You need to get the file to your friend as fast as possible. How should you send it?</p>
+<p>Most people’s first thought would be email, FTP, or some other means of electronic transfer. That thought is reasonable, but only half correct. If it’s a small file, you’re certainly right. It would take 5 - 10 hours to get to an airport, hop on a flight, and then deliver it to your friend. But what if the file were really, really large? Is it possible that it’s faster to physically deliver it via plane?</p>
+<p>Yes, actually it is. A one-terabyte (1 TB) file could take more than a day to transfer electronically. It would be much faster to just fly it across the country. If your file is that urgent (and cost isn’t an issue), you might just want to do that. What if there were no flights, and instead you had to drive across the country? Even then, for a really huge file, it would be faster to drive.</p>
 <section id="time-complexity">
-<h1>Time Complexity<a class="headerlink" href="#time-complexity" title="Permalink to this headline">#</a></h1>
-<p>This is what the concept of asymptotic runtime, or big <span class="math notranslate nohighlight">\(O\)</span> time, means. We could describe the data transfer
-<em>algorithm</em> runtime as:</p>
+<h2>Time Complexity<a class="headerlink" href="#time-complexity" title="Permalink to this headline">#</a></h2>
+<p>This is what the concept of asymptotic runtime, or big <span class="math notranslate nohighlight">\(O\)</span> time, means. We could describe the data transfer <em>algorithm</em> runtime as:</p>
 <ul class="simple">
-<li><p>Electronic Transfer: <span class="math notranslate nohighlight">\(O(s)\)</span>, where <span class="math notranslate nohighlight">\(s\)</span> is the size of the file. This means that the time to transfer the file
-increases linearly with the size of the file. (Yes, this is a bit of a simplification, but that’s okay for these purposes)</p></li>
-<li><p>Airplane Transfer: <span class="math notranslate nohighlight">\(O(1)\)</span> with respect to the size of the file. As the size of the file increases, it won’t take
-any longer to get the file to your friend. The time is constant.</p></li>
+<li><p>Electronic Transfer: <span class="math notranslate nohighlight">\(O(s)\)</span>, where <span class="math notranslate nohighlight">\(s\)</span> is the size of the file. This means that the time to transfer the file increases linearly with the size of the file. (Yes, this is a bit of a simplification, but that’s okay for these purposes)</p></li>
+<li><p>Airplane Transfer: <span class="math notranslate nohighlight">\(O(1)\)</span> with respect to the size of the file. As the size of the file increases, it won’t take any longer to get the file to your friend. The time is constant.</p></li>
 </ul>
 <figure class="align-default" id="image17">
 <a class="reference internal image-reference" href="../../_images/image171.PNG"><img alt="../../_images/image171.PNG" src="../../_images/image171.PNG" style="height: 200px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 21 </span><span class="caption-text">No matter how big the constant is and how slow the linear increase is, linear will at some point surpass the constant.</span><a class="headerlink" href="#image17" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 23 </span><span class="caption-text">No matter how big the constant is and how slow the linear increase is, linear will at some point surpass the constant.</span><a class="headerlink" href="#image17" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>There are many more runtimes than this. Some ofthe most common ones are <span class="math notranslate nohighlight">\(O(log N),O(N log N),
-O(N), O(N^2), O(2^N)\)</span>. There’s no fixed list of possible runtimes, though.
-You can also have multiple variables in your runtime. For example, the time to paint a fence that’s <span class="math notranslate nohighlight">\(w\)</span> meters
-wide and <span class="math notranslate nohighlight">\(h\)</span> meters high could be described as <span class="math notranslate nohighlight">\(O(wh)\)</span> .If you needed <span class="math notranslate nohighlight">\(p\)</span> layers of paint, then you could say
-that the time is <span class="math notranslate nohighlight">\(O(whp)\)</span>.</p>
+<p>There are many more runtimes than this. Some ofthe most common ones are <span class="math notranslate nohighlight">\(O(log N),O(N log N), O(N), O(N^2), O(2^N)\)</span>. There’s no fixed list of possible runtimes, though. You can also have multiple variables in your runtime. For example, the time to paint a fence that’s <span class="math notranslate nohighlight">\(w\)</span> meters wide and <span class="math notranslate nohighlight">\(h\)</span> meters high could be described as <span class="math notranslate nohighlight">\(O(wh)\)</span> .If you needed <span class="math notranslate nohighlight">\(p\)</span> layers of paint, then you could say that the time is <span class="math notranslate nohighlight">\(O(whp)\)</span>.</p>
 </section>
-<section id="o-theta-and-omega">
-<h1><span class="math notranslate nohighlight">\(O\)</span>, <span class="math notranslate nohighlight">\(\Theta\)</span>, and <span class="math notranslate nohighlight">\(\Omega\)</span><a class="headerlink" href="#o-theta-and-omega" title="Permalink to this headline">#</a></h1>
-<p>Academics use <span class="math notranslate nohighlight">\(O\)</span>, <span class="math notranslate nohighlight">\(\Theta\)</span>, and <span class="math notranslate nohighlight">\(\Omega\)</span> to describe runtimes:</p>
-<ul class="simple">
-<li><p><strong><span class="math notranslate nohighlight">\(O\)</span>(Big <span class="math notranslate nohighlight">\(O\)</span>):</strong> In academia, <span class="math notranslate nohighlight">\(O\)</span> describes an upper bound on the time. An algorithm that prints all the
-values in an array could be described as <span class="math notranslate nohighlight">\(O(N)\)</span>, but it could also be described as <span class="math notranslate nohighlight">\(O(N^2)\)</span>, <span class="math notranslate nohighlight">\(O(N^3)\)</span> or <span class="math notranslate nohighlight">\(O(2^N)\)</span>
-(or many other <span class="math notranslate nohighlight">\(O\)</span> times). The algorithm is at least as fast as each of these; therefore they are upper
-bounds on the runtime. This is similar to a <span class="math notranslate nohighlight">\(\leq\)</span> relationship. If Bob is <span class="math notranslate nohighlight">\(X\)</span> years old (I’ll
-assume no one lives past age <span class="math notranslate nohighlight">\(130\)</span>), then you could say <span class="math notranslate nohighlight">\(X \leq 130\)</span>. It would also be correct to say that
-<span class="math notranslate nohighlight">\(X \leq 1000\)</span> or <span class="math notranslate nohighlight">\(X \leq 1000000\)</span>. It’s technically true (although not terribly useful). Likewise, a simple
-algorithm to print the values in an array is <span class="math notranslate nohighlight">\(O(N)\)</span> as well as <span class="math notranslate nohighlight">\(O(N^3)\)</span> or any runtime bigger than <span class="math notranslate nohighlight">\(O(N)\)</span>.</p></li>
-<li><p><strong><span class="math notranslate nohighlight">\(\Omega\)</span>(big omega):</strong> In academia, <span class="math notranslate nohighlight">\(\Omega\)</span> is the equivalent concept but for lower bound. Printing the values in
-an array is <span class="math notranslate nohighlight">\(\Omega(N)\)</span> as well as <span class="math notranslate nohighlight">\(O(log N)\)</span> and <span class="math notranslate nohighlight">\(O(1)\)</span>. After all, you know that it won’t be faster than those
-runtimes.</p></li>
-<li><p><strong><span class="math notranslate nohighlight">\(\Theta\)</span>(big theta):</strong> In academia, <span class="math notranslate nohighlight">\(\Theta\)</span> means both <span class="math notranslate nohighlight">\(O\)</span> and <span class="math notranslate nohighlight">\(\Omega\)</span>. That is, an algorithm is <span class="math notranslate nohighlight">\(\Theta(N)\)</span> if it is both <span class="math notranslate nohighlight">\(O(N)\)</span> and
-<span class="math notranslate nohighlight">\(\Omega(N)\)</span>. <span class="math notranslate nohighlight">\(\Theta\)</span> gives a tight bound on runtime.</p></li>
-</ul>
-<p>In industry people seem to have merged <span class="math notranslate nohighlight">\(\Theta\)</span> and <span class="math notranslate nohighlight">\(O\)</span> together. Industry’s meaning of <span class="math notranslate nohighlight">\(O\)</span> is closer to what academics mean by <span class="math notranslate nohighlight">\(\Theta\)</span>, in that it would be seen as incorrect to describe printing an array as <span class="math notranslate nohighlight">\(O(N^2)\)</span>. Industry would just say this is <span class="math notranslate nohighlight">\(O(N)\)</span>.
-Here we will use <span class="math notranslate nohighlight">\(O\)</span> in the way that industry tends to use it: By always trying to offer the tightest description of the runtime.</p>
 <section id="big-o-of-ds-algorithms">
 <h2>Big O of DS Algorithms<a class="headerlink" href="#big-o-of-ds-algorithms" title="Permalink to this headline">#</a></h2>
 <figure class="align-default" id="image15">
-<a class="reference internal image-reference" href="../../_images/image151.PNG"><img alt="../../_images/image151.PNG" src="../../_images/image151.PNG" style="width: 891.8px; height: 1012.1999999999999px;" /></a>
+<a class="reference internal image-reference" href="../../_images/image151.PNG"><img alt="../../_images/image151.PNG" src="../../_images/image151.PNG" style="width: 637.0px; height: 723.0px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 22 </span><span class="caption-text">Big O of some of the popular Machine Learning Algorithms</span><a class="headerlink" href="#image15" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 24 </span><span class="caption-text">Big O of some of the popular Machine Learning Algorithms</span><a class="headerlink" href="#image15" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>

@@ -7,20 +7,7 @@ html_meta:
 
 ## Big O Analysis
 
-```{warning}
-This page is a work in progress
-```
-
-Big O notation (with a capital letter O, not a zero), also called Landau's symbol, is a
-symbolism used in complexity theory, computer science, and mathematics to describe the
-asymptotic behavior of functions. Basically, it tells you how fast a function grows or
-declines.
-
-Landau's symbol comes from the name of the German number theoretician Edmund
-Landau who invented the notation. The letter O is used because the rate of growth of a
-function is also called its order.
-
-Here we will study it in the Alogrithm Analysis context.
+Big O notation (with a capital letter O, not a zero), also called Landau's symbol, is a symbolism used in complexity theory, computer science, and mathematics to describe the asymptotic behavior of functions. Basically, it tells you how fast a function grows or declines.
 
 ## Why is Algorithm Analysis Important?
 
@@ -57,21 +44,18 @@ def fact(n):
 
 %timeit fact(50)
 ```
-
-```{code-block} Output
-- 4.16 µs ± 15 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
-- 7.41 µs ± 142 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
-```
-
 ````
 
-The execution time shows that the first algorithm is faster compared to the second algorithm involving recursion. This example shows the importance of algorithm analysis. In the case of large inputs, the performance difference can become more significant.
+Output - 
+- 4.16 µs ± 15 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+- 7.41 µs ± 142 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 
-However, execution time is not a good metric to measure the complexity of an algorithm since it depends upon the hardware. A more objective complexity analysis metrics for the algorithms is needed. This is where Big O notation comes to play.
+
+The execution time shows that the first algorithm is faster compared to the second algorithm involving recursion. This example shows the importance of algorithm analysis. In the case of large inputs, the performance difference can become more significant. However, **execution time is not a good metric to measure the complexity of an algorithm since it depends upon the hardware. A more objective complexity analysis metrics for the algorithms is needed.** This is where Big O notation comes to play.
 
 ## Algorithm Analysis with Big-O Notation
 
-Big-O notation is a metrics used to find algorithm complexity. Basically, Big-O notation signifies the relationship between the input to the algorithm and the steps required to execute the algorithm. It is denoted by a big $O$ followed by opening and closing parenthesis. Inside the parenthesis, the relationship between the input and the steps taken by the algorithm is presented using $n$.
+Big-O notation signifies the relationship between the input to the algorithm and the steps required to execute the algorithm. It is denoted by a big $O$ followed by opening and closing parenthesis. Inside the parenthesis, the relationship between the input and the steps taken by the algorithm is presented using $n$.
 
 For instance, if there is a linear relationship between the input and the step taken by the algorithm to complete its execution, the Big-O notation used will be $O(n)$. Similarly, the Big-O notation for quadratic functions is $O(n^2)$
 
@@ -96,38 +80,18 @@ name: image16
 n is the input size and c is a positive constant
 ```
 
-To get an idea of how Big-O notation in is calculated, let's take a look at some examples of constant, linear, and quadratic complexity.
+## Analogy
+Imagine the following scenario: You've got a file on a hard drive and you need to send it to your friend who lives across the country. You need to get the file to your friend as fast as possible. How should you send it?
 
-## Constant Complexity ($O(C)$)
+Most people's first thought would be email, FTP, or some other means of electronic transfer. That thought is reasonable, but only half correct. If it's a small file, you're certainly right. It would take 5 - 10 hours to get to an airport, hop on a flight, and then deliver it to your friend. But what if the file were really, really large? Is it possible that it's faster to physically deliver it via plane?
 
-The complexity of an algorithm is said to be constant if the steps required to complete the execution of an algorithm remain constant, irrespective of the number of inputs. The constant complexity is denoted by $O(c)$ where $c$ can be any constant number.
+Yes, actually it is. A one-terabyte (1 TB) file could take more than a day to transfer electronically. It would be much faster to just fly it across the country. If your file is that urgent (and cost isn't an issue), you might just want to do that. What if there were no flights, and instead you had to drive across the country? Even then, for a really huge file, it would be faster to drive.
 
-Let's write a simple algorithm in Python that finds the square of the first item in the list and then prints it on the screen.
+### Time Complexity
 
-
-
-## An Analogy
-Imagine the following scenario: You've got a file on a hard drive and you need to send it to your friend who
-lives across the country. You need to get the file to your friend as fast as possible. How should you send it?
-Most people's first thought would be email, FTP, or some other means of electronic transfer. That thought is
-reasonable, but only half correct. If it's a small file, you're certainly right. It would take 5 - 10 hours to get to an airport, hop on a flight, and
-then deliver it to your friend.
-But what if the file were really, really large? Is it possible that it's faster to physically deliver it via plane?
-Yes, actually it is. A one-terabyte (1 TB) file could take more than a day to transfer electronically. It would be
-much faster to just fly it across the country. If your file is that urgent (and cost isn't an issue), you might just
-want to do that.
-What if there were no flights, and instead you had to drive across the country? Even then, for a really huge
-file, it would be faster to drive.
-
-## Time Complexity
-
-This is what the concept of asymptotic runtime, or big $O$ time, means. We could describe the data transfer
-*algorithm* runtime as:
-- Electronic Transfer: $O(s)$, where $s$ is the size of the file. This means that the time to transfer the file
-increases linearly with the size of the file. (Yes, this is a bit of a simplification, but that's okay for these purposes)
-- Airplane Transfer: $O(1)$ with respect to the size of the file. As the size of the file increases, it won't take
-any longer to get the file to your friend. The time is constant.
-
+This is what the concept of asymptotic runtime, or big $O$ time, means. We could describe the data transfer *algorithm* runtime as:
+- Electronic Transfer: $O(s)$, where $s$ is the size of the file. This means that the time to transfer the file increases linearly with the size of the file. (Yes, this is a bit of a simplification, but that's okay for these purposes)
+- Airplane Transfer: $O(1)$ with respect to the size of the file. As the size of the file increases, it won't take any longer to get the file to your friend. The time is constant.
 
 ```{figure} ../Algorithms/images/image17.PNG
 ---
@@ -137,40 +101,14 @@ name: image17
 No matter how big the constant is and how slow the linear increase is, linear will at some point surpass the constant.
 ```
 
-There are many more runtimes than this. Some ofthe most common ones are $O(log N),O(N log N),
-O(N), O(N^2), O(2^N)$. There's no fixed list of possible runtimes, though.
-You can also have multiple variables in your runtime. For example, the time to paint a fence that's $w$ meters
-wide and $h$ meters high could be described as $O(wh)$ .If you needed $p$ layers of paint, then you could say
-that the time is $O(whp)$.
-
-## $O$, $\Theta$, and $\Omega$
-
-Academics use $O$, $\Theta$, and $\Omega$ to describe runtimes:
-
-- **$O$(Big $O$):** In academia, $O$ describes an upper bound on the time. An algorithm that prints all the
-values in an array could be described as $O(N)$, but it could also be described as $O(N^2)$, $O(N^3)$ or $O(2^N)$
-(or many other $O$ times). The algorithm is at least as fast as each of these; therefore they are upper
-bounds on the runtime. This is similar to a $\leq$ relationship. If Bob is $X$ years old (I'll
-assume no one lives past age $130$), then you could say $X \leq 130$. It would also be correct to say that
-$X \leq 1000$ or $X \leq 1000000$. It's technically true (although not terribly useful). Likewise, a simple
-algorithm to print the values in an array is $O(N)$ as well as $O(N^3)$ or any runtime bigger than $O(N)$.
-
-- **$\Omega$(big omega):** In academia, $\Omega$ is the equivalent concept but for lower bound. Printing the values in
-an array is $\Omega(N)$ as well as $O(log N)$ and $O(1)$. After all, you know that it won't be faster than those
-runtimes.
-
-- **$\Theta$(big theta):** In academia, $\Theta$ means both $O$ and $\Omega$. That is, an algorithm is $\Theta(N)$ if it is both $O(N)$ and
-$\Omega(N)$. $\Theta$ gives a tight bound on runtime.
-
-In industry people seem to have merged $\Theta$ and $O$ together. Industry's meaning of $O$ is closer to what academics mean by $\Theta$, in that it would be seen as incorrect to describe printing an array as $O(N^2)$. Industry would just say this is $O(N)$.
-Here we will use $O$ in the way that industry tends to use it: By always trying to offer the tightest description of the runtime.
+There are many more runtimes than this. Some ofthe most common ones are $O(log N),O(N log N), O(N), O(N^2), O(2^N)$. There's no fixed list of possible runtimes, though. You can also have multiple variables in your runtime. For example, the time to paint a fence that's $w$ meters wide and $h$ meters high could be described as $O(wh)$ .If you needed $p$ layers of paint, then you could say that the time is $O(whp)$.
 
 ### Big O of DS Algorithms
 
 ```{figure} ../Algorithms/images/image15.PNG
 ---
 name: image15
-scale: 70%
+scale: 50%
 ---
 Big O of some of the popular Machine Learning Algorithms
 ```
