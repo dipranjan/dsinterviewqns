@@ -6,6 +6,8 @@ logo: logo.gif
 email: "thedatascienceinterviewbook@gmail.com"
 
 latex:
+  latex_engine: "xelatex"
+  use_jupyterbook_latex: false
   latex_documents:
     targetname: book.tex
 #######################################################################################

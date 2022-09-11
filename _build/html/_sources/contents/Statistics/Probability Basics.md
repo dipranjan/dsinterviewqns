@@ -185,7 +185,7 @@ Each zebra has 2 options of travel: clockwise or anticlockwise. So a total of $2
 
 Out of this only way in which they donot collide is if all of them travel clockwise or anticlockwise. So a total of $2$.
 
-Therefore the probability of no collision $= 2/8 = 25%$
+Therefore the probability of no collision $= 2/8 = 25%\$
 
 ```
 
@@ -251,7 +251,7 @@ $$
 ```{admonition} Problem: [FACEBOOK] Labeling Content
 :class: tip, dropdown
 
-Facebook has a content team that labels pieces of content on the platform as spam or not spam. $90%$ of them are diligent raters and will label $20%$ of the content as spam and $80%$ as non-spam. The remaining $10%$ are non-diligent raters and will label $0%$ of the content as spam and $100%$ as non-spam. Assume the pieces of content are labeled independently from one another, for every rater. Given that a rater has labeled $4$ pieces of content as good, what is the probability that they are a diligent rater?
+Facebook has a content team that labels pieces of content on the platform as spam or not spam. $90%\$ of them are diligent raters and will label $20%\$ of the content as spam and $80%\$ as non-spam. The remaining $10%\$ are non-diligent raters and will label $0%\$ of the content as spam and $100%\$ as non-spam. Assume the pieces of content are labeled independently from one another, for every rater. Given that a rater has labeled $4$ pieces of content as good, what is the probability that they are a diligent rater?
 ```
 
 ```{admonition} Solution:
@@ -284,7 +284,7 @@ Even though the problem is straightforward one can interpret the problem in many
 For it to be not raining, all friends must be lying. Therefore, the solution must be the inverse of the probability that all three are "messing with you." 
 $(1/3)*(1/3)*(1/3)=1/27$ (3.7% chance they are all lying). 
 
-Since there is only a $3.7%$ chance all three friends are messing with you, there is a $96.3%$ chance it is raining.
+Since there is only a $3.7%\$ chance all three friends are messing with you, there is a $96.3%\$ chance it is raining.
 ```
 
 ```{admonition} Problem: [MICROSOFT] First to Six
@@ -450,8 +450,8 @@ There are two types of raters. Random and independent from our point of view:
 
 - 100 raters are divided into 2 groups according to probabilities:
 
-$20$ lazy raters: $100%$ good ads -> $20$ good ads;
-$80$ careful raters: $60%$ good ads -> $80 * 0.6 = 48$ good ads.
+$20$ lazy raters: $100%\$ good ads -> $20$ good ads;
+$80$ careful raters: $60%\$ good ads -> $80 * 0.6 = 48$ good ads.
 Total $68$ good ads.
 
 - There could be 2 cases:

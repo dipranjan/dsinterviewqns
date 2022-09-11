@@ -29,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/myfile.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -60,7 +61,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Recurrent Neural Network" href="Recurrent%20Neural%20Network.html" />
-    <link rel="prev" title="Anomaly Detection" href="../Algorithms/Anomaly%20Detection.html" />
+    <link rel="prev" title="Big O Analysis" href="../Algorithms/Big%20O%20Analysis.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -252,6 +253,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../Algorithms/Anomaly%20Detection.html">
    Anomaly Detection
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Algorithms/Big%20O%20Analysis.html">
+   Big O Analysis
   </a>
  </li>
 </ul>
@@ -703,7 +709,7 @@ title="Print to PDF"
 <figure class="align-default" id="image1">
 <a class="reference internal image-reference" href="../../_images/image110.PNG"><img alt="../../_images/image110.PNG" src="../../_images/image110.PNG" style="width: 588.4px; height: 546.8000000000001px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 20 </span><span class="caption-text"><a class="reference external" href="https://www.v7labs.com/blog/neural-networks-activation-functions">📖Source</a></span><a class="headerlink" href="#image1" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 23 </span><span class="caption-text"><a class="reference external" href="https://www.v7labs.com/blog/neural-networks-activation-functions">📖Source</a></span><a class="headerlink" href="#image1" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p><strong>An artificial neural network is a network of such neurons.</strong> Neurons in a neural network are arranged in layers. The <em>first</em> and the <em>last</em> layer are called the <em>input</em> and <em>output</em> layers. Input layers have as many neurons as the number of attributes in the data set and the output layer has as many neurons as the number of classes of the target variable (for a classification problem). For a regression problem, the number of neurons in the output layer would be 1 (a numeric variable).
@@ -732,7 +738,7 @@ There are six main things that need to be specified for specifying a neural netw
 <figure class="align-default" id="image2">
 <a class="reference internal image-reference" href="../../_images/image2.gif"><img alt="../../_images/image2.gif" src="../../_images/image2.gif" style="width: 360.0px; height: 378.0px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 21 </span><span class="caption-text">Neural Networks can be used to <em>reasonably</em> approriximate <em>most</em> functions</span><a class="headerlink" href="#image2" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 24 </span><span class="caption-text">Neural Networks can be used to <em>reasonably</em> approriximate <em>most</em> functions</span><a class="headerlink" href="#image2" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -743,7 +749,7 @@ Feed forward neural network architecture consists of following main parts – In
 <figure class="align-default" id="image3">
 <a class="reference internal image-reference" href="../../_images/image3.gif"><img alt="../../_images/image3.gif" src="../../_images/image3.gif" style="width: 448.0px; height: 336.0px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 22 </span><span class="caption-text"><a class="reference external" href="https://machinelearningknowledge.ai/animated-explanation-of-feed-forward-neural-network-architecture/">📖Source</a></span><a class="headerlink" href="#image3" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 25 </span><span class="caption-text"><a class="reference external" href="https://machinelearningknowledge.ai/animated-explanation-of-feed-forward-neural-network-architecture/">📖Source</a></span><a class="headerlink" href="#image3" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -755,7 +761,7 @@ Feed forward neural network architecture consists of following main parts – In
 <figure class="align-default" id="image4">
 <a class="reference internal image-reference" href="../../_images/image4.gif"><img alt="../../_images/image4.gif" src="../../_images/image4.gif" style="width: 448.0px; height: 336.0px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 23 </span><span class="caption-text"><a class="reference external" href="https://machinelearningknowledge.ai/animated-explanation-of-feed-forward-neural-network-architecture/">📖Source</a></span><a class="headerlink" href="#image4" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 26 </span><span class="caption-text"><a class="reference external" href="https://machinelearningknowledge.ai/animated-explanation-of-feed-forward-neural-network-architecture/">📖Source</a></span><a class="headerlink" href="#image4" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>For updating weights and biases using plain backpropagation, you have to scan through the entire data set to make a single update to the weights. This is computationally very expensive for large datasets. Thus, you use multiple batches (or <strong>mini-batches</strong>) of data points, compute the average gradient for a batch, and update the weights based on that gradient.</p>
@@ -820,11 +826,11 @@ Apart from using the parameter norm, there is another popular neural network reg
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../Algorithms/Anomaly%20Detection.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../Algorithms/Big%20O%20Analysis.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Anomaly Detection</p>
+            <p class="prev-next-title">Big O Analysis</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="Recurrent%20Neural%20Network.html" title="next page">

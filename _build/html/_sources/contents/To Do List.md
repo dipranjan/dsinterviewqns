@@ -1,14 +1,14 @@
 ## Log
 
-![Megaphone](../handphoneupd2.gif) **Last updated on <span style="color:red">30 Aug 2022</span>.**
+![Megaphone](../handphoneupd2.gif) **Last updated on <span style="color:red">11 Sep 2022</span>.**
 
 ```{admonition} What's Happening
 :class: tip, dropdown
 
-- 🔥 Sampling
-- 🔥 Excel
-- 🔥 NN
-- 🔥 NLP
+- ⌛ Sampling
+- ⌛ Excel
+- ⌛ NN
+- ⌛ NLP
 - ⌛ Tensorflow
 - ⌛ Airflow
 - ⌛ Neo4j
@@ -32,6 +32,10 @@
 
 ```{admonition} What Happened
 :class: tip, dropdown
+
+**Month of September, 2022**
+- As per suggestions by users PDF of the book as been made available as a paid extra. It can be purchased from [here](https://www.buymeacoffee.com/dearc/e/88363)
+- Big O notation section added
 
 **Month of August, 2022**
 - Behavioral - Management section added

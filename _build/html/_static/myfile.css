@@ -1,0 +1,17 @@
+@media print {
+    .bd-sidebar{
+        visibility: hidden;
+    }
+    .bd-toc {
+        visibility: hidden;
+    }
+    #main-content{
+        min-width: 90%;
+    }
+    footer{
+        visibility: hidden;
+    }
+    p {
+        text-align: justify;
+    }
+}

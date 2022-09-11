@@ -1,2 +1,4 @@
 _build/latex/
 _build/pdf/
+*.pdf
+printpdf.py
