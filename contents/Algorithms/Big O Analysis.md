@@ -32,8 +32,9 @@ The manager has to decide which algorithm to use. To do so, he has to find the c
 
 In the Jupyter notebook, you can use the `%timeit` literal followed by the function call to find the time taken by the function to execute. Look at the following script:
 
-````{panels}
-```
+````{tab-set-code}
+
+```{code-block} python
 '''Alogrithm by Employee 1'''
 def fact(n):
     product = 1
@@ -56,12 +57,12 @@ def fact(n):
 
 %timeit fact(50)
 ```
----
 
-**Output:**
-
+```{code-block} Output
 - 4.16 µs ± 15 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 - 7.41 µs ± 142 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+```
+
 ````
 
 The execution time shows that the first algorithm is faster compared to the second algorithm involving recursion. This example shows the importance of algorithm analysis. In the case of large inputs, the performance difference can become more significant.
@@ -87,7 +88,7 @@ The following are some of the most common Big-O functions:
 | Log Linear  | $O(nlog(n))$ |
 
 
-```{figure} ./image16.png
+```{figure} ../Algorithms/images/image16.PNG
 ---
 height: 200px
 name: image16
@@ -128,7 +129,7 @@ increases linearly with the size of the file. (Yes, this is a bit of a simplific
 any longer to get the file to your friend. The time is constant.
 
 
-```{figure} ./image17.png
+```{figure} ../Algorithms/images/image17.PNG
 ---
 height: 200px
 name: image17
@@ -169,7 +170,7 @@ Here we will use $O$ in the way that industry tends to use it: By always trying 
 ```{figure} ../Algorithms/images/image15.PNG
 ---
 name: image15
-scale: 100%
+scale: 70%
 ---
 Big O of some of the popular Machine Learning Algorithms
 ```

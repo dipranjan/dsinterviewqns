@@ -755,6 +755,43 @@ function is also called its order.</p>
 <p>Suppose a manager gives a task to two of his employees to design an algorithm in Python that calculates the factorial of a number entered by the user.</p>
 <p>The manager has to decide which algorithm to use. To do so, he has to find the complexity of the algorithm. One way to do so is by finding the time required to execute the algorithms.</p>
 <p>In the Jupyter notebook, you can use the <code class="docutils literal notranslate"><span class="pre">%timeit</span></code> literal followed by the function call to find the time taken by the function to execute. Look at the following script:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="eefd1bc1-89d6-4bf7-a41e-4e049dac39eb" name="72ad0d79-dd5f-4233-9d2c-9676292b4853" type="radio">
+</input><label class="sd-tab-label" data-sync-id="tabcode-python" for="eefd1bc1-89d6-4bf7-a41e-4e049dac39eb">
+PYTHON</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;Alogrithm by Employee 1&#39;&#39;&#39;</span>
+<span class="k">def</span> <span class="nf">fact</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">product</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="sd">&#39;&#39;&#39;Uses for loop&#39;&#39;&#39;</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">product</span> <span class="o">=</span> <span class="n">product</span> <span class="o">*</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">product</span>
+
+<span class="o">%</span><span class="n">timeit</span> <span class="n">fact</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+
+<span class="c1">################################</span>
+
+<span class="sd">&#39;&#39;&#39;Alogrithm by Employee 2&#39;&#39;&#39;</span>
+<span class="k">def</span> <span class="nf">fact</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="sd">&#39;&#39;&#39;Uses recursive call&#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">fact</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="o">%</span><span class="n">timeit</span> <span class="n">fact</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="f3763960-52d3-4ed5-86ca-ccb061444019" name="72ad0d79-dd5f-4233-9d2c-9676292b4853" type="radio">
+</input><label class="sd-tab-label" data-sync-id="tabcode-Output" for="f3763960-52d3-4ed5-86ca-ccb061444019">
+OUTPUT</label><div class="sd-tab-content docutils">
+<div class="highlight-Output notranslate"><div class="highlight"><pre><span></span><span class="go">- 4.16 µs ± 15 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)</span>
+<span class="go">- 7.41 µs ± 142 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>The execution time shows that the first algorithm is faster compared to the second algorithm involving recursion. This example shows the importance of algorithm analysis. In the case of large inputs, the performance difference can become more significant.</p>
 <p>However, execution time is not a good metric to measure the complexity of an algorithm since it depends upon the hardware. A more objective complexity analysis metrics for the algorithms is needed. This is where Big O notation comes to play.</p>
 </section>
@@ -794,7 +831,7 @@ function is also called its order.</p>
 </tbody>
 </table>
 <figure class="align-default" id="image16">
-<a class="reference internal image-reference" href="contents/Algorithms/image16.png"><img alt="contents/Algorithms/image16.png" src="contents/Algorithms/image16.png" style="height: 200px;" /></a>
+<a class="reference internal image-reference" href="../../_images/image161.PNG"><img alt="../../_images/image161.PNG" src="../../_images/image161.PNG" style="height: 200px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 20 </span><span class="caption-text">n is the input size and c is a positive constant</span><a class="headerlink" href="#image16" title="Permalink to this image">#</a></p>
 </figcaption>
@@ -831,7 +868,7 @@ increases linearly with the size of the file. (Yes, this is a bit of a simplific
 any longer to get the file to your friend. The time is constant.</p></li>
 </ul>
 <figure class="align-default" id="image17">
-<a class="reference internal image-reference" href="contents/Algorithms/image17.png"><img alt="contents/Algorithms/image17.png" src="contents/Algorithms/image17.png" style="height: 200px;" /></a>
+<a class="reference internal image-reference" href="../../_images/image171.PNG"><img alt="../../_images/image171.PNG" src="../../_images/image171.PNG" style="height: 200px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 21 </span><span class="caption-text">No matter how big the constant is and how slow the linear increase is, linear will at some point surpass the constant.</span><a class="headerlink" href="#image17" title="Permalink to this image">#</a></p>
 </figcaption>
@@ -864,7 +901,7 @@ Here we will use <span class="math notranslate nohighlight">\(O\)</span> in the 
 <section id="big-o-of-ds-algorithms">
 <h2>Big O of DS Algorithms<a class="headerlink" href="#big-o-of-ds-algorithms" title="Permalink to this headline">#</a></h2>
 <figure class="align-default" id="image15">
-<a class="reference internal image-reference" href="../../_images/image151.PNG"><img alt="../../_images/image151.PNG" src="../../_images/image151.PNG" style="width: 1274.0px; height: 1446.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/image151.PNG"><img alt="../../_images/image151.PNG" src="../../_images/image151.PNG" style="width: 891.8px; height: 1012.1999999999999px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 22 </span><span class="caption-text">Big O of some of the popular Machine Learning Algorithms</span><a class="headerlink" href="#image15" title="Permalink to this image">#</a></p>
 </figcaption>

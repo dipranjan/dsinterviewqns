@@ -6,6 +6,14 @@ html_meta:
 ---
 
 ## About this Book
+
+---
+```{epigraph}
+The fellow-pupil can help more than the master because he knows less. The difficulty we want him to explain is one he has recently met. The expert met it so long ago that he has forgotten…
+
+-- C.S. Lewis in his Reflections on the Psalms
+```
+---
  
 Preparing for interviews is a stressful task. There is an enormous amount of resources available in the internet, multiple repositories, there are even companies that help students prepare for interviews at the Big Tech companies. The idea here is to create an web based accessible version of these resources, optimized across devices so people on this journey can benefit from it no matter where they are from.
 
