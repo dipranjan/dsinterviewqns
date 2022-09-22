@@ -162,10 +162,11 @@ The second part of the question is a little tricky, let's start by generalizing 
 
 P(at least 1 three) $= 2*(5^1/6^2) + 5^0/6^2$
 
-Now for N dice: P(at least 1 three) $=$ P(exactly 1 three) $+$  P(2 three) $+$  P(3 three) ... $+$  P(N three)
+Now for $N$ dice: P(at least 1 three) $=$ P(exactly 1 three) $+$  P(2 three) $+$  P(3 three) ... $+$  P(N three)
 
-Combining both $= N * \frac{5^{N-1}}{6^N} + N * \frac{5^{N-2}}{6^N} + N * \frac{5^{N-3}}{6^N} + ... + N * \frac{5^0}{6^N} = \frac{N}{6^N}(5^{N-1} + 5^{N-2} + .. + 1)$
+Combining both $= N * \frac{5^{N-1}}{6^N} + N * \frac{5^{N-2}}{6^N} + N * \frac{5^{N-3}}{6^N} + ... + \frac{5^0}{6^N} = \frac{N}{6^N}(5^{N-1} + ..+5^{N-2} + ..) + 1$
 
+There is a simpler way to solve this problem: calculate the number of ways to not throw any threes, then subtract this number from the total number of ways to throw the dice. For $N=2$, this is $1 - (5/6)^2 = 1 - 25/36 = 11/36$. For $N$, it is $1 - (5/6)^N$. You can see that this is equivalent to the probability calculated using the above sum: $1 - (5/6)^N = (6^N - 5^N)/6^N$.
 ```
 
 ```{admonition} Problem: [FACEBOOK] 3 Zebras

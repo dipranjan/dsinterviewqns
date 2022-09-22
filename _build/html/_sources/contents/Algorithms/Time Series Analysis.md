@@ -152,11 +152,7 @@ $MSLE = \frac{1}{n}\sum\limits_{i=1}^{n} (log(1+y_i) - log(1+\hat{y}_i))^2$
 
 $MAPE = \frac{100}{n}\sum\limits_{i=1}^{n} \frac{|y_i - \hat{y}_i|}{y_i}$ 
 
-
-
-
-
-
+---
 
 #### Questions
 
@@ -173,4 +169,34 @@ Can cross validation be used with Time Series to estimate model parameters autom
 Normal cross-validation cannot be used for time series because one cannot randomly mix values in a fold while preserving this structure. With randomization, all time dependencies between observations will be lost. But something like "cross-validation on a rolling basis" can be used.
 
 The idea is rather simple -- we train our model on a small segment of the time series from the beginning until some $t$, make predictions for the next $t+n$ steps, and calculate an error. Then, we expand our training sample to $t+n$ value, make predictions from $t+n$ until $t+2*n$, and continue moving our test segment of the time series until we hit the last available observation. As a result, we have as many folds as $n$ will fit between the initial training sample and the last observation.
+```
+
+```{admonition} Problem: CNNs in Time Series
+:class: tip, dropdown
+
+How are CNNs used for Time Series Prediction?
+```
+
+```{admonition} Solution:
+:class: dropdown
+
+- The ability of CNNs to learn and automatically extract features from raw input data can be applied to time series forecasting problems. A sequence of observations can be treated like a one-dimensional image that a CNN model can read and distill into the most salient elements.
+- The capability of CNNs has been demonstrated to great effect on time series classification tasks such as automatically detecting human activities based on raw accelerator sensor data from fitness devices and smartphones.
+- CNNs have the support for multivariate input, multivariate output, it can learn arbitrary but complex functional relationships, but does not require that the model learn directly from lag observations. Instead, the model can learn a representation from a large input sequence that is most relevant for the prediction problem.
+```
+
+```{admonition} Problem: Data Prep for Time Series
+:class: tip, dropdown
+
+What are some of Data Preprocessing Operations you would use for Time Series Data?  
+```
+
+```{admonition} Solution:
+:class: dropdown
+It depends on the problem, but some common ones are:
+- Parsing time series information from various sources and formats.
+- Generating sequences of fixed-frequency dates and time spans.
+- Manipulating and converting date times with time zone information.
+- Resampling or converting a time series to a particular frequency.
+- Performing date and time arithmetic with absolute or relative time increments.
 ```
