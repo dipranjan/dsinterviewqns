@@ -198,7 +198,17 @@ Suppose you draw n samples from a uniform distribution U(a, b). What is the MLE 
 ```{admonition} Solution:
 :class: dropdown
 
-Solution Pending
+Let $x_1, x_2, \ldots , x_n$ be the $n$ samples drawn.
+
+Recall the pdf for the uniform distribution function is:
+
+$$f(x)=\frac{1}{b-a}$$
+
+Thus, the likelihood function $\mathcal{L}$ is simply the product of the pdf n times, which is:
+
+$$f(x)=\frac{1}{(b-a)^n}.$$
+
+The MLE will occur at the values of $a$ and $b$ for which that quantity is maximized. Since $(b-a)^n$ is in the denominator, and $b-a$ must always be positive because $b>a$, the likelihood is maximized when $b-a$ is minimized. This means we want $a$ as big as possible, and $b$ as small as possible. But for one of the $x_i$ to be sampled, $a$ must be smaller than that value, (and $b$ must be larger), so the maximum likelihood estimation is $a=\min(x_1, x_2, \ldots , x_n)$ and b=\max(x_1, x_2, \ldots , x_n)$
 
 ```
 
