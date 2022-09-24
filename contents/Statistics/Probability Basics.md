@@ -158,15 +158,16 @@ Suppose you're playing a dice game. You have 2 die.
 
 P(at least 1 three) $=$ P(exactly 1 three) $+$  P(2 three) $= 1/6 * 5/6 + 5/6 * 1/6 + 1/36 = 11/36$
 
-The second part of the question is a little tricky, let's start by generalizing the above equation:
+*Solution recieved from the community via [mail](mailto:thedatascienceinterviewbook@gmail.com)*
 
-P(at least 1 three) $= 2*(5^1/6^2) + 5^0/6^2$
+To count the number of ways to throw at least $1$ three for $N$ dice, you need to sum over all $k$, $1<k<=N$, where $k$ is the number of threes you throw. For each $k$, there are $C(N,k)$ possible combinations of dice that are three. For each of these combinations, there are $5$ possible values for the other $N-K$ dice. So the number of ways to throw $k$ threes with $N$ dice is $5^{(N-k)}*C(N,k)$. 
 
-Now for $N$ dice: P(at least 1 three) $=$ P(exactly 1 three) $+$  P(2 three) $+$  P(3 three) ... $+$  P(N three)
+The total sum over $1<k<=N$ is  $\sum_{k=1}^N 5^{(N-k)} \begin{pmatrix}
+    n\\
+    k\\
+  \end{pmatrix} = 6^N-5^N$. Since there are $6^N$ ways to throw the dice, the probability is $(6^N - 5^N)/6^N = 1 - (5/6)^N$.
 
-Combining both $= N * \frac{5^{N-1}}{6^N} + N * \frac{5^{N-2}}{6^N} + N * \frac{5^{N-3}}{6^N} + ... + \frac{5^0}{6^N} = \frac{N}{6^N}(5^{N-1} + ..+5^{N-2} + ..) + 1$
-
-There is a simpler way to solve this problem: calculate the number of ways to not throw any threes, then subtract this number from the total number of ways to throw the dice. For $N=2$, this is $1 - (5/6)^2 = 1 - 25/36 = 11/36$. For $N$, it is $1 - (5/6)^N$. You can see that this is equivalent to the probability calculated using the above sum: $1 - (5/6)^N = (6^N - 5^N)/6^N$.
+There is a simpler way to solve this problem: calculate the number of ways to not throw any threes, then subtract this number from the total number of ways to throw the dice. For $N=2$, this is $1 - (5/6)^2 = 1 - 25/36 = 11/36$. For $N$, it is $1 - (5/6)^N$. You can see that this is equivalent to the probability calculated using the above sum: $1 - (5/6)^N$.
 ```
 
 ```{admonition} Problem: [FACEBOOK] 3 Zebras

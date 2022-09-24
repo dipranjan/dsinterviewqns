@@ -1,6 +1,6 @@
 ## Log
 
-![Megaphone](../handphoneupd2.gif) **Last updated on <span style="color:red">11 Sep 2022</span>.**
+![Megaphone](../handphoneupd2.gif) **Last updated on <span style="color:red">24 Sep 2022</span>.**
 
 ```{admonition} What's Happening
 :class: tip, dropdown
@@ -10,9 +10,6 @@
 - ⌛ NN
 - ⌛ NLP
 - ⌛ Tensorflow
-- ⌛ Airflow
-- ⌛ Neo4j
-- ⌛ Anomaly Detection
 - ⌛ Regularization
 - ⌛ Confidence Intervals
 - ⌛ Plots
@@ -37,6 +34,9 @@
 - As per suggestions by users PDF of the book as been made available as a paid extra. It can be purchased from [here](https://www.buymeacoffee.com/dearc/e/88363)
 - Big O notation section added
 - Anamoly detection section extensively updated
+- Probability Section `[FACEBOOK] N Dice` problem solution updated
+- Probability Distribution `[SPOTIFY] MLE of Uniform Distribution` problem solution added
+- New Questions added in the Time Series section
 
 **Month of August, 2022**
 - Behavioral - Management section added

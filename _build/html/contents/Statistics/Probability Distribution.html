@@ -913,7 +913,15 @@ Following are the measures of central tendency:</p>
 </div>
 <div class="dropdown admonition">
 <p class="admonition-title">Solution:</p>
-<p>Solution Pending</p>
+<p><em>Solution recieved from the community via <a class="reference external" href="https://github.com/dipranjan/dsinterviewqns/pull/4">merge request</a></em></p>
+<p>Let <span class="math notranslate nohighlight">\(x_1, x_2, \ldots , x_n\)</span> be the <span class="math notranslate nohighlight">\(n\)</span> samples drawn.</p>
+<p>Recall the pdf for the uniform distribution function is:</p>
+<div class="math notranslate nohighlight">
+\[f(x)=\frac{1}{b-a}\]</div>
+<p>Thus, the likelihood function <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> is simply the product of the pdf n times, which is:</p>
+<div class="math notranslate nohighlight">
+\[f(x)=\frac{1}{(b-a)^n}.\]</div>
+<p>The MLE will occur at the values of <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> for which that quantity is maximized. Since <span class="math notranslate nohighlight">\((b-a)^n\)</span> is in the denominator, and <span class="math notranslate nohighlight">\(b-a\)</span> must always be positive because <span class="math notranslate nohighlight">\(b&gt;a\)</span>, the likelihood is maximized when <span class="math notranslate nohighlight">\(b-a\)</span> is minimized. This means we want <span class="math notranslate nohighlight">\(a\)</span> as big as possible, and <span class="math notranslate nohighlight">\(b\)</span> as small as possible. But for one of the <span class="math notranslate nohighlight">\(x_i\)</span> to be sampled, <span class="math notranslate nohighlight">\(a\)</span> must be smaller than that value, (and <span class="math notranslate nohighlight">\(b\)</span> must be larger), so the maximum likelihood estimation is <span class="math notranslate nohighlight">\(a=\min(x_1, x_2, \ldots , x_n)\)</span> and <span class="math notranslate nohighlight">\(b=\max(x_1, x_2, \ldots , x_n)\)</span></p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Problem: [MCKINSEY]  Flipping 576 Times</p>
