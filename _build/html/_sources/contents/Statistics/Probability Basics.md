@@ -169,7 +169,8 @@ The total sum over $1<k<=N$ is  $\sum_{k=1}^N 5^{(N-k)} \begin{pmatrix}
 
 There is a simpler way to solve this problem: calculate the number of ways to not throw any threes, then subtract this number from the total number of ways to throw the dice. For $N=2$, this is $1 - (5/6)^2 = 1 - 25/36 = 11/36$. For $N$, it is $1 - (5/6)^N$. You can see that this is equivalent to the probability calculated using the above sum: $1 - (5/6)^N$.
 
-** Tip: Check the general case for N=2 and see if the numbers match**
+`Tip: Check the general case for N=2 and see if the numbers match`
+ 
 ```
 
 ```{admonition} Problem: [FACEBOOK] 3 Zebras
