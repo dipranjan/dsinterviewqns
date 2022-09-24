@@ -200,3 +200,97 @@ It depends on the problem, but some common ones are:
 - Resampling or converting a time series to a particular frequency.
 - Performing date and time arithmetic with absolute or relative time increments.
 ```
+
+```{admonition} Problem: Missing Value in Time Series
+:class: tip, dropdown
+
+What are some of best ways to handle missing values in Time Series Data?  
+```
+
+```{admonition} Solution:
+:class: dropdown
+
+The most common methodology used for handling missing, unequally spaced, or unsynchronized values is *linear interpolation*. 
+
+The idea is to create estimated values at the desired time stamps. These can be used to generate multivariate time series that are synchronized, equally spaced, and have no missing values.
+Consider the scenario where $y_i$ and  $y_j$ are values for the time series at times $t_i$ and  $t_j$, repectively, where $i < j$. Let $t$ be a time drawn from the interval $(t_i, t_j)$. Then, the interpolated value of the series is given by: 
+$y = y_i + \frac{t-t_i}{t_j-t_i}*(y_j-y_i)$
+```
+
+```{admonition} Problem: Stationarity
+:class: tip, dropdown
+
+Can you explain why time series has to be stationary? 
+```
+
+```{admonition} Solution:
+:class: dropdown
+
+Stationarity is important because, in its absence, a model describing the data will vary in accuracy at different time points. As such, stationarity is required for sample statistics such as means, variances, and correlations to accurately describe the data at all time points of interest.
+
+Looking at the time series plots below, you can notice how the mean and variance of any given segment of time would do a good job representing the whole stationary time series but a relatively poor job representing the whole non-stationary time series. For instance, the mean of the non-stationary time series is much lower from $600<t<800$ and its variance is much higher in this range than in the range from $200<t<400$.
+
+![Stationary vs Non-Stationary](../Algorithms/images/image20.PNG)
+
+What quantities are we typically interested in when we perform statistical analysis on a time series? We want to know
+- Its expected value,
+- Its variance, and
+- The correlation between values $s$ periods apart for a set of values.
+
+To calculate these thingswe use a mean across many time periods. The mean across many time periods is only informative if the expected value is the same across those time periods. If these population parameters can vary, what are we really estimating by taking an average across time?
+
+(Weak) stationarity requires that these population quantities must be the same across time, making the sample average a reasonable way to estimate them.
+```
+
+```{admonition} Problem: IQR in Time Series
+:class: tip, dropdown
+
+How is Interquartile range used in Time series? 
+```
+
+```{admonition} Solution:
+:class: dropdown
+
+It is mostly used to detect outliers in Time Series data.
+```
+
+```{admonition} Problem: Irregular Data 
+:class: tip, dropdown
+
+What does irregularly-spaced spatial data mean in Time series?
+```
+
+```{admonition} Solution:
+:class: dropdown
+- A lot of techniques assume that data is sampled at regularly-spaced intervals of time. This interval between adjacent samples is called the *sampling period*.
+- A lot of data is not or cannot be sampled with a fixed sampling period. For example, if we measure the atmosphere using sensors, the terrain may not allow us to place weather stations exactly 50 miles apart.
+
+There are many different ways to deal with this kind of data which does not have a fixed sampling period. One approach is to interpolate the data onto a grid and then use a technique intended for gridded data.
+```
+
+```{admonition} Problem: Sliding Window 
+:class: tip, dropdown
+
+Explain the Sliding Window method in Time series?
+```
+
+```{admonition} Solution:
+:class: dropdown
+- Time series can be phrased as supervised learning. Given a sequence of numbers for a time series dataset, we can restructure the data to look like a supervised learning problem.
+- In the sliding window method, the previous time steps can be used as input variables, and the next time steps can be used as the output variable. 
+
+In statistics and time series analysis, this is called a lag or lag method. The number of previous time steps is called the window width or size of the lag. This sliding window is the basis for how we can turn any time series dataset into a supervised learning problem.
+```
+
+```{admonition} Problem: LSTM vs MLP 
+:class: tip, dropdown
+Can you discuss on the usage of LSTM vs MLP in Time Series?
+```
+
+```{admonition} Solution:
+:class: dropdown
+
+Multilayer Perceptrons, or MLPs for short, can be applied to time series forecasting. A challenge with using MLPs for time series forecasting is in the preparation of the data. Specifically, lag observations must be flattened into feature vectors. My understanding is that LSTMs captures the relations between time steps, whereas simple MLPs treat each time step as a separated feature (doesn't take succession into consideration).
+
+RNNs are known to be superior to MLP in case of sequential data. But complex models like LSTM and GRU require a lot of data to achieve their potential.
+```

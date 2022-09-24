@@ -831,6 +831,76 @@ title="Print to PDF"
 <li><p>Performing date and time arithmetic with absolute or relative time increments.</p></li>
 </ul>
 </div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: Missing Value in Time Series</p>
+<p>What are some of best ways to handle missing values in Time Series Data?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>The most common methodology used for handling missing, unequally spaced, or unsynchronized values is <em>linear interpolation</em>.</p>
+<p>The idea is to create estimated values at the desired time stamps. These can be used to generate multivariate time series that are synchronized, equally spaced, and have no missing values.
+Consider the scenario where <span class="math notranslate nohighlight">\(y_i\)</span> and  <span class="math notranslate nohighlight">\(y_j\)</span> are values for the time series at times <span class="math notranslate nohighlight">\(t_i\)</span> and  <span class="math notranslate nohighlight">\(t_j\)</span>, repectively, where <span class="math notranslate nohighlight">\(i &lt; j\)</span>. Let <span class="math notranslate nohighlight">\(t\)</span> be a time drawn from the interval <span class="math notranslate nohighlight">\((t_i, t_j)\)</span>. Then, the interpolated value of the series is given by:
+<span class="math notranslate nohighlight">\(y = y_i + \frac{t-t_i}{t_j-t_i}*(y_j-y_i)\)</span></p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: Stationarity</p>
+<p>Can you explain why time series has to be stationary?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>Stationarity is important because, in its absence, a model describing the data will vary in accuracy at different time points. As such, stationarity is required for sample statistics such as means, variances, and correlations to accurately describe the data at all time points of interest.</p>
+<p>Looking at the time series plots below, you can notice how the mean and variance of any given segment of time would do a good job representing the whole stationary time series but a relatively poor job representing the whole non-stationary time series. For instance, the mean of the non-stationary time series is much lower from <span class="math notranslate nohighlight">\(600&lt;t&lt;800\)</span> and its variance is much higher in this range than in the range from <span class="math notranslate nohighlight">\(200&lt;t&lt;400\)</span>.</p>
+<p><img alt="Stationary vs Non-Stationary" src="../../_images/image20.PNG" /></p>
+<p>What quantities are we typically interested in when we perform statistical analysis on a time series? We want to know</p>
+<ul class="simple">
+<li><p>Its expected value,</p></li>
+<li><p>Its variance, and</p></li>
+<li><p>The correlation between values <span class="math notranslate nohighlight">\(s\)</span> periods apart for a set of values.</p></li>
+</ul>
+<p>To calculate these thingswe use a mean across many time periods. The mean across many time periods is only informative if the expected value is the same across those time periods. If these population parameters can vary, what are we really estimating by taking an average across time?</p>
+<p>(Weak) stationarity requires that these population quantities must be the same across time, making the sample average a reasonable way to estimate them.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: IQR in Time Series</p>
+<p>How is Interquartile range used in Time series?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>It is mostly used to detect outliers in Time Series data.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: Irregular Data </p>
+<p>What does irregularly-spaced spatial data mean in Time series?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<ul class="simple">
+<li><p>A lot of techniques assume that data is sampled at regularly-spaced intervals of time. This interval between adjacent samples is called the <em>sampling period</em>.</p></li>
+<li><p>A lot of data is not or cannot be sampled with a fixed sampling period. For example, if we measure the atmosphere using sensors, the terrain may not allow us to place weather stations exactly 50 miles apart.</p></li>
+</ul>
+<p>There are many different ways to deal with this kind of data which does not have a fixed sampling period. One approach is to interpolate the data onto a grid and then use a technique intended for gridded data.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: Sliding Window </p>
+<p>Explain the Sliding Window method in Time series?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<ul class="simple">
+<li><p>Time series can be phrased as supervised learning. Given a sequence of numbers for a time series dataset, we can restructure the data to look like a supervised learning problem.</p></li>
+<li><p>In the sliding window method, the previous time steps can be used as input variables, and the next time steps can be used as the output variable.</p></li>
+</ul>
+<p>In statistics and time series analysis, this is called a lag or lag method. The number of previous time steps is called the window width or size of the lag. This sliding window is the basis for how we can turn any time series dataset into a supervised learning problem.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: LSTM vs MLP </p>
+<p>Can you discuss on the usage of LSTM vs MLP in Time Series?</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p>Multilayer Perceptrons, or MLPs for short, can be applied to time series forecasting. A challenge with using MLPs for time series forecasting is in the preparation of the data. Specifically, lag observations must be flattened into feature vectors. My understanding is that LSTMs captures the relations between time steps, whereas simple MLPs treat each time step as a separated feature (doesn’t take succession into consideration).</p>
+<p>RNNs are known to be superior to MLP in case of sequential data. But complex models like LSTM and GRU require a lot of data to achieve their potential.</p>
+</div>
 </section>
 </section>
 
