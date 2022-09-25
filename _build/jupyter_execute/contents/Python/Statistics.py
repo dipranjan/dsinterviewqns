@@ -25,7 +25,7 @@
 # Write a function to generate N samples from a normal distribution and plot the histogram.
 # ```
 
-# In[6]:
+# In[5]:
 
 
 import numpy as np
@@ -54,10 +54,38 @@ normal_sample_generator(10000)
 # Given a random Bernoulli trial generator, write a function to return a value sampled from a normal distribution.
 # ```
 
-# ```{admonition} Solution:
-# :class: dropdown
-# Solution pending, [Reference material link](Given a random Bernoulli trial generator, how do you return a value sampled from a normal distribution?)
-# ```
+# In[2]:
+
+
+# *Solution recieved from the community via [merge request](https://github.com/dipranjan/dsinterviewqns/pull/5)*
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# straightforward using the central limit theorem.
+
+p = .5
+n = 10000
+
+# returns standard normal output via the central limit theorem
+def standard_normal_output(p,n):
+    bernoulli_mean = p
+    bernoulli_variance = p*(1-p)
+    bernoulli_std = abs(np.sqrt(bernoulli_variance))
+    sample = np.random.binomial(size = n, n = 1, p = p)
+    return (sample.mean() - bernoulli_mean)/(bernoulli_std/np.sqrt(n))
+
+# now we plot this output 10000 times to indeed show it is a standard normal distribution
+def plot_output():
+    outputs=[]
+    for i in range(0,n):
+        outputs.append(standard_normal_output(p=p,n=n))
+    num_bins = 20
+    plt.hist(outputs, bins=num_bins, facecolor='blue', alpha=0.5)
+    plt.show() 
+plot_output()
+
 
 # ```{admonition} Problem: [PINTEREST] Interquartile Distance
 # :class: dropdown, tip
@@ -65,7 +93,7 @@ normal_sample_generator(10000)
 # Given an array of unsorted random numbers (decimals) find the interquartile distance.
 # ```
 
-# In[9]:
+# In[3]:
 
 
 # Interquartile distance is the difference between first and third quartile
@@ -109,7 +137,7 @@ print("Interquartile distance: ", qtl_1 - qtl_3)
 # 
 # ````
 
-# In[9]:
+# In[4]:
 
 
 import pandas as pd

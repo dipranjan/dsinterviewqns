@@ -705,9 +705,42 @@ title="Print to PDF"
 <p class="admonition-title">Problem: [UBER] Bernoulli trial generator</p>
 <p>Given a random Bernoulli trial generator, write a function to return a value sampled from a normal distribution.</p>
 </div>
-<div class="dropdown admonition">
-<p class="admonition-title">Solution:</p>
-<p>Solution pending, [Reference material link](Given a random Bernoulli trial generator, how do you return a value sampled from a normal distribution?)</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># *Solution recieved from the community via [merge request](https://github.com/dipranjan/dsinterviewqns/pull/5)*</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># straightforward using the central limit theorem.</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="mf">.5</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10000</span>
+
+<span class="c1"># returns standard normal output via the central limit theorem</span>
+<span class="k">def</span> <span class="nf">standard_normal_output</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">bernoulli_mean</span> <span class="o">=</span> <span class="n">p</span>
+    <span class="n">bernoulli_variance</span> <span class="o">=</span> <span class="n">p</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">p</span><span class="p">)</span>
+    <span class="n">bernoulli_std</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">bernoulli_variance</span><span class="p">))</span>
+    <span class="n">sample</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="n">n</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">p</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">-</span> <span class="n">bernoulli_mean</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">bernoulli_std</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+
+<span class="c1"># now we plot this output 10000 times to indeed show it is a standard normal distribution</span>
+<span class="k">def</span> <span class="nf">plot_output</span><span class="p">():</span>
+    <span class="n">outputs</span><span class="o">=</span><span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">outputs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">standard_normal_output</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="n">p</span><span class="p">,</span><span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">))</span>
+    <span class="n">num_bins</span> <span class="o">=</span> <span class="mi">20</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">num_bins</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> 
+<span class="n">plot_output</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Statistics_7_0.png" src="../../_images/Statistics_7_0.png" />
+</div>
 </div>
 <div class="dropdown tip admonition">
 <p class="admonition-title">Problem: [PINTEREST] Interquartile Distance</p>
@@ -733,8 +766,8 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[54.81, 65.68, 63.85, 58.29, 60.14, 53.23, 52.58, 51.62, 61.6, 57.85, 51.37, 38.7, 35.87, 33.95, 61.65, 33.59, 61.33, 44.97, 62.49, 39.67, 51.03, 45.79, 60.99, 60.49, 64.8, 46.16, 46.61, 34.06, 37.78, 56.72, 39.62, 61.38, 55.27, 40.53, 49.31, 58.95, 37.49, 34.39, 60.47, 56.12, 61.41, 34.56, 58.18, 56.35, 63.59, 50.59, 61.51, 42.02, 52.43, 56.71]
-Interquartile distance:  -17.7275
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[35.08, 50.02, 60.4, 51.82, 37.31, 40.69, 39.67, 45.21, 45.7, 34.52, 42.25, 42.06, 57.53, 45.21, 52.25, 66.18, 34.77, 53.83, 35.99, 33.68, 47.57, 51.62, 38.79, 58.53, 51.25, 61.53, 33.49, 64.59, 35.93, 36.07, 63.0, 46.17, 34.36, 50.61, 50.73, 34.07, 65.38, 59.51, 42.84, 62.86, 54.46, 54.87, 49.58, 65.68, 59.23, 65.94, 38.46, 59.21, 55.28, 55.94]
+Interquartile distance:  -19.269999999999996
 </pre></div>
 </div>
 </div>
