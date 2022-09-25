@@ -34,7 +34,7 @@
 - As per suggestions by users PDF of the book as been made available as a paid extra. It can be purchased from [here](https://www.buymeacoffee.com/dearc/e/88363)
 - Big O notation section added
 - Anamoly detection and Time Series section extensively updated
-- Probability `[FACEBOOK] N Dice` and `[SPOTIFY] MLE of Uniform Distribution` problem solution updated
+- Probability `[FACEBOOK] N Dice`, `[SPOTIFY] MLE of Uniform Distribution`,`Bernoulli trial generator` problem solution updated
 
 **Month of August, 2022**
 - Behavioral - Management section added
