@@ -91,7 +91,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="visually-hidden">Toggle in-page Table of Contents</div>
 </label>
 <!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
+<div class="announcement header-item noprint">As per user request PDF version of the book is now available 🥳 Check the footer for the link to purchase it!!!</div>
 <div class="header header-item noprint"></div>
 
     
@@ -456,7 +456,10 @@ const thebe_selector_output = ".output, .cell_output"
              <!-- To handle the deprecated key -->
             
             <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            <div>
+    <a href="https://www.buymeacoffee.com/dearc"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=dearc&button_colour=b20a0a&font_colour=ffffff&font_family=Bree&outline_colour=ffffff&coffee_colour=FFDD00" /></a>
+</div>
+
             </div>
             
         </div>
@@ -901,6 +904,15 @@ Consider the scenario where <span class="math notranslate nohighlight">\(y_i\)</
 <p>Multilayer Perceptrons, or MLPs for short, can be applied to time series forecasting. A challenge with using MLPs for time series forecasting is in the preparation of the data. Specifically, lag observations must be flattened into feature vectors. My understanding is that LSTMs captures the relations between time steps, whereas simple MLPs treat each time step as a separated feature (doesn’t take succession into consideration).</p>
 <p>RNNs are known to be superior to MLP in case of sequential data. But complex models like LSTM and GRU require a lot of data to achieve their potential.</p>
 </div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: Sequential vs Non-Sequential</p>
+<p>Can a CNN (or other non-sequential deep learning models) outperform LSTM (or other sequential models) in time series data</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p><em>(Source)[<a class="reference external" href="https://ai.stackexchange.com/questions/16818/can-non-sequential-deep-learning-models-outperform-sequential-models-in-time-ser">https://ai.stackexchange.com/questions/16818/can-non-sequential-deep-learning-models-outperform-sequential-models-in-time-ser</a>]</em>
+You are right CNN based models can outperform RNN. You can take a look at this <a class="reference external" href="https://arxiv.org/pdf/1803.01271.pdf">paper</a> where they compared different RNN models with TCN (temporal convolutional networks) on different sequence modeling tasks. Even though there are no big differences in terms of results there are some nice properties that CNN based models offers such as: parallelism, stable gradients and low training memory footprint. In addition to CNN based models there are also attention based models (you might want to take a look at the <a class="reference external" href="https://papers.nips.cc/paper/7181-attention-is-all-you-need.pdf">transformer</a>)</p>
+</div>
 </section>
 </section>
 
@@ -956,7 +968,6 @@ Consider the scenario where <span class="math notranslate nohighlight">\(y_i\)</
   
     <div class="extra_footer">
       <p>
-<a href="https://www.buymeacoffee.com/dearc" target="_blank"><img src="https://img.shields.io/badge/Support-Buy%20me%20a%20%E2%98%95-orange?style=flat-square&logo=appveyor.svg" alt="Buy Me A Coffee"></a>
 <a href="https://dearc.medium.com/membership" target="_blank"><img src="https://img.shields.io/badge/Support-Medium%20Referral-lightgrey?style=flat-square&logo=appveyor.svg" alt="Medium Membership"></a>
 <a href="https://www.linkedin.com/company/the-data-science-interview-book/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BeglbXB3xT0mopZBzReqMEQ%3D%3D" target="_blank"><img src="https://img.shields.io/badge/Follow-LinkedIn-0077B5?style=flat-square&logo=appveyor.svg" alt="Follow LinkedIn"></a>
 <a href="https://github.com/dipranjan/dsinterviewqns/discussions" target="_blank"><img src="https://img.shields.io/badge/Discussion%20Forum-%F0%9F%99%8A%20%20%F0%9F%99%88%20%20%F0%9F%99%89-0172B3?style=flat-square&logo=appveyor.svg" alt="Discussion Forum"></a>

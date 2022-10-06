@@ -294,3 +294,15 @@ Multilayer Perceptrons, or MLPs for short, can be applied to time series forecas
 
 RNNs are known to be superior to MLP in case of sequential data. But complex models like LSTM and GRU require a lot of data to achieve their potential.
 ```
+
+```{admonition} Problem: Sequential vs Non-Sequential
+:class: tip, dropdown
+Can a CNN (or other non-sequential deep learning models) outperform LSTM (or other sequential models) in time series data 
+```
+
+```{admonition} Solution:
+:class: dropdown
+*(Source)[https://ai.stackexchange.com/questions/16818/can-non-sequential-deep-learning-models-outperform-sequential-models-in-time-ser]*
+You are right CNN based models can outperform RNN. You can take a look at this [paper](https://arxiv.org/pdf/1803.01271.pdf) where they compared different RNN models with TCN (temporal convolutional networks) on different sequence modeling tasks. Even though there are no big differences in terms of results there are some nice properties that CNN based models offers such as: parallelism, stable gradients and low training memory footprint. In addition to CNN based models there are also attention based models (you might want to take a look at the [transformer](https://papers.nips.cc/paper/7181-attention-is-all-you-need.pdf))
+```
+
