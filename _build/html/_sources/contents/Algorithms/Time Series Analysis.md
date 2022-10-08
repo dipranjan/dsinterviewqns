@@ -289,7 +289,6 @@ Can you discuss on the usage of LSTM vs MLP in Time Series?
 
 ```{admonition} Solution:
 :class: dropdown
-
 Multilayer Perceptrons, or MLPs for short, can be applied to time series forecasting. A challenge with using MLPs for time series forecasting is in the preparation of the data. Specifically, lag observations must be flattened into feature vectors. My understanding is that LSTMs captures the relations between time steps, whereas simple MLPs treat each time step as a separated feature (doesn't take succession into consideration).
 
 RNNs are known to be superior to MLP in case of sequential data. But complex models like LSTM and GRU require a lot of data to achieve their potential.
@@ -302,7 +301,124 @@ Can a CNN (or other non-sequential deep learning models) outperform LSTM (or oth
 
 ```{admonition} Solution:
 :class: dropdown
-*(Source)[https://ai.stackexchange.com/questions/16818/can-non-sequential-deep-learning-models-outperform-sequential-models-in-time-ser]*
+*[Source](https://ai.stackexchange.com/questions/16818/can-non-sequential-deep-learning-models-outperform-sequential-models-in-time-ser)*
+
 You are right CNN based models can outperform RNN. You can take a look at this [paper](https://arxiv.org/pdf/1803.01271.pdf) where they compared different RNN models with TCN (temporal convolutional networks) on different sequence modeling tasks. Even though there are no big differences in terms of results there are some nice properties that CNN based models offers such as: parallelism, stable gradients and low training memory footprint. In addition to CNN based models there are also attention based models (you might want to take a look at the [transformer](https://papers.nips.cc/paper/7181-attention-is-all-you-need.pdf))
 ```
 
+```{admonition} Problem: Long Time Series
+:class: tip, dropdown
+What's the best architecture for time series prediction with a long dataset?
+```
+
+```{admonition} Solution:
+:class: dropdown
+*[Source](https://ai.stackexchange.com/questions/17802/whats-the-best-architecture-for-time-series-prediction-with-a-long-dataset#:~:text=Yes%2C%20LSTM%20are%20ideal%20for%20this.)*
+
+LSTM is ideal for this. For even stronger representational capacity, make your LSTM's multi-layered. Using 1-dimensional convolutions in a CNN is a common way to exctract information from time series too, so there's no harm in trying. Typically, you'll test many models out and take the one that has best validation performance.
+```
+
+```{admonition} Problem: Correlation
+:class: tip, dropdown
+How to use Correlation in Time series data?
+```
+
+```{admonition} Solution:
+:class: dropdown
+*[Source](https://stats.stackexchange.com/questions/133155/how-to-use-pearson-correlation-correctly-with-time-series)*
+
+Pearson correlation is used to look at correlation between series ... but being time series the correlation is looked at across different lags -- the cross-correlation function. The cross-correlation is impacted by dependence within-series, so in many cases the within-series dependence should be removed first. So to use this correlation, rather than smoothing the series, it's actually more common (because it's meaningful) to look at dependence between residuals - the rough part that's left over after a suitable model is found for the variables.
+
+You probably want to begin with some basic resources on time series models before delving into trying to figure out whether a Pearson correlation across (presumably) nonstationary, smoothed series is interpretable.
+
+In particular, you'll probably want to look into spurious correlation. The point about spurious correlation is that series can appear correlated, but the correlation itself is not meaningful. Consider two people tossing two distinct coins counting number of heads so far minus number of tails so far as the value of their series.
+
+(So if person-1 tosses $HTHH$... they have $3-1 = 2$ for the value at the $4^{th}$ time step, and their series goes $1,0,1,2,....$)
+
+Obviously there's no connection whatever between the two series. Clearly neither can tell you the first thing about the other!
+
+But look at the sort of correlations you get between pairs of coins:
+
+![2 series for comparison](../Algorithms/images/image21.PNG)
+
+If I didn't tell you what those were, and you took any pair of those series by themselves, those would be impressive correlations would they not?
+
+But they're all meaningless. Utterly spurious. None of the three pairs are really any more positively or negatively related to each other than any of the others -- its just cumulated noise. The spuriousness isn't just about prediction, the whole notion of of considering association between series without taking account of the within-series dependence is misplaced.
+
+All you have here is within-series dependence. There's no actual cross-series relation whatever.
+
+Once you deal properly with the issue that makes these series auto-dependent - they're all integrated (Bernoulli random walks), so you need to difference them - the "apparent" association disappears (the largest absolute cross-series correlation of the three is 0.048).
+
+What that tells you is the truth -- the apparent association is a mere illusion caused by the dependence within-series.
+
+If your question asked "how to use Pearson correlation correctly with time series" -- so please understand: if there's within-series dependence and you don't deal with it first, you won't be using it correctly.
+
+Further, smoothing won't reduce the problem of serial dependence; quite the opposite -- it makes it even worse! Here are the correlations after smoothing (default loess smooth - of series vs index - performed in R):
+
+|       | coin1      | coin2      |
+|-------|------------|------------|
+| coin2 | 0.9696378  |            |
+| coin3 | -0.8829326 | -0.7733559 |
+
+They all got further from 0. They're all still nothing but meaningless noise, though now it's smoothed, cumulated noise. (By smoothing, we reduce the variability in the series we put into the correlation calculation, so that may be why the correlation goes up.)
+
+*Check the link given above for a detailed discussion*
+```
+
+```{admonition} Problem: State Space Model and Kalman Filtering
+:class: tip, dropdown
+Describe in details how State Space Model and Kalman Filtering are used in Time Series forecasting?
+```
+
+```{admonition} Solution:
+:class: dropdown
+*[Resource](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjDh_W1_dD6AhWU-DgGHY5OAlMQFnoECBMQAQ&url=https%3A%2F%2Ftowardsdatascience.com%2Fstate-space-model-and-kalman-filter-for-time-series-prediction-basic-structural-dynamic-linear-2421d7b49fa6&usg=AOvVaw0u-sCm-kITU5I-Ptdc9K8s) [Source](https://mfe.baruch.cuny.edu/wp-content/uploads/2014/12/TS_Lecture5_2019.pdf)*
+
+A state space model (SSM) is a time series model in which the time series $Y_t$ is interpreted as the result of a noisy observation of a stochastic process $X_t$. The values of the variables $X_t$ and $Y_t$ can be continuous (scalar or vector) or discrete. Graphically, an SSM is represented as follows:
+
+![State Space Model](../Algorithms/images/image22.PNG)
+
+SSMs belong to the realm of Bayesian inference, and they have been successfully applied in many fields to solve a broad range of problems. It is usually assumed that the state process $X_t$ is Markovian. The most well studied SSM is the Kalman filter, for which the processes above are linear and and the sources of randomness are Gaussian. 
+
+Let $T$ denote the time horizon. Our broad goal is to make inference about the states Xt based on a set of observations $Y_1, . . . , Y_t$.
+Three questions are of particular interest:
+- **Filtering:** $t < T$. What can we infer about the current state of the system based on all available observations?
+- **Smoothing:** $t = T$. What can be inferred about the system based on the information contained in the entire data sample? In particular, how can we back fill missing observations?
+- **Forecasting:** $t > T$. What is the optimal prediction of a future observation and/or a future state of the system?
+
+In principle, any inference for this model can be done using the standard methods of multivariate statistics. However, these methods require storing large amounts of data and inverting $tn × tn$ matrices. Notice that, as new data arrive, the storage requirements and matrix dimensionality increase. This is frequently computationally intractable and impractical. Instead, the Kalman filter relies on a recursive approach which does not require significant storage resources and involves inverting $n × n$ matrices only.
+```
+
+```{admonition} Problem: State Space Model vs Conventional Methodologies
+:class: tip, dropdown
+What are disadvantages of state-space models and Kalman Filter for time-series modelling over let's say conventional methodologies like ARIMA, VAR or ad-hoc/heuristic methods?
+```
+
+```{admonition} Solution:
+:class: dropdown
+*[Source](https://stats.stackexchange.com/questions/78287/what-are-disadvantages-of-state-space-models-and-kalman-filter-for-time-series-m)*
+
+- Overall - compared to ARIMA, state-space models allow you to model more complex processes, have interpretable structure and easily handle data irregularities; but for this you pay with increased complexity of a model, harder calibration, less community knowledge.
+
+- ARIMA is a universal approximator - you don't care what is the true model behind your data and you use universal ARIMA diagnostic and fitting tools to approximate this model. It is like a polynomial curve fitting - you don't care what is the true function, you always can approximate it with a polynomial of some degree.
+
+- State-space models naturally require you to write-down some reasonable model for your process (which is good - you use your prior knowledge of your process to improve estimates). Of course, if you don't have any idea of your process, you always can use some universal state-space model also - e.g. represent ARIMA in a state-space form. But then ARIMA in its original form has more parsimonious formulation - without introducing unnecessary hidden states.
+
+- Because there is such a great variety of state-space models formulations (much richer than class of ARIMA models), behavior of all these potential models is not well studied and if the model you formulated is complicated - it's hard to say how it will behave under different circumstances. Of course, if your state-space model is simple or composed of interpretable components, there is no such problem. But ARIMA is always the same well studied ARIMA so it should be easier to anticipate its behavior even if you use it to approximate some complex process.
+
+- Because state-space allows you directly and exactly model complex/nonlinear models, then for these complex/nonlinear models you may have problems with stability of filtering/prediction (EKF/UKF divergence, particle filter degradation). You may also have problems with calibrating complicated-model's parameters - it's a computationally-hard optimization problem. ARIMA is simple, has less parameters (1 noise source instead of 2 noise sources, no hidden variables) so its calibration is simpler.
+
+- For state-space there is less community knowledge and software in statistical community than for ARIMA.
+```
+
+```{admonition} Problem: Discrete Wavelet Transform
+:class: tip, dropdown
+Have you heard of Discrete Wavelet Transform in time series?
+```
+
+```{admonition} Solution:
+:class: dropdown
+*[Source](https://stackoverflow.com/questions/68303601/wavelet-for-time-series)*
+
+A Discrete Wavelet Transform (DWT) allows you to decompose your input data into a set of discrete levels, providing you with information about the frequency content of the signal i.e. determining whether the signal contains high frequency variations or low frequency trends. Think of it as applying several band-pass filters to your input data.
+```

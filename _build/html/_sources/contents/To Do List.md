@@ -1,7 +1,5 @@
 ## Log
 
-![Megaphone](../handphoneupd2.gif) **Last updated on <span style="color:red">24 Sep 2022</span>.**
-
 ```{admonition} What's Happening
 :class: tip, dropdown
 
@@ -29,6 +27,9 @@
 
 ```{admonition} What Happened
 :class: tip, dropdown
+
+**Month of October, 2022**
+- More questions added to the Time Series Section
 
 **Month of September, 2022**
 - As per suggestions by users PDF of the book as been made available as a paid extra. It can be purchased from [here](https://www.buymeacoffee.com/dearc/e/88363)
