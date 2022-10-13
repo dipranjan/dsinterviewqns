@@ -36,6 +36,7 @@
 - Big O notation section added
 - Anamoly detection and Time Series section extensively updated
 - Probability `[FACEBOOK] N Dice`, `[SPOTIFY] MLE of Uniform Distribution`,`Bernoulli trial generator` problem solution updated
+- Business Scenarios section updated
 
 **Month of August, 2022**
 - Behavioral - Management section added
