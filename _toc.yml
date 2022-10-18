@@ -22,6 +22,7 @@ parts:
     - file: contents/Data/Hyperparameter optimization
   - caption: Algorithms
     chapters:
+    - file: contents/Algorithms/Diagnostics
     - file: contents/Algorithms/Regression
     - file: contents/Algorithms/Generative VS Discriminative Models
     - file: contents/Algorithms/Classification

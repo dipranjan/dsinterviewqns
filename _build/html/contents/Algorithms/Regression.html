@@ -61,7 +61,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Generative vs Discriminative Models" href="Generative%20VS%20Discriminative%20Models.html" />
-    <link rel="prev" title="Hyperparameter Optimization" href="../Data/Hyperparameter%20optimization.html" />
+    <link rel="prev" title="Bias/Variance Tradeoff" href="Diagnostics.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -91,7 +91,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="visually-hidden">Toggle in-page Table of Contents</div>
 </label>
 <!-- Headers at the top -->
-<div class="announcement header-item noprint">✨Book Last updated on 13 Oct'22 ✨ PDF version of the book is now available 🥳 Check the footer for the link!!!</div>
+<div class="announcement header-item noprint">✨Book Last updated on 18 Oct'22 ✨ PDF version of the book is now available 🥳 Check the footer for the link!!!</div>
 <div class="header header-item noprint"></div>
 
     
@@ -225,6 +225,11 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Diagnostics.html">
+   Bias/Variance Tradeoff
+  </a>
+ </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Regression
@@ -730,7 +735,7 @@ title="Print to PDF"
 <figure class="align-default" id="image2">
 <a class="reference internal image-reference" href="../../_images/image8.PNG"><img alt="../../_images/image8.PNG" src="../../_images/image8.PNG" style="width: 376.2px; height: 228.0px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 10 </span><span class="caption-text"><a class="reference external" href="https://xkcd.com/605/">📖Source</a></span><a class="headerlink" href="#image2" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text"><a class="reference external" href="https://xkcd.com/605/">📖Source</a></span><a class="headerlink" href="#image2" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p><span class="math notranslate nohighlight">\(Y = b_0 + b_1 * x_1 + b_2 * x_2 + \epsilon\)</span></p>
@@ -738,7 +743,7 @@ title="Print to PDF"
 <figure class="align-default" id="id1">
 <img alt="../../_images/image2.PNG" src="../../_images/image2.PNG" />
 <figcaption>
-<p><span class="caption-number">Fig. 11 </span><span class="caption-text"><a class="reference external" href="https://www.shutterstock.com/image-illustration/annotated-diagram-explaining-components-graph-showing-1406041139">📖Source</a></span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text"><a class="reference external" href="https://www.shutterstock.com/image-illustration/annotated-diagram-explaining-components-graph-showing-1406041139">📖Source</a></span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <section id="metrics">
@@ -762,16 +767,12 @@ title="Print to PDF"
 <p><a class="reference external" href="https://www.analyticsvidhya.com/blog/2016/01/ridge-lasso-regression-python-complete-tutorial/">📖Explanation</a></p>
 <p>Penalized regression is similar in spirit to AIC. Instead of explicitly searching through a discrete set of models, the model-fitting equation incorporates a constraint that penalizes the model for too many variables (parameters). Rather than eliminating predictor variables entirely — as with stepwise, forward, and backward selection — penalized regression applies the penalty by reducing coefficients, in some cases to near zero. Common penalized regression methods are ridge regression and lasso regression.
 Regularization is nothing but adding a penalty term to the objective function and control the model complexity using that penalty term. It can be used for many machine learning Algorithms. Both Ridge and Lasso regression uses <span class="math notranslate nohighlight">\(L2\)</span> and <span class="math notranslate nohighlight">\(L1\)</span> regularizations.</p>
-<ul class="simple">
-<li><p><strong>Ridge Regression (L2)</strong>: <span class="math notranslate nohighlight">\(\text{RSS} + \lambda (\sum_{j=1}^p b_j^2)\)</span>, the value of hyperparameter <span class="math notranslate nohighlight">\(\lambda\)</span> can be found using cross-validation</p></li>
-<li><p><strong>LASSO Regression (L1)</strong>: <span class="math notranslate nohighlight">\(\text{RSS} + \lambda (\sum_{j=1}^p \lVert b_j\rVert)\)</span>, the value of hyperparameter <span class="math notranslate nohighlight">\(\lambda\)</span> can be found using cross-validation. It’s full form is Least Absolute Shrinkage and Selection Operator</p></li>
-</ul>
 </li>
 </ul>
 <figure class="align-default" id="image9">
-<a class="reference internal image-reference" href="../../_images/image9.PNG"><img alt="../../_images/image9.PNG" src="../../_images/image9.PNG" style="width: 536.9px; height: 402.5px;" /></a>
+<a class="reference internal image-reference" href="../../_images/image231.PNG"><img alt="../../_images/image231.PNG" src="../../_images/image231.PNG" style="width: 713.7px; height: 411.3px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 12 </span><span class="caption-text">LASSO vs Ridge, the red contours are that of RSS whereas the geometric shapes are that of Ridge and Lasso. <a class="reference external" href="https://towardsdatascience.com/ridge-and-lasso-regression-a-complete-guide-with-python-scikit-learn-e20e34bcbf0b">(📖Source)</a></span><a class="headerlink" href="#image9" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text"><a class="reference external" href="https://stanford.edu/~shervine/teaching/cs-229/cheatsheet-machine-learning-tips-and-tricks">📖Source</a></span><a class="headerlink" href="#image9" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="admonition note">
@@ -1019,11 +1020,11 @@ where each diagonal term in the matrix D represents the error term used for each
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../Data/Hyperparameter%20optimization.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="Diagnostics.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Hyperparameter Optimization</p>
+            <p class="prev-next-title">Bias/Variance Tradeoff</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="Generative%20VS%20Discriminative%20Models.html" title="next page">
