@@ -646,6 +646,11 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ensemble-learning">
+   Ensemble Learning
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#boosting">
    Boosting
   </a>
@@ -732,6 +737,11 @@ title="Print to PDF"
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ensemble-learning">
+   Ensemble Learning
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#boosting">
@@ -885,6 +895,21 @@ title="Print to PDF"
 </section>
 </section>
 <hr class="docutils" />
+<section id="ensemble-learning">
+<h2>Ensemble Learning<a class="headerlink" href="#ensemble-learning" title="Permalink to this headline">#</a></h2>
+<p>Ensemble Learning is called the Wisdom of the crowd. Combine multiple weak models/learners into one predictive model to reduce bias, variance and/or improve accuracy.</p>
+<ul class="simple">
+<li><p><strong>Bagging:</strong> Trains N different weak models (usually of same types – homogenous) with N non-overlapping subset of the input dataset in parallel. In the test phase, each model is evaluated. The label with the greatest number of predictions is selected as the prediction. Bagging methods reduces variance of the prediction</p></li>
+<li><p><strong>Boosting:</strong> Trains N different weak models (usually of same types – homogenous) with the complete dataset in a sequential order. The datapoints wrongly classified with previous weak model is provided more weights to that they can be classified by the next weak leaner properly. In the test phase, each model is evaluated and based on the test error of each weak model, the prediction is weighted for voting. Boosting methods decreases the bias of the prediction.</p></li>
+<li><p><strong>Stacking:</strong> Trains N different weak models (usually of different types – heterogenous) with one of the two subsets of the dataset in parallel. Once the weak learners are trained, they are used to trained a meta learner to combine their predictions and carry out final prediction using the other subset. In test phase, each model predicts its label, these set of labels are fed to the meta learner which generates the final prediction.</p></li>
+</ul>
+<figure class="align-default" id="image12">
+<a class="reference internal image-reference" href="../../_images/image251.PNG"><img alt="../../_images/image251.PNG" src="../../_images/image251.PNG" style="width: 918.8000000000001px; height: 752.8000000000001px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 20 </span><span class="caption-text">Comparison table for each of these three methods <a class="reference external" href="https://www.cheatsheets.aqeel-anwar.com">(Source)</a></span><a class="headerlink" href="#image12" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
 <section id="boosting">
 <h2>Boosting<a class="headerlink" href="#boosting" title="Permalink to this headline">#</a></h2>
 <p>Boosting was first introduced in 1997 by Freund and Schapire in the popular algorithm, AdaBoost. It was originally designed for classification problems. Since its inception, many new boosting algorithms have been developed those tackle regression problems also and have become famous as they are used in the top
@@ -908,7 +933,7 @@ solutions of many Kaggle competitions.</p>
 <figure class="align-default" id="image10">
 <a class="reference internal image-reference" href="../../_images/image10.PNG"><img alt="../../_images/image10.PNG" src="../../_images/image10.PNG" style="width: 594.4px; height: 396.8px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 20 </span><span class="caption-text">Adaboost Pseudocode</span><a class="headerlink" href="#image10" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 21 </span><span class="caption-text">Adaboost Pseudocode</span><a class="headerlink" href="#image10" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>

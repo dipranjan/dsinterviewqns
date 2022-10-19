@@ -117,6 +117,22 @@ It turns out that the OOB error is as good as cross validation error.
 - `min_impurity_split`: Threshold for early stopping in tree growth. A node will split if its impurity is above the threshold, otherwise it is a leaf
 ---
 
+### Ensemble Learning
+
+Ensemble Learning is called the Wisdom of the crowd. Combine multiple weak models/learners into one predictive model to reduce bias, variance and/or improve accuracy.
+
+- **Bagging:** Trains N different weak models (usually of same types – homogenous) with N non-overlapping subset of the input dataset in parallel. In the test phase, each model is evaluated. The label with the greatest number of predictions is selected as the prediction. Bagging methods reduces variance of the prediction
+- **Boosting:** Trains N different weak models (usually of same types – homogenous) with the complete dataset in a sequential order. The datapoints wrongly classified with previous weak model is provided more weights to that they can be classified by the next weak leaner properly. In the test phase, each model is evaluated and based on the test error of each weak model, the prediction is weighted for voting. Boosting methods decreases the bias of the prediction.
+- **Stacking:** Trains N different weak models (usually of different types – heterogenous) with one of the two subsets of the dataset in parallel. Once the weak learners are trained, they are used to trained a meta learner to combine their predictions and carry out final prediction using the other subset. In test phase, each model predicts its label, these set of labels are fed to the meta learner which generates the final prediction.
+
+```{figure} ../Algorithms/images/image25.PNG
+---
+name: image12
+scale: 40%
+---
+Comparison table for each of these three methods [(Source)](https://www.cheatsheets.aqeel-anwar.com)
+```
+
 ### Boosting
 
 Boosting was first introduced in 1997 by Freund and Schapire in the popular algorithm, AdaBoost. It was originally designed for classification problems. Since its inception, many new boosting algorithms have been developed those tackle regression problems also and have become famous as they are used in the top
