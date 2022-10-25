@@ -125,6 +125,7 @@ Ensemble Learning is called the Wisdom of the crowd. Combine multiple weak model
 - **Boosting:** Trains N different weak models (usually of same types – homogenous) with the complete dataset in a sequential order. The datapoints wrongly classified with previous weak model is provided more weights to that they can be classified by the next weak leaner properly. In the test phase, each model is evaluated and based on the test error of each weak model, the prediction is weighted for voting. Boosting methods decreases the bias of the prediction.
 - **Stacking:** Trains N different weak models (usually of different types – heterogenous) with one of the two subsets of the dataset in parallel. Once the weak learners are trained, they are used to trained a meta learner to combine their predictions and carry out final prediction using the other subset. In test phase, each model predicts its label, these set of labels are fed to the meta learner which generates the final prediction.
 
+````{div} full-width
 ```{figure} ../Algorithms/images/image25.PNG
 ---
 name: image12
@@ -132,6 +133,7 @@ scale: 40%
 ---
 Comparison table for each of these three methods [(Source)](https://www.cheatsheets.aqeel-anwar.com)
 ```
+````
 
 ### Boosting
 

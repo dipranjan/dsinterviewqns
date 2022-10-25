@@ -903,12 +903,14 @@ title="Print to PDF"
 <li><p><strong>Boosting:</strong> Trains N different weak models (usually of same types – homogenous) with the complete dataset in a sequential order. The datapoints wrongly classified with previous weak model is provided more weights to that they can be classified by the next weak leaner properly. In the test phase, each model is evaluated and based on the test error of each weak model, the prediction is weighted for voting. Boosting methods decreases the bias of the prediction.</p></li>
 <li><p><strong>Stacking:</strong> Trains N different weak models (usually of different types – heterogenous) with one of the two subsets of the dataset in parallel. Once the weak learners are trained, they are used to trained a meta learner to combine their predictions and carry out final prediction using the other subset. In test phase, each model predicts its label, these set of labels are fed to the meta learner which generates the final prediction.</p></li>
 </ul>
+<div class="full-width docutils">
 <figure class="align-default" id="image12">
 <a class="reference internal image-reference" href="../../_images/image251.PNG"><img alt="../../_images/image251.PNG" src="../../_images/image251.PNG" style="width: 918.8000000000001px; height: 752.8000000000001px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 21 </span><span class="caption-text">Comparison table for each of these three methods <a class="reference external" href="https://www.cheatsheets.aqeel-anwar.com">(Source)</a></span><a class="headerlink" href="#image12" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
+</div>
 </section>
 <section id="boosting">
 <h2>Boosting<a class="headerlink" href="#boosting" title="Permalink to this headline">#</a></h2>
