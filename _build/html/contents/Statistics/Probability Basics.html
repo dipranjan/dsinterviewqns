@@ -91,7 +91,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="visually-hidden">Toggle in-page Table of Contents</div>
 </label>
 <!-- Headers at the top -->
-<div class="announcement header-item noprint">✨Book Last updated on 18 Oct'22 ✨ PDF version of the book is now available 🥳 Check the footer for the link!!!</div>
+<div class="announcement header-item noprint">✨Book Last updated on 25 Oct'22 ✨ PDF version of the book is now available 🥳 Check the footer for the link!!!</div>
 <div class="header header-item noprint"></div>
 
     
@@ -462,7 +462,7 @@ const thebe_selector_output = ".output, .cell_output"
             
             <div class="navbar_extra_footer">
             <div>
-    <a href="https://www.buymeacoffee.com/dearc"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=dearc&button_colour=b20a0a&font_colour=ffffff&font_family=Bree&outline_colour=ffffff&coffee_colour=FFDD00" /></a>
+    <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="dearc" data-color="#FF5F5F" data-emoji=""  data-font="Bree" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
 </div>
 
             </div>
@@ -627,6 +627,11 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#map-vs-mle">
+   MAP vs MLE
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#questions">
    Questions
   </a>
@@ -673,6 +678,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#bayes-theorem">
    Bayes’ Theorem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#map-vs-mle">
+   MAP vs MLE
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -741,6 +751,16 @@ The square root of the variance is called the <strong>standard deviation.</stron
 <p>An easy way of remembering it is using the below example:</p>
 <p>What is the probability of a fruit being banana given that it is long, sweet and yellow?</p>
 <p><span class="math notranslate nohighlight">\(P(Banana|Long,Sweet,Yellow) = \frac{P(Long|Banana)*P(Sweet|Banana)*P(Yellow|Banana)*P(Banana)}{P(Long)*P(Sweet)*P(Yellow)}\)</span></p>
+</section>
+<section id="map-vs-mle">
+<h2>MAP vs MLE<a class="headerlink" href="#map-vs-mle" title="Permalink to this headline">#</a></h2>
+<p>The Maximum Aposteriori Probability (MAP) Estimation of the random variable y, given we have observed IID <span class="math notranslate nohighlight">\((x1, x2, x3, ... )\)</span> here we try to accommodate our prior knowledge when estimating. In Maximum Likelihood Estimation (MLE), we assume we don’t have any prior knowledge of the quantity being estimated.</p>
+<figure class="align-default" id="image14">
+<a class="reference internal image-reference" href="../../_images/image141.PNG"><img alt="../../_images/image141.PNG" src="../../_images/image141.PNG" style="width: 412.5px; height: 170.0px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">MAP vs MLE</span><a class="headerlink" href="#image14" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
 <hr class="docutils" />
 <section id="questions">

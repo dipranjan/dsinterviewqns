@@ -16,10 +16,10 @@ html:
   google_analytics_id       : "UA-60403888-2"  # A GA id that can be used to track book views.
   home_page_in_navbar       : true  # Whether to include your home page in the left Navigation Bar
   baseurl                   : "https://dipranjan.github.io/dsinterviewqns/"  # The base URL where your book will be hosted. Used for creating image previews and social links. e.g.: https://mypage.com/mybook/
-  announcement: "✨Book Last updated on 18 Oct'22 ✨ PDF version of the book is now available 🥳 Check the footer for the link!!!"
+  announcement: "✨Book Last updated on 25 Oct'22 ✨ PDF version of the book is now available 🥳 Check the footer for the link!!!"
   extra_navbar: |
         <div>
-            <a href="https://www.buymeacoffee.com/dearc"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=dearc&button_colour=b20a0a&font_colour=ffffff&font_family=Bree&outline_colour=ffffff&coffee_colour=FFDD00" /></a>
+            <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="dearc" data-color="#FF5F5F" data-emoji=""  data-font="Bree" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
         </div>
   extra_footer: |
     <p>

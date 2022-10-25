@@ -31,6 +31,8 @@
 **Month of October, 2022**
 - More questions added to the Time Series Section
 - Bias/Variance Tradeoff added
+- Ensemble learning section updated in Decision Tree
+- MAP vs MLE added in Probability Basics
 
 **Month of September, 2022**
 - As per suggestions by users PDF of the book as been made available as a paid extra. It can be purchased from [here](https://www.buymeacoffee.com/dearc/e/88363)

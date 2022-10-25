@@ -75,6 +75,18 @@ What is the probability of a fruit being banana given that it is long, sweet and
 
 $P(Banana|Long,Sweet,Yellow) = \frac{P(Long|Banana)*P(Sweet|Banana)*P(Yellow|Banana)*P(Banana)}{P(Long)*P(Sweet)*P(Yellow)}$
 
+### MAP vs MLE
+
+The Maximum Aposteriori Probability (MAP) Estimation of the random variable y, given we have observed IID $(x1, x2, x3, ... )$ here we try to accommodate our prior knowledge when estimating. In Maximum Likelihood Estimation (MLE), we assume we don’t have any prior knowledge of the quantity being estimated.
+
+```{figure} ../Statistics/images/image14.PNG
+---
+scale: 50%
+name: image14
+---
+MAP vs MLE
+```
+
 ---
 ### Questions
 
