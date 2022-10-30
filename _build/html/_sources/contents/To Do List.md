@@ -33,6 +33,7 @@
 - Bias/Variance Tradeoff added
 - Ensemble learning section updated in Decision Tree
 - MAP vs MLE added in Probability Basics
+- Basic Overview page added in the Algorithm section
 
 **Month of September, 2022**
 - As per suggestions by users PDF of the book as been made available as a paid extra. It can be purchased from [here](https://www.buymeacoffee.com/dearc/e/88363)

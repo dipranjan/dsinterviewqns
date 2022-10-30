@@ -91,7 +91,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="visually-hidden">Toggle in-page Table of Contents</div>
 </label>
 <!-- Headers at the top -->
-<div class="announcement header-item noprint">✨Book Last updated on 25 Oct'22 ✨ PDF version of the book is now available 🥳 Check the footer for the link!!!</div>
+<div class="announcement header-item noprint">✨Book Last updated on 30 Oct'22 ✨ PDF version of the book is now available 🥳 Check the footer for the link!!!</div>
 <div class="header header-item noprint"></div>
 
     
@@ -225,6 +225,11 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Algorithms/Overview.html">
+   Overview
+  </a>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Algorithms/Diagnostics.html">
    Bias/Variance Tradeoff
@@ -717,7 +722,7 @@ title="Print to PDF"
 <figure class="align-default" id="image1">
 <a class="reference internal image-reference" href="../../_images/image110.PNG"><img alt="../../_images/image110.PNG" src="../../_images/image110.PNG" style="width: 588.4px; height: 546.8000000000001px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 28 </span><span class="caption-text"><a class="reference external" href="https://www.v7labs.com/blog/neural-networks-activation-functions">📖Source</a></span><a class="headerlink" href="#image1" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 29 </span><span class="caption-text"><a class="reference external" href="https://www.v7labs.com/blog/neural-networks-activation-functions">📖Source</a></span><a class="headerlink" href="#image1" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p><strong>An artificial neural network is a network of such neurons.</strong> Neurons in a neural network are arranged in layers. The <em>first</em> and the <em>last</em> layer are called the <em>input</em> and <em>output</em> layers. Input layers have as many neurons as the number of attributes in the data set and the output layer has as many neurons as the number of classes of the target variable (for a classification problem). For a regression problem, the number of neurons in the output layer would be 1 (a numeric variable).
@@ -746,7 +751,7 @@ There are six main things that need to be specified for specifying a neural netw
 <figure class="align-default" id="image2">
 <a class="reference internal image-reference" href="../../_images/image2.gif"><img alt="../../_images/image2.gif" src="../../_images/image2.gif" style="width: 360.0px; height: 378.0px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 29 </span><span class="caption-text">Neural Networks can be used to <em>reasonably</em> approriximate <em>most</em> functions</span><a class="headerlink" href="#image2" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 30 </span><span class="caption-text">Neural Networks can be used to <em>reasonably</em> approriximate <em>most</em> functions</span><a class="headerlink" href="#image2" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -757,7 +762,7 @@ Feed forward neural network architecture consists of following main parts – In
 <figure class="align-default" id="image3">
 <a class="reference internal image-reference" href="../../_images/image3.gif"><img alt="../../_images/image3.gif" src="../../_images/image3.gif" style="width: 448.0px; height: 336.0px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 30 </span><span class="caption-text"><a class="reference external" href="https://machinelearningknowledge.ai/animated-explanation-of-feed-forward-neural-network-architecture/">📖Source</a></span><a class="headerlink" href="#image3" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 31 </span><span class="caption-text"><a class="reference external" href="https://machinelearningknowledge.ai/animated-explanation-of-feed-forward-neural-network-architecture/">📖Source</a></span><a class="headerlink" href="#image3" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -769,7 +774,7 @@ Feed forward neural network architecture consists of following main parts – In
 <figure class="align-default" id="image4">
 <a class="reference internal image-reference" href="../../_images/image4.gif"><img alt="../../_images/image4.gif" src="../../_images/image4.gif" style="width: 448.0px; height: 336.0px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 31 </span><span class="caption-text"><a class="reference external" href="https://machinelearningknowledge.ai/animated-explanation-of-feed-forward-neural-network-architecture/">📖Source</a></span><a class="headerlink" href="#image4" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 32 </span><span class="caption-text"><a class="reference external" href="https://machinelearningknowledge.ai/animated-explanation-of-feed-forward-neural-network-architecture/">📖Source</a></span><a class="headerlink" href="#image4" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>For updating weights and biases using plain backpropagation, you have to scan through the entire data set to make a single update to the weights. This is computationally very expensive for large datasets. Thus, you use multiple batches (or <strong>mini-batches</strong>) of data points, compute the average gradient for a batch, and update the weights based on that gradient.</p>
