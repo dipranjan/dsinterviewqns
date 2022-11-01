@@ -131,7 +131,7 @@ Ensemble Learning is called the Wisdom of the crowd. Combine multiple weak model
 name: image12
 scale: 40%
 ---
-Comparison table for each of these three methods [(Source)](https://www.cheatsheets.aqeel-anwar.com)
+Comparison for the above 3 methods [(Source)](https://www.cheatsheets.aqeel-anwar.com)
 ```
 ````
 

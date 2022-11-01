@@ -28,6 +28,10 @@
 ```{admonition} What Happened
 :class: tip, dropdown
 
+**Month of November, 2022**
+- Group vs Window added
+- Git added in the new ML Ops section
+
 **Month of October, 2022**
 - More questions added to the Time Series Section
 - Bias/Variance Tradeoff added

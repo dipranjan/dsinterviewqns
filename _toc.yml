@@ -57,6 +57,9 @@ parts:
     - file: contents/SQL/Time
     - file: contents/SQL/Functions
     - file: contents/SQL/Problems
+  - caption: ML Ops
+    chapters:
+    - file: contents/MLOps/Git
   - caption: Excel
     chapters:
     - file: contents/Excel/Excel Basics

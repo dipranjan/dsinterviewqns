@@ -12,8 +12,8 @@ html_meta:
 ```{figure} ../Algorithms/images/image26.PNG
 ---
 name: image1
-scale: 40%
+scale: 50%
 ---
-A Quick & Non-Exhaustive Overview of Different Algorithms [(Reference)](https://learn.microsoft.com/en-us/azure/machine-learning/algorithm-cheat-sheet) [(Reference)](https://scikit-learn.org/stable/tutorial/machine_learning_map/)
+Overview of Different Algorithms [(Reference)](https://learn.microsoft.com/en-us/azure/machine-learning/algorithm-cheat-sheet) [(Reference)](https://scikit-learn.org/stable/tutorial/machine_learning_map/)
 ```
 ````
