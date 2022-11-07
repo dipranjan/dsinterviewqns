@@ -4,14 +4,16 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Interview resource of Data Science Interview focusing on Probability." lang="en" name="description" xml:lang="en" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<meta content="Interview resource of Data Science Interview focusing on Probability." lang="en" name="description" xml:lang="en" />
 <meta content="interview, data science, machine learning, probability" name="keywords" />
 <meta content="en_US" property="og:locale" />
 
     <title>Probability Distribution &#8212; The Data Science Interview Book</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -21,39 +23,39 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/myfile.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/Statistics/Probability Distribution.html" />
     <link rel="shortcut icon" href="../../_static/logo.gif"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -61,10 +63,37 @@
     <link rel="next" title="Central Limit Theorem" href="Central%20Limit%20Theorem.html" />
     <link rel="prev" title="Probability Basics" href="Probability%20Basics.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
     
+
+    <!-- Google Analytics -->
+    
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-60403888-2', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint">✨Major UI update on the way.. keep checking back✨ PDF version of the book is now available 🥳 Check the footer for the link!!!</div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -73,10 +102,15 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
       
       <img src="../../_static/logo.gif" class="logo" alt="logo">
       
@@ -89,14 +123,15 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../intro.html">
-   About this Book
-  </a>
- </li>
-</ul>
-<p class="caption">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    About this Book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Journey of this project
  </span>
@@ -108,7 +143,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Statistics
  </span>
@@ -140,34 +175,66 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Data
+  Model Building
  </span>
 </p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../Data/Scaling.html">
-   Scaling
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Data/Data.html">
+   Data
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Data/Scaling.html">
+     Scaling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Data/Missing%20Value.html">
+     Missing Value
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Data/Outlier.html">
+     Outlier
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Data/Sampling.html">
+     Sampling
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Data/Missing%20Value.html">
-   Missing Value
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Data/Outlier.html">
-   Outlier
+  <a class="reference internal" href="../Data/Hyperparameter%20optimization.html">
+   Hyperparameter Optimization
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Algorithms
  </span>
 </p>
 <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Algorithms/Overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Algorithms/Diagnostics.html">
+   Bias/Variance Tradeoff
+  </a>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Algorithms/Regression.html">
    Regression
@@ -198,8 +265,13 @@
    Anomaly Detection
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Algorithms/Big%20O%20Analysis.html">
+   Big O Analysis
+  </a>
+ </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Neural Network
  </span>
@@ -210,8 +282,13 @@
    Neural Network
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../NN/Recurrent%20Neural%20Network.html">
+   Recurrent Neural Network
+  </a>
+ </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   NLP
  </span>
@@ -228,7 +305,19 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Story Telling
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../StoryTelling/Visualization.html">
+   Visualization
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Python
  </span>
@@ -249,8 +338,13 @@
    Statistics
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Python/NLP.html">
+   NLP
+  </a>
+ </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   SQL
  </span>
@@ -292,7 +386,19 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  ML Ops
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../MLOps/Git.html">
+   GIT
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Excel
  </span>
@@ -303,20 +409,47 @@
    Excel Basics
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Excel/Data%20Manipulation.html">
+   Data Manipulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Excel/Time%20and%20Date.html">
+   Time and Date
+  </a>
+ </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Tensorflow
+  Machine Learning Frameworks
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../Tensorflow/Basics.html">
-   Basics
+  <a class="reference internal" href="../MLFramework/PyCaret.html">
+   PyCaret
   </a>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../MLFramework/Tensorflow/Tensorflow.html">
+   Tensorflow
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MLFramework/Tensorflow/Basics.html">
+     Basics
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Analytical Thinking
  </span>
@@ -332,90 +465,159 @@
    Industry Application
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Analytical%20Thinking/Behavioral%20-%20Management.html">
+   Behavioral - Management
+  </a>
+ </li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            <div>
+    <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="dearc" data-color="#FF5F5F" data-emoji=""  data-font="Bree" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
 </div>
 
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/contents/Statistics/Probability Distribution.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        
-        <a class="issues-button"
-            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/Statistics/Probability Distribution.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/Statistics/Probability Distribution.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/contents/Statistics/Probability Distribution.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#random-variable">
    Random Variable
@@ -475,19 +677,94 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Probability Distribution</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#random-variable">
+   Random Variable
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#types-of-distribution">
+   Types of Distribution
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#normal-gaussian-distribution">
+   Normal(Gaussian) Distribution
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#measures-to-understand-a-distribution">
+   Measures to understand a distribution:
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#measure-of-central-tendency">
+     Measure of Central Tendency
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#measure-of-dispersion">
+     Measure of Dispersion
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#measure-to-describe-shape-of-distribution">
+     Measure to describe shape of distribution
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#box-plots">
+     Box Plots
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#unbiased-estimator">
+   Unbiased Estimator
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#maximum-likelihood-estimation-mle">
+   Maximum Likelihood Estimation (MLE)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#questions">
+   Questions
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="section" id="probability-distribution">
-<h1>Probability Distribution<a class="headerlink" href="#probability-distribution" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="random-variable">
-<h2>Random Variable<a class="headerlink" href="#random-variable" title="Permalink to this headline">¶</a></h2>
+  <section id="probability-distribution">
+<h1>Probability Distribution<a class="headerlink" href="#probability-distribution" title="Permalink to this headline">#</a></h1>
+<section id="random-variable">
+<h2>Random Variable<a class="headerlink" href="#random-variable" title="Permalink to this headline">#</a></h2>
 <p><strong>Random Variable maps the outcome of sample space into real numbers.</strong></p>
 <p>Example: How many heads when we toss 3 coins?</p>
 <p><span class="math notranslate nohighlight">\(X\)</span> could be <span class="math notranslate nohighlight">\(0, 1, 2\)</span> or <span class="math notranslate nohighlight">\(3\)</span> randomly, and they might each have a different probability. <strong><span class="math notranslate nohighlight">\(X\)</span> = “The number of Heads” is the Random Variable.</strong></p>
@@ -503,10 +780,12 @@ The three coins can land in eight possible ways:</p>
 <li><p><span class="math notranslate nohighlight">\(P(X = 0) = 1/8 = {TTT}\)</span></p></li>
 </ul>
 <p>And this is what becomes the <strong>probability distribution.</strong></p>
-<div class="figure align-default" id="image2">
-<a class="reference internal image-reference" href="../../_images/image26.PNG"><img alt="../../_images/image26.PNG" src="../../_images/image26.PNG" style="height: 250px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Probability Distribution vs Frequency Distribution</span><a class="headerlink" href="#image2" title="Permalink to this image">¶</a></p>
-</div>
+<figure class="align-default" id="image2">
+<a class="reference internal image-reference" href="../../_images/image28.PNG"><img alt="../../_images/image28.PNG" src="../../_images/image28.PNG" style="height: 250px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Probability Distribution vs Frequency Distribution</span><a class="headerlink" href="#image2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p><strong>Frequency distribution</strong> comes from actually doing the experiment <span class="math notranslate nohighlight">\(n\)</span> number of times as <span class="math notranslate nohighlight">\(n-&gt;\infty\)</span> the shape comes closer and closer to the Probability distribution</p>
 <p>Now the probability distribution can be of <span class="math notranslate nohighlight">\(2\)</span> types, <strong>discrete and continous</strong>. An example of Discrete is shown above.</p>
 <ul class="simple">
@@ -514,17 +793,19 @@ The three coins can land in eight possible ways:</p>
 <li><p>When we use a probability function to describe a continuous probability distribution we call it a <strong>probability density function (pdf)</strong>.</p></li>
 </ul>
 <p>Now depending on the problem type one can choose the corresponding distribution and find the probability for some value of the random variable.</p>
-</div>
-<div class="section" id="types-of-distribution">
-<h2>Types of Distribution<a class="headerlink" href="#types-of-distribution" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="types-of-distribution">
+<h2>Types of Distribution<a class="headerlink" href="#types-of-distribution" title="Permalink to this headline">#</a></h2>
 <p>Some common types of probability distribution are as follows:</p>
-<div class="figure align-default" id="image3">
-<img alt="../../_images/image36.PNG" src="../../_images/image36.PNG" />
-<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Types of Probability Distribution</span><a class="headerlink" href="#image3" title="Permalink to this image">¶</a></p>
-</div>
-</div>
-<div class="section" id="normal-gaussian-distribution">
-<h2>Normal(Gaussian) Distribution<a class="headerlink" href="#normal-gaussian-distribution" title="Permalink to this headline">¶</a></h2>
+<figure class="align-default" id="image3">
+<img alt="../../_images/image37.PNG" src="../../_images/image37.PNG" />
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Types of Probability Distribution</span><a class="headerlink" href="#image3" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="normal-gaussian-distribution">
+<h2>Normal(Gaussian) Distribution<a class="headerlink" href="#normal-gaussian-distribution" title="Permalink to this headline">#</a></h2>
 <p>The normal distribution is the most important probability distribution in statistics because it fits many natural phenomena. For example, heights, blood pressure, measurement error, and IQ scores follow the normal distribution.</p>
 <p>Despite the different shapes, all forms of the normal distribution have the following characteristic properties.</p>
 <ul class="simple">
@@ -551,18 +832,18 @@ The three coins can land in eight possible ways:</p>
 </tr>
 </tbody>
 </table>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="measures-to-understand-a-distribution">
-<h2>Measures to understand a distribution:<a class="headerlink" href="#measures-to-understand-a-distribution" title="Permalink to this headline">¶</a></h2>
+<section id="measures-to-understand-a-distribution">
+<h2>Measures to understand a distribution:<a class="headerlink" href="#measures-to-understand-a-distribution" title="Permalink to this headline">#</a></h2>
 <p>There are 3 variety of measures, required to understand a distribution:</p>
 <ul class="simple">
 <li><p>Measure of Central tendency</p></li>
 <li><p>Measure of dispersion</p></li>
 <li><p>Measure to describe shape of curve</p></li>
 </ul>
-<div class="section" id="measure-of-central-tendency">
-<h3>Measure of Central Tendency<a class="headerlink" href="#measure-of-central-tendency" title="Permalink to this headline">¶</a></h3>
+<section id="measure-of-central-tendency">
+<h3>Measure of Central Tendency<a class="headerlink" href="#measure-of-central-tendency" title="Permalink to this headline">#</a></h3>
 <p>Measures of central tendencies are measures, which help you describe a population, through a single metric. For example, if you were to compare Saving habits of people across various nations, you will compare average Savings rate in each of these nations.
 Following are the measures of central tendency:</p>
 <ul class="simple">
@@ -570,13 +851,15 @@ Following are the measures of central tendency:</p>
 <li><p><strong>Median:</strong> the value, which divides the population in two half</p></li>
 <li><p><strong>Mode:</strong> the most frequent value in a population</p></li>
 </ul>
-<div class="figure align-default" id="image4">
+<figure class="align-default" id="image4">
 <img alt="../../_images/image45.PNG" src="../../_images/image45.PNG" />
-<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Measure of Central Tendency. Mean is typically affected the most by Outliers, followed by the median and mode.</span><a class="headerlink" href="#image4" title="Permalink to this image">¶</a></p>
-</div>
-</div>
-<div class="section" id="measure-of-dispersion">
-<h3>Measure of Dispersion<a class="headerlink" href="#measure-of-dispersion" title="Permalink to this headline">¶</a></h3>
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Measure of Central Tendency. Mean is typically affected the most by Outliers, followed by the median and mode.</span><a class="headerlink" href="#image4" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="measure-of-dispersion">
+<h3>Measure of Dispersion<a class="headerlink" href="#measure-of-dispersion" title="Permalink to this headline">#</a></h3>
 <p>Measures of dispersion reveal how is the population distributed around the measures of central tendency.</p>
 <ul class="simple">
 <li><p><strong>Range:</strong> Difference in the maximum and minimum value in the population</p></li>
@@ -585,36 +868,38 @@ Following are the measures of central tendency:</p>
 <li><p><strong>Variance:</strong> The average of the squared differences from the Mean.</p></li>
 <li><p><strong>Standard Deviation:</strong> is square root of Variance</p></li>
 </ul>
-<div class="figure align-default" id="image5">
-<img alt="../../_images/image53.PNG" src="../../_images/image53.PNG" />
-<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">2 distributions with different standard deviations</span><a class="headerlink" href="#image5" title="Permalink to this image">¶</a></p>
-</div>
-</div>
-<div class="section" id="measure-to-describe-shape-of-distribution">
-<h3>Measure to describe shape of distribution<a class="headerlink" href="#measure-to-describe-shape-of-distribution" title="Permalink to this headline">¶</a></h3>
+<figure class="align-default" id="image5">
+<img alt="../../_images/image54.PNG" src="../../_images/image54.PNG" />
+<figcaption>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">2 distributions with different standard deviations</span><a class="headerlink" href="#image5" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="measure-to-describe-shape-of-distribution">
+<h3>Measure to describe shape of distribution<a class="headerlink" href="#measure-to-describe-shape-of-distribution" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p><strong>Skewness:</strong> Skewness is a measure of the asymmetry. Negatively skewed curve has a long left tail and vice versa.</p></li>
 <li><p><strong>Kurtosis:</strong> Kurtosis is a measure of the “peaked ness”. Distributions with higher peaks have positive kurtosis and vice-versa</p></li>
 </ul>
-<div class="figure align-default" id="image6">
-<a class="reference internal image-reference" href="../../_images/image63.PNG"><img alt="../../_images/image63.PNG" src="../../_images/image63.PNG" style="width: 361.2px; height: 237.0px;" /></a>
-</div>
-</div>
-<div class="section" id="box-plots">
-<h3>Box Plots<a class="headerlink" href="#box-plots" title="Permalink to this headline">¶</a></h3>
+<figure class="align-default" id="image6">
+<a class="reference internal image-reference" href="../../_images/image64.PNG"><img alt="../../_images/image64.PNG" src="../../_images/image64.PNG" style="width: 361.2px; height: 237.0px;" /></a>
+</figure>
+</section>
+<section id="box-plots">
+<h3>Box Plots<a class="headerlink" href="#box-plots" title="Permalink to this headline">#</a></h3>
 <p>Box plots are one of the easiest and most intuitive way to understand distributions. They show mean, median, quartiles and Outliers on single plot.</p>
-<div class="figure align-default" id="image7">
-<a class="reference internal image-reference" href="../../_images/image71.PNG"><img alt="../../_images/image71.PNG" src="../../_images/image71.PNG" style="width: 189.0px; height: 229.2px;" /></a>
-</div>
-</div>
-</div>
+<figure class="align-default" id="image7">
+<a class="reference internal image-reference" href="../../_images/image73.PNG"><img alt="../../_images/image73.PNG" src="../../_images/image73.PNG" style="width: 189.0px; height: 229.2px;" /></a>
+</figure>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="unbiased-estimator">
-<h2>Unbiased Estimator<a class="headerlink" href="#unbiased-estimator" title="Permalink to this headline">¶</a></h2>
+<section id="unbiased-estimator">
+<h2>Unbiased Estimator<a class="headerlink" href="#unbiased-estimator" title="Permalink to this headline">#</a></h2>
 <p>An unbiased estimator is an accurate statistic that’s used to approximate a population parameter. “Accurate” in this sense means that it’s neither an overestimate nor an underestimate. If an overestimate or underestimate does happen, the mean of the difference is called a “bias.” That’s just saying if the estimator (i.e. the sample mean) equals the parameter (i.e. the population mean), then it’s an unbiased estimator.</p>
-</div>
-<div class="section" id="maximum-likelihood-estimation-mle">
-<h2>Maximum Likelihood Estimation (MLE)<a class="headerlink" href="#maximum-likelihood-estimation-mle" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="maximum-likelihood-estimation-mle">
+<h2>Maximum Likelihood Estimation (MLE)<a class="headerlink" href="#maximum-likelihood-estimation-mle" title="Permalink to this headline">#</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><strong>Reference:</strong> <a class="reference external" href="https://stats.stackexchange.com/questions/112451/maximum-likelihood-estimation-mle-in-layman-terms">Discussion</a>, <a class="reference external" href="https://www.kdnuggets.com/2019/11/probability-learning-maximum-likelihood.html">Explanation</a>, <a class="reference external" href="https://analyticsindiamag.com/maximum-likelihood-estimation-python-guide/">Implementation</a></p>
@@ -622,10 +907,10 @@ Following are the measures of central tendency:</p>
 <p>Say you have some data. Say you’re willing to assume that the data comes from some distribution – perhaps Gaussian. There are an infinite number of different Gaussians that the data could have come from (which correspond to the combination of the infinite number of means and variances that a Gaussian distribution can have). MLE will pick the Gaussian (i.e., the mean and variance) that is “most consistent” with your data (the precise meaning of consistent is explained below).</p>
 <p>So, say you’ve got a data set of <span class="math notranslate nohighlight">\(y={−1,3,7}\)</span>. The most consistent Gaussian from which that data could have come has a mean of <span class="math notranslate nohighlight">\(3\)</span> and a variance of <span class="math notranslate nohighlight">\(16\)</span>. It could have been sampled from some other Gaussian. But one with a mean of <span class="math notranslate nohighlight">\(3\)</span> and variance of <span class="math notranslate nohighlight">\(16\)</span> is most consistent with the data in the following sense: the probability of getting the particular <span class="math notranslate nohighlight">\(y\)</span> values you observed is greater with this choice of mean and variance, than it is with any other choice.</p>
 <p>Maximum Likelihood Estimation can be applied to both regression and classification problems.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="questions">
-<h2>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h2>
+<section id="questions">
+<h2>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">#</a></h2>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Problem: [LIME] Example of unbiased estimator</p>
 <p>What is an unbiased estimator and can you provide an example for a layman to understand?</p>
@@ -653,19 +938,45 @@ Following are the measures of central tendency:</p>
 </div>
 <div class="dropdown admonition">
 <p class="admonition-title">Solution:</p>
-<p>Solution Pending</p>
+<p><em>Solution recieved from the community via <a class="reference external" href="https://github.com/dipranjan/dsinterviewqns/pull/4">merge request</a></em></p>
+<p>Let <span class="math notranslate nohighlight">\(x_1, x_2, \ldots , x_n\)</span> be the <span class="math notranslate nohighlight">\(n\)</span> samples drawn.</p>
+<p>Recall the pdf for the uniform distribution function is:</p>
+<div class="math notranslate nohighlight">
+\[f(x)=\frac{1}{b-a}\]</div>
+<p>Thus, the likelihood function <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> is simply the product of the pdf n times, which is:</p>
+<div class="math notranslate nohighlight">
+\[f(x)=\frac{1}{(b-a)^n}.\]</div>
+<p>The MLE will occur at the values of <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> for which that quantity is maximized. Since <span class="math notranslate nohighlight">\((b-a)^n\)</span> is in the denominator, and <span class="math notranslate nohighlight">\(b-a\)</span> must always be positive because <span class="math notranslate nohighlight">\(b&gt;a\)</span>, the likelihood is maximized when <span class="math notranslate nohighlight">\(b-a\)</span> is minimized. This means we want <span class="math notranslate nohighlight">\(a\)</span> as big as possible, and <span class="math notranslate nohighlight">\(b\)</span> as small as possible. But for one of the <span class="math notranslate nohighlight">\(x_i\)</span> to be sampled, <span class="math notranslate nohighlight">\(a\)</span> must be smaller than that value, (and <span class="math notranslate nohighlight">\(b\)</span> must be larger), so the maximum likelihood estimation is <span class="math notranslate nohighlight">\(a=\min(x_1, x_2, \ldots , x_n)\)</span> and <span class="math notranslate nohighlight">\(b=\max(x_1, x_2, \ldots , x_n)\)</span></p>
 </div>
 <div class="tip dropdown admonition">
-<p class="admonition-title">Problem: [MCKINSEY] Flipping Coins</p>
+<p class="admonition-title">Problem: [MCKINSEY]  Flipping 576 Times</p>
 <p>You flip a fair coin 576 times. Without using a calculator, calculate the probability of flipping at least 312 heads.</p>
 </div>
 <div class="dropdown admonition">
 <p class="admonition-title">Solution:</p>
-<p>This is an example of a Binomial Distribution.
-The number will be <span class="math notranslate nohighlight">\({}^{576} \mathrm{ C }_{312} (\frac{1}{2})^{312} (\frac{1}{2})^{264}\)</span></p>
+<p>Fair coin, <span class="math notranslate nohighlight">\(p(H)=0.5\)</span> Since this experiment has only <span class="math notranslate nohighlight">\(2\)</span> outcomes hence we can use a binomial distribution,</p>
+<p>mean = <span class="math notranslate nohighlight">\(np\)</span> = <span class="math notranslate nohighlight">\(576*0.5 = 288\)</span>, var= <span class="math notranslate nohighlight">\(np(1-p)= 576*0.5*0.5 = 144\)</span>, stddev = sqrt(var) = <span class="math notranslate nohighlight">\(12\)</span>.</p>
+<p>For normal distribution, <em>68% of the data falls within one standard deviation, 95% percent within two standard deviations, and 99.7% within three standard deviations from the mean.</em></p>
+<p><span class="math notranslate nohighlight">\(312= 288\)</span>(mean)<span class="math notranslate nohighlight">\(+2*12\)</span>(stddev), which means the probability of flipping at least <span class="math notranslate nohighlight">\(312\)</span> heads or tails is <span class="math notranslate nohighlight">\(5%\)</span>. Since we are only looking at the probability of at least <span class="math notranslate nohighlight">\(321\)</span> heads, it is the right tail area of the distribution, which is <span class="math notranslate nohighlight">\(5%/2= 2.5%\)</span>. So the probability of flipping at least <span class="math notranslate nohighlight">\(312\)</span> heads is <span class="math notranslate nohighlight">\(2.5%\)</span>.</p>
 </div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Problem: [GOOGLE]  Non-normal Probability Distribution</p>
+<p>Explain how a probability distribution could be not normal and give an example scenario.</p>
 </div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solution:</p>
+<p><a class="reference external" href="https://www.interviewquery.com/questions/non-normal-probability-distribution?ref=question_email">Source</a></p>
+<p>Normal probability distributions are characterized by their famous bell shaped probability density function. The observations are centered around the mean and are equally spread around as per the standard deviation of the distribution, in case the probability distribution is a standard normal. They occur frequently in the nature, for e.g. distribution of heights</p>
+<p>There are other types of distributions which are not normal; since normal distributions are for continuous random variable, all discrete random variables do not follow normal distributions.</p>
+<p>There can be many examples of Non-Normal distribution:</p>
+<ul class="simple">
+<li><p>Flip a coin ten times and count the number of heads you get. That follows a binomial distribution</p></li>
+<li><p>Flip a coin until you get five heads and count the number of flips. That follows a negative binomial distribution</p></li>
+<li><p>Take a well-shuffled deck of cards and count how many red cards there are in the first ten. That follows a hypergeometric distribution</p></li>
+</ul>
 </div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -689,72 +1000,56 @@ The number will be <span class="math notranslate nohighlight">\({}^{576} \mathrm
 
               </div>
               
-        
-            
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="Probability%20Basics.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Probability Basics</p>
-            </div>
-        </a>
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="Probability%20Basics.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Probability Basics</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Central%20Limit%20Theorem.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Central Limit Theorem</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="Central%20Limit%20Theorem.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Central Limit Theorem</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Dip Ranjan Chatterjee | © MIT License - 2021<br/>
+  
+    <div class="extra_footer">
       <p>
-        
-          By Dip Ranjan Chatterjee | © MIT License - 2021<br/>
-        
-          <div class="extra_footer">
-            <p>
-<a href="https://www.buymeacoffee.com/dearc" target="_blank"><img src="https://img.shields.io/badge/Support-Buy%20me%20a%20%E2%98%95-orange?style=flat-square&logo=appveyor.svg" alt="Buy Me A Coffee"></a>
 <a href="https://dearc.medium.com/membership" target="_blank"><img src="https://img.shields.io/badge/Support-Medium%20Referral-lightgrey?style=flat-square&logo=appveyor.svg" alt="Medium Membership"></a>
 <a href="https://www.linkedin.com/company/the-data-science-interview-book/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BeglbXB3xT0mopZBzReqMEQ%3D%3D" target="_blank"><img src="https://img.shields.io/badge/Follow-LinkedIn-0077B5?style=flat-square&logo=appveyor.svg" alt="Follow LinkedIn"></a>
 <a href="https://github.com/dipranjan/dsinterviewqns/discussions" target="_blank"><img src="https://img.shields.io/badge/Discussion%20Forum-%F0%9F%99%8A%20%20%F0%9F%99%88%20%20%F0%9F%99%89-0172B3?style=flat-square&logo=appveyor.svg" alt="Discussion Forum"></a>
+<a href="https://www.buymeacoffee.com/dearc/e/88363" target="_blank"><img src="https://img.shields.io/badge/BUY-PDF%20Version%20%F0%9F%93%96-red?style=flat-square&logo=appveyor.svg" alt="Buy Book"></a>
 </p>
 
-          </div>
-      </p>
     </div>
-  </footer>
-</main>
+</p>
+        </footer>
+    </div>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
-  
-<script async="" src="https://www.google-analytics.com/analytics.js"></script>
-<script>
-                        window.ga = window.ga || function () {
-                            (ga.q = ga.q || []).push(arguments) };
-                        ga.l = +new Date;
-                        ga('create', 'UA-60403888-2', 'auto');
-                        ga('set', 'anonymizeIp', true);
-                        ga('send', 'pageview');
-                    </script>
 
   </body>
 </html>

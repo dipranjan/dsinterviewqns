@@ -3,17 +3,15 @@
 ```{admonition} What's Happening
 :class: tip, dropdown
 
-- 🔥 NN
-- 🔥 NLP
+- ⌛ Sampling
+- ⌛ Excel
+- ⌛ NN
+- ⌛ NLP
 - ⌛ Tensorflow
-- ⌛ Excel [new section]
-- ⌛ Anomaly Detection
 - ⌛ Regularization
 - ⌛ Confidence Intervals
-- ⌛ Missing Value Treatment
 - ⌛ Plots
 - ⌛ Case Studies
-- ⌛ Hyper Parameter Tuning
 - ⌛ Deep Learning [new section]
 - ⌛ Collaborative Filtering
 - ⌛ Survivor Analysis
@@ -30,8 +28,52 @@
 ```{admonition} What Happened
 :class: tip, dropdown
 
+**Month of November, 2022**
+- Group vs Window added
+- Git added in the new ML Ops section
+
+**Month of October, 2022**
+- More questions added to the Time Series Section
+- Bias/Variance Tradeoff added
+- Ensemble learning section updated in Decision Tree
+- MAP vs MLE added in Probability Basics
+- Basic Overview page added in the Algorithm section
+
+**Month of September, 2022**
+- As per suggestions by users PDF of the book as been made available as a paid extra. It can be purchased from [here](https://www.buymeacoffee.com/dearc/e/88363)
+- Big O notation section added
+- Anamoly detection and Time Series section extensively updated
+- Probability `[FACEBOOK] N Dice`, `[SPOTIFY] MLE of Uniform Distribution`,`Bernoulli trial generator` problem solution updated
+- Business Scenarios section updated
+
+**Month of August, 2022**
+- Behavioral - Management section added
+- New interview questions added
+
+**Month of July, 2022**
+- Data sampling section added under data
+
+**Month of June, 2022**
+- We are back post break, keep checking for new content
+- Machine Learning Framework section added and Tensorflow moved into it
+- PyCaret added to Machine Learning Framework section
+
+**Month of March, 2022**
+- Hyperparameter optimization section completed
+- Had an extremely busy last few weeks and the next few months are going to be packed too
+- Story Telling section added
+- Quick guide to Visualization added
+
+**Month of February, 2022**
+- Added problems in Python, SQL, Probability
+- Excel section updated
+- Data section has been moved into a new and broader section called Model Building
+- To keep the table of contents clean collapsable headers used in Model Building section
+- Hyperparameter optimization section added 
+
 **Month of January, 2022**
 - Neural Network section added
+- Added new problems in the Probability section
 - Added cartoons in a few sections
 - Outlier section added
 

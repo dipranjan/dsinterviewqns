@@ -17,6 +17,13 @@ Since solving any reasonable SQL problem requires a combination of all the topic
 Window (also, windowing or windowed) functions perform a calculation over a set of rows. I like to think of “looking through the window” at the rows that are being returned and having one last chance to perform a calculation. The window is defined by the OVER clause which determines if the rows are partitioned into smaller sets and if they are ordered.
 They allow you to add your favourite aggregate function to a non-aggregate query. Similar to Transform is pandas group by clause.
 
+```{figure} ../SQL/images/image5.PNG
+---
+name: image1
+---
+GROUP vs WINDOW
+```
+
 ### Common Windows Functions
 
 - **Ranking functions**

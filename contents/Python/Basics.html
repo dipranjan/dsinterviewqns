@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Basics &#8212; The Data Science Interview Book</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,48 +20,75 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/myfile.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="https://dipranjan.github.io/dsinterviewqns/contents/Python/Basics.html" />
     <link rel="shortcut icon" href="../../_static/logo.gif"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Data Manipulation" href="Data%20Manipulation.html" />
-    <link rel="prev" title="Syntactic Processing" href="../NLP/Syntactic%20Processing.html" />
+    <link rel="prev" title="Visualization" href="../StoryTelling/Visualization.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
     
+
+    <!-- Google Analytics -->
+    
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-60403888-2', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint">✨Major UI update on the way.. keep checking back✨ PDF version of the book is now available 🥳 Check the footer for the link!!!</div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -68,10 +97,15 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
       
       <img src="../../_static/logo.gif" class="logo" alt="logo">
       
@@ -84,14 +118,15 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../intro.html">
-   About this Book
-  </a>
- </li>
-</ul>
-<p class="caption">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    About this Book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Journey of this project
  </span>
@@ -103,7 +138,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Statistics
  </span>
@@ -135,34 +170,66 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Data
+  Model Building
  </span>
 </p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../Data/Scaling.html">
-   Scaling
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Data/Data.html">
+   Data
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Data/Scaling.html">
+     Scaling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Data/Missing%20Value.html">
+     Missing Value
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Data/Outlier.html">
+     Outlier
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Data/Sampling.html">
+     Sampling
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Data/Missing%20Value.html">
-   Missing Value
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Data/Outlier.html">
-   Outlier
+  <a class="reference internal" href="../Data/Hyperparameter%20optimization.html">
+   Hyperparameter Optimization
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Algorithms
  </span>
 </p>
 <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Algorithms/Overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Algorithms/Diagnostics.html">
+   Bias/Variance Tradeoff
+  </a>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Algorithms/Regression.html">
    Regression
@@ -193,8 +260,13 @@
    Anomaly Detection
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Algorithms/Big%20O%20Analysis.html">
+   Big O Analysis
+  </a>
+ </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Neural Network
  </span>
@@ -205,8 +277,13 @@
    Neural Network
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../NN/Recurrent%20Neural%20Network.html">
+   Recurrent Neural Network
+  </a>
+ </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   NLP
  </span>
@@ -223,7 +300,19 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Story Telling
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../StoryTelling/Visualization.html">
+   Visualization
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Python
  </span>
@@ -244,8 +333,13 @@
    Statistics
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="NLP.html">
+   NLP
+  </a>
+ </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   SQL
  </span>
@@ -287,7 +381,19 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  ML Ops
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../MLOps/Git.html">
+   GIT
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Excel
  </span>
@@ -298,20 +404,47 @@
    Excel Basics
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Excel/Data%20Manipulation.html">
+   Data Manipulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Excel/Time%20and%20Date.html">
+   Time and Date
+  </a>
+ </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Tensorflow
+  Machine Learning Frameworks
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../Tensorflow/Basics.html">
-   Basics
+  <a class="reference internal" href="../MLFramework/PyCaret.html">
+   PyCaret
   </a>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../MLFramework/Tensorflow/Tensorflow.html">
+   Tensorflow
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../MLFramework/Tensorflow/Basics.html">
+     Basics
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Analytical Thinking
  </span>
@@ -327,107 +460,188 @@
    Industry Application
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Analytical%20Thinking/Behavioral%20-%20Management.html">
+   Behavioral - Management
+  </a>
+ </li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/contents/Python/Basics.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
+            <div class="navbar_extra_footer">
+            <div>
+    <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="dearc" data-color="#FF5F5F" data-emoji=""  data-font="Bree" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
 </div>
 
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        
-        <a class="issues-button"
-            href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/Python/Basics.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/dipranjan/dsinterviewqns/master?urlpath=tree/contents/Python/Basics.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/dipranjan/dsinterviewqns/master?urlpath=tree/contents/Python/Basics.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/dipranjan/dsinterviewqns/issues/new?title=Issue%20on%20page%20%2Fcontents/Python/Basics.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/contents/Python/Basics.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#questions">
    Questions
@@ -435,19 +649,45 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Basics</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#questions">
+   Questions
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="section" id="basics">
-<h1>Basics<a class="headerlink" href="#basics" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="questions">
-<h2>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h2>
+  <section id="basics">
+<h1>Basics<a class="headerlink" href="#basics" title="Permalink to this headline">#</a></h1>
+<figure class="align-default" id="image2">
+<a class="reference internal image-reference" href="../../_images/image26.PNG"><img alt="../../_images/image26.PNG" src="../../_images/image26.PNG" style="width: 480.0px; height: 360.0px;" /></a>
+</figure>
+<section id="questions">
+<h2>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">#</a></h2>
 <div class="dropdown tip admonition">
 <p class="admonition-title">Problem: [SNAPCHAT] Palindrome Checker</p>
 <p>Given a string, determine whether any permutation of it is a palindrome.</p>
@@ -781,8 +1021,101 @@ Complexity of O(N) required.</p>
 </div>
 </div>
 </div>
+<div class="dropdown tip admonition">
+<p class="admonition-title">Problem: [SQUARE] Book Combinations</p>
+<p>You have store credit of N dollars. However, you don’t want to walk a long distance with heavy books, but you want to spend all of your store credit.</p>
+<p>Let’s say we have a list of books in the format of tuples where the first value is the price and the second value is the weight of the book -&gt; (price,weight).</p>
+<p>Write a function optimal_books to retrieve the combination allows you to spend all of your store credit while getting at least two books at the lowest weight.</p>
+<p>Note: you should spend all your credit and getting at least 2 books, If no such condition satisfied just return empty list.</p>
+<p>Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>N = 18
+books = [(17,8), (9,4), (18,5), (11,9), (1,2), (13,7), (7,5), (3,6), (10,8)]
+
+def optimal_books(N, books) -&gt; [(17,8),(1,2)]
+</pre></div>
 </div>
 </div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s take this step by step</span>
+<span class="kn">import</span> <span class="nn">itertools</span>
+
+<span class="k">def</span> <span class="nf">optimal_books</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">books</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;(Price,Weight) details of books: &quot;</span><span class="p">,</span><span class="n">books</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Store Credit: &quot;</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
+    <span class="n">final_books</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># empty list to store the final books</span>
+    <span class="c1"># sorting the books by weight as we need the lightest books</span>
+    <span class="n">sorted_books</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">books</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> 
+    <span class="n">price</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">sorted_books</span><span class="p">]</span> <span class="c1">#list of prices sorted by weight</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">price</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">templist</span> <span class="o">=</span> <span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">combinations</span><span class="p">(</span><span class="n">price</span><span class="p">,</span><span class="n">i</span><span class="p">)))</span> <span class="c1"># generating all combinations of price</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="p">[</span><span class="nb">sum</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">templist</span><span class="p">]</span> <span class="c1"># summing individual combination to get total price of each combination</span>
+        <span class="k">if</span> <span class="n">N</span> <span class="ow">in</span> <span class="n">res</span><span class="p">:</span> <span class="c1"># if the result matches traceback traceback and append the combination         </span>
+            <span class="n">tempbooks</span> <span class="o">=</span> <span class="p">(</span><span class="n">templist</span><span class="p">[</span><span class="n">res</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">N</span><span class="p">)])</span>            
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">tempbooks</span><span class="p">:</span>
+                <span class="n">final_books</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sorted_books</span><span class="p">[</span><span class="n">price</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">k</span><span class="p">)])</span>            
+            <span class="k">break</span>
+            
+    <span class="k">return</span> <span class="n">final_books</span>
+        
+<span class="n">N</span> <span class="o">=</span> <span class="mi">18</span>
+<span class="n">books</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">17</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="mi">9</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="mi">7</span><span class="p">),</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best Combination: &quot;</span><span class="p">,</span><span class="n">optimal_books</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">books</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(Price,Weight) details of books:  [(17, 8), (9, 4), (18, 5), (11, 9), (1, 2), (13, 7), (7, 5), (3, 6), (10, 8)]
+Store Credit:  18
+Best Combination:  [(1, 2), (17, 8)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="dropdown tip admonition">
+<p class="admonition-title">Problem: [WISH] Intersecting Lines</p>
+<p>Say you are given a list of tuples where the first element is the slope of a line and the second element is the y-intercept of a line.</p>
+<p>Write a function find_intersecting to find which lines, if any, intersect with any of the others in the given x_range.</p>
+<p><strong>Example Input</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">tuple_list</span> <span class="pre">=</span> <span class="pre">[(2,</span> <span class="pre">3),</span> <span class="pre">(-3,</span> <span class="pre">5),</span> <span class="pre">(4,</span> <span class="pre">6),</span> <span class="pre">(5,</span> <span class="pre">7)]</span> <span class="pre">x_range</span> <span class="pre">=</span> <span class="pre">(0,</span> <span class="pre">1)</span></code>
+<strong>Output</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">find_intersecting(tuple_list,</span> <span class="pre">x_range)</span> <span class="pre">-&gt;</span>&#160; <span class="pre">[(2,3),</span> <span class="pre">(-3,5)]</span></code></p>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># for 2 lines to intersect the formulas used here are:</span>
+<span class="c1"># y = mx + c</span>
+<span class="c1"># x = (c2-c1)/(m1-m2)</span>
+<span class="c1"># https://www.cuemath.com/geometry/intersection-of-two-lines/ Check this link for details of the formula</span>
+
+<span class="k">def</span> <span class="nf">intersectinglines</span><span class="p">(</span><span class="n">tuple_list</span><span class="p">,</span><span class="n">x_range</span><span class="p">):</span>
+    <span class="n">output</span><span class="o">=</span><span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tuple_list</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">tuple_list</span><span class="p">)):</span>
+
+            <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">tuple_list</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">tuple_list</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="n">tuple_list</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">tuple_list</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">tuple_list</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="n">tuple_list</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+            <span class="k">if</span> <span class="n">x</span><span class="o">&gt;=</span><span class="n">x_range</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">and</span> <span class="n">x</span><span class="o">&lt;=</span><span class="n">x_range</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+                <span class="n">output</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">tuple_list</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">tuple_list</span><span class="p">[</span><span class="n">j</span><span class="p">]])</span>
+    <span class="k">return</span> <span class="n">output</span>
+
+<span class="n">tuple_list</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">)]</span>
+<span class="n">x_range</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">intersectinglines</span><span class="p">(</span><span class="n">tuple_list</span><span class="p">,</span> <span class="n">x_range</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(2, 3), (-3, 5)]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -806,72 +1139,56 @@ Complexity of O(N) required.</p>
 
               </div>
               
-        
-            
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="../NLP/Syntactic%20Processing.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Syntactic Processing</p>
-            </div>
-        </a>
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../StoryTelling/Visualization.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Visualization</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Data%20Manipulation.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Data Manipulation</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="Data%20Manipulation.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Data Manipulation</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Dip Ranjan Chatterjee | © MIT License - 2021<br/>
+  
+    <div class="extra_footer">
       <p>
-        
-          By Dip Ranjan Chatterjee | © MIT License - 2021<br/>
-        
-          <div class="extra_footer">
-            <p>
-<a href="https://www.buymeacoffee.com/dearc" target="_blank"><img src="https://img.shields.io/badge/Support-Buy%20me%20a%20%E2%98%95-orange?style=flat-square&logo=appveyor.svg" alt="Buy Me A Coffee"></a>
 <a href="https://dearc.medium.com/membership" target="_blank"><img src="https://img.shields.io/badge/Support-Medium%20Referral-lightgrey?style=flat-square&logo=appveyor.svg" alt="Medium Membership"></a>
 <a href="https://www.linkedin.com/company/the-data-science-interview-book/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BeglbXB3xT0mopZBzReqMEQ%3D%3D" target="_blank"><img src="https://img.shields.io/badge/Follow-LinkedIn-0077B5?style=flat-square&logo=appveyor.svg" alt="Follow LinkedIn"></a>
 <a href="https://github.com/dipranjan/dsinterviewqns/discussions" target="_blank"><img src="https://img.shields.io/badge/Discussion%20Forum-%F0%9F%99%8A%20%20%F0%9F%99%88%20%20%F0%9F%99%89-0172B3?style=flat-square&logo=appveyor.svg" alt="Discussion Forum"></a>
+<a href="https://www.buymeacoffee.com/dearc/e/88363" target="_blank"><img src="https://img.shields.io/badge/BUY-PDF%20Version%20%F0%9F%93%96-red?style=flat-square&logo=appveyor.svg" alt="Buy Book"></a>
 </p>
 
-          </div>
-      </p>
     </div>
-  </footer>
-</main>
+</p>
+        </footer>
+    </div>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
-  
-<script async="" src="https://www.google-analytics.com/analytics.js"></script>
-<script>
-                        window.ga = window.ga || function () {
-                            (ga.q = ga.q || []).push(arguments) };
-                        ga.l = +new Date;
-                        ga('create', 'UA-60403888-2', 'auto');
-                        ga('set', 'anonymizeIp', true);
-                        ga('send', 'pageview');
-                    </script>
 
   </body>
 </html>
