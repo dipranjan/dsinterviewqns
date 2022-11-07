@@ -6,7 +6,7 @@ html_meta:
 ---
 
 
-## Overview
+## GIT
 
 ```{figure} ../MLOps/images/image1.PNG
 ---
