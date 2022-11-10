@@ -131,13 +131,9 @@ scale: 60%
 
 An unbiased estimator is an accurate statistic that’s used to approximate a population parameter. “Accurate” in this sense means that it’s neither an overestimate nor an underestimate. If an overestimate or underestimate does happen, the mean of the difference is called a “bias.” That’s just saying if the estimator (i.e. the sample mean) equals the parameter (i.e. the population mean), then it’s an unbiased estimator.
 
-
 ### Maximum Likelihood Estimation (MLE)
 
-
-:::{note}
 **Reference:** [Discussion](https://stats.stackexchange.com/questions/112451/maximum-likelihood-estimation-mle-in-layman-terms), [Explanation](https://www.kdnuggets.com/2019/11/probability-learning-maximum-likelihood.html), [Implementation](https://analyticsindiamag.com/maximum-likelihood-estimation-python-guide/)
-:::
 
 Say you have some data. Say you're willing to assume that the data comes from some distribution -- perhaps Gaussian. There are an infinite number of different Gaussians that the data could have come from (which correspond to the combination of the infinite number of means and variances that a Gaussian distribution can have). MLE will pick the Gaussian (i.e., the mean and variance) that is "most consistent" with your data (the precise meaning of consistent is explained below).
 
@@ -170,12 +166,10 @@ Given 3 i.i.d. variables from an uniform distribution of $$0$$ to $$4$$, what’
 **Answer**
 
 This will only be possible if atleast $$2$$ random variables are greater than $$3$$.
-
-$$P(M>3) = P(GGL) + P(GLG) + P(LGG) + P(GGG)
-= 3 * (1/4)^2 * 3/4 + (1/4)^3 = 5/32$$
-
-where, $$G$$ stands for probability of number $$> 3$$ which is probability of it being $$4$$ out of $$1,2,3,4 = 1/4$$; 
-$$L$$ for probability of number $$< 3$$ which is probability of it being $$1,2,3$$ out of $$1,2,3,4 = 3/4$$; 
+ 
+$$P(M>3) = P(GGL) + P(GLG) + P(LGG) + P(GGG) = 3 * (1/4)^2 * 3/4 + (1/4)^3 = 5/32$$ where, $$G$$ stands for probability of number $$> 3$$ which is probability of it being $$4$$ out of $$1,2,3,4 = 1/4$$; 
+$$L$$ for probability of number $$< 3$$ which is probability of it being $$1,2,3$$ out of $$1,2,3,4 = 3/4 $$
+ 
 </details>
 
 <details>
