@@ -162,3 +162,23 @@ There is a simpler way to solve this problem: calculate the number of ways to no
 
 </details>
 
+<details>
+
+<summary>[FACEBOOK] 3 Zebras</summary>
+
+Three zebras are chilling in the desert. Suddenly a lion attacks.
+
+Each zebra is sitting on a corner of an equally length triangle. Each zebra randomly picks a direction and only runs along the outline of the triangle to either edge of the triangle.
+
+What is the probability that none of the zebras collide?
+
+**Answer**
+
+Each zebra has 2 options of travel: clockwise or anticlockwise. So a total of $$2*2*2 = 8$$ options.
+
+Out of this only way in which they donot collide is if all of them travel clockwise or anticlockwise. So a total of $$2$$.
+
+Therefore the probability of no collision $$= 2/8 = 25%\$$
+
+</details>
+
