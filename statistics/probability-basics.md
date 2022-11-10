@@ -7,7 +7,7 @@ description: >-
 
 # Probability Basics
 
-<figure><img src="../.gitbook/assets/prob basic cartoon (1)" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/prob basic cartoon" alt=""><figcaption></figcaption></figure>
 
 Probability theory is the mathematical framework that allows us to analyze chance events in a logically sound manner. The probability of an event is a number indicating how likely that event will occur.
 
@@ -71,7 +71,7 @@ $$
 
 The Maximum Aposteriori Probability (MAP) Estimation of the random variable y, given we have observed IID $$(x_1, x_2, x_3, ... )$$ here we try to accommodate our prior knowledge when estimating. In Maximum Likelihood Estimation (MLE), we assume we don’t have any prior knowledge of the quantity being estimated.
 
-<figure><img src="../.gitbook/assets/MAP vs MLE" alt=""><figcaption><p>MAP vs MLE</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/MAP vs MLE (1)" alt=""><figcaption><p>MAP vs MLE</p></figcaption></figure>
 
 ## Questions
 
