@@ -226,15 +226,13 @@ There is a subtle nuance to this problem, in the above solution we have assumed 
 
 Let's take $$r=3$$, for $$n$$ die rolls we should have atleast one $$r$$. The Probability of that is:
 
-$$
-P(r=3) \\
-& = P(\text{of getting all n values as 1,2,3} * P(\text{atleast one 3})) \\
-& = (\frac{3}{6})^n * (1-P(\text{no 3's occuring})) \\
-& = (\frac{3}{6})^n * (1-(\frac{\text{only getting 1,2}}{\text{out of 1,2,3}})^n) \\
-& = (\frac{3}{6})^n * (1-(\frac{2}{3})^n) \\
-& = \text{generalizing } (\frac{r}{6})^n * (1-(\frac{r-1}{r})^n) \\
-& = \frac{r^n - (r-1)^n}{6^n}\\
-$$
+$$P(r=3)$$
+$$= P(\text{of getting all n values as 1,2,3} * P(\text{atleast one 3}))$$
+$$= (\frac{3}{6})^n * (1-P(\text{no 3's occuring})) $$
+$$= (\frac{3}{6})^n * (1-(\frac{\text{only getting 1,2}}{\text{out of 1,2,3}})^n) $$
+$$= (\frac{3}{6})^n * (1-(\frac{2}{3})^n) $$
+$$= \text{generalizing } (\frac{r}{6})^n * (1-(\frac{r-1}{r})^n) $$
+$$= \frac{r^n - (r-1)^n}{6^n}$$
 </details>
 
 <details>
