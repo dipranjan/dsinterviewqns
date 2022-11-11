@@ -12,24 +12,24 @@ Given the dataset, write code in Pandas to return the cumulative percentage of s
 
 Example Input:
 
-|  user_id | grade | test score |
-| -------- | ----- | ---------- |
-| 1        | 10    | 85         |
-| 2        | 10    | 60         |
-| 3        | 11    | 90         |
-| 4        | 10    | 30         |
-| 5        | 11    | 99         |
+    |  user_id | grade | test score |
+    | -------- | ----- | ---------- |
+    | 1        | 10    | 85         |
+    | 2        | 10    | 60         |
+    | 3        | 11    | 90         |
+    | 4        | 10    | 30         |
+    | 5        | 11    | 99         |
 
 Example Output:
 
-| grade | test score | percentage |
-| ----- | ---------- | ---------- |
-| 10    | <50        | 30%        |
-| 10    | <75        | 65%        |
-| 10    | <90        | 96%        |
-| 10    | <100       | 99%        |
-| 11    | <50        | 15%        |
-| 11    | <75        | 50%        |
+    | grade | test score | percentage |
+    | ----- | ---------- | ---------- |
+    | 10    | <50        | 30%        |
+    | 10    | <75        | 65%        |
+    | 10    | <90        | 96%        |
+    | 10    | <100       | 99%        |
+    | 11    | <50        | 15%        |
+    | 11    | <75        | 50%        |
 
 **Answer**
 
@@ -69,13 +69,13 @@ df_addresses
 
 address
 
-4860 Sunset Boulevard, San Francisco, 94105 3055 Paradise Lane, Salt Lake City, 84103 682 Main Street, Detroit, 48204 9001 Cascade Road, Kansas City, 64102 5853 Leon Street, Tampa, 33605
+*4860 Sunset Boulevard, San Francisco, 94105 3055 Paradise Lane, Salt Lake City, 84103 682 Main Street, Detroit, 48204 9001 Cascade Road, Kansas City, 64102 5853 Leon Street, Tampa, 33605*
 
 df_cities
 
-city state Salt Lake City Utah Kansas City Missouri Detroit Michigan Tampa Florida San Francisco California
+*city state Salt Lake City Utah Kansas City Missouri Detroit Michigan Tampa Florida San Francisco California*
 
-Write a function complete\_address to create a single dataframe with complete addresses in the format of street, city, state, zipcode.
+Write a function complete_address to create a single dataframe with complete addresses in the format of street, city, state, zipcode.
 
 **Answer**
 
