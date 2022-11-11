@@ -28,6 +28,13 @@
 
 * [Visualization](story-telling/visualization.md)
 
+## PYTHON
+
+* [Basics](python/basics.md)
+* [Data Manipulation](python/data-manipulation.md)
+* [Statistics](python/statistics.md)
+* [NLP](python/nlp.md)
+
 ## ML OPS
 
 * [GIT](ml-ops/git.md)
