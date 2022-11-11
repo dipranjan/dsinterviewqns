@@ -24,6 +24,14 @@
 
 * [Overview](algorithms/overview.md)
 
+## STORY TELLING
+
+* [Visualization](story-telling/visualization.md)
+
+## ML OPS
+
+* [GIT](ml-ops/git.md)
+
 ## CONCLUSION
 
 * [PRIVACY NOTICE](conclusion/privacy-notice.md)
