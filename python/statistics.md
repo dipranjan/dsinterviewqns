@@ -1,22 +1,29 @@
 # Statistics
 
-### Questions[#](broken-reference)
+## Questions
 
-Problem: JOIN Dataframes
+<details>
+
+<summary>JOIN Dataframes</summary>
 
 Can you tell me the ways in which 2 pandas data frames can be joined?
 
-Solution:
+**Answer**
 
-A very high level difference is that merge() is used to combine two (or more) dataframes on the basis of values of common columns (indices can also be used, use left\_index=True and/or right\_index=True), and concat() is used to append one (or more) dataframes one below the other (or sideways, depending on whether the axis option is set to 0 or 1).
+- merge() is used to combine two (or more) dataframes on the basis of values of common columns (indices can also be used, use left\_index=True and/or right\_index=True)
+- concat() is used to append one (or more) dataframes one below the other (or sideways, depending on whether the axis option is set to 0 or 1).
+- join() is used to merge 2 dataframes on the basis of the index; instead of using merge() with the option left\_index=True we can use join().
+</details>
+    
+<details>
 
-join() is used to merge 2 dataframes on the basis of the index; instead of using merge() with the option left\_index=True we can use join().
-
-Problem: \[GOOGLE] Normal Distribution
+<summary>[GOOGLE] Normal Distribution</summary>
 
 Write a function to generate N samples from a normal distribution and plot the histogram.
 
-```
+**Answer**
+    
+```python
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy import stats
@@ -36,12 +43,17 @@ def normal_sample_generator(N):
 
 normal_sample_generator(10000)
 ```
+</details>
+    
+<details>
 
-Problem: \[UBER] Bernoulli trial generator
+<summary>[UBER] Bernoulli trial generator</summary>
 
 Given a random Bernoulli trial generator, write a function to return a value sampled from a normal distribution.
+    
+**Answer**
 
-```
+```python
 # *Solution recieved from the community via [merge request](https://github.com/dipranjan/dsinterviewqns/pull/5)*
 
 import numpy as np
@@ -71,12 +83,17 @@ def plot_output():
     plt.show() 
 plot_output()
 ```
+</details>
+    
+<details>
 
-Problem: \[PINTEREST] Interquartile Distance
+<summary>[PINTEREST] Interquartile Distance</summary>
 
 Given an array of unsorted random numbers (decimals) find the interquartile distance.
 
-```
+**Answer**
+
+```python
 # Interquartile distance is the difference between first and third quartile
 
 # first let's generate a list of random numbers
@@ -92,49 +109,24 @@ qtl_3 = np.quantile(li,.75)
 
 print("Interquartile distance: ", qtl_1 - qtl_3)
 ```
+</details>
+    
+<details>
 
-```
-[35.08, 50.02, 60.4, 51.82, 37.31, 40.69, 39.67, 45.21, 45.7, 34.52, 42.25, 42.06, 57.53, 45.21, 52.25, 66.18, 34.77, 53.83, 35.99, 33.68, 47.57, 51.62, 38.79, 58.53, 51.25, 61.53, 33.49, 64.59, 35.93, 36.07, 63.0, 46.17, 34.36, 50.61, 50.73, 34.07, 65.38, 59.51, 42.84, 62.86, 54.46, 54.87, 49.58, 65.68, 59.23, 65.94, 38.46, 59.21, 55.28, 55.94]
-Interquartile distance:  -19.269999999999996
-```
+<summary>[GENENTECH] Imputing the mdeian</summary>
 
-Problem: \[GENENTECH] Imputing the mdeian
+Write a function cheese_median to impute the median price of the selected California cheeses in place of the missing values. You may assume at least one cheese is not missing its price.
 
-Write a function cheese\_median to impute the median price of the selected California cheeses in place of the missing values. You may assume at least one cheese is not missing its price.
+**Answer**
 
-Input:
-
-```
+```python    
 import pandas as pd
 
 cheeses = {"Name": ["Bohemian Goat", "Central Coast Bleu", "Cowgirl Mozzarella", "Cypress Grove Cheddar", "Oakdale Colby"], "Price" : [15.00, None, 30.00, None, 45.00]}
 
 df_cheeses = pd.DataFrame(cheeses)
 ```
+</details>
 
-| Name                  | Price |
-| --------------------- | ----- |
-| Bohemian Goat         | 15.00 |
-| Central Coast Bleu    | 30.00 |
-| Cowgirl Mozzarella    | 30.00 |
-| Cypress Grove Cheddar | 30.00 |
-| Oakdale Colby         | 45.00 |
 
-```
-import pandas as pd
 
-cheeses = {"Name": ["Bohemian Goat", "Central Coast Bleu", "Cowgirl Mozzarella", "Cypress Grove Cheddar", "Oakdale Colby"], "Price" : [15.00, None, 30.00, None, 45.00]}
-
-df_cheeses = pd.DataFrame(cheeses)
-
-df_cheeses['Price'] = df_cheeses['Price'].fillna(df_cheeses['Price'].median())
-df_cheeses.head()
-```
-
-|   | Name                  | Price |
-| - | --------------------- | ----- |
-| 0 | Bohemian Goat         | 15.0  |
-| 1 | Central Coast Bleu    | 30.0  |
-| 2 | Cowgirl Mozzarella    | 30.0  |
-| 3 | Cypress Grove Cheddar | 30.0  |
-| 4 | Oakdale Colby         | 45.0  |
