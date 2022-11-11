@@ -7,7 +7,7 @@ description: >-
 
 # Probability Basics
 
-<figure><img src="../.gitbook/assets/prob basic cartoon (2)" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/prob basic cartoon (1) (1)" alt=""><figcaption></figcaption></figure>
 
 Probability theory is the mathematical framework that allows us to analyze chance events in a logically sound manner. The probability of an event is a number indicating how likely that event will occur.
 
@@ -57,7 +57,7 @@ It can be surprisingly difficult to count the number of sequences or sets satisf
 
 Bayes' theorem, named after 18th-century British mathematician Thomas Bayes, is a mathematical formula for determining conditional probability. **Conditional probability is the likelihood of an outcome occurring, based on a previous outcome occurring.**
 
-<figure><img src="../.gitbook/assets/Baye&#x27;s theorem (2)" alt=""><figcaption><p>Baye's Theorem</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Baye&#x27;s theorem (1) (1)" alt=""><figcaption><p>Baye's Theorem</p></figcaption></figure>
 
 An easy way of remembering it is using the below example:
 
