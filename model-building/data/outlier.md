@@ -1,6 +1,6 @@
 # Outlier
 
-<figure><img src="../../.gitbook/assets/image1.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/outlier cartoon.png" alt=""><figcaption></figcaption></figure>
 
 Outliers are the extreme values that exhibit significant deviation from the other observations in our data set. By looking at the outlier, it initially seems that this data probably does not belong with the rest of the data set as they look different from the rest.
 

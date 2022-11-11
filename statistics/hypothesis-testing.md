@@ -74,7 +74,7 @@ UCV/LCV $$= 36 \pm 2.17 * \frac{4}{\sqrt{49}} = 37.24 \text{ and } 34.76$$
 
 Now as the sample mean $$34.5$$ is not between UCV and LCV hence we reject the null hypothesis.
 
-<figure><img src="../.gitbook/assets/image10.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image10 (1).png" alt=""><figcaption></figcaption></figure>
 
 Now let's solve it using the $$p$$-value method:
 
@@ -90,7 +90,7 @@ As $$p$$-value is $$< \alpha$$ so, we reject null-hypothesis.
 
 ### Errors in Hypothesis Testing
 
-<figure><img src="../.gitbook/assets/image11.png" alt=""><figcaption><p>Types of Error in Hypothesis Testing (<a href="https://www.sixsigmadaily.com/type-i-and-type-ii-errors-in-hypothesis-testing/">SOURCE</a>)</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image11 (1).png" alt=""><figcaption><p>Types of Error in Hypothesis Testing (<a href="https://www.sixsigmadaily.com/type-i-and-type-ii-errors-in-hypothesis-testing/">SOURCE</a>)</p></figcaption></figure>
 
 ## Questions
 
@@ -124,6 +124,7 @@ $$P(\text{type I error}) = p(\text{type I error on A OR type I error on B})$$ $$
 If you want your $$p(type I error)$$ across n-tests to remain at $$5%$$, you will need to decrease the $$\alpha$$ in each individual test. Bonferroni correction can be applied. Basically, alpha will be reduced to alpha/n. n is number of experiments you are running.
 
 Otherwise, you can try and run an F-test to start in order to identify if a least $$1$$ test sees some significant effect. Then run a t-test on the specific experiment with the highest effect size. Granted, the p-value of the test will also depend on the variance of the sample in the given test, if we assume constant variance across tests, then the test with the highest effect size is in expectation the best performing test. Only running a single t-test will keep your p(type I error) low.
+
 </details>
 
 <details>
@@ -148,4 +149,3 @@ Selection bias is the phenomenon of selecting individuals, groups or data for an
 Handling missing data can make selection bias worse because different methods impact the data in different ways. For example, if you replace null values with the mean of the data, you are adding bias in the sense that you’re assuming that the data is not as spread out as it might actually be.
 
 </details>
-

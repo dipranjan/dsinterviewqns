@@ -15,7 +15,7 @@ Let's start with an example, suppose from the SAT math scores
 * Then, you do it again with a new sample of $$10$$ students. You might get a mean of $$480$$ this time.
 * Then, you do it again. And again. And again...... and get the following means for each of those three new samples of $$10$$ people: $$550$$, $$517$$, $$472$$
 
-<figure><img src="../.gitbook/assets/image8.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image8 (1).png" alt=""><figcaption></figcaption></figure>
 
 The sampling distribution, which is basically the distribution of sample means of a population, has some interesting properties which are collectively called the **central limit theorem**, _which states that no matter how the original population is distributed, the sampling distribution will follow these three properties_ –
 

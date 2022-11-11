@@ -39,6 +39,17 @@
 
 * [GIT](ml-ops/git.md)
 
-## CONCLUSION
+## MACHINE LEARNING FRAMEWORKS
 
-* [PRIVACY NOTICE](conclusion/privacy-notice.md)
+* [PyCaret](machine-learning-frameworks/pycaret.md)
+* [Tensorflow](machine-learning-frameworks/tensorflow.md)
+
+## ANALYTICAL THINKING
+
+* [Business Scenarios](analytical-thinking/business-scenarios.md)
+* [Industry Application](analytical-thinking/industry-application.md)
+* [Behavioral/Management](analytical-thinking/behavioral-management.md)
+
+## POLICIES
+
+* [PRIVACY NOTICE](policies/privacy-notice.md)
