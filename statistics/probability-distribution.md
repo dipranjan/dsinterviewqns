@@ -26,7 +26,7 @@ Looking at the table we see just 1 case of Three Heads, but 3 cases of Two Heads
 
 And this is what becomes the **probability distribution.**
 
-<figure><img src="../.gitbook/assets/image2.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../contents/Statistics/images/image2.png" alt=""><figcaption></figcaption></figure>
 
 **Frequency distribution** comes from actually doing the experiment $$n$$ number of times as $$n->\infty$$ the shape comes closer and closer to the Probability distribution
 
@@ -41,7 +41,7 @@ Now depending on the problem type one can choose the corresponding distribution 
 
 Some common types of probability distribution are as follows:
 
-<figure><img src="../.gitbook/assets/image3.png" alt=""><figcaption><p>Types of Probability Distribution</p></figcaption></figure>
+<figure><img src="../contents/Statistics/images/image3.png" alt=""><figcaption><p>Types of Probability Distribution</p></figcaption></figure>
 
 ## Normal (Gaussian) Distribution
 
@@ -76,7 +76,7 @@ Measures of central tendencies are measures, which help you describe a populatio
 * **Median:** the value, which divides the population in two half
 * **Mode:** the most frequent value in a population
 
-<figure><img src="../.gitbook/assets/image4.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../contents/Statistics/images/image4.png" alt=""><figcaption></figcaption></figure>
 
 ### Measure of Dispersion
 
@@ -88,20 +88,20 @@ Measures of dispersion reveal how is the population distributed around the measu
 * **Variance:** The average of the squared differences from the Mean.
 * **Standard Deviation:** is square root of Variance
 
-<figure><img src="../.gitbook/assets/image5.png" alt=""><figcaption><p>2 Distribution with different standard deviation</p></figcaption></figure>
+<figure><img src="../contents/Statistics/images/image5.png" alt=""><figcaption><p>2 Distribution with different standard deviation</p></figcaption></figure>
 
 ### Measure to describe shape of distribution
 
 * **Skewness:** Skewness is a measure of the asymmetry. Negatively skewed curve has a long left tail and vice versa.
 * **Kurtosis:** Kurtosis is a measure of the “peaked ness”. Distributions with higher peaks have positive kurtosis and vice-versa
 
-<figure><img src="../.gitbook/assets/image6.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../contents/Statistics/images/image6.png" alt=""><figcaption></figcaption></figure>
 
 ### Box Plots
 
 Box plots are one of the easiest and most intuitive way to understand distributions. They show mean, median, quartiles and Outliers on single plot.
 
-<figure><img src="../.gitbook/assets/image7.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../contents/Statistics/images/image7.png" alt=""><figcaption></figcaption></figure>
 
 ## Unbiased Estimator
 
