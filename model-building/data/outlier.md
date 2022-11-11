@@ -8,7 +8,7 @@ An outlier may occur due to the variability in the data, or due to experimental 
 
 In the cases when you have a small sample size, outliers can significantly mess up all your results. For statistical analysis of data, outliers can impact the normality test results of our data, invalidate the basic assumptions like constant variances for regression testing etc.
 
-<figure><img src="../../.gitbook/assets/image2.png" alt=""><figcaption><p>Outliers tend to affect mean more than median or mode</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image2 (1).png" alt=""><figcaption><p>Outliers tend to affect mean more than median or mode</p></figcaption></figure>
 
 ## Detecting Outliers
 
@@ -25,7 +25,7 @@ Here are some of the techniques for detecting outliers:
 
 * **Z-Score or Extreme Value Analysis (parametric):** The z-score or standard score of an observation is a metric that indicates how many standard deviations a data point is from the sample’s mean, assuming a gaussian distribution. This makes z-score a parametric method. Very frequently data points are not to described by a gaussian distribution, this problem can be solved by applying transformations to data ie: scaling it. It is a very effective method if you can describe the values in the feature space with a gaussian distribution. However, it is only convenient to use in a low dimensional feature space, in a small to medium sized dataset.
 
-<figure><img src="../../.gitbook/assets/image4.png" alt=""><figcaption><p>Any data point whose Z-score falls out 3rd standard deviation is usually considered an outlier</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image4 (1).png" alt=""><figcaption><p>Any data point whose Z-score falls out 3rd standard deviation is usually considered an outlier</p></figcaption></figure>
 
 * **Dbscan:** Dbscan is a density based clustering algorithm, it is focused on finding neighbors by density (MinPts) on an ‘n-dimensional sphere’ with radius $\epsilon$. A cluster can be defined as the maximal set of ‘density connected points’ in the feature space.Dbscan then defines different classes of points:
   * **Core point:** A is a core point if its neighborhood (defined by $\epsilon$) contains at least the same number or more points than the parameter MinPts.

@@ -57,7 +57,7 @@ It can be surprisingly difficult to count the number of sequences or sets satisf
 
 Bayes' theorem, named after 18th-century British mathematician Thomas Bayes, is a mathematical formula for determining conditional probability. **Conditional probability is the likelihood of an outcome occurring, based on a previous outcome occurring.**
 
-<figure><img src="../.gitbook/assets/Baye&#x27;s theorem (1) (1)" alt=""><figcaption><p>Baye's Theorem</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Baye&#x27;s theorem (1)" alt=""><figcaption><p>Baye's Theorem</p></figcaption></figure>
 
 An easy way of remembering it is using the below example:
 

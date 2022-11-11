@@ -53,3 +53,9 @@
 ## POLICIES
 
 * [PRIVACY NOTICE](policies/privacy-notice.md)
+
+## EXCEL
+
+* [Excel Basics](excel/excel-basics.md)
+* [Data Manipulation](excel/data-manipulation.md)
+* [Time and Date](excel/time-and-date.md)
