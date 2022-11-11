@@ -1,13 +1,12 @@
 # Business Scenarios
 
-```
-:class: tip, dropdown
+<details>
+
+<summary> [SALESFORCE] User Base </summary>
 
 Suppose as a Netflix product Analyst you are speaking with a Product Manager of Netflix. You get the question as to "I would want to understand user base of Netflix". What would be your approach?
-```
 
-```
-:class: dropdown
+**Answer**
 
 This type of questions are basically a coversation and tries to judge your skills in breaking down the problem statement and providing an analytical solution.
 
@@ -15,19 +14,18 @@ This type of questions are basically a coversation and tries to judge your skill
 - Define KPIs
 - Speak about your assumptions
 - Break down the problem statement into 2-3 pieces and tell how would you solve them
-```
+</details>
 
-```
-:class: tip, dropdown
+<details>
+
+<summary> [SALESFORCE] User Growth </summary>
 
 Suppose your company has launched a Survey Monkey competitor and the PM wants to understand user growth. There are 2 flavors of the product:
 
 - Unlimited survey's for 3 for a pro license
 - One survey per license for a normal license
-```
 
-```
-:class: dropdown
+**Answer**
 
 This type of questions are basically a coversation and tries to judge your skills in breaking down the problem statement and providing an analytical solution.
 
@@ -35,10 +33,11 @@ This type of questions are basically a coversation and tries to judge your skill
 - Define KPIs
 - Speak about your assumptions
 - Break down the problem statement into 2-3 pieces and tell how would you solve them
-```
+</details>
 
-```
-:class: tip, dropdown
+<details>
+
+<summary> Valuation </summary>
 
 Let's say that you're working at Netflix.
 
@@ -46,11 +45,9 @@ The company executives are working to renew a deal with another TV network that 
 
 We know that the TV show has been on Netflix for a year already. 
 
-How would you approach valuing the benefit of keeping this show on Netflix? 
-```
+How would you approach valuing the benefit of keeping this show on Netflix?
 
-```
-:class: dropdown
+**Answer**
 
 Some of the factors which you can consider are as follows:
 
@@ -60,37 +57,33 @@ Some of the factors which you can consider are as follows:
 - How many people who viewed this on Netflix renewed their subscriptions?
 - What percent of viewers who saw this completed the entire series?
 - How many of the people are repeat viewers of this seris?
-```
+</details>
 
-```
-:class: tip, dropdown
+<details>
+
+<summary> [SQUARE] New Product</summary>
 
 Let’s say that you’re in charge of Square’s small business division. 
 
 The CEO wants to hire a customer success manager for help managing a new software product. Another executive thinks that it’s worth just instituting a free trial instead.
 
 What would be your recommendation on utilizing a customer success manager versus just a free trial to get new or existing customers to use the new product?
-```
 
-```
-:class: dropdown
+**ANSWER PENDING**
+</details>
 
-SOLUTION PENDING
-```
+<details>
 
-```
-:class: tip, dropdown
+<summary> [FACEBOOK] Promote Product</summary>
 [📖Source](https://www.interviewquery.com/questions/promoting-instagram) 
 
 Let's say you work on the growth team at Facebook and are tasked with promoting Instagram from within the Facebook app.
 
 Where and how could you promote Instagram through Facebook?
-```
 
-```
-:class: dropdown
+**Answer**
 
-Goal: Increase awareness of Instragram through Facebook Hypothesis: Showing Instragram ads to users in their News Feed will increase the likelihood that they will login to Instragram by $X%$.
+Goal: Increase awareness of Instragram through Facebook Hypothesis: Showing Instragram ads to users in their News Feed will increase the likelihood that they will login to Instragram by $$X%$$.
 
 Run A/B test:
 - Control group: no changes
@@ -108,10 +101,11 @@ Metrics:
 - The other idea is: Notifying ppl on Facebook when their friends join Instagram. We can do a regression of number of friends on Instagram vs % of those users who use Instagram
 
 Another thing to add to this would be to look at including an Instagram reference/clickable when a user uploads a new photo/video to Facebook. It is a natural fit there since Instagram is a photo/video sharing paltform and it is a natural integration to bring those together for those users who do not have Instagram.
-```
+</details>
 
-```
-:class: tip, dropdown
+<details>
+
+<summary> [LINKEDIN] Email Campaign</summary>
 
 [Source](https://www.linkedin.com/feed/update/urn:li:activity:6984161706524442624/)
 
@@ -121,21 +115,19 @@ LinkedIn’s marketing team tested two versions of email campaigns, A and B, in 
 
 The summary table below shows the number of emails per variation per city. Explain your assessment
 
-| Variations | NYC    | SF     |
-|------------|--------|--------|
-| A          | 20,000 | 60,000 |
-| B          | 12,000 | 8,000  |
-```
+	| Variations | NYC    | SF     |
+	|------------|--------|--------|
+	| A          | 20,000 | 60,000 |
+	| B          | 12,000 | 8,000  |
 
-```
-:class: dropdown
+**Answer**
 
 **[Candidate]** Before I address your question, I will first organize CTR numbers you presented in a summary table:
 
-| Variations | Size   | CTR | Count  |
-|------------|--------|-----|--------|
-| A          | 80,000 | 15% | 12,000 |
-| B          | 20,000 | 30% | 6,000  |
+	| Variations | Size   | CTR | Count  |
+	|------------|--------|-----|--------|
+	| A          | 80,000 | 15% | 12,000 |
+	| B          | 20,000 | 30% | 6,000  |
 
 As you mentioned, a total of 100,000 emails were dispatched, 80% being email A while the remaining being email B. Given the 15% CTR for email A and 30% CTR for email B, the counts of conversions were 12,000 and 6,000, A and B respectively. 
 
@@ -151,8 +143,8 @@ As you mentioned, a total of 100,000 emails were dispatched, 80% being email A w
 
 **[Candidate]** First, I would state the hypothesis:
 
-$H_o$: The CTR’s of emails A and B are the same.
-$H_a$: The CTR’s of emails A and B are different.
+$$H_o$$: The CTR’s of emails A and B are the same.
+$$H_a$$: The CTR’s of emails A and B are different.
 
 Second, I would use either a chi-square contingency test or a T-test for two-sample proportions. If p-value of a test is less than the significance level at 0.05, reject the null hypothesis and conclude there is statistical significance in the CTR’s of the two emails. Finally, I can conclude that email B brings higher CTR than email A.
 
@@ -169,11 +161,11 @@ while that of email B was 30%, which suggests that email B produced higher CTR t
 
 **[Candidate]** As I had done in the previous problem, let me organize the numbers in a summary table, rounded:
 
-|            | Total        |              | NYC    |               | SF     |               |
-|------------|--------------|--------------|--------|---------------|--------|---------------|
-| Variations | Size         | Conversions  | Size   | Conversions   | Size   | Conversions   |
-| A          | 80,000 (80%) | 12,000 (15%) | 20,000 | 3,000 (15%)   | 60,000 | 9000 (15%)    |
-| B          | 20,000 (20%) | 6,000 (30%)  | 12,000 | 5,000 (41.7%) | 8,000  | 1,000 (12.5%) |
+	|            | Total        |              | NYC    |               | SF     |               |
+	|------------|--------------|--------------|--------|---------------|--------|---------------|
+	| Variations | Size         | Conversions  | Size   | Conversions   | Size   | Conversions   |
+	| A          | 80,000 (80%) | 12,000 (15%) | 20,000 | 3,000 (15%)   | 60,000 | 9000 (15%)    |
+	| B          | 20,000 (20%) | 6,000 (30%)  | 12,000 | 5,000 (41.7%) | 8,000  | 1,000 (12.5%) |
 
 I have generic observations about the table. I see that the distribution of emails are higher for version B than A. I also see that San Francisco received higher allocation of email A than New York while New York received higher allocation of email B than email A.
 
@@ -190,27 +182,27 @@ I have generic observations about the table. I see that the distribution of emai
 **[Candidate]** If we disregard the possibility of interaction effect between email variations and cities, then we can use T-test for sample proportions to test whether cities affect email conversions.
 
 First, I would establish the following hypothesis:
-$H_o: CTR_{NYC} = CTR_{SF}$
-$H_a: CTR_{NYC} ≠ CTR_{SF}$
+$$H_o: CTR_{NYC} = CTR_{SF}$$
+$$H_a: CTR_{NYC} ≠ CTR_{SF}$$
 Next, I would create the following numerical summary pooled across variations by city:
 
-| Cities | Calculations                        | CTR's |
-|--------|-------------------------------------|-------|
-| NYC    | (3,000 + 5,000) / (20,000 + 12,000) | 25%   |
-| SF     | (9,000 + 1,000)/6,000 + 60,000)     | -15%  |
+	| Cities | Calculations                        | CTR's |
+	|--------|-------------------------------------|-------|
+	| NYC    | (3,000 + 5,000) / (20,000 + 12,000) | 25%   |
+	| SF     | (9,000 + 1,000)/6,000 + 60,000)     | -15%  |
 
 Next, I would calculate the sample standard error, and calculate the T-statistic:
-$T − Statistic = \frac{(CTR_{NYC} − CTR_{SF})}{SE}$
+$$T − Statistic = \frac{(CTR_{NYC} − CTR_{SF})}{SE}$$
 If the corresponding p-value is less than the usual significance level at 0.05, then reject the null hypothesis and conclude that there is statistical significance in the difference between the CTRs in the two cities at the significance level of 0.05.
 
 **[Interviewer]** Could you have used a one-sample T-test?
 
 **[Candidate]** Let me think. I believe it is possible to use a one-sample T-test. Instead of comparing the difference of CTR’s between NYC and SF, I can compare if the difference of CTR’s against 0 such that the hypothesis statements is now the following:
-$H_o: (CTR_{NYC} − CTR_{SF}) = 0$
-$H_a: (CTR_{NYC} − CTR_{SF}) ≠ 0$
+$$H_o: (CTR_{NYC} − CTR_{SF}) = 0$$
+$$H_a: (CTR_{NYC} − CTR_{SF}) ≠ 0$$
 
 Based on this change, the T-statistic is calculated as follows:
-$T − Statistic = [(CTR_{NYC} − CTR_{SF}) − 0] / SE$
+$$T − Statistic = [(CTR_{NYC} − CTR_{SF}) − 0] / SE$$
 
 **[Interviewer]** Suppose that we do care about the interaction effect between city and variation. How would you evaluate it?
 
@@ -226,9 +218,9 @@ The ANOVA test would provde statistical significance of each of the three terms 
 
 **[Candidate]** I would explain that the statistical test result suggests that there is an effect on CTR given the variation across cities and emails. I would then advise that the study is expanded on more markets to assess this business hypothesis further. In addition, I would suggest that more variations of the email are tested to assess the following assumption - emails tailored to a city’s demography performs better than a generic version across markets.
  
-| Assessments             | Rating | Comments                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-|-------------------------|--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Statistical Methodology | 4      | In both problems, the candidate's statistical know-how was fairly strong.  In problem #1, she devised a statistical framework that addressed the interview question.  Her approach of utilizing T-test was appropriate.   In problem #2, most of her responses were solid except on a follow-up question involving one-sample T-test.  Given that sample-size difference between the two groups, mathematically, the statistical test is not possible.                                                |
-| Product Sense           | 5      | In both questions, she ensured that her responses are grounded in the marketing problem.  She devised a numerical summary, making sense of the CTR metrics.  This allowed her to suggests approaches that aligned with the problem.  Lastly, in her last problem, when asked about her recommendation, she offered sound suggestions.  The idea of testing email variations on more than two emails makes sense to assess whether emails  focused on target market perform better than a general one. |
-| Communication           | 5      | The candidate ensured that she understood the problems, illustrating a numerical summary and explaining her analysis clearly.  Her explanation of statistical were easy to follow and comprehensive. Lastly, she clearly explained recommendations to a  marketing team, suggesting that she possesses fluidity in stakeholder engagement.                                                                                                                                                            |
-```
+	| Assessments             | Rating | Comments                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+	|-------------------------|--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+	| Statistical Methodology | 4      | In both problems, the candidate's statistical know-how was fairly strong.  In problem #1, she devised a statistical framework that addressed the interview question.  Her approach of utilizing T-test was appropriate.   In problem #2, most of her responses were solid except on a follow-up question involving one-sample T-test.  Given that sample-size difference between the two groups, mathematically, the statistical test is not possible.                                                |
+	| Product Sense           | 5      | In both questions, she ensured that her responses are grounded in the marketing problem.  She devised a numerical summary, making sense of the CTR metrics.  This allowed her to suggests approaches that aligned with the problem.  Lastly, in her last problem, when asked about her recommendation, she offered sound suggestions.  The idea of testing email variations on more than two emails makes sense to assess whether emails  focused on target market perform better than a general one. |
+	| Communication           | 5      | The candidate ensured that she understood the problems, illustrating a numerical summary and explaining her analysis clearly.  Her explanation of statistical were easy to follow and comprehensive. Lastly, she clearly explained recommendations to a  marketing team, suggesting that she possesses fluidity in stakeholder engagement.                                                                                                                                                            |
+</details>
