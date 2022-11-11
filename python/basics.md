@@ -4,7 +4,7 @@ description: This page deals with Basic Python Questions
 
 # Basics
 
-### Questions[#](broken-reference)
+### Questions
 
 <details>
 
