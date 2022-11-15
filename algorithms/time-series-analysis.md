@@ -339,6 +339,11 @@ If your question asked "_how to use Pearson correlation correctly with time seri
 
 Further, smoothing won't reduce the problem of serial dependence; quite the opposite -- it makes it even worse! Here are the correlations after smoothing (default loess smooth - of series vs index - performed in R):
 
+    |       | coin1      | coin2      |
+    |-------|------------|------------|
+    | coin2 | 0.9696378  |            |
+    | coin3 | -0.8829326 | -0.7733559 |
+
 They all got further from 0. They're all still nothing but meaningless noise, though now it's smoothed, cumulated noise. (By smoothing, we reduce the variability in the series we put into the correlation calculation, so that may be why the correlation goes up.)
 
 _Check the link given above for a detailed discussion_
