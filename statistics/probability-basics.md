@@ -7,7 +7,7 @@ description: >-
 
 # Probability Basics
 
-<figure><img src="../.gitbook/assets/prob basic cartoon (1)" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/prob basic cartoon" alt=""><figcaption></figcaption></figure>
 
 Probability theory is the mathematical framework that allows us to analyze chance events in a logically sound manner. The probability of an event is a number indicating how likely that event will occur.
 
@@ -57,7 +57,7 @@ It can be surprisingly difficult to count the number of sequences or sets satisf
 
 Bayes' theorem, named after 18th-century British mathematician Thomas Bayes, is a mathematical formula for determining conditional probability. **Conditional probability is the likelihood of an outcome occurring, based on a previous outcome occurring.**
 
-<figure><img src="../.gitbook/assets/Baye&#x27;s theorem" alt=""><figcaption><p>Baye's Theorem</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Baye&#x27;s theorem (1)" alt=""><figcaption><p>Baye's Theorem</p></figcaption></figure>
 
 An easy way of remembering it is using the below example:
 
@@ -71,7 +71,7 @@ $$
 
 The Maximum Aposteriori Probability (MAP) Estimation of the random variable y, given we have observed IID $$(x_1, x_2, x_3, ... )$$ here we try to accommodate our prior knowledge when estimating. In Maximum Likelihood Estimation (MLE), we assume we don’t have any prior knowledge of the quantity being estimated.
 
-<figure><img src="../.gitbook/assets/MAP vs MLE (1) (1)" alt=""><figcaption><p>MAP vs MLE</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/MAP vs MLE" alt=""><figcaption><p>MAP vs MLE</p></figcaption></figure>
 
 ## Questions
 
@@ -345,7 +345,7 @@ Plotting the lines $$x + y = 10 x + y = 5, x = 5, y = 5$$. Now favorable area is
 
 Required probability $$= 1/4$$
 
-<img src="../.gitbook/assets/image13.png" alt="" data-size="original">
+<img src="../.gitbook/assets/image13 (1) (1).png" alt="" data-size="original">
 
 </details>
 

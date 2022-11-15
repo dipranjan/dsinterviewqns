@@ -61,7 +61,7 @@ The following are some of the most common Big-O functions:
 | Logarithmic | $O(log(n))$  |
 | Log Linear  | $O(nlog(n))$ |
 
-<figure><img src="../.gitbook/assets/image16.png" alt=""><figcaption><p>n is the input size and c is a positive constant</p></figcaption></figure>
+<figure><img src="../contents/Algorithms/images/image16.PNG" alt=""><figcaption><p>n is the input size and c is a positive constant</p></figcaption></figure>
 
 ### Analogy
 
@@ -78,10 +78,10 @@ This is what the concept of asymptotic runtime, or big $O$ time, means. We could
 * Electronic Transfer: $O(s)$, where $s$ is the size of the file. This means that the time to transfer the file increases linearly with the size of the file. (Yes, this is a bit of a simplification, but that's okay for these purposes)
 * Airplane Transfer: $O(1)$ with respect to the size of the file. As the size of the file increases, it won't take any longer to get the file to your friend. The time is constant.
 
-<figure><img src="../.gitbook/assets/image17.PNG" alt=""><figcaption><p>No matter how big the constant is and how slow the linear increase is, linear will at some point surpass the constant.</p></figcaption></figure>
+<figure><img src="../contents/Algorithms/images/image17.PNG" alt=""><figcaption><p>No matter how big the constant is and how slow the linear increase is, linear will at some point surpass the constant.</p></figcaption></figure>
 
 There are many more runtimes than this. Some ofthe most common ones are $O(log N),O(N log N), O(N), O(N^2), O(2^N)$. There's no fixed list of possible runtimes, though. You can also have multiple variables in your runtime. For example, the time to paint a fence that's $w$ meters wide and $h$ meters high could be described as $O(wh)$ .If you needed $p$ layers of paint, then you could say that the time is $O(whp)$.
 
 #### Big O of DS Algorithms
 
-<figure><img src="../.gitbook/assets/image15.png" alt=""><figcaption><p>Big O of some of the popular Machine Learning Algorithms</p></figcaption></figure>
+<figure><img src="../contents/Algorithms/images/image15.png" alt=""><figcaption><p>Big O of some of the popular Machine Learning Algorithms</p></figcaption></figure>

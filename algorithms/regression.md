@@ -2,13 +2,13 @@
 
 ## Linear Regression
 
-<figure><img src="../.gitbook/assets/image8.png" alt=""><figcaption><p><a href="https://xkcd.com/605/">Source</a></p></figcaption></figure>
+<figure><img src="../contents/Algorithms/images/image8.png" alt=""><figcaption><p><a href="https://xkcd.com/605/">Source</a></p></figcaption></figure>
 
 $$Y = b_0 + b_1 * x_1 + b_2 * x_2 + \epsilon$$
 
 The idea is to find the line or plane which best fits the data. Collectively, $$b_0, b_1, b_2$$ are called regression coefficients. $$\epsilon$$ is the error term, the part of $$Y$$ the regression model is unable to explain.
 
-<figure><img src="../.gitbook/assets/image2.png" alt=""><figcaption><p><a href="https://www.shutterstock.com/image-illustration/annotated-diagram-explaining-components-graph-showing-1406041139">Source</a></p></figcaption></figure>
+<figure><img src="../contents/Algorithms/images/image2.png" alt=""><figcaption><p><a href="https://www.shutterstock.com/image-illustration/annotated-diagram-explaining-components-graph-showing-1406041139">Source</a></p></figcaption></figure>
 
 ### Metrics
 
@@ -32,7 +32,7 @@ Now once you have the model fit next comes the metrics to measure how good the f
 
     Penalized regression is similar in spirit to AIC. Instead of explicitly searching through a discrete set of models, the model-fitting equation incorporates a constraint that penalizes the model for too many variables (parameters). Rather than eliminating predictor variables entirely — as with stepwise, forward, and backward selection — penalized regression applies the penalty by reducing coefficients, in some cases to near zero. Common penalized regression methods are ridge regression and lasso regression. Regularization is nothing but adding a penalty term to the objective function and control the model complexity using that penalty term. It can be used for many machine learning Algorithms. Both Ridge and Lasso regression uses $$L2$$ and $$L1$$ regularizations.
 
-<figure><img src="../.gitbook/assets/image23 (1).png" alt=""><figcaption><p><a href="https://stanford.edu/~shervine/teaching/cs-229/cheatsheet-machine-learning-tips-and-tricks">Source</a></p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image23.png" alt=""><figcaption><p><a href="https://stanford.edu/~shervine/teaching/cs-229/cheatsheet-machine-learning-tips-and-tricks">Source</a></p></figcaption></figure>
 
 {% hint style="info" %}
 Ridge brings the coefficients close to $$0$$ but not exactly to $$0$$ which results in the model retaining all the features. Lasso on the other hand brings the coefficients to $$0$$ hence results in reduced features. Lasso shrinks the coefficients by same amount whereas Ridge shrinks them by same proportion.
@@ -136,9 +136,9 @@ In the case of regression, decision trees in random forest learn by splitting th
 
 It is difficult to tell which will perform better, it completely depends on the problem statement and the available data. Other than the points mentioned above some of the Key advantages of linear models over tree-based ones are:
 
-* they can extrapolate (e.g. if labels are between 1-5 in train set, tree based model will never predict 10, but linear will)
+* they can extrapolate (e.g., if labels are between 1-5 in train set, tree-based model will never predict 10, but linear will)
 * could be used for anomaly detection because of extrapolation
-* interpretability (yes, tree based models have feature importance, but it's only a proxy, weights in linear model are better)
+* interpretability (yes, tree-based models have feature importance, but it's only a proxy, weights in linear model are better)
 * need less data to get good results
 * Random Forest is able to discover more complex relation at the cost of time
 
@@ -152,7 +152,9 @@ The first point becomes clearly important in this case as we would need booking 
 
 Say we are running a probabilistic linear regression which does a good job modeling the underlying relationship between some $$y$$ and $$x$$. Now assume all inputs have some noise $$\epsilon$$ added, which is independent of the training data.
 
-What is the new objective function? How do you compute it? **Answer** [📖Source](https://www.nicksingh.com/posts/30-machine-learning-interview-questions-ml-interview-study-guide)
+What is the new objective function? How do you compute it?&#x20;
+
+**Answer** ([Source)](https://www.nicksingh.com/posts/30-machine-learning-interview-questions-ml-interview-study-guide)
 
 The objective function for linear regression where $$x$$ is set of input vectors and $$w$$ are the weights: $$L(w) = E[(w^Tx-y)^2]$$
 
@@ -160,11 +162,11 @@ Let's assume that the noise added is Gaussian as follows: $$\epsilon \sim N(0, \
 
 To compute it, we simplify: $$L'(w) = E[(w^T x -y + w^T\epsilon)^2]$$ $$L'(w) = E[(w^T x - y)^2 + 2(w^Tx-y)w^T\epsilon +w^T\epsilon \epsilon^Tw]$$ $$L'(w) = E[(w^T x - y)^2] + E[2(w^Tx-y)w^T\epsilon] + E[w^T\epsilon \epsilon^Tw]$$
 
-We know that the expectation for $$\epsilon$$ is $$0$$ so the middle term becomes $$0$$ and we are left with:$$L'(w) = L(w) + 0 + w^TE[\epsilon \epsilon^T]w$$
+We know that the expectation for $$\epsilon$$ is $$0$$ so, the middle term becomes $$0$$ and we are left with:$$L'(w) = L(w) + 0 + w^TE[\epsilon \epsilon^T]w$$
 
 The last term can be simplified as: $$L'(w) = L(w) + w^T\lambda Iw$$
 
-And therefore the objective function simplifies to that of L2-regularization: $$L'(w) = L(w) + \lambda||w||^2$$
+And therefore, the objective function simplifies to that of L2-regularization: $$L'(w) = L(w) + \lambda||w||^2$$
 
 </details>
 
@@ -174,9 +176,7 @@ And therefore the objective function simplifies to that of L2-regularization: $$
 
 What is L1 and L2 regularization? What are the differences between the two?
 
-**Answer**
-
-[📖Source](https://www.nicksingh.com/posts/30-machine-learning-interview-questions-ml-interview-study-guide)
+**Answer** [(Source)](https://www.nicksingh.com/posts/30-machine-learning-interview-questions-ml-interview-study-guide)
 
 $$L1$$ and $$L2$$ regularization are both methods of regularization that attempt to prevent overfitting in machine learning. For a regular regression model assume the loss function is given by $$L$$. $$L1$$ adds the absolute value of the coefficients as a penalty term, whereas $$L2$$ adds the squared magnitude of the coefficients as a penalty term.
 
@@ -201,9 +201,7 @@ You're working with several sensors that are designed to predict a particular en
 
 What are some cost functions you might consider, and which would you decide to minimize in this scenario?
 
-**Answer**
-
-[📖Source](https://www.nicksingh.com/posts/30-machine-learning-interview-questions-ml-interview-study-guide)
+**Answer** [(Source)](https://www.nicksingh.com/posts/30-machine-learning-interview-questions-ml-interview-study-guide)
 
 There are two potential cost functions here, one using the $$L1$$ norm and the other using the $$L2$$ norm. Below are two basic cost functions using an L1 and L2 norm respectively:
 
@@ -224,9 +222,7 @@ However, given the fact that there are many sensors (and a broad range of how us
 
 Suppose you are running a linear regression and model the error terms as being normally distributed. Show that in this setup, maximizing the likelihood of the data is equivalent to minimizing the sum of squared residuals.
 
-**Answer**
-
-[📖Source](https://cppcodingzen.com/?p=1609)
+**Answer** [(Source)](https://cppcodingzen.com/?p=1609)
 
 A mathematical derivation like this requires us to:
 
