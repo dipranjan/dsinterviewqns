@@ -4,11 +4,9 @@
 If you want to have some hands on practice without the hassle of installing and setting up the required softwares in your local machine 🔫DB Fiddle provides free SQL sandbox. In a lot of problems below prebuilt sandbox links are already provided to refer but it is always recommended that you setup your personal sandbox to play around.
 {% endhint %}
 
-```
-
 <details>
 
-<summary>**[Leetcode](https://leetcode.com/problems/second-highest-salary/)**</summary>
+<summary>[**Leetcode**](https://leetcode.com/problems/second-highest-salary/)</summary>
 
 *For a similar problem with different approach check Nth highest salary problem*
 
@@ -262,7 +260,6 @@ with cte as(
 
 Select Employee from cte where Emp_Sal > Man_Salary
 ```
-
 </details>
 
 <details>
@@ -308,7 +305,6 @@ Select Created_date
 from users
 group by Created_date
 ```
-
 </details>
 
 <details>
