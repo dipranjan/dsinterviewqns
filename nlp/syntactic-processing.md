@@ -35,7 +35,7 @@ So, the probability of a tag sequence $$(T_1, T_2, T_3,$$ …$$, T_n)$$ for a gi
 
 $$P(T|W) = (P(W_1|T_1) * P(T_1|start)) * (P(W_2|T_2) * P(T_2|T_1)) * ...* (P(W_n|T_n) * P(T_n|T_{n-1}))$$
 
-**For a sequence of $$n$$ words and $$t$$ tags, a total of $$t_n$$ tag sequences are possible.**
+**For a sequence of** $$n$$ **words and** $$t$$ **tags, a total of** $$t_n$$ **tag sequences are possible.**
 
 ### Viterbi Heuristic
 
@@ -164,16 +164,14 @@ The idea of chunking in the context of entity recognition is simple - most entit
 
 **Noun phrase chunks:** 'John', 'the hotel'
 
-**Grammar:** $$\text{NP_chunk: {
-
-?\}}$$
+**Grammar:** $$\text{NP_chunk: {<DT>?<NN>}}$$
 
 **Probabilistic method for NER**
 
 The following two probabilistic models to get the most probable IOB tags for word:
 
 * **Unigram chunker** computes the unigram probabilities P(IOB label | pos) for each word and assigns the label that is most likely for the POS tag.
-* **Bigram chunker** works similar to a unigram chunker, the only difference being that now the probability of a POS tag having an IOB label is computed using the current and the previous POS tags, i.e. P(label | pos, prev_pos).
+* **Bigram chunker** works similar to a unigram chunker, the only difference being that now the probability of a POS tag having an IOB label is computed using the current and the previous POS tags, i.e., P(label | pos, prev\_pos).
 
 **Gazetteer Lookup**, another way to identify named entities (like cities and states) is to look up a dictionary or a gazetteer. A gazetteer is a geographical directory which stores data regarding the names of geographical entities (cities, states, countries) and some other features related to the geographies.
 
@@ -190,8 +188,8 @@ CRFs are used in a wide variety of sequence labelling tasks across various domai
 
 CRFs use ‘feature functions’ rather than the input word sequence $$x$$ itself. The idea is similar to how features are extracted for building the naive Bayes and decision tree classifiers in a previous section. Some example ‘word-features’ (each word has these features) are:
 
-* Word and POS tag based features: word_is_city, word_is_digit, pos, previous_pos, etc.
-* Label-based features: previous_label
+* Word and POS tag-based features: word\_is\_city, word\_is\_digit, pos, previous\_pos, etc.
+* Label-based features: previous\_label
 
 A feature function takes the following four inputs:
 
@@ -204,7 +202,7 @@ Let's see an example of a feature function:
 
 A feature function $$f_1$$ which returns $$1$$ if the word $$x_i$$ is a city and the corresponding label $$y_i$$ is ‘I-location’, else $$0$$. This can be represented as:
 
-$$f_{1}(x,i,y_i,y_{i-1})= \[\[x_i \text{ is in city last name}] \text{ and } \[y_i \text{ is I-location}]]$$
+$$f_{1}(x,i,y_i,y_{i-1})= [[x_i \text{ is in city last name}] \text{ and } [y_i \text{ is I-location}]]$$
 
 The feature function returns $$1$$ only if both the conditions are satisfied, i.e. when the word is a city name and is tagged as ‘I-location’ (e.g. Tokyo/I-location).
 
@@ -226,7 +224,7 @@ where $$Z(x)$$ is sum of scores of all possible tag sequences $$N$$ $$= \sum_1^N
 
 Training a CRF model means to compute the optimal set of weights $$w$$ which best represents the observed sequences $$y$$ for the given word sequences $$x$$. In other words, we want to find the set of weights $$w$$ which maximises the conditional probability $$P(y|x,w)$$ for all the observed sequences $$(x,y)$$, by taking log and simplifying the equations and adding a regularization term to prevent overfitting, the final equation comes out as:
 
-$$L(w) = \sum_1^N\[(w.f)-log(Z)] - \text{regularization term}$$
+$$L(w) = \sum_1^N[(w.f)-log(Z)] - \text{regularization term}$$
 
 The inference task to assign the label sequence $$y^*$$ to $$x$$ which maximises the score of the sequence, i.e.
 

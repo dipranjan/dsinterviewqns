@@ -13,7 +13,7 @@ Normal neural network is insufficient to train sequence data. Some examples of s
 
 Sequential data contains multiple entities​ and the order in which these entities are present is important.
 
-<figure><img src="../contents/NN/images/image2.png" alt=""><figcaption><p>In RNN each activation is dependent on two things: the activation in the previous layer <span class="math">l-1</span> at the current timestep <span class="math">t</span>, and the activation in the same layer <span class="math">l</span> at the previous timestep <span class="math">t-1</span></p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image2.png" alt=""><figcaption><p>In RNN each activation is dependent on two things: the activation in the previous layer <span class="math">l-1</span> at the current timestep <span class="math">t</span>, and the activation in the same layer <span class="math">l</span> at the previous timestep <span class="math">t-1</span></p></figcaption></figure>
 
 ## Types of RNN
 
@@ -21,7 +21,7 @@ Sequential data contains multiple entities​ and the order in which these entit
 * **Many to Many:** Model data which involves sequences in the input as well as the output​. Both the input and output sequences must have a one-to-one correspondence ​and therefore the input and output sequences are equal in length​. E.g.: POS tagging of sentences
 * **Encoder-decoder:** Here the length of the input and the output sequence is not equal​. It is used in problems such as language translation and document summarization. Here the errors are backpropagated from the decoder to the encoder. The encoder and decoder have a different set of weights and they are different RNNs altogether. The loss is calculated at each timestep which can either be backpropagated at each timestep, or the cumulative loss (sum of all the losses from all the timesteps of a sequence) can be backpropagated after the entire sequence is ingested. Generally, the errors are backpropagated once an RNN ingests an entire batch
 
-<figure><img src="../contents/NN/images/image3.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image3.png" alt=""><figcaption></figcaption></figure>
 
 * **One to Many:** This type of architecture has a single entity as an input and a sequence as the output​. It is used for generation such as music generation, creating drawings, generating text, etc.
 
