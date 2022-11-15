@@ -59,7 +59,13 @@
 
 ## SQL
 
-* [Page 1](sql/page-1.md)
+* [Basics](sql/basics.md)
+* [Joins](sql/joins.md)
+* [Temporary Datasets](sql/temporary-datasets.md)
+* [Windows Functions](sql/windows-functions.md)
+* [Time](sql/time.md)
+* [Functions](sql/functions.md)
+* [Problems](sql/problems.md)
 
 ## EXCEL
 
