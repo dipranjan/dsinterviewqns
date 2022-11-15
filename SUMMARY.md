@@ -23,6 +23,14 @@
 ## Algorithms
 
 * [Overview](algorithms/overview.md)
+* [Bias/Variance Tradeoff](algorithms/bias-variance-tradeoff.md)
+* [Regression](algorithms/regression.md)
+* [Generative vs Discriminative Models](algorithms/generative-vs-discriminative-models.md)
+* [Classification](algorithms/classification.md)
+* [Tree based approaches](algorithms/tree-based-approaches.md)
+* [Time Series Analysis](algorithms/time-series-analysis.md)
+* [Anomaly Detection](algorithms/anomaly-detection.md)
+* [Big O](algorithms/big-o.md)
 
 ## STORY TELLING
 
@@ -39,6 +47,12 @@
 
 * [GIT](ml-ops/git.md)
 
+## EXCEL
+
+* [Excel Basics](excel/excel-basics.md)
+* [Data Manipulation](excel/data-manipulation.md)
+* [Time and Date](excel/time-and-date.md)
+
 ## MACHINE LEARNING FRAMEWORKS
 
 * [PyCaret](machine-learning-frameworks/pycaret.md)
@@ -53,9 +67,3 @@
 ## POLICIES
 
 * [PRIVACY NOTICE](policies/privacy-notice.md)
-
-## EXCEL
-
-* [Excel Basics](excel/excel-basics.md)
-* [Data Manipulation](excel/data-manipulation.md)
-* [Time and Date](excel/time-and-date.md)

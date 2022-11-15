@@ -34,7 +34,7 @@ Here are some of the techniques for detecting outliers:
 
 It is an unsupervised model and needs to be re-calibrated each time a new batch of data is analyzed.
 
-<figure><img src="../../.gitbook/assets/image5.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image5 (1).png" alt=""><figcaption></figcaption></figure>
 
 * **Isolation Forests:** Isolation forests are an effective method for detecting outliers or novelties in data. The basic principle is that outliers are few and far from the rest of the observations. To build a tree (training), the algorithm randomly picks a feature from the feature space and a random split value ranging between the maximums and minimums. This is made for all the observations in the training set. To build the forest a tree ensemble is made averaging all the trees in the forest.
 
