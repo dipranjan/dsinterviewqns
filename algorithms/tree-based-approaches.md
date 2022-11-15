@@ -43,7 +43,7 @@ The ID3 algorithm builds decision trees using a top-down greedy search approach 
 - On each iteration of the algorithm, it iterates through the unused attributes of the set and calculates a measure of Homogeneity:
 	- **Gini Index:** Gini Index uses the probability of finding a data point with one label as an indicator for homogeneity — if the dataset is completely homogeneous, then the probability of finding a datapoint with one of the labels is 1 and the probability of finding a data point with the other label is zero
 	- **Information Gain / Entropy-based:** The idea is to use the notion of entropy which is a central concept in information theory. Entropy quantifies the degree of disorder in the data. Entropy is always a positive number between zero and 1. Another interpretation of entropy is in terms of information content. A completely homogeneous dataset has no information content in it (there is nothing non-trivial to be learnt from the dataset) whereas a dataset with a lot of disorder has a lot of latent information waiting to be learnt.
-	- For Regression models the split can happen by checking metrics like $R^2$
+	- For Regression models the split can happen by checking metrics like $$R^2$$
 - It then selects the attribute which has the smallest Entropy or Largest Information gain
 - The set is then split by the selected attribute to produce a subset of the data
 - The algorithm continues to recur on each subset, considering only attributes never selected before
@@ -75,13 +75,13 @@ For an ensemble to work, each model of the ensemble should comply with the follo
 - Each model should be diverse. Diversity ensures that the models serve complementary purposes, which means that the individual models make predictions independent of each other.
 - Each model should be acceptable. Acceptability implies that each model is at least better than a random model.
 
-Random forests are created using a special ensemble method called **bagging(Bootstrap Aggregation)**. Bootstrapping means creating bootstrap samples from a given data set. A bootstrap sample is created by sampling the given data set uniformly and with replacement. A bootstrap sample typically contains about $30$-$70$% data from the data set. Aggregation implies combining the results of different models present in the ensemble.
+Random forests are created using a special ensemble method called **bagging(Bootstrap Aggregation)**. Bootstrapping means creating bootstrap samples from a given data set. A bootstrap sample is created by sampling the given data set uniformly and with replacement. A bootstrap sample typically contains about $$30$$-$$70$$% data from the data set. Aggregation implies combining the results of different models present in the ensemble.
 
 #### Steps
 
 - Create a bootstrap sample from the training set
 - Now construct a decision tree using the bootstrap sample. While splitting a node of the tree, only consider a random subset of features. Every time a node has to split, a different random subset of features will be considered.
-- Repeat the steps 1 and 2 for $n$ times, to construct $n$ trees in the forest. Remember each tree is constructed independently, so it is possible to construct each tree in parallel.
+- Repeat the steps 1 and 2 for $$n$$ times, to construct $$n$$ trees in the forest. Remember each tree is constructed independently, so it is possible to construct each tree in parallel.
 - While predicting a test case, each tree predicts individually, and the final prediction is given by the majority vote of all the trees
 
 #### OOB (Out-of-Bag) Error
@@ -142,8 +142,8 @@ An ensemble is a collection of models which ideally should predict better than i
 
 - AdaBoost starts by assigning equal weight to each datapoint, the idea is to adjust the weights of each observation after every iteration such that the the algorithm is forced to take a harder look at these difficult to classify observations
 - Post each iteration we will have a weak learner using which we will calculate 2 things:
-	- the updated weights of each $N$ observation for the next iteration
-	- the weight that the weak learner itself will have on the final output, in each of the $t$ iterations we will have a learner $h_1$, $h_2$, $h_3$ .. $h_t$ each of which will be combined to make the final model, the weight of each of these individual learners in the final output is given by $\alpha_t$. The models with low error rate will have higher values of $\alpha_t$ and hence higher weight in the final output.
+	- the updated weights of each $$N$$ observation for the next iteration
+	- the weight that the weak learner itself will have on the final output, in each of the $$t$$ iterations we will have a learner $$h_1$$, $$h_2$$, $$h_3$$ .. $$h_t$$ each of which will be combined to make the final model, the weight of each of these individual learners in the final output is given by $$\alpha_t$$. The models with low error rate will have higher values of $$\alpha_t$$ and hence higher weight in the final output.
 - Before you apply the AdaBoost algorithm, you should specifically remove the Outliers. Since AdaBoost tends to boost up the probabilities of misclassified points and there is a high chance that outliers will be misclassified, it will keep increasing the probability associated with the outliers and make the progress difficult.
 
 ```{figure} ../Algorithms/images/image10.PNG
@@ -200,7 +200,7 @@ Put simply: random forest builds multiple decision trees and merges them togethe
 Steps:
 - Create a bootstrap sample from the training set
 - Now construct a decision tree using the bootstrap sample. While splitting a node of the tree, only consider a random subset of features. Every time a node has to split, a different random subset of features will be considered.
-- Repeat the steps 1 and 2 for $n$ times, to construct $n$ trees in the forest. Remember each tree is constructed independently, so it is possible to construct each tree in parallel.
+- Repeat the steps 1 and 2 for $$n$$ times, to construct $$n$$ trees in the forest. Remember each tree is constructed independently, so it is possible to construct each tree in parallel.
 - While predicting a test case, each tree predicts individually, and the final prediction is given by the majority vote of all the trees
 
 As for why or when we use it over logistic regression, the answer is it depends:
@@ -243,12 +243,12 @@ Briefly explain the properties of Gini Impurity.
 
 Gini Impurity is the probability of incorrectly classifying a randomly chosen element in the dataset if it were randomly labeled according to the class distribution in the dataset. It’s calculated as
 
-$\text{Gini Impurity} = 1 - \text{Gini Index}$
+$$\text{Gini Impurity} = 1 - \text{Gini Index}$$
 
 So there can be 2 cases:
 
-- When all the data points belong to a single class: $G = 1 - (1^2 + 0^2) = 0$
-- When $50%$ of the data points belong to a class: $G = 1 - (0.5^2 + 0.5^2) = 0.5$
+- When all the data points belong to a single class: $$G = 1 - (1^2 + 0^2) = 0$$
+- When $$50%$$ of the data points belong to a class: $$G = 1 - (0.5^2 + 0.5^2) = 0.5$$
 
 ![image 12](../Algorithms/images/image12.PNG)
 
@@ -306,7 +306,7 @@ Some points keep in mind about information gain:
 - Thus, the higher the difference, the higher the information gain, and the better the feature used for the split.
 Mathematically, the information gain can be computed by the equation as follows:
 
-Information Gain = $E(S1) – E(S2)$, $E(S1)$ denotes the entropy of data belonging to the node before the split and $E(S2)$ denotes the weighted summation of the entropy of children nodes by considering the weights as the proportion of data instances falling in specific children nodes.
+Information Gain = $$E(S1) – E(S2)$$, $$E(S1)$$ denotes the entropy of data belonging to the node before the split and $$E(S2)$$ denotes the weighted summation of the entropy of children nodes by considering the weights as the proportion of data instances falling in specific children nodes.
 
 As for the disadvantages, Information gain biases the Decision Tree against considering attributes with a large number of distinct values which might lead to overfitting. In order to solve this problem, the Information Gain Ratio is used.
 </details>
@@ -321,23 +321,23 @@ Explain the time and space complexity of training and testing in the case of a D
 
 **Answer**
 
-What happens in the training stage is that for each of the features (dimensions) in the dataset we’ll sort the data which takes $O(n log n)$ time following which we traverse the data points to find the right threshold which takes $O(n)$ time. For $d$ dimensions, total time complexity would be:
+What happens in the training stage is that for each of the features (dimensions) in the dataset we’ll sort the data which takes $$O(n log n)$$ time following which we traverse the data points to find the right threshold which takes $$O(n)$$ time. For $$d$$ dimensions, total time complexity would be:
 
-$O(n * log n * d) + O(n*d) \text{which asymptotically is } O(n * log n * d)$
+$$O(n * log n * d) + O(n*d) \text{which asymptotically is } O(n * log n * d)$$
 
 Train space complexity:
 The things we need while training a decision tree are the nodes which are typically stored as if-else conditions.
-Hence, the train space complexity would be: $O(nodes)$
+Hence, the train space complexity would be: $$O(nodes)$$
 
-Test time complexity would be $O(depth)$ since we have to move from root to a leaf node of the decision tree.
-Test space complexity would be $O(nodes)$
+Test time complexity would be $$O(depth)$$ since we have to move from root to a leaf node of the decision tree.
+Test space complexity would be $$O(nodes)$$
 
 For Random forest the same would be:
 
-Training Time Complexity = $O(n*log(n)*d*k)$, $k$=number of Decision Trees
+Training Time Complexity = $$O(n*log(n)*d*k)$$, $$k$$=number of Decision Trees
 Notes: When we have a large number of data with reasonable features. Then we can use multi-core to parallelize our model to train different Decision Trees.
-Run-time Complexity= $O(depth of tree* k)$
-Space Complexity= $O(depth of tree *k)$
+Run-time Complexity= $$O(depth of tree* k)$$
+Space Complexity= $$O(depth of tree *k)$$
 
 Note: Random Forest is comparatively faster than other algorithms.
 </details>
@@ -356,11 +356,11 @@ As we know that the computational complexity of training a Decision Tree is give
 
 Now, we have to determine the value of K. To finds K, divide the complexity of both:
 
-$K = (n × 10m × log(10m)) / (n × m × log(m)) = 10 × log(10m) / log(m)$
+$$K = (n × 10m × log(10m)) / (n × m × log(m)) = 10 × log(10m) / log(m)$$
 
-For $10$ million instances i.e., $m = 106$, then we get the value of $K ≈ 11.7$.
+For $$10$$ million instances i.e., $$m = 106$$, then we get the value of $$K ≈ 11.7$$.
 
-Therefore, we can expect the training time to be roughly $11.7$ hours.
+Therefore, we can expect the training time to be roughly $$11.7$$ hours.
 </details>
 
 <details>
