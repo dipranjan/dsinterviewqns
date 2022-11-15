@@ -16,7 +16,7 @@ Can you write a formula to generate the SUM of all digits in a cell?
 
 **Answer**
 
-![](../.gitbook/assets/image5.png)
+![](../\_build/html/\_images/image52.PNG)
 
 To use when you are sure that there are only digits in the column:
 
@@ -53,7 +53,7 @@ This is a 3-part question:
 
 **Answer**
 
-![](<../.gitbook/assets/image6 (1).png>)****
+![](../\_build/html/\_images/image62.PNG)****
 
 You can check for duplicates using:
 

@@ -27,7 +27,7 @@ $$variance = \mathbb{E}[(f'(x) - \mathbb{E}[f'(x)])^2]$$
 * Low error on train data and high on test
 * Starts modelling the noise in the input
 
-<figure><img src="../contents/Algorithms/images/image24.png" alt=""><figcaption><p><a href="https://stanford.edu/~shervine/teaching/cs-229/cheatsheet-machine-learning-tips-and-tricks">📖Source</a></p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image24.png" alt=""><figcaption><p><a href="https://stanford.edu/~shervine/teaching/cs-229/cheatsheet-machine-learning-tips-and-tricks">📖Source</a></p></figcaption></figure>
 
 **Bias variance Trade-off**
 

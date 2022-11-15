@@ -32,6 +32,16 @@
 * [Anomaly Detection](algorithms/anomaly-detection.md)
 * [Big O](algorithms/big-o.md)
 
+## NEURAL NETWORK
+
+* [Neural Network](neural-network/neural-network.md)
+* [Recurrent Neural Network](neural-network/recurrent-neural-network.md)
+
+## NLP
+
+* [Lexical Processing](nlp/lexical-processing.md)
+* [Syntactic Processing](nlp/syntactic-processing.md)
+
 ## STORY TELLING
 
 * [Visualization](story-telling/visualization.md)
@@ -46,6 +56,10 @@
 ## ML OPS
 
 * [GIT](ml-ops/git.md)
+
+## SQL
+
+* [Page 1](sql/page-1.md)
 
 ## EXCEL
 

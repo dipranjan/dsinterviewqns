@@ -24,7 +24,7 @@ This function initializes the training environment and creates the transformatio
 
 `compare_models` trains and evaluates the performance of all estimators available in the model library using cross-validation. Post model selection you can tune the model by optimizing prpbability threshold, stacking and ensembling models. PyCaret also provides an easy way to analyze your model by using the `evaluate_model` command. A single command which show out Hyperparameters, Plots, Feature importance and many things more.
 
-<figure><img src="../.gitbook/assets/image1 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../_build/html/_images/image18.PNG" alt=""><figcaption></figcaption></figure>
 
 The `interpret_model` command analyzes the predictions generated from a trained model. Most plots in this function are implemented based on the SHAP (Shapley Additive exPlanations).
 
