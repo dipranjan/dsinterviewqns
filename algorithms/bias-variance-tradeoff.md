@@ -5,14 +5,14 @@
 * Error between average model prediction and ground truth
 * The bias of the estimated function tells us the capacity of the underlying model to predict the values
 
-$bias = \mathbb{E}\[f'(x)] - f(x)$
+$$bias = \mathbb{E}\[f'(x)] - f(x)$$
 
 ## Variance
 
 * Average variability in the model prediction for the given dataset
 * The variance of the estimated function tells you how much the function can adjust to the change in the dataset
 
-$variance = \mathbb{E}\[(f'(x) - \mathbb{E}\[f'(x)])^2]$
+$$variance = \mathbb{E}\[(f'(x) - \mathbb{E}\[f'(x)])^2]$$
 
 **High Bias:**
 
