@@ -6,20 +6,21 @@ If you want to have some hands on practice without the hassle of installing and 
 
 ```
 
-**Reference - [Leetcode](https://leetcode.com/problems/second-highest-salary/)**
+<details>
+
+<summary>**[Leetcode](https://leetcode.com/problems/second-highest-salary/)</summary>
 
 *For a similar problem with different approach check Nth highest salary problem*
 
 Write a SQL query to get the second highest salary from the Employee table.
 
-| Id | Salary |
-|----|--------|
-| 1  | 100    |
-| 2  | 200    |
-| 3  | 300    |
+	| Id | Salary |
+	|----|--------|
+	| 1  | 100    |
+	| 2  | 200    |
+	| 3  | 300    |
 
 For example, given the above Employee table, the query should return 200 as the second highest salary. If there is no second highest salary, then the query should return null.
-```
 
 **Answer**
 
@@ -33,6 +34,7 @@ ORDER BY Salary DESC
 LIMIT 1 OFFSET 1) 
 AS SecondHighestSalary
 ```
+</details>
 
 <details>
 
@@ -42,29 +44,24 @@ AS SecondHighestSalary
 
 Write a SQL query to rank scores. If there is a tie between two scores, both should have the same ranking. Note that after a tie, the next ranking number should be the next consecutive integer value. In other words, there should be no "holes" between ranks.
 
-```
-| Id | Score |
-|----|-------|
-| 1  | 3.40  |
-| 2  | 3.65  |
-| 3  | 4.00  |
-| 4  | 3.50  |
-| 5  | 4.00  |
-| 6  | 3.65  |
-```
+	| Id | Score |
+	|----|-------|
+	| 1  | 3.40  |
+	| 2  | 3.65  |
+	| 3  | 4.00  |
+	| 4  | 3.50  |
+	| 5  | 4.00  |
+	| 6  | 3.65  |
 
 For example, given the above Scores table, your query should generate the following report (order by highest score):
-
-```
-| score | Rank    |
-|-------|---------|
-| 4.00  | 1       |
-| 4.00  | 1       |
-| 3.95  | 2       |
-| 3.65  | 3       |
-| 3.65  | 3       |
-| 3.40  | 4       |
-```
+	| score | Rank    |
+	|-------|---------|
+	| 4.00  | 1       |
+	| 4.00  | 1       |
+	| 3.95  | 2       |
+	| 3.65  | 3       |
+	| 3.65  | 3       |
+	| 3.40  | 4       |
 
 **Answer**
 
@@ -75,23 +72,19 @@ select
 Score, dense_rank() over(order by score desc) as Rank
 from Scores
 ```
-
 </details>
 
 <details>
 
 <summary>[CHEWY] 2nd Highest score</summary>
-
-```
-| Id | subject | marks |
-|---:|---------|------:|
-|  1 | Maths   |    30 |
-|  1 | Phy     |    50 |
-|  1 | Chem    |    85 |
-|  2 | Maths   |    90 |
-|  2 | Phy     |    50 |
-|  2 | Chem    |    85 |
-```
+	| Id | subject | marks |
+	|---:|---------|------:|
+	|  1 | Maths   |    30 |
+	|  1 | Phy     |    50 |
+	|  1 | Chem    |    85 |
+	|  2 | Maths   |    90 |
+	|  2 | Phy     |    50 |
+	|  2 | Chem    |    85 |
 
 Select the second highest mark for each student.
 
@@ -119,26 +112,21 @@ Return the result table in any order.
 Input:
 
 Logs table:
-
-```
-| Id | Num |
-|----|-----|
-| 1  | 1   |
-| 2  | 1   |
-| 3  | 1   |
-| 4  | 2   |
-| 5  | 1   |
-| 6  | 2   |
-| 7  | 2   |
-```
+	| Id | Num |
+	|----|-----|
+	| 1  | 1   |
+	| 2  | 1   |
+	| 3  | 1   |
+	| 4  | 2   |
+	| 5  | 1   |
+	| 6  | 2   |
+	| 7  | 2   |
 
 Result table:
-
-```
-| ConsecutiveNums |
-|-----------------|
-| 1               |
-```
+	
+	| ConsecutiveNums |
+	|-----------------|
+	| 1               |
 
 1 is the only number that appears consecutively for at least three times.
 
@@ -172,24 +160,22 @@ with a(Num,NextNum,SecondNextNum ) as(
 
 Given you have user data for 2 accounts for 2 months. Calculate the growth rate of users in each account where growth rate is defined as unique users in month 2 divided by unique users in month 1.
 
-```
-| date_details | account_id | user_id |
-|--------------|------------|---------|
-| 2021-01-01   | U1         | A1      |
-| 2021-01-01   | U1         | A2      |
-| 2021-01-01   | U1         | A3      |
-| 2021-01-01   | U1         | A4      |
-| 2021-02-01   | U1         | A1      |
-| 2021-02-01   | U1         | A2      |
-| 2021-02-01   | U1         | A3      |
-| 2021-02-01   | U1         | A4      |
-| 2021-02-01   | U1         | A5      |
-| 2021-01-01   | U2         | A1      |
-| 2021-01-01   | U2         | A2      |
-| 2021-01-01   | U2         | A3      |
-| 2021-02-01   | U2         | A1      |
-| 2021-02-01   | U2         | A2      |
-```
+	| date_details | account_id | user_id |
+	|--------------|------------|---------|
+	| 2021-01-01   | U1         | A1      |
+	| 2021-01-01   | U1         | A2      |
+	| 2021-01-01   | U1         | A3      |
+	| 2021-01-01   | U1         | A4      |
+	| 2021-02-01   | U1         | A1      |
+	| 2021-02-01   | U1         | A2      |
+	| 2021-02-01   | U1         | A3      |
+	| 2021-02-01   | U1         | A4      |
+	| 2021-02-01   | U1         | A5      |
+	| 2021-01-01   | U2         | A1      |
+	| 2021-01-01   | U2         | A2      |
+	| 2021-01-01   | U2         | A3      |
+	| 2021-02-01   | U2         | A1      |
+	| 2021-02-01   | U2         | A2      |
 
 **Answer**
 
@@ -245,9 +231,9 @@ where
 prev_month is not null
 ```
 
-````
+<details>
 
-```{admonition} Problem: [SALESFORCE] Employee earning more than their manager</summary>
+<summary>[SALESFORCE] Employee earning more than their manager</summary>
 
 **Reference - [Leetcode](https://leetcode.com/problems/employees-earning-more-than-their-managers/)**
 
@@ -463,19 +449,19 @@ order by diff asc
 
 You are given a table with varying distances from various cities. How do you find the average distance between each of the pairs of the cities?
 
-| scity  | dcity  | distance |
-|--------|--------|---------:|
-| City A | City B |       30 |
-| City A | City B |       32 |
-| City B | City A |       29 |
-| City A | City C |       40 |
-| City C | City A |       41 |
+	| scity  | dcity  | distance |
+	|--------|--------|---------:|
+	| City A | City B |       30 |
+	| City A | City B |       32 |
+	| City B | City A |       29 |
+	| City A | City C |       40 |
+	| City C | City A |       41 |
 
 Output:
-| city1  | city2  |         distance |
-|--------|--------|-----------------:|
-| City A | City C |             40.5 |
-| City A | City B | 30.3333333333333 |
+	| city1  | city2  |         distance |
+	|--------|--------|-----------------:|
+	| City A | City C |             40.5 |
+	| City A | City B | 30.3333333333333 |
 
 Another variant of this question is 
 
@@ -523,21 +509,21 @@ HAVING COUNT(*) > 1
 
 **transactions table**
 
-|   column   |   type   |
-|:----------:|:--------:|
-| id         | integer  |
-| user_id    | integer  |
-| created_at | datetime |
-| product_id | integer  |
-| quantity   | integer  |
+	|   column   |   type   |
+	|:----------:|:--------:|
+	| id         | integer  |
+	| user_id    | integer  |
+	| created_at | datetime |
+	| product_id | integer  |
+	| quantity   | integer  |
 
 **products table**
 
-| column |   type  |
-|:------:|:-------:|
-| id     | integer |
-| name   | string  |
-| price  | float   |
+	| column |   type  |
+	|:------:|:-------:|
+	| id     | integer |
+	| name   | string  |
+	| price  | float   |
 
 Given a table of transactions and products, write a query to return the product id, product price, and average transaction price of all products with price greater than the average transaction price.
 ```
@@ -566,8 +552,5 @@ inner join cte c
 	on p.id = c.product_id
 where p.price > c.avg_trans_price
 ```
-
-</details>
-````
 
 </details>
