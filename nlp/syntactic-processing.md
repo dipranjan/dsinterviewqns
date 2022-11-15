@@ -27,25 +27,25 @@ Markov processes are commonly used to model sequential data, such as text and sp
 
 <figure><img src="../contents/NLP/images/image3.png" alt=""><figcaption></figcaption></figure>
 
-The POS tag $T\_i$ for given word $W\_i$ depends on two things: POS tag of the previous word and the word itself.
+The POS tag $$T_i$$ for given word $$W_i$$ depends on two things: POS tag of the previous word and the word itself.
 
-$P(T\_i| W\_i) = P(W\_i|T\_i) \* P(T\_i-1|T\_i)$
+$$P(T_i| W_i) = P(W_i|T_i) * P(T_i-1|T_i)$$
 
-So, the probability of a tag sequence $(T\_1, T\_2, T\_3,$ …$, T\_n)$ for a given the word sequence $(W\_1, W\_2, W\_3,$ …$, W\_n)$ can be defined as:
+So, the probability of a tag sequence $$(T_1, T_2, T_3,$$ …$$, T_n)$$ for a given the word sequence $$(W_1, W_2, W_3,$$ …$$, W_n)$$ can be defined as:
 
-$P(T|W) = (P(W\_1|T\_1) \* P(T\_1|start)) \* (P(W\_2|T\_2) \* P(T\_2|T\_1)) \* ...\* (P(W\_n|T\_n) \* P(T\_n|T\_{n-1}))$
+$$P(T|W) = (P(W_1|T_1) * P(T_1|start)) * (P(W_2|T_2) * P(T_2|T_1)) * ...* (P(W_n|T_n) * P(T_n|T_{n-1}))$$
 
-**For a sequence of $n$ words and $t$ tags, a total of $t\_n$ tag sequences are possible.**
+**For a sequence of $$n$$ words and $$t$$ tags, a total of $$t_n$$ tag sequences are possible.**
 
 ### Viterbi Heuristic
 
-Viterbi Heuristic can deal with this problem by taking a greedy approach. The basic idea of the Viterbi algorithm is as follows - given a list of observations (words) $O\_1,O\_2....O\_n$ to be tagged, rather than computing the probabilities of all possible tag sequences, you assign tags sequentially, i.e. assign the most likely tag to each word using the previous tag.
+Viterbi Heuristic can deal with this problem by taking a greedy approach. The basic idea of the Viterbi algorithm is as follows - given a list of observations (words) $$O_1,O_2....O_n$$ to be tagged, rather than computing the probabilities of all possible tag sequences, you assign tags sequentially, i.e. assign the most likely tag to each word using the previous tag.
 
-More formally, you assign the tag $T\_i$ to each word $W\_i$ such that it maximises the likelihood:
+More formally, you assign the tag $$T_i$$ to each word $$W_i$$ such that it maximises the likelihood:
 
-$P(T\_i| W\_i) = P(W\_i|T\_i) \* P(T\_i-1|T\_i)$
+$$P(T_i| W_i) = P(W_i|T_i) * P(T_i-1|T_i)$$
 
-where $T\_i-1$ is the tag assigned to the previous word. The probability of a tag $T\_i$ is assumed to be dependent only on the previous tag $T\_{i-1}$, and hence the term $P(T\_i|T\_{i-1})$ - Markov Assumption.
+where $$T_i-1$$ is the tag assigned to the previous word. The probability of a tag $$T_i$$ is assumed to be dependent only on the previous tag $$T_{i-1}$$, and hence the term $$P(T_i|T_{i-1})$$ - Markov Assumption.
 
 **Viterbi algorithm is an example of a dynamic programming algorithm.** In general, algorithms which break down a complex problem into subproblems and solve each subproblem optimally are called dynamic programming algorithms.
 
@@ -53,12 +53,12 @@ where $T\_i-1$ is the tag assigned to the previous word. The probability of a ta
 
 The process of learning the probabilities from a tagged corpus is called **training an HMM model**. The emission and the transition probabilities can be learnt as follows:
 
-*   **Emission Probability** of a word $w$ for tag $t$: $P(w|t)$ = Number of times $w$ has been tagged $t$/Number of times $t$ appears
+*   **Emission Probability** of a word $$w$$ for tag $$t$$: $$P(w|t)$$ = Number of times $$w$$ has been tagged $$t$$/Number of times $$t$$ appears
 
-    Example: $P(dog|N)$ = Number of times 'dog' appears as Noun/ Number of times Noun is appearing
-*   **Transition Probability** of tag $t\_1$ followed by tag $t\_2$: $P(t\_2|t\_1)$ = Number of times $t\_1$ is followed by tag $t\_2$/ Number of times $t\_1$ appears
+    Example: $$P(dog|N)$$ = Number of times 'dog' appears as Noun/ Number of times Noun is appearing
+*   **Transition Probability** of tag $$t_1$$ followed by tag $$t_2$$: $$P(t_2|t_1)$$ = Number of times $$t_1$$ is followed by tag $$t_2$$/ Number of times $$t_1$$ appears
 
-    Example: $P(Noun|Adj)$ = number of times adjective is followed by Noun/ Number of times Adjective is appearing
+    Example: $$P(Noun|Adj)$$ = number of times adjective is followed by Noun/ Number of times Adjective is appearing
 
 ## Constituency Parsing
 
@@ -79,7 +79,7 @@ Example a CFG is:
 
 There are two broad approaches to constituency parsing:
 
-* **Top-down parsing:** starts with the start symbol $S$ at the top and uses the production rules to parse each word one by one. And, you continue to parse until all the words have been allocated to some production rule.
+* **Top-down parsing:** starts with the start symbol $$S$$ at the top and uses the production rules to parse each word one by one. And, you continue to parse until all the words have been allocated to some production rule.
 
 Top-down parsers have a specific limitation- Left Recursion.
 
@@ -121,7 +121,7 @@ Free word order languages such as Hindi, Bengali are difficult to parse using co
 
 Apart from dependencies defined in the form of subject-verb-object, there's a non-exhaustive list of dependency relationships, which are called **universal dependencies**.
 
-Dependencies are represented as labelled arcs of the form $h → d(l)$ where '$h$' is called the “head” of the dependency, '$d$' is the “dependent” and $l$ is the “label” assigned to the arc. In a dependency parse, we start from the root of the sentence, which is often a verb. And then start to establish dependencies between root and other words.
+Dependencies are represented as labelled arcs of the form $$h → d(l)$$ where '$$h$$' is called the “head” of the dependency, '$$d$$' is the “dependent” and $$l$$ is the “label” assigned to the arc. In a dependency parse, we start from the root of the sentence, which is often a verb. And then start to establish dependencies between root and other words.
 
 ## Information Extraction
 
@@ -164,16 +164,16 @@ The idea of chunking in the context of entity recognition is simple - most entit
 
 **Noun phrase chunks:** 'John', 'the hotel'
 
-**Grammar:** $\text{NP\_chunk: {
+**Grammar:** $$\text{NP_chunk: {
 
-?\}}$
+?\}}$$
 
 **Probabilistic method for NER**
 
 The following two probabilistic models to get the most probable IOB tags for word:
 
 * **Unigram chunker** computes the unigram probabilities P(IOB label | pos) for each word and assigns the label that is most likely for the POS tag.
-* **Bigram chunker** works similar to a unigram chunker, the only difference being that now the probability of a POS tag having an IOB label is computed using the current and the previous POS tags, i.e. P(label | pos, prev\_pos).
+* **Bigram chunker** works similar to a unigram chunker, the only difference being that now the probability of a POS tag having an IOB label is computed using the current and the previous POS tags, i.e. P(label | pos, prev_pos).
 
 **Gazetteer Lookup**, another way to identify named entities (like cities and states) is to look up a dictionary or a gazetteer. A gazetteer is a geographical directory which stores data regarding the names of geographical entities (cities, states, countries) and some other features related to the geographies.
 
@@ -183,53 +183,53 @@ The following two probabilistic models to get the most probable IOB tags for wor
 
 HMMs can be used for any sequence classification task, such as NER. However, many NER tasks and datasets are far more complex than tasks such as POS tagging, and therefore, more sophisticated sequence models have been developed and widely accepted in the NLP community. One of these models is Conditional Random Fields (CRFs).
 
-CRFs are used in a wide variety of sequence labelling tasks across various domains - POS tagging, speech recognition, NER, and even in computational biology for modelling genetic patterns etc. CRFs model the **conditional probability** $P(Y|X)$, where $Y$ is the vector of output sequence (IOB labels here) and $X$ is the input sequence (words to be tagged), which are similar to Logistic Regression classifier. Broadly, there are two types of classifiers in ML:
+CRFs are used in a wide variety of sequence labelling tasks across various domains - POS tagging, speech recognition, NER, and even in computational biology for modelling genetic patterns etc. CRFs model the **conditional probability** $$P(Y|X)$$, where $$Y$$ is the vector of output sequence (IOB labels here) and $$X$$ is the input sequence (words to be tagged), which are similar to Logistic Regression classifier. Broadly, there are two types of classifiers in ML:
 
-* **Discriminative classifiers** learn the boundary between classes by modelling the conditional probability distribution $P(Y|X)$, where $Y$ is the vector of class labels and $X$ represents the input features. Examples are Logistic Regression, SVMs etc.
-* **Generative classifiers** model the joint probability distribution $P(Y|X)$. Examples of generative classifiers are Naive Bayes, HMMs etc.
+* **Discriminative classifiers** learn the boundary between classes by modelling the conditional probability distribution $$P(Y|X)$$, where $$Y$$ is the vector of class labels and $$X$$ represents the input features. Examples are Logistic Regression, SVMs etc.
+* **Generative classifiers** model the joint probability distribution $$P(Y|X)$$. Examples of generative classifiers are Naive Bayes, HMMs etc.
 
-CRFs use ‘feature functions’ rather than the input word sequence $x$ itself. The idea is similar to how features are extracted for building the naive Bayes and decision tree classifiers in a previous section. Some example ‘word-features’ (each word has these features) are:
+CRFs use ‘feature functions’ rather than the input word sequence $$x$$ itself. The idea is similar to how features are extracted for building the naive Bayes and decision tree classifiers in a previous section. Some example ‘word-features’ (each word has these features) are:
 
-* Word and POS tag based features: word\_is\_city, word\_is\_digit, pos, previous\_pos, etc.
-* Label-based features: previous\_label
+* Word and POS tag based features: word_is_city, word_is_digit, pos, previous_pos, etc.
+* Label-based features: previous_label
 
 A feature function takes the following four inputs:
 
-* The input sequence of words: $x$
+* The input sequence of words: $$x$$
 * The position of a word in the sentence (whose features are to be extracted)
-* The label $y\_i$ of the current word (the target label)
-* The label $y\_{i-1}$ of the previous word
+* The label $$y_i$$ of the current word (the target label)
+* The label $$y_{i-1}$$ of the previous word
 
 Let's see an example of a feature function:
 
-A feature function $f\_1$ which returns $1$ if the word $x\_i$ is a city and the corresponding label $y\_i$ is ‘I-location’, else $0$. This can be represented as:
+A feature function $$f_1$$ which returns $$1$$ if the word $$x_i$$ is a city and the corresponding label $$y_i$$ is ‘I-location’, else $$0$$. This can be represented as:
 
-$f\_{1}(x,i,y\_i,y\_{i-1})= \[\[x\_i \text{ is in city last name}] \text{ and } \[y\_i \text{ is I-location}]]$
+$$f_{1}(x,i,y_i,y_{i-1})= \[\[x_i \text{ is in city last name}] \text{ and } \[y_i \text{ is I-location}]]$$
 
-The feature function returns $1$ only if both the conditions are satisfied, i.e. when the word is a city name and is tagged as ‘I-location’ (e.g. Tokyo/I-location).
+The feature function returns $$1$$ only if both the conditions are satisfied, i.e. when the word is a city name and is tagged as ‘I-location’ (e.g. Tokyo/I-location).
 
-Every feature function $f\_i$ has a weight $w\_i$ associated with it, which represents the ‘importance’ of that feature function. This is almost exactly the same as logistic regression where coefficients of features represent their importance. Training a CRF means to compute the optimal weight vector $w$ which best represents the observed sequences $y$ for the given word sequences $x$. In other words, we want to find the set of weights $w$ which maximises $P(y|x,w)$.
+Every feature function $$f_i$$ has a weight $$w_i$$ associated with it, which represents the ‘importance’ of that feature function. This is almost exactly the same as logistic regression where coefficients of features represent their importance. Training a CRF means to compute the optimal weight vector $$w$$ which best represents the observed sequences $$y$$ for the given word sequences $$x$$. In other words, we want to find the set of weights $$w$$ which maximises $$P(y|x,w)$$.
 
-In CRFs, the conditional probabilities $P(y|x,w)$ are modeled using a scoring function. If there are $k$ feature functions (and thus $k$ weights), for each word $i$ in the sequence $x$, a scoring function for a word is defined as follows:
+In CRFs, the conditional probabilities $$P(y|x,w)$$ are modeled using a scoring function. If there are $$k$$ feature functions (and thus $$k$$ weights), for each word $$i$$ in the sequence $$x$$, a scoring function for a word is defined as follows:
 
-$score\_i = exp(w\_1.f\_1 + w\_2.f\_2 ... + w\_k.f\_k) = exp(w.f(y\_i,x\_i,y\_{i-1},i))$
+$$score_i = exp(w_1.f_1 + w_2.f_2 ... + w_k.f_k) = exp(w.f(y_i,x_i,y_{i-1},i))$$
 
 and the overall sequence score for the sentence can be defined as:
 
-$\text{sequence-score}(y|x) = \prod\_{i=1}^n (exp(w.f(y\_i,x\_i,y\_{i-1},i))) = exp(\sum\_1^n(w.f(y\_i,x\_i,y\_{i-1},i)))$
+$$\text{sequence-score}(y|x) = \prod_{i=1}^n (exp(w.f(y_i,x_i,y_{i-1},i))) = exp(\sum_1^n(w.f(y_i,x_i,y_{i-1},i)))$$
 
-The probability of observing the label sequence $y$ given the input sequence $x$ is given by:
+The probability of observing the label sequence $$y$$ given the input sequence $$x$$ is given by:
 
-$P(y|x,w) = exp(\sum\_1^n(w.f(y\_i,x\_i,y\_{i-1},i)))/Z(x) = exp(w.f(x,y))/Z(x)$
+$$P(y|x,w) = exp(\sum_1^n(w.f(y_i,x_i,y_{i-1},i)))/Z(x) = exp(w.f(x,y))/Z(x)$$
 
-where $Z(x)$ is sum of scores of all possible tag sequences $N$ $= \sum\_1^N(exp(w.f(x,y)))$
+where $$Z(x)$$ is sum of scores of all possible tag sequences $$N$$ $$= \sum_1^N(exp(w.f(x,y)))$$
 
-Training a CRF model means to compute the optimal set of weights $w$ which best represents the observed sequences $y$ for the given word sequences $x$. In other words, we want to find the set of weights $w$ which maximises the conditional probability $P(y|x,w)$ for all the observed sequences $(x,y)$, by taking log and simplifying the equations and adding a regularization term to prevent overfitting, the final equation comes out as:
+Training a CRF model means to compute the optimal set of weights $$w$$ which best represents the observed sequences $$y$$ for the given word sequences $$x$$. In other words, we want to find the set of weights $$w$$ which maximises the conditional probability $$P(y|x,w)$$ for all the observed sequences $$(x,y)$$, by taking log and simplifying the equations and adding a regularization term to prevent overfitting, the final equation comes out as:
 
-$L(w) = \sum\_1^N\[(w.f)-log(Z)] - \text{regularization term}$
+$$L(w) = \sum_1^N\[(w.f)-log(Z)] - \text{regularization term}$$
 
-The inference task to assign the label sequence $y^\*$ to $x$ which maximises the score of the sequence, i.e.
+The inference task to assign the label sequence $$y^*$$ to $$x$$ which maximises the score of the sequence, i.e.
 
-$y^\* = argmax(w.f(x,y))$
+$$y^* = argmax(w.f(x,y))$$
 
-The naive way to get $y^\*$ is by calculating $w.f(x,y)$ for every possible label sequence , and then choose the label sequence that has maximum $(w.f(x,y))$ value. However, there are an exponential number of possible labels ($t^n$ for a tag set of size $t$ and a sentence of length $n$), and this task is computationally heavy.
+The naive way to get $$y^*$$ is by calculating $$w.f(x,y)$$ for every possible label sequence , and then choose the label sequence that has maximum $$(w.f(x,y))$$ value. However, there are an exponential number of possible labels ($$t^n$$ for a tag set of size $$t$$ and a sentence of length $$n$$), and this task is computationally heavy.
