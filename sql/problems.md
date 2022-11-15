@@ -8,7 +8,7 @@ If you want to have some hands on practice without the hassle of installing and 
 
 <details>
 
-<summary>**[Leetcode](https://leetcode.com/problems/second-highest-salary/)</summary>
+<summary>**[Leetcode](https://leetcode.com/problems/second-highest-salary/)**</summary>
 
 *For a similar problem with different approach check Nth highest salary problem*
 
@@ -54,6 +54,7 @@ Write a SQL query to rank scores. If there is a tie between two scores, both sho
 	| 6  | 3.65  |
 
 For example, given the above Scores table, your query should generate the following report (order by highest score):
+	
 	| score | Rank    |
 	|-------|---------|
 	| 4.00  | 1       |
@@ -77,6 +78,7 @@ from Scores
 <details>
 
 <summary>[CHEWY] 2nd Highest score</summary>
+	
 	| Id | subject | marks |
 	|---:|---------|------:|
 	|  1 | Maths   |    30 |
@@ -112,6 +114,7 @@ Return the result table in any order.
 Input:
 
 Logs table:
+	
 	| Id | Num |
 	|----|-----|
 	| 1  | 1   |
@@ -266,14 +269,11 @@ Select Employee from cte where Emp_Sal > Man_Salary
 
 <summary>[Leetcode] Highest Salary in each Department</summary>
 
-
 **Reference - [Leetcode](https://leetcode.com/problems/department-highest-salary/)**
 
 Write an SQL query to find employees who have the highest salary in each of the departments.
 
 ![image 3](../SQL/images/image3.PNG)
-
-```
 
 **Answer**
 
@@ -290,7 +290,6 @@ inner join Department b
 on a.DepartmentId = b.Id
 where a.Rank = 1
 ```
-
 </details>
 
 <details>
@@ -300,7 +299,6 @@ where a.Rank = 1
 Given a users table, write a query to get the cumulative number of new users added by day, with the total reset every month.
 
 [🔫Playground](https://dbfiddle.uk/?rdbms=sqlserver_2017&fiddle=516b59f188aaf8c5c1296143d1b13bcd)
-
 
 **Answer**
 
@@ -458,6 +456,7 @@ You are given a table with varying distances from various cities. How do you fin
 	| City C | City A |       41 |
 
 Output:
+	
 	| city1  | city2  |         distance |
 	|--------|--------|-----------------:|
 	| City A | City C |             40.5 |
@@ -504,8 +503,7 @@ HAVING COUNT(*) > 1
 
 <details>
 
-<summary>[INTUIT] Product Average
-
+<summary>[INTUIT] Product Average</summary>
 
 **transactions table**
 
@@ -526,7 +524,6 @@ HAVING COUNT(*) > 1
 	| price  | float   |
 
 Given a table of transactions and products, write a query to return the product id, product price, and average transaction price of all products with price greater than the average transaction price.
-```
 
 **Answer**
 
@@ -552,5 +549,4 @@ inner join cte c
 	on p.id = c.product_id
 where p.price > c.avg_trans_price
 ```
-
 </details>
