@@ -19,4 +19,4 @@ In any large text document (say, a hundred thousand words), the word frequencies
 * Convert the data into tabular form:
   * **Bag of Words(BoW):** A table containing which word is present in which document, can be either count or binary
   * **tf-idf:** is a numerical statistic that is intended to reflect how important a word is to a document in a collection or corpus. The tf–idf value increases proportionally to the number of times a word appears in the document and is offset by the number of documents in the corpus that contain the word, which helps to adjust for the fact that some words appear more frequently in general.
-    * $ tf-idf = \frac{\text{freq of term 't' in doc 'd'\}}{\text{total terms in 'd'\}} \* log \frac{\text{total number of docs\}}{\text{total number of docs having term 't'\}}$
+    * $$ tf-idf = \frac{\text{freq of term 't' in doc 'd'\}}{\text{total terms in 'd'\}} \* log \frac{\text{total number of docs\}}{\text{total number of docs having term 't'\}}$$
