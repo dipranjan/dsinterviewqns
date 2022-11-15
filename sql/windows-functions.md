@@ -25,8 +25,8 @@ Window (also, windowing or windowed) functions perform a calculation over a set 
   * **LEAD:** the function allows you to pull columns or expressions from a row after the current row
   * **FIRST\_VALUE:** the functions allows you to return values from the first row of the partition
   * **LAST\_VALUE:** the functions allows you to return values from the last row of the partition
-* **Statistical functions** – **PERCENT\_RANK:** returns the percentage of rows that rank lower than the current row, its formula is $\frac{\text{Rank} -1}{\text{Row count} -1}$
-  * **CUME\_DIST:** cumulative distribution, returns the exact rank, its formula is $\frac{\text{Rank\}}{\text{Row count\}}$
+* **Statistical functions** – **PERCENT\_RANK:** returns the percentage of rows that rank lower than the current row, its formula is $$\frac{\text{Rank} -1}{\text{Row count} -1}$$
+  * **CUME\_DIST:** cumulative distribution, returns the exact rank, its formula is $$\frac{\text{Rank}}{\text{Row count}}$$
   * **PERCENTILE\_DISC & PERCENTILE\_CONT:** these two work in the opposite way. Given a percent rank, find the value at that rank. They differ in that PERCENTILE\_DISC will return a value that exists in the set while PERCENTILE\_CONT will calculate an exact value if none of the values in the set falls precisely at that rank. You can use PERCENTILE\_CONT to calculate a median by supplying 0.5 as the percent rank. For example, which temperature ranks at 50% in St. Louis?
 
 **One problem is you cannot add window functions to the WHERE clause.**
