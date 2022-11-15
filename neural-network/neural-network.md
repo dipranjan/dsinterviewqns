@@ -17,7 +17,7 @@ Like a perceptron, the input is the weighted sum of inputs. The output is the ac
 
 Some of the common activation functions are as follows:
 
-<figure><img src="../.gitbook/assets/image1 (1).png" alt=""><figcaption><p><a href="https://www.v7labs.com/blog/neural-networks-activation-functions">Source</a></p></figcaption></figure>
+<figure><img src="../contents/NN/images/image1.png" alt=""><figcaption><p><a href="https://www.v7labs.com/blog/neural-networks-activation-functions">Source</a></p></figcaption></figure>
 
 **An artificial neural network is a network of such neurons.** Neurons in a neural network are arranged in layers. The _first_ and the _last_ layer are called the _input_ and _output_ layers. Input layers have as many neurons as the number of attributes in the data set and the output layer has as many neurons as the number of classes of the target variable (for a classification problem). For a regression problem, the number of neurons in the output layer would be 1 (a numeric variable). There are six main things that need to be specified for specifying a neural network completely:
 
@@ -45,13 +45,13 @@ Neural networks require rigorous training. Recall that models such as linear reg
 
 During training, the neural network learning algorithm fits various models to the training data and selects the best model for prediction. The learning algorithm is trained with a fixed set of hyperparameters - the network structure (number of layers, number of neurons in the input, hidden and output layers etc.). It is trained on the weights and the biases, which are the parameters of the network.
 
-<figure><img src="../.gitbook/assets/image2.gif" alt=""><figcaption><p>Neural Networks can be used to <em>reasonably</em> approximate <em>most</em> functions</p></figcaption></figure>
+<figure><img src="../contents/NN/images/image2.gif" alt=""><figcaption><p>Neural Networks can be used to <em>reasonably</em> approximate <em>most</em> functions</p></figcaption></figure>
 
 ## Feed forward
 
 In artificial neural networks, the output from one layer is used as input to the next layer. Such networks are called feedforward neural networks. Feed forward neural network architecture consists of following main parts – Input Layer, Hidden Layer - If the number of hidden layers is one then it is known as a shallow neural network, else it is known as a deep neural network, Output Layer
 
-<figure><img src="../.gitbook/assets/image3.gif" alt=""><figcaption><p><a href="https://machinelearningknowledge.ai/animated-explanation-of-feed-forward-neural-network-architecture/">Source</a></p></figcaption></figure>
+<figure><img src="../contents/NN/images/image3.gif" alt=""><figcaption><p><a href="https://machinelearningknowledge.ai/animated-explanation-of-feed-forward-neural-network-architecture/">Source</a></p></figcaption></figure>
 
 ## Backpropagation
 
@@ -61,7 +61,7 @@ An important point to note is that if the data is large (which is often the case
 
 For a large neural network, the number of weight elements and biases becomes so large and minimizing the loss with so many parameters is a difficult task. This complex task is achieved using gradient descent.
 
-<figure><img src="../.gitbook/assets/image4.gif" alt=""><figcaption><p><a href="https://machinelearningknowledge.ai/animated-explanation-of-feed-forward-neural-network-architecture/">Source</a></p></figcaption></figure>
+<figure><img src="../contents/NN/images/image4.gif" alt=""><figcaption><p><a href="https://machinelearningknowledge.ai/animated-explanation-of-feed-forward-neural-network-architecture/">Source</a></p></figcaption></figure>
 
 For updating weights and biases using plain backpropagation, you have to scan through the entire data set to make a single update to the weights. This is computationally very expensive for large datasets. Thus, you use multiple batches (or **mini-batches**) of data points, compute the average gradient for a batch, and update the weights based on that gradient.
 

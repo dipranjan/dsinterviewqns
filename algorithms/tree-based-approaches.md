@@ -1,6 +1,6 @@
 # Tree based approaches
 
-<figure><img src="../_build/html/_images/image13.PNG" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image13 (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Decision Tree
 
@@ -14,7 +14,7 @@ The decision of making strategic splits heavily affects a tree’s accuracy. The
 
 Decision trees use multiple algorithms to decide to split a node into two or more sub-nodes. The creation of sub-nodes increases the homogeneity of resultant sub-nodes. In other words, we can say that the purity of the node increases with respect to the target variable. The decision tree splits the nodes on all available variables and then selects the split which results in most homogeneous sub-nodes.
 
-<figure><img src="../_build/html/_images/image11.PNG" alt=""><figcaption><p>Decision Tree</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image11 (2).png" alt=""><figcaption><p>Decision Tree</p></figcaption></figure>
 
 The algorithm selection is also based on the type of target variables. Let us look at some algorithms used in Decision Trees:
 
@@ -108,7 +108,7 @@ Ensemble Learning is called the Wisdom of the crowd. Combine multiple weak model
 * **Boosting:** Trains N different weak models (usually of same types – homogenous) with the complete dataset in a sequential order. The datapoints wrongly classified with previous weak model is provided more weights to that they can be classified by the next weak leaner properly. In the test phase, each model is evaluated and based on the test error of each weak model, the prediction is weighted for voting. Boosting methods decreases the bias of the prediction.
 * **Stacking:** Trains N different weak models (usually of different types – heterogenous) with one of the two subsets of the dataset in parallel. Once the weak learners are trained, they are used to trained a meta learner to combine their predictions and carry out final prediction using the other subset. In test phase, each model predicts its label, these set of labels are fed to the meta learner which generates the final prediction.
 
-<figure><img src="../_build/html/_images/image251.PNG" alt=""><figcaption><p>Comparison for the above 3 methods <a href="https://www.cheatsheets.aqeel-anwar.com">(Source)</a></p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image25.png" alt=""><figcaption><p>Comparison for the above 3 methods <a href="https://www.cheatsheets.aqeel-anwar.com">(Source)</a></p></figcaption></figure>
 
 ## Boosting
 
@@ -126,7 +126,7 @@ An ensemble is a collection of models which ideally should predict better than i
   * the weight that the weak learner itself will have on the final output, in each of the $$t$$ iterations we will have a learner $$h_1$$, $$h_2$$, $$h_3$$ .. $$h_t$$ each of which will be combined to make the final model, the weight of each of these individual learners in the final output is given by $$\alpha_t$$. The models with low error rate will have higher values of $$\alpha_t$$ and hence higher weight in the final output.
 * Before you apply the AdaBoost algorithm, you should specifically remove the Outliers. Since AdaBoost tends to boost up the probabilities of misclassified points and there is a high chance that outliers will be misclassified, it will keep increasing the probability associated with the outliers and make the progress difficult.
 
-<figure><img src="../_build/html/_images/image10.PNG" alt=""><figcaption><p>Adaboost Pseudocode</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image10 (2).png" alt=""><figcaption><p>Adaboost Pseudocode</p></figcaption></figure>
 
 ***
 

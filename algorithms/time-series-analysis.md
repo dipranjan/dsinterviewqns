@@ -2,7 +2,7 @@
 
 **Reference:** [📖Explanation](https://nbviewer.jupyter.org/github/Yorko/mlcourse\_open/blob/master/jupyter\_english/topic09\_time\_series/topic9\_part1\_time\_series\_python.ipynb)
 
-<figure><img src="../.gitbook/assets/image14.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../contents/Algorithms/images/image14.png" alt=""><figcaption></figcaption></figure>
 
 A time series is simply a series of data points ordered in time. In a time series, time is often the independent variable and the goal is usually to make a forecast for the future.
 
@@ -203,7 +203,7 @@ Stationarity is important because, in its absence, a model describing the data w
 
 Looking at the time series plots below, you can notice how the mean and variance of any given segment of time would do a good job representing the whole stationary time series but a relatively poor job representing the whole non-stationary time series. For instance, the mean of the non-stationary time series is much lower from $$600<t<800$$ and its variance is much higher in this range than in the range from $$200<t<400$$.
 
-&#x20;![](../.gitbook/assets/image20.png)
+<img src="../contents/Algorithms/images/image20.png" alt="" data-size="original">
 
 What quantities are we typically interested in when we perform statistical analysis on a time series? We want to know
 
@@ -323,7 +323,7 @@ Obviously, there's no connection whatever between the two series. Clearly neithe
 
 But look at the sort of correlations you get between pairs of coins:
 
-<img src="../.gitbook/assets/image21.png" alt="" data-size="original">
+<img src="../contents/Algorithms/images/image21.png" alt="" data-size="original">
 
 If I didn't tell you what those were, and you took any pair of those series by themselves, those would be impressive correlations would they not?
 
@@ -339,10 +339,12 @@ If your question asked "_how to use Pearson correlation correctly with time seri
 
 Further, smoothing won't reduce the problem of serial dependence; quite the opposite -- it makes it even worse! Here are the correlations after smoothing (default loess smooth - of series vs index - performed in R):
 
-    |       | coin1      | coin2      |
-    |-------|------------|------------|
-    | coin2 | 0.9696378  |            |
-    | coin3 | -0.8829326 | -0.7733559 |
+```
+|       | coin1      | coin2      |
+|-------|------------|------------|
+| coin2 | 0.9696378  |            |
+| coin3 | -0.8829326 | -0.7733559 |
+```
 
 They all got further from 0. They're all still nothing but meaningless noise, though now it's smoothed, cumulated noise. (By smoothing, we reduce the variability in the series we put into the correlation calculation, so that may be why the correlation goes up.)
 
@@ -358,11 +360,11 @@ Describe in details how State Space Model and Kalman Filtering are used in Time 
 
 **Answer**
 
-[_Resource_](https://www.google.com/url?sa=t\&rct=j\&q=\&esrc=s\&source=web\&cd=\&cad=rja\&uact=8\&ved=2ahUKEwjDh\_W1\_dD6AhWU-DgGHY5OAlMQFnoECBMQAQ\&url=https%3A%2F%2Ftowardsdatascience.com%2Fstate-space-model-and-kalman-filter-for-time-series-prediction-basic-structural-dynamic-linear-2421d7b49fa6\&usg=AOvVaw0u-sCm-kITU5I-Ptdc9K8s) __ [_Source_](https://mfe.baruch.cuny.edu/wp-content/uploads/2014/12/TS\_Lecture5\_2019.pdf)
+[_Resource_](https://www.google.com/url?sa=t\&rct=j\&q=\&esrc=s\&source=web\&cd=\&cad=rja\&uact=8\&ved=2ahUKEwjDh\_W1\_dD6AhWU-DgGHY5OAlMQFnoECBMQAQ\&url=https%3A%2F%2Ftowardsdatascience.com%2Fstate-space-model-and-kalman-filter-for-time-series-prediction-basic-structural-dynamic-linear-2421d7b49fa6\&usg=AOvVaw0u-sCm-kITU5I-Ptdc9K8s) \_\_ [_Source_](https://mfe.baruch.cuny.edu/wp-content/uploads/2014/12/TS\_Lecture5\_2019.pdf)
 
 A state space model (SSM) is a time series model in which the time series $$Y_t$$ is interpreted as the result of a noisy observation of a stochastic process $$X_t$$. The values of the variables $$X_t$$ and $$Y_t$$ can be continuous (scalar or vector) or discrete. Graphically, an SSM is represented as follows:
 
-![](../.gitbook/assets/image22.png)
+<img src="../contents/Algorithms/images/image22.png" alt="" data-size="original">
 
 SSMs belong to the realm of Bayesian inference, and they have been successfully applied in many fields to solve a broad range of problems. It is usually assumed that the state process $$X_t$$ is Markovian. The most well studied SSM is the Kalman filter, for which the processes above are linear and the sources of randomness are Gaussian.
 
