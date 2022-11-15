@@ -16,7 +16,7 @@ Several different techniques exist in the practice for dealing with imbalanced d
 
 ## Undersampling vs Oversampling
 
-<figure><img src="../../.gitbook/assets/image7.png" alt=""><figcaption><p><a href="https://medium.com/analytics-vidhya/undersampling-and-oversampling-an-old-and-a-new-approach-4f984a0e8392">Source</a></p></figcaption></figure>
+<figure><img src="../../contents/Data/images/image7.png" alt=""><figcaption><p><a href="https://medium.com/analytics-vidhya/undersampling-and-oversampling-an-old-and-a-new-approach-4f984a0e8392">Source</a></p></figcaption></figure>
 
 **Undersampling** means to get all of the classes to the same amount as the minority class or the one with the least amount of rows. To put this in an example: We have a dataset of 100 rows with three independent columns and one dependent feature, otherwise known as the class column. The class column has three labels: 1, 2, and 3. Label 1 has 39 instances, label 2 has 32 instances and label 3 has 29 instances. In order to apply undersampling to the aforementioned dataset, we would have to reduce label 1 and label 2 to the same amount of instances as label 3. Thus, each label would have, in this particular case, 29 instances each.
 

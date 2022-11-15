@@ -1,6 +1,6 @@
 # Big O
 
-Big O notation (with a capital letter O, not a zero), also called Landau's symbol, is a symbolism used in complexity theory, computer science, and mathematics to describe the asymptotic behavior of functions. Basically, it tells you how fast a function grows or declines.
+Big O notation also called Landau's symbol, is a symbolism used in complexity theory, computer science, and mathematics to describe the asymptotic behavior of functions. Basically, it tells you how fast a function grows or declines.
 
 ### Why is Algorithm Analysis Important?
 
@@ -12,9 +12,7 @@ The manager has to decide which algorithm to use. To do so, he has to find the c
 
 In the Jupyter notebook, you can use the `%timeit` literal followed by the function call to find the time taken by the function to execute. Look at the following script:
 
-````
-
-```{code-block} python
+```python
 '''Alogrithm by Employee 1'''
 def fact(n):
     product = 1
@@ -37,9 +35,8 @@ def fact(n):
 
 %timeit fact(50)
 ```
-````
 
-Output -
+**Output -**
 
 * 4.16 µs ± 15 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 * 7.41 µs ± 142 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
@@ -64,17 +61,11 @@ The following are some of the most common Big-O functions:
 | Logarithmic | $O(log(n))$  |
 | Log Linear  | $O(nlog(n))$ |
 
-```
----
-height: 200px
-name: image16
----
-n is the input size and c is a positive constant
-```
+<figure><img src="../.gitbook/assets/image16.png" alt=""><figcaption><p>n is the input size and c is a positive constant</p></figcaption></figure>
 
 ### Analogy
 
-Imagine the following scenario: You've got a file on a hard drive and you need to send it to your friend who lives across the country. You need to get the file to your friend as fast as possible. How should you send it?
+Imagine the following scenario: _You've got a file on a hard drive, and you need to send it to your friend who lives across the country. You need to get the file to your friend as fast as possible. How should you send it?_
 
 Most people's first thought would be email, FTP, or some other means of electronic transfer. That thought is reasonable, but only half correct. If it's a small file, you're certainly right. It would take 5 - 10 hours to get to an airport, hop on a flight, and then deliver it to your friend. But what if the file were really, really large? Is it possible that it's faster to physically deliver it via plane?
 
@@ -87,22 +78,10 @@ This is what the concept of asymptotic runtime, or big $O$ time, means. We could
 * Electronic Transfer: $O(s)$, where $s$ is the size of the file. This means that the time to transfer the file increases linearly with the size of the file. (Yes, this is a bit of a simplification, but that's okay for these purposes)
 * Airplane Transfer: $O(1)$ with respect to the size of the file. As the size of the file increases, it won't take any longer to get the file to your friend. The time is constant.
 
-```
----
-height: 200px
-name: image17
----
-No matter how big the constant is and how slow the linear increase is, linear will at some point surpass the constant.
-```
+<figure><img src="../.gitbook/assets/image17.PNG" alt=""><figcaption><p>No matter how big the constant is and how slow the linear increase is, linear will at some point surpass the constant.</p></figcaption></figure>
 
 There are many more runtimes than this. Some ofthe most common ones are $O(log N),O(N log N), O(N), O(N^2), O(2^N)$. There's no fixed list of possible runtimes, though. You can also have multiple variables in your runtime. For example, the time to paint a fence that's $w$ meters wide and $h$ meters high could be described as $O(wh)$ .If you needed $p$ layers of paint, then you could say that the time is $O(whp)$.
 
 #### Big O of DS Algorithms
 
-```
----
-name: image15
-scale: 50%
----
-Big O of some of the popular Machine Learning Algorithms
-```
+<figure><img src="../.gitbook/assets/image15.png" alt=""><figcaption><p>Big O of some of the popular Machine Learning Algorithms</p></figcaption></figure>

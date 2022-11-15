@@ -4,7 +4,7 @@
 This page is a Work in Progress
 {% endhint %}
 
-<figure><img src="../.gitbook/assets/image1.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../_build/html/_images/image16.PNG" alt=""><figcaption></figcaption></figure>
 
 ***
 
@@ -16,7 +16,7 @@ This page is a Work in Progress
 
 From the source below can you find the Revenue the specified account?&#x20;
 
-<img src="../.gitbook/assets/image2.png" alt="" data-size="original">
+<img src="../_build/html/_images/image22.PNG" alt="" data-size="original">
 
 
 
@@ -36,7 +36,7 @@ This can be solved with a simple VLOOKUP
 
 From the source below can you find the Customer Number corresponding to the Account Name?
 
-&#x20;![](<../.gitbook/assets/image3 (1).png>)
+&#x20;![](../\_build/html/\_images/image32.PNG)
 
 **Answer**
 
@@ -52,7 +52,7 @@ VLOOKUP won't work as Customer Num is to the LEFT of the Account Name. We need I
 
 <summary>Total Revenue</summary>
 
-From the source below can you find the total revenue per sales rep? ![](../.gitbook/assets/image4.png)
+From the source below can you find the total revenue per sales rep? ![](../\_build/html/\_images/image42.PNG)
 
 **Answer**
 
