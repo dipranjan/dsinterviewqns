@@ -1,10 +1,3 @@
----
-html_meta:
-  "description lang=en": "Interview resource of Data Science focusing on Anomaly Detection."
-  "keywords": "interview, data science, machine learning, Anomaly Detection, Isolation Forest"
-  "property=og:locale": "en_US"
----
-
 ## Anomaly Detection
 
 An anomaly is something that differs from a norm: a deviation, an exception. In software engineering, by anomaly we understand a rare occurrence or event that doesn’t fit into the pattern, and, therefore, seems suspicious.
