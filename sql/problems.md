@@ -6,7 +6,7 @@ If you want to have some hands on practice without the hassle of installing and 
 
 <details>
 
-<summary>[**Leetcode**](https://leetcode.com/problems/second-highest-salary/)</summary>
+<summary>[Leetcode](https://leetcode.com/problems/second-highest-salary/)</summary>
 
 *For a similar problem with different approach check Nth highest salary problem*
 
@@ -206,8 +206,8 @@ on (a.account_id = b.account_id)
 
 You have 2 tables:
 
-* transactions: date, prod\_id, quantity
-* products: prod\_id, price
+* transactions: date, prod_id, quantity
+* products: prod_id, price
 
 Calculate the month over month revenue, example month over month revenue for month2 is month2\_Revenue- month1\_Revenue
 
@@ -231,6 +231,7 @@ select month, (Rev-Prev_month) as extra_rev  from cte2
 where 
 prev_month is not null
 ```
+</details>
 
 <details>
 
@@ -270,7 +271,7 @@ Select Employee from cte where Emp_Sal > Man_Salary
 
 Write an SQL query to find employees who have the highest salary in each of the departments.
 
-![image 3](../SQL/images/image3.PNG)
+(../SQL/images/image3.PNG)
 
 **Answer**
 
@@ -414,7 +415,6 @@ Output:
 	|---:|--------------:|-----:|
 	|  1 |             2 |    5 |
 
-
 **Answer**
 
 ```sql
@@ -494,7 +494,6 @@ SELECT *, COUNT(*) FROM userstable
 GROUP BY id, name
 HAVING COUNT(*) > 1
 ```
-
 </details>
 
 <details>
