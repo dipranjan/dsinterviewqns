@@ -1,10 +1,10 @@
-## Problems
+# Problems
 
-If you want to have some hands on practice without the hassle of installing and setting up the required softwares in your local machine [🔫DB Fiddle](https://dbfiddle.uk) provides free SQL sandbox. In a lot of problems below prebuilt sandbox links are already provided to refer but it is always recommended that you setup your personal sandbox to play around.
+{% hint style="info" %}
+If you want to have some hands on practice without the hassle of installing and setting up the required softwares in your local machine 🔫DB Fiddle provides free SQL sandbox. In a lot of problems below prebuilt sandbox links are already provided to refer but it is always recommended that you setup your personal sandbox to play around.
+{% endhint %}
 
-
-```{admonition} Problem: [Leetcode] Second Highest Salary
-
+```
 
 **Reference - [Leetcode](https://leetcode.com/problems/second-highest-salary/)**
 
@@ -19,7 +19,6 @@ Write a SQL query to get the second highest salary from the Employee table.
 | 3  | 300    |
 
 For example, given the above Employee table, the query should return 200 as the second highest salary. If there is no second highest salary, then the query should return null.
-
 ```
 
 **Answer**
@@ -35,35 +34,37 @@ LIMIT 1 OFFSET 1)
 AS SecondHighestSalary
 ```
 
-</details>
-
 <details>
 
 <summary>[Leetcode] Rank Scores</summary>
 
-**Reference - [Leetcode](https://leetcode.com/problems/rank-scores/)**
+**Reference -** [**Leetcode**](https://leetcode.com/problems/rank-scores/)
 
 Write a SQL query to rank scores. If there is a tie between two scores, both should have the same ranking. Note that after a tie, the next ranking number should be the next consecutive integer value. In other words, there should be no "holes" between ranks.
 
-	| Id | Score |
-	|----|-------|
-	| 1  | 3.40  |
-	| 2  | 3.65  |
-	| 3  | 4.00  |
-	| 4  | 3.50  |
-	| 5  | 4.00  |
-	| 6  | 3.65  |
+```
+| Id | Score |
+|----|-------|
+| 1  | 3.40  |
+| 2  | 3.65  |
+| 3  | 4.00  |
+| 4  | 3.50  |
+| 5  | 4.00  |
+| 6  | 3.65  |
+```
 
 For example, given the above Scores table, your query should generate the following report (order by highest score):
 
-	| score | Rank    |
-	|-------|---------|
-	| 4.00  | 1       |
-	| 4.00  | 1       |
-	| 3.95  | 2       |
-	| 3.65  | 3       |
-	| 3.65  | 3       |
-	| 3.40  | 4       |
+```
+| score | Rank    |
+|-------|---------|
+| 4.00  | 1       |
+| 4.00  | 1       |
+| 3.95  | 2       |
+| 3.65  | 3       |
+| 3.65  | 3       |
+| 3.40  | 4       |
+```
 
 **Answer**
 
@@ -74,20 +75,23 @@ select
 Score, dense_rank() over(order by score desc) as Rank
 from Scores
 ```
+
 </details>
 
 <details>
 
 <summary>[CHEWY] 2nd Highest score</summary>
 
-	| Id | subject | marks |
-	|---:|---------|------:|
-	|  1 | Maths   |    30 |
-	|  1 | Phy     |    50 |
-	|  1 | Chem    |    85 |
-	|  2 | Maths   |    90 |
-	|  2 | Phy     |    50 |
-	|  2 | Chem    |    85 |
+```
+| Id | subject | marks |
+|---:|---------|------:|
+|  1 | Maths   |    30 |
+|  1 | Phy     |    50 |
+|  1 | Chem    |    85 |
+|  2 | Maths   |    90 |
+|  2 | Phy     |    50 |
+|  2 | Chem    |    85 |
+```
 
 Select the second highest mark for each student.
 
@@ -99,44 +103,49 @@ with CTE as(
 )
 select Id, subject, marks from CTE where Rank = 1
 ```
+
 </details>
 
 <details>
 
 <summary>[Leetcode] Consecutive Numbers</summary>
 
-
-**Reference - [Leetcode](https://leetcode.com/problems/consecutive-numbers/)**
+**Reference -** [**Leetcode**](https://leetcode.com/problems/consecutive-numbers/)
 
 Write an SQL query to find all numbers that appear at least three times consecutively.
 
 Return the result table in any order.
 
-Input: 
+Input:
 
 Logs table:
 
-	| Id | Num |
-	|----|-----|
-	| 1  | 1   |
-	| 2  | 1   |
-	| 3  | 1   |
-	| 4  | 2   |
-	| 5  | 1   |
-	| 6  | 2   |
-	| 7  | 2   |
+```
+| Id | Num |
+|----|-----|
+| 1  | 1   |
+| 2  | 1   |
+| 3  | 1   |
+| 4  | 2   |
+| 5  | 1   |
+| 6  | 2   |
+| 7  | 2   |
+```
 
 Result table:
 
-	| ConsecutiveNums |
-	|-----------------|
-	| 1               |
+```
+| ConsecutiveNums |
+|-----------------|
+| 1               |
+```
 
 1 is the only number that appears consecutively for at least three times.
 
 **Answer**
 
 Multiple solutions are possible, one of them is given below
+
 ```sql
 with a(Num,NextNum,SecondNextNum ) as(
 
@@ -152,32 +161,35 @@ with a(Num,NextNum,SecondNextNum ) as(
 	Num = NextNum
 	and Num = SecondNextNum
 ```
+
 </details>
 
 <details>
 
 <summary>[SALESFORCE] User Growth</summary>
 
-**[🔫Playground](https://dbfiddle.uk/?rdbms=sqlserver_2017&fiddle=ce4ded37fa37bf552365c18cb7840c3b)**
+[**🔫Playground**](https://dbfiddle.uk/?rdbms=sqlserver\_2017\&fiddle=ce4ded37fa37bf552365c18cb7840c3b)
 
 Given you have user data for 2 accounts for 2 months. Calculate the growth rate of users in each account where growth rate is defined as unique users in month 2 divided by unique users in month 1.
 
-	| date_details | account_id | user_id |
-	|--------------|------------|---------|
-	| 2021-01-01   | U1         | A1      |
-	| 2021-01-01   | U1         | A2      |
-	| 2021-01-01   | U1         | A3      |
-	| 2021-01-01   | U1         | A4      |
-	| 2021-02-01   | U1         | A1      |
-	| 2021-02-01   | U1         | A2      |
-	| 2021-02-01   | U1         | A3      |
-	| 2021-02-01   | U1         | A4      |
-	| 2021-02-01   | U1         | A5      |
-	| 2021-01-01   | U2         | A1      |
-	| 2021-01-01   | U2         | A2      |
-	| 2021-01-01   | U2         | A3      |
-	| 2021-02-01   | U2         | A1      |
-	| 2021-02-01   | U2         | A2      |
+```
+| date_details | account_id | user_id |
+|--------------|------------|---------|
+| 2021-01-01   | U1         | A1      |
+| 2021-01-01   | U1         | A2      |
+| 2021-01-01   | U1         | A3      |
+| 2021-01-01   | U1         | A4      |
+| 2021-02-01   | U1         | A1      |
+| 2021-02-01   | U1         | A2      |
+| 2021-02-01   | U1         | A3      |
+| 2021-02-01   | U1         | A4      |
+| 2021-02-01   | U1         | A5      |
+| 2021-01-01   | U2         | A1      |
+| 2021-01-01   | U2         | A2      |
+| 2021-01-01   | U2         | A3      |
+| 2021-02-01   | U2         | A1      |
+| 2021-02-01   | U2         | A2      |
+```
 
 **Answer**
 
@@ -203,14 +215,14 @@ on (a.account_id = b.account_id)
 
 <summary>[SALESFORCE] Month over Month Revenue</summary>
 
-**[🔫Playground](https://dbfiddle.uk/?rdbms=sqlserver_2017&fiddle=72569e574e670b477d2f62fdfc4276ca)**
+[**🔫Playground**](https://dbfiddle.uk/?rdbms=sqlserver\_2017\&fiddle=72569e574e670b477d2f62fdfc4276ca)
 
 You have 2 tables:
 
- - transactions: date, prod_id, quantity
- - products: prod_id, price
+* transactions: date, prod\_id, quantity
+* products: prod\_id, price
 
- Calculate the month over month revenue, example month over month revenue for month2 is month2_Revenue- month1_Revenue
+Calculate the month over month revenue, example month over month revenue for month2 is month2\_Revenue- month1\_Revenue
 
 **Answer**
 
@@ -554,5 +566,8 @@ inner join cte c
 	on p.id = c.product_id
 where p.price > c.avg_trans_price
 ```
+
+</details>
+````
 
 </details>

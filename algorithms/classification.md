@@ -4,19 +4,19 @@
 
 It is easy to say that the linear regression predicts a “value” of the targeted variable through a linear combination of the given features, while on the other hand, a Logistic regression predicts “probability value” through a linear combination of the given features plugged inside a logistic function. Linear regression is unbounded, and this brings logistic regression into picture. Their value strictly ranges from 0 to 1.
 
-<figure><img src="../contents/Algorithms/images/image3.png" alt=""><figcaption><p>Logistic regression uses Sigmoid function to transform linear regression into the logit function. Logit is nothing but log of Odds. Then using log of Odds it calculates the required probability. (<a href="https://www.vebuso.com/2020/02/linear-to-logistic-regression-explained-step-by-step/">Source</a>)</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image3 (2).png" alt=""><figcaption><p>Logistic regression uses Sigmoid function to transform linear regression into the logit function. Logit is nothing but log of Odds. Then using log of Odds it calculates the required probability. (<a href="https://www.vebuso.com/2020/02/linear-to-logistic-regression-explained-step-by-step/">Source</a>)</p></figcaption></figure>
 
 ### Cost Function
 
 One more thing to note here is that logistic regression uses maximum likelihood estimation (MLE) instead of least squares method of minimizing the error which is used in linear models. In Linear regression we minimized SSE. In Logistic Regression we maximize log likelihood instead. Linear regression uses mean squared error as its cost function. If this is used for logistic regression, then it will be a non-convex function of parameters (theta). Gradient descent will converge into global minimum only if the function is convex.
 
-<figure><img src="../contents/Algorithms/images/image4.png" alt=""><figcaption><p>Cost function (<a href="https://pvgisours.tistory.com/59">Source</a>)</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image4 (2).png" alt=""><figcaption><p>Cost function (<a href="https://pvgisours.tistory.com/59">Source</a>)</p></figcaption></figure>
 
 ## Metrics
 
-<figure><img src="../contents/Algorithms/images/image5.png" alt=""><figcaption><p>Confusion Matrix and key Metrics</p></figcaption></figure>
+<figure><img src="../_build/html/_images/image5.PNG" alt=""><figcaption><p>Confusion Matrix and key Metrics</p></figcaption></figure>
 
-<figure><img src="../contents/Algorithms/images/image6.png" alt=""><figcaption><p>(a) ROC curve (b) Precision-Recall curve. Both are a helpful diagnostic tool for evaluating a single classifier but challenging for comparing classifiers. Like ROC AUC, we can calculate the area under the curve as a score and use that score to compare classifiers. The focus on the minority class makes the Precision-Recall AUC more useful for imbalanced classification problems. (<a href="https://machinelearningmastery.com/tour-of-evaluation-metrics-for-imbalanced-classification/">Source</a>)</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image6 (2).png" alt=""><figcaption><p>(a) ROC curve (b) Precision-Recall curve. Both are a helpful diagnostic tool for evaluating a single classifier but challenging for comparing classifiers. Like ROC AUC, we can calculate the area under the curve as a score and use that score to compare classifiers. The focus on the minority class makes the Precision-Recall AUC more useful for imbalanced classification problems. (<a href="https://machinelearningmastery.com/tour-of-evaluation-metrics-for-imbalanced-classification/">Source</a>)</p></figcaption></figure>
 
 ## Questions
 
@@ -30,7 +30,7 @@ How would you interpret coefficients of logistic regression for categorical and 
 
 **Reference:** [Explanation](https://www.displayr.com/how-to-interpret-logistic-regression-coefficients/)
 
-Let's explain this using an example. The table below shows the main outputs from the logistic regression. It is very obvious which are the categorial variables out here: ![](../\_build/html/\_images/image1.PNG)
+Let's explain this using an example. The table below shows the main outputs from the logistic regression. It is very obvious which are the categorial variables out here: ![](../contents/Algorithms/images/image1.png)
 
 The first category (usually not shown) has a coefficient of $$0$$. So, if we can say, for example, that:
 

@@ -26,13 +26,13 @@ And three fundamental approaches to detect anomalies are based on:
 
 Isolation Forest is an unsupervised anomaly detection algorithm that uses a random forest algorithm (decision trees) under the hood to detect outliers in the dataset. The algorithm tries to split or divide the data points such that each observation gets isolated from the others. Usually, the anomalies lie away from the cluster of data points, so it's easier to isolate the anomalies compare to the regular data points.
 
-<figure><img src="../.gitbook/assets/image18 (1) (1) (1) (1).png" alt=""><figcaption><p>Partitioning of Anomaly and Regular data point (<a href="https://towardsdatascience.com/5-anomaly-detection-algorithms-every-data-scientist-should-know-b36c3605ea16">Source)</a></p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image18 (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Partitioning of Anomaly and Regular data point (<a href="https://towardsdatascience.com/5-anomaly-detection-algorithms-every-data-scientist-should-know-b36c3605ea16">Source)</a></p></figcaption></figure>
 
 ### Local Outlier Factor
 
 It takes the density of data points into consideration to decide whether a point is an anomaly or not. The local outlier factor computes an anomaly score called anomaly score that measures how isolated the point is with respect to the surrounding neighborhood. It takes into account the local as well as the global density to compute the anomaly score.
 
-<figure><img src="../.gitbook/assets/image19.png" alt=""><figcaption><p>Local Outlier Factor Formulation (<a href="https://medium.com/mlpoint/local-outlier-factor-a-way-to-detect-outliers-dde335d77e1a">Source)</a></p></figcaption></figure>
+<figure><img src="../_build/html/_images/image191.PNG" alt=""><figcaption><p>Local Outlier Factor Formulation (<a href="https://medium.com/mlpoint/local-outlier-factor-a-way-to-detect-outliers-dde335d77e1a">Source)</a></p></figcaption></figure>
 
 ### Robust Covariance
 

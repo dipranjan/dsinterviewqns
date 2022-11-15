@@ -25,7 +25,7 @@ The four main techniques used for POS tagging:
 
 Markov processes are commonly used to model sequential data, such as text and speech. The first-order Markov assumption states that the probability of an event (or state) depends only on the previous state. The Hidden Markov Model, an extension to the Markov process, is used to model phenomena where the states are hidden, and they emit observations. The transition and the emission probabilities specify the probabilities of transition between states and emission of observations from states, respectively. In POS tagging, the states are the POS tags while the words are the observations. To summarise, a Hidden Markov Model is defined by the initial state, emission, and the transition probabilities.
 
-<figure><img src="../contents/NLP/images/image3.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image3 (1).png" alt=""><figcaption></figcaption></figure>
 
 The POS tag $$T_i$$ for given word $$W_i$$ depends on two things: POS tag of the previous word and the word itself.
 
@@ -85,11 +85,11 @@ Top-down parsers have a specific limitation- Left Recursion.
 
 Example of a left recursion: VP -> VP NP. Whenever a top-down parser encounters such a rule, it runs into an infinite loop, thus no parse tree is obtained. Following is the illustration of top-down parse:
 
-<figure><img src="../contents/NLP/images/image4.png" alt=""><figcaption><p>Top-down parse</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image4.png" alt=""><figcaption><p>Top-down parse</p></figcaption></figure>
 
 * **Bottom-up parsing:** reduces each terminal word to a production rule, i.e. reduces the right-hand-side of the grammar to the left-hand-side. It continues the reduction process until the entire sentence has been reduced to the start symbol S. Shift-Reduce Parser algorithm, which parses the words of the sentence one-by-one either by shifting a word to the stack or reducing the stack by using the production rules. Below is an example of bottom-up parse tree.
 
-<figure><img src="../contents/NLP/images/image5.png" alt=""><figcaption><p>Bottom-up parse</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image5.png" alt=""><figcaption><p>Bottom-up parse</p></figcaption></figure>
 
 ### Probabilistic CFG
 
@@ -117,7 +117,7 @@ In dependency grammar, constituencies (such as NP, VP etc.) do not form the basi
 
 Free word order languages such as Hindi, Bengali are difficult to parse using constituency parsing techniques. This is because, in such free-word-order languages, the order of words/constituents may change significantly while keeping the meaning exactly the same. It is thus difficult to fit the sentences into the finite set of production rules that CFGs offer. Dependencies in a sentence are defined using the elements Subject-Verb-Object (SVO). The following table shows SVO dependencies in three types of sentences - declarative, interrogative, and imperative
 
-<figure><img src="../contents/NLP/images/image6.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image6.png" alt=""><figcaption></figcaption></figure>
 
 Apart from dependencies defined in the form of subject-verb-object, there's a non-exhaustive list of dependency relationships, which are called **universal dependencies**.
 
