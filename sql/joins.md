@@ -6,7 +6,7 @@ Since solving any reasonable SQL problem requires a combination of all the topic
 
 Joins are best explained using Venn diagrams
 
-<figure><img src="../.gitbook/assets/image1 (1).png" alt=""><figcaption><p>TSQL JOIN Types, <a href="https://stevestedman.com/2015/05/tsql-join-types-poster-version-4-1/">Reference</a></p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image1.png" alt=""><figcaption><p>TSQL JOIN Types, <a href="https://stevestedman.com/2015/05/tsql-join-types-poster-version-4-1/">Reference</a></p></figcaption></figure>
 
 Remember that in case of multiple joins each single join produces a **single derived table** that is then joined to the next table and so on.
 

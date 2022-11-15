@@ -8,7 +8,7 @@ $$Y = b_0 + b_1 * x_1 + b_2 * x_2 + \epsilon$$
 
 The idea is to find the line or plane which best fits the data. Collectively, $$b_0, b_1, b_2$$ are called regression coefficients. $$\epsilon$$ is the error term, the part of $$Y$$ the regression model is unable to explain.
 
-<figure><img src="../.gitbook/assets/image2 (2).png" alt=""><figcaption><p><a href="https://www.shutterstock.com/image-illustration/annotated-diagram-explaining-components-graph-showing-1406041139">Source</a></p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image2 (2) (1).png" alt=""><figcaption><p><a href="https://www.shutterstock.com/image-illustration/annotated-diagram-explaining-components-graph-showing-1406041139">Source</a></p></figcaption></figure>
 
 ### Metrics
 

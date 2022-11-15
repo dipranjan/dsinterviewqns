@@ -1,6 +1,8 @@
 # Problems
 
-If you want to have some hands on practice without the hassle of installing and setting up the required softwares in your local machine [🔫DB Fiddle](https://dbfiddle.uk) provides free SQL sandbox. In a lot of problems below prebuilt sandbox links are already provided to refer but it is always recommended that you setup your personal sandbox to play around.
+{% hint style="info" %}
+If you want to have some hands on practice without the hassle of installing and setting up the required softwares in your local machine 🔫DB Fiddle provides free SQL sandbox. In a lot of problems below prebuilt sandbox links are already provided to refer but it is always recommended that you setup your personal sandbox to play around.
+{% endhint %}
 
 ```
 :class: tip, dropdown

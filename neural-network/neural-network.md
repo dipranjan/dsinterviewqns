@@ -17,7 +17,7 @@ Like a perceptron, the input is the weighted sum of inputs. The output is the ac
 
 Some of the common activation functions are as follows:
 
-<figure><img src="../.gitbook/assets/image1 (1) (1).png" alt=""><figcaption><p><a href="https://www.v7labs.com/blog/neural-networks-activation-functions">Source</a></p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image1 (1).png" alt=""><figcaption><p><a href="https://www.v7labs.com/blog/neural-networks-activation-functions">Source</a></p></figcaption></figure>
 
 **An artificial neural network is a network of such neurons.** Neurons in a neural network are arranged in layers. The _first_ and the _last_ layer are called the _input_ and _output_ layers. Input layers have as many neurons as the number of attributes in the data set and the output layer has as many neurons as the number of classes of the target variable (for a classification problem). For a regression problem, the number of neurons in the output layer would be 1 (a numeric variable). There are six main things that need to be specified for specifying a neural network completely:
 

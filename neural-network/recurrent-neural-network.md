@@ -13,7 +13,7 @@ Normal neural network is insufficient to train sequence data. Some examples of s
 
 Sequential data contains multiple entities​ and the order in which these entities are present is important.
 
-<figure><img src="../.gitbook/assets/image2 (1).png" alt=""><figcaption><p>In RNN each activation is dependent on two things: the activation in the previous layer <span class="math">l-1</span> at the current timestep <span class="math">t</span>, and the activation in the same layer <span class="math">l</span> at the previous timestep <span class="math">t-1</span></p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image2.png" alt=""><figcaption><p>In RNN each activation is dependent on two things: the activation in the previous layer <span class="math">l-1</span> at the current timestep <span class="math">t</span>, and the activation in the same layer <span class="math">l</span> at the previous timestep <span class="math">t-1</span></p></figcaption></figure>
 
 ## Types of RNN
 

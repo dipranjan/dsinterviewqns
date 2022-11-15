@@ -18,7 +18,7 @@ Window (also, windowing or windowed) functions perform a calculation over a set 
   * **DENSE\_RANK:** doesnot skip and rank number
   * **NTILE:** It assigns bucket numbers to the rows instead of row numbers or ranks
 
-<figure><img src="../.gitbook/assets/image2.png" alt=""><figcaption><p>Ranking functions, check playground to work with this</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image2 (2).png" alt=""><figcaption><p>Ranking functions, check playground to work with this</p></figcaption></figure>
 
 * **Offset functions**
   * **LAG:** the function allows you to pull columns or expressions from a row before the current row

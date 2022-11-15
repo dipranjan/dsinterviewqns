@@ -15,4 +15,4 @@ While it is very important to know what a `VIEW` is, however in most cases the a
 * A **recursive CTE** is one that references itself within that CTE. The recursive CTE is useful when working with hierarchical data because the CTE continues to execute until the query returns the entire hierarchy
 * A **non-recursive CTE** is one that does not reference itself within the CTE. Nonrecursive CTEs tend to be simpler than recursive CTEs
 
-<figure><img src="../.gitbook/assets/image4.png" alt=""><figcaption><p>The above image shows a case where we need to use CTE to answer a question</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image4 (1).png" alt=""><figcaption><p>The above image shows a case where we need to use CTE to answer a question</p></figcaption></figure>
