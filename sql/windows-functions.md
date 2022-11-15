@@ -8,7 +8,7 @@ Since solving any reasonable SQL problem requires a combination of all the topic
 
 Window (also, windowing or windowed) functions perform a calculation over a set of rows. I like to think of “looking through the window” at the rows that are being returned and having one last chance to perform a calculation. The window is defined by the OVER clause which determines if the rows are partitioned into smaller sets and if they are ordered. They allow you to add your favourite aggregate function to a non-aggregate query. Similar to Transform is pandas group by clause.
 
-<figure><img src="../contents/SQL/images/image5.png" alt=""><figcaption><p>GROUP vs WINDOW</p></figcaption></figure>
+<figure><img src="../_build/html/_images/image55.PNG" alt=""><figcaption><p>GROUP vs WINDOW</p></figcaption></figure>
 
 ## Common Windows Functions
 
@@ -18,7 +18,7 @@ Window (also, windowing or windowed) functions perform a calculation over a set 
   * **DENSE\_RANK:** doesnot skip and rank number
   * **NTILE:** It assigns bucket numbers to the rows instead of row numbers or ranks
 
-<figure><img src="../contents/SQL/images/image2.png" alt=""><figcaption><p>Ranking functions, check playground to work with this</p></figcaption></figure>
+<figure><img src="../_build/html/_images/image27.PNG" alt=""><figcaption><p>Ranking functions, check playground to work with this</p></figcaption></figure>
 
 * **Offset functions**
   * **LAG:** the function allows you to pull columns or expressions from a row before the current row

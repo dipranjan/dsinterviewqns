@@ -2,7 +2,7 @@
 
 **Reference:** [📖Explanation](https://nbviewer.jupyter.org/github/Yorko/mlcourse\_open/blob/master/jupyter\_english/topic09\_time\_series/topic9\_part1\_time\_series\_python.ipynb)
 
-<figure><img src="../_build/html/_images/image14.PNG" alt=""><figcaption></figcaption></figure>
+<figure><img src="../_build/html/_images/image14 (1).PNG" alt=""><figcaption></figcaption></figure>
 
 A time series is simply a series of data points ordered in time. In a time series, time is often the independent variable and the goal is usually to make a forecast for the future.
 
@@ -364,7 +364,7 @@ Describe in details how State Space Model and Kalman Filtering are used in Time 
 
 A state space model (SSM) is a time series model in which the time series $$Y_t$$ is interpreted as the result of a noisy observation of a stochastic process $$X_t$$. The values of the variables $$X_t$$ and $$Y_t$$ can be continuous (scalar or vector) or discrete. Graphically, an SSM is represented as follows:
 
-<img src="../_build/html/_images/image221.PNG" alt="" data-size="original">
+<img src="../_build/html/_images/image221 (1).PNG" alt="" data-size="original">
 
 SSMs belong to the realm of Bayesian inference, and they have been successfully applied in many fields to solve a broad range of problems. It is usually assumed that the state process $$X_t$$ is Markovian. The most well studied SSM is the Kalman filter, for which the processes above are linear and the sources of randomness are Gaussian.
 

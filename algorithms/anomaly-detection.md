@@ -26,7 +26,7 @@ And three fundamental approaches to detect anomalies are based on:
 
 Isolation Forest is an unsupervised anomaly detection algorithm that uses a random forest algorithm (decision trees) under the hood to detect outliers in the dataset. The algorithm tries to split or divide the data points such that each observation gets isolated from the others. Usually, the anomalies lie away from the cluster of data points, so it's easier to isolate the anomalies compare to the regular data points.
 
-<figure><img src="../.gitbook/assets/image18 (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Partitioning of Anomaly and Regular data point (<a href="https://towardsdatascience.com/5-anomaly-detection-algorithms-every-data-scientist-should-know-b36c3605ea16">Source)</a></p></figcaption></figure>
+<figure><img src="../_build/html/_images/image181.PNG" alt=""><figcaption><p>Partitioning of Anomaly and Regular data point (<a href="https://towardsdatascience.com/5-anomaly-detection-algorithms-every-data-scientist-should-know-b36c3605ea16">Source)</a></p></figcaption></figure>
 
 ### Local Outlier Factor
 

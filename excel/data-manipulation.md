@@ -53,7 +53,7 @@ This is a 3-part question:
 
 **Answer**
 
-![](<../.gitbook/assets/image6 (1).png>)****
+![](../\_build/html/\_images/image62.PNG)****
 
 You can check for duplicates using:
 

@@ -32,7 +32,7 @@ Now once you have the model fit next comes the metrics to measure how good the f
 
     Penalized regression is similar in spirit to AIC. Instead of explicitly searching through a discrete set of models, the model-fitting equation incorporates a constraint that penalizes the model for too many variables (parameters). Rather than eliminating predictor variables entirely — as with stepwise, forward, and backward selection — penalized regression applies the penalty by reducing coefficients, in some cases to near zero. Common penalized regression methods are ridge regression and lasso regression. Regularization is nothing but adding a penalty term to the objective function and control the model complexity using that penalty term. It can be used for many machine learning Algorithms. Both Ridge and Lasso regression uses $$L2$$ and $$L1$$ regularizations.
 
-<figure><img src="../.gitbook/assets/image23.png" alt=""><figcaption><p><a href="https://stanford.edu/~shervine/teaching/cs-229/cheatsheet-machine-learning-tips-and-tricks">Source</a></p></figcaption></figure>
+<figure><img src="../_build/html/_images/image231.PNG" alt=""><figcaption><p><a href="https://stanford.edu/~shervine/teaching/cs-229/cheatsheet-machine-learning-tips-and-tricks">Source</a></p></figcaption></figure>
 
 {% hint style="info" %}
 Ridge brings the coefficients close to $$0$$ but not exactly to $$0$$ which results in the model retaining all the features. Lasso on the other hand brings the coefficients to $$0$$ hence results in reduced features. Lasso shrinks the coefficients by same amount whereas Ridge shrinks them by same proportion.

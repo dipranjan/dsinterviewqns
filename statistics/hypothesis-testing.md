@@ -74,7 +74,7 @@ UCV/LCV $$= 36 \pm 2.17 * \frac{4}{\sqrt{49}} = 37.24 \text{ and } 34.76$$
 
 Now as the sample mean $$34.5$$ is not between UCV and LCV hence we reject the null hypothesis.
 
-<figure><img src="../.gitbook/assets/image10 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../_build/html/_images/image101 (1).PNG" alt=""><figcaption></figcaption></figure>
 
 Now let's solve it using the $$p$$-value method:
 
@@ -90,7 +90,7 @@ As $$p$$-value is $$< \alpha$$ so, we reject null-hypothesis.
 
 ### Errors in Hypothesis Testing
 
-<figure><img src="../.gitbook/assets/image11 (1).png" alt=""><figcaption><p>Types of Error in Hypothesis Testing (<a href="https://www.sixsigmadaily.com/type-i-and-type-ii-errors-in-hypothesis-testing/">SOURCE</a>)</p></figcaption></figure>
+<figure><img src="../_build/html/_images/image113.PNG" alt=""><figcaption><p>Types of Error in Hypothesis Testing (<a href="https://www.sixsigmadaily.com/type-i-and-type-ii-errors-in-hypothesis-testing/">SOURCE</a>)</p></figcaption></figure>
 
 ## Questions
 
