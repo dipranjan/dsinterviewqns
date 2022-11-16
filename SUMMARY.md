@@ -84,6 +84,17 @@
 * [Industry Application](analytical-thinking/industry-application.md)
 * [Behavioral/Management](analytical-thinking/behavioral-management.md)
 
+## CHEAT SHEETS
+
+* [NumPy](cheat-sheets/numpy.md)
+* [Pandas](cheat-sheets/pandas.md)
+* [SQL](cheat-sheets/sql.md)
+* [RegEx](cheat-sheets/regex.md)
+* [Git](cheat-sheets/git.md)
+* [Power BI](cheat-sheets/power-bi.md)
+* [Python Basics](cheat-sheets/python-basics.md)
+* [Keras](cheat-sheets/keras.md)
+
 ## POLICIES
 
 * [PRIVACY NOTICE](policies/privacy-notice.md)

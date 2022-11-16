@@ -9,6 +9,7 @@ description: The journey of the book so far
 * Group vs Window added
 * Git added in the new ML Ops section
 * Platform migration for the book
+* Cheat Sheet section added
 
 **Month of October, 2022**
 
