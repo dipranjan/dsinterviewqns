@@ -1,5 +1,3 @@
 # SQL
 
-{% embed url="https://www.dataquest.io/wp-content/uploads/2021/01/dataquest-sql-cheat-sheet.pdf" %}
-([Source](https://www.dataquest.io/wp-content/uploads/2021/01/dataquest-sql-cheat-sheet.pdf))
-{% endembed %}
+{% embed url="https://learnsql.com/blog/sql-basics-cheat-sheet/sql-basics-cheat-sheet-letter.pdf" %}
