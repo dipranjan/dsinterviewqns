@@ -1,9 +1,5 @@
 # Time and Date
 
-{% hint style="warning" %}
-This page is a Work in Progress
-{% endhint %}
-
 {% hint style="info" %}
 Excel, as a product, always remains under active development from Microsoft. With new releases, new features are brought in whereas old ones are discarded. Due to this there might be changes to the solutions mentioned below depending on the version that you are using.
 {% endhint %}

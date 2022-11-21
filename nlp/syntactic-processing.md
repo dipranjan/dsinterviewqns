@@ -1,9 +1,5 @@
 # Syntactic Processing
 
-{% hint style="warning" %}
-Questions section is a work in progress
-{% endhint %}
-
 Syntactic processing is widely used in applications such as question answering systems, information extraction, sentiment analysis, grammar checking etc. There are 3 broad levels of syntactic processing:
 
 * (Parts-of-Speech) POS tagging

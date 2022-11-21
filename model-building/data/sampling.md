@@ -1,12 +1,12 @@
-# Sampling
+# ⚠ Sampling
 
-{% hint style="info" %}
+{% hint style="warning" %}
 This page is a Work In Progress
 {% endhint %}
 
 [📚 Source](https://www.kaggle.com/code/residentmario/undersampling-and-oversampling-imbalanced-data/notebook) [📚 Source](https://medium.com/analytics-vidhya/undersampling-and-oversampling-an-old-and-a-new-approach-4f984a0e8392) [📚 Source](https://www.analyticsvidhya.com/blog/2020/07/10-techniques-to-deal-with-class-imbalance-in-machine-learning/)
 
-Oftentimes in practical machine learning problems there will be significant differences in the rarity of different classes of data being predicted. For example, when detecting cancer we can expect to have datasets with large numbers of false outcomes, and a relatively smaller number of true outcomes. Same with fraud analysis, the number of actual fraud cases will be much lower.
+Oftentimes in practical machine learning problems there will be significant differences in the rarity of different classes of data being predicted. For example, when detecting cancer, we can expect to have datasets with large numbers of false outcomes, and a relatively smaller number of true outcomes. Same with fraud analysis, the number of actual fraud cases will be much lower.
 
 The overall performance of any model trained on such data will be constrained by its ability to predict rare points. In problems where these rare points are only equally important or perhaps less important than non-rare points, this constraint may only become significant in the later "tuning" stages of building the model. But in problems where the rare points are important, or even the point of the classifier (as in a cancer example), dealing with their scarcity is a first-order concern for the model builder.
 

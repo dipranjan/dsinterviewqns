@@ -10,6 +10,7 @@ description: The journey of the book so far
 * Git added in the new ML Ops section
 * Platform migration for the book
 * Cheat Sheet section added
+* ⚠️ Sign beside pages indicate that work is pending on those
 
 **Month of October, 2022**
 

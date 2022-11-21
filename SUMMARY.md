@@ -17,7 +17,7 @@
   * [Scaling](model-building/data/scaling.md)
   * [Missing Value](model-building/data/missing-value.md)
   * [Outlier](model-building/data/outlier.md)
-  * [Sampling](model-building/data/sampling.md)
+  * [⚠ Sampling](model-building/data/sampling.md)
 * [Hyperparameter Optimization](model-building/hyperparameter-optimization.md)
 
 ## Algorithms
@@ -35,7 +35,7 @@
 ## NEURAL NETWORK
 
 * [Neural Network](neural-network/neural-network.md)
-* [Recurrent Neural Network](neural-network/recurrent-neural-network.md)
+* [⚠ Recurrent Neural Network](neural-network/recurrent-neural-network.md)
 
 ## NLP
 
@@ -67,7 +67,7 @@
 * [Functions](sql/functions.md)
 * [Problems](sql/problems.md)
 
-## EXCEL
+## ⚠ EXCEL
 
 * [Excel Basics](excel/excel-basics.md)
 * [Data Manipulation](excel/data-manipulation.md)
@@ -76,12 +76,12 @@
 ## MACHINE LEARNING FRAMEWORKS
 
 * [PyCaret](machine-learning-frameworks/pycaret.md)
-* [Tensorflow](machine-learning-frameworks/tensorflow.md)
+* [⚠ Tensorflow](machine-learning-frameworks/tensorflow.md)
 
 ## ANALYTICAL THINKING
 
 * [Business Scenarios](analytical-thinking/business-scenarios.md)
-* [Industry Application](analytical-thinking/industry-application.md)
+* [⚠ Industry Application](analytical-thinking/industry-application.md)
 * [Behavioral/Management](analytical-thinking/behavioral-management.md)
 
 ## CHEAT SHEETS

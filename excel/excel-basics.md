@@ -1,9 +1,5 @@
 # Excel Basics
 
-{% hint style="warning" %}
-This page is a Work in Progress
-{% endhint %}
-
 <figure><img src="../_build/html/_images/image16.PNG" alt=""><figcaption></figcaption></figure>
 
 ***
