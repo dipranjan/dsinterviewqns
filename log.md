@@ -11,6 +11,7 @@ description: The journey of the book so far
 * Platform migration for the book
 * Cheat Sheet section added
 * ⚠️ Sign beside pages indicate that work is pending on those
+* Added questions to Bias/Variance
 
 **Month of October, 2022**
 
