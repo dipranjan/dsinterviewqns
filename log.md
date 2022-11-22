@@ -13,6 +13,10 @@ description: The journey of the book so far
 * ⚠️ Sign beside pages indicate that work is pending on those
 * Added questions to Bias/Variance
 
+<details>
+
+<summary>Older Updates</summary>
+
 **Month of October, 2022**
 
 * More questions added to the Time Series Section
@@ -94,3 +98,5 @@ description: The journey of the book so far
 * Added this change log section
 * Added Generative VS Discriminative Models section
 * Completed Hypothesis Testing
+
+</details>
