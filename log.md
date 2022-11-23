@@ -12,6 +12,7 @@ description: The journey of the book so far
 * Cheat Sheet section added
 * ⚠️ Sign beside pages indicate that work is pending on those
 * Added questions to Bias/Variance
+* Python Theoretical section added
 
 <details>
 

@@ -48,6 +48,7 @@
 
 ## PYTHON
 
+* [Theoretical](python/theoretical.md)
 * [Basics](python/basics.md)
 * [Data Manipulation](python/data-manipulation.md)
 * [Statistics](python/statistics.md)
