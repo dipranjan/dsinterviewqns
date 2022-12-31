@@ -59,17 +59,19 @@ Now change the code to output\
 
 **Answer**
 
-<pre class="language-python"><code class="lang-python"><strong>def pyramid(n):
-</strong>    i = 1
+```python
+def pyramid(n):
+    i = 1
     j = 1
-    while i &#x3C; n:
+    while i < n:
         for k in range(1,j):
             print(i, end=' ') # For the second pattern change i to k
             i += 1
         print(" ") 
         j +=1
 
-pyramid(6)</code></pre>
+pyramid(6)
+```
 
 </details>
 
@@ -302,7 +304,7 @@ You have an array of integers of length n spanning 0 to n with one missing. Writ
 
 _Example:_
 
-_nums = \[0,1,2,4,5] missingNumber(nums) -> 3_&#x20;
+_nums = \[0,1,2,4,5] missingNumber(nums) -> 3_
 
 Complexity of O(N) required.
 
@@ -383,7 +385,7 @@ Write a function find\_intersecting to find which lines, if any, intersect with 
 
 _Example_
 
-`tuple_list = [(2, 3), (-3, 5), (4, 6), (5, 7)] x_range = (0, 1)`&#x20;
+`tuple_list = [(2, 3), (-3, 5), (4, 6), (5, 7)] x_range = (0, 1)`
 
 _Output_
 
