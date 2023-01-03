@@ -4,6 +4,16 @@ description: The journey of the book so far
 
 # Log
 
+**Month of January, 2023**
+
+* R Basics cheat sheet added
+
+
+
+<details>
+
+<summary>Older Updates</summary>
+
 **Month of November, 2022**
 
 * Group vs Window added
@@ -12,11 +22,7 @@ description: The journey of the book so far
 * Cheat Sheet section added
 * ⚠️ Sign beside pages indicate that work is pending on those
 * Added questions to Bias/Variance
-* Python Theoretical section added
-
-<details>
-
-<summary>Older Updates</summary>
+* Python Theoretical section added --> TBA in BOOK
 
 **Month of October, 2022**
 

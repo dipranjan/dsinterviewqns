@@ -96,6 +96,7 @@
 * [Power BI](cheat-sheets/power-bi.md)
 * [Python Basics](cheat-sheets/python-basics.md)
 * [Keras](cheat-sheets/keras.md)
+* [R Basics](cheat-sheets/r-basics.md)
 
 ## POLICIES
 
