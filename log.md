@@ -7,6 +7,7 @@ description: The journey of the book so far
 **Month of January, 2023**
 
 * R Basics cheat sheet added
+* Python Theoretical Question section updated
 
 
 

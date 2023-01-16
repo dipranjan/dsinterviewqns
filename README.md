@@ -6,8 +6,6 @@ description: >-
 
 # About
 
-<figure><img src=".gitbook/assets/Black Luxury New Year Banner.png" alt=""><figcaption><p>“Celebrate endings—for they precede new beginnings.” —<em>Jonathan Lockwood Huie</em></p></figcaption></figure>
-
 > _The fellow-pupil can help more than the master because he knows less. The difficulty we want him to explain is one he has recently met. The expert met it so long ago that he has forgotten…_
 >
 > _- C.S. Lewis in his Reflections on the Psalms_
