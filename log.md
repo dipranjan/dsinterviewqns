@@ -8,6 +8,7 @@ description: The journey of the book so far
 
 * R Basics cheat sheet added
 * Python Theoretical Question section updated
+* Mathematical Motivation Page added
 
 
 

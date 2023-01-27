@@ -2,6 +2,7 @@
 
 * [About](README.md)
 * [Log](log.md)
+* [Mathematical Motivation](mathematical-motivation.md)
 
 ## STATISTICS
 
