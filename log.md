@@ -4,12 +4,15 @@ description: The journey of the book so far
 
 # Log
 
+We are taking a break for some time owing to some professional and personal commitments, we will be back soon.
+
 **Month of January, 2023**
 
 * R Basics cheat sheet added
 * Python Theoretical Question section updated
 * Mathematical Motivation Page added
-* We are taking a break for a month or so owing to some professional commitments, we will be back soon.
+
+
 
 
 
