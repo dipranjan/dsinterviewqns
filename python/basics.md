@@ -79,7 +79,7 @@ pyramid(6)
 
 <summary>[UBER] Sum to N</summary>
 
-Given a list of integers, find all combinations that equal the value N.
+Given a list of positive integers, find all combinations that equal the value N.
 
 Example:
 
