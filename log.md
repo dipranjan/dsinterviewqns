@@ -6,6 +6,12 @@ description: The journey of the book so far
 
 We are taking a break for some time owing to some professional and personal commitments, we will be back soon.
 
+**Month of May, 2023**
+
+* Have enabled GitBook's Lens feature in search, which allow users to ask a question and get answers back from the content of the book itself. This is an experimental feature and supported by OpenAI. Please note this is experimental and can be changed or removed at any moment.
+
+
+
 **Month of January, 2023**
 
 * R Basics cheat sheet added
