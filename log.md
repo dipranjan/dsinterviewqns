@@ -9,22 +9,19 @@ We are taking a break for some time owing to some professional and personal comm
 **Month of May, 2023**
 
 * Have enabled GitBook's Lens feature in search, which allow users to ask a question and get answers back from the content of the book itself. This is an experimental feature and supported by OpenAI. Please note this is experimental and can be changed or removed at any moment.
-
-
-
-**Month of January, 2023**
-
-* R Basics cheat sheet added
-* Python Theoretical Question section updated
-* Mathematical Motivation Page added
-
-
+* Work on Power BI section started under the Business Intelligence section.
 
 
 
 <details>
 
 <summary>Older Updates</summary>
+
+**Month of January, 2023**
+
+* R Basics cheat sheet added
+* Python Theoretical Question section updated
+* Mathematical Motivation Page added
 
 **Month of November, 2022**
 

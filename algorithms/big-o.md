@@ -51,15 +51,7 @@ For instance, if there is a linear relationship between the input and the step t
 
 The following are some of the most common Big-O functions:
 
-| **Name**    | **Big O**    |
-| ----------- | ------------ |
-| Constant    | $O(c)$       |
-| Linear      | $O(n)$       |
-| Quadratic   | $O(n^2)$     |
-| Cubic       | $O(n^3)$     |
-| Exponential | $O(2^n)$     |
-| Logarithmic | $O(log(n))$  |
-| Log Linear  | $O(nlog(n))$ |
+<table data-header-hidden><thead><tr><th width="208"></th><th></th></tr></thead><tbody><tr><td><strong>Name</strong></td><td><strong>Big O</strong></td></tr><tr><td>Constant</td><td>$O(c)$</td></tr><tr><td>Linear</td><td>$O(n)$</td></tr><tr><td>Quadratic</td><td>$O(n^2)$</td></tr><tr><td>Cubic</td><td>$O(n^3)$</td></tr><tr><td>Exponential</td><td>$O(2^n)$</td></tr><tr><td>Logarithmic</td><td>$O(log(n))$</td></tr><tr><td>Log Linear</td><td>$O(nlog(n))$</td></tr></tbody></table>
 
 <figure><img src="../_build/html/_images/image161.PNG" alt=""><figcaption><p>n is the input size and c is a positive constant</p></figcaption></figure>
 

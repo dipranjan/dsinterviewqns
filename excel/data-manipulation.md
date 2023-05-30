@@ -49,7 +49,7 @@ This is a 3-part question:
 
 **Answer**
 
-![](../\_build/html/\_images/image62.PNG)****
+![](../\_build/html/\_images/image62.PNG)
 
 You can check for duplicates using:
 

@@ -43,9 +43,11 @@
 * [Lexical Processing](nlp/lexical-processing.md)
 * [Syntactic Processing](nlp/syntactic-processing.md)
 
-## STORY TELLING
+## BUSINESS INTELLIGENCE
 
-* [Visualization](story-telling/visualization.md)
+* [⚠ Power BI](business-intelligence/power-bi/README.md)
+  * [Charts](business-intelligence/power-bi/charts.md)
+* [Visualization](business-intelligence/visualization.md)
 
 ## PYTHON
 

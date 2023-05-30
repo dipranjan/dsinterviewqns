@@ -7,7 +7,7 @@ description: >-
 # Mathematical Motivation
 
 {% hint style="info" %}
-The motivation (pun-intended) for having this chapter came when I was studying an [_Introduction to Probability for Data Science_](https://services.publishing.umich.edu/wp-content/themes/mpub-services/library/pdf/PDSdownload100.pdf) __ by _Stanley H_. _Chan._ A lot of material in this chapter is taken from the book, do check it out.
+The motivation (pun-intended) for having this chapter came when I was studying an [_Introduction to Probability for Data Science_](https://services.publishing.umich.edu/wp-content/themes/mpub-services/library/pdf/PDSdownload100.pdf) by _Stanley H_. _Chan._ A lot of material in this chapter is taken from the book, do check it out.
 {% endhint %}
 
 Data Science, Machine Learning is at its core widely dependent on different mathematical concepts which have been developed over centuries. But in this age of easy-to-use packages, frameworks, AutoML solutions we often tend to forget or skip it. In this chapter we would like to quickly glance at some of the broad mathematical topics and how they relate to Data Science. Obviously, it is not in the scope of this book to cover the topics in depth, but the goal here is to leave you with an appreciation of goes behind the algorithms and if needed you can always explore more on your own.
@@ -20,7 +20,7 @@ Imagine that you have a fair coin. What is the probability that you need to flip
 
 Since the coin is fair, the probability of obtaining a head is 1/2 . The probability of getting a tail followed by a head is 1/2 × 1/2 = 1 4 . Similarly, the probability of getting two tails and then a head is 1/2 × 1/2 × 1/2 = 1/8 . If you follow this logic, you can write down the probabilities for all other cases. For your convenience, we have drawn the first few in Figure 1.1. As you have probably noticed, the probabilities follow the pattern { 1/2 , 1/4 , 1/8 , . . .}.
 
-<figure><img src=".gitbook/assets/image (4).png" alt=""><figcaption><p>The histogram of flipping a coin until we see a head. The x-axis is the number of coin flips, and the y-axis is the probability.</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (4) (1).png" alt=""><figcaption><p>The histogram of flipping a coin until we see a head. The x-axis is the number of coin flips, and the y-axis is the probability.</p></figcaption></figure>
 
 Let us ask something harder: On average, if you want to be 90% sure that you will get a head, what is the minimum number of attempts you need to try? Five attempts? Ten attempts? Indeed, if you try ten attempts, you will very likely accomplish your goal. However, this would seem to be overkill.&#x20;
 
@@ -36,7 +36,7 @@ The binomial theorem makes the most sense when we also learn about the Pascal’
 
 Consider a function, $$f(x) = log(1 + x)$$ , for  $$x >0$$ as shown below. This is a nonlinear function, and we all know that nonlinear functions are not fun to deal with. For example, if you want to integrate the function $$\int_a^b x log(1 + x) \,dx$$, then the logarithm will force you to do integration by parts. However, in many practical problems, you may not need the full range of $$x >0$$ . Suppose that you are only interested in values $$x <<1$$  Then the logarithm can be approximated, and thus the integral can also be approximated.
 
-<figure><img src=".gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 <mark style="color:yellow;">Given a function it is often useful to analyze its behavior by approximating using its local information. Taylor approximation (or Taylor series) is one of the tools for such a task.</mark> It is a geometry-based approximation. It approximates the function according to the offset, slope, curvature, and so on. The Taylor series has an infinite number of terms. If we use a finite number of terms, we obtain the nth-order Taylor approximation:
 
@@ -77,9 +77,9 @@ To motivate the discussion of combinatorics, let us start with the following pro
 
 The first thing you might be thinking is that since there are 365 days, we need at least 366 people to ensure that one pair has the same birthday. Therefore, the chance that 2 of 50 people have the same birthday is low. This seems reasonable, but let’s do a simulated experiment. In Figure 1.16 we plot the probability as a function of the number of people. For a room containing 50 people, the probability is 97%. To get a 50% probability, we just need 23 people! How is this possible?
 
-<figure><img src=".gitbook/assets/image.png" alt=""><figcaption><p>The probability for two people in a group to have the same birthday as a function of the number of people in the group.</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (6).png" alt=""><figcaption><p>The probability for two people in a group to have the same birthday as a function of the number of people in the group.</p></figcaption></figure>
 
-<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption><p>The probability for two people to have the same birthday as a function of the number of people in the group. When there is only one person, this person can land on any of the 365 days. When there are two people, the first person has already taken one day (out of 365 days), so the second person can only choose 364 days. When there are three people, the first two people have occupied two days, so there are only 363 days left. If we generalize this process, we see that the number of configurations is 365 × 364 × · · · × (365 − k + 1), where k is the number of people in the room.</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1) (1).png" alt=""><figcaption><p>The probability for two people to have the same birthday as a function of the number of people in the group. When there is only one person, this person can land on any of the 365 days. When there are two people, the first person has already taken one day (out of 365 days), so the second person can only choose 364 days. When there are three people, the first two people have occupied two days, so there are only 363 days left. If we generalize this process, we see that the number of configurations is 365 × 364 × · · · × (365 − k + 1), where k is the number of people in the room.</p></figcaption></figure>
 
 So imagine that you keep going down the list to the 50th person. The probability that none of these 50 people will have the same birthday is as little as 3%. If you take the complement, you can show that with 97% probability, there is at least one pair of people having the same birthday.
 
