@@ -47,7 +47,7 @@
 
 * [⚠ Power BI](business-intelligence/power-bi/README.md)
   * [Charts](business-intelligence/power-bi/charts.md)
-* [Visualization](business-intelligence/visualization.md)
+* [Visualization](story-telling/visualization.md)
 
 ## PYTHON
 
