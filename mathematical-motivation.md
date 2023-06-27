@@ -18,7 +18,7 @@ Data Science, Machine Learning is at its core widely dependent on different math
 
 Imagine that you have a fair coin. What is the probability that you need to flip the coin three times to get one head?
 
-Since the coin is fair, the probability of obtaining a head is 1/2 . The probability of getting a tail followed by a head is 1/2 × 1/2 = 1 4 . Similarly, the probability of getting two tails and then a head is 1/2 × 1/2 × 1/2 = 1/8 . If you follow this logic, you can write down the probabilities for all other cases. For your convenience, we have drawn the first few in Figure 1.1. As you have probably noticed, the probabilities follow the pattern { 1/2 , 1/4 , 1/8 , . . .}.
+Since the coin is fair, the probability of obtaining a head is 1/2 . The probability of getting a tail followed by a head is 1/2 × 1/2 = 1/4 . Similarly, the probability of getting two tails and then a head is 1/2 × 1/2 × 1/2 = 1/8 . If you follow this logic, you can write down the probabilities for all other cases. For your convenience, we have drawn the first few in Figure 1.1. As you have probably noticed, the probabilities follow the pattern { 1/2 , 1/4 , 1/8 , . . .}.
 
 <figure><img src=".gitbook/assets/image (4) (1).png" alt=""><figcaption><p>The histogram of flipping a coin until we see a head. The x-axis is the number of coin flips, and the y-axis is the probability.</p></figcaption></figure>
 
