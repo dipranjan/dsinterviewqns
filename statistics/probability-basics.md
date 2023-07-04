@@ -37,7 +37,7 @@ $$
 
 ## Set
 
-A set, broadly defined, is a collection of objects. In the context of probability theory, we use set notation to specify compound events. For example, we can represent the event \_roll an even numbe\_r by the set {2, 4, 6}.
+A set, broadly defined, is a collection of objects. In the context of probability theory, we use set notation to specify compound events. For example, we can represent the event roll an even number by the set {2, 4, 6}.
 
 ## Permutation and Combination
 
