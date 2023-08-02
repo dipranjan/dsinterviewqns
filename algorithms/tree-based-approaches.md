@@ -128,7 +128,7 @@ An ensemble is a collection of models which ideally should predict better than i
 
 <figure><img src="../_build/html/_images/image10.PNG" alt=""><figcaption><p>Adaboost Pseudocode</p></figcaption></figure>
 
-***
+
 
 ## Gradient Boosting
 

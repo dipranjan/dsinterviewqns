@@ -4,17 +4,19 @@ description: The journey of the book so far
 
 # Log
 
+**Month of August, 2023**
+
+* Vector Database added in the LLM section.
+
+<details>
+
+<summary>Older Updates</summary>
+
 **Month of May, 2023**
 
 * Have enabled GitBook's Lens feature in search, which allow users to ask a question and get answers back from the content of the book itself. This is an experimental feature and supported by OpenAI. Please note this is experimental and can be changed or removed at any moment.
 * Work on Power BI section started under the Business Intelligence section.
 * Dark mode and Light mode toggle enabled.
-
-
-
-<details>
-
-<summary>Older Updates</summary>
 
 **Month of January, 2023**
 
