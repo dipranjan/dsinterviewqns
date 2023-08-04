@@ -7,6 +7,7 @@ description: The journey of the book so far
 **Month of August, 2023**
 
 * Vector Database added in the LLM section.
+* Categorical Encoding added in the data section.
 
 <details>
 

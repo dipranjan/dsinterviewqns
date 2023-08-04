@@ -19,6 +19,7 @@
   * [Missing Value](model-building/data/missing-value.md)
   * [Outlier](model-building/data/outlier.md)
   * [⚠ Sampling](model-building/data/sampling.md)
+  * [Categorical Variable](model-building/data/categorical-variable.md)
 * [Hyperparameter Optimization](model-building/hyperparameter-optimization.md)
 
 ## Algorithms
