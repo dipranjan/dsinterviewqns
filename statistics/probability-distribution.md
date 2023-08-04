@@ -60,6 +60,10 @@ Despite the different shapes, all forms of the normal distribution have the foll
 | 2                            | 95%                          |
 | 3                            | 99.7%                        |
 
+{% embed url="https://media.licdn.com/dms/document/media/D561FAQEhP422gUwoXA/feedshare-document-pdf-analyzed/0/1691029309693?e=1692230400&t=50wRIQb6WbyO_orVmpiJXcDC65c6jkzHnBfVYS3w6uQ&v=beta" fullWidth="false" %}
+This is one of the best resources out there on Probability Distributions. Thanks to [Reza Bagheri](https://www.linkedin.com/in/reza-bagheri-71882a76/)
+{% endembed %}
+
 ## Measures to understand a distribution:
 
 There are 3 variety of measures, required to understand a distribution:
