@@ -8,6 +8,7 @@ description: The journey of the book so far
 
 * Vector Database added in the LLM section.
 * Categorical Encoding added in the data section.
+* Probability Distribution cheat sheet added.
 
 <details>
 
