@@ -27,6 +27,8 @@ $$variance = \mathbb{E}[(f'(x) - \mathbb{E}[f'(x)])^2]$$
 * Low error on train data and high on test
 * Starts modelling the noise in the input
 
+***
+
 The bias-variance tradeoff is a fundamental concept in machine learning that helps us understand the tradeoff between two types of errors that a model can make: bias and variance. It's crucial to strike a balance between these two types of errors to create a model that generalizes well to new, unseen data.
 
 **Bias** refers to the error due to overly simplistic assumptions in the learning algorithm. A high bias model might underfit the data, meaning it fails to capture the underlying patterns and relationships in the data, leading to poor performance on both the training and test sets.
