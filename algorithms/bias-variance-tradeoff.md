@@ -27,13 +27,24 @@ $$variance = \mathbb{E}[(f'(x) - \mathbb{E}[f'(x)])^2]$$
 * Low error on train data and high on test
 * Starts modelling the noise in the input
 
+The bias-variance tradeoff is a fundamental concept in machine learning that helps us understand the tradeoff between two types of errors that a model can make: bias and variance. It's crucial to strike a balance between these two types of errors to create a model that generalizes well to new, unseen data.
+
+**Bias** refers to the error due to overly simplistic assumptions in the learning algorithm. A high bias model might underfit the data, meaning it fails to capture the underlying patterns and relationships in the data, leading to poor performance on both the training and test sets.
+
+**Variance** refers to the error due to the model's sensitivity to small fluctuations in the training data. A high variance model might overfit the data, meaning it fits the training data very well but fails to generalize to new data points, resulting in poor performance on the test set.
+
+**Tradeoff Explanation with Example:**
+
+Let's consider a simple example of fitting a polynomial to a set of data points. Imagine you have a set of data points that form a curve on a 2D plane. Your goal is to find a polynomial equation that fits these data points.
+
+1. **High Bias, Low Variance:** Suppose you decide to fit a linear equation (a straight line) to the data points. This is a high bias model because it makes a simplistic assumption about the underlying relationship. As a result, the fitted line might not capture the curve's nuances, leading to a bias in predictions. However, this simple model is less sensitive to variations in the training data, so it might perform similarly on both the training and test sets.
+2. **Low Bias, High Variance:** Now consider fitting a high-degree polynomial (e.g., a 10th-degree polynomial) to the data. This is a low bias model because it has the flexibility to closely follow the data points, even capturing their intricate details. However, this model is more sensitive to the noise and fluctuations in the training data, resulting in a high variance. It's likely to fit the training data extremely well but may not generalize to new data points, leading to poor performance on the test set.
+
+Finding the right balance between bias and variance is crucial. You want a model that is complex enough to capture the underlying patterns but not overly complex to avoid fitting noise. This balance can be achieved by techniques like cross-validation, regularization, and choosing an appropriate model complexity based on the problem's nature and the available data.
+
+In essence, the bias-variance tradeoff reminds us that while we aim to minimize both bias and variance, there's often a tradeoff between the two. The goal is to find the "sweet spot" where the model generalizes well to new data while still capturing the essential patterns in the training data.
+
 <figure><img src="../_build/html/_images/image241.PNG" alt=""><figcaption><p><a href="https://stanford.edu/~shervine/teaching/cs-229/cheatsheet-machine-learning-tips-and-tricks">📖Source</a></p></figcaption></figure>
-
-**Bias variance Trade-off**
-
-* Increasing bias (not always) reduces variance and vice-versa
-* The best model is where the error is reduced.
-* Compromise between bias and variance while choosing the best model
 
 ## Questions
 

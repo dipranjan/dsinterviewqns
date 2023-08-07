@@ -10,6 +10,7 @@ description: The journey of the book so far
 * Categorical Encoding added in the data section.
 * Probability Distribution cheat sheet added.
 * Algorithm overview page updated.
+* Bias Variance tradeoff updated.
 
 <details>
 
