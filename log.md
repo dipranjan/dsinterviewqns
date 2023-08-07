@@ -11,6 +11,7 @@ description: The journey of the book so far
 * Probability Distribution cheat sheet added.
 * Algorithm overview page updated.
 * Bias Variance tradeoff updated.
+* Linear Regression page updated.
 
 <details>
 

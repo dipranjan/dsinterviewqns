@@ -10,6 +10,10 @@ The idea is to find the line or plane which best fits the data. Collectively, $$
 
 <figure><img src="../_build/html/_images/image2.PNG" alt=""><figcaption><p><a href="https://www.shutterstock.com/image-illustration/annotated-diagram-explaining-components-graph-showing-1406041139">Source</a></p></figcaption></figure>
 
+1. **Loss Function:** The loss function in linear regression quantifies how well the model's predictions match the actual target values. In linear regression, the most common loss function is the Mean Squared Error (MSE). The MSE calculates the average squared difference between the predicted values and the actual target values for all data points.
+2. **Optimization Criterion:** The optimization criterion is the goal of finding the best-fitting line (or hyperplane in higher dimensions) that minimizes the chosen loss function. In the case of linear regression, the goal is to find the coefficients (slope and intercept) of the linear equation that minimize the MSE. This involves adjusting the coefficients to minimize the overall squared difference between the predicted and actual values.
+3. **Optimization Routine:** To find the optimal coefficients that minimize the MSE, an optimization routine is used. Gradient Descent is a widely used optimization algorithm for linear regression.&#x20;
+
 ### Metrics
 
 Now once you have the model fit next comes the metrics to measure how good the fit is, some of the common metrics are as follows:
