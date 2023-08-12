@@ -102,10 +102,10 @@
 * [Keras](cheat-sheets/keras.md)
 * [R Basics](cheat-sheets/r-basics.md)
 
+## Generative AI
+
+* [Vector Database](generative-ai/vector-database.md)
+
 ## POLICIES
 
 * [PRIVACY NOTICE](policies/privacy-notice.md)
-
-## LLM
-
-* [Vector Database](llm/vector-database.md)

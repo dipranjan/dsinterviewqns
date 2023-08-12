@@ -12,6 +12,7 @@ description: The journey of the book so far
 * Algorithm overview page updated.
 * Bias Variance tradeoff updated.
 * Linear Regression page updated.
+* LLM Section updated to Generative AI.
 
 <details>
 
