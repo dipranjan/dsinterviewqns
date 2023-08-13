@@ -105,6 +105,7 @@
 ## Generative AI
 
 * [Vector Database](generative-ai/vector-database.md)
+* [LLMs](generative-ai/llms.md)
 
 ## POLICIES
 
