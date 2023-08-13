@@ -7,7 +7,7 @@ description: >-
 # LLMs
 
 {% hint style="info" %}
-Check out these 2 brilliant resources Source (more accessible) [Source](https://eugeneyan.com/writing/llm-patterns/)(detailed)
+Check out these 2 brilliant resources [Source](https://www.kaggle.com/code/abireltaief/contemporary-large-language-models-llms) (more accessible) [Source](https://eugeneyan.com/writing/llm-patterns/)(detailed)
 {% endhint %}
 
 Large language models (LLMs) are AI models that are intended to comprehend and generate human language, code, and much more. They are typically derived from the Transformer architecture. This architecture was introduced by a team at Google Brain in 2017. Attention, transfer learning, and scaling up neural networks are the main principles that lay the groundwork for Transformers to flourish.
