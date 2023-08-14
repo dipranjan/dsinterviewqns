@@ -38,7 +38,7 @@ The first category (usually not shown) has a coefficient of $$0$$. So, if we can
 * The effect of having a Fiber optic service is approximately twice as big as having a DSL service.
 * If somebody has a One-year contract and a DSL service, these two effects almost completely cancel each other out.
 
-Consider the scenario of a senior citizen with a $$2$$ month tenure, with no internet service, a one-year contract and a monthly charge of \$$\$$100\$$. If we compute all the effects and add them up we have:
+Consider the scenario of a senior citizen with a $$2$$ month tenure, with no internet service, a one-year contract and a monthly charge of $100. If we compute all the effects and add them up we have:
 
 $$0.41$$ (Senior Citizen = Yes) $$- 0.06 (2*-0.03$$; tenure) $$+ 0$$ (no internet service) $$- 0.88$$ (one year contract) $$+ 0 (100*0$$; monthly charge) $$= -0.53$$.
 
