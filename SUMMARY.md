@@ -29,6 +29,7 @@
 * [Regression](algorithms/regression.md)
 * [Generative vs Discriminative Models](algorithms/generative-vs-discriminative-models.md)
 * [Classification](algorithms/classification.md)
+* [⚠ Clustering](algorithms/clustering.md)
 * [Tree based approaches](algorithms/tree-based-approaches.md)
 * [Time Series Analysis](algorithms/time-series-analysis.md)
 * [Anomaly Detection](algorithms/anomaly-detection.md)

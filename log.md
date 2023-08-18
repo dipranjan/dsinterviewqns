@@ -13,6 +13,7 @@ description: The journey of the book so far
 * Bias Variance tradeoff updated.
 * Linear Regression page updated.
 * LLM Section updated to Generative AI.
+* Clustering (WIP) section added.
 
 <details>
 
