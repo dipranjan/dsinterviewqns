@@ -14,6 +14,7 @@ description: The journey of the book so far
 * Linear Regression page updated.
 * LLM Section updated to Generative AI.
 * Clustering (WIP) section added.
+* QUALIFY added in Windows functions page.
 
 <details>
 

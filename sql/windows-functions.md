@@ -29,4 +29,15 @@ Window (also, windowing or windowed) functions perform a calculation over a set 
   * **CUME\_DIST:** cumulative distribution, returns the exact rank, its formula is $$\frac{\text{Rank}}{\text{Row count}}$$
   * **PERCENTILE\_DISC & PERCENTILE\_CONT:** these two work in the opposite way. Given a percent rank, find the value at that rank. They differ in that PERCENTILE\_DISC will return a value that exists in the set while PERCENTILE\_CONT will calculate an exact value if none of the values in the set falls precisely at that rank. You can use PERCENTILE\_CONT to calculate a median by supplying 0.5 as the percent rank. For example, which temperature ranks at 50% in St. Louis?
 
-**One problem is you cannot add window functions to the WHERE clause.**
+{% hint style="info" %}
+One problem is you cannot add window functions to the WHERE clause. But certain Data Bases like TeraData, Snowflake, Databricks, Big Query, etc. have support for something called QUALIFY. Let's take an example to understand the difference:
+
+In traditional SQL you will write the below SQL:
+
+`select * from (SELECT Product, Region, Revenue, ROW_NUMBER() OVER (PARTITION BY Region ORDER BY Revenue DESC) as rn FROM Sales ) where rn=1`
+
+Here's how you can use the QUALIFY keyword to achieve this:
+
+`SELECT Product, Region, Revenue FROM Sales QUALIFY ROW_NUMBER() OVER (PARTITION BY Region ORDER BY Revenue DESC) = 1;`
+{% endhint %}
+
