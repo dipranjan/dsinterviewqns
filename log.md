@@ -15,7 +15,7 @@ description: The journey of the book so far
 * LLM Section updated to Generative AI.
 * Clustering (WIP) section added.
 * QUALIFY added in Windows functions page.
-* We are now on [Instagram](https://www.instagram.com/thedatascienceinterviewbook/), <mark style="color:red;">please do follow</mark> we will start uploading content soon.
+* We are now on [Instagram](https://www.instagram.com/thedatascienceinterviewbook/) , [TikTok](https://www.tiktok.com/@the.ds.interview?\_t=8f1vEGiHYYk&\_r=1) and [YouTube](https://youtube.com/@thedatascienceinterviewboo7076), <mark style="color:red;">please do follow</mark> <mark style="color:red;">we will start uploading content soon.</mark>
 
 <details>
 
