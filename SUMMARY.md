@@ -78,6 +78,7 @@
 * [Excel Basics](excel/excel-basics.md)
 * [Data Manipulation](excel/data-manipulation.md)
 * [Time and Date](excel/time-and-date.md)
+* [Python in Excel](excel/python-in-excel.md)
 
 ## MACHINE LEARNING FRAMEWORKS
 
