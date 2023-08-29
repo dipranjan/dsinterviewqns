@@ -17,6 +17,9 @@ description: The journey of the book so far
 * QUALIFY added in Windows functions page.
 * We are now on [Instagram](https://www.instagram.com/thedatascienceinterviewbook/) , [TikTok](https://www.tiktok.com/@the.ds.interview?\_t=8f1vEGiHYYk&\_r=1) and [YouTube](https://youtube.com/@thedatascienceinterviewboo7076), <mark style="color:red;">please do follow</mark> <mark style="color:red;">we will start uploading content soon.</mark>
 * Python in Excel Page added.
+* Python Questions added.
+
+
 
 <details>
 
