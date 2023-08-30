@@ -236,3 +236,118 @@ result = df[df['days'] <= 7]['user_id'].unique()
 ```
 
 </details>
+
+<details>
+
+<summary>[Amazon] Monthly Percentage Difference</summary>
+
+[Check this link to practice​.](https://platform.stratascratch.com/coding/10319-monthly-percentage-difference/discussion?code\_type=2)
+
+Given a table of purchases by date, calculate the month-over-month percentage change in revenue. The output should include the year-month date (YYYY-MM) and percentage change, rounded to the 2nd decimal point, and sorted from the beginning of the year to the end of the year. The percentage change column will be populated from the 2nd month forward and can be calculated as ((this month's revenue - last month's revenue) / last month's revenue)\*100.
+
+**Answer**
+
+```python
+# Import your libraries
+import pandas as pd
+
+# Start writing code
+sf_transactions.head()
+sf_transactions['created_at'] = pd.to_datetime(sf_transactions['created_at'], format='%b')
+
+sf_transactions['year-m'] = sf_transactions['created_at'].dt.to_period('M').astype(str)
+
+df = sf_transactions.groupby('year-m', as_index=False)['value'].sum().sort_values(by='year-m', ascending = True)
+df['LM'] = df['value'].shift()
+df['prcnt_change'] = (100*(df['value'] - df['LM'])/df['LM']).round(2)
+df.head()
+```
+
+</details>
+
+<details>
+
+<summary>[Salesforce][Tesla] New Products</summary>
+
+[Check this link to practice​.](https://platform.stratascratch.com/coding/10318-new-products?code\_type=2)
+
+You are given a table of product launches by company by year. Write a query to count the net difference between the number of products companies launched in 2020 with the number of products companies launched in the previous year. Output the name of the companies and a net difference of net products released for 2020 compared to the previous year.
+
+**Answer**
+
+```
+import pandas as pd
+import numpy as np
+from datetime import datetime
+
+df_2020 = car_launches[car_launches['year'].astype(str) == '2020']
+df_2019 = car_launches[car_launches['year'].astype(str) == '2019']
+df = pd.merge(df_2020, df_2019, how='outer', on=[
+    'company_name'], suffixes=['_2020', '_2019']).fillna(0)
+df = df[df['product_name_2020'] != df['product_name_2019']]
+df = df.groupby(['company_name']).agg(
+    {'product_name_2020': 'nunique', 'product_name_2019': 'nunique'}).reset_index()
+df['net_new_products'] = df['product_name_2020'] - df['product_name_2019']
+result = df[['company_name', 'net_new_products']]
+
+```
+
+</details>
+
+<details>
+
+<summary>[Google][Netflix] Top Percentile Fraud</summary>
+
+[Check this link to practice​.](https://platform.stratascratch.com/coding/10303-top-percentile-fraud?code\_type=2)
+
+ABC Corp is a mid-sized insurer in the US and in the recent past their fraudulent claims have increased significantly for their personal auto insurance portfolio. They have developed a ML based predictive model to identify propensity of fraudulent claims. Now, they assign highly experienced claim adjusters for top 5 percentile of claims identified by the model. Your objective is to identify the top 5 percentile of claims from each state. Your output should be policy number, state, claim cost, and fraud score.
+
+**Answer**
+
+```python
+import pandas as pd
+import numpy as np
+
+fraud_score["percentile"] = fraud_score.groupby('state')['fraud_score'].rank(pct=True)
+df= fraud_score[fraud_score['percentile']>.95]
+result = df[['policy_num','state','claim_cost','fraud_score']]
+fraud_score.head()
+```
+
+</details>
+
+<details>
+
+<summary>[LinkedIn] Risky Projects</summary>
+
+[Check this link to practice​.](https://platform.stratascratch.com/coding/10304-risky-projects?code\_type=2)
+
+Identify projects that are at risk for going overbudget. A project is considered to be overbudget if the cost of all employees assigned to the project is greater than the budget of the project.
+
+You'll need to prorate the cost of the employees to the duration of the project. For example, if the budget for a project that takes half a year to complete is $10K, then the total half-year salary of all employees assigned to the project should not exceed $10K. Salary is defined on a yearly basis, so be careful how to calculate salaries for the projects that last less or more than one year.
+
+Output a list of projects that are overbudget with their project name, project budget, and prorated total employee expense (rounded to the next dollar amount).
+
+HINT: to make it simpler, consider that all years have 365 days. You don't need to think about the leap years.
+
+**Answer**
+
+```python
+import pandas as pd
+import numpy as np
+from datetime import datetime
+
+df = pd.merge(linkedin_projects, linkedin_emp_projects, how = 'inner',left_on = ['id'], right_on=['project_id'])
+df1 = pd.merge(df, linkedin_employees, how = 'inner',left_on = ['emp_id'], right_on=['id'])
+df1['project_duration'] = (pd.to_datetime(df1['end_date']) - pd.to_datetime(df1['start_date'])).dt.days
+df_expense = df1.groupby('title')['salary'].sum().reset_index(name='expense')
+df_budget_expense = pd.merge(df1, df_expense, how = 'left',left_on = ['title'], right_on=['title'])
+df_budget_expense['prorated_expense'] = np.ceil(df_budget_expense['expense']*(df_budget_expense['project_duration'])/365)
+df_budget_expense['budget_diff'] = df_budget_expense['prorated_expense'] - df_budget_expense['budget']
+df_over_budget = df_budget_expense[df_budget_expense["budget_diff"] > 0]
+result = df_over_budget[['title','budget','prorated_expense']]
+result = result.drop_duplicates().sort_values('title')
+
+```
+
+</details>
