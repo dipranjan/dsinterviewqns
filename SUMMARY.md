@@ -44,6 +44,7 @@
 
 * [Lexical Processing](nlp/lexical-processing.md)
 * [Syntactic Processing](nlp/syntactic-processing.md)
+* [Transformers](nlp/transformers.md)
 
 ## BUSINESS INTELLIGENCE
 
