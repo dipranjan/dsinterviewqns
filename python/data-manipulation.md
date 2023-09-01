@@ -351,3 +351,34 @@ result = result.drop_duplicates().sort_values('title')
 ```
 
 </details>
+
+<details>
+
+<summary>[Microsoft] Premium vs Freemium</summary>
+
+[Check this link to practice​.](https://platform.stratascratch.com/coding/10300-premium-vs-freemium?code\_type=2)
+
+Find the total number of downloads for paying and non-paying users by date. Include only records where non-paying customers have more downloads than paying customers. The output should contain 3 columns date, non-paying downloads, paying downloads.
+
+**Answer**
+
+```python
+# Import your libraries
+import pandas as pd
+import numpy as np
+
+# Start writing code
+ms_acc_dimension.head()
+paying_accs = (ms_acc_dimension[ms_acc_dimension['paying_customer']!='no'])['acc_id'].unique()
+paying_cust = (ms_user_dimension[ms_user_dimension['acc_id'].isin(paying_accs)])['user_id'].unique()
+# paying_cust
+ms_download_facts['p_np'] = np.where(ms_download_facts['user_id'].isin(paying_cust), 'paying downloads', 'non-paying downloads')
+ms_download_facts['date'] = ms_download_facts['date'].dt.date
+ms_download_facts = ms_download_facts.groupby(['date', 'p_np'], as_index= False)['downloads'].sum()
+ms_download_facts = ms_download_facts.pivot(index= 'date', columns = 'p_np', values='downloads')
+ms_download_facts['date'] = ms_download_facts.index
+ms_download_facts.head()
+
+```
+
+</details>
