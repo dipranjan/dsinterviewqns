@@ -41,3 +41,18 @@ Here's how you can use the QUALIFY keyword to achieve this:
 `SELECT Product, Region, Revenue FROM Sales QUALIFY ROW_NUMBER() OVER (PARTITION BY Region ORDER BY Revenue DESC) = 1;`
 {% endhint %}
 
+
+
+{% hint style="info" %}
+Remember you CAN include window function and GROUP BY in the same statement, in such case the WINDOW function is evaluated _after_ GROUP BY. _As an example, below we can get both the user2 count at a user1 level along with total number of users in the table in the same query:_
+
+<pre class="language-sql"><code class="lang-sql">select user1 
+, 100*(<a data-footnote-ref href="#user-content-fn-1">CAST(count(distinct(user2)</a>) as FLOAT)/CAST (<a data-footnote-ref href="#user-content-fn-2">count(*) over () as FLOAT</a>)) as popularity_percent
+from facebook_friends
+group by user1
+</code></pre>
+{% endhint %}
+
+[^1]: GROUP BY
+
+[^2]: WINDOW function

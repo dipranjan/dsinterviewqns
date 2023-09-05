@@ -4,6 +4,10 @@ description: The journey of the book so far
 
 # Log
 
+**Month of Sep, 2023**
+
+* Windows Function updated
+
 **Month of August, 2023**
 
 * Vector Database added in the LLM section.
