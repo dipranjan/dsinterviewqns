@@ -10,7 +10,7 @@ A --> D["`Data Science`"]
 D --> E["`Understand the Business Problem`"]
 E --> F["`**North Star Metric (NSM)/Overall Evaluation Criterion (OEC)**
 This is the primary KPI that measures the performance of the company towards its goal. Every function of the company - marketing, engineering, etc. works on improving this KPI.
-*ex. NSM of Meta would be to increase the total amount of time spent by users in their ecosystem.*`"]
+*ex. NSM of Meta would be to increase the total amount of time spent by users in their ecosystem.*`"]
 E --> G["`**Driver Metric** 
 NSM on a whole can be difficult to track in the shorter timeframe of the experiment we use driver metric instead. This is a product or feature level measure which is used as a proxy for the NSM in the AB tests.`"]
 E --> H["`**Guardrails**
@@ -38,10 +38,14 @@ State-the-Experiment --> Design-the-Experiment
 Design-the-Experiment --> R["`**Run the Experiment**`"]
 
 subgraph Access-Validity-Threats
-Sa["Stable Unit Treatment Value Assumption"]
-Sb["Survivorship Bias"]
-Sc["Sample Ratio Mismatch"]
-Sd["Primacy Effect & Novelty Effect"]
+Sa["Stable Unit Treatment 
+Value Assumption"]
+Sb["Survivorship 
+Bias"]
+Sc["Sample Ratio 
+Mismatch"]
+Sd["Primacy Effect 
+& Novelty Effect"]
 Se["Holiday Effect"]
 Sf["Other Effects"]
 Sg["AA test"]
