@@ -11,6 +11,7 @@
 * [Central Limit Theorem](statistics/central-limit-theorem.md)
 * [Bayesian vs Frequentist Reasoning](statistics/bayesian-vs-frequentist-reasoning.md)
 * [Hypothesis Testing](statistics/hypothesis-testing.md)
+* [⚠ A/B test](statistics/a-b-test.md)
 
 ## MODEL BUILDING
 
