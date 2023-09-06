@@ -44,11 +44,15 @@ Sb["Survivorship
 Bias"]
 Sc["Sample Ratio 
 Mismatch"]
+
 Sd["Primacy Effect 
 & Novelty Effect"]
-Se["Holiday Effect"]
-Sf["Other Effects"]
-Sg["AA test"]
+Se["Holiday 
+Effect"]
+Sf["Other 
+Effects"]
+Sg["AA 
+test"]
 end
 R --> Access-Validity-Threats
 Access-Validity-Threats --> T["`**Statistical Inference**`"]
