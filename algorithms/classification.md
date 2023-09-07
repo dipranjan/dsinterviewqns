@@ -18,6 +18,35 @@ One more thing to note here is that logistic regression uses maximum likelihood 
 
 <figure><img src="../_build/html/_images/image6.PNG" alt=""><figcaption><p>(a) ROC curve (b) Precision-Recall curve. Both are a helpful diagnostic tool for evaluating a single classifier but challenging for comparing classifiers. Like ROC AUC, we can calculate the area under the curve as a score and use that score to compare classifiers. The focus on the minority class makes the Precision-Recall AUC more useful for imbalanced classification problems. (<a href="https://machinelearningmastery.com/tour-of-evaluation-metrics-for-imbalanced-classification/">Source</a>)</p></figcaption></figure>
 
+In classification problems, various evaluation metrics are used to assess the performance of a machine learning model. The choice of metric depends on the specific characteristics of your problem and your priorities, such as the relative importance of false positives and false negatives. Here's an explanation of common classification metrics and when to use them, along with examples:
+
+1. **Accuracy**:
+   * **Use Case**: Suitable for balanced datasets where false positives and false negatives have similar consequences.
+   * **Example**: In a spam email classifier, where both false positives (legitimate emails marked as spam) and false negatives (spam emails in the inbox) are undesirable.
+2. **Precision**:
+   * **Use Case**: When minimizing false positives is crucial, and you want to ensure that the positive predictions made by your model are highly accurate.
+   * **Example**: Medical diagnoses like cancer detection, where false positives can lead to unnecessary treatments and stress.
+3. **Recall (Sensitivity or True Positive Rate)**:
+   * **Use Case**: When minimizing false negatives is critical, and you want to ensure that your model captures as many positive instances as possible.
+   * **Example**: An airport security system for detecting prohibited items, where missing a threat (false negative) is far more serious than a false alarm.
+4. **F1 Score**:
+   * **Use Case**: Balances precision and recall, suitable when you want a single metric that considers both false positives and false negatives.
+   * **Example**: Information retrieval systems, where you need to find relevant documents (recall) while minimizing the number of irrelevant ones (precision).
+5. **Specificity (True Negative Rate)**:
+   * **Use Case**: Relevant in scenarios where minimizing false positives is essential, like fraud detection.
+   * **Example**: Credit card fraud detection, where it's important to correctly identify non-fraudulent transactions (true negatives) to prevent blocking legitimate transactions.
+6. **ROC AUC (Receiver Operating Characteristic Area Under the Curve)**:
+   * **Use Case**: Useful when comparing different models or assessing the overall performance of a classifier across different thresholds.
+   * **Example**: Evaluating the performance of various machine learning algorithms in a credit scoring task.
+7. **Matthews Correlation Coefficient (MCC)**:
+   * **Use Case**: Appropriate for imbalanced datasets, where there is a significant difference in class frequencies.
+   * **Example**: Anomaly detection in network security, where normal events far outnumber anomalous ones.
+8. **F-beta Score**:
+   * **Use Case**: Allows you to adjust the balance between precision and recall using the parameter beta.
+   * **Example**: When you want to prioritize either precision (beta < 1) or recall (beta > 1) depending on the specific needs of your application.
+
+Remember that the choice of metric should be based on the specific goals and trade-offs of your problem. It's often a good practice to consider multiple metrics, especially when the consequences of false positives and false negatives differ significantly in your application.
+
 ## Questions
 
 <details>
