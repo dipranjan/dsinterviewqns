@@ -62,6 +62,20 @@ Elastic Net is another useful technique which combines both L1 and L2 regulariza
 One very important point to remember is that Generalized Linear Regression is called so because $$Y$$ is linear w.r.t its coefficients $$b_0, b_1, b_2$$, etc. it is irrespective of whether the features $$x_1, x_2$$, etc. are linear or not. Meaning $$x_1$$ can actually be $$x_1^2$$ and it won't matter.
 {% endhint %}
 
+### OLS Stats Model (Ordinary Least Square)
+
+OLS is a stats model, which will help us in identifying the more significant features that can has an influence on the output. OLS model in python is executed as: lm = smf.ols(formula = 'Sales \~ am+constant', data = data).fit() lm.conf\_int() lm.summary() And we get the output as below
+
+<figure><img src="../.gitbook/assets/image (16).png" alt=""><figcaption><p>The higher the t-value for the feature, the more significant the feature is to the output variable. And also, the p-value plays a rule in rejecting the Null hypothesis(Null hypothesis stating the features has zero significance on the target variable.). If the p-value is less than 0.05(95% confidence interval) for a feature, then we can consider the feature to be significant.</p></figcaption></figure>
+
+## SVR (Support Vector Regression)
+
+In simple linear regression, try to minimize the error rate. But in SVR, we try to fit the error within a certain threshold.
+
+Our best fit line is the one where the hyperplane has the maximum number of points. We are trying to do here is trying to decide a decision boundary at ‘e’ distance from the original hyperplane such that data points closest to the hyperplane or the support vectors are within that boundary line.
+
+<figure><img src="../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+
 ## Non-Linear Regression
 
 In some cases, the true relationship between the outcome and a predictor variable might not be linear. There are different solutions extending the linear regression model for capturing these nonlinear effects, some of these are covered below.

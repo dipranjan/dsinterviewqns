@@ -6,8 +6,9 @@ description: The journey of the book so far
 
 **Month of Sep, 2023**
 
-* Windows Function updated
-* A/B test page (WIP) added
+* Windows Function updated.
+* A/B test page (WIP) added.
+* SVR and OLS added in Regression page.
 
 **Month of August, 2023**
 
