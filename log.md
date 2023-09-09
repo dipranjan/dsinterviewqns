@@ -10,6 +10,7 @@ description: The journey of the book so far
 * A/B test page (WIP) added.
 * SVR and OLS added in Regression page.
 * Classification metrics updated with use cases.
+* Optimizers updated in Alogorithm overiew page.
 
 **Month of August, 2023**
 
