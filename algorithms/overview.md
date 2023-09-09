@@ -54,6 +54,27 @@ Cost functions, also known as loss functions or objective functions, are used in
 
 The choice of a cost function depends on the nature of your data, the type of problem you're trying to solve, and your modeling goals. Selecting an appropriate cost function is a crucial step in designing and training machine learning models.
 
+In the context of optimization problems, such as those encountered in machine learning and mathematical optimization, the terms "convex" and "non-convex" refer to the shape of the cost or objective function. These terms describe how the function's curvature changes as you move through the parameter space. Let's break down what each of these terms means:
+
+1. **Convex Cost Function**:
+   * **Definition**: A cost function is convex if, when you draw a straight line between any two points on the function's graph, the line lies above the graph of the function for all points in between.
+   * **Characteristics**:
+     * Has a single global minimum (and no other local minima).
+     * Gradient descent and similar optimization algorithms can efficiently find the global minimum.
+     * Converges reliably to the optimal solution.
+2. **Non-Convex Cost Function**:
+   * **Definition**: A cost function is non-convex if the straight line connecting two points on the graph may lie below the function at some intermediate points.
+   * **Characteristics**:
+     * Can have multiple local minima, making it challenging to find the global minimum.
+     * Gradient-based optimization methods may get stuck in local minima.
+     * Requires careful initialization and possibly more sophisticated optimization techniques, such as random restarts or simulated annealing, to avoid suboptimal solutions.
+
+In machine learning, when training models, you often encounter non-convex cost functions because the relationships between model parameters and the objective function can be complex. Deep learning, for example, involves optimizing highly non-convex functions due to the complexity of neural network architectures.
+
+The convexity or non-convexity of the cost function has significant implications for optimization. Convex problems are generally easier to solve because they have a single global minimum, while non-convex problems can be more challenging and may require more sophisticated optimization techniques to find good solutions.
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
 ### Optimizers
 
 Optimizers are algorithms used in data science and machine learning to adjust the parameters of a model during training to minimize the error or loss function. Each optimizer has its own way of updating these parameters, and they come with their own advantages and disadvantages.&#x20;
