@@ -20,7 +20,7 @@ A common overview of different algorithms is given below:
 
 Optimizers are algorithms used in data science and machine learning to adjust the parameters of a model during training to minimize the error or loss function. Each optimizer has its own way of updating these parameters, and they come with their own advantages and disadvantages.&#x20;
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/56201contours_evaluation_optimizers.gif" alt=""><figcaption></figcaption></figure>
 
 Here are some common optimizers explained in simple terms with their pros and cons:
 
