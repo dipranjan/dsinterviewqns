@@ -1,7 +1,7 @@
 # Basics
 
 {% hint style="info" %}
-Since solving any reasonable SQL problem requires a combination of all the topics covered here, hence it becomes difficult to seggregate problems based on one topic alone. So for SQL we are creating a dedicated **Problems** section. Theoritical and Basic questions will still be under their dedicated sections.
+Since solving any reasonable SQL problem requires a combination of all the topics covered here, hence it becomes difficult to seggregate problems based on one topic alone. So for SQL we are creating a dedicated [**Problems**](problems.md) section. Theoritical and Basic questions will still be under their dedicated sections.
 {% endhint %}
 
 If you are new to SQL, the video playlist below[️](https://www.youtube.com/watch?v=7GVFYt6\_ZFM\&list=PL08903FB7ACA1C2FB) is one of the most comprehensive materials of SQL that is available on the internet. Please go through the portions of interest to you.

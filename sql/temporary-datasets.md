@@ -1,7 +1,7 @@
 # Temporary Datasets
 
 {% hint style="info" %}
-Since solving any reasonable SQL problem requires a combination of all the topics covered here, hence it becomes difficult to seggregate problems based on one topic alone. So for SQL we are creating a dedicated **Problems** section. Theoretical and Basic questions will still be under their dedicated sections.
+Since solving any reasonable SQL problem requires a combination of all the topics covered here, hence it becomes difficult to seggregate problems based on one topic alone. So for SQL we are creating a dedicated [**Problems**](problems.md) section. Theoretical and Basic questions will still be under their dedicated sections.
 {% endhint %}
 
 **Reference:** [📖Explanation](https://www.red-gate.com/simple-talk/databases/sql-server/t-sql-programming-sql-server/sql-server-cte-basics/)

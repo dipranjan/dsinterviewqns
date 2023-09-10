@@ -1,7 +1,7 @@
 # Functions
 
 {% hint style="info" %}
-Since solving any reasonable SQL problem requires a combination of all the topics covered here, hence it becomes difficult to segregate problems based on one topic alone. So, for SQL we are creating a dedicated **Problems** section. Theoretical and Basic questions will still be under their dedicated sections.
+Since solving any reasonable SQL problem requires a combination of all the topics covered here, hence it becomes difficult to segregate problems based on one topic alone. So, for SQL we are creating a dedicated [**Problems**](problems.md) section. Theoretical and Basic questions will still be under their dedicated sections.
 {% endhint %}
 
 <details>

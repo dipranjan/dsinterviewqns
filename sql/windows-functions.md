@@ -1,7 +1,7 @@
 # Windows Functions
 
 {% hint style="info" %}
-Since solving any reasonable SQL problem requires a combination of all the topics covered here, hence it becomes difficult to seggregate problems based on one topic alone. So for SQL we are creating a dedicated **Problems** section. Theoretical and Basic questions will still be under their dedicated sections.
+Since solving any reasonable SQL problem requires a combination of all the topics covered here, hence it becomes difficult to seggregate problems based on one topic alone. So for SQL we are creating a dedicated [**Problems**](problems.md) section. Theoretical and Basic questions will still be under their dedicated sections.
 {% endhint %}
 
 **Reference:** [📖Explanation](https://www.red-gate.com/simple-talk/sql/t-sql-programming/introduction-to-t-sql-window-functions/), [🔫Playground](https://dbfiddle.uk/?rdbms=sqlserver\_2017\&fiddle=6379904805d1f465cc0f6ea33fc3c0d6)

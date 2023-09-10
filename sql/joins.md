@@ -1,7 +1,7 @@
 # Joins
 
 {% hint style="info" %}
-Since solving any reasonable SQL problem requires a combination of all the topics covered here, hence it becomes difficult to seggregate problems based on one topic alone. So for SQL we are creating a dedicated **Problems** section. Theoritical and Basic questions will still be under their dedicated sections.
+Since solving any reasonable SQL problem requires a combination of all the topics covered here, hence it becomes difficult to seggregate problems based on one topic alone. So for SQL we are creating a dedicated [**Problems**](problems.md) section. Theoritical and Basic questions will still be under their dedicated sections.
 {% endhint %}
 
 Joins are best explained using Venn diagrams
@@ -38,7 +38,8 @@ Table: Address
 | City        | varchar |
 | State       | varchar |
 
-AddressId is the primary key column for this table.</code></pre>
+AddressId is the primary key column for this table.
+</code></pre>
 
 Write a SQL query for a report that provides the following information for each person in the Person table, regardless of if there is an address for each of those people:
 
