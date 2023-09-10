@@ -4,9 +4,7 @@ description: A summary of transformers and why it makes it important in Data Sci
 
 # Transformers
 
-Certainly, I'd be happy to explain the transformer architecture in the context of data science and its importance.
-
-The Transformer architecture is a breakthrough in natural language processing (NLP) that has had a profound impact on various fields, including data science. It was introduced in the paper "Attention is All You Need" by Vaswani et al. in 2017 and has since become the foundation for many state-of-the-art models, including BERT, GPT, and more. Here's a simplified explanation and its importance:
+The Transformer architecture is a breakthrough in natural language processing (NLP) that has had a profound impact on various fields, including data science. It was introduced in the paper ["Attention is All You Need" by Vaswani et al. in 2017](https://arxiv.org/abs/1706.03762) and has since become the foundation for many state-of-the-art models, including BERT, GPT, and more. Here's a simplified explanation and its importance:
 
 **Explanation:**
 
