@@ -16,30 +16,26 @@ For example, _carerac_ should return _true_, since it can be rearranged to form 
 
 **Answer**
 
-```python
-# A string can be a palindrome only if it has even pair of characters and at max 1 odd character
-def palindrome_checker(txt):
-        temp = {}
-        odd_count = 0
-        even_count = 0
-        for i in (txt): # Storing characters and their count
-            if i in temp.keys():
-                temp[i] = temp[i] + 1
-            else:
-                temp[i] = 1
-        for i in temp: # Check count of characters
-            if temp[i]%2==0:
-                even_count = even_count + 1
-            else:
-                odd_count = odd_count + 1
-        if((odd_count>1)or(even_count==0)):
-            return False
-        else:
-            return True    
-
-print(palindrome_checker("carerac"))
-print(palindrome_checker("sunset"))
-```
+<pre class="language-python"><code class="lang-python"># A string can be a palindrome only if it has even pair of characters and at max 1 odd character
+<strong>def palindrome(x):
+</strong>    char_dict = {}
+    for i in x:
+# we will check if the element exists else we will add it to the dictionary
+        try:
+            char_dict[i] = char_dict[i] + 1
+        except:
+            char_dict.update({i:1})
+ # next we will create a list of element counts and use list comprehension 
+ # to check if odd element count is 1 and rest all even           
+    check = list(char_dict.values())
+    if (len([temp for temp in check if temp%2==1]) == 1 and len([temp for temp in check if temp%2==0]) > 1):
+        return "palindrome"
+    else:
+        return "not palindrome"
+    
+print(palindrome("carerac"))
+print(palindrome("abc"))
+</code></pre>
 
 </details>
 
@@ -61,15 +57,15 @@ Now change the code to output\
 
 ```python
 def pyramid(n):
-    i = 1
-    j = 1
-    while i < n:
-        for k in range(1,j):
-            print(i, end=' ') # For the second pattern change i to k
-            i += 1
-        print(" ") 
-        j +=1
-
+    counter = 1
+    max = 1
+    while(max<n):
+        for i in range(max, max+counter): # for the second pattern change max to 1
+            print(i, end=" ")
+            max=max+1
+        counter=counter+1
+        print(" ")
+    
 pyramid(6)
 ```
 
