@@ -123,17 +123,19 @@ _buy –> 5 sell –> 32_
 **Answer**
 
 ```python
-stock_prices = [10,5,20,32,25,12]
-
-diff = []
-for i,j in enumerate(stock_prices):
-    for k in range(i+1,len(stock_prices)):
-        diff.append(stock_prices[k]-j)
-        if(len(diff)>2 and (diff[-1]> max(diff[:-1]))):
+li = [10,5,20,32,25,12]
+diff = 0
+for i,j in enumerate(li):
+    try:
+        if(diff<(max(li[i+1:])-j)):
+            diff = max(li[i+1:])-j
             buy = j
-            sell = stock_prices[k]
-
-print(buy,sell)
+            sell = max(li[i+1:])
+        print(j, max(li[i+1:]))
+    except:
+        print("end")
+    
+print(buy, sell, diff)
 ```
 
 </details>
