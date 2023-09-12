@@ -104,3 +104,57 @@ In what situations would you recommend using one metric over the another for cla
 It all depends on the use case. For example, a diagnostic lab will be concerned with incorrect positive diagnosis. Hence, they will aim for a high specificity value. On the other hand, for a model predicting loan default rate the goal is to identify even a small chance of default, hence we need the model to maximize sensitivity.
 
 </details>
+
+<details>
+
+<summary>[INTUIT] Logistic Regression vs Decision Tree</summary>
+
+What's the difference between decision tree and logistic regression?
+
+**Answer**
+
+Decision trees and logistic regression are both machine learning algorithms used for classification tasks, but they have different approaches and characteristics. Here are the key differences between decision trees and logistic regression:
+
+**1. Algorithm Type:**
+
+* **Decision Tree**: Decision trees are non-linear models that use a tree-like structure to make decisions by recursively splitting the data into subsets based on the most informative features.
+* **Logistic Regression**: Logistic regression is a linear model that estimates the probability of a binary outcome by fitting a linear equation to the input features.
+
+**2. Model Complexity:**
+
+* **Decision Tree**: Decision trees can capture complex relationships in the data and can fit highly non-linear decision boundaries.
+* **Logistic Regression**: Logistic regression assumes a linear relationship between the input features and the log-odds of the output, making it less flexible for modeling complex, non-linear relationships.
+
+**3. Interpretability:**
+
+* **Decision Tree**: Decision trees are highly interpretable. You can easily visualize the tree structure and understand how decisions are made at each node.
+* **Logistic Regression**: Logistic regression provides interpretable coefficients for each feature, indicating the direction and magnitude of their influence on the outcome.
+
+**4. Handling of Numeric vs. Categorical Features:**
+
+* **Decision Tree**: Decision trees can handle both numeric and categorical features without requiring one-hot encoding.
+* **Logistic Regression**: Logistic regression typically requires one-hot encoding of categorical features to be included in the model.
+
+**5. Overfitting:**
+
+* **Decision Tree**: Decision trees are prone to overfitting, especially if they are deep and complex. Pruning or limiting the depth of the tree can help mitigate overfitting.
+* **Logistic Regression**: Logistic regression is less prone to overfitting, especially when the number of features is limited relative to the number of training samples.
+
+**6. Probability Output:**
+
+* **Decision Tree**: Decision trees can provide class probabilities by counting the proportion of samples in each leaf node belonging to a particular class. However, this can lead to uneven class probability estimates.
+* **Logistic Regression**: Logistic regression provides well-calibrated class probabilities, making it suitable for tasks where probability estimates are essential.
+
+**7. Handling Imbalanced Data:**
+
+* **Decision Tree**: Decision trees can struggle with imbalanced datasets, as they tend to favor the majority class in splits.
+* **Logistic Regression**: Logistic regression can handle imbalanced datasets better by adjusting the decision threshold or using class weights.
+
+**8. Performance on Linear Problems:**
+
+* **Decision Tree**: Decision trees are not well-suited for linear problems where the decision boundary is best represented by a straight line.
+* **Logistic Regression**: Logistic regression is appropriate for linear problems and can capture linear relationships effectively.
+
+In practice, the choice between decision trees and logistic regression depends on the specific characteristics of your data and the problem you are trying to solve. Decision trees are more suitable for non-linear and interpretable problems, while logistic regression is a good choice for problems where linear relationships are predominant and well-calibrated probability estimates are required.
+
+</details>
