@@ -11,6 +11,7 @@ description: The journey of the book so far
 * SVR and OLS added in Regression page.
 * Classification metrics updated with use cases.
 * Optimizers and Optimization Criterion updated in Alogorithm overiew page.
+* Model Building Overview page added.
 
 **Month of August, 2023**
 
