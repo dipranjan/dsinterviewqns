@@ -10,8 +10,9 @@ description: The journey of the book so far
 * A/B test page (WIP) added.
 * SVR and OLS added in Regression page.
 * Classification metrics updated with use cases.
-* Optimizers and Optimization Criterion updated in Alogorithm overiew page.
+* Optimizers and Optimization Criterion updated in Alogorithm overview page.
 * Model Building Overview page added.
+* Naive Bayes added in classification.
 
 **Month of August, 2023**
 

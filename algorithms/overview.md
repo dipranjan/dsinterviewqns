@@ -116,3 +116,34 @@ Here are some common optimizers explained in simple terms with their pros and co
    * **Cons**: Computationally more expensive than some other optimizers.
 
 The choice of optimizer depends on the specific problem you are solving, the dataset size, and the architecture of your neural network. It's common to experiment with different optimizers and hyperparameters to find the one that works best for your particular task.
+
+### **Parametric and non-parametric models**
+
+Parametric and non-parametric models are two fundamental approaches to modeling in statistics and machine learning. They differ in how they represent the underlying data distribution and make assumptions about the functional form of that distribution.
+
+**Parametric Models**:
+
+1. **Definition**: Parametric models make specific assumptions about the functional form or shape of the data distribution. These assumptions are typically described by a fixed number of parameters.
+2. **Characteristics**:
+   * The number of parameters in a parametric model is fixed, regardless of the amount of data available.
+   * Examples of parametric models include linear regression, logistic regression, Gaussian Naive Bayes, and parametric probability distributions like the normal distribution.
+   * Parametric models are computationally efficient and require relatively little data to estimate their parameters.
+   * They are often interpretable because the model structure is well-defined.
+   * However, they may not perform well when the assumptions about the data distribution are incorrect.
+
+**Non-Parametric Models**:
+
+1. **Definition**: Non-parametric models make fewer assumptions about the functional form of the data distribution. Instead, they aim to let the data determine the model's complexity.
+2. **Characteristics**:
+   * The number of parameters in a non-parametric model can grow with the amount of data. As more data becomes available, non-parametric models can become more complex and flexible.
+   * Examples of non-parametric models include k-nearest neighbors (KNN), decision trees, random forests, support vector machines (SVMs), and kernel density estimation.
+   * Non-parametric models are more flexible and can capture complex relationships in the data without strong assumptions about distribution shape.
+   * They may require larger datasets to perform well, and their computational complexity can be higher.
+   * Non-parametric models are often less interpretable because their structure is more data-driven.
+
+**Key Differences**:
+
+1. **Assumptions**: Parametric models make specific assumptions about the data distribution, while non-parametric models make fewer assumptions and let the data dictate the model's complexity.
+2. **Complexity**: Parametric models have fixed complexity, while non-parametric models can adapt their complexity to the data.
+3. **Interpretability**: Parametric models are often more interpretable due to their well-defined structure, whereas non-parametric models can be more challenging to interpret because they are data-driven.
+4. **Data Requirements**: Parametric models can work well with relatively small datasets, while non-parametric models often require larger datasets to capture complex patterns.
