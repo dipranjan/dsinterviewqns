@@ -382,3 +382,28 @@ ms_download_facts.head()
 ```
 
 </details>
+
+<details>
+
+<summary>[Microsoft][Apple] Most Popular Client_Id</summary>
+
+[Check this link to practice​.](https://platform.stratascratch.com/coding/2029-the-most-popular-client\_id-among-users-using-video-and-voice-calls?code\_type=2)
+
+Select the client\_ids based on a count of the number of users who have at least 50% of their events from the following list: 'video call received', 'video call sent', 'voice call received', 'voice call sent'.
+
+**Answer**
+
+```python
+# Import your libraries
+import pandas as pd
+import numpy as np
+
+# Start writing code
+
+fact_events['event_cat'] = np.where(fact_events['event_type'].isin(['video call received', 'video call sent', 'voice call received', 'voice call sent']),"valid","others")
+fact_events = fact_events.groupby(['user_id','event_cat'], as_index=False)['time_id'].count()
+fact_events['prnct'] = fact_events.groupby(['user_id']).transform(lambda x:100*x/x.sum())
+fact_events.head()
+```
+
+</details>
