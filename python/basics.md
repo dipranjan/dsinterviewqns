@@ -311,9 +311,12 @@ Complexity of O(N) required.
 ```python
 nums = [0,1,2,4,5]
 
-for i in range(0,len(nums)-1):
-    if(nums[i+1]-nums[i]>1):
-        print(nums[i]+1)
+for i in range(0,len(nums)+1):
+    try:
+        if(nums[i+1]-nums[i]>1):
+            print("Missing nums --> ", i+1)
+    except:
+        pass
 ```
 
 </details>
