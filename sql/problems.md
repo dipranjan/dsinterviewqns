@@ -604,3 +604,113 @@ where p.price > c.avg_trans_price
 ```
 
 </details>
+
+<details>
+
+<summary>[INTUIT] Data Analyst Interview Question</summary>
+
+Given the following tables:
+
+&#x20;<img src="../.gitbook/assets/image (18).png" alt="" data-size="original">&#x20;
+
+&#x20;Where
+
+Experiments is a table in which we store whether a user is part of an experiment and if so whether they are in test or control (assume there is only one test variant per experiment).  The fields are:
+
+●     user\_id - There are many users each of whom can be in many experiments
+
+●     assignment\_ts - timestamp of when the user was allocated to the experiment.  A user is only allocated once per experiment.
+
+●     experiment\_id - An experiment has many users
+
+●     experiment\_assignment - Whether the user is in test or control.  Assignments are immutable and there is only one assignment per user/experiment combo.
+
+&#x20;Subscriptions is a table of subscription related events.  For each user, there will always be a trial start event however there will only be a subscription start event if the user subscribes.  Assume a given user can only have one trial start and at most one subscription start.  The subscription can start at any time after the trial start and times for either event type are captured in event\_ts.
+
+**Questions**
+
+Write queries to produce the following:
+
+1. When did each experiment start?  Use the first instance of an experiment assignment to either test or control for an experiment to equate to when the experiment started.  Results should look like:
+
+&#x20;![](<../.gitbook/assets/image (19).png>)
+
+2. How long did each experiment last, expressed in days?  Assume the last instance of an experiment assignment to test or control for an experiment to equate to when the experiment ended.  Results should look like:
+
+&#x20;![](<../.gitbook/assets/image (20).png>)
+
+3. How many users are in test and control for each experiment?  Result should look like:
+
+![](<../.gitbook/assets/image (21).png>)
+
+4. What is the conversion rate by experiment assignment for each experiment?  A conversion is any user for whom there is a subscription start event in addition to the trial start event (all users have a trial start event).  If a user is in multiple experiments at the same time, it’s ok to count them towards the conversion rate of each experiment.  We also want to only return one row per experiment.  Result should look like:
+
+![](<../.gitbook/assets/image (22).png>)
+
+5\) For each experiment\_id, rank and list first 3 user\_ids who subscribed to the product. Output should look like:
+
+&#x20;![](<../.gitbook/assets/image (23).png>)
+
+</details>
+
+<details>
+
+<summary>[INTUIT] Employer EINs</summary>
+
+🔫[Playground](https://dbfiddle.uk/wXAiFvAe)
+
+We're given a table called _**employers**_ that consists of a _user\_id, year_, and _employer EIN_ label. Users can have multiple employers dictated by the different EIN labels.
+
+Write a query to add a flag to each user if they've added a new employer in the current year.
+
+Example:&#x20;
+
+
+
+```
+# employer
+# 
+# user_id    year    employer_ein
+# 34323      2018    A 
+# 34323      2018    B
+# 34323      2018    C
+# 34323      2017    F
+# 34323      2017    A
+# 34323      2017    B
+# 
+# 86323      2018    A
+# 86323      2018    B
+# 86323      2018    C
+# 86323      2017    B
+# 
+# 98787      2018    A
+# 98787      2018    B
+# 98787      2017    B
+# 98787      2017    A
+
+# Output
+# user_id    year    new_ein_flag
+# 34323      2018      1
+# 86323      2018      1
+# 98787      2018      0 
+```
+
+**Answer**
+
+```sql
+select a.id, max(a.year) as year, ISNULL(b.new_ein_flag, 0) as new_ein_flag 
+from users a left join
+
+(select id, year, count(employer_ein) as new_ein_flag 
+from users where year in (select max(year) from users)
+and employer_ein not in 
+(select employer_ein from users 
+where year in (select max(year)-1 from users))
+group by id, year) b
+on a.id = b.id
+group by a.id, b.new_ein_flag
+
+
+```
+
+</details>

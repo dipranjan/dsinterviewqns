@@ -13,6 +13,7 @@ description: The journey of the book so far
 * Optimizers and Optimization Criterion updated in Alogorithm overview page.
 * Model Building Overview page added.
 * Naive Bayes added in classification.
+* Many new SQL problems added.
 
 **Month of August, 2023**
 
