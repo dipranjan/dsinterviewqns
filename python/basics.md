@@ -419,3 +419,30 @@ intersectinglines(tuple_list, x_range)
 ```
 
 </details>
+
+<details>
+
+<summary>Find the majority element in a list.</summary>
+
+a = \[2,3,4,6, 6, 2,2] answer --> 2
+
+**Answer**
+
+```python
+a = [2,3,4,6, 6, 2,2]
+
+def major_ele(x):
+    counter_dict = {}
+    for i in a:
+        if i not in counter_dict:
+           counter_dict.update({i:1})
+        else:
+           counter_dict[i] =  counter_dict[i] + 1 
+    for i,j in counter_dict.items():
+        if j == max(list(counter_dict.values())):
+            return i
+
+print(major_ele(a))
+```
+
+</details>
