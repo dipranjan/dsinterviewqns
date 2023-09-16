@@ -428,3 +428,36 @@ Random rater is careful with probability of $$0.8: 0.8 * 0.6 = 0.48$$ - probabil
 * It’s $$0$$ probability that the rater is lazy because lazy raters always rate ads as good.
 
 </details>
+
+<details>
+
+<summary>[INTUIT] Chances of Winning</summary>
+
+Let’s say you can play a coin flipping guessing game either once or a 2 out of 3 game. What is the best strategy for winning?
+
+**Answer**
+
+**Scenario 1: Single Coin Flip Game**
+
+* In this game, you have a 50% chance of winning on each flip because there are two possible outcomes (heads or tails), and you need one specific outcome (either heads or tails) to win.
+
+Probability of winning a single coin flip = 0.5 (50%)
+
+**Scenario 2: 2 out of 3 Coin Flip Game**
+
+* In this game, you need to win at least two out of three coin flips to win the game. To calculate this probability, we can use the binomial probability formula.
+
+Probability of winning two out of three coin flips:
+
+* Calculate the probability of winning exactly two out of three flips:
+  * P(Win 2 out of 3) = C(3, 2) \* (0.5)^2 \* (0.5)^(3-2) = 3 \* 0.25 \* 0.5 = 0.375
+* Calculate the probability of winning all three flips:
+  * P(Win 3 out of 3) = (0.5)^3 = 0.125
+
+Now, sum these probabilities to get the overall probability of winning the 2 out of 3 game:
+
+Probability of winning the 2 out of 3 game = P(Win 2 out of 3) + P(Win 3 out of 3) = 0.375 + 0.125 = 0.5 (50%)
+
+So, the probability of winning in either a single coin flip game or a 2 out of 3 coin flip game is 50% for both scenarios.
+
+</details>

@@ -446,3 +446,71 @@ print(major_ele(a))
 ```
 
 </details>
+
+<details>
+
+<summary>[INTUIT] Iterator</summary>
+
+Implement an iterator function which takes three iterators as the input and sorts them.
+
+**Answer**
+
+2 Solutions are provided below:
+
+```python
+import heapq
+
+def sorted_merge(*iterators):
+    # Use heapq.merge to merge and sort the input iterators
+    sorted_iterator = heapq.merge(*iterators)
+    
+    # Return the sorted iterator
+    return sorted_iterator
+
+# Example usage:
+if __name__ == "__main__":
+    # Create three sorted iterators (lists in this case)
+    iterator1 = iter([1, 3, 5, 7])
+    iterator2 = iter([2, 4, 6, 8])
+    iterator3 = iter([0, 9, 10])
+    
+    # Merge and sort the iterators
+    sorted_iterator = sorted_merge(iterator1, iterator2, iterator3)
+    
+    # Iterate through the sorted values
+    for value in sorted_iterator:
+        print(value)
+
+```
+
+```python
+def sort_iterators(it1, it2, it3):
+  """Sorts three iterators.
+
+  Args:
+    it1: The first iterator.
+    it2: The second iterator.
+    it3: The third iterator.
+
+  Returns:
+    An iterator that yields the sorted elements of the three iterators.
+  """
+  # Create a list to store the elements of the three iterators.
+  elements = []
+
+  # Iterate over the three iterators and add the elements to the list.
+  for element in it1:
+    elements.append(element)
+  for element in it2:
+    elements.append(element)
+  for element in it3:
+    elements.append(element)
+
+  # Sort the list.
+  elements.sort()
+
+  # Create an iterator that yields the elements of the sorted list.
+  return iter(elements)
+```
+
+</details>
