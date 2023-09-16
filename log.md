@@ -10,10 +10,11 @@ description: The journey of the book so far
 * A/B test page (WIP) added.
 * SVR and OLS added in Regression page.
 * Classification metrics updated with use cases.
-* Optimizers and Optimization Criterion updated in Alogorithm overview page.
+* Optimizers and Optimization Criterion updated in Algorithm overview page.
 * Model Building Overview page added.
 * Naive Bayes added in classification.
 * Many new SQL problems added.
+* Confidence Interval added in Central Limit Theorem.
 
 **Month of August, 2023**
 
