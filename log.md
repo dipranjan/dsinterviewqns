@@ -13,7 +13,7 @@ description: The journey of the book so far
 * Optimizers and Optimization Criterion updated in Algorithm overview page.
 * Model Building Overview page added.
 * Naive Bayes added in classification.
-* Many new SQL problems added.
+* Many new SQL and Python problems added.
 * Confidence Interval added in Central Limit Theorem.
 
 **Month of August, 2023**
