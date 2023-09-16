@@ -45,13 +45,13 @@ The execution time shows that the first algorithm is faster compared to the seco
 
 ### Algorithm Analysis with Big-O Notation
 
-Big-O notation signifies the relationship between the input to the algorithm and the steps required to execute the algorithm. It is denoted by a big $O$ followed by opening and closing parenthesis. Inside the parenthesis, the relationship between the input and the steps taken by the algorithm is presented using $n$.
+Big-O notation signifies the relationship between the input to the algorithm and the steps required to execute the algorithm. It is denoted by a big $$O$$ followed by opening and closing parenthesis. Inside the parenthesis, the relationship between the input and the steps taken by the algorithm is presented using $$n$$.
 
-For instance, if there is a linear relationship between the input and the step taken by the algorithm to complete its execution, the Big-O notation used will be $O(n)$. Similarly, the Big-O notation for quadratic functions is $O(n^2)$
+For instance, if there is a linear relationship between the input and the step taken by the algorithm to complete its execution, the Big-O notation used will be $$O(n)$$. Similarly, the Big-O notation for quadratic functions is $$O(n^2)$$
 
 The following are some of the most common Big-O functions:
 
-<table data-header-hidden><thead><tr><th width="208"></th><th></th></tr></thead><tbody><tr><td><strong>Name</strong></td><td><strong>Big O</strong></td></tr><tr><td>Constant</td><td>$O(c)$</td></tr><tr><td>Linear</td><td>$O(n)$</td></tr><tr><td>Quadratic</td><td>$O(n^2)$</td></tr><tr><td>Cubic</td><td>$O(n^3)$</td></tr><tr><td>Exponential</td><td>$O(2^n)$</td></tr><tr><td>Logarithmic</td><td>$O(log(n))$</td></tr><tr><td>Log Linear</td><td>$O(nlog(n))$</td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th width="208"></th><th></th></tr></thead><tbody><tr><td><strong>Name</strong></td><td><strong>Big O</strong></td></tr><tr><td>Constant</td><td><span class="math">O(c)</span></td></tr><tr><td>Linear</td><td><span class="math">O(n)</span></td></tr><tr><td>Quadratic</td><td><span class="math">O(n^2)</span></td></tr><tr><td>Cubic</td><td><span class="math">O(n^3)</span></td></tr><tr><td>Exponential</td><td><span class="math">O(2^n)</span></td></tr><tr><td>Logarithmic</td><td><span class="math">O(log(n))</span></td></tr><tr><td>Log Linear</td><td><span class="math">O(nlog(n))</span></td></tr></tbody></table>
 
 <figure><img src="../_build/html/_images/image161.PNG" alt=""><figcaption><p>n is the input size and c is a positive constant</p></figcaption></figure>
 
@@ -65,14 +65,14 @@ Yes, actually it is. A one-terabyte (1 TB) file could take more than a day to tr
 
 #### Time Complexity
 
-This is what the concept of asymptotic runtime, or big $O$ time, means. We could describe the data transfer _algorithm_ runtime as:
+This is what the concept of asymptotic runtime, or big $$O$$ time, means. We could describe the data transfer _algorithm_ runtime as:
 
-* Electronic Transfer: $O(s)$, where $s$ is the size of the file. This means that the time to transfer the file increases linearly with the size of the file. (Yes, this is a bit of a simplification, but that's okay for these purposes)
-* Airplane Transfer: $O(1)$ with respect to the size of the file. As the size of the file increases, it won't take any longer to get the file to your friend. The time is constant.
+* Electronic Transfer: $$O(s)$$, where $$s$$ is the size of the file. This means that the time to transfer the file increases linearly with the size of the file. (Yes, this is a bit of a simplification, but that's okay for these purposes)
+* Airplane Transfer: $$O(1)$$ with respect to the size of the file. As the size of the file increases, it won't take any longer to get the file to your friend. The time is constant.
 
 <figure><img src="../_build/html/_images/image171.PNG" alt=""><figcaption><p>No matter how big the constant is and how slow the linear increase is, linear will at some point surpass the constant.</p></figcaption></figure>
 
-There are many more runtimes than this. Some ofthe most common ones are $O(log N),O(N log N), O(N), O(N^2), O(2^N)$. There's no fixed list of possible runtimes, though. You can also have multiple variables in your runtime. For example, the time to paint a fence that's $w$ meters wide and $h$ meters high could be described as $O(wh)$ .If you needed $p$ layers of paint, then you could say that the time is $O(whp)$.
+There are many more runtimes than this. Some of the most common ones are $$O(log N),O(N log N), O(N), O(N^2), O(2^N)$$. There's no fixed list of possible runtimes, though. You can also have multiple variables in your runtime. For example, the time to paint a fence that's $$w$$ meters wide and $$h$$ meters high could be described as $$O(wh)$$. If you needed $$p$$ layers of paint, then you could say that the time is $$O(whp)$$.
 
 #### Big O of DS Algorithms
 
