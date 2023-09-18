@@ -73,7 +73,7 @@ In machine learning, when training models, you often encounter non-convex cost f
 
 The convexity or non-convexity of the cost function has significant implications for optimization. Convex problems are generally easier to solve because they have a single global minimum, while non-convex problems can be more challenging and may require more sophisticated optimization techniques to find good solutions.
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Optimizers
 

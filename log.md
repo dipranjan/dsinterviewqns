@@ -15,6 +15,7 @@ description: The journey of the book so far
 * Naive Bayes added in classification.
 * Many new SQL and Python problems added.
 * Confidence Interval added in Central Limit Theorem.
+* Algorithms from scratch added in Python.
 
 **Month of August, 2023**
 

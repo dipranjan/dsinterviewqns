@@ -117,7 +117,7 @@ print("Interquartile distance: ", qtl_1 - qtl_3)
 
 <details>
 
-<summary>[GENENTECH] Imputing the mdeian</summary>
+<summary>[GENENTECH] Imputing the median</summary>
 
 Write a function cheese\_median to impute the median price of the selected California cheeses in place of the missing values. You may assume at least one cheese is not missing its price.
 
@@ -130,5 +130,41 @@ cheeses = {"Name": ["Bohemian Goat", "Central Coast Bleu", "Cowgirl Mozzarella",
 
 df_cheeses = pd.DataFrame(cheeses)
 ```
+
+</details>
+
+<details>
+
+<summary>Show the Central Limit Theorem</summary>
+
+In order to do this we will start with a non-normal distribution example the uniform distribution. Next, we will sample that distribution and get the mean of the sample, we will do this repeatedly. As per the central limit theorem the plot of the means will resemble a normal distribution.
+
+**Answer**
+
+```python
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+def sampling(n):
+    # Create sample from uniform distribution
+    sample = np.random.uniform(size=n, low = 1, high = 6)
+    return sample.mean() #3.5 subtract the population mean if you want mean=0 for the normal distribution
+
+# now we sample this 10000 times to indeed show it is a standard normal distribution
+def plot_output(n):
+    outputs=[]
+    for i in range(0,n):
+        outputs.append(sampling(30))
+    num_bins = 20
+    plt.hist(outputs, bins=num_bins, facecolor='blue', alpha=0.5)
+    plt.title("Sample")
+    plt.show() 
+
+plot_output(10000)
+
+```
+
+&#x20;![](../.gitbook/assets/image.png)
 
 </details>

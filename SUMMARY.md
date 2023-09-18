@@ -61,6 +61,9 @@
 * [Data Manipulation](python/data-manipulation.md)
 * [Statistics](python/statistics.md)
 * [NLP](python/nlp.md)
+* [Algorithms from scratch](python/algorithms-from-scratch/README.md)
+  * [Linear Regression](python/algorithms-from-scratch/linear-regression.md)
+  * [Logistic Regression](python/algorithms-from-scratch/logistic-regression.md)
 
 ## ML OPS
 
