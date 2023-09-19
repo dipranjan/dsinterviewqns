@@ -6,16 +6,16 @@ description: The journey of the book so far
 
 **Month of Sep, 2023**
 
-* Windows Function updated.
-* A/B test page (WIP) added.
-* SVR and OLS added in Regression page.
-* Classification metrics updated with use cases.
-* Optimizers and Optimization Criterion updated in Algorithm overview page.
-* Model Building Overview page added.
-* Naive Bayes added in classification.
+* [Windows Function](sql/windows-functions.md) updated.
+* [A/B test page](statistics/a-b-test.md) (WIP) added.
+* SVR and OLS added in [Regression page](algorithms/regression.md).
+* [Classification metrics](algorithms/classification.md#metrics) updated with use cases.
+* Optimizers and Optimization Criterion updated in [Algorithm overview page](broken-reference).
+* [Model Building Overview](model-building/overview.md) page added.
+* [Naive Bayes](algorithms/classification.md#naive-bayes-algorithm) added in classification.
 * Many new SQL and Python problems added.
-* Confidence Interval added in Central Limit Theorem.
-* Algorithms from scratch added in Python.
+* [Confidence Interval](statistics/central-limit-theorem.md#what\_is\_confidence\_interval) added in Central Limit Theorem.
+* Coding [Algorithms from scratch](python/algorithms-from-scratch/) added in Python.
 
 **Month of August, 2023**
 
