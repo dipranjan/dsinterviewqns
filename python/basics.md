@@ -551,3 +551,28 @@ def get_last_page(int_string):
 ```
 
 </details>
+
+<details>
+
+<summary>Python Recursion</summary>
+
+Explain Python recursion with an example.
+
+**Answer**
+
+Recursion is a programming technique that allows a function to call itself. This can be useful for solving problems that involve self-similar structures, such as trees and graphs.
+
+```python
+def factorial(n): # 6! = 6*3*2*1
+  if(n==0 or n==1): # define the base case
+    return 1
+  return factorial(n-1)*n # recursively call the func
+
+factorial(6)
+```
+
+This function works by calling itself recursively to calculate the factorial. The base cases are when n is 0 or 1, in which case the function simply returns n.
+
+Recursion can be a powerful tool, but it is important to use it carefully. If a recursive function is not designed carefully, it can easily lead to stack overflows.
+
+</details>
