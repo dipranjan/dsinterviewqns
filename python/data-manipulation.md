@@ -393,6 +393,22 @@ Select the client\_ids based on a count of the number of users who have at least
 
 **Answer**
 
+2 versions of the answer are given with slight difference
+
+```python
+import pandas as pd
+import numpy as np
+
+events_list = ['video call received', 'video call sent', 'voice call received', 'voice call sent']
+
+fact_events['valid_even_count'] = np.where(fact_events['event_type'].isin(events_list), 1,0)
+
+fact_events = fact_events.groupby(['client_id']).apply(lambda x: x['valid_even_count'].sum()/x['event_id'].count()).rename("abc").reset_index()
+# rename will set a name to the column else it will be blank and reset_index will
+# bring back the client_id as a column
+fact_events.head()
+```
+
 ```python
 # Import your libraries
 import pandas as pd
