@@ -514,3 +514,40 @@ def sort_iterators(it1, it2, it3):
 ```
 
 </details>
+
+<details>
+
+<summary>[SPLUNK] Last Page Number</summary>
+
+We're given a string of integers that represent page numbers.
+
+Write a function to return the last page number in the string. If the string of integers is not in correct page order, return the last number in order.
+
+```
+input = '12345'
+output = 5
+
+input = '12345678910111213'
+output = 13
+
+input = '1235678'
+output = 3
+```
+
+**Answer**
+
+```python
+def get_last_page(int_string):
+    print(int_string)
+    count = 0
+    counter2 = 0
+    for i in int_string:
+        count = count+1+counter2//10
+        counter2 = counter2+1
+        if(str(counter2)==int_string[count-1:count+counter2//10]):
+            pass
+        else:
+            return counter2-1
+```
+
+</details>
