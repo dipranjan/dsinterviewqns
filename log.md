@@ -16,6 +16,7 @@ description: The journey of the book so far
 * Many new SQL and Python problems added.
 * [Confidence Interval](statistics/central-limit-theorem.md#what\_is\_confidence\_interval) added in Central Limit Theorem.
 * Coding [Algorithms from scratch](python/algorithms-from-scratch/) added in Python.
+* [Common hypothesis tests](statistics/hypothesis-testing.md) added.
 
 **Month of August, 2023**
 

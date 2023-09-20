@@ -92,6 +92,35 @@ As $$p$$-value is $$< \alpha$$ so, we reject null-hypothesis.
 
 <figure><img src="../_build/html/_images/image113.PNG" alt=""><figcaption><p>Types of Error in Hypothesis Testing (<a href="https://www.sixsigmadaily.com/type-i-and-type-ii-errors-in-hypothesis-testing/">SOURCE</a>)</p></figcaption></figure>
 
+### Types of Test
+
+1. **Z-Test**:
+   * **Purpose**: Used to test hypotheses about a population mean when the population standard deviation is known.
+   * **Example**: Suppose you want to test if the average weight of a sample of 50 apples is significantly different from 150 grams (population mean). You know the population standard deviation is 10 grams.
+2. **T-Test**:
+   * **Purpose**: Used to test hypotheses about a population mean when the population standard deviation is unknown or when dealing with small sample sizes.
+   * **Example**: You want to test if a new drug has a statistically significant effect on blood pressure. You collect data from 30 patients before and after treatment and perform a t-test to compare the means.
+3. **Chi-Square Test**:
+   * **Purpose**: Used to test the independence of categorical variables or goodness-of-fit of observed data to an expected distribution.
+   * **Example**: You want to determine if there is an association between smoking habits (smoker, non-smoker) and the incidence of lung cancer (yes, no) in a population. You create a contingency table and perform a chi-square test for independence.
+4. **ANOVA (Analysis of Variance)**:
+   * **Purpose**: Used to compare means of more than two groups to determine if there are statistically significant differences among them.
+   * **Example**: You have data on test scores from three different teaching methods (A, B, C). You want to determine if there is a significant difference in mean test scores between the methods.
+5. **Paired T-Test**:
+   * **Purpose**: Used to compare the means of two related groups (e.g., before and after treatment) to determine if there is a significant difference.
+   * **Example**: You measure the blood pressure of the same group of patients before and after a 6-week exercise program to see if there is a significant change.
+6. **Wilcoxon Rank-Sum Test (Mann-Whitney U Test)**:
+   * **Purpose**: Used to compare two independent groups when the data is not normally distributed or when ordinal data is involved.
+   * **Example**: You want to determine if there is a significant difference in test scores between students who received tutoring and those who did not. The data is not normally distributed.
+7. **Fisher's Exact Test**:
+   * **Purpose**: Used to test the independence of two categorical variables in a 2x2 contingency table, especially when sample sizes are small.
+   * **Example**: You want to determine if there's an association between gender (male, female) and the success of a medical treatment (success, failure) in a small sample of patients.
+8. **K-Sample Anderson-Darling Test**:
+   * **Purpose**: Used to compare the distribution of multiple independent samples to determine if they come from the same population.
+   * **Example**: You have three different groups of people, and you want to test if their ages are drawn from the same population distribution.
+
+These are just a few examples of hypothesis tests, and there are many more specific tests designed for different types of data and research questions. The choice of which test to use depends on the nature of your data, the research question, and the assumptions of the test.
+
 ## Questions
 
 <details>
