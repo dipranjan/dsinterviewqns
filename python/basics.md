@@ -576,3 +576,77 @@ This function works by calling itself recursively to calculate the factorial. Th
 Recursion can be a powerful tool, but it is important to use it carefully. If a recursive function is not designed carefully, it can easily lead to stack overflows.
 
 </details>
+
+<details>
+
+<summary>[INTUIT] <a href="https://leetcode.com/problems/subarray-product-less-than-k/">Subarray Product Less Than K</a></summary>
+
+This was asked in INTUIT Sr. Data Scientist initial round using Glider
+
+Given an array of integers `nums` and an integer `k`, return _the number of contiguous subarrays where the product of all the elements in the subarray is strictly less than_ `k`.
+
+&#x20;**Example 1:**
+
+<pre><code><strong>Input: nums = [10,5,2,6], k = 100
+</strong><strong>Output: 8
+</strong><strong>Explanation: The 8 subarrays that have product less than 100 are:
+</strong>[10], [5], [2], [6], [10, 5], [5, 2], [2, 6], [5, 2, 6]
+Note that [10, 5, 2] is not included as the product of 100 is not strictly less than k.
+</code></pre>
+
+**Example 2:**
+
+<pre><code><strong>Input: nums = [1,2,3], k = 0
+</strong><strong>Output: 0
+</strong></code></pre>
+
+&#x20;**Constraints:**
+
+* `1 <= nums.length <= 3 * 104`
+* `1 <= nums[i] <= 1000`
+* `0 <= k <= 106`
+
+**Answer**
+
+You are not only required to solve the problem in a limited time frame (\~30mins) but the ask is also to ensure that the all test-cases pass and at least one of them fails if the code does not meet the required time complexity even if you get the required answer.
+
+```python
+class Solution:
+    def numSubarrayProductLessThanK(self, nums: List[int], max_product: int) -> int:        
+        result = 0
+        for i in range(1, len(nums)):
+            for j, l in enumerate(nums):
+                temp = nums[j:j+i]
+                res = 1
+                for m in temp:
+                    res = m*res
+                if(res<max_product and len(temp)==i):
+                    result +=1      
+        return result
+```
+
+The above code fails some test cases as it has O(n^3) complexity. There is the two-pointer or inchworm approach given below which solves the problem along with taking care of the complexity. Click on the Leetcode link above and check the discussions if you want to understand it better:
+
+```python
+class Solution:
+    def numSubarrayProductLessThanK(self, nums: List[int], max_product: int) -> int:        
+        left = 0
+        result = 0
+        product = 1
+        
+        for right in range(len(nums)):
+            product *= nums[right]
+            
+            if product >= max_product:
+                while product >= max_product and left <= right:
+                    product /= nums[left]
+                    left += 1
+            
+            result += right - left + 1
+        
+        return result
+```
+
+
+
+</details>
