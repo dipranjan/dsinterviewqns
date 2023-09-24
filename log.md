@@ -17,6 +17,7 @@ description: The journey of the book so far
 * [Confidence Interval](statistics/central-limit-theorem.md#what\_is\_confidence\_interval) added in Central Limit Theorem.
 * Coding [Algorithms from scratch](python/algorithms-from-scratch/) added in Python.
 * [Common hypothesis tests](statistics/hypothesis-testing.md) added.
+* [Neural Network](broken-reference) section updated
 
 **Month of August, 2023**
 
@@ -33,8 +34,6 @@ description: The journey of the book so far
 * Python in Excel Page added.
 * Many Python Questions added.
 * Transformer page added.
-
-
 
 <details>
 
