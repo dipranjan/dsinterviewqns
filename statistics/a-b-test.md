@@ -188,10 +188,10 @@ To account for network effects, we will need to choose the **randomization unit*
 
 * **Baseline conversion** — which is the existing conversion of the control before changes are made
 * **Minimum detectable difference or MDE** — which is the smallest change in conversion rate we are interested in detecting. A smaller change than this will not be practically significant to the business — it is typically chosen such that the improvement in the desired outcome will justify the cost of implementing and maintaining the feature
-* **Statistical Power** — which is the probability that a test correctly rejects the null hypothesis
+* **Statistical Power** — the statistical power can be thought of as the probability of accepting an alternative hypothesis, when the alternative hypothesis is true.
 * **Significance Level** — which is the probability of rejecting a null hypothesis when it is true
 
-A 5% significance level and power of 80% are usually chosen and I will assume these unless you say otherwise. Also I will assume a 50–50 split between the control and treatment. Once I have these inputs finalized, I will use power analysis to calculate the sample size. I would use a programming language for this. For e.g. In R, there is a package called ‘pwr’ that can be used for this.
+A 5% significance level and power of 80% are usually chosen and I will assume these unless you say otherwise. Also I will assume a 50–50 split between the control and treatment. Once I have these inputs finalized, I will use power analysis to calculate the sample size.
 
 <mark style="color:red;">INTERVIEWER —</mark> Yes, let’s say based on the analysis we get a sample size of 10,000 users per variation needed. How will you calculate the duration for the test?
 

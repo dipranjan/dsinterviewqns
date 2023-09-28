@@ -58,6 +58,19 @@ Let's take an example suppose we want to fill the Manager name as 'No Manager' i
 * `CASE WHEN manager IS NULL THEN 'No Manager' ELSE manager END as manager`
 * The other option is `COALESCE` but it essentially takes the first non-null value out of the passed columns
 
+### Best practices
+
+* Use aliases to shorten and simplify names. This can make your code more readable and usable.&#x20;
+* Avoid using the SELECT \* statement. This can cause unexpected results and performance issues.&#x20;
+* Use indexes to speed up queries. Indexes allow the database to quickly find entries that match specific criteria.&#x20;
+* Use EXIST() instead of COUNT(). EXIST() only runs until it finds the first entry for a record in the table. This can save time and computing power.&#x20;
+* Avoid using SELECT DISTINCT for large tables. This clause removes duplicate entries, but it is computationally expensive.&#x20;
+* Use WHERE instead of HAVING.&#x20;
+* Use ORDER BY to ensure the ordering of your results.
+* Use STARTS\_WITH instead of LIKE.&#x20;
+* Avoid using multiple nested queries.
+* Avoid using unnecessary subqueries.  Instead, rewrite queries with outer joins.&#x20;
+
 ## Questions
 
 <details>

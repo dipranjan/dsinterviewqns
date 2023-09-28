@@ -76,7 +76,7 @@
 * [Temporary Datasets](sql/temporary-datasets.md)
 * [Windows Functions](sql/windows-functions.md)
 * [Time](sql/time.md)
-* [Functions](sql/functions.md)
+* [Functions & Stored Proc](sql/functions.md)
 * [Problems](sql/problems.md)
 
 ## ⚠ EXCEL
