@@ -165,6 +165,6 @@ plot_output(10000)
 
 ```
 
-&#x20;![](<../.gitbook/assets/image (1).png>)
+&#x20;![](<../.gitbook/assets/image (1) (1).png>)
 
 </details>

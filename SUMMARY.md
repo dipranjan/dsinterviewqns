@@ -67,7 +67,9 @@
 
 ## ML OPS
 
+* [Overview](ml-ops/overview.md)
 * [GIT](ml-ops/git.md)
+* [Feature Store](ml-ops/feature-store.md)
 
 ## SQL
 
