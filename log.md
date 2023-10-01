@@ -4,6 +4,11 @@ description: The journey of the book so far
 
 # Log
 
+**Month of Oct, 2023**
+
+* [Problems page](business-intelligence/power-bi/problems.md) added in Power BI
+* [Cheatsheets](broken-reference) pushed to the end of the contents
+
 **Month of Sep, 2023**
 
 * [Windows Function](sql/windows-functions.md) updated.
@@ -18,6 +23,10 @@ description: The journey of the book so far
 * Coding [Algorithms from scratch](python/algorithms-from-scratch/) added in Python.
 * [Common hypothesis tests](statistics/hypothesis-testing.md) added.
 * [Neural Network](broken-reference) section updated
+
+<details>
+
+<summary>Older Updates</summary>
 
 **Month of August, 2023**
 
@@ -34,10 +43,6 @@ description: The journey of the book so far
 * Python in Excel Page added.
 * Many Python Questions added.
 * Transformer page added.
-
-<details>
-
-<summary>Older Updates</summary>
 
 **Month of May, 2023**
 

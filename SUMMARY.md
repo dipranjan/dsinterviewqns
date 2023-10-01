@@ -52,6 +52,7 @@
 
 * [⚠ Power BI](business-intelligence/power-bi/README.md)
   * [Charts](business-intelligence/power-bi/charts.md)
+  * [Problems](business-intelligence/power-bi/problems.md)
 * [Visualization](story-telling/visualization.md)
 
 ## PYTHON
@@ -99,6 +100,11 @@
 * [⚠ Industry Application](analytical-thinking/industry-application.md)
 * [Behavioral/Management](analytical-thinking/behavioral-management.md)
 
+## Generative AI
+
+* [Vector Database](generative-ai/vector-database.md)
+* [LLMs](generative-ai/llms.md)
+
 ## CHEAT SHEETS
 
 * [NumPy](cheat-sheets/numpy.md)
@@ -111,11 +117,6 @@
 * [Python Basics](cheat-sheets/python-basics.md)
 * [Keras](cheat-sheets/keras.md)
 * [R Basics](cheat-sheets/r-basics.md)
-
-## Generative AI
-
-* [Vector Database](generative-ai/vector-database.md)
-* [LLMs](generative-ai/llms.md)
 
 ## POLICIES
 
