@@ -698,3 +698,39 @@ class Solution:
 ```
 
 </details>
+
+<details>
+
+<summary><a href="https://leetcode.com/problems/move-zeroes/description/?envType=study-plan-v2&#x26;envId=leetcode-75">Swap numbers</a></summary>
+
+Given an integer array `nums`, move all `0`'s to the end of it while maintaining the relative order of the non-zero elements.
+
+**Note** that you must do this in-place without making a copy of the array.
+
+**Example:**
+
+<pre><code><strong>Input: nums = [0,1,0,3,12]
+</strong><strong>Output: [1,3,12,0,0]
+</strong></code></pre>
+
+**Answer**
+
+```python
+class Solution:
+    def moveZeroes(self, nums: list) -> None:
+        slow = 0
+        for fast in range(len(nums)):
+            if nums[fast] != 0 and nums[slow] == 0:
+                nums[slow], nums[fast] = nums[fast], nums[slow]
+
+            # wait while we find a non-zero element to
+            # swap with you
+            if nums[slow] != 0:
+                slow += 1
+```
+
+**Algorithm complexity:**\
+_Time complexity: O(n)_. Our fast pointer does not visit the same spot twice.\
+_Space complexity: O(1)_. All operations are made in-place
+
+</details>
