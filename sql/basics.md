@@ -89,3 +89,25 @@ The major differences between HAVING and WHERE are as follows:
 Performance wise there is not much of a difference, the best practice is to filter out unwanted rows as early as possible.
 
 </details>
+
+Can you tell the difference between T-SQL and PL SQL
+
+**Answer**
+
+| \*\*T-SQL\*\*                                                                                                                                                        | \*\*P/L SQL\*\*                                                                                                            |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| T-SQL   was originally developed by Sybase and now owned by Microsoft. Hence, it   works with Microsoft SQL Server only.                                             | P/L SQL was developed   by Oracle and works with Oracle only.                                                              |
+| All   database objects like Tables/Views/Procedures are internally organized by   database names. Users are allowed access to a specific database and its   objects. | All database objects   are organized in Schemas. Users are allowed access to certain schemas via   roles and permissions.  |
+| More   focussed on Microsoft SQL Server and its functions only.                                                                                                      | P/L SQL is more   versatile and encompassing, E.g. you can send Emails and access Web   Pages.                             |
+| Allows   B-Tree Indexes only.                                                                                                                                        | Allows B-Tree, Bitmap,   Domain, and Partitioned Indexes.                                                                  |
+| Provides   a greater degree of control on how an application works in Microsoft SQL   Server and is easy to learn.                                                   | Enhances the power of   plain SQL, and is considered to be more powerful and holistic.                                     |
+| Limited   and patchy support for use of Cursors.                                                                                                                     | Powerful support for   use of Cursors, the underlying file/data organization supports it.                                  |
+| No   direct support for Object-Oriented programming. Only supported though 3rd   party ORM   tools.                                                                  | Full support for Object-Oriented programming via Function Overloading, Data Encapsulation, etc.                            |
+| Explicit   error handling capabilities using Try-Catch blocks.                                                                                                       | Provides error handling via checking for Exceptions only.                                                                  |
+| Provides bulk insert and data loading.                                                                                                                               | No explicit bulk inserts.                                                                                                  |
+| Allows reading data from an external sequential file and you can use the BULK   statement to fine-tune the external reads.                                           | Indirectly allows reading data from an external sequential file but no specific language   constructs to ease the process. |
+| No packages to ease re-use.                                                                                                                                          | Allows grouping of Procedures into Packages, which can be reused.                                                          |
+| No   need for Subqueries and DELETE and UPDATE are improvised accordingly.                                                                                           | Needs Subqueries to read data from another table.                                                                          |
+| Provides WAITFOR construct to wait for a certain period of elapsed time.                                                                                             | No such direct construct in P/L SQL.                                                                                       |
+| No support for Arrays.                                                                                                                                               | Supports Arrays.                                                                                                           |
+
