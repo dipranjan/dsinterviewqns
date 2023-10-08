@@ -80,6 +80,8 @@
 * [Windows Functions](sql/windows-functions.md)
 * [Time](sql/time.md)
 * [Functions & Stored Proc](sql/functions.md)
+* [Index](sql/index.md)
+* [Performance Tuning](sql/performance-tuning.md)
 * [Problems](sql/problems.md)
 
 ## ⚠ EXCEL

@@ -8,6 +8,9 @@ description: The journey of the book so far
 
 * [Problems page](business-intelligence/power-bi/problems.md) added in Power BI
 * [Cheatsheets](broken-reference) pushed to the end of the contents
+* [Index](sql/index.md) added in SQL
+* [Temp datasets](sql/temporary-datasets.md) updated with Table Variable and Temp tables
+* [Performance Tuning ](sql/performance-tuning.md)added in SQL
 
 **Month of Sep, 2023**
 
