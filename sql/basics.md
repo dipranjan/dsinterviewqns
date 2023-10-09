@@ -90,6 +90,14 @@ Performance wise there is not much of a difference, the best practice is to filt
 
 </details>
 
+<details>
+
+<summary>DROP vs TRUNCATE vs DELETE</summary>
+
+The DELETE command deletes one or more existing records from the table in the database. The DROP Command drops the complete table from the database. The TRUNCATE Command deletes all the rows from the existing table, leaving the row with the column names.
+
+</details>
+
 Can you tell the difference between T-SQL and PL SQL
 
 **Answer**
