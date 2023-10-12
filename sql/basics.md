@@ -69,7 +69,18 @@ Let's take an example suppose we want to fill the Manager name as 'No Manager' i
 * Use ORDER BY to ensure the ordering of your results.
 * Use STARTS\_WITH instead of LIKE.&#x20;
 * Avoid using multiple nested queries.
-* Avoid using unnecessary subqueries.  Instead, rewrite queries with outer joins.&#x20;
+* Avoid using unnecessary subqueries.  Instead, rewrite queries with outer joins.
+
+### NOLOCK
+
+* The NOLOCK hint allows SQL to read data from tables by ignoring any locks and therefore not get blocked by other processes.
+* This can improve query performance by removing the blocks, but introduces the possibility of _dirty reads_.
+
+```sql
+SELECT * FROM Person.Contact WITH (NOLOCK) WHERE ContactID < 20 
+```
+
+If you want to learn more check[ this link.](https://www.mssqltips.com/sqlservertip/2470/understanding-the-sql-server-nolock-hint/)
 
 ## Questions
 
