@@ -697,20 +697,28 @@ Example:&#x20;
 
 **Answer**
 
+This problem is a little trickier than it looks at the outset
+
 ```sql
-select a.id, max(a.year) as year, ISNULL(b.new_ein_flag, 0) as new_ein_flag 
-from users a left join
+with cte as
+  (
+select user_id, ein,
+case when year = max(year) over() then 1 else 0 end as 'CY_flg',
+case when year = max(year) over() -1 then 1 else 0 end as 'LY_flg'
+from users
+),
 
-(select id, year, count(employer_ein) as new_ein_flag 
-from users where year in (select max(year) from users)
-and employer_ein not in 
-(select employer_ein from users 
-where year in (select max(year)-1 from users))
-group by id, year) b
-on a.id = b.id
-group by a.id, b.new_ein_flag
+cte2 as(
+select user_id, ein,  sum(CY_flg) as 'CY_flg', sum(LY_flg) as 'LY_flg' from cte
+group by user_id, ein)
 
-
+select b.user_id, isnull(newflg,0) as new_ein_count  from
+  (select user_id, isnull(count(ein),0) as newflg from cte2
+where CY_flg = 1 and Ly_flg = 0
+  group by user_id)a
+right join
+(select distinct(user_id) from users) b
+on a.user_id = b.user_id
 ```
 
 </details>
