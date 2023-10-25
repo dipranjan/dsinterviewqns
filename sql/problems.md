@@ -466,19 +466,15 @@ Output:
 
 ```sql
 with cte as(
-select id, score, LEAD(score, 1) over(order by score desc) as prior_score,
-LEAD(id, 1) over(order by score desc) as other_student
-from score
-),
+select id
+  , LEAD(id, 1) over(order by score desc) as other_student
+  , score - LEAD(score, 1) over(order by score desc) as diff
+from 
+score)
 
-cte2 as (
-select id,other_student, (score-prior_score) as diff
-from cte
-)
-
-select top 1* from cte2
+select top 1 * from cte
 where diff is not null
-order by diff asc
+order by diff
 ```
 
 </details>
