@@ -151,7 +151,7 @@ What is a perceptron?
 
 A **Perceptron** is shown in the figure below:
 
-<img src="../.gitbook/assets/image (1).png" alt="" data-size="original">
+<img src="../.gitbook/assets/image (1) (1).png" alt="" data-size="original">
 
 </details>
 

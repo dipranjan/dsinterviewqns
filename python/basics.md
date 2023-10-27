@@ -755,3 +755,90 @@ _Time complexity: O(n)_. Our fast pointer does not visit the same spot twice.\
 _Space complexity: O(1)_. All operations are made in-place
 
 </details>
+
+<details>
+
+<summary>[SALESFORCE] Interpolation</summary>
+
+![](<../.gitbook/assets/image (1).png>)
+
+**Answer**
+
+```python
+x = [25, 50, 100]
+y = [5.0, 4.0, 3.0]
+
+def interporlate(n):
+  if(n in x):
+    return y[x.index(n)]
+  elif(n > x[-1]):
+    x_t = x[-1]-x[-2]
+    y_t = y[-1]-y[-2]
+    return y[-1] + (y_t / x_t * (n-x[-1]))
+  elif(n < x[0]):
+    x_t = x[0]-x[1]
+    y_t = y[0]-y[1]
+    return y[0] + (y_t / x_t * (n-x[0]))
+  else:
+    for i,j in enumerate(x):
+      if n<j:
+        break
+    x_t = x[i-1]-x[i]
+    y_t = y[i-1]-y[i]
+    return y[i-1] + (y_t / x_t * (n-x[i-1]))
+
+
+print(interporlate(50))
+print(interporlate(150))
+print(interporlate(25))
+print(interporlate(75))
+```
+
+</details>
+
+<details>
+
+<summary>[SALESFORCE] Prison Problem</summary>
+
+<img src="../.gitbook/assets/image (2).png" alt="" data-size="original">
+
+**Answer**
+
+```python
+def prison(size, x, y):
+  x_t = list(range(0,6,1))
+  y_t = list(range(0,6,1))
+  x_t = [a for a in x_t if a not in x]
+  y_t = [a for a in y_t if a not in y]
+
+  # accounting for the outer walls, we will add 0 as starting
+  # and add +1 to all others
+  x_t = list(map(lambda t: t + 1, x_t))
+  y_t = list(map(lambda t: t + 1, y_t))
+  x_t.insert(0,0)
+  y_t.insert(0,0)
+
+  max_x = 1
+  max_y = 1
+
+  for i,j in enumerate(x_t):
+    try:
+      if(max_x< x_t[i+1]-j):
+        max_x = x_t[i+1] -j    
+    except:
+      pass
+
+  for i,j in enumerate(y_t):
+    try:
+      if(max_y< y_t[i+1]-j):
+        max_y = y_t[i+1] -j
+    except:
+      pass
+
+  return "Max cell size: ", max_x*max_y
+
+
+prison(5, [3, 2], [0, 1, 3])
+```
+
+</details>

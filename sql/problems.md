@@ -258,6 +258,50 @@ prev_month is not null
 
 <details>
 
+<summary>[SALESFORCE] Retention Rate</summary>
+
+([Source](https://platform.stratascratch.com/coding/2053-retention-rate?code\_type=5\&utm\_source=blog\&utm\_medium=click\&utm\_campaign=YT+description+link))
+
+Find the monthly retention rate of users for each account separately for Dec 2020 and Jan 2021. Retention rate is the percentage of active users an account retains over a given period of time. In this case, assume the user is retained if he/she stays with the app in any future months. For example, if a user was active in Dec 2020 and has activity in any future month, consider them retained for Dec. You can assume all accounts are present in Dec 2020 and Jan 2021. Your output should have the account ID and the Jan 2021 retention rate divided by Dec 2020 retention rate.
+
+_Note: I believe the official solution provided on the website is not correct as of 25-10-2023_
+
+**Answer**
+
+```sql
+-- ret rate for jan and dec = active in future/ active in dec
+-- ret rate of jan 21 ret rate/ dec 20 ret rate at acc_id level
+
+with cte as(
+select a.account_id, a.user_id,dec_active,jan_active,last_actv    from 
+(select account_id, user_id
+, case when date between '2020-12-01' and '2020-12-31' then 1 else 0 end as dec_active
+, case when date between '2021-01-01' and '2021-01-31' then 1 else 0 end as jan_active
+from sf_events)a
+
+inner join
+(
+select user_id, max(date) as last_actv
+from sf_events group by user_id) b
+on a.user_id = b.user_id),
+
+cte2 as(
+select 
+account_id
+, sum(case when dec_active = 1 and last_actv > '2020-12-31' then 1 else 0 end)/sum(dec_active) *1.0 as dec_retn
+, sum(case when jan_active = 1 and last_actv > '2021-01-01' then 1 else 0 end)/sum(jan_active) *1.0 as jan_retn
+ from cte
+ 
+group by account_id)
+
+select account_id, jan_retn/nullif(dec_retn,0) * 1.0 as retention from cte2
+
+```
+
+</details>
+
+<details>
+
 <summary>[SALESFORCE] Employee earning more than their manager</summary>
 
 **Reference -** [**Leetcode**](https://leetcode.com/problems/employees-earning-more-than-their-managers/)

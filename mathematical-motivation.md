@@ -44,7 +44,7 @@ Consider a function, $$f(x) = log(1 + x)$$ , for  $$x >0$$ as shown below. This 
 
 _What order of approximation is good?_ It depends on where you want the approximation to be good, and how far you want the approximation to go. The difference between first-order and second-order approximations is shown below:
 
-<figure><img src=".gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Calculus
 
@@ -56,7 +56,7 @@ This is one of the most important pillars on which the domain rests.&#x20;
 
 * It provides a way to vectorize and represent the data:
 
-<figure><img src=".gitbook/assets/image (3).png" alt=""><figcaption><p>Suppose we have a crime dataset and we want to figure out which factors influence the crime rate of a city. One way to do it is to put the numbers in matrices and vectors, as shown above. With this vector expression of the data, the analysis questions can roughly be translated to finding β’s in the last equation.</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (3) (1).png" alt=""><figcaption><p>Suppose we have a crime dataset and we want to figure out which factors influence the crime rate of a city. One way to do it is to put the numbers in matrices and vectors, as shown above. With this vector expression of the data, the analysis questions can roughly be translated to finding β’s in the last equation.</p></figcaption></figure>
 
 * How can you calculate how different your prediction is from the expected output? Loss Functions, of course. A loss function is an application of the **Vector Norm** in Linear Algebra. The norm of a vector can simply be its magnitude.
 * Regularization is a very important concept in data science. It’s a technique we use to prevent models from overfitting. _Regularization is actually another application of the Norm._
@@ -79,7 +79,7 @@ The first thing you might be thinking is that since there are 365 days, we need 
 
 <figure><img src=".gitbook/assets/image (6).png" alt=""><figcaption><p>The probability for two people in a group to have the same birthday as a function of the number of people in the group.</p></figcaption></figure>
 
-<figure><img src=".gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>The probability for two people to have the same birthday as a function of the number of people in the group. When there is only one person, this person can land on any of the 365 days. When there are two people, the first person has already taken one day (out of 365 days), so the second person can only choose 364 days. When there are three people, the first two people have occupied two days, so there are only 363 days left. If we generalize this process, we see that the number of configurations is 365 × 364 × · · · × (365 − k + 1), where k is the number of people in the room.</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>The probability for two people to have the same birthday as a function of the number of people in the group. When there is only one person, this person can land on any of the 365 days. When there are two people, the first person has already taken one day (out of 365 days), so the second person can only choose 364 days. When there are three people, the first two people have occupied two days, so there are only 363 days left. If we generalize this process, we see that the number of configurations is 365 × 364 × · · · × (365 − k + 1), where k is the number of people in the room.</p></figcaption></figure>
 
 So imagine that you keep going down the list to the 50th person. The probability that none of these 50 people will have the same birthday is as little as 3%. If you take the complement, you can show that with 97% probability, there is at least one pair of people having the same birthday.
 

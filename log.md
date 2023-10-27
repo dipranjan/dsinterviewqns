@@ -12,6 +12,7 @@ description: The journey of the book so far
 * [Temp datasets](sql/temporary-datasets.md) updated with Table Variable and Temp tables
 * [Performance Tuning ](sql/performance-tuning.md)added in SQL
 * [Study reference materials](python/basics.md) added for Python programming questions
+* New Problems added in Python and SQL
 
 **Month of Sep, 2023**
 
