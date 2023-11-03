@@ -24,7 +24,7 @@ For example, given the above Employee table, the query should return 200 as the 
 
 **Answer**
 
-Multiple solutions are possible only one approach is given below for reference
+Multiple solutions are possible two approaches are given below for reference
 
 ```sql
 SELECT
@@ -33,6 +33,19 @@ FROM Employee
 ORDER BY Salary DESC
 LIMIT 1 OFFSET 1) 
 AS SecondHighestSalary
+```
+
+I feel the below solution is more complete as it gives you the ability to handle edge cases if id is also needed and there are multiple employees with same salary:
+
+```sql
+with cte(
+select 
+salary,
+dense_rank() over(order by salary desc) as rank
+from Employee)
+
+select salary as SecondHighestSalary
+from cte where rank = 2
 ```
 
 </details>
