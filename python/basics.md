@@ -94,7 +94,7 @@ pyramid(6)
 
 <details>
 
-<summary>[UBER] Sum to N</summary>
+<summary>[UBER] <a href="https://leetcode.com/problems/combination-sum/description/">Sum to N</a></summary>
 
 Given a list of positive integers, find all combinations that equal the value N.
 
@@ -106,26 +106,19 @@ _output = \[\[2,2,2,2],\[2,3,3],\[3,5]]_
 
 **Answer**
 
-{% code overflow="wrap" %}
 ```python
-# Ref: https://stackoverflow.com/questions/58415182/function-that-find-combination-of-values-that-sums-to-a-given-number
+def combinationSum(candidates, target):
+    ans = []                                        # for adding all the answers
+    def traverse(candid, arr, sm):                  # arr : an array that contains the accused combination; sm : is the sum of all elements of arr 
+        if sm == target: ans.append(arr)            # If sum is equal to target then add it to the final list
+        if sm >= target: return                     # If sum is greater than target then no need to move further.
+        for i in range(len(candid)):                # we will traverse each element from the array.
+            traverse(candid[i:], arr + [candid[i]], sm+candid[i])   #most important, splice the array including the current index, splicing in order to handle the duplicates.
+    traverse(candidates,[], 0)
+    return ans
 
-def a(lst, target):
-    final_list = [] # list to store all the valid results
-    
-    def _a(idx, li):
-        if target == sum(li): final_list.append(li)
-        elif target < sum(li): return
-        
-        for u in range(idx, len(lst)):
-            _a(u , li + [lst[u]]) # recursive call
-        return final_list
-    
-    return _a(0, []) # initial call
-
-a([2,3,5],8)ython
+combinationSum([2, 3, 5], 8)
 ```
-{% endcode %}
 
 </details>
 
