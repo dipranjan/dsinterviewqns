@@ -323,14 +323,23 @@ Complexity of O(N) required.
 **Answer**
 
 ```python
-nums = [0,1,2,4,5]
+def missingNumber(nums):
 
-for i in range(0,len(nums)+1):
+  diff = 0
+  miss_num = []
+  for i, j in enumerate(nums):
     try:
-        if(nums[i+1]-nums[i]>1):
-            print("Missing nums --> ", i+1)
+      t_diff = nums[i+1]-nums[i]
+      if t_diff>0:
+        for k in range(i+1,i+t_diff):
+          # print(k)
+          miss_num.append(k)
     except:
-        pass
+      pass
+  return miss_num
+
+nums = [0,1,2,5,6]
+missingNumber(nums)
 ```
 
 </details>
