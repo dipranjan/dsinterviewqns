@@ -106,6 +106,8 @@ _output = \[\[2,2,2,2],\[2,3,3],\[3,5]]_
 
 **Answer**
 
+We will solve it in 2 ways, one using itertools the other one using recursion:
+
 ```python
 def combinationSum(candidates, target):
     ans = []                                        # for adding all the answers
@@ -118,6 +120,24 @@ def combinationSum(candidates, target):
     return ans
 
 combinationSum([2, 3, 5], 8)
+```
+
+```python
+import itertools
+integers = [2,3,5]
+target = 8
+final = []
+# output = [[2,2,2,2],[2,3,3],[3,5]]
+
+max = target//min(integers)
+for i in range(1,max+1):
+  a = list(itertools.combinations_with_replacement(integers,i))
+  for k in a:
+    
+    if sum(list(k)) == target:
+      final.append(k)
+
+print(final)
 ```
 
 </details>
