@@ -4,6 +4,10 @@ description: The journey of the book so far
 
 # Log
 
+**Month of Feb, 2024**
+
+We are working on new updates, keep checking back for more.
+
 **Month of Oct, 2023**
 
 * [Problems page](business-intelligence/power-bi/problems.md) added in Power BI
@@ -13,6 +17,10 @@ description: The journey of the book so far
 * [Performance Tuning ](sql/performance-tuning.md)added in SQL
 * [Study reference materials](python/basics.md) added for Python programming questions
 * New Problems added in Python and SQL
+
+<details>
+
+<summary>Older Updates</summary>
 
 **Month of Sep, 2023**
 
@@ -28,10 +36,6 @@ description: The journey of the book so far
 * Coding [Algorithms from scratch](python/algorithms-from-scratch/) added in Python.
 * [Common hypothesis tests](statistics/hypothesis-testing.md) added.
 * [Neural Network](broken-reference) section updated
-
-<details>
-
-<summary>Older Updates</summary>
 
 **Month of August, 2023**
 
