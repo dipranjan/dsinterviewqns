@@ -6,7 +6,7 @@ description: The journey of the book so far
 
 **Month of Feb, 2024**
 
-We are working on new updates, keep checking back for more.
+* [Clustering](algorithms/clustering.md) page updated
 
 **Month of Oct, 2023**
 
