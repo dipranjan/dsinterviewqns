@@ -11,7 +11,7 @@
 * [Central Limit Theorem](statistics/central-limit-theorem.md)
 * [Bayesian vs Frequentist Reasoning](statistics/bayesian-vs-frequentist-reasoning.md)
 * [Hypothesis Testing](statistics/hypothesis-testing.md)
-* [⚠ A/B test](statistics/a-b-test.md)
+* [⚠️ A/B test](statistics/a-b-test.md)
 
 ## MODEL BUILDING
 
@@ -20,7 +20,7 @@
   * [Scaling](model-building/data/scaling.md)
   * [Missing Value](model-building/data/missing-value.md)
   * [Outlier](model-building/data/outlier.md)
-  * [⚠ Sampling](model-building/data/sampling.md)
+  * [⚠️ Sampling](model-building/data/sampling.md)
   * [Categorical Variable](model-building/data/categorical-variable.md)
 * [Hyperparameter Optimization](model-building/hyperparameter-optimization.md)
 
@@ -31,7 +31,7 @@
 * [Regression](algorithms/regression.md)
 * [Generative vs Discriminative Models](algorithms/generative-vs-discriminative-models.md)
 * [Classification](algorithms/classification.md)
-* [⚠ Clustering](algorithms/clustering.md)
+* [⚠️ Clustering](algorithms/clustering.md)
 * [Tree based approaches](algorithms/tree-based-approaches.md)
 * [Time Series Analysis](algorithms/time-series-analysis.md)
 * [Anomaly Detection](algorithms/anomaly-detection.md)
@@ -40,7 +40,7 @@
 ## NEURAL NETWORK
 
 * [Neural Network](neural-network/neural-network.md)
-* [⚠ Recurrent Neural Network](neural-network/recurrent-neural-network.md)
+* [⚠️ Recurrent Neural Network](neural-network/recurrent-neural-network.md)
 
 ## NLP
 
@@ -50,7 +50,7 @@
 
 ## BUSINESS INTELLIGENCE
 
-* [⚠ Power BI](business-intelligence/power-bi/README.md)
+* [⚠️ Power BI](business-intelligence/power-bi/README.md)
   * [Charts](business-intelligence/power-bi/charts.md)
   * [Problems](business-intelligence/power-bi/problems.md)
 * [Visualization](story-telling/visualization.md)
@@ -84,7 +84,7 @@
 * [Performance Tuning](sql/performance-tuning.md)
 * [Problems](sql/problems.md)
 
-## ⚠ EXCEL
+## ⚠️ EXCEL
 
 * [Excel Basics](excel/excel-basics.md)
 * [Data Manipulation](excel/data-manipulation.md)
@@ -94,12 +94,12 @@
 ## MACHINE LEARNING FRAMEWORKS
 
 * [PyCaret](machine-learning-frameworks/pycaret.md)
-* [⚠ Tensorflow](machine-learning-frameworks/tensorflow.md)
+* [⚠️ Tensorflow](machine-learning-frameworks/tensorflow.md)
 
 ## ANALYTICAL THINKING
 
 * [Business Scenarios](analytical-thinking/business-scenarios.md)
-* [⚠ Industry Application](analytical-thinking/industry-application.md)
+* [⚠️ Industry Application](analytical-thinking/industry-application.md)
 * [Behavioral/Management](analytical-thinking/behavioral-management.md)
 
 ## Generative AI
