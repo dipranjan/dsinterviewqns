@@ -4,6 +4,10 @@ description: The journey of the book so far
 
 # Log
 
+**Month of Sep, 2024**
+
+* Pyspark [cheat sheet](cheat-sheets/pyspark.md) added
+
 **Month of Feb, 2024**
 
 * [Clustering](algorithms/clustering.md) page updated

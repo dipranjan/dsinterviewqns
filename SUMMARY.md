@@ -111,6 +111,7 @@
 
 * [NumPy](cheat-sheets/numpy.md)
 * [Pandas](cheat-sheets/pandas.md)
+* [Pyspark](cheat-sheets/pyspark.md)
 * [SQL](cheat-sheets/sql.md)
 * [Statistics](cheat-sheets/statistics.md)
 * [RegEx](cheat-sheets/regex.md)
