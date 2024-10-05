@@ -20,7 +20,6 @@ This online version of the book **IS AND ALWAYS WILL** be **free** and **a work 
 
 Every project requires resources to maintain and keep it relevant. The trouble with individual-driven open-source projects of this kind is that it runs on hope, banking on the goodwill of users to support the project. So, if this book has helped you in any way or you see merit in it, show some ❤:
 
-* The best way is to **support the project**. You can either [Buy me a Coffee ☕](https://www.buymeacoffee.com/dearc) or take a paid subscription to Medium using the [referral link](https://dearc.medium.com/membership), Medium pays back a small portion of the subscription charges
-* You can also **buy a full PDF version of the book** 📖 from [here](https://www.buymeacoffee.com/dearc/e/88363). Please note that the content of the PDF usually lags behind the website. Please do check the website for the latest content.
+* The best way is to **support the project**. You can  [Buy me a Coffee ☕](https://www.buymeacoffee.com/dearc).
 * You can also help by adding more content to make this book more relevant, feel free to create a merge request or post in [👪 forum](https://github.com/dipranjan/dsinterviewqns/discussions)
 * If you want to share your interview experience via ✉, please drop one to _thedatascienceinterviewbook@gmail.com_, it will just be used to improve and enhance the book not for any other purpose
