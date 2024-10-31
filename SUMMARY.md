@@ -65,6 +65,7 @@
 * [Algorithms from scratch](python/algorithms-from-scratch/README.md)
   * [Linear Regression](python/algorithms-from-scratch/linear-regression.md)
   * [Logistic Regression](python/algorithms-from-scratch/logistic-regression.md)
+* [PySpark](python/pyspark.md)
 
 ## ML OPS
 

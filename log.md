@@ -4,6 +4,10 @@ description: The journey of the book so far
 
 # Log
 
+**Month of Oct, 2024**
+
+* [Pyspark page](python/pyspark.md) added
+
 **Month of Sep, 2024**
 
 * Pyspark [cheat sheet](cheat-sheets/pyspark.md) added
