@@ -117,7 +117,39 @@ An unbiased estimator is an accurate statistic that’s used to approximate a po
 
 Say you have some data. Say you're willing to assume that the data comes from some distribution -- perhaps Gaussian. There are an infinite number of different Gaussians that the data could have come from (which correspond to the combination of the infinite number of means and variances that a Gaussian distribution can have). MLE will pick the Gaussian (i.e., the mean and variance) that is "most consistent" with your data (the precise meaning of consistent is explained below).
 
-So, say you've got a data set of $$y={−1,3,7}$$. The most consistent Gaussian from which that data could have come has a mean of $$3$$ and a variance of $$16$$. It could have been sampled from some other Gaussian. But one with a mean of $$3$$ and variance of $$16$$ is most consistent with the data in the following sense: the probability of getting the particular $$y$$ values you observed is greater with this choice of mean and variance, than it is with any other choice.
+So, say you've got a data set of $$y={−1,3,7}$$. The most consistent Gaussian from which that data could have come has a mean of $$3$$ and a variance of $$32/3$$. It could have been sampled from some other Gaussian. But one with a mean of $$3$$ and variance of $$32/3$$ is most consistent with the data in the following sense: the probability of getting the particular $$y$$ values you observed is greater with this choice of mean and variance, than it is with any other choice.
+
+Will show the calculation step by step:
+
+We have a dataset: $$y = \{-1, 3, 7\}$$
+
+Assuming the data follows a normal distribution $$\mathcal{N}(\mu, \sigma^2)$$, the likelihood function is:
+
+$$
+L(\mu, \sigma^2) = \prod_{i=1}^{n} \frac{1}{\sqrt{2\pi\sigma^2}} \exp\left(-\frac{(y_i - \mu)^2}{2\sigma^2}\right)
+$$
+
+Taking the **log-likelihood**:
+
+$$
+\log L(\mu, \sigma^2) = -\frac{n}{2} \log (2\pi \sigma^2) - \frac{1}{2\sigma^2} \sum_{i=1}^{n} (y_i - \mu)^2
+$$
+
+The MLE for the mean of a Gaussian is the **sample mean**:
+
+$$
+\hat{\mu} = \frac{1}{n} \sum_{i=1}^{n} y_i
+$$
+
+Substituting the values: $$\hat{\mu} = \frac{-1 + 3 + 7}{3} = \frac{9}{3} = 3$$
+
+The MLE for variance is: $$\hat{\sigma}^2 = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{\mu})^2$$&#x20;
+
+Substituting the values: $$\hat{\sigma}^2 = \frac{( -1 - 3)^2 + (3 - 3)^2 + (7 - 3)^2}{3}$$
+
+However, if the **population variance formula** was used instead of the true MLE formula: $$\hat{\sigma}^2 = \frac{1}{n-1} \sum_{i=1}^{n} (y_i - \hat{\mu})^2$$ $$= \frac{32}{2} = 16$$
+
+This would be the **unbiased variance estimator**, not the true MLE.
 
 Maximum Likelihood Estimation can be applied to both regression and classification problems.
 
@@ -201,7 +233,7 @@ Explain how a probability distribution could be not normal and give an example s
 
 **Answer**
 
-[Source](https://www.interviewquery.com/questions/non-normal-probability-distribution?ref=question\_email)
+[Source](https://www.interviewquery.com/questions/non-normal-probability-distribution?ref=question_email)
 
 Normal probability distributions are characterized by their famous bell shaped probability density function. The observations are centered around the mean and are equally spread around as per the standard deviation of the distribution, in case the probability distribution is a standard normal. They occur frequently in the nature, for e.g. distribution of heights
 
