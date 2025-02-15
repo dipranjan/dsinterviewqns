@@ -4,6 +4,10 @@ description: The journey of the book so far
 
 # Log
 
+**Month of Feb, 2025**
+
+* MLE calculation error updated in the [probability-distribution.md](statistics/probability-distribution.md "mention") page
+
 **Month of Oct, 2024**
 
 * [Pyspark page](python/pyspark.md) added
@@ -17,6 +21,12 @@ description: The journey of the book so far
 * [Clustering](algorithms/clustering.md) page updated
 * Questions added in the [Clustering ](algorithms/clustering.md#questions)page
 
+
+
+<details>
+
+<summary>Older Updates</summary>
+
 **Month of Oct, 2023**
 
 * [Problems page](business-intelligence/power-bi/problems.md) added in Power BI
@@ -26,10 +36,6 @@ description: The journey of the book so far
 * [Performance Tuning ](sql/performance-tuning.md)added in SQL
 * [Study reference materials](python/basics.md) added for Python programming questions
 * New Problems added in Python and SQL
-
-<details>
-
-<summary>Older Updates</summary>
 
 **Month of Sep, 2023**
 
@@ -41,7 +47,7 @@ description: The journey of the book so far
 * [Model Building Overview](model-building/overview.md) page added.
 * [Naive Bayes](algorithms/classification.md#naive-bayes-algorithm) added in classification.
 * Many new SQL and Python problems added.
-* [Confidence Interval](statistics/central-limit-theorem.md#what\_is\_confidence\_interval) added in Central Limit Theorem.
+* [Confidence Interval](statistics/central-limit-theorem.md#what_is_confidence_interval) added in Central Limit Theorem.
 * Coding [Algorithms from scratch](python/algorithms-from-scratch/) added in Python.
 * [Common hypothesis tests](statistics/hypothesis-testing.md) added.
 * [Neural Network](broken-reference) section updated
@@ -57,7 +63,7 @@ description: The journey of the book so far
 * LLM Section updated to Generative AI.
 * Clustering (WIP) section added.
 * QUALIFY added in Windows functions page.
-* We are now on [Instagram](https://www.instagram.com/thedatascienceinterviewbook/) , [TikTok](https://www.tiktok.com/@the.ds.interview?\_t=8f1vEGiHYYk&\_r=1) and [YouTube](https://youtube.com/@thedatascienceinterviewboo7076), <mark style="color:red;">please do follow</mark> <mark style="color:red;">we will start uploading content soon.</mark>
+* We are now on [Instagram](https://www.instagram.com/thedatascienceinterviewbook/) , [TikTok](https://www.tiktok.com/@the.ds.interview?_t=8f1vEGiHYYk&_r=1) and [YouTube](https://youtube.com/@thedatascienceinterviewboo7076), <mark style="color:red;">please do follow</mark> <mark style="color:red;">we will start uploading content soon.</mark>
 * Python in Excel Page added.
 * Many Python Questions added.
 * Transformer page added.
@@ -150,7 +156,7 @@ description: The journey of the book so far
 * Took some break, was obsessively working on this 😌
 * New section - Tree based approaches, Industry application added
 * Decided to make this page a little more interesting
-* Launched our LinkedIn page do [![Follow LinkedIn](https://img.shields.io/badge/Follow-LinkedIn-0077B5?style=flat-square\&logo=appveyor.svg)](https://www.linkedin.com/company/the-data-science-interview-book/?lipi=urn%3Ali%3Apage%3Ad\_flagship3\_feed%3BeglbXB3xT0mopZBzReqMEQ%3D%3D), have some interesting plans for it in near future
+* Launched our LinkedIn page do [![Follow LinkedIn](https://img.shields.io/badge/Follow-LinkedIn-0077B5?style=flat-square\&logo=appveyor.svg)](https://www.linkedin.com/company/the-data-science-interview-book/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BeglbXB3xT0mopZBzReqMEQ%3D%3D), have some interesting plans for it in near future
 * Added support for dark theme, 🤯 had to remove it as it was breaking a lot of other stuff. Will wait for official support
 * Added new problems in Probability, Python, Regression, SQL
 * Added Temporary Datasets and Time page in SQL covering CTEs
