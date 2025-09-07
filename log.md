@@ -4,6 +4,10 @@ description: The journey of the book so far
 
 # Log
 
+**Month of Sep, 2025**
+
+* Well sad news, Gitbook has decided to nerf and remove features from its free tier, so there are things which might stop working here pretty soon. The paid tiers are pretty costly for us to afford, but we will keep this website up as long as possible. If you find this helpful, please spread the word and consider donating using the Buy me a coffee button at the top. Given the current job market, we will this resource might be more relevant than ever.
+
 **Month of Feb, 2025**
 
 * MLE calculation error updated in the [probability-distribution.md](statistics/probability-distribution.md "mention") page
